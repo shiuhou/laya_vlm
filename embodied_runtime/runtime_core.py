@@ -235,7 +235,10 @@ class LayaProvider(DecisionProvider):
                  "semantic": snapshot.semantic, "goal": snapshot.goal,
                  "candidate_tokens": list(criteria)}
         started = time.perf_counter()
-        result = self.agent.predict(state, questions, model=self.model_name)
+        if hasattr(self.agent, "system_one"):
+            result = self.agent.system_one(state, questions)
+        else:
+            result = self.agent.predict(state, questions, model=self.model_name)
         latency = (time.perf_counter() - started) * 1000.0
         answer = result["answers"]["action"]
         token = str(answer["choice"])
@@ -246,6 +249,13 @@ class LayaProvider(DecisionProvider):
         return Decision(token, probs, float(answer.get("confidence", 0.0)), "laya",
                         snapshot.revision, snapshot.asof_sim_time, time.time(),
                         snapshot.asof_sim_time + .5, status, latency_ms=latency)
+
+
+def load_laya_provider(model_name: str = "typed-decisions") -> LayaProvider:
+    """Load an already-downloaded checkpoint; this helper never downloads weights."""
+    import laya
+    agent = laya.load("convaiinnovations/laya", subfolder=model_name)
+    return LayaProvider(agent, model_name=model_name)
 
 
 class AtomicBackend(ABC):
