@@ -50,3 +50,21 @@ def test_executor_and_done_gate():
     with pytest.raises(RuntimeError):
         executor.execute("DONE")
 
+
+def test_laya_provider_uses_system_one_without_loading_weights():
+    from embodied_runtime.runtime_core import LayaProvider
+
+    class FakeAgent:
+        def system_one(self, state, questions):
+            return {"answers": {"action": {
+                "choice": "MV_FWD",
+                "probabilities": {"MV_FWD": 0.9, "STOP": 0.1},
+                "confidence": 0.9,
+            }}}
+
+    snap = BeliefSnapshot("ep", 1, 0.0, {}, {}, {},
+                          (Candidate("MV_FWD", "forward"), Candidate("STOP", "stop")), {})
+    decision = LayaProvider(FakeAgent()).decide(snap)
+    assert decision.token == "MV_FWD"
+    assert decision.source == "laya"
+
