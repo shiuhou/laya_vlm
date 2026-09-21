@@ -5,13 +5,14 @@ leaving environment-specific action layouts behind AtomicBackend.
 """
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
-from collections import deque
-from dataclasses import dataclass, field
-from math import exp, isfinite, log
-from typing import Any, Mapping
 import json
 import time
+from abc import ABC, abstractmethod
+from collections import deque
+from collections.abc import Mapping
+from dataclasses import dataclass, field
+from math import exp, isfinite, log
+from typing import Any
 
 MOVE = {
     "MV_FWD": (1.0, 0.0, 0.0), "MV_BACK": (-1.0, 0.0, 0.0),

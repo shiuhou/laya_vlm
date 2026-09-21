@@ -1,8 +1,9 @@
 """JSONL replay utilities; replay never invokes a model."""
 from __future__ import annotations
+
 import json
+from collections.abc import Iterable, Iterator
 from pathlib import Path
-from typing import Iterable, Iterator
 
 
 def write_events(path: str | Path, events: Iterable[dict]) -> None:

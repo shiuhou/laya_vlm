@@ -1,4 +1,11 @@
-from embodied_runtime.runtime_core import BeliefStore, CandidateBuilder, FakeBackend, RuleProvider, ObservationEvent, AtomicExecutor
+from embodied_runtime.runtime_core import (
+    AtomicExecutor,
+    BeliefStore,
+    CandidateBuilder,
+    FakeBackend,
+    ObservationEvent,
+    RuleProvider,
+)
 
 
 def main() -> None:

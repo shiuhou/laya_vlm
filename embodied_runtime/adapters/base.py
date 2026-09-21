@@ -5,6 +5,7 @@ from the model-facing runtime. They can be implemented without changing the fusi
 decision code.
 """
 from __future__ import annotations
+
 from typing import Any, Protocol
 
 
