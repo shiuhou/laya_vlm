@@ -34,3 +34,6 @@ References:
 - Jev-LIBERO candidate preview architecture: https://github.com/Dimweaker/jev-libero
 - Laya: https://github.com/NandhaKishorM/laya
 - LIBERO-Pro: https://github.com/Zxy-MLlab/LIBERO-PRO
+
+## Server environment
+nvironment.yml defines the intended Conda environment (Python 3.10). On the target server, use conda env create -f environment.yml; if network access is restricted, install the model-free core with the system Python after the repository clone.
