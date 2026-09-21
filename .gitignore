@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+checkpoints/
+models/
+runs/
+outputs/
+server.txt
+*.npz
+*.mp4
+stray.tmp
+
+*.egg-info/
+stray.tmp
+
