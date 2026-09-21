@@ -22,6 +22,13 @@ Install the optional dependency separately:
 
 Load the typed-decisions checkpoint separately and pass the loaded agent to LayaProvider. This repository never downloads model weights.
 
+## Vision model
+
+The first visual-semantic prototype is NVIDIA LocateAnything-3B plus RGB-D depth,
+tracking and belief fusion. See docs/vision_model.md for the boundary: LocateAnything
+localizes queried regions; depth, tracking, task predicates and execution remain local
+code. LocateAnything weights are not included or downloaded by this repository.
+
 ## Environment integration
 
 Implement AtomicBackend for a specific MuJoCo or LIBERO environment. The backend owns action layout, coordinate frame, scaling, gripper polarity, observations and success predicate. Do not reuse ManiSkill action scales for LIBERO.
@@ -36,4 +43,4 @@ References:
 - LIBERO-Pro: https://github.com/Zxy-MLlab/LIBERO-PRO
 
 ## Server environment
-nvironment.yml defines the intended Conda environment (Python 3.10). On the target server, use conda env create -f environment.yml; if network access is restricted, install the model-free core with the system Python after the repository clone.
+environment.yml defines the intended Conda environment (Python 3.10). On the target server, use `conda env create -f environment.yml`; if network access is restricted, install the model-free core with the system Python after the repository clone.
