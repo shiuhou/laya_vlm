@@ -1,8 +1,8 @@
 # Laya Embodied Runtime：交接与执行手册
 
-> 更新时间：2026-09-21（Asia/Shanghai）  
-> 代码仓库：<https://github.com/LilRodriguez/laya-embodied-runtime>（私有）  
-> 工作分支：`master`  
+> 更新时间：2026-09-21（Asia/Shanghai）<br>
+> 代码仓库：<https://github.com/LilRodriguez/laya-embodied-runtime>（私有）<br>
+> 工作分支：`master`<br>
 > 本文只记录已核实的工程状态与下一步操作；不把尚未跑通的接口描述成实验结果。
 
 ## 0. 交接目标与边界
