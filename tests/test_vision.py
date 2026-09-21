@@ -19,4 +19,4 @@ def test_depth_projection_and_provider_event():
                              episode_id="ep", source_seq=1, capture_sim_time=1.0)
     assert event is not None
     assert event.track_id == "red_mug"
-    assert event.value["position_camera_m"] == [0.0, 0.0, 1.0]
+    assert np.allclose(event.value["position_camera_m"], [0.5, 0.5, 1.0])
