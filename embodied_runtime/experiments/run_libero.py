@@ -49,13 +49,13 @@ def run_episode(args):
                 "candidates": [_jsonable(c.__dict__) for c in snap.candidates],
                 "decision": _jsonable(decision.__dict__), "decision_latency_ms": elapsed_ms,
                 "before_features": _jsonable(before), "after_features": _jsonable(world.features()),
-                "success": bool(world.success()), "vision_capture_seq": None,
+                "success": bool(backend.success()), "vision_capture_seq": None,
                 "vision_age_s": None, "model_latency_ms": None,
                 "physics_preview": {"rejected": _jsonable(preview.get("rejected", {})),
                                     "pool_names": {k: list(v) for k, v in preview.get("pools", {}).items()}},
                 "execution": _jsonable(execution),
             })
-            if world.success():
+            if backend.success():
                 break
     finally:
         world.close()
