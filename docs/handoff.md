@@ -1,6 +1,6 @@
 # Laya Embodied Runtime：交接与执行手册
 
-> 更新时间：2026-09-21（Asia/Shanghai）<br>
+> 更新时间：2026-09-22（Asia/Shanghai）<br>
 > 代码仓库：<https://github.com/LilRodriguez/laya-embodied-runtime>（私有）<br>
 > 工作分支：`master`<br>
 > 本文只记录已核实的工程状态与下一步操作；不把尚未跑通的接口描述成实验结果。
@@ -37,11 +37,11 @@ AtomicExecutor → LiberoWorldBackend → robosuite / MuJoCo
 
 | 领域 | 当前状态 | 可核验证据 | 下一步门槛 |
 |---|---|---|---|
-| GitHub | 私有仓库已创建、已推送 | `master` / `origin/master` 均为 `61e37ff` | 服务器安全同步这两个落后提交 |
+| GitHub | 私有仓库已创建、已推送 | 文档更新前 `master` / `origin/master` 为 `481da00` | 服务器安全同步落后提交 |
 | Runtime 合同 | 已实现，历史单测为 6 passed | `tests/test_runtime.py`、`tests/test_vision.py` | 在服务器同步后复跑；不把 mock 当实验 |
 | LIBERO 后端 | 适配器代码已提交，真实任务未验收 | `embodied_runtime/adapters/libero.py` | 创建 world、逐 token 标定、headless episode smoke test |
-| LocateAnything | RGB-D callback 接缝和 mock 测试已完成 | `embodied_runtime/vision.py` | 官方 checkpoint + 一张真实 LIBERO RGB 推理 |
-| Laya | `system_one` 合同 mock 已完成 | `LayaProvider` 单测 | 正确 checkpoint 实际加载和一次真实决定 |
+| LocateAnything | 官方权重、处理器、模型加载与单图推理已验证；LIBERO RGB-D 尚未接入 | 服务器校验日志与推理 JSONL | 用真实 LIBERO RGB-D 做定位并接入 worker |
+| Laya | typed-decisions checkpoint 已下载并完成真实 `system_one` | `laya_smoke.json` | 接入 Runtime 并记录多次决策 p50/p95 |
 | 物理候选 | 尚未实现 | 基础 `CandidateBuilder` 仅支持标志位 veto | 接入 `World.predict_all()` 并写单测 |
 | 实验表 | 尚未产出 | 服务器无 results/CSV/JSONL | 建 evaluator，完成至少一个 task 的真实原始日志和汇总 |
 
@@ -132,10 +132,11 @@ python -m venv .venv
 
 ### 1.4 环境与服务器准备
 
-`environment.yml` 定义了 Python 3.10 的 Conda 基础环境；镜像配置见 [server_setup.md](server_setup.md)。2026-09-21 的只读服务器审计得到以下精确状态：
+`environment.yml` 定义了 Python 3.10 的 Conda 基础环境；镜像配置见 [server_setup.md](server_setup.md)。服务器在 2026-09-22 完成模型下载和运行验证后状态如下：
 
 - Miniforge：`/home/junhongli/miniforge3`；环境：`laya-embodied`；Python `3.10.21`；
-- 已安装 `torch 2.2.0+cu121`、MuJoCo `3.5.0`、robosuite `1.4.1`、`laya 0.3.4`、`python-fcl`、scipy、pytest/ruff；`pip check` 曾为通过；
+- Laya 环境 `/home/junhongli/miniforge3/envs/laya-embodied` 已固定为 `torch 2.2.0+cu121`、`transformers 4.57.3`、`laya 0.3.4`，并保留 MuJoCo `3.5.0`、robosuite `1.4.1`、`python-fcl`、scipy、pytest/ruff；
+- LocateAnything 使用独立环境 `/home/junhongli/miniforge3/envs/locateanything`，包含 Torch `2.2.0+cu121`、Transformers `4.57.3`、torchvision `0.17.0+cu121`、decord `0.6.0`、lmdb、peft 和 accelerate；
 - Torch CUDA 可用，审计时能看到 7 张 RTX 4090。GPU 0、3、5 当时被其他工作以约 20.5 GiB / 100% 占用；开始新运行前应重新检查，不要抢占它们；
 - 磁盘余量约 475 GiB；
 - 上游检出干净：`/home/junhongli/projects/LIBERO` 在 `8f1084e3132a39270c3a13ebe37270a43ece2a01`，`/home/junhongli/projects/jev-libero` 在 `3bdad985b225`；
@@ -143,13 +144,15 @@ python -m venv .venv
 
 服务器项目仓库当前为干净的 `0d68b445c2343a2f75b9baa316018b945d33645b`，落后于 GitHub 的 `05d0827` 与 `61e37ff`，所以缺少当前的 LIBERO 和视觉适配器。服务器的 `origin` 不能无交互读取私有 GitHub 仓库；同步必须使用临时的安全认证方式，随后恢复不含秘密的 remote URL。
 
-两套模型权重**均未就绪**：
+两套模型权重与最小真实推理已经就绪：
 
-- `/home/junhongli/models/huggingface/LocateAnything-3B` 仅约 25 MiB，只有 README/许可证/示例媒体等小文件，没有 config、processor 或 safetensors shard；
-- `~/.cache/huggingface/hub/models--nvidia--LocateAnything-3B` 和 `models--convaiinnovations--laya` 都只有很小的 ref；
-- 审计时没有属于该用户的模型下载进程。恢复前应检查缓存、磁盘和 log，不能因为存在目录就认为模型可用。
+- Laya typed-decisions：`/home/junhongli/models/huggingface/laya/typed-decisions/model.safetensors`，大小 `842609220` 字节。GPU 加载约 `7853 ms`，第一次真实 `system_one` 约 `892 ms`；烟测从 `MV_FWD / MV_LEFT / STOP` 中选择了 `MV_FWD` 并返回完整概率分布；
+- LocateAnything-3B：`/home/junhongli/models/huggingface/LocateAnything-3B`。两个权重分片大小分别为 `4959632160` 与 `2701795216` 字节；
+- LocateAnything 分片 SHA-256 分别为 `923cfc10fed19808067da6df85a9a4220ddc1f9eb91ceee94c0fecd05d0f2d58` 和 `3459ba101f40594f3f62d3312014f1f8378b4ba3da3b1d562480045938fc7d47`，与 Hugging Face LFS 标识一致；
+- LocateAnything 在 RTX 4090 上以 BF16 / SDPA 成功加载，约 `4769 ms`、分配约 `7.23 GiB` 显存；随后对仓库自带图片执行了真实图文定位推理，完整命令约 `7926 ms`（包含冷加载），产出结构化 `<box>` token；
+- 验证日志位于 `/home/junhongli/logs/model-downloads/`：`laya_smoke.json`、`locateanything_sha256.txt`、`locateanything_load_smoke.json`、`locateanything_infer.jsonl` 和相应 stderr。
 
-还有一个实质性环境阻塞：`transformers 5.17.0` 发现 Torch 仅为 2.2 后会打印“PyTorch >= 2.5 required”并禁用 PyTorch。因此，Laya checkpoint 下载完成前后都应优先将 Transformers 固定到与 Torch 2.2 兼容的 4.x 版本，或谨慎升级 Torch；前者下载更小，优先作为首个尝试。
+原有的 `transformers 5.17.0 / torch 2.2` 阻塞已经通过将 Laya 环境固定到 Transformers `4.57.3` 解决。LocateAnything 也在独立环境的同一版本组合上完成模型加载和一次推理。官方代码仍会提示 tokenizer regex、slow processor、GenerationMixin、缺少 FlashAttention/MagiAttention 等警告；当前验证使用 SDPA，这些警告没有阻止推理。`decord 0.6.0` 会在 `pip check` 中报告平台元数据不受支持，但模块实际可导入且处理器与推理均成功，后续应记录这一环境例外。
 
 服务器的地址、用户名和密码只存在用户提供的 `server.txt`，绝不能写入仓库、终端日志、实验表、Issue 或本文件。连接后应使用 SSH key 或现有安全凭据；不要把密码放在命令行参数或 Git remote 中。
 
@@ -159,8 +162,8 @@ python -m venv .venv
 
 | 优先级 | 缺口 | 为什么影响实验 | 需要完成的具体工作 |
 |---|---|---|---|
-| P0 | LocateAnything checkpoint 尚未验证可加载 | `vision.py` 目前只有 callback，完全没有真实模型推理 | 完成权重下载；用官方代码和一张 LIBERO RGB 测试图跑通真实 `infer(rgb, query)`；保存版本、commit、哈希、延迟日志 |
-| P0 | Laya checkpoint 尚未验证可加载 | 目前只能 fake agent 验证 JSON contract | 下载正确的 typed-decisions checkpoint；固定兼容的 transformers/torch 组合；调用一次 `system_one` 并记录结构化响应 |
+| P0 | LocateAnything 尚未接入运行时 | checkpoint 和官方单图推理已通过，但 `vision.py` 仍只有 callback | 实现官方输出 parser；对真实 LIBERO RGB-D 推理并写入带时间戳的 `ObservationEvent` |
+| P0 | Laya 尚未接入真实 episode | checkpoint 与单次 `system_one` 已通过，但没有 LIBERO 决策序列 | 让 `Runtime` 从本地 checkpoint 创建 `LayaProvider`；记录热身后 p50/p95 和非法候选拒绝 |
 | P0 | 没有端到端 LIBERO 实验 driver | 不能产生任务成功率、延迟、失败类型表 | 新建 CLI/脚本，按 seed/task/method 运行 episode，写 JSONL 原始记录和 CSV/Markdown 汇总 |
 | P0 | 视觉结果未进入真实 LIBERO loop | 现有 `LocateAnythingProvider` 没有采集 RGB-D、标定或 tracker | 从 LIBERO 相机获得 RGB、depth、K、T；实现最新帧队列、相机坐标→world/base 变换、关联和 TTL 检查 |
 | P1 | 没有 Jev-LIBERO physics-preview candidate builder | 当前 `CandidateBuilder` 只看 `blocked_*` 标志，不能约束碰撞/可达性 | 用 `World.predict_all()` / 预测特征为每个原子 token 填 `feasible`、`reason_codes`、`risk`；只允许 Laya 在剩余候选中选 |
@@ -199,12 +202,12 @@ python -m venv .venv
    PY
    ```
 
-3. 固定 Laya 的可用组合。服务器当前安装到了 `transformers 5.17.0`，它会因 PyTorch 2.2 被禁用；优先把 transformers 固定到一个满足 Laya `>=4.45` 且支持当前 Torch 的 4.x 版本，然后做一次真实 checkpoint load。只有成功加载后才可做 Laya 延迟测量。
+3. Laya 可用组合已经固定为 Torch `2.2.0+cu121`、Transformers `4.57.3`、Laya `0.3.4`。不要无理由升级该环境；先在现有组合上集成 Runtime 和测量热身后的延迟。
 
-4. 权重下载完成后，先做两个最小 smoke test：
+4. 两个模型 smoke test 均已完成。下一步必须换成真实系统输入：
 
-   - 一张静态 LIBERO RGB 对 `"the target object"` 运行 LocateAnything，打印/保存原始模型输出；
-   - 一个静态 `BeliefSnapshot` 交给 Laya，验证选择值属于候选 token。
+   - 从 LIBERO episode 捕获一张带相机元数据的 RGB-D，对任务目标运行 LocateAnything 并保存原始输出；
+   - 把同一 episode 的真实 `BeliefSnapshot` 交给 Laya，验证选择属于经物理预演过滤后的候选 token。
 
 每一步都先生成可检查日志；失败时保留完整 Python traceback 和版本信息，但不能泄露凭据。
 
@@ -343,7 +346,7 @@ git push origin master
 
 可以把下面这段原样交给新的 Codex：
 
-> 阅读 `docs/handoff.md`、`docs/vision_model.md` 与当前 Git 状态。不要把 oracle simulator state 计入视觉方法。先在服务器的 `laya-embodied` Conda 环境中核实本地/远端 commit、Torch/Transformers 兼容性和两份模型权重下载状态。修复 `load_laya_provider` 导出问题，并用真实 checkpoint 分别完成 Laya `system_one` 和 LocateAnything 单图推理 smoke test。随后实现严格带 capture timestamp 的 LIBERO RGB-D source、latest-frame 视觉 worker 和 Jev-LIBERO physics-preview candidate builder。最后实现一个可复现的 `top_drawer` 单任务实验 CLI，写 JSONL 原始动作日志与自动生成的 CSV/Markdown 表；运行 oracle_rule、oracle_laya、vision_rule、vision_laya、structured_only 的固定 seed 试验。每次提交前跑 pytest 和 ruff；任何未跑通项在表中标为未完成，不要伪造成功率。
+> 阅读 `docs/handoff.md`、`docs/vision_model.md` 与当前 Git 状态。不要把 oracle simulator state 计入视觉方法。服务器上的 Laya 和 LocateAnything 权重、独立 Conda 环境、真实模型加载与单次推理已经验证，日志在 `/home/junhongli/logs/model-downloads/`；不要重复下载。先安全同步服务器仓库并修复 `load_laya_provider` 导出问题。随后实现严格带 capture timestamp 的 LIBERO RGB-D source、LocateAnything 输出 parser、latest-frame 视觉 worker 和 Jev-LIBERO physics-preview candidate builder。最后实现一个可复现的 `top_drawer` 单任务实验 CLI，写 JSONL 原始动作日志与自动生成的 CSV/Markdown 表；运行 oracle_rule、oracle_laya、vision_rule、vision_laya、structured_only 的固定 seed 试验。每次提交前跑 pytest 和 ruff；任何未跑通项在表中标为未完成，不要伪造成功率。
 
 ## 8. 参考资料
 
