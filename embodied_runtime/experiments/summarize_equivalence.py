@@ -112,14 +112,14 @@ def _validate_decision(data, inputs):
     return decision
 
 
-def summarize_equivalence(output):
-    """Write deterministic CSV/JSON, preserving missing output as incomplete.
+def analyze_equivalence(records, diagnostics=()):
+    """Analyze loaded records without writing files or trusting derived caches.
 
-    Invalid complete evidence fails validation. Interrupted trailing records are
-    reported by ``load_records``; absent outputs never become model decisions.
+    Callers must use ``load_records`` first to validate the raw hash chain.
+    Absent outputs never become model decisions; incomplete-tail diagnostics
+    remain visible. This is shared by the batch writer and read-only inspector.
     """
-    output = Path(output)
-    records, diagnostics = load_records(output / "episodes.jsonl")
+    diagnostics = list(diagnostics)
     pairs, decisions, inputs, config, terminations = {}, {}, {}, {}, []
     for record in records:
         kind, data = record["kind"], record["data"]
@@ -207,10 +207,17 @@ def summarize_equivalence(output):
                "complete_comparisons": sum(r["status"] == "complete" for r in comparisons),
                "incomplete_comparisons": sum(r["status"] == "incomplete" for r in comparisons),
                "diagnostics": diagnostics, "pairs": pair_summaries, "comparisons": comparisons, "stability": stability}
+    return summary
+
+
+def summarize_equivalence(output):
+    """Write deterministic CSV/JSON from raw evidence, including interruptions."""
+    output = Path(output)
+    summary = analyze_equivalence(*load_records(output / "episodes.jsonl"))
     with (output / "equivalence_summary.csv").open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
         writer.writeheader()
-        writer.writerows(comparisons)
+        writer.writerows(summary["comparisons"])
     (output / "equivalence_summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n")
     return summary
 

@@ -10,7 +10,8 @@ from ..runtime_core import Candidate, _sha256_json
 
 
 def field_differences(oracle, perceptual):
-    same_position_definition = (oracle.fields["target.position_definition"].value ==
+    same_position_definition = (oracle.fields["target.position_definition"].value is not None and
+                                oracle.fields["target.position_definition"].value ==
                                 perceptual.fields["target.position_definition"].value)
     result = {}
     for key, a in oracle.fields.items():
