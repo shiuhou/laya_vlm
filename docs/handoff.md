@@ -61,7 +61,7 @@ flowchart LR
 
 ## 0.2 2026-09-22 本轮实现结果
 
-本轮已提交到 GitHub `master` 的最新提交为 `5165d49`。服务器通过临时 Git bundle 安全同步到同一提交；服务器私有 remote 因未缓存 GitHub 凭据不能交互 `pull`，没有把 token 写入 remote。
+本轮已提交到 GitHub `master` 的最新提交为 `4d0b31d`。服务器通过临时 Git bundle 安全同步到同一提交；服务器私有 remote 因未缓存 GitHub 凭据不能交互 `pull`，没有把 token 写入 remote。
 
 已完成并实际验证：
 
@@ -71,12 +71,13 @@ flowchart LR
 - `LiberoRgbdSource` 在 `render=True` 的真实 LIBERO world 上捕获 384×384 RGB、米制深度、K、camera-to-world T、capture sequence 和 MuJoCo simulation time。服务器验证结果：`K=[[463.529,0,192],[0,463.529,192],[0,0,1]]`，深度范围约 `0.726--2.401 m`。
 - `parse_locateanything()` 遵循官方 parser：`<box>` 坐标是 `[0,1000]` 量化值，按图像宽高转换为像素，并拒绝非法/退化框。
 - `run_libero.py` 已能启动真实 `top_drawer`，完成 1 step Jev physics-preview + RuleProvider episode，并写出服务器结果目录。
+- `LatestFrameWorker` 使用容量 1 队列，新帧替换旧待处理帧并计数；结果保留 capture sequence、仿真时间和 camera-to-world 投影，确定性 worker 测试已通过。
 
 当前明确未完成：LocateAnything worker 尚未跨 Conda 环境接入 `Runtime` 的非 oracle episode；latest-frame 容量 1 worker、query tracking、RGB-D 世界坐标融合和 `vision_rule`/`vision_laya` 对照实验仍需实现。`run_libero.py` 当前输出的 smoke 行显式标记 `oracle=true`、`vision=false`，不能当视觉结果。
 
 ## 1. 已完成且已提交的内容
 
-本地 HEAD 为 `5165d49 Handle MuJoCo depth render tuple`。本轮关键提交链如下：
+本地 HEAD 为 `4d0b31d Add capacity-one RGB-D vision worker`。本轮关键提交链如下：
 
 ```text
 06a2f59  Add Laya embodied runtime foundation
@@ -114,7 +115,7 @@ python -m venv .venv
 .\.venv\Scripts\python examples\fake_run.py
 ```
 
-本次工作会话本地与服务器均已验证 `pytest -q` 为 **7 passed**；服务器严格 `ruff check .` 也已通过。这是 fake / contracts 测试，不是 LIBERO 实验。
+本次工作会话本地已验证 `pytest -q` 为 **8 passed**；服务器在同步 `4d0b31d` 后需复跑同一命令；服务器严格 `ruff check .` 也已通过。这是 fake / contracts 测试，不是 LIBERO 实验。
 
 ### 1.2 LIBERO / MuJoCo 执行接缝
 
@@ -157,7 +158,7 @@ python -m venv .venv
 - 上游检出干净：`/home/junhongli/projects/LIBERO` 在 `8f1084e3132a39270c3a13ebe37270a43ece2a01`，`/home/junhongli/projects/jev-libero` 在 `3bdad985b225`；
 - `jev-libero pytest -q tests` 是此前会话的历史结果：`34 passed, 19 skipped`。其严格 simulation replay 曾在 `max_state_error == 0` 处得到 `5.295763827461997e-14` 而失败；这是机器精度差异，不能暗改断言后报告为全通过。
 
-服务器项目仓库已通过临时 bundle 同步到 `5165d49`，工作树干净，包含当前 LIBERO、RGB-D、LocateAnything parser、physics-preview 和 smoke CLI。服务器的 `origin` 不能无交互读取私有 GitHub 仓库；同步必须使用临时的安全认证方式，随后恢复不含秘密的 remote URL。
+服务器项目仓库已通过临时 bundle 同步到 `4d0b31d`，工作树干净，包含当前 LIBERO、RGB-D、LocateAnything parser、physics-preview 和 smoke CLI。服务器的 `origin` 不能无交互读取私有 GitHub 仓库；同步必须使用临时的安全认证方式，随后恢复不含秘密的 remote URL。
 
 两套模型权重与最小真实推理已经就绪：
 
