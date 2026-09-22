@@ -1,12 +1,17 @@
 # Laya Embodied Runtime
 
-This is a small runtime for LIBERO and MuJoCo embodied experiments.
+This is a research runtime for studying how asynchronous sensor observations can
+be converted into decision-sufficient state and candidate-effect evidence for
+typed embodied decision making. Laya is one replaceable decision backend.
 
 Current verified status and review gate: [docs/current_state.md](docs/current_state.md).
-Stage 2 evidence and exact verification commands: [docs/stage2_handoff.md](docs/stage2_handoff.md).
-No formal E1 experiment has started.
+Research question and proposed E0: [docs/research.md](docs/research.md).
+Interfaces: [docs/architecture.md](docs/architecture.md).
+Latest evidence and commands: [docs/decision_interface_handoff.md](docs/decision_interface_handoff.md).
+No formal E0/E1 experiment has started.
 
-It separates environment execution, asynchronous observation fusion, candidate generation, Laya typed Choice, atomic execution and replay. Checkpoints are intentionally excluded.
+It separates temporal belief, compact decision state, candidate semantics/effects,
+typed decisions, validation and physical execution. Checkpoints are excluded.
 
 ## Model-free smoke test
 

@@ -2,7 +2,11 @@
 
 Historical model/design notes. For verified active behavior, see
 [current_state.md](current_state.md): real query tracking is inactive, covariance
-is heuristic and uncalibrated, and E1 readiness has not been established.
+is heuristic and uncalibrated, and formal experiment readiness is not established.
+Current evaluation targets [oracle-to-belief decision equivalence](research.md),
+not full simulator reconstruction. A query-box/depth point is not automatically
+the same reference point as simulator target geometry; the paired exporter marks
+this distinction explicitly. Temporal validity remains part of decision sufficiency.
 
 ## Decision
 
