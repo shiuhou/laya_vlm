@@ -58,6 +58,7 @@ def run_episode(args):
         for step in range(args.steps):
             before = world.features()
             vision_event = None
+            vision_event_fresh = False
             vision_result = None
             if visual:
                 frame = first_frame if step == 0 else vision_source.capture()
@@ -73,6 +74,7 @@ def run_episode(args):
                     vision_event = pending_event
                     pending_event = vision_worker.poll()
                 if vision_event is not None:
+                    vision_event_fresh = True
                     runtime.ingest(vision_event, now_sim=float(world.data.time))
                     vision_result = {
                         "boxes_xyxy": [vision_event.value.get("box_xyxy")],
@@ -95,6 +97,7 @@ def run_episode(args):
                 "decision": _jsonable(decision.__dict__), "decision_latency_ms": elapsed_ms,
                 "before_features": _jsonable(before), "after_features": _jsonable(world.features()),
                 "success": bool(backend.success()), "vision_capture_seq": vision_event.source_seq if vision_event else None,
+                "vision_event_fresh": vision_event_fresh,
                 "vision_age_s": (float(world.data.time) - vision_event.capture_sim_time) if vision_event else None,
                 "model_latency_ms": vision_result.get("model_latency_ms") if vision_result else vision_latency_ms,
                 "physics_preview": None if visual else {"rejected": _jsonable(preview.get("rejected", {})),
@@ -103,6 +106,12 @@ def run_episode(args):
                 "vision_queue_replaced": vision_worker.replaced if vision_worker else 0,
                 "vision_completed": vision_worker.completed if vision_worker else 0,
                 "vision_dropped": vision_worker.dropped if vision_worker else 0,
+                "vision_last_error": vision_worker.last_error if vision_worker else None,
+                "fusion_geometry_tracks": {
+                    key: {"position_m": state.position_m.tolist(), "velocity_mps": state.velocity_mps.tolist(), "age_s": state.age_s}
+                    for key, state in (runtime.fusion.snapshot(reference_time=float(world.data.time))["geometry"].items() if runtime.fusion else [])
+                },
+                "fusion_semantic": runtime.fusion.snapshot(reference_time=float(world.data.time))["semantic"] if runtime.fusion else {},
                 "execution": _jsonable(execution),
             })
             if backend.success():
