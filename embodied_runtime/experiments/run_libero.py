@@ -27,7 +27,7 @@ def run_episode(args):
     run_id = args.run_id or time.strftime("%Y%m%d-%H%M%S")
     out = Path(args.output) / run_id
     out.mkdir(parents=True, exist_ok=True)
-    backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=args.render)
+    backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=args.render, libero_root=args.libero_root, config_dir=args.config_dir)
     world = backend.world
     provider = RuleProvider()
     if args.provider == "laya":
@@ -86,6 +86,8 @@ def main():
     ap.add_argument("--laya-path", default="/home/junhongli/models/huggingface/laya/typed-decisions")
     ap.add_argument("--device", default=None)
     ap.add_argument("--render", action="store_true")
+    ap.add_argument("--libero-root", default=None)
+    ap.add_argument("--config-dir", default=None)
     ap.add_argument("--run-id")
     ap.add_argument("--output", default="runs")
     args = ap.parse_args()
