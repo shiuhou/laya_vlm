@@ -63,7 +63,8 @@ class LocateAnythingWorker:
 class LatestFrameWorker:
     """Capacity-one worker: stale pending frames are replaced before inference."""
 
-    def __init__(self, provider, infer, *, query: str, episode_id: str, track_id: str | None = None):
+    def __init__(self, provider, infer, *, query: str, episode_id: str, track_id: str | None = None,
+                 event_sink=None):
         self.provider = provider
         self.infer = infer
         self.query = query
@@ -76,7 +77,14 @@ class LatestFrameWorker:
         self.submitted = self.replaced = self.completed = self.dropped = 0
         self.last_latency_ms: float | None = None
         self.last_error: str | None = None
+        self.event_sink = event_sink
+        self._sink_lock = threading.Lock()
         self._thread.start()
+
+    def _emit(self, kind, data):
+        with self._sink_lock:
+            if self.event_sink:
+                self.event_sink(kind, data)
 
     def submit(self, frame: dict[str, Any]) -> bool:
         self.submitted += 1
@@ -89,7 +97,9 @@ class LatestFrameWorker:
             return True
         except queue.Full:
             try:
-                self._pending.get_nowait()
+                replaced = self._pending.get_nowait()
+                self._emit("vision_queue_replaced", {"capture_seq": replaced["capture_seq"],
+                                                    "replacement_seq": item["capture_seq"]})
             except queue.Empty:
                 pass
             self.replaced += 1
@@ -104,7 +114,18 @@ class LatestFrameWorker:
 
     def close(self):
         self._stop.set()
-        self._thread.join(timeout=2.0)
+        # CUDA kernels must finish before interpreter/model teardown. A daemon
+        # still executing torch at process exit can abort the whole process.
+        self._thread.join(timeout=30.0)
+        state = {"thread_alive": self._thread.is_alive(), "pending": self._pending.qsize(),
+                 "unconsumed_results": self._results.qsize(), "submitted": self.submitted,
+                 "replaced": self.replaced, "completed": self.completed, "dropped": self.dropped}
+        self._emit("vision_worker_closed", state)
+        if state["thread_alive"]:
+            self._emit("failure", {"category": "timeout", "phase": "vision_shutdown", **state})
+        with self._sink_lock:
+            self.event_sink = None
+        return state
 
     def _run(self):
         while not self._stop.is_set():
@@ -114,7 +135,10 @@ class LatestFrameWorker:
                 continue
             started = time.perf_counter()
             try:
+                self._emit("vision_started", {"capture_seq": item["capture_seq"],
+                                              "capture_sim_time": item["capture_sim_time"]})
                 result = self.infer(item["rgb"], item.get("query", self.query))
+                completion = time.time()
                 event = self.provider.observe(
                     item["rgb"], item["depth_m"], item.get("query", self.query),
                     episode_id=item.get("episode_id", self.episode_id),
@@ -124,11 +148,20 @@ class LatestFrameWorker:
                     camera_to_world_matrix=item.get("camera_to_world"),
                     inference_result=result,
                 )
+                self._emit("vision_completed", {"capture_seq": item["capture_seq"],
+                                                "capture_sim_time": item["capture_sim_time"],
+                                                "model_completed_wall_time": completion,
+                                                "worker_latency_ms": (time.perf_counter() - started) * 1000,
+                                                "result": result, "event": event})
                 if event is not None:
                     self._results.put(event)
+                else:
+                    self._emit("failure", {"category": "vision_missing", "capture_seq": item["capture_seq"]})
                 self.completed += 1
             except Exception as exc:  # noqa: BLE001 - worker must survive one bad frame
                 self.last_error = repr(exc)
                 self.dropped += 1
+                self._emit("failure", {"category": "model_error", "phase": "vision",
+                                       "capture_seq": item["capture_seq"], "exception": repr(exc)})
             finally:
                 self.last_latency_ms = (time.perf_counter() - started) * 1000.0

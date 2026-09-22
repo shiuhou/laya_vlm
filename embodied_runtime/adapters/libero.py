@@ -53,6 +53,22 @@ class LiberoWorldBackend(AtomicBackend):
     def success(self) -> bool:
         return bool(self.world.features().get("success", False))
 
+    def gripper_command(self):
+        return self._grip_cmd
+
+    def proprioception(self):
+        """Allowed robot sensors/commands only; never calls world.features().
+
+        Width is joint opening (not simulator finger-pad geometry).
+        A closed command does not establish holding an object.
+        """
+        joints = np.asarray(self.world.obs["robot0_gripper_qpos"], dtype=float)
+        return {"tcp_pos_world_m": self.tcp_pos().tolist(),
+                "gripper_joint_positions": joints.tolist(),
+                "gripper_width_m": float(np.sum(np.abs(joints))),
+                "gripper_command": "CLOSED" if self._grip_cmd > 0 else "OPEN",
+                "holding": None, "proprioception_source": "robot_observation_and_retained_command"}
+
     def _move_name(self, delta: np.ndarray) -> str:
         delta = np.asarray(delta, dtype=float)
         if delta.shape != (3,) or not np.isfinite(delta).all() or np.count_nonzero(delta) != 1:

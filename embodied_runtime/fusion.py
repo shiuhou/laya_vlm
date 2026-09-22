@@ -418,6 +418,8 @@ class MultiRateFusion:
             "capture_sim_time": event.capture_sim_time, "received_wall_time": event.received_wall_time,
             "quality": event.quality, "frame_id": event.frame_id, "valid_until_sim": event.valid_until_sim,
             "measurement_covariance_source": "provided" if "position_covariance_m2" in value else "configured_fallback",
+            "position_covariance_source": value.get("position_covariance_source", "unknown"),
+            "position_covariance_calibrated": value.get("position_covariance_calibrated"),
             "position_world_m": self._measurement(event).position_m.tolist() if "position_world_m" in value else None,
             "position_covariance_m2": self._measurement(event).covariance_m2.tolist() if "position_world_m" in value else None,
             "semantic_probabilities": deepcopy(value.get("probabilities") or value.get("hypotheses")),

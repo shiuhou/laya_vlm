@@ -71,6 +71,32 @@ def camera_to_world(point_camera: np.ndarray, camera_to_world_matrix: np.ndarray
     return (transform @ np.r_[point, 1.0])[:3]
 
 
+def position_covariance_from_depth(u: float, v: float, z: float,
+                                   box_xyxy: tuple[int, int, int, int],
+                                   stats: Mapping[str, float | None],
+                                   intrinsics: Mapping[str, float]) -> np.ndarray:
+    """Heuristic first-order RGB-D position covariance estimate.
+
+    This is a measurement-quality estimate, not a calibrated sensor model. It
+    combines the observed depth spread with a 5% box-size localization error and
+    records its heuristic provenance in the event payload.
+    """
+    if hasattr(intrinsics, "shape"):
+        fx, fy = float(intrinsics[0, 0]), float(intrinsics[1, 1])
+        cx, cy = float(intrinsics[0, 2]), float(intrinsics[1, 2])
+    else:
+        fx, fy = float(intrinsics["fx"]), float(intrinsics["fy"])
+        cx, cy = float(intrinsics["cx"]), float(intrinsics["cy"])
+    sigma_z = max(float(stats.get("std_m") or 0.0), float(stats.get("mad_m") or 0.0) * 1.4826, 0.002)
+    sigma_u = max(1.0, abs(float(box_xyxy[2]) - float(box_xyxy[0])) * 0.05)
+    sigma_v = max(1.0, abs(float(box_xyxy[3]) - float(box_xyxy[1])) * 0.05)
+    jacobian = np.array([[z / fx, 0.0, (u - cx) / fx],
+                         [0.0, z / fy, (v - cy) / fy],
+                         [0.0, 0.0, 1.0]])
+    covariance = jacobian @ np.diag([sigma_u ** 2, sigma_v ** 2, sigma_z ** 2]) @ jacobian.T
+    return (covariance + covariance.T) / 2.0
+
+
 class LocateAnythingProvider:
     """Convert model localization results plus depth into ObservationEvents."""
 
@@ -97,6 +123,7 @@ class LocateAnythingProvider:
             return None
         u, v = (x1 + x2) / 2.0, (y1 + y2) / 2.0
         point = pixel_to_camera(u, v, z, self.intrinsics)
+        covariance_camera = position_covariance_from_depth(u, v, z, box, stats, self.intrinsics)
         confidence = float(result.get("score", result.get("confidence", 0.0)))
         payload = {
             "label": query,
@@ -106,15 +133,19 @@ class LocateAnythingProvider:
             "depth_valid_ratio": valid_ratio,
             "depth_mad_m": stats["mad_m"],
             "depth_std_m": stats["std_m"],
+            "position_covariance_m2": covariance_camera.tolist(),
+            "position_covariance_source": "heuristic_depth_projection_v1",
+            "position_covariance_calibrated": False,
             "model_latency_ms": result.get("model_latency_ms"),
             "raw_response": result.get("raw_response"),
         }
         if camera_to_world_matrix is not None:
             payload["position_world_m"] = camera_to_world(point, camera_to_world_matrix).tolist()
+            rotation = np.asarray(camera_to_world_matrix, dtype=float)[:3, :3]
+            payload["position_covariance_m2"] = (rotation @ covariance_camera @ rotation.T).tolist()
         return ObservationEvent(
             source=self.source, episode_id=episode_id, source_seq=source_seq,
             capture_sim_time=capture_sim_time, received_wall_time=__import__("time").time(),
             frame_id="camera", track_id=track_id or query, value=payload,
             quality=min(confidence, valid_ratio), valid_until_sim=capture_sim_time + 0.75,
         )
-

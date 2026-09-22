@@ -5,6 +5,7 @@ leaving environment-specific action layouts behind AtomicBackend.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import time
 from abc import ABC, abstractmethod
@@ -72,6 +73,17 @@ class Candidate:
     feasible: bool = True
     reason_codes: tuple[str, ...] = ()
     risk: float = 0.0
+    metadata: Mapping[str, Any] = field(default_factory=dict)
+
+    def canonical(self) -> dict[str, Any]:
+        return {
+            "token": self.token,
+            "description": self.description,
+            "feasible": self.feasible,
+            "reason_codes": list(self.reason_codes),
+            "risk": self.risk,
+            "metadata": self.metadata,
+        }
 
 
 @dataclass(frozen=True)
@@ -87,6 +99,9 @@ class Decision:
     status: str = "valid"
     latency_ms: float | None = None
     max_hold_steps: int = 1
+    input_belief_id: str | None = None
+    candidate_set_id: str | None = None
+    input_snapshot_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -108,13 +123,48 @@ class BeliefSnapshot:
             "episode_id": self.episode_id, "revision": self.revision,
             "asof_sim_time": self.asof_sim_time, "continuous": self.continuous,
             "semantic": self.semantic, "goal": self.goal,
-            "candidates": [c.__dict__ for c in self.candidates],
+            "candidates": [c.canonical() for c in self.candidates],
             "ages": self.ages, "flags": self.flags,
             "validity": self.validity, "temporal_config": self.temporal_config,
         }, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
     def allowed(self) -> set[str]:
         return {c.token for c in self.candidates if c.feasible}
+
+    def belief_id(self) -> str:
+        return _sha256_json({
+            "episode_id": self.episode_id, "revision": self.revision,
+            "asof_sim_time": self.asof_sim_time, "continuous": self.continuous,
+            "semantic": self.semantic, "goal": self.goal, "ages": self.ages,
+            "flags": self.flags, "validity": self.validity,
+            "temporal_config": self.temporal_config,
+        })
+
+    def candidate_set_id(self) -> str:
+        return _sha256_json({"candidates": [c.canonical() for c in self.candidates]})
+
+    def snapshot_id(self) -> str:
+        return _sha256_json({"belief_id": self.belief_id(),
+                             "candidate_set_id": self.candidate_set_id()})
+
+    def provider_input(self) -> dict[str, Any]:
+        state = json.loads(self.canonical_json())
+        state.update({"belief_revision": self.revision, "belief_id": self.belief_id(),
+                      "candidate_set_id": self.candidate_set_id(), "snapshot_id": self.snapshot_id(),
+                      "candidate_tokens": [c.token for c in self.candidates if c.feasible]})
+        return state
+
+
+def _sha256_json(value: Any) -> str:
+    return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
+                                     separators=(",", ":"), allow_nan=False).encode()).hexdigest()
+
+
+def _decision(snapshot: BeliefSnapshot, **kwargs: Any) -> Decision:
+    kwargs.setdefault("input_belief_id", snapshot.belief_id())
+    kwargs.setdefault("candidate_set_id", snapshot.candidate_set_id())
+    kwargs.setdefault("input_snapshot_id", snapshot.snapshot_id())
+    return Decision(**kwargs)
 
 
 class BeliefStore:
@@ -274,17 +324,27 @@ class DecisionProvider(ABC):
 
 
 class RuleProvider(DecisionProvider):
+    version = "rule-greedy-distance-v1"
+
     def decide(self, snapshot: BeliefSnapshot) -> Decision:
-        allowed = list(snapshot.allowed())
+        allowed = sorted(snapshot.allowed())
         priority = ("DONE", "GRASP", "RELEASE", "MV_FWD", "MV_BACK", "MV_LEFT", "MV_RIGHT", "MV_UP", "MV_DOWN", "ROTATE_CW", "ROTATE_CCW", "STOP")
         token = next((item for item in priority if item in allowed), "STOP")
         if snapshot.goal.get("satisfied") and "DONE" in allowed:
             token = "DONE"
         elif snapshot.continuous.get("aligned") and snapshot.continuous.get("holding") is None and "GRASP" in allowed:
             token = "GRASP"
+        if any(c.metadata.get("builder_version") == "vision-candidates-v1" for c in snapshot.candidates):
+            # A deliberately small approach baseline. Grasp/pull affordances are
+            # not established by a box centroid, so no task planner is implied.
+            moves = [c for c in snapshot.candidates if c.feasible and c.token in MOVE
+                     and (c.metadata.get("distance_reduction_m") or 0) > 0]
+            token = max(moves, key=lambda c: c.metadata["distance_reduction_m"]).token if moves else "STOP"
         probs = {k: float(k == token) for k in allowed}
-        return Decision(token, probs, 1.0, "rule", snapshot.revision, snapshot.asof_sim_time,
-                        time.time(), snapshot.asof_sim_time + .5)
+        return _decision(snapshot, token=token, probabilities=probs, confidence=1.0,
+                         source="rule", input_revision=snapshot.revision,
+                         input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                         valid_until_sim=snapshot.asof_sim_time + .5)
 
 
 class ReplayProvider(DecisionProvider):
@@ -295,27 +355,28 @@ class ReplayProvider(DecisionProvider):
         token = self.decisions.get(snapshot.revision, "STOP")
         if token not in allowed:
             token = "STOP" if "STOP" in allowed else next(iter(allowed), "STOP")
-        return Decision(token, {k: float(k == token) for k in allowed}, 1.0, "replay",
-                        snapshot.revision, snapshot.asof_sim_time, time.time(), snapshot.asof_sim_time + .5)
+        return _decision(snapshot, token=token,
+                         probabilities={k: float(k == token) for k in allowed}, confidence=1.0,
+                         source="replay", input_revision=snapshot.revision,
+                         input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                         valid_until_sim=snapshot.asof_sim_time + .5)
 
 
 class LayaProvider(DecisionProvider):
+    version = "laya-typed-choice-v2"
     def __init__(self, agent: Any, model_name: str = "typed-decisions"):
         self.agent, self.model_name = agent, model_name
     def decide(self, snapshot: BeliefSnapshot) -> Decision:
         criteria = {c.token: c.description for c in snapshot.candidates if c.feasible}
         if not criteria:
-            return Decision("STOP", {"STOP": 1.0}, 1.0, "laya", snapshot.revision,
-                            snapshot.asof_sim_time, time.time(), snapshot.asof_sim_time + .2, "invalid")
+            return _decision(snapshot, token="STOP", probabilities={"STOP": 1.0}, confidence=1.0,
+                             source="laya", input_revision=snapshot.revision,
+                             input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                             valid_until_sim=snapshot.asof_sim_time + .2, status="invalid")
         questions = {"action": {"type": "choice",
-            "instructions": "Choose exactly one physically feasible atomic action.",
+            "instructions": "Choose exactly one allowed atomic action. Allowed means validity checks passed; collision freedom is not established.",
             "criteria": criteria}}
-        state = {"episode_id": snapshot.episode_id, "belief_revision": snapshot.revision,
-                 "asof_sim_time": snapshot.asof_sim_time, "continuous": snapshot.continuous,
-                 "semantic": snapshot.semantic, "goal": snapshot.goal,
-                 "ages": snapshot.ages, "flags": snapshot.flags,
-                 "validity": snapshot.validity, "temporal_config": snapshot.temporal_config,
-                 "candidate_tokens": list(criteria)}
+        state = snapshot.provider_input()
         started = time.perf_counter()
         if hasattr(self.agent, "system_one"):
             result = self.agent.system_one(state, questions)
@@ -326,11 +387,11 @@ class LayaProvider(DecisionProvider):
         token = str(answer["choice"])
         probs = {str(k): float(v) for k, v in answer.get("probabilities", {}).items()}
         status = "valid" if token in criteria else "invalid"
-        if status != "valid":
-            token = "STOP" if "STOP" in criteria else next(iter(criteria))
-        return Decision(token, probs, float(answer.get("confidence", 0.0)), "laya",
-                        snapshot.revision, snapshot.asof_sim_time, time.time(),
-                        snapshot.asof_sim_time + .5, status, latency_ms=latency)
+        return _decision(snapshot, token=token, probabilities=probs,
+                         confidence=float(answer.get("confidence", 0.0)), source="laya",
+                         input_revision=snapshot.revision, input_sim_time=snapshot.asof_sim_time,
+                         completed_wall_time=time.time(), valid_until_sim=snapshot.asof_sim_time + .5,
+                         status=status, latency_ms=latency)
 
 
 def load_laya_provider(path_or_repo: str = "convaiinnovations/laya", *,

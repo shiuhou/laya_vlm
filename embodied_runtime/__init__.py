@@ -37,6 +37,7 @@ from .vision import (
     camera_to_world,
     depth_statistics,
     pixel_to_camera,
+    position_covariance_from_depth,
     robust_depth,
 )
 
@@ -73,5 +74,6 @@ __all__ = [
     "load_laya_provider",
     "parse_locateanything",
     "pixel_to_camera",
+    "position_covariance_from_depth",
     "robust_depth",
 ]
