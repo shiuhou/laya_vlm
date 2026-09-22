@@ -14,6 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from ..adapters.libero import LiberoWorldBackend
+from ..runtime_core import _sha256_json
 from .collect_pairs import initial_state_inventory, physical_evidence
 from .records import RunRecorder, code_identity, file_hash, load_records, versions
 
@@ -90,25 +91,78 @@ def audit_unit(backend, recorder, unit, trajectory, *, check_archive):
 
 
 def summarize(path):
-    """Read-only recovery of completed and interrupted initial-state audits."""
+    """Recompute from ordered physical states; cached labels/totals are checks.
+
+The JSONL hash chain protects serialization, while these checks also reject
+internally inconsistent, correctly rehashed records. No terminal cache supplies
+phase coverage, physical-state counts, motion outcomes, or control counts.
+"""
     rows, diagnostics = load_records(Path(path) / "episodes.jsonl")
-    units, terminated = {}, False
+    units, previous, identities, terminated = {}, {}, {}, False
+    config, benchmark_ids = {}, None
+    identity_keys = ("task", "init_state_id", "seed", "benchmark_state_id", "trajectory_sha256")
     for row in rows:
         kind, data = row["kind"], row["data"]
+        if kind == "run_start":
+            config = data["resolved_config"]
+            if "phase_rules" in config and config["phase_rules"] != PHASE_RULES:
+                raise ValueError("unsupported phase rules for raw regeneration")
+        if kind == "initial_state_inventory":
+            benchmark_ids = data["state_ids"]
         if kind == "termination":
             terminated = True
         if "init_state_id" not in data:
             continue
-        result = units.setdefault(data["init_state_id"], {"init_state_id": data["init_state_id"],
-                                 "physical_states": 0, "phase_coverage": Counter(), "completed": False})
+        init = data["init_state_id"]
+        identity = {key: data[key] for key in identity_keys if key in data}
+        if identities.setdefault(init, identity) != identity:
+            raise ValueError("initial-state source identity changed within audit")
+        for key in ("task", "seed", "trajectory_sha256"):
+            if key in config and identity.get(key) != config[key]:
+                raise ValueError(f"initial-state {key} differs from run config")
+        if benchmark_ids is not None and (not 0 <= init < len(benchmark_ids)
+                                         or identity.get("benchmark_state_id") != benchmark_ids[init]):
+            raise ValueError("benchmark initial-state hash mismatch")
+        result = units.setdefault(init, {**identity, "physical_states": 0, "controls": 0,
+                                         "phase_coverage": Counter(), "completed": False,
+                                         "max_archive_state_error": None, "model_decisions_executed": 0})
         if kind == "collection_state":
+            if result["completed"] or data["environment_step"] != result["physical_states"]:
+                raise ValueError("collection state step is duplicate or out of order")
+            if data["environment_step"] != result["controls"]:
+                raise ValueError("collection state lacks preceding control intent")
+            content = {k: v for k, v in data.items() if k not in {
+                "physical_state_id", "phases", "archive_comparison_applicable", "replay_state_max_error"}}
+            if _sha256_json(content) != data["physical_state_id"]:
+                raise ValueError("physical state content hash mismatch")
+            labels = phases(data["features"], previous.get(init))
+            if "phases" in data and data["phases"] != labels:
+                raise ValueError("cached phases differ from physical features")
+            previous[init] = data["features"]
             result["physical_states"] += 1
-            result["phase_coverage"].update(data["phases"])
+            result["phase_coverage"].update(labels)
+            result.setdefault("initial_physical_state_id", data["physical_state_id"])
             result["final_physical_state_id"] = data["physical_state_id"]
             result["final_remaining_open_mm"] = data["features"]["remaining_open_mm"]
             result["final_success"] = data["features"]["success"]
+            error = data.get("replay_state_max_error")
+            if error is not None:
+                result["max_archive_state_error"] = max(result["max_archive_state_error"] or 0., error)
+        elif kind == "collection_control_started":
+            if (result["completed"] or data["environment_step"] != result["controls"]
+                    or result["physical_states"] != result["controls"] + 1
+                    or data["physical_state_id"] != result["final_physical_state_id"]):
+                raise ValueError("control intent does not match preceding physical state")
+            result["controls"] += 1
         elif kind == "initial_state_termination":
-            result.update(data)
+            if result["completed"] or result["physical_states"] != result["controls"] + 1:
+                raise ValueError("termination without completed control outcomes")
+            for key, measured in result.items():
+                if key in data and key != "completed" and data[key] != measured:
+                    raise ValueError(f"cached termination {key} differs from raw evidence")
+            # The termination reason is a declared event, not a measured outcome.
+            if "reason" in data:
+                result["reason"] = data["reason"]
             result["completed"] = True
         elif kind == "failure":
             result["failure"] = data

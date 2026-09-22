@@ -1,71 +1,78 @@
 # Verified current state
 
-Reviewed 2026-09-23 (Asia/Shanghai). This index supersedes historical plans, not raw
-evidence. Current implementation: `9041f9d`, after `16c4fca`; the documentation-only
-successor contains this index. Use `git rev-parse HEAD` for the full checkout revision.
-Experiment status: **decision-interface smoke**, no formal E0/E1 and no freeze tag.
+Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
+Implementation: `3984a07` (bounded reference pilot), `87f5163` (pixel-centered
+first-hit oracle geometry), plus the raw multi-init summary integrity repair in
+the handoff commit. Use `git rev-parse HEAD` for the exact final checkout revision.
+Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
 
-The current question is which sensor-derived state preserves oracle-conditioned
-decisions, and separately which non-privileged candidate effects preserve decisions.
-See [research.md](research.md), [architecture.md](architecture.md), and the
-[decision-interface handoff](decision_interface_handoff.md).
+Current report: [reference_pilot_handoff.md](reference_pilot_handoff.md).
+Predeclared pilot and correction: [reference_pilot_protocol.md](reference_pilot_protocol.md).
+Conditional next experiment: [research.md](research.md).
 
-## Verified active paths
+## Active and verified
 
-- Stage 2 live runtime remains operational with visual validity, atomic contracts,
-  temporal fusion, source isolation, and durable records. Its 74 tests remain passing.
-- New **offline** canonical v0.1 projection/replay path: same schema for perceptual
-  and explicitly privileged oracle state; unknown fields stay unknown.
-- Separate candidate effects: Tier-0 nominal geometric effects and an explicit
-  oracle-preview adapter. Primary State Gap replay uses no effects and one shared
-  11-token semantics-only probe set, never executed by the collector.
-- Same-provider paired replay, fixed question/history/candidates, field replacement,
-  input identities, token-budget checks, and independently regenerated metrics.
-- Real collection: 155 archived controls replayed with max state error `1.272e-11`,
-  covering approach/contact/closure. Six paired states include a 0.4-s stale variant.
-- Real compact Rule/Laya replay: 72 decisions, 36 paired comparisons, zero missing
-  outputs; three identical-input repeats had identical returned choices/probabilities.
-  All Laya prompt components fit, and consumed-token hashes were stable.
-- Actual `init_state_id` passes to LIBERO's benchmark reset; inventory contains 50
-  distinct initial-state vectors, separate from seeds. Only init 0 trajectory has
-  been validated in this stage.
+- Stage 1/2 atomic, fusion, visual validity, isolation and durable-record tests
+  remain passing. Legacy live runtime behavior is not silently changed.
+- Offline CanonicalDecisionState v0.1 and separate CandidateEffectBundle remain;
+  primary replay has shared 11-token semantics-only candidates and **no effects**.
+- New referent **v0.2**: visible-pixel-weighted foreground top-handle surface
+  centroid. Sensor uses its own approximate bbox support/RGB-D. Oracle uses
+  independent first-hit visual-mesh rays at calibrated raster centers. No oracle
+  membership corrects perception. Raw old AABB and bbox-depth proxies survive.
+- Twelve phase-diverse init-0 states plus three pairs each on init 1/2 were
+  collected at exactly matched physical boundaries. All 18 raw sensor/oracle
+  centroid readouts reproduce; all 18 snapshot restorations/STOP replays have
+  zero recorded error. Init-0 full-control replay error remains `1.272e-11`.
+- Final Rule/Laya replay: 144 decisions, 72 complete paired comparisons, three
+  repeats per input. All 72 Laya calls fit the checkpoint, with stable consumed
+  tokens, choice and returned probabilities. No probe choices control collection.
+- Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
+  contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
+  remaining opening; lack of near-completion coverage is preserved.
+- 152 tests, ruff and compileall pass. Dependencies, upstream repositories and
+  model weights were not changed or downloaded.
 
-## Important limitations
+## Scientific result and limitations
 
-- The new canonical path is not yet a validated closed-loop policy. Successful Jev
-  collection does not establish correctness of current oracle-input Laya choices.
-- Oracle collision-AABB center and perceptual query-box/depth point differ in
-  definition. Numeric error is marked incomparable until a common referent is fixed.
-- An early full-JSON replay silently exceeded Laya's context and clipped candidate
-  meanings. That artifact is retained and invalid for complete-interface claims.
-  `compact-v0.1` now rejects clipping and records actual tokens. This also narrows
-  the old Stage 2 matching claim: matching upstream snapshots does not guarantee
-  that every field reached the model. The legacy live full-snapshot presentation
-  has not been retroactively converted to the canonical presentation.
-- Tracking remains inactive. Covariance/semantic score are heuristic and uncalibrated.
-  Current visibility/contact/holding/progress are not inferred from simulator state
-  for perception. No collision-free or grasp-affordance claim exists.
-- STOP-only Stage 2 behavior is explained primarily by the unobserved velocity prior,
-  not an atomic/controller bug. No thresholds or Stage 1 fusion equations changed.
-- Offline collection pauses simulation during model inference; it is not an async
-  deployment performance experiment. GPU deterministic algorithms remain disabled;
-  repeatability is measured at returned API precision, not guaranteed universally.
+**The current no-effect oracle-conditioned Laya is not validated as a useful task
+reference.** All twelve choices are GRASP/RELEASE; most RELEASE probes equal STOP
+because the retained command was already open. One GRASP reopens the drawer by
+14.272 mm. Independent offered actions demonstrate useful closure at several
+states. Lack of one-step utility does not rule out every preparatory strategy,
+but matching this model is not yet evidence of useful decision sufficiency.
 
-## Evidence paths and next gate
+- Shared referent is coherent, not accurate perception: final init-0 fused point
+  errors are 38–99 mm; late boxes include other handles. It is view/occlusion
+  dependent, not rigid object pose. Ray/raster depth residuals and shared camera
+  calibration assumptions are explicit.
+- Oracle CDS remains a *partial* decision interface, not full controller state.
+  The pilot samples low-level collector boundaries, sometimes in loaded/in-flight
+  motion. Reset-calibrated execution envelopes flag 91/132 init-0 counterfactual
+  probes, including large STOP drift at one state; these are not erased or called
+  safety certificates. No hidden gripper actuation was observed.
+- Tracking inactive; covariance/semantic scores uncalibrated. Perceptual contact,
+  holding, task progress and unsupported visibility remain unknown.
+- STOP-only natural availability follows the unobserved-velocity prior and
+  uncalibrated covariance. No threshold change. Offline probes bypass natural
+  filtering only for paired analysis, never live execution authorization.
+- Original mismatched-reference and truncated artifacts remain historical.
+  First pilot ID-render/integer-pixel artifacts are also retained as approximate,
+  superseded reference evidence, not silently promoted to corrected results.
 
-All local evidence lives under ignored `runs/interface/`:
+## Evidence and review gate
 
-- `trajectory-audit/`: inventory and all replayed physical states.
-- `paired-smoke-attempt1/`: six pairs, RGB-D frames, observation/belief provenance.
-- `replay-smoke-attempt1/`: retained **truncated** initial diagnostic.
-- `encoding-audit/`: tokenizer-only comparison of old and compact presentations.
-- `replay-smoke-compact/`: accepted unclipped diagnostic and regenerated summaries.
+Under ignored `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`,
+`replay-init0-v02/`, `raw-referent-audit-v02/`. Old `init*-attempt1/`,
+`replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
+Older Stage 1/2/interface handoffs remain historical.
 
-Earlier Stage 2 artifacts remain under `runs/stage2/`; historical details remain in
-[stage2_handoff.md](stage2_handoff.md). Current verification: 103 tests pass, lint and
-compileall pass. No weights, dependencies, upstream repositories or formal experiment
-versions changed.
+Geometric reference comparable: **YES**, under the stated camera/visibility definition.
+Reference state usable as a **validated useful-decision reference: NO**.
+Multi-init collection viable: **YES**, with incomplete near-completion coverage.
+Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Ready to freeze `exp-e0-v0`: **NO**. Ready for formal E0: **NO**.
-Next human review should settle the oracle-reference sanity pilot, target referent,
-and multi-initial-state collection plan in [research.md](research.md).
+Smallest next decision: approve a narrower descriptive fidelity claim, or separately
+validate a task-relative/dynamic oracle interface and its action operating regime.
+Do not silently settle loaded states or waive reset-envelope violations. Do not insert effects
+into the no-effect comparison, tune gates, or expand the benchmark without review.

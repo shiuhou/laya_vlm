@@ -44,7 +44,7 @@ their inputs are privileged. Audit metadata is excluded from model features.
 |---|---|---|
 | task | instruction and query identity | identical supplied context |
 | robot | world TCP XYZ; joint-opening width; retained OPEN/CLOSED command | identical robot information |
-| target | fused world position/velocity; explicit query-box/depth point definition | current moving-geometry AABB center with different definition; velocity unknown |
+| target | fused world position/velocity with explicit measurement referent | same referent in the new pilot; legacy AABB remains distinct; velocity unknown |
 | relations | target minus TCP XYZ, norm, XY norm, signed Z error | same formulas on oracle target |
 | interaction | contact unknown; holding unknown unless legitimately observed | measured simulator target-contact boolean; shared legitimate holding |
 | progress | remaining opening unknown | simulator remaining_open_mm |
@@ -54,6 +54,15 @@ Current visibility is unknown on both branches: a historical detection does not
 establish current visibility. TCP orientation/velocity and target-progress histories
 are deliberately not included in v0.1. Source IDs in the paired record link the compact
 state to full belief/event/camera records and separate simulator evaluation records.
+
+The reference-quality collector uses referent v0.2: pixel-weighted visible top-handle
+surface centroid, with `(u+.5,v+.5)` raster centers. Its sensor-only bbox/RGB-D
+estimator enters a fresh isolated fusion stream; its oracle uses independent
+first-hit visual-mesh rays. Legacy bbox-median and collision-AABB values are retained,
+not renamed. This view-dependent centroid is not a rigid grasp point; its filtered
+velocity is point-estimate velocity, not independently measured rigid-body velocity.
+Independent full-snapshot atomic previews assess outputs but never enter the
+no-effect model input. See the reference pilot handoff for operating-envelope limits.
 
 `state.intervene({...}, label=...)` performs only named field replacements and records
 the parent state ID. It does not silently recompute dependent relations. This supports
@@ -101,7 +110,9 @@ Experimental identity includes task/binding, benchmark `init_state_id` and state
 seed, trajectory hash, control boundary, simulator-state hash, source belief and pair
 hash. Projection time equals the physical boundary on both branches; visual capture
 may be older, and its age is explicit. Collection checks simulator immobility during
-perception and replay agreement against every archived state.
+perception and replay agreement against every archived state for the original init.
+Transferred controls on other benchmark resets have their own physical identities;
+they are not expected to match init 0's archived states.
 
 The model presentation `compact-v0.1` uses values/nulls, quality and effects/history;
 full field source/basis/privilege stays in the audit record, not in the model prompt.

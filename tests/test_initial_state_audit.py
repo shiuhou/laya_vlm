@@ -5,6 +5,7 @@ import pytest
 
 from embodied_runtime.experiments import audit_initial_states as audit
 from embodied_runtime.experiments.records import RunRecorder, load_records
+from embodied_runtime.runtime_core import _sha256_json
 
 
 def features(gap=30., remaining=150., contact=False, success=False):
@@ -24,9 +25,9 @@ def test_phase_rules_are_explicit_overlapping_evaluator_strata():
 def fake_backend(monkeypatch, *, offset=0., fail_at=None):
     backend = SimpleNamespace(index=0, _grip_cmd=-1., world=SimpleNamespace())
     def evidence(backend, unit, step):
-        return {**unit, "environment_step": step, "physical_state_id": f"state-{offset}-{step}",
-                "sim_state": [backend.index + offset], "sim_time": step * .05,
-                "features": features(gap=30. - step * 10., remaining=150. - step)}
+        result = {**unit, "environment_step": step, "sim_state": [backend.index + offset],
+                  "sim_time": step * .05, "features": features(gap=30. - step * 10., remaining=150. - step)}
+        return {**result, "physical_state_id": _sha256_json(result)}
     def step(action):
         if fail_at == backend.index:
             raise RuntimeError("injected environment error")
@@ -98,3 +99,61 @@ def test_environment_exception_retains_completed_states_and_last_intent(monkeypa
     assert not recovered["terminated"]
     assert not recovered["initial_states"][0]["completed"]
     assert recovered["initial_states"][0]["physical_states"] == 2
+
+
+def recorded_fixture(monkeypatch, root):
+    recorder = RunRecorder(root, {}, {"run_id": "test"})
+    audit.audit_unit(fake_backend(monkeypatch), recorder, {"init_state_id": 0, "seed": 1},
+                     trajectory(), check_archive=True)
+    recorder.record("termination", {"reason": "test_complete"})
+    recorder.close()
+    return load_records(root / "episodes.jsonl")[0]
+
+
+def rerecord(root, rows):
+    """Build a valid outer hash chain around deliberately inconsistent data."""
+    recorder = RunRecorder(root, {}, {"run_id": "test"})
+    for row in rows[1:]:
+        recorder.record(row["kind"], row["data"])
+    recorder.close()
+
+
+@pytest.mark.parametrize("field,value", [
+    ("phase_coverage", {"far": 999}), ("physical_states", 999), ("controls", 999),
+    ("final_remaining_open_mm", 999.), ("final_success", True),
+    ("initial_physical_state_id", "bad"), ("final_physical_state_id", "bad"),
+    ("max_archive_state_error", 999.),
+])
+def test_rehashed_termination_cache_corruption_is_rejected(monkeypatch, tmp_path, field, value):
+    rows = recorded_fixture(monkeypatch, tmp_path / "source")
+    next(r["data"] for r in rows if r["kind"] == "initial_state_termination")[field] = value
+    rerecord(tmp_path / "changed", rows)
+    with pytest.raises(ValueError, match="cached termination"):
+        audit.summarize(tmp_path / "changed")
+
+
+def test_phase_and_terminal_caches_can_be_absent(monkeypatch, tmp_path):
+    rows = recorded_fixture(monkeypatch, tmp_path / "source")
+    expected = audit.summarize(tmp_path / "source")
+    for row in rows:
+        if row["kind"] == "collection_state":
+            row["data"].pop("phases")
+        if row["kind"] == "initial_state_termination":
+            row["data"] = {key: row["data"][key] for key in ("init_state_id", "seed", "reason")}
+    rerecord(tmp_path / "changed", rows)
+    assert audit.summarize(tmp_path / "changed") == expected
+
+
+@pytest.mark.parametrize("kind,field,value,match", [
+    ("collection_state", "phases", ["success"], "cached phases"),
+    ("collection_state", "physical_state_id", "bad", "content hash"),
+    ("collection_state", "environment_step", 2, "out of order"),
+    ("collection_control_started", "physical_state_id", "bad", "control intent"),
+    ("collection_control_started", "seed", 99, "source identity"),
+])
+def test_rehashed_state_and_source_inconsistencies_are_rejected(monkeypatch, tmp_path, kind, field, value, match):
+    rows = recorded_fixture(monkeypatch, tmp_path / "source")
+    next(r["data"] for r in rows if r["kind"] == kind)[field] = value
+    rerecord(tmp_path / "changed", rows)
+    with pytest.raises(ValueError, match=match):
+        audit.summarize(tmp_path / "changed")

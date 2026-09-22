@@ -5,6 +5,22 @@ decision-sufficient state and candidate-effect evidence for typed embodied decis
 It does not aim to reconstruct the entire simulator or prove a particular model
 intelligent. The oracle-conditioned model is a reference to validate, not ground truth.
 
+Engineering first makes World/Sensors → Structured Interface → Typed Model → Robot
+work as a controllable, replaceable instrument. The science then asks which world
+and action-consequence information that interface must preserve—not how to reproduce
+the whole simulator or merely optimize wording.
+
+## Three-stage roadmap and review boundaries
+
+- **Stage 4, current:** common referent, reference-quality pilot, actual initial-state
+  collection and a freeze recommendation. Stop for review, including a NO result.
+- **Stage 5, only after approval:** frozen formal E0 and field-family interventions,
+  yielding a decision sensitivity map, not just one agreement percentage.
+- **Stage 6, later:** closed-loop tests of the sensitive fields found in E0—temporal
+  validity, missing-state estimators, then separately controlled effect comparisons.
+  Provider comparisons follow under a matched interface, not a simultaneous change
+  to perception, candidate logic, effects and model. Each stage requires review.
+
 The immediate comparison is **State Gap**:
 
 ```text
@@ -63,6 +79,9 @@ Do not assume adding those fields will fix the model. A fixed-effect condition i
 also a separate reviewed option: both branches would receive the *same* effects,
 and privileged effects would remain diagnostic. Do not quietly introduce them into
 the present no-effect comparison. No such interface/effect change was tested here.
+Also characterize the loaded/in-flight action operating regime: reset calibration
+does not establish realized pose-hold/10 mm motion at every collector boundary.
+Do not silently settle the simulator, discard flagged states, or loosen contracts.
 
 The smallest proposed formal E0 after this pilot:
 
