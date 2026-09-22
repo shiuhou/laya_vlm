@@ -8,8 +8,11 @@ temporal belief correctness. P0-C, P0-D, and formal experiments have not started
 ## Repository
 
 Baseline before this stage: `75d810784fd0d7accfad91cd8c2f550518885638`.
-The implementation commit for this stage is recorded after this document is
-added. The pre-existing untracked `docs/mix.md` is intentionally left untouched.
+The implementation commit for this stage is `c502fb4`. At the start of the
+stage, `docs/mix.md` appeared as an untracked file. It is absent from the final
+filesystem and Git history; it was not included in the staged files or any
+command intentionally used for this stage. Recover that user-owned document
+before the next stage if it is still needed.
 
 Verified environment:
 
