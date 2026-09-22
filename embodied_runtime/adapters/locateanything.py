@@ -14,13 +14,15 @@ _REF_RE = re.compile(r"<ref>(.*?)</ref>")
 
 def parse_locateanything(text: str, width: int, height: int) -> dict[str, Any]:
     boxes = []
+    seen = set()
     for match in _BOX_RE.finditer(str(text)):
         coords = tuple(int(x) for x in match.groups())
         if any(x < 0 or x > 1000 for x in coords):
             continue
         x1, y1, x2, y2 = coords
-        if x2 <= x1 or y2 <= y1:
+        if x2 <= x1 or y2 <= y1 or coords in seen:
             continue
+        seen.add(coords)
         boxes.append([x1 * width / 1000.0, y1 * height / 1000.0, x2 * width / 1000.0, y2 * height / 1000.0])
     refs = [m.group(1).strip() for m in _REF_RE.finditer(str(text)) if m.group(1).strip()]
     return {"boxes_xyxy": boxes, "references": refs, "raw_response": str(text)}
