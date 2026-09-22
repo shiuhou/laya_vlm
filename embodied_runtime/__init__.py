@@ -1,4 +1,8 @@
-from .adapters.locateanything import LocateAnythingWorker, parse_locateanything
+from .adapters.locateanything import (
+    LatestFrameWorker,
+    LocateAnythingWorker,
+    parse_locateanything,
+)
 from .adapters.physics_preview import PhysicsPreviewCandidateBuilder
 from .runtime import Runtime
 from .runtime_core import (
@@ -17,7 +21,12 @@ from .runtime_core import (
     RuleProvider,
     load_laya_provider,
 )
-from .vision import LocateAnythingProvider, pixel_to_camera, robust_depth
+from .vision import (
+    LocateAnythingProvider,
+    camera_to_world,
+    pixel_to_camera,
+    robust_depth,
+)
 
 __all__ = [
     "ATOMIC_ACTIONS",
@@ -29,6 +38,7 @@ __all__ = [
     "Decision",
     "DecisionProvider",
     "FakeBackend",
+    "LatestFrameWorker",
     "LayaProvider",
     "LocateAnythingProvider",
     "LocateAnythingWorker",
@@ -37,6 +47,7 @@ __all__ = [
     "ReplayProvider",
     "RuleProvider",
     "Runtime",
+    "camera_to_world",
     "load_laya_provider",
     "parse_locateanything",
     "pixel_to_camera",
