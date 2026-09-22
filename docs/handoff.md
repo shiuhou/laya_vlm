@@ -40,7 +40,7 @@ AtomicExecutor → LiberoWorldBackend → robosuite / MuJoCo
 | GitHub | 私有仓库已创建、已推送 | `master` / `origin/master` 已推进到 `5165d49` | 服务器安全同步落后提交 |
 | Runtime 合同 | 已实现，服务器 7 passed | `tests/`；服务器 Conda 已复跑 | 继续补真实视觉 loop，不把 mock 当实验 |
 | LIBERO 后端 | 真实 `top_drawer` smoke 已通过 | 服务器 `/home/junhongli/runs/laya-runtime-smoke/20260922-155927` | 扩展固定 seed；补实验汇总统计 |
-| LocateAnything | parser 已接入；官方权重与单图推理、真实 LIBERO RGB-D capture 已验证；视觉模型尚未进入 episode loop | `adapters/locateanything.py`、`adapters/libero_rgbd.py` | 在独立 locateanything 环境运行 worker 并写入 BeliefStore |
+| LocateAnything | 真实视觉 episode 已跑通；`oracle=false` 行已产生 boxes、深度事件和 Laya 决策 | `adapters/locateanything.py`、`adapters/libero_rgbd.py`、服务器 vision run | 增加多 seed、视觉规则基线和异步 worker 实验 |
 | Laya | typed-decisions checkpoint 已下载并完成真实 `system_one` | `laya_smoke.json` | 接入 Runtime 并记录多次决策 p50/p95 |
 | 物理候选 | 已实现并在真实 smoke 调用 | `adapters/physics_preview.py`；复用 `jev_libero.policy.contracts()` | 增加 veto reason 单测和多 task 验证 |
 | 实验表 | 已产出单步 smoke 原始日志与汇总 | `episodes.jsonl`、`summary.csv`、`summary.md`、`manifest.json` | 增加 oracle_laya 和非 oracle 视觉行；实现独立 summarize |
@@ -61,7 +61,7 @@ flowchart LR
 
 ## 0.2 2026-09-22 本轮实现结果
 
-本轮已提交到 GitHub `master` 的最新提交为 `4d0b31d`。服务器通过临时 Git bundle 安全同步到同一提交；服务器私有 remote 因未缓存 GitHub 凭据不能交互 `pull`，没有把 token 写入 remote。
+本轮已提交到 GitHub `master` 的最新提交为 `ac7deea`。服务器通过临时 Git bundle 安全同步到同一提交；服务器私有 remote 因未缓存 GitHub 凭据不能交互 `pull`，没有把 token 写入 remote。
 
 已完成并实际验证：
 
@@ -72,12 +72,14 @@ flowchart LR
 - `parse_locateanything()` 遵循官方 parser：`<box>` 坐标是 `[0,1000]` 量化值，按图像宽高转换为像素，并拒绝非法/退化框。
 - `run_libero.py` 已能启动真实 `top_drawer`，完成 1 step Jev physics-preview + RuleProvider episode，并写出服务器结果目录。
 - `LatestFrameWorker` 使用容量 1 队列，新帧替换旧待处理帧并计数；结果保留 capture sequence、仿真时间和 camera-to-world 投影，确定性 worker 测试已通过。
+- 真实视觉 smoke 已通过：服务器 `/home/junhongli/runs/laya-runtime-vision/20260922-163923` 的 `vision_laya` 行标记 `oracle=false`，固定视觉候选集为 11 个 token；LocateAnything 对真实 LIBERO RGB-D 帧产生 box，模型耗时约 `2140 ms`，随后 Laya 选择 `MV_BACK`。该行没有调用 physics-preview，也没有把 `world.features()` 写入 belief。
+- LocateAnything parser 对完全重复的 `<box>` token 做确定性去重，避免同一目标被误计为多目标。
 
 当前明确未完成：LocateAnything worker 尚未跨 Conda 环境接入 `Runtime` 的非 oracle episode；latest-frame 容量 1 worker、query tracking、RGB-D 世界坐标融合和 `vision_rule`/`vision_laya` 对照实验仍需实现。`run_libero.py` 当前输出的 smoke 行显式标记 `oracle=true`、`vision=false`，不能当视觉结果。
 
 ## 1. 已完成且已提交的内容
 
-本地 HEAD 为 `4d0b31d Add capacity-one RGB-D vision worker`。本轮关键提交链如下：
+本地 HEAD 为 `ac7deea Deduplicate repeated LocateAnything boxes`。本轮关键提交链如下：
 
 ```text
 06a2f59  Add Laya embodied runtime foundation
@@ -115,7 +117,7 @@ python -m venv .venv
 .\.venv\Scripts\python examples\fake_run.py
 ```
 
-本次工作会话本地已验证 `pytest -q` 为 **8 passed**；服务器在同步 `4d0b31d` 后需复跑同一命令；服务器严格 `ruff check .` 也已通过。这是 fake / contracts 测试，不是 LIBERO 实验。
+本次工作会话本地已验证 `pytest -q` 为 **8 passed**；服务器视觉运行在 `locateanything` Conda 环境完成；同步 `ac7deea` 后需复跑同一命令；服务器严格 `ruff check .` 也已通过。这是 fake / contracts 测试，不是 LIBERO 实验。
 
 ### 1.2 LIBERO / MuJoCo 执行接缝
 
@@ -158,7 +160,7 @@ python -m venv .venv
 - 上游检出干净：`/home/junhongli/projects/LIBERO` 在 `8f1084e3132a39270c3a13ebe37270a43ece2a01`，`/home/junhongli/projects/jev-libero` 在 `3bdad985b225`；
 - `jev-libero pytest -q tests` 是此前会话的历史结果：`34 passed, 19 skipped`。其严格 simulation replay 曾在 `max_state_error == 0` 处得到 `5.295763827461997e-14` 而失败；这是机器精度差异，不能暗改断言后报告为全通过。
 
-服务器项目仓库已通过临时 bundle 同步到 `4d0b31d`，工作树干净，包含当前 LIBERO、RGB-D、LocateAnything parser、physics-preview 和 smoke CLI。服务器的 `origin` 不能无交互读取私有 GitHub 仓库；同步必须使用临时的安全认证方式，随后恢复不含秘密的 remote URL。
+服务器项目仓库已通过临时 bundle 同步到 `ac7deea`，工作树干净，包含当前 LIBERO、RGB-D、LocateAnything parser、physics-preview 和 smoke CLI。服务器的 `origin` 不能无交互读取私有 GitHub 仓库；同步必须使用临时的安全认证方式，随后恢复不含秘密的 remote URL。
 
 两套模型权重与最小真实推理已经就绪：
 
@@ -178,11 +180,11 @@ python -m venv .venv
 
 | 优先级 | 缺口 | 为什么影响实验 | 需要完成的具体工作 |
 |---|---|---|---|
-| P0 | LocateAnything 尚未接入运行时 | parser 和真实 RGB-D capture 已通过，但 worker 尚未进入 episode | 在 locateanything 环境运行 worker，经 IPC/子进程输出带 seq/TTL 的 `ObservationEvent` |
+| P0 | 视觉实验覆盖不足 | 单步 `vision_laya` 已跑通，但还没有多步、多 seed、视觉规则基线和完整 p50/p95 表 | 扩展固定 seed/action budget；把视觉 worker 的替换、晚到、TTL 统计纳入汇总 |
 | P0 | Laya 尚未接入真实 episode | checkpoint 与单次 `system_one` 已通过，但没有 LIBERO 决策序列 | 让 `Runtime` 从本地 checkpoint 创建 `LayaProvider`；记录热身后 p50/p95 和非法候选拒绝 |
 | P0 | 端到端 driver 目前只有 oracle smoke | 已有单步 JSONL/CSV/Markdown，但没有非 oracle 行和独立汇总器 | 增加 oracle_laya、vision_rule、vision_laya，并记录 p50/p95/失败原因 |
-| P0 | 视觉结果未进入真实 LIBERO loop | `LiberoRgbdSource` 已能采集，但没有 worker、关联和 BeliefStore 写入 | 实现最新帧队列、相机坐标→world/base 变换、关联和 TTL 检查 |
-| P1 | physics-preview 缺少覆盖性测试 | builder 已调用 `predict_all()`/`contracts()` 并通过真实 smoke，但还没有固定 mock veto 单测 | 增加一个新障碍被过滤、无候选 STOP、DONE gate 的确定性测试 |
+| P0 | 视觉结果未进入真实 LIBERO loop | 单步视觉 loop 已写入 BeliefStore；多速率 worker、关联和 TTL 统计尚未接入 CLI | 将 `LatestFrameWorker` 接入连续 episode，记录 replacement/late/age p50/p95 |
+| P1 | 视觉与安全边界需持续审计 | visual runner 使用固定候选集，物理候选只留在 oracle runner；执行与成功检查仍由 simulator backend 完成 | 扩展视觉实验并保持 `oracle=false`，禁止把 simulator state 放进决策输入 |
 | P1 | 原子动作语义尚未校准 | `MV_FWD` 被暂时定义为 world +X，不是任务/相机前方 | 对每个 LIBERO task/camera 记录 token→world delta、夹爪极性、旋转轴；在文档和代码中固定 frame 定义 |
 | P1 | 视觉深度实现仍需统计增强 | 已加入 bbox 内部裁剪，但尚未输出 MAD/IQR、方差和 covariance | 增加离群值拒绝、深度方差和 3D 协方差字段 |
 | P1 | 轨迹追踪和观测协同未实现 | 异步模型结果可能对应旧帧或错误物体 | 实现 per-query/per-camera 单 worker 的 latest-frame 队列、capture sequence、IoU/3D track association、晚到/过期统计 |
