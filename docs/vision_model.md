@@ -1,5 +1,9 @@
 # Vision model selection
 
+Historical model/design notes. For verified active behavior, see
+[current_state.md](current_state.md): real query tracking is inactive, covariance
+is heuristic and uncalibrated, and E1 readiness has not been established.
+
 ## Decision
 
 The first visual-semantic prototype uses NVIDIA LocateAnything-3B as an asynchronous

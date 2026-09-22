@@ -2,6 +2,10 @@
 
 This is a small runtime for LIBERO and MuJoCo embodied experiments.
 
+Current verified status and review gate: [docs/current_state.md](docs/current_state.md).
+Stage 2 evidence and exact verification commands: [docs/stage2_handoff.md](docs/stage2_handoff.md).
+No formal E1 experiment has started.
+
 It separates environment execution, asynchronous observation fusion, candidate generation, Laya typed Choice, atomic execution and replay. Checkpoints are intentionally excluded.
 
 ## Model-free smoke test
@@ -25,7 +29,8 @@ Load the typed-decisions checkpoint separately and pass the loaded agent to Laya
 ## Vision model
 
 The first visual-semantic prototype is NVIDIA LocateAnything-3B plus RGB-D depth,
-tracking and belief fusion. See docs/vision_model.md for the boundary: LocateAnything
+belief fusion. Query tracking is implemented but inactive in the real runner.
+See docs/vision_model.md for the boundary: LocateAnything
 localizes queried regions; depth, tracking, task predicates and execution remain local
 code. LocateAnything weights are not included or downloaded by this repository.
 

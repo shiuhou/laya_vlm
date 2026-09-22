@@ -1,5 +1,8 @@
 # Laya Embodied Runtime：交接与执行手册
 
+> Historical handoff; some status/plan paragraphs below are superseded.
+> Use [current_state.md](current_state.md) for the verified active path and next gate.
+
 > 更新时间：2026-09-22（Asia/Shanghai）<br>
 > 代码仓库：<https://github.com/LilRodriguez/laya-embodied-runtime>（私有）<br>
 > 工作分支：`master`<br>
