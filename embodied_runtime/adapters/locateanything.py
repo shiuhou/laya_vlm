@@ -114,6 +114,7 @@ class LatestFrameWorker:
                 continue
             started = time.perf_counter()
             try:
+                result = self.infer(item["rgb"], item.get("query", self.query))
                 event = self.provider.observe(
                     item["rgb"], item["depth_m"], item.get("query", self.query),
                     episode_id=item.get("episode_id", self.episode_id),
@@ -121,6 +122,7 @@ class LatestFrameWorker:
                     capture_sim_time=float(item["capture_sim_time"]),
                     track_id=item.get("track_id", self.track_id),
                     camera_to_world_matrix=item.get("camera_to_world"),
+                    inference_result=result,
                 )
                 if event is not None:
                     self._results.put(event)

@@ -33,6 +33,26 @@ def robust_depth(depth: np.ndarray, box_xyxy: tuple[int, int, int, int], *,
     return float(np.median(valid)), float(valid.size / max(crop.size, 1))
 
 
+def depth_statistics(depth: np.ndarray, box_xyxy: tuple[int, int, int, int], *,
+                     min_depth: float = 0.01, max_depth: float = 5.0) -> dict[str, float | None]:
+    x1, y1, x2, y2 = [int(v) for v in box_xyxy]
+    arr = np.asarray(depth)
+    h, w = arr.shape[:2]
+    x1, x2 = max(0, min(w, x1)), max(0, min(w, x2))
+    y1, y2 = max(0, min(h, y1)), max(0, min(h, y2))
+    if x2 <= x1 or y2 <= y1:
+        return {"median_m": None, "mad_m": None, "std_m": None, "valid_ratio": 0.0}
+    pad_x, pad_y = max(1, (x2 - x1) // 5), max(1, (y2 - y1) // 5)
+    crop = arr[y1 + pad_y:min(y2 - pad_y, y2), x1 + pad_x:min(x2 - pad_x, x2)]
+    valid = crop[np.isfinite(crop) & (crop >= min_depth) & (crop <= max_depth)]
+    if valid.size == 0:
+        return {"median_m": None, "mad_m": None, "std_m": None, "valid_ratio": 0.0}
+    median = float(np.median(valid))
+    mad = float(np.median(np.abs(valid - median)))
+    return {"median_m": median, "mad_m": mad, "std_m": float(np.std(valid)),
+            "valid_ratio": float(valid.size / max(crop.size, 1))}
+
+
 def pixel_to_camera(u: float, v: float, z: float, intrinsics: Mapping[str, float]) -> np.ndarray:
     if hasattr(intrinsics, "shape"):
         fx, fy = float(intrinsics[0, 0]), float(intrinsics[1, 1])
@@ -62,14 +82,17 @@ class LocateAnythingProvider:
 
     def observe(self, rgb: np.ndarray, depth: np.ndarray, query: str, *,
                 episode_id: str, source_seq: int, capture_sim_time: float,
-                track_id: str | None = None, camera_to_world_matrix: np.ndarray | None = None) -> ObservationEvent | None:
-        result = dict(self.infer(rgb, query))
+                track_id: str | None = None, camera_to_world_matrix: np.ndarray | None = None,
+                inference_result: Mapping[str, Any] | None = None) -> ObservationEvent | None:
+        result = dict(self.infer(rgb, query) if inference_result is None else inference_result)
         boxes = result.get("boxes_xyxy") or result.get("boxes") or []
         if not boxes:
             return None
         box = tuple(int(v) for v in boxes[0])
         x1, y1, x2, y2 = box
-        z, valid_ratio = robust_depth(depth, box)
+        stats = depth_statistics(depth, box)
+        z = stats["median_m"]
+        valid_ratio = float(stats["valid_ratio"] or 0.0)
         if z is None:
             return None
         u, v = (x1 + x2) / 2.0, (y1 + y2) / 2.0
@@ -81,6 +104,10 @@ class LocateAnythingProvider:
             "position_camera_m": point.tolist(),
             "box_xyxy": list(box),
             "depth_valid_ratio": valid_ratio,
+            "depth_mad_m": stats["mad_m"],
+            "depth_std_m": stats["std_m"],
+            "model_latency_ms": result.get("model_latency_ms"),
+            "raw_response": result.get("raw_response"),
         }
         if camera_to_world_matrix is not None:
             payload["position_world_m"] = camera_to_world(point, camera_to_world_matrix).tolist()

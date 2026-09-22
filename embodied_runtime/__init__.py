@@ -34,6 +34,7 @@ from .runtime_core import (
 from .vision import (
     LocateAnythingProvider,
     camera_to_world,
+    depth_statistics,
     pixel_to_camera,
     robust_depth,
 )
@@ -66,6 +67,7 @@ __all__ = [
     "VisionCandidateBuilder",
     "box_iou",
     "camera_to_world",
+    "depth_statistics",
     "load_laya_provider",
     "parse_locateanything",
     "pixel_to_camera",

@@ -44,6 +44,15 @@ def run_episode(args):
     runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, candidate_builder, fusion=MultiRateFusion(lag_s=1.0) if visual else None)
     rgbd = LocateAnythingWorker(args.locateanything_path, device=args.device or "cuda") if visual else None
     vision_source = LiberoRgbdSource(world) if visual else None
+    vision_worker = None
+    if visual:
+        first_frame = vision_source.capture()
+        vision_provider = LocateAnythingProvider(lambda _rgb, _query: {}, first_frame["intrinsics"])
+        from ..adapters.locateanything import LatestFrameWorker
+        vision_worker = LatestFrameWorker(
+            vision_provider, rgbd.infer, query=args.query,
+            episode_id=f"{args.task}-seed{args.seed}", track_id=args.query,
+        )
     rows = []
     try:
         for step in range(args.steps):
@@ -51,18 +60,26 @@ def run_episode(args):
             vision_event = None
             vision_result = None
             if visual:
-                frame = vision_source.capture()
-                infer_started = time.perf_counter()
-                vision_result = rgbd.infer(frame["rgb"], args.query)
-                vision_provider = LocateAnythingProvider(lambda _rgb, _query, result=vision_result: result, frame["intrinsics"])
-                vision_event = vision_provider.observe(
-                    frame["rgb"], frame["depth_m"], args.query,
-                    episode_id=f"{args.task}-seed{args.seed}", source_seq=frame["capture_seq"],
-                    capture_sim_time=frame["capture_sim_time"], camera_to_world_matrix=frame["camera_to_world"],
-                )
+                frame = first_frame if step == 0 else vision_source.capture()
+                vision_worker.submit(frame)
+                if step == 0 and args.vision_warmup_s > 0:
+                    deadline = time.perf_counter() + args.vision_warmup_s
+                    while time.perf_counter() < deadline and vision_event is None:
+                        vision_event = vision_worker.poll()
+                        if vision_event is None:
+                            time.sleep(0.01)
+                pending_event = vision_worker.poll()
+                while pending_event is not None:
+                    vision_event = pending_event
+                    pending_event = vision_worker.poll()
                 if vision_event is not None:
                     runtime.ingest(vision_event, now_sim=float(world.data.time))
-                vision_latency_ms = (time.perf_counter() - infer_started) * 1000.0
+                    vision_result = {
+                        "boxes_xyxy": [vision_event.value.get("box_xyxy")],
+                        "model_latency_ms": vision_event.value.get("model_latency_ms"),
+                        "raw_response": vision_event.value.get("raw_response"),
+                    }
+                vision_latency_ms = vision_worker.last_latency_ms
             else:
                 vision_latency_ms = None
                 runtime.observe("oracle", float(world.data.time), before, quality=1.0, valid_until_sim=float(world.data.time) + 0.5)
@@ -83,11 +100,16 @@ def run_episode(args):
                 "physics_preview": None if visual else {"rejected": _jsonable(preview.get("rejected", {})),
                                     "pool_names": {k: list(v) for k, v in preview.get("pools", {}).items()}},
                 "vision_result": _jsonable(vision_result),
+                "vision_queue_replaced": vision_worker.replaced if vision_worker else 0,
+                "vision_completed": vision_worker.completed if vision_worker else 0,
+                "vision_dropped": vision_worker.dropped if vision_worker else 0,
                 "execution": _jsonable(execution),
             })
             if backend.success():
                 break
     finally:
+        if vision_worker is not None:
+            vision_worker.close()
         if rgbd is not None:
             del rgbd
         world.close()
@@ -118,6 +140,7 @@ def main():
     ap.add_argument("--experiment", choices=("oracle", "vision"), default="oracle")
     ap.add_argument("--query", default="the top drawer of the cabinet")
     ap.add_argument("--locateanything-path", default="/home/junhongli/models/huggingface/LocateAnything-3B")
+    ap.add_argument("--vision-warmup-s", type=float, default=3.0)
     ap.add_argument("--laya-path", default="/home/junhongli/models/huggingface/laya/typed-decisions")
     ap.add_argument("--device", default=None)
     ap.add_argument("--render", action="store_true")
