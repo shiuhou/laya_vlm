@@ -1,0 +1,8 @@
+{
+  "task": "top_drawer",
+  "seed": 1,
+  "steps": 2,
+  "provider": "rule",
+  "oracle": true,
+  "vision": false
+}

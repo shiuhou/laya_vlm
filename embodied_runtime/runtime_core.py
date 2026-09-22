@@ -197,7 +197,8 @@ class DecisionProvider(ABC):
 class RuleProvider(DecisionProvider):
     def decide(self, snapshot: BeliefSnapshot) -> Decision:
         allowed = list(snapshot.allowed())
-        token = "STOP" if not allowed else allowed[0]
+        priority = ("DONE", "GRASP", "RELEASE", "MV_FWD", "MV_BACK", "MV_LEFT", "MV_RIGHT", "MV_UP", "MV_DOWN", "ROTATE_CW", "ROTATE_CCW", "STOP")
+        token = next((item for item in priority if item in allowed), "STOP")
         if snapshot.goal.get("satisfied") and "DONE" in allowed:
             token = "DONE"
         elif snapshot.continuous.get("aligned") and snapshot.continuous.get("holding") is None and "GRASP" in allowed:
@@ -251,10 +252,24 @@ class LayaProvider(DecisionProvider):
                         snapshot.asof_sim_time + .5, status, latency_ms=latency)
 
 
-def load_laya_provider(model_name: str = "typed-decisions") -> LayaProvider:
-    """Load an already-downloaded checkpoint; this helper never downloads weights."""
+def load_laya_provider(path_or_repo: str = "convaiinnovations/laya", *,
+                       subfolder: str | None = "typed-decisions",
+                       device: str | None = None) -> LayaProvider:
+    """Load Laya from a local checkpoint or an explicitly selected repository.
+
+    Local paths are always loaded offline.  The runtime never downloads weights as a
+    side effect of importing or constructing a provider.
+    """
+    from pathlib import Path
+
     import laya
-    agent = laya.load("convaiinnovations/laya", subfolder=model_name)
+    path = Path(path_or_repo).expanduser()
+    if path.exists():
+        agent = laya.load(str(path), device=device, subfolder=None)
+        model_name = path.name
+    else:
+        agent = laya.load(path_or_repo, device=device, subfolder=subfolder)
+        model_name = subfolder or path_or_repo
     return LayaProvider(agent, model_name=model_name)
 
 
@@ -274,8 +289,11 @@ class AtomicBackend(ABC):
 
 
 class AtomicExecutor:
-    def __init__(self, backend: AtomicBackend, step_m: float = .02):
-        self.backend, self.step_m, self.grip_cmd = backend, float(step_m), 1.0
+    def __init__(self, backend: AtomicBackend, step_m: float | None = None):
+        backend_step = getattr(backend, "step_m", None)
+        self.backend = backend
+        self.step_m = float(backend_step if step_m is None and backend_step is not None else (.02 if step_m is None else step_m))
+        self.grip_cmd = 1.0
     def execute(self, token: str) -> dict[str, Any]:
         import numpy as np
         token = str(token).upper()

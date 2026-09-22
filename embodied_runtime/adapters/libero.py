@@ -20,6 +20,7 @@ class LiberoWorldBackend(AtomicBackend):
     def __init__(self, world: Any, step_mm: int = 10):
         self.world = world
         self.step_mm = int(step_mm)
+        self.step_m = self.step_mm / 1000.0
         self._grip_cmd = -1.0  # robosuite convention: open/close is backend-owned
 
     @classmethod
@@ -67,7 +68,7 @@ class LiberoWorldBackend(AtomicBackend):
 
     def rotate(self, token: str) -> None:
         # Rotation mapping is explicit and stays at the execution boundary.
-        axis = "z" if token == "ROTATE_CW" else "x"
+        axis = "z"
         sign = -1 if token == "ROTATE_CW" else 1
         self.world.execute(f"rotate_{axis}{sign * 10:+d}deg", grip=self._grip_cmd, record=False)
 

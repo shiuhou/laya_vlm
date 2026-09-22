@@ -18,7 +18,15 @@ from .runtime_core import ObservationEvent
 def robust_depth(depth: np.ndarray, box_xyxy: tuple[int, int, int, int], *,
                  min_depth: float = 0.01, max_depth: float = 5.0) -> tuple[float | None, float]:
     x1, y1, x2, y2 = [int(v) for v in box_xyxy]
-    crop = np.asarray(depth)[max(0, y1):max(0, y2), max(0, x1):max(0, x2)]
+    arr = np.asarray(depth)
+    h, w = arr.shape[:2]
+    x1, x2 = max(0, min(w, x1)), max(0, min(w, x2))
+    y1, y2 = max(0, min(h, y1)), max(0, min(h, y2))
+    if x2 <= x1 or y2 <= y1:
+        return None, 0.0
+    # Interior pixels reduce edge mixing and depth discontinuity outliers.
+    pad_x, pad_y = max(1, (x2 - x1) // 5), max(1, (y2 - y1) // 5)
+    crop = arr[y1 + pad_y:min(y2 - pad_y, y2), x1 + pad_x:min(x2 - pad_x, x2)]
     valid = crop[np.isfinite(crop) & (crop >= min_depth) & (crop <= max_depth)]
     if valid.size == 0:
         return None, 0.0
@@ -26,8 +34,12 @@ def robust_depth(depth: np.ndarray, box_xyxy: tuple[int, int, int, int], *,
 
 
 def pixel_to_camera(u: float, v: float, z: float, intrinsics: Mapping[str, float]) -> np.ndarray:
-    fx, fy = float(intrinsics["fx"]), float(intrinsics["fy"])
-    cx, cy = float(intrinsics["cx"]), float(intrinsics["cy"])
+    if hasattr(intrinsics, "shape"):
+        fx, fy = float(intrinsics[0, 0]), float(intrinsics[1, 1])
+        cx, cy = float(intrinsics[0, 2]), float(intrinsics[1, 2])
+    else:
+        fx, fy = float(intrinsics["fx"]), float(intrinsics["fy"])
+        cx, cy = float(intrinsics["cx"]), float(intrinsics["cy"])
     return np.asarray([(u - cx) * z / fx, (v - cy) * z / fy, z], dtype=float)
 
 
