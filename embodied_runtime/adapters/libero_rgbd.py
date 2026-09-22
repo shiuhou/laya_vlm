@@ -17,7 +17,10 @@ class LiberoRgbdSource:
             raise RuntimeError("LIBERO World must be created with render=True for RGB-D capture")
         sim = self.world.env.sim
         rgb = np.asarray(sim.render(width=self.width, height=self.height, camera_name=self.camera_name), dtype=np.uint8)[::-1].copy()
-        raw_depth = np.asarray(sim.render(width=self.width, height=self.height, camera_name=self.camera_name, depth=True), dtype=np.float32)[::-1].copy()
+        rendered_depth = sim.render(width=self.width, height=self.height, camera_name=self.camera_name, depth=True)
+        if isinstance(rendered_depth, tuple):
+            rendered_depth = rendered_depth[-1]
+        raw_depth = np.asarray(rendered_depth, dtype=np.float32)[::-1].copy()
         from robosuite.utils.camera_utils import (
             get_camera_extrinsic_matrix,
             get_camera_intrinsic_matrix,
