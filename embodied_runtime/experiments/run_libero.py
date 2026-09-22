@@ -32,7 +32,7 @@ def run_episode(args):
               "method": f"{args.experiment}_{args.provider}", "experiment_version": "stage2-smoke-v1",
               "temporal": asdict(temporal) if visual else None,
               "candidate_builder": builder.resolved_config() if visual else {"version": "physics-preview-candidates-v1", "collision_aware": True},
-              "tracking_active": False, "init_index": 0, "success_predicate": "official_LIBERO",
+              "tracking_active": False, "init_index": args.init_state_id, "success_predicate": "official_LIBERO",
               "atomic": {"step_m": .01, "rotation_world_z_deg": 10, "control_steps": 8,
                          "contract_version": CONTRACT_VERSION, "tolerances": CONTRACT_TOLERANCES},
               "vision": {"camera": "agentview", "size": [384, 384], "event_ttl_s": .75,
@@ -66,7 +66,7 @@ def run_episode(args):
             model_ids["decision"] = model_identity(args.laya_path)
         recorder.manifest_update({"models": model_ids})
         phase = "environment_startup"
-        backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=args.render or visual,
+        backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, init_state_id=args.init_state_id, render=args.render or visual,
                                                libero_root=args.libero_root, config_dir=args.config_dir)
         world = backend.world
         import jev_libero.world
@@ -90,7 +90,7 @@ def run_episode(args):
         provider = RuleProvider() if args.provider == "rule" else load_laya_provider(args.laya_path, subfolder=None, device=args.device)
         if not visual:
             builder = PhysicsPreviewCandidateBuilder(world, grip_command=backend.gripper_command)
-        runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, builder,
+        runtime = Runtime(f"{args.task}-init{args.init_state_id}-seed{args.seed}", provider, backend, builder,
                           fusion=MultiRateFusion(config=temporal) if visual else None,
                           event_sink=recorder.record, sim_clock=lambda: world.data.time, oracle=not visual)
         recorder.record("provider", {"name": type(provider).__name__, "version": provider.version})
@@ -166,6 +166,7 @@ def parser():
     ap = argparse.ArgumentParser()
     ap.add_argument("--task", default="top_drawer")
     ap.add_argument("--seed", type=int, default=1)
+    ap.add_argument("--init-state-id", type=int, default=0)
     ap.add_argument("--steps", type=int, default=2)
     ap.add_argument("--provider", choices=("rule", "laya"), default="rule")
     ap.add_argument("--experiment", choices=("oracle", "vision"), default="oracle")

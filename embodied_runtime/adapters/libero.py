@@ -35,12 +35,15 @@ class LiberoWorldBackend(AtomicBackend):
 
     @classmethod
     def from_task(cls, task: str = "top_drawer", *, seed: int = 1,
+                  init_state_id: int = 0,
                   libero_root: str | None = None, config_dir: str | None = None,
                   render: bool = False) -> LiberoWorldBackend:
         from jev_libero.config import load_task
         from jev_libero.world import World
 
-        world = World(seed=seed, render=render, task_config=load_task(task),
+        if not isinstance(init_state_id, int) or init_state_id < 0:
+            raise ValueError("init_state_id must be a nonnegative benchmark index")
+        world = World(seed=seed, init_index=init_state_id, render=render, task_config=load_task(task),
                       libero_root=libero_root, config_dir=config_dir)
         return cls(world)
 

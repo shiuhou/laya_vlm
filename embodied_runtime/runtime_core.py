@@ -327,6 +327,13 @@ class RuleProvider(DecisionProvider):
     version = "rule-greedy-distance-v1"
 
     def decide(self, snapshot: BeliefSnapshot) -> Decision:
+        from .decision_interface import CanonicalDecisionInput
+        if isinstance(snapshot, CanonicalDecisionInput):
+            token = snapshot.rule_token()
+            return _decision(snapshot, token=token, probabilities={k: float(k == token) for k in sorted(snapshot.allowed())},
+                             confidence=1., source="rule_canonical_greedy_v0.1", input_revision=snapshot.revision,
+                             input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                             valid_until_sim=snapshot.asof_sim_time + .5)
         allowed = sorted(snapshot.allowed())
         priority = ("DONE", "GRASP", "RELEASE", "MV_FWD", "MV_BACK", "MV_LEFT", "MV_RIGHT", "MV_UP", "MV_DOWN", "ROTATE_CW", "ROTATE_CCW", "STOP")
         token = next((item for item in priority if item in allowed), "STOP")
@@ -384,6 +391,8 @@ class LayaProvider(DecisionProvider):
         questions = {"action": {"type": "choice",
             "instructions": "Choose exactly one allowed atomic action. Allowed means validity checks passed; collision freedom is not established.",
             "criteria": criteria}}
+        if hasattr(snapshot, "questions"):
+            questions = snapshot.questions()
         state = snapshot.provider_input()
         started = time.perf_counter()
         if hasattr(self.agent, "system_one"):
