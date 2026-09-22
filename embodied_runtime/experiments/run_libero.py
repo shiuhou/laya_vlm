@@ -53,7 +53,7 @@ def run_episode(args):
                 frame = vision_source.capture()
                 infer_started = time.perf_counter()
                 vision_result = rgbd.infer(frame["rgb"], args.query)
-                vision_provider = LocateAnythingProvider(lambda _rgb, _query: vision_result, frame["intrinsics"])
+                vision_provider = LocateAnythingProvider(lambda _rgb, _query, result=vision_result: result, frame["intrinsics"])
                 vision_event = vision_provider.observe(
                     frame["rgb"], frame["depth_m"], args.query,
                     episode_id=f"{args.task}-seed{args.seed}", source_seq=frame["capture_seq"],
@@ -130,3 +130,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
