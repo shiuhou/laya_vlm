@@ -57,6 +57,11 @@ def repository_identity(path):
     return {"root": root, "commit": git("rev-parse", "HEAD"), "dirty_status": git("status", "--porcelain")}
 
 
+def package_directory(module):
+    """LIBERO may be installed as a namespace package with __file__=None."""
+    return Path(module.__file__).parent if module.__file__ else Path(next(iter(module.__path__)))
+
+
 def model_identity(path):
     """Fingerprint local bytes; no network or dependence on an undocumented revision."""
     root = Path(path).expanduser().resolve()

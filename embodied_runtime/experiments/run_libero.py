@@ -19,7 +19,7 @@ from ..fusion import MultiRateFusion, TemporalConfig
 from ..runtime import Runtime
 from ..runtime_core import RuleProvider, load_laya_provider
 from ..vision import LocateAnythingProvider
-from .records import RunRecorder, code_identity, model_identity, repository_identity, summarize, versions
+from .records import RunRecorder, code_identity, model_identity, package_directory, repository_identity, summarize, versions
 
 
 def run_episode(args):
@@ -72,8 +72,8 @@ def run_episode(args):
         import jev_libero.world
         import libero
         recorder.manifest_update({"environment_repositories": {
-            "jev": repository_identity(Path(jev_libero.world.__file__).parent),
-            "libero": repository_identity(Path(libero.__file__).parent)}})
+            "jev": repository_identity(package_directory(jev_libero.world)),
+            "libero": repository_identity(package_directory(libero))}})
         recorder.record("environment", {"purpose": "execution_and_offline_evaluation_only",
                                         "task_config": world.config, "instruction": world.task,
                                         "initial_state": backend.execution_state(),

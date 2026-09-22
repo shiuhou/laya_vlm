@@ -10,7 +10,7 @@ import pytest
 
 from embodied_runtime.adapters.libero import LiberoWorldBackend
 from embodied_runtime.adapters.physics_preview import PhysicsPreviewCandidateBuilder, VisionCandidateBuilder
-from embodied_runtime.experiments.records import RunRecorder, load_records, summarize
+from embodied_runtime.experiments.records import RunRecorder, load_records, package_directory, summarize
 from embodied_runtime.runtime import Runtime
 from embodied_runtime.runtime_core import FakeBackend, RuleProvider
 from embodied_runtime.vision import LocateAnythingProvider, position_covariance_from_depth
@@ -18,6 +18,11 @@ from embodied_runtime.vision import LocateAnythingProvider, position_covariance_
 
 def recorder(path):
     return RunRecorder(path, {"task": "fixture", "seed": 1, "method": "fixture", "oracle": False}, {"run_id": "fixture"})
+
+
+def test_namespace_package_provenance_path(tmp_path):
+    assert package_directory(SimpleNamespace(__file__=None, __path__=[str(tmp_path)])) == tmp_path
+    assert package_directory(SimpleNamespace(__file__=str(tmp_path / "__init__.py"))) == tmp_path
 
 
 def test_durable_chain_regenerates_tables_and_rejects_corruption(tmp_path):
