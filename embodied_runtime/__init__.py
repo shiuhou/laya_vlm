@@ -1,3 +1,4 @@
+from .association import QueryTrackManager, Track, box_iou
 from .adapters.locateanything import (
     LatestFrameWorker,
     LocateAnythingWorker,
@@ -39,6 +40,9 @@ from .vision import (
 
 __all__ = [
     "ATOMIC_ACTIONS",
+    "QueryTrackManager",
+    "Track",
+    "box_iou",
     "AtomicExecutor",
     "BeliefSnapshot",
     "BeliefStore",
