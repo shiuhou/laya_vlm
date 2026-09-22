@@ -373,6 +373,14 @@ class LayaProvider(DecisionProvider):
                              source="laya", input_revision=snapshot.revision,
                              input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
                              valid_until_sim=snapshot.asof_sim_time + .2, status="invalid")
+        if len(criteria) == 1:
+            # laya 0.3.4 assumes topk(2). A singleton is a forced constraint
+            # choice, not model evidence; do not fabricate a second option.
+            token = next(iter(criteria))
+            return _decision(snapshot, token=token, probabilities={token: 1.0}, confidence=1.0,
+                             source="laya_single_candidate", input_revision=snapshot.revision,
+                             input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                             valid_until_sim=snapshot.asof_sim_time + .5, latency_ms=0.0)
         questions = {"action": {"type": "choice",
             "instructions": "Choose exactly one allowed atomic action. Allowed means validity checks passed; collision freedom is not established.",
             "criteria": criteria}}

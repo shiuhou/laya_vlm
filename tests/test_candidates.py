@@ -126,3 +126,18 @@ def test_workspace_gripper_and_target_constraints_do_not_choose_policy():
     leaking = BeliefSnapshot(**{**base.__dict__, "continuous": {**base.continuous, "hidden_object_xyz": [0, 0, 0]}})
     with pytest.raises(ValueError, match="privileged"):
         builder.build(leaking)
+
+
+def test_laya_singleton_is_explicit_forced_choice_without_model_call():
+    class Agent:
+        def system_one(self, *_):
+            raise AssertionError("singleton must not call model topk(2)")
+    belief = snapshot(valid=False)
+    candidates = VisionCandidateBuilder(target_track="drawer").build(belief)
+    belief = BeliefSnapshot(**{**belief.__dict__, "candidates": candidates})
+    assert belief.allowed() == {"STOP"}
+    decision = LayaProvider(Agent()).decide(belief)
+    assert decision.token == "STOP"
+    assert decision.source == "laya_single_candidate"
+    assert decision.latency_ms == 0
+    assert decision.input_snapshot_id == belief.snapshot_id()
