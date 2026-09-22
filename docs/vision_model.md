@@ -8,6 +8,14 @@ not full simulator reconstruction. A query-box/depth point is not automatically
 the same reference point as simulator target geometry; the paired exporter marks
 this distinction explicitly. Temporal validity remains part of decision sufficiency.
 
+The newer [reference-quality pilot](reference_pilot_protocol.md) uses a separate,
+explicit foreground-handle query and a box-support visible-surface centroid. It
+preserves the old bbox/interior-median-depth point as raw evidence. Oracle geometry
+is used only to evaluate membership/position, never to correct the sensor box or
+fill perceptual contact/progress. This diagnostic estimator is not an automatic
+replacement for the historical live RGB-D path below. Its covariance is the old
+box-projection heuristic, explicitly uncalibrated for this centroid estimator.
+
 ## Decision
 
 The first visual-semantic prototype uses NVIDIA LocateAnything-3B as an asynchronous

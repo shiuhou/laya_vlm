@@ -31,11 +31,15 @@ trajectory genuinely covers approach, contact and drawer closure. Its successful
 collection policy used simulator preview, different primitives and hierarchy; that
 does not validate the current no-effect Laya reference policy.
 
-The visual query/depth proxy and simulator collision-AABB center are different
-position definitions. Their numerical discrepancy is currently marked incomparable,
-not labeled localization error. Current visibility, contact, holding and task progress
-are unknown unless their evidence source actually supports them. Tracking is inactive;
-visual covariance and semantic scores are uncalibrated.
+The old visual query/depth proxy and simulator collision-AABB center remain
+incomparable. The reference-quality pilot instead defines the visible-pixel-weighted
+surface centroid of the foreground top-drawer handle. A sensor-only box-support
+RGB-D estimator and an independent first-hit visual-geometry ray oracle estimate
+that same quantity. Box contamination is measured, not corrected by the oracle.
+This is a view-dependent point, not rigid object pose or a grasp center. Current
+visibility, contact, holding and task progress are unknown unless their evidence
+source actually supports them. Tracking is inactive; visual covariance and semantic
+scores are uncalibrated.
 
 An initial replay exposed Laya input truncation. The replacement compact presentation
 is token-audited, rejects clipping, and records actual consumed tokens. Earlier
@@ -44,36 +48,55 @@ See [the interface handoff](decision_interface_handoff.md) for measurements.
 
 ## Proposed E0, conditional on review — not frozen or run
 
-First pass a **reference-quality pilot**, approximately 12 phase-diverse states from
-the verified collection trajectory. Agree on one target-position referent and on
-independently evaluated reasonable action sets. Simulator preview may label actions
-offline but must not filter the probe set or enter the no-effect decision input.
-Check whether oracle-conditioned decisions respond usefully to progress/contact and
-whether good decisions are identifiable without effects. If not, either study
-descriptive oracle-conditioned fidelity with a narrower claim, or separately approve
-a fixed-effect reference condition. Do not silently convert a State Gap study into
-State Gap plus Effect Gap.
+The **reference-quality pilot** is predeclared in
+[reference_pilot_protocol.md](reference_pilot_protocol.md). Its result and raw evidence
+are in [reference_pilot_handoff.md](reference_pilot_handoff.md). It does **not** validate
+no-effect oracle-conditioned Laya as an expert reference. Preparatory choices are
+not proved wrong merely by lacking one-step utility, but high-confidence agreement
+with an unvalidated reference cannot establish useful decision sufficiency.
+
+The smallest remaining gate is scientific: approve a **descriptive decision-fidelity**
+claim, or validate a revised oracle decision interface in a separate small pilot.
+For a useful-policy reference, first consider explicitly sourced task-relative
+interaction geometry (e.g. closing axis/contact mode), not another perception model.
+Do not assume adding those fields will fix the model. A fixed-effect condition is
+also a separate reviewed option: both branches would receive the *same* effects,
+and privileged effects would remain diagnostic. Do not quietly introduce them into
+the present no-effect comparison. No such interface/effect change was tested here.
 
 The smallest proposed formal E0 after this pilot:
 
 - Task: `KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet`, LIBERO `libero_90`.
-- Initial-state IDs 0–4, seed 1, with benchmark-state and trajectory hashes. Only
-  init 0 collection is verified today; collectors for the other four must first
-  be validated independently of the compared model outputs.
-- Twelve predeclared boundaries per trajectory: two each for far, approach,
-  near-contact, contact, closure progress, near-completion. Define phase rules and
-  minimum temporal spacing using evaluator telemetry before selection; preserve
-  missing phases and failures instead of replacing trajectories until successful.
-- Approximately 60 physical boundaries, each with fresh and 0.4-s-old archived
-  sensor history: at most 120 paired records. The age is simulation time, chosen
-  from one existing atomic action duration, not from observed method rankings.
-  Capture/history replay must supply observations throughout the collection, not
-  just at the five sparse smoke boundaries. No artificial occlusion condition yet.
+- Actual benchmark initial-state IDs **0,1,2**, seed **1**, with benchmark-state,
+  task/assets and archived-control hashes. All three fixed-control trajectories
+  are verified; only init 0 completes the task. Do not discard init 1/2 or append
+  successful-only replacements. Near-completion is not pooled across these resets.
+- Select from boundaries at least eight controls after reset and before first
+  success. Five evaluator strata: far (surface gap >=20 mm); approach (5<=gap<20);
+  contact (measured target contact); progressing (>0.1 mm closure since prior
+  control); late (remaining opening <=25% of that reset's initial opening).
+  Select indices `round(q*(n-1))`, q=.25,.75, ties-to-even, in chronological order
+  per stratum. Deduplicate physical states across strata; preserve missing strata.
+  Overlapping phase names are not claims of monotonic task progression.
+- On the audited trajectories this selects **29 physical states**:
+  init 0 `[11,17,23,44,56,82,94,131,134,146]`;
+  init 1 `[13,24,32,48,61,132,147,153,155]`;
+  init 2 `[14,27,35,50,60,82,132,142,147,151]`.
+  Twenty show >0.1 mm drawer displacement over the preceding .4 s; the nine
+  static-target windows are controls. This is observed mechanism sensitivity,
+  not a model-outcome-derived selection rule.
+- **Fresh / .4-s-old** conditions at each boundary: 58 paired records total.
+  Collect RGB-D at every archived control boundary with simulation paused during
+  inference. Replay the identical history through temporal fusion: the stale
+  branch receives only captures through `step-8`, while fresh receives through
+  `step`; both use current, identical proprioception/history at the same physical
+  boundary. Log actual geometry reference age and temporal update identities.
+  No artificial occlusion condition yet; do not conflate wall latency with age.
 - One fixed 11-token semantics-only probe set, same order, same question, same last
   robot outcome, empty effect bundle on both branches. These are offline choices,
   not execution authorization. Record natural candidate availability separately.
 - One local Laya content revision/API/config/presentation for both branches, Rule as
-  a deterministic reference. Three alternating-order repeats on every branch; seed
+  a deterministic comparison. Three alternating-order repeats on every branch; seed
   once per run rather than resetting before each call. Log actual device and tokens.
 
 Primary metrics: top-1 agreement; top-2-set agreement with ties explicit; Jensen–
@@ -83,15 +106,18 @@ Condition results on phase, actual age, missingness and natural candidate availa
 Use position/relation error only for genuinely comparable referents. Candidate-set
 agreement is unknown when an oracle natural set has not been collected.
 
-First sensitivity families: target position **and coherently recomputed relations**;
-remaining-opening missingness; contact missingness; age/validity; covariance. Literal
+First sensitivity families on fresh pairs: target position **and coherently
+recomputed relations**; remaining-opening missingness; contact missingness;
+age/validity/covariance as a coherent quality family (with separate labeled
+counterfactuals only later). Literal
 single-field counterfactuals can intentionally leave inconsistent relations, but must
 be labeled accordingly. Model-facing numeric precision and inclusion/exclusion of
 provenance are themselves frozen interface choices, not invisible implementation details.
 
 Report per-initial-state/trajectory results. Frames and repeat calls are correlated,
-not independent sample size. Five trajectories are a small first benchmark with
-limited uncertainty estimates; do not interpret non-significance as equivalence.
+not independent sample size. Three trajectories support a small descriptive
+benchmark, not population generalization or a convincing bootstrap interval over
+independent tasks. Show every reset; do not interpret non-significance as equivalence.
 Freeze code, model bytes, task assets, initial states, collection/phase selection,
 reference-point definition, candidate vocabulary, question, history, numeric
 presentation, temporal config, delay delivery and metrics before formal collection.

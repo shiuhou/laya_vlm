@@ -30,7 +30,7 @@ Perception estimates handle membership using the first box from one fixed query:
 Its box-support RGB-D centroid is a deliberately approximate surface estimate;
 background/occluder contamination and wrong-instance selection are measurement
 errors, not oracle-corrected inputs. No learned segmenter or ground-truth box is
-supplied to perception. Independent oracle geom segmentation and render depth
+supplied to perception. Independent oracle first-hit visual-mesh camera rays
 define the ideal visible handle support and its centroid. Save both masks/supports,
 membership overlap and old AABB / box-center-with-median-depth representations.
 Do not conflate a shared estimand with a proven accurate or calibrated estimator.
@@ -74,3 +74,21 @@ No threshold changes based on model results. Do not turn this pilot into an
 accuracy score. If no-effect oracle choices lack demonstrated utility, recommend
 a descriptive fidelity claim or a separately reviewed interface/effect condition;
 do not silently redefine the primary State-Gap comparison.
+
+## Recorded implementation correction (before any formal freeze)
+
+The first pilot collection used ID-color segmentation/render depth and integer
+pixel indices (`...centroid_v0.1`). Raw inspection found isolated false handle-ID
+pixels elsewhere in the scene. A geometric first-hit ray oracle removes those
+ID-color artifacts without using model choices or changing utility thresholds.
+Camera audit also established the raster convention: with K principal point at
+`(W/2,H/2)`, flipped raster pixel centers are `(u+.5,v+.5)`, not `(u,v)`.
+
+The corrected **referent v0.2** uses that convention for both sensor centroid and
+oracle rays. The original live bbox-center/median-depth path is unchanged; its
+continuous box-center coordinates must not receive an automatic half-pixel shift.
+Original `init*-attempt1` and `replay-init0` artifacts remain available but are
+not the final common-referent evidence. One explicitly labeled recollection/replay
+checks the correction on the same states, query, candidates, question, history,
+model bytes and rubric. It is not a success-conditioned retry or a new seed search.
+Ray-vs-raster depth residuals remain recorded, not hidden by mask correction.

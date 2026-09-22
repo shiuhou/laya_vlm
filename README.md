@@ -7,7 +7,7 @@ typed embodied decision making. Laya is one replaceable decision backend.
 Current verified status and review gate: [docs/current_state.md](docs/current_state.md).
 Research question and proposed E0: [docs/research.md](docs/research.md).
 Interfaces: [docs/architecture.md](docs/architecture.md).
-Latest evidence and commands: [docs/decision_interface_handoff.md](docs/decision_interface_handoff.md).
+Latest evidence and commands: [docs/reference_pilot_handoff.md](docs/reference_pilot_handoff.md).
 No formal E0/E1 experiment has started.
 
 It separates temporal belief, compact decision state, candidate semantics/effects,
@@ -43,7 +43,9 @@ code. LocateAnything weights are not included or downloaded by this repository.
 
 Implement AtomicBackend for a specific MuJoCo or LIBERO environment. The backend owns action layout, coordinate frame, scaling, gripper polarity, observations and success predicate. Do not reuse ManiSkill action scales for LIBERO.
 
-Oracle state is for execution and policy upper bounds. It must not be reported as visual performance.
+Oracle state is for execution, evaluation and explicitly privileged baselines.
+An oracle-conditioned model is not automatically an expert or a policy upper bound.
+Its results must not be reported as visual performance.
 
 References:
 
