@@ -1,11 +1,12 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Latest stage: bounded minimal-interface search after mechanism baseline
-`0f62862`. Use `git rev-parse HEAD` for the exact final checkout revision.
+Latest stage: paired status missingness pilot and consequence-reference gate
+after baseline `a7da3d8`. Use `git rev-parse HEAD` for the exact final checkout revision.
 Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
 
-Current report: [interface_search_handoff.md](interface_search_handoff.md).
+Current report: [reference_gate_handoff.md](reference_gate_handoff.md).
+Prior interface search: [interface_search_handoff.md](interface_search_handoff.md).
 Mechanism report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
 Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
 Predeclared pilot and correction: [reference_pilot_protocol.md](reference_pilot_protocol.md).
@@ -31,10 +32,25 @@ Conditional next experiment: [research.md](research.md).
 - Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
   contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 226 tests, ruff and compileall pass. Dependencies, upstream repositories and
+- 236 tests, ruff and compileall pass. Dependencies, upstream repositories and
   model weights were not changed or downloaded.
 
 ## Scientific result and limitations
+
+Latest bounded evidence: **212 offline calls**, all repeated inputs stable and
+unclipped. Three archived oracle/perceptual status pairs isolate missing
+articulation: correct oracle CONTINUE at open/intermediate states becomes DONE
+when that field is unknown. Oracle-field masking exactly reproduces perceptual
+payloads and outputs. Adding an explicit UNKNOWN answer in a separate diagnostic
+resolves the tested missingness cases without breaking known-state judgments.
+This is a finite status-reference result, not perception accuracy or robot control.
+
+Candidate-attached qualitative effects pass an eight-contrast synthetic goal/
+assignment/order test; equivalent state-side tables do not. Transfer to four
+actual loaded contexts with all eleven actions fails: true effects yield no
+incrementally useful choices in original order and only one of eight under
+reversed order. Coarse absolute-change categories also omit distinctions needed
+by STOP-relative utility. No paired manipulation E0 follows the failed gate.
 
 Latest interface search: **744 bounded offline model calls**, no future effects
 or action execution. A spatial sentence + neutral candidate IDs passes simple
@@ -103,10 +119,11 @@ Reference state usable as a **validated useful-decision reference: NO**.
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Smallest next test: independently validate the narrow observed/requested
-articulation interface on held-out language, unknowns and boundary cases, while
-keeping a deterministic comparator. Review whether task-progress fidelity is a
-useful revised target. Full atomic-policy E0 still lacks a competent reference;
-do not silently rename the narrow classification result as that experiment.
+Smallest next tests: validate explicit UNKNOWN status outputs and obtain a
+legitimate sensor-derived articulation estimate for anything beyond the observed
+missingness effect. For manipulation, isolate effect binding from native action
+semantics at fixed option count, and expose STOP-relative effects if incremental
+utility is the objective. Full atomic-policy E0 still lacks a competent reference;
+do not silently rename the narrow status result as that experiment.
 Do not silently settle loaded states or waive reset-envelope violations. Do not insert effects
 into the no-effect comparison, tune gates, or expand the benchmark without review.

@@ -138,6 +138,13 @@ an offline status judgment; DONE/CONTINUE must not be mapped to physical STOP
 or execution without a separately validated controller. See the
 [search handoff](interface_search_handoff.md) for evidence and claim boundaries.
 
+`experiments.reference_gate` reuses that audited recorder for a narrow paired
+status-missingness test and separate consequence-use diagnostics. Only state and
+question/criteria enter inference; source identities, evaluator labels and raw
+physical outcomes remain outside it. Effect-bearing fixtures are explicitly marked.
+These exploratory projections do not replace the canonical live/offline interfaces
+or validate an atomic policy. See the [reference gate handoff](reference_gate_handoff.md).
+
 LIBERO/MuJoCo provide physical execution and evaluator state. Jev-LIBERO supplies the
 World/controller adapter, oracle preview and the existing recorded collection trace.
 Show-Harness inspires atomic token names, not an imported controller. LocateAnything

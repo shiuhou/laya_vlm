@@ -45,14 +45,15 @@ def spatial(delta):
             if clauses else "The target and tool are at the same position.")
 
 
-def fixture(state, instruction, criteria, *, condition, sample, answer, source=None, mapping=None):
+def fixture(state, instruction, criteria, *, condition, sample, answer, source=None, mapping=None,
+            effects_supplied=False):
     mapping = mapping or {t: t for t in criteria}
     result = {"condition": condition, "sample": sample, "source": source,
               "state": state, "questions": {"action": {"type": "choice", "instructions": instruction,
                                                         "criteria": criteria}},
               "option_order": list(criteria), "option_to_canonical": mapping,
               "diagnostic_reference_not_model_input": {"scored_expected_tokens": answer},
-              "effects_supplied": False}
+              "effects_supplied": effects_supplied}
     result["payload_id"] = payload_id(state, result["questions"])
     result["fixture_id"] = _sha256_json(result)
     return result
@@ -101,7 +102,8 @@ def transform(f, condition, *, reverse=False, shift=0, instruction=None, answer=
     return fixture(deepcopy(f["state"]), instruction or f["questions"]["action"]["instructions"],
                    dict(entries), condition=condition, sample=f["sample"], source=f["source"],
                    answer=answer if answer is not None else f["diagnostic_reference_not_model_input"]["scored_expected_tokens"],
-                   mapping={renamed[k]: f["option_to_canonical"][k] for k in keys})
+                   mapping={renamed[k]: f["option_to_canonical"][k] for k in keys},
+                   effects_supplied=f["effects_supplied"])
 
 
 def validation(pilot_root):
@@ -273,7 +275,8 @@ def goal_placement():
 def execute(fixtures, args):
     config = {"version": VERSION, "suite": args.suite, "repeats": args.repeats, "seed": args.seed,
               "fixture_ids": [f["fixture_id"] for f in fixtures], "no_execution": True,
-              "effects": "none", "not_formal_e0": True}
+              "effects": "explicitly_marked_diagnostic" if any(f["effects_supplied"] for f in fixtures) else "none",
+              "not_formal_e0": True}
     recorder = RunRecorder(args.output, config, {"run_id": Path(args.output).name,
                            "code": code_identity(), "versions": versions()})
     try:

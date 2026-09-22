@@ -42,7 +42,16 @@ of useful decision sufficiency; disagreement is not automatically perception err
 
 ## Current evidence and limitations
 
-The subsequent [bounded interface search](interface_search_handoff.md) tests
+The [paired status and consequence gate](reference_gate_handoff.md) isolates a
+missing-articulation effect using exact field masking: the binary status model
+declares DONE on unknown input, while an explicit UNKNOWN option handles these
+tested cases. This is not a visual-estimation or manipulation E0 result. A
+separate actual-effect reference test fails despite a passing synthetic
+two-option consequence-use control. Effect presentation, native action semantics,
+option count, and absolute-versus-STOP-relative abstraction remain distinct
+scientific issues; supplying oracle consequences is not automatically sufficient.
+
+The preceding [bounded interface search](interface_search_handoff.md) tests
 smaller states rather than presuming CDS v0.1 is sufficient. It finds a narrow
 goal-sensitive articulation-status judgment, but no robust eleven-action policy.
 Perfect nominal scores appear when code precomputes the winning geometric axis;
