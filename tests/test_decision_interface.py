@@ -75,8 +75,8 @@ def test_primary_pair_preserves_candidates_questions_history_effects():
     assert a.questions() == b.questions()
     assert a.history == b.history
     x, y = a.provider_input(), b.provider_input()
-    x.pop("decision_state")
-    y.pop("decision_state")
+    x.pop("state")
+    y.pop("state")
     assert x == y
     assert record["field_differences"]["target.position_m"]["status"] == "incomparable_definition"
     assert "difference_l2" not in record["field_differences"]["target.position_m"]
@@ -196,3 +196,25 @@ def test_audit_ids_not_model_features_and_history_allowlist():
     assert _sha256_json(changed.provider_input()) == _sha256_json(a.provider_input())
     with pytest.raises(ValueError, match="unsupported recent"):
         replace(a, history=({"source": "proprioception", "remaining_open_mm": 2},))
+
+
+def test_compact_presentation_is_order_stable_and_full_audit_remains():
+    import json
+    a, _ = paired_inputs(pair())
+    reversed_state = replace(a.state, fields=dict(reversed(list(a.state.fields.items()))))
+    b = replace(a, state=reversed_state)
+    assert json.dumps(a.provider_input()) == json.dumps(b.provider_input())
+    assert "source" not in a.provider_input()["state"]
+    assert "task.instruction" in a.provider_input()["state"]
+    assert a.provider_input("audit-json-v0")["decision_state"]["fields"]["target.position_m"]["source"] == "oracle_sim"
+    assert a.model_questions()["action"]["criteria"]["MV_UP"] != a.model_questions()["action"]["criteria"]["MV_DOWN"]
+
+
+def test_laya_rejects_truncated_canonical_input_before_inference(monkeypatch):
+    from embodied_runtime.adapters import laya_input
+    monkeypatch.setattr(laya_input, "encoding_audit", lambda *args: {"available": True, "truncated": True})
+    class Agent:
+        def system_one(self, *_):
+            raise AssertionError("truncated input must not reach model")
+    with pytest.raises(ValueError, match="truncated"):
+        LayaProvider(Agent()).decide(paired_inputs(pair())[0])

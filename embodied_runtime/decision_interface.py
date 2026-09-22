@@ -290,15 +290,46 @@ class CanonicalDecisionInput:
                              "effects": self.effects.identity(), "history": self.history,
                              "question": self.questions(), "diagnostic_only": self.diagnostic_only})
 
-    def provider_input(self):
+    def provider_input(self, presentation_version="compact-v0.1"):
         # Audit IDs, collection phase, branch label, and source file paths are not
         # model features. Evidence sources/quality are intentional state fields.
         effects = deepcopy(self.effects.effects)
         for effect in effects.values():
             effect.pop("state_id", None)
-        return {"decision_state": self.state.model_state(),
-                "candidates": [c.canonical() for c in self.candidates],
-                "candidate_effects": effects, "recent_actual_outcomes": deepcopy(self.history)}
+        if presentation_version == "audit-json-v0":
+            return {"decision_state": self.state.model_state(),
+                    "candidates": [c.canonical() for c in self.candidates],
+                    "candidate_effects": effects, "recent_actual_outcomes": deepcopy(self.history)}
+        if presentation_version != "compact-v0.1":
+            raise ValueError("unsupported model presentation")
+        # Full source/basis/privilege and unrounded values remain in the CDS
+        # record. The compact model view carries values/unknowns and quality;
+        # it does not tell the model which branch it is evaluating.
+        def rounded(value):
+            if isinstance(value, float):
+                return float(f"{value:.6g}")
+            if isinstance(value, dict):
+                return {k: rounded(value[k]) for k in sorted(value)}
+            if isinstance(value, (tuple, list)):
+                return [rounded(v) for v in value]
+            return value
+        return rounded({"state": {k: v.value for k, v in self.state.fields.items()},
+                        "effects": effects, "previous": self.history})
+
+    def model_questions(self, presentation_version="compact-v0.1"):
+        if presentation_version == "audit-json-v0":
+            return self.questions()
+        if presentation_version != "compact-v0.1":
+            raise ValueError("unsupported model presentation")
+        descriptions = {"MV_FWD": "world +X 10mm", "MV_BACK": "world -X 10mm",
+                        "MV_LEFT": "world +Y 10mm", "MV_RIGHT": "world -Y 10mm",
+                        "MV_UP": "world +Z 10mm", "MV_DOWN": "world -Z 10mm",
+                        "ROTATE_CW": "world Z -10deg", "ROTATE_CCW": "world Z +10deg",
+                        "STOP": "hold pose and grip", "GRASP": "close grip; hold pose",
+                        "RELEASE": "open grip; hold pose"}
+        return {"action": {"type": "choice", "instructions":
+                "Choose for task. Offline probe, not safety approval. Null means unknown. Moves retain orientation/grip; rotations retain position/grip.",
+                "criteria": {c.token: descriptions[c.token] for c in self.candidates if c.feasible}}}
 
     def questions(self):
         return {"action": {"type": "choice", "instructions":

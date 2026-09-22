@@ -391,14 +391,22 @@ class LayaProvider(DecisionProvider):
         questions = {"action": {"type": "choice",
             "instructions": "Choose exactly one allowed atomic action. Allowed means validity checks passed; collision freedom is not established.",
             "criteria": criteria}}
-        if hasattr(snapshot, "questions"):
-            questions = snapshot.questions()
+        if hasattr(snapshot, "model_questions"):
+            questions = snapshot.model_questions()
         state = snapshot.provider_input()
+        if hasattr(snapshot, "model_questions"):
+            from .adapters.laya_input import encoding_audit
+            self.last_input_audit = encoding_audit(self.agent, state, questions)
+            if self.last_input_audit.get("truncated"):
+                raise ValueError("canonical model input would be truncated by Laya")
         started = time.perf_counter()
         if hasattr(self.agent, "system_one"):
             result = self.agent.system_one(state, questions)
         else:
             result = self.agent.predict(state, questions, model=self.model_name)
+        if hasattr(snapshot, "model_questions"):
+            self.last_input_audit["actual_device"] = str(getattr(self.agent, "device", "unknown"))
+            self.last_input_audit["actual_dtype"] = str(getattr(self.agent, "dtype", "unknown"))
         latency = (time.perf_counter() - started) * 1000.0
         answer = result["answers"]["action"]
         token = str(answer["choice"])

@@ -27,6 +27,7 @@ def main():
         raise ValueError("bounded smoke only: 1..16 pairs, 2..10 repeats")
     recorder = RunRecorder(args.output, {**vars(args), "source_sha256": file_hash(args.pairs_jsonl),
                                         "oracle": True, "purpose": "diagnostic_state_gap_not_policy_evaluation",
+                                        "presentation_version": "compact-v0.1", "numeric_precision": "6 significant digits; raw values retained",
                                         "seed_scope": "once before model load, not before each inference"},
                            {"run_id": Path(args.output).name, "code": code_identity(), "versions": versions()})
     try:

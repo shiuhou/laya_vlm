@@ -113,13 +113,14 @@ def replay_pair(pair, provider, recorder, *, repeats=3):
         branches = (0, 1) if repeat % 2 == 0 else (1, 0)
         for index in branches:
             name, inp = ("oracle", "perceptual")[index], inputs[index]
-            payload = {"state": inp.provider_input(), "question": inp.questions()}
+            payload = {"state": inp.provider_input(), "question": inp.model_questions()}
             started = time.perf_counter()
             decision = provider.decide(deepcopy(inp))
             if decision.input_snapshot_id != inp.snapshot_id():
                 raise ValueError("provider input identity mismatch")
             recorder.record("equivalence_decision", {"pair_id": pair["pair_id"], "branch": name,
                             "repeat": repeat, "provider": type(provider).__name__, "decision": asdict(decision),
+                            "presentation_version": "compact-v0.1", "input_encoding": getattr(provider, "last_input_audit", None),
                             "model_input_id": _sha256_json(payload), "latency_ms": (time.perf_counter() - started) * 1000,
                             "choice_allowed": decision.token in inp.allowed()})
             decisions[name].append(decision)

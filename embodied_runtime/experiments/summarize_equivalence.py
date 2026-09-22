@@ -25,9 +25,34 @@ CSV_FIELDS = [
     "natural_oracle_candidate_count", "natural_oracle_feasible_count", "natural_candidate_set_agreement",
     "perceptual_geometry_age_s", "oracle_geometry_age_s", "position_comparison_status", "position_error_m",
     "oracle_choice", "perceptual_choice", "oracle_choice_allowed", "perceptual_choice_allowed",
+    "oracle_presentation_version", "perceptual_presentation_version",
+    "oracle_input_truncation_status", "perceptual_input_truncation_status",
+    "oracle_effective_input_id", "perceptual_effective_input_id", "effective_input_agreement",
     "oracle_latency_ms", "perceptual_latency_ms", "top1_agreement", "top2_set_agreement",
     "top2_boundary_tie", "js_divergence_nats", "oracle_margin",
 ]
+
+
+def _truncation_status(data):
+    audit = data.get("input_encoding")
+    if not audit or not audit.get("available") or type(audit.get("truncated")) is not bool:
+        return "unknown"
+    return "truncated" if audit["truncated"] else "not_truncated"
+
+
+def _effective_input_id(data):
+    """Content ID over question-name/token-hash pairs; None means unobserved."""
+    audit = data.get("input_encoding")
+    if not audit or not audit.get("available") or not audit.get("questions"):
+        return None
+    hashes = {}
+    for name, question in audit["questions"].items():
+        if "effective_input_id" not in question:
+            return None
+        hashes[name] = question["effective_input_id"]
+        if "effective_input_ids" in question and hashes[name] != _sha256_json(question["effective_input_ids"]):
+            raise ValueError("effective token identity mismatch")
+    return _sha256_json(hashes)
 
 
 def _pair_evidence(pair, inputs):
@@ -74,13 +99,16 @@ def _validate_decision(data, inputs):
               decision.input_revision, decision.input_sim_time)
     if actual != expected:
         raise ValueError("decision input identity mismatch")
-    payload = {"state": inp.provider_input(), "question": inp.questions()}
+    presentation = data.get("presentation_version", "audit-json-v0")
+    payload = {"state": inp.provider_input(presentation_version=presentation),
+               "question": inp.model_questions(presentation_version=presentation)}
     if data["model_input_id"] != _sha256_json(payload):
         raise ValueError("model input identity mismatch")
     if type(data["choice_allowed"]) is not bool or data["choice_allowed"] != (decision.token in inp.allowed()):
         raise ValueError("choice allowance mismatch")
     if not np.isfinite(data["latency_ms"]) or data["latency_ms"] < 0:
         raise ValueError("invalid decision latency")
+    _effective_input_id(data)
     return decision
 
 
@@ -141,15 +169,21 @@ def summarize_equivalence(output):
                     if item is not None:
                         data, decision = item
                         row.update({f"{branch}_choice": decision.token, f"{branch}_choice_allowed": data["choice_allowed"],
+                                    f"{branch}_presentation_version": data.get("presentation_version", "audit-json-v0"),
+                                    f"{branch}_input_truncation_status": _truncation_status(data),
+                                    f"{branch}_effective_input_id": _effective_input_id(data),
                                     f"{branch}_latency_ms": data["latency_ms"]})
                 if not missing:
                     row.update(compare_decisions(selected["oracle"][1], selected["perceptual"][1], tokens))
+                    if all(row[f"{branch}_effective_input_id"] is not None for branch in BRANCHES):
+                        row["effective_input_agreement"] = row["oracle_effective_input_id"] == row["perceptual_effective_input_id"]
                 comparisons.append(row)
             for branch in BRANCHES:
                 samples = [decisions[(pair_id, provider, branch, i)] for i in range(repeats)
                            if (pair_id, provider, branch, i) in decisions]
                 probs = [distribution(d, tokens) for _, d in samples]
                 input_ids = {d["model_input_id"] for d, _ in samples}
+                effective_ids = [_effective_input_id(d) for d, _ in samples]
                 if len(input_ids) > 1:
                     raise ValueError("same-branch repeated model input changed")
                 stability.append({"pair_id": pair_id, "provider": provider, "branch": branch,
@@ -157,6 +191,10 @@ def summarize_equivalence(output):
                                   "complete": None if expected_repeats is None else len(samples) == expected_repeats,
                                   "repeatability_measured": len(samples) >= 2,
                                   "model_input_id": next(iter(input_ids), None),
+                                  "input_truncation_statuses": sorted({_truncation_status(d) for d, _ in samples}),
+                                  "effective_input_ids": sorted({i for i in effective_ids if i is not None}),
+                                  "effective_input_stable": None if len(samples) < 2 or None in effective_ids
+                                  else len(set(effective_ids)) == 1,
                                   "unique_choices": sorted({d.token for _, d in samples}),
                                   "all_choices_allowed": all(d["choice_allowed"] for d, _ in samples) if samples else None,
                                   "max_probability_difference": None if len(samples) < 2 or any(p is None for p in probs)
@@ -164,6 +202,8 @@ def summarize_equivalence(output):
     summary = {"version": "equivalence-summary-v0.1", "purpose": "descriptive_smoke_diagnostics_not_statistical_evidence",
                "terminated": bool(terminations), "terminations": terminations,
                "expected_repeats": expected_repeats, "pair_count": len(pairs), "decision_count": len(decisions),
+               "input_encoding_decision_counts": {status: sum(_truncation_status(d) == status for d, _ in decisions.values())
+                                                  for status in ("unknown", "truncated", "not_truncated")},
                "complete_comparisons": sum(r["status"] == "complete" for r in comparisons),
                "incomplete_comparisons": sum(r["status"] == "incomplete" for r in comparisons),
                "diagnostics": diagnostics, "pairs": pair_summaries, "comparisons": comparisons, "stability": stability}

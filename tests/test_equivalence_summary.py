@@ -29,7 +29,8 @@ def decision_record(pair, branch, repeat):
     inp = paired_inputs(pair)[0 if branch == "oracle" else 1]
     return {"pair_id": pair["pair_id"], "branch": branch, "repeat": repeat, "provider": "RuleProvider",
             "decision": asdict(RuleProvider().decide(inp)),
-            "model_input_id": _sha256_json({"state": inp.provider_input(), "question": inp.questions()}),
+            "presentation_version": "compact-v0.1",
+            "model_input_id": _sha256_json({"state": inp.provider_input(), "question": inp.model_questions()}),
             "latency_ms": 1.5, "choice_allowed": True}
 
 
@@ -146,6 +147,61 @@ def test_same_input_probability_variability_is_exposed(tmp_path):
     assert summary["stability"][0]["unique_choices"] == ["MV_BACK"]
     assert summary["stability"][0]["max_probability_difference"] == .25
     assert summary["stability"][1]["max_probability_difference"] == 0
+
+
+def test_legacy_audit_json_model_input_hashes_still_regenerate(tmp_path):
+    pair = paired_state()
+    records = [decision_record(pair, branch, repeat) for repeat in range(2) for branch in ("oracle", "perceptual")]
+    for record in records:
+        inp = paired_inputs(pair)[0 if record["branch"] == "oracle" else 1]
+        record.pop("presentation_version")
+        record["model_input_id"] = _sha256_json({
+            "state": inp.provider_input(presentation_version="audit-json-v0"),
+            "question": inp.model_questions(presentation_version="audit-json-v0")})
+    path = tmp_path / "legacy"
+    write_run(path, pair, records)
+    summary = summarize_equivalence(path)
+    assert summary["complete_comparisons"] == 2
+    assert summary["comparisons"][0]["js_divergence_nats"] == pytest.approx(np.log(2))
+    assert summary["comparisons"][0]["oracle_presentation_version"] == "audit-json-v0"
+    assert summary["comparisons"][0]["oracle_input_truncation_status"] == "unknown"
+    assert summary["input_encoding_decision_counts"] == {"unknown": 4, "truncated": 0, "not_truncated": 0}
+
+
+def test_encoding_audit_exposes_truncation_without_inventing_old_audit(tmp_path):
+    pair = paired_state()
+    records = [decision_record(pair, branch, repeat) for repeat in range(2) for branch in ("oracle", "perceptual")]
+    records[0]["input_encoding"] = {"available": True, "truncated": False}
+    records[1]["input_encoding"] = {"available": True, "truncated": True}
+    records[2]["input_encoding"] = {"available": False, "reason": "agent_has_no_tokenizer_config"}
+    path = tmp_path / "run"
+    write_run(path, pair, records)
+    summary = summarize_equivalence(path)
+    assert summary["comparisons"][0]["oracle_presentation_version"] == "compact-v0.1"
+    assert summary["comparisons"][0]["oracle_input_truncation_status"] == "not_truncated"
+    assert summary["comparisons"][0]["perceptual_input_truncation_status"] == "truncated"
+    assert summary["comparisons"][1]["oracle_input_truncation_status"] == "unknown"
+    assert summary["comparisons"][1]["perceptual_input_truncation_status"] == "unknown"
+    assert summary["input_encoding_decision_counts"] == {"unknown": 2, "truncated": 1, "not_truncated": 1}
+
+
+def test_consumed_token_stability_is_separate_from_model_payload_stability(tmp_path):
+    pair = paired_state()
+    records = [decision_record(pair, branch, repeat) for repeat in range(2) for branch in ("oracle", "perceptual")]
+    for record, tokens in zip(records, ([1, 2], [3, 4], [1, 2], [3, 5])):
+        record["input_encoding"] = {"available": True, "truncated": False, "questions": {
+            "action": {"effective_input_id": _sha256_json(tokens), "effective_input_ids": tokens}}}
+    path = tmp_path / "run"
+    write_run(path, pair, records)
+    summary = summarize_equivalence(path)
+    assert summary["stability"][0]["effective_input_stable"] is True
+    assert summary["stability"][1]["effective_input_stable"] is False
+    assert all(row["effective_input_agreement"] is False for row in summary["comparisons"])
+    records[0]["input_encoding"]["questions"]["action"]["effective_input_id"] = "corrupt"
+    corrupt = tmp_path / "corrupt"
+    write_run(corrupt, pair, records)
+    with pytest.raises(ValueError, match="effective token identity mismatch"):
+        summarize_equivalence(corrupt)
 
 
 @pytest.mark.parametrize("corruption, message", [("hash", "pair content identity"), ("question", "question mismatch")])
