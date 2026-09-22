@@ -144,7 +144,7 @@ class ConstantVelocityFusion3D:
                 continue
             x, p = self._predict(x, p, m.capture_time - t)
             z = np.asarray(m.position_m, dtype=float)
-            h = np.zeros((3, 6)); h[:, :3] = np.eye(3)
+            h = np.zeros((3, 6))`r`n            h[:, :3] = np.eye(3)
             r = np.asarray(m.covariance_m2, dtype=float) / max(m.quality, 0.05)
             innovation = z - h @ x
             s = h @ p @ h.T + r
@@ -167,7 +167,7 @@ class ConstantVelocityFusion3D:
     def _predict(self, x: np.ndarray, p: np.ndarray, dt: float) -> tuple[np.ndarray, np.ndarray]:
         if dt <= 0:
             return x, p
-        f = np.eye(6); f[:3, 3:] = np.eye(3) * dt
+        f = np.eye(6)`r`n        f[:3, 3:] = np.eye(3) * dt
         q = self.process_noise_mps2 ** 2
         qmat = np.zeros((6, 6))
         qmat[:3, :3] = np.eye(3) * dt ** 3 / 3.0 * q
@@ -251,4 +251,5 @@ class MultiRateFusion:
                 geometry[track] = state
         semantic = {track: self.semantic.distribution(track, reference_time=reference_time) for track in self.semantic.tracks}
         return {"geometry": geometry, "semantic": semantic}
+
 
