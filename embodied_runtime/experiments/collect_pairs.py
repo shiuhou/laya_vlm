@@ -6,7 +6,7 @@ Collection pauses simulation for RGB-D inference, keeping state alignment exact.
 from __future__ import annotations
 
 import argparse
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 import time
@@ -17,7 +17,7 @@ from ..adapters.libero import LiberoWorldBackend
 from ..adapters.libero_rgbd import LiberoRgbdSource
 from ..adapters.locateanything import LocateAnythingWorker
 from ..adapters.physics_preview import VisionCandidateBuilder
-from ..decision_interface import geometric_effects, project_belief, project_oracle, shared_atomic_candidates
+from ..decision_interface import evidence, geometric_effects, project_belief, project_oracle, shared_atomic_candidates
 from ..fusion import MultiRateFusion
 from ..runtime import Runtime
 from ..runtime_core import RuleProvider, _sha256_json
@@ -75,10 +75,18 @@ def collect(args):
         resolved_recorded["measurements"] = {"joint_position": {"kind": "joint_position"}}
     if resolved_recorded != installed:
         raise ValueError("recorded trajectory does not match requested task configuration")
+    reference_pilot = getattr(args, "reference_pilot", False)
+    if reference_pilot and (args.task != "top_drawer" or args.audit_only):
+        raise ValueError("reference pilot requires rendered top_drawer")
+    if reference_pilot and args.query != "the metal handle on the top drawer of the small freestanding wooden cabinet in the foreground":
+        raise ValueError("reference pilot requires the exact predeclared foreground handle query")
     samples = sorted(set(args.sample_steps))
-    if not samples or len(samples) > 8 or min(samples) < 0 or max(samples) > len(trajectory["actions"]):
-        raise ValueError("smoke requires 1..8 valid sample steps, not a formal grid")
-    unit = {"task": args.task, "init_state_id": config["initial_state"], "seed": config["seed"]}
+    limit = 12 if reference_pilot else 8
+    if not samples or len(samples) > limit or min(samples) < 0 or max(samples) > len(trajectory["actions"]):
+        raise ValueError(f"smoke requires 1..{limit} valid sample steps, not a formal grid")
+    init = getattr(args, "init_state_id", None)
+    unit = {"task": args.task, "init_state_id": config["initial_state"] if init is None else init, "seed": config["seed"]}
+    check_archive = unit["init_state_id"] == config["initial_state"]
     resolved = {**vars(args), **unit, "experiment_version": "decision-interface-smoke-v0.1",
                 "oracle": True, "purpose": "paired_diagnostic_not_deployable_policy",
                 "candidate_mode": "shared_atomic_offline_probes", "effect_mode": "none",
@@ -89,12 +97,22 @@ def collect(args):
                 "resolved_task_config": installed,
                 "legacy_measurement_migration": task_config != resolved_recorded,
                 "tracking_active": False, "covariance_calibrated": False}
+    if reference_pilot:
+        from .reference_quality import RUBRIC
+        from .target_referent import REFERENT_VERSION
+        resolved.update(experiment_version="reference-quality-pilot-v0.1", target_referent=REFERENT_VERSION,
+                        reference_rubric=RUBRIC,
+                        membership_estimator="query_bbox_all_valid_pixels_no_oracle_correction",
+                        covariance_note="legacy box-projection heuristic reused for centroid; uncalibrated, not coverage",
+                        archive_comparison_applicable=check_archive)
     recorder = RunRecorder(args.output, resolved, {"run_id": Path(args.output).name, "code": code_identity(),
                                                   "versions": versions(), "oracle": True})
     backend = None
     try:
         inventory = initial_state_inventory(args.task, args.libero_root, args.config_dir)
         recorder.record("initial_state_inventory", inventory)
+        if not 0 <= unit["init_state_id"] < inventory["count"]:
+            raise ValueError("benchmark initial-state ID out of range")
         unit["benchmark_state_id"] = inventory["state_ids"][unit["init_state_id"]]
         backend = LiberoWorldBackend.from_task(args.task, seed=unit["seed"], init_state_id=unit["init_state_id"],
                                                render=not args.audit_only, libero_root=args.libero_root, config_dir=args.config_dir)
@@ -115,8 +133,8 @@ def collect(args):
                                              "target_query": args.query})
         candidates = shared_atomic_candidates()
         history = ()
-        max_error, pairs = 0., 0
-        def export(physical, variant):
+        max_error, pairs = 0. if check_archive else None, 0
+        def export(physical, variant, oracle_readout=None):
             nonlocal pairs
             now = float(world.data.time)
             runtime.observe("proprio", now, backend.proprioception())
@@ -124,7 +142,13 @@ def collect(args):
             # observe() republishes the current-time fusion including age/covariance.
             natural = builder.build(snap)
             perceptual = project_belief(snap, args.query)
-            oracle = project_oracle(perceptual, oracle_target(backend, physical))
+            if reference_pilot and perceptual.fields["target.position_m"].value is not None:
+                # Geometry entering fusion was changed by the sensor-only
+                # estimator below; this is NOT renaming the old box proxy.
+                perceptual = perceptual.intervene({"target.position_definition": evidence(
+                    REFERENT_VERSION, "sensor", "query bbox membership + all valid pixel surface centroid")},
+                    label="explicit_collector_sensor_estimand")
+            oracle = project_oracle(perceptual, oracle_readout or oracle_target(backend, physical))
             pair = make_pair(oracle, perceptual, candidates, physical={**physical, "variant": variant},
                              history=history, natural_perceptual=natural)
             recorder.record("belief_fixture", {"belief_id": snap.belief_id(), "snapshot": json.loads(snap.canonical_json())})
@@ -134,15 +158,17 @@ def collect(args):
             pairs += 1
 
         for step in range(len(trajectory["actions"]) + 1):
-            expected = trajectory["states_before"][step] if step < len(trajectory["actions"]) else trajectory["final_state"]
-            error = float(np.max(np.abs(world.env.sim.get_state().flatten() - expected)))
-            max_error = max(error, max_error)
-            if error > 1e-8:
-                raise RuntimeError(f"trajectory state mismatch at {step}: {error}")
+            error = None
+            if check_archive:
+                expected = trajectory["states_before"][step] if step < len(trajectory["actions"]) else trajectory["final_state"]
+                error = float(np.max(np.abs(world.env.sim.get_state().flatten() - expected)))
+                max_error = max(error, max_error)
+                if error > 1e-8:
+                    raise RuntimeError(f"trajectory state mismatch at {step}: {error}")
             physical = physical_evidence(backend, unit, step)
             recorder.record("collection_state", {**physical, "replay_state_max_error": error})
             if step in samples and not args.audit_only:
-                if step == args.stale_step and runtime.fusion.geometry:
+                if step == args.stale_step and runtime.fusion.geometry and not reference_pilot:
                     export(physical, "previous_observation_only")
                 frame = source.capture()
                 recorder.capture(frame)
@@ -154,13 +180,54 @@ def collect(args):
                                        camera_to_world_matrix=frame["camera_to_world"], inference_result=result)
                 recorder.record("vision_completed", {"capture_seq": frame["capture_seq"], "result": result,
                                                      "event": event, "latency_ms": (time.perf_counter() - started) * 1000})
+                oracle_readout = None
+                if reference_pilot:
+                    from .reference_quality import preview_probes
+                    from .target_referent import evaluate_mask_overlap, oracle_visible_handle, sensor_bbox_reference
+                    # Sensor readout is computed before oracle access. Never
+                    # substitute ideal membership, even for a wrong instance.
+                    sensor = None
+                    if event is not None:
+                        sensor = sensor_bbox_reference(frame["depth_m"], event.value["box_xyxy"],
+                                  frame["intrinsics"], frame["camera_to_world"], query=args.query,
+                                  raw_position_world_m=event.value["position_world_m"])
+                        if sensor["position_world_m"] is None:
+                            event = None
+                        else:
+                            event = replace(event, value={**event.value,
+                                "position_world_m": sensor["position_world_m"],
+                                "position_camera_m": (np.linalg.inv(frame["camera_to_world"]) @
+                                                      np.r_[sensor["position_world_m"], 1.])[:3].tolist(),
+                                "position_definition": REFERENT_VERSION,
+                                "position_covariance_source": "heuristic_bbox_projection_reused_for_centroid_uncalibrated"})
+                    ideal = oracle_visible_handle(world, frame)
+                    overlap = None if sensor is None else evaluate_mask_overlap(sensor["mask"], ideal["mask"])
+                    # Pixel supports are encoded as flat indices (384x384 mask
+                    # arrays would obscure the small diagnostic records).
+                    def support_record(item):
+                        if item is None:
+                            return None
+                        return {**{k: v for k, v in item.items() if k != "mask"},
+                                "mask_shape": list(item["mask"].shape),
+                                "mask_flat_indices": np.flatnonzero(item["mask"]).tolist()}
+                    recorder.record("target_referent", {"physical_state_id": physical["physical_state_id"],
+                                    "capture_seq": frame["capture_seq"], "environment_step": step,
+                                    "sensor": support_record(sensor), "oracle": support_record(ideal),
+                                    "membership_evaluation": overlap, "not_oracle_corrected": True})
+                    oracle_readout = {**oracle_target(backend, physical),
+                                      "target_position_m": ideal["position_world_m"],
+                                      "position_definition": REFERENT_VERSION}
                 if event is not None:
                     runtime.ingest(event, now_sim=float(world.data.time))
                 else:
                     recorder.record("failure", {"category": "vision_missing", "environment_step": step})
                 if physical_evidence(backend, unit, step)["physical_state_id"] != physical["physical_state_id"]:
                     raise RuntimeError("simulator changed while producing paired perception")
-                export(physical, "fresh_capture")
+                export(physical, "fresh_capture", oracle_readout)
+                if reference_pilot:
+                    preview_probes(backend, candidates, recorder, physical["physical_state_id"])
+                    if physical_evidence(backend, unit, step)["physical_state_id"] != physical["physical_state_id"]:
+                        raise RuntimeError("evaluator changed paired physical boundary")
             if step == len(trajectory["actions"]):
                 break
             before_tcp = backend.tcp_pos()
@@ -196,6 +263,8 @@ def main():
     ap.add_argument("--task", default="top_drawer")
     ap.add_argument("--sample-steps", type=int, nargs="+", default=[0, 80, 144, 152])
     ap.add_argument("--stale-step", type=int, default=152)
+    ap.add_argument("--init-state-id", type=int, default=None, help="benchmark reset ID; source archive checked only on its own init")
+    ap.add_argument("--reference-pilot", action="store_true", help="bounded common-referent collection plus independent atomic evaluator")
     ap.add_argument("--audit-only", action="store_true")
     ap.add_argument("--query", default="the top drawer of the cabinet")
     ap.add_argument("--locateanything-path", default="/home/junhongli/models/huggingface/LocateAnything-3B")
