@@ -65,7 +65,8 @@ def run_episode(args):
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
     fields = ["task", "seed", "step", "method", "decision", "success", "decision_latency_ms"]
     with (out / "summary.csv").open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fields); writer.writeheader()
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
         for row in rows:
             writer.writerow({k: row[k] if k != "decision" else row[k]["token"] for k in fields})
     successes = sum(bool(r["success"]) for r in rows)

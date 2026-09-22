@@ -34,10 +34,14 @@ class CallbackBackend(AtomicBackend):
     def success(self) -> bool:
         return bool(self._success())
     def close_gripper(self) -> None:
-        if self._close: self._close()
+        if self._close:
+            self._close()
     def open_gripper(self) -> None:
-        if self._open: self._open()
+        if self._open:
+            self._open()
     def rotate(self, token: str) -> None:
-        if self._rotate: self._rotate(token)
+        if self._rotate:
+            self._rotate(token)
     def hold(self) -> None:
-        if self._hold: self._hold()
+        if self._hold:
+            self._hold()

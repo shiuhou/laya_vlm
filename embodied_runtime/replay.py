@@ -7,7 +7,8 @@ from pathlib import Path
 
 
 def write_events(path: str | Path, events: Iterable[dict]) -> None:
-    p = Path(path); p.parent.mkdir(parents=True, exist_ok=True)
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
     with p.open("w", encoding="utf-8") as f:
         for event in events:
             f.write(json.dumps(event, ensure_ascii=False, sort_keys=True) + "\n")

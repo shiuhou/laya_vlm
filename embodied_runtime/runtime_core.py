@@ -304,9 +304,11 @@ class AtomicExecutor:
         elif token in ("ROTATE_CW", "ROTATE_CCW"):
             self.backend.rotate(token)
         elif token == "GRASP":
-            self.grip_cmd = -1.0; self.backend.close_gripper()
+            self.grip_cmd = -1.0
+            self.backend.close_gripper()
         elif token == "RELEASE":
-            self.grip_cmd = 1.0; self.backend.open_gripper()
+            self.grip_cmd = 1.0
+            self.backend.open_gripper()
         elif token == "STOP":
             self.backend.hold()
         elif token == "DONE":
