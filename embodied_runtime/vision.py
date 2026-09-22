@@ -57,7 +57,7 @@ class LocateAnythingProvider:
     def __init__(self, infer: Callable[[np.ndarray, str], Mapping[str, Any]],
                  intrinsics: Mapping[str, float], *, source: str = "locateanything+depth"):
         self.infer = infer
-        self.intrinsics = dict(intrinsics)
+        self.intrinsics = intrinsics.copy() if hasattr(intrinsics, "copy") else dict(intrinsics)
         self.source = source
 
     def observe(self, rgb: np.ndarray, depth: np.ndarray, query: str, *,
