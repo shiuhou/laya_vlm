@@ -1,12 +1,12 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Implementation: `3984a07` (bounded reference pilot), `87f5163` (pixel-centered
-first-hit oracle geometry), plus the raw multi-init summary integrity repair in
-the handoff commit. Use `git rev-parse HEAD` for the exact final checkout revision.
+Latest stage: bounded reference-mechanism diagnostics after audit baseline
+`0da1596`. Use `git rev-parse HEAD` for the exact final checkout revision.
 Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
 
-Current report: [reference_pilot_handoff.md](reference_pilot_handoff.md).
+Current report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
+Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
 Predeclared pilot and correction: [reference_pilot_protocol.md](reference_pilot_protocol.md).
 Conditional next experiment: [research.md](research.md).
 
@@ -30,10 +30,25 @@ Conditional next experiment: [research.md](research.md).
 - Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
   contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 152 tests, ruff and compileall pass. Dependencies, upstream repositories and
+- 211 tests, ruff and compileall pass. Dependencies, upstream repositories and
   model weights were not changed or downloaded.
 
 ## Scientific result and limitations
+
+Latest bounded mechanism evidence: 29 boundaries across init IDs 0/1/2,
+435 physical probes, exact restoration throughout. Native primary probes trigger
+182/319 reset-envelope flags. Inherited orientation goals causally contribute to
+STOP drift (step 144: 56–64 mm becomes 32–35 mm when reanchored), but do not explain
+all of it. All 29 native STOP/RELEASE pairs are exact command/endpoint aliases.
+No native semantics or uncertainty thresholds were changed.
+
+Separately, 52 no-effect model calls show stable but inadequate instruction
+following: both explicit token-selection sentinels fail, all eight nominal
+approach fixtures fail, and order/alias changes alter choices. The checkpoint's
+11-option temperature (~0.1006) greatly sharpens returned probabilities without
+changing argmax. This is evidence of a model/interface competence mismatch as
+well as incomplete physical semantics, not merely missing perceptual fields.
+Privileged physical diagnostic evidence never enters these model controls.
 
 **The current no-effect oracle-conditioned Laya is not validated as a useful task
 reference.** All twelve choices are GRASP/RELEASE; most RELEASE probes equal STOP
@@ -72,7 +87,9 @@ Reference state usable as a **validated useful-decision reference: NO**.
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Smallest next decision: approve a narrower descriptive fidelity claim, or separately
-validate a task-relative/dynamic oracle interface and its action operating regime.
+Smallest next test: a tiny, predeclared model/interface capability ladder
+(explicit selection → signed relations → nominal geometric choice), alongside
+validation of controller-conditioned intervention semantics. Descriptive fidelity
+remains possible but is not a validated useful-reference experiment.
 Do not silently settle loaded states or waive reset-envelope violations. Do not insert effects
 into the no-effect comparison, tune gates, or expand the benchmark without review.
