@@ -3,7 +3,10 @@ from .adapters.locateanything import (
     LocateAnythingWorker,
     parse_locateanything,
 )
-from .adapters.physics_preview import PhysicsPreviewCandidateBuilder
+from .adapters.physics_preview import (
+    PhysicsPreviewCandidateBuilder,
+    VisionCandidateBuilder,
+)
 from .runtime import Runtime
 from .runtime_core import (
     ATOMIC_ACTIONS,
@@ -47,6 +50,7 @@ __all__ = [
     "ReplayProvider",
     "RuleProvider",
     "Runtime",
+    "VisionCandidateBuilder",
     "camera_to_world",
     "load_laya_provider",
     "parse_locateanything",

@@ -55,3 +55,30 @@ class PhysicsPreviewCandidateBuilder:
             candidates.append(Candidate("STOP", "hold because no physics-preview candidate satisfies the task contract", True, ("no_feasible_candidate",), 0.0))
         self.last_preview = {"before": before, "predictions": predictions, "pools": pools, "rejected": rejected}
         return tuple(candidates)
+
+
+class VisionCandidateBuilder:
+    """Fixed Show-Harness atomic vocabulary for non-oracle visual experiments.
+
+    No simulator features, predictions, contacts, or success state enter the
+    decision snapshot. Execution still enforces the backend's DONE gate.
+    """
+
+    def __init__(self, *, include_gripper: bool = True):
+        self.include_gripper = include_gripper
+        self.last_preview = None
+
+    def build(self, belief):
+        tokens = (
+            "MV_FWD", "MV_BACK", "MV_LEFT", "MV_RIGHT", "MV_UP", "MV_DOWN",
+            "ROTATE_CW", "ROTATE_CCW", "STOP",
+        )
+        candidates = [Candidate(token, DESCRIPTIONS[token], True) for token in tokens]
+        if self.include_gripper:
+            candidates.extend((
+                Candidate("GRASP", DESCRIPTIONS["GRASP"], True),
+                Candidate("RELEASE", DESCRIPTIONS["RELEASE"], True),
+            ))
+        if belief.goal.get("satisfied"):
+            candidates.append(Candidate("DONE", "finish only after the real success predicate is true", True))
+        return tuple(candidates)
