@@ -13,6 +13,7 @@ from .fusion import (
     MultiRateFusion,
     PositionMeasurement,
     SemanticEvidenceFusion,
+    TemporalConfig,
 )
 from .runtime import Runtime
 from .runtime_core import (
@@ -63,6 +64,7 @@ __all__ = [
     "RuleProvider",
     "Runtime",
     "SemanticEvidenceFusion",
+    "TemporalConfig",
     "Track",
     "VisionCandidateBuilder",
     "box_iou",
@@ -73,4 +75,3 @@ __all__ = [
     "pixel_to_camera",
     "robust_depth",
 ]
-

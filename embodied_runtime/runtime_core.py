@@ -16,6 +16,8 @@ from typing import Any
 
 import numpy as np
 
+from .fusion import EventAdmission
+
 MOVE = {
     "MV_FWD": (1.0, 0.0, 0.0), "MV_BACK": (-1.0, 0.0, 0.0),
     "MV_LEFT": (0.0, 1.0, 0.0), "MV_RIGHT": (0.0, -1.0, 0.0),
@@ -34,6 +36,8 @@ def _finite(value: Any) -> bool:
         return all(_finite(k) and _finite(v) for k, v in value.items())
     if isinstance(value, (list, tuple)):
         return all(_finite(v) for v in value)
+    if isinstance(value, np.ndarray):
+        return bool(np.isfinite(value).all())
     return True
 
 
@@ -51,13 +55,13 @@ class ObservationEvent:
     valid_until_sim: float | None = None
 
     def validate(self) -> None:
-        if not self.source or not self.episode_id or self.source_seq < 0:
+        if not self.source or not self.episode_id or not isinstance(self.source_seq, int) or self.source_seq < 0:
             raise ValueError("invalid observation identity")
-        if not isfinite(self.capture_sim_time) or not isfinite(self.received_wall_time):
+        if not isfinite(self.capture_sim_time) or self.capture_sim_time < 0 or not isfinite(self.received_wall_time):
             raise ValueError("timestamps must be finite")
         if not 0.0 <= self.quality <= 1.0 or not _finite(self.value):
             raise ValueError("invalid observation quality or value")
-        if self.valid_until_sim is not None and self.valid_until_sim < self.capture_sim_time:
+        if self.valid_until_sim is not None and (not isfinite(self.valid_until_sim) or self.valid_until_sim < self.capture_sim_time):
             raise ValueError("validity interval is invalid")
 
 
@@ -96,6 +100,8 @@ class BeliefSnapshot:
     candidates: tuple[Candidate, ...] = ()
     ages: Mapping[str, float] = field(default_factory=dict)
     flags: Mapping[str, bool] = field(default_factory=dict)
+    validity: Mapping[str, Any] = field(default_factory=dict)
+    temporal_config: Mapping[str, Any] = field(default_factory=dict)
 
     def canonical_json(self) -> str:
         return json.dumps({
@@ -104,6 +110,7 @@ class BeliefSnapshot:
             "semantic": self.semantic, "goal": self.goal,
             "candidates": [c.__dict__ for c in self.candidates],
             "ages": self.ages, "flags": self.flags,
+            "validity": self.validity, "temporal_config": self.temporal_config,
         }, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
     def allowed(self) -> set[str]:
@@ -113,7 +120,7 @@ class BeliefSnapshot:
 class BeliefStore:
     """Late-fusion store for asynchronous geometry and semantic events."""
 
-    def __init__(self, episode_id: str, history_s: float = 1.0):
+    def __init__(self, episode_id: str, history_s: float = 1.0, *, allow_delayed: bool = False):
         self.episode_id = episode_id
         self.history_s = float(history_s)
         self.revision = 0
@@ -126,26 +133,50 @@ class BeliefStore:
         self._fused_meta: dict[str, tuple[float, float]] = {}
         self.dropped_late = 0
         self.dropped_out_of_order = 0
+        self.dropped_duplicate = 0
+        self.last_ingest_reason = "empty"
+        self.allow_delayed = allow_delayed
+        self.admission = EventAdmission(history_s)
+        self._validity = {}
+        self._temporal_config = {}
+        self.reference_time = 0.0
 
     def ingest(self, event: ObservationEvent, now_sim: float | None = None) -> bool:
         event.validate()
         now = event.capture_sim_time if now_sim is None else float(now_sim)
-        if event.capture_sim_time < now - self.history_s:
-            self.dropped_late += 1
+        if not isfinite(now) or now < self.reference_time:
+            raise ValueError("invalid or regressing belief reference time")
+        if event.quality == 0:
+            self.last_ingest_reason = "zero_quality"
+            return self.admission.reject("zero_quality")
+        if event.episode_id != self.episode_id:
+            self.last_ingest_reason = "episode_mismatch"
             return False
         key = (event.source, event.track_id)
         old = self._latest.get(key)
-        if old and event.source_seq <= old.source_seq:
-            self.dropped_out_of_order += 1
+        if not self.allow_delayed and old and event.source_seq < old.source_seq:
+            self.last_ingest_reason = "sequence_regression"
+            self.admission.reject("sequence_regression")
+            self.dropped_out_of_order = self.admission.stats.dropped_out_of_order
             return False
-        self._latest[key] = event
+        if not self.admission.admit(repr(key), event.source_seq, event.capture_sim_time, now):
+            self.last_ingest_reason = self.admission.last_reason
+            self.dropped_late = self.admission.stats.dropped_too_late
+            self.dropped_duplicate = self.admission.stats.dropped_duplicate
+            self.dropped_out_of_order = self.admission.stats.dropped_out_of_order
+            return False
+        self.last_ingest_reason = self.admission.last_reason
+        self.reference_time = now
+        latest = old is None or event.capture_sim_time >= old.capture_sim_time
+        if latest:
+            self._latest[key] = event
         self._events.append(event)
         value = dict(event.value)
-        if event.source in {"oracle", "geometry", "proprio"}:
+        if latest and event.source in {"oracle", "geometry", "proprio"}:
             self._continuous.update(value)
             if isinstance(value.get("goal"), Mapping):
                 self._goal.update(value["goal"])
-        if event.source in {"semantic", "vision_semantic"}:
+        if not self.allow_delayed and event.source in {"semantic", "vision_semantic"}:
             track = event.track_id or str(value.get("track_id") or "scene")
             probs = dict(value.get("probabilities") or value.get("hypotheses") or {})
             if not probs and value.get("label"):
@@ -153,8 +184,7 @@ class BeliefStore:
             self._update_semantic(track, probs, event, now)
         self.revision += 1
         cutoff = now - self.history_s
-        while self._events and self._events[0].capture_sim_time < cutoff:
-            self._events.popleft()
+        self._events = deque(e for e in self._events if e.capture_sim_time >= cutoff)
         return True
 
     def _update_semantic(self, track: str, probs: Mapping[str, float], event: ObservationEvent, now: float) -> None:
@@ -173,7 +203,7 @@ class BeliefStore:
         }
         normalizer = sum(fused.values())
         self._semantic[track] = {k: v / normalizer for k, v in fused.items()}
-        self._semantic_meta[track] = (event.valid_until_sim or now + 0.75, event.capture_sim_time)
+        self._semantic_meta[track] = (event.valid_until_sim if event.valid_until_sim is not None else event.capture_sim_time + 0.75, event.capture_sim_time)
 
     def apply_fused_snapshot(self, fused: Mapping[str, Any], now_sim: float) -> None:
         """Publish timestamp-aware fusion output into the model-facing belief."""
@@ -186,12 +216,39 @@ class BeliefStore:
             self._fused_meta[prefix] = (float(state.reference_time), float(state.age_s))
         for track, probabilities in fused.get("semantic", {}).items():
             self._semantic[track] = {str(k): float(v) for k, v in probabilities.items()}
-            self._semantic_meta[track] = (float(now_sim) + 0.75, float(now_sim))
+            metadata = fused["validity"][track]
+            if metadata["semantic_reference_time"] is not None:
+                self._semantic_meta[track] = (metadata["semantic_valid_until_sim"], metadata["semantic_reference_time"])
+        self._validity = json.loads(json.dumps(fused.get("validity", {})))
+        self._temporal_config = dict(fused.get("temporal_config", {}))
 
     def snapshot(self, now_sim: float, candidates: tuple[Candidate, ...] = (), goal: Mapping[str, Any] | None = None) -> BeliefSnapshot:
+        if not isfinite(now_sim) or now_sim < self.reference_time:
+            raise ValueError("invalid or regressing belief reference time")
+        self.reference_time = now_sim
         semantic = json.loads(json.dumps(self._semantic))
         ages: dict[str, float] = {}
         flags: dict[str, bool] = {}
+        validity = json.loads(json.dumps(self._validity))
+        for track, metadata in validity.items():
+            captured = metadata["geometry_capture_time"]
+            if captured is not None:
+                metadata["geometry_age_s"] = now_sim - captured
+                if now_sim - captured > self._temporal_config["geometry_max_age_s"]:
+                    metadata["geometry_valid"] = False
+                    if "geometry_too_old" not in metadata["geometry_invalid_reasons"]:
+                        metadata["geometry_invalid_reasons"].append("geometry_too_old")
+                ttl = metadata.get("geometry_valid_until_sim")
+                if ttl is not None and now_sim > ttl:
+                    metadata["geometry_valid"] = False
+                    if "geometry_ttl_expired" not in metadata["geometry_invalid_reasons"]:
+                        metadata["geometry_invalid_reasons"].append("geometry_ttl_expired")
+            if metadata["semantic_reference_time"] is not None:
+                metadata["semantic_age_s"] = now_sim - metadata["semantic_reference_time"]
+                metadata["semantic_valid"] = now_sim <= metadata["semantic_valid_until_sim"]
+                metadata["semantic_invalid_reasons"] = [] if metadata["semantic_valid"] else ["semantic_ttl_expired"]
+            flags[f"geometry_invalid:{track}"] = not metadata["geometry_valid"]
+            flags[f"temporal_inconsistency:{track}"] = not metadata["temporal_consistency_ok"]
         for key, (captured, age) in self._fused_meta.items():
             ages[f"{key}:age_s"] = max(0.0, float(age) + max(0.0, now_sim - captured))
         for track, (valid_until, captured) in self._semantic_meta.items():
@@ -199,12 +256,16 @@ class BeliefStore:
             ages[f"semantic:{track}"] = age
             if now_sim > valid_until:
                 flags[f"semantic_stale:{track}"] = True
-                semantic[track]["unknown"] = max(semantic[track].get("unknown", 0.0), 0.5)
+                unknown = max(semantic[track].get("unknown", 0.0), 0.5)
+                known_total = sum(v for k, v in semantic[track].items() if k != "unknown")
+                semantic[track] = {k: v * (1 - unknown) / known_total for k, v in semantic[track].items() if k != "unknown"} if known_total else {}
+                semantic[track]["unknown"] = unknown if known_total else 1.0
         merged_goal = dict(self._goal)
         if goal:
             merged_goal.update(goal)
         return BeliefSnapshot(self.episode_id, self.revision, float(now_sim),
-                              dict(self._continuous), semantic, merged_goal, candidates, ages, flags)
+                              json.loads(json.dumps(self._continuous)), semantic, merged_goal, candidates, ages, flags,
+                              validity, dict(self._temporal_config))
 
 
 class DecisionProvider(ABC):
@@ -252,6 +313,8 @@ class LayaProvider(DecisionProvider):
         state = {"episode_id": snapshot.episode_id, "belief_revision": snapshot.revision,
                  "asof_sim_time": snapshot.asof_sim_time, "continuous": snapshot.continuous,
                  "semantic": snapshot.semantic, "goal": snapshot.goal,
+                 "ages": snapshot.ages, "flags": snapshot.flags,
+                 "validity": snapshot.validity, "temporal_config": snapshot.temporal_config,
                  "candidate_tokens": list(criteria)}
         started = time.perf_counter()
         if hasattr(self.agent, "system_one"):
@@ -295,7 +358,9 @@ class AtomicBackend(ABC):
     @abstractmethod
     def tcp_pos(self): ...
     @abstractmethod
-    def apply_delta(self, delta, grip_cmd): ...
+    def apply_delta(self, delta, grip_cmd=None):
+        """Translate; None preserves the backend-owned gripper command."""
+        ...
     @abstractmethod
     def gripper_width(self): ...
     @abstractmethod
@@ -304,6 +369,10 @@ class AtomicBackend(ABC):
     def open_gripper(self): pass
     def close_gripper(self): pass
     def hold(self): pass
+    def execution_state(self): return None
+    def execution_evidence(self, token, before):
+        return {"execution_contract_violation": None,
+                "execution_contract_reason": ["backend_contract_not_instrumented"]}
 
 
 class AtomicExecutor:
@@ -311,21 +380,19 @@ class AtomicExecutor:
         backend_step = getattr(backend, "step_m", None)
         self.backend = backend
         self.step_m = float(backend_step if step_m is None and backend_step is not None else (.02 if step_m is None else step_m))
-        self.grip_cmd = 1.0
     def execute(self, token: str) -> dict[str, Any]:
         import numpy as np
         token = str(token).upper()
         move = {k: np.asarray(v) for k, v in MOVE.items()}
         before = np.asarray(self.backend.tcp_pos()).copy()
+        contract_before = self.backend.execution_state()
         if token in move:
-            self.backend.apply_delta(move[token] * self.step_m, self.grip_cmd)
+            self.backend.apply_delta(move[token] * self.step_m)
         elif token in ("ROTATE_CW", "ROTATE_CCW"):
             self.backend.rotate(token)
         elif token == "GRASP":
-            self.grip_cmd = -1.0
             self.backend.close_gripper()
         elif token == "RELEASE":
-            self.grip_cmd = 1.0
             self.backend.open_gripper()
         elif token == "STOP":
             self.backend.hold()
@@ -336,7 +403,8 @@ class AtomicExecutor:
             raise ValueError(f"unknown token {token}")
         after = np.asarray(self.backend.tcp_pos()).copy()
         return {"token": token, "before": before.tolist(), "after": after.tolist(),
-                "delta_m": (after - before).tolist(), "success": bool(self.backend.success())}
+                "delta_m": (after - before).tolist(), "success": bool(self.backend.success()),
+                **self.backend.execution_evidence(token, contract_before)}
 
 
 class FakeBackend(AtomicBackend):
@@ -344,7 +412,7 @@ class FakeBackend(AtomicBackend):
         import numpy as np
         self.pos, self.width, self.done = np.zeros(3), .08, False
     def tcp_pos(self): return self.pos.copy()
-    def apply_delta(self, delta, grip_cmd): self.pos += delta
+    def apply_delta(self, delta, grip_cmd=None): self.pos += delta
     def gripper_width(self): return float(self.width)
     def close_gripper(self): self.width = 0.0
     def open_gripper(self): self.width = .08

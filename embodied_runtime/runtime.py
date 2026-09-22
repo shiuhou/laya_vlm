@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import time
 from collections.abc import Mapping
+from dataclasses import asdict
 from typing import Any
 
 from .fusion import MultiRateFusion
@@ -20,7 +21,12 @@ class Runtime:
     def __init__(self, episode_id: str, provider: DecisionProvider, backend: Any,
                  candidate_builder: CandidateBuilder | None = None,
                  fusion: MultiRateFusion | None = None):
-        self.store = BeliefStore(episode_id)
+        if fusion is not None:
+            if fusion.episode_id not in (None, episode_id):
+                raise ValueError("fusion belongs to a different episode")
+            fusion.episode_id = episode_id
+        self.store = BeliefStore(episode_id, history_s=fusion.lag_s if fusion else 1.0,
+                                 allow_delayed=fusion is not None)
         self.provider = provider
         self.backend = backend
         self.candidate_builder = candidate_builder or CandidateBuilder()
@@ -29,8 +35,10 @@ class Runtime:
         self.source_seq = 0
 
     def ingest(self, event: ObservationEvent, now_sim: float | None = None) -> bool:
-        accepted = self.store.ingest(event, now_sim=now_sim)
         if self.fusion is not None:
+            self.fusion.validate_event(event, event.capture_sim_time if now_sim is None else now_sim)
+        accepted = self.store.ingest(event, now_sim=now_sim)
+        if self.fusion is not None and accepted:
             reference = event.capture_sim_time if now_sim is None else float(now_sim)
             self.fusion.ingest_event(event, reference_time=reference)
             self.store.apply_fused_snapshot(self.fusion.snapshot(reference_time=reference), reference)
@@ -48,6 +56,8 @@ class Runtime:
         ), now_sim=sim_time)
 
     def step(self, sim_time: float, goal: Mapping[str, Any] | None = None) -> dict[str, Any]:
+        if self.fusion is not None:
+            self.store.apply_fused_snapshot(self.fusion.snapshot(reference_time=sim_time), sim_time)
         # Snapshot twice so candidate generation sees the latest fused state.
         snapshot = self.store.snapshot(sim_time, goal=goal)
         candidates = self.candidate_builder.build(snapshot)
@@ -63,4 +73,9 @@ class Runtime:
                 valid_until_sim=sim_time + 0.1, status="invalid",
             )
         result = self.executor.execute(decision.token)
-        return {"snapshot": snapshot, "decision": decision, "result": result}
+        return {"snapshot": snapshot, "decision": decision, "result": result,
+                "temporal_diagnostics": {
+                    "store": asdict(self.store.admission.stats),
+                    "store_last_reason": self.store.last_ingest_reason,
+                    "fusion": self.fusion.diagnostics() if self.fusion else None,
+                }}

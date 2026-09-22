@@ -1,0 +1,15 @@
+{
+  "version": "temporal-stage1-v1",
+  "lag_s": 1.0,
+  "geometry_max_age_s": 0.75,
+  "geometry_max_position_trace_m2": 0.03,
+  "semantic_ttl_s": 0.75,
+  "semantic_half_life_s": 0.75,
+  "consistency_max_gap_s": 0.05,
+  "process_noise_mps2": 1.0,
+  "gate_sigma": 4.0,
+  "initial_position_var": 0.25,
+  "initial_velocity_var": 1.0,
+  "fallback_measurement_variance_m2": 0.01,
+  "max_events": 128
+}

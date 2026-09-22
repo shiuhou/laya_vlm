@@ -14,7 +14,7 @@ from ..adapters.physics_preview import (
     PhysicsPreviewCandidateBuilder,
     VisionCandidateBuilder,
 )
-from ..fusion import MultiRateFusion
+from ..fusion import MultiRateFusion, TemporalConfig
 from ..runtime import Runtime
 from ..runtime_core import RuleProvider, load_laya_provider
 from ..vision import LocateAnythingProvider
@@ -41,7 +41,8 @@ def run_episode(args):
     if args.provider == "laya":
         provider = load_laya_provider(args.laya_path, subfolder=None, device=args.device)
     candidate_builder = VisionCandidateBuilder() if visual else PhysicsPreviewCandidateBuilder(world)
-    runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, candidate_builder, fusion=MultiRateFusion(lag_s=1.0) if visual else None)
+    temporal_config = TemporalConfig(**json.loads(Path(args.temporal_config).read_text())) if args.temporal_config else TemporalConfig()
+    runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, candidate_builder, fusion=MultiRateFusion(config=temporal_config) if visual else None)
     rgbd = LocateAnythingWorker(args.locateanything_path, device=args.device or "cuda") if visual else None
     vision_source = LiberoRgbdSource(world) if visual else None
     vision_worker = None
@@ -93,6 +94,8 @@ def run_episode(args):
             rows.append({
                 "task": args.task, "seed": args.seed, "step": step, "method": f"{args.experiment}_{args.provider}",
                 "oracle": not visual, "belief_revision": snap.revision,
+                "belief_validity": snap.validity, "temporal_config": snap.temporal_config,
+                "temporal_diagnostics": result["temporal_diagnostics"],
                 "candidates": [_jsonable(c.__dict__) for c in snap.candidates],
                 "decision": _jsonable(decision.__dict__), "decision_latency_ms": elapsed_ms,
                 "before_features": _jsonable(before), "after_features": _jsonable(world.features()),
@@ -113,6 +116,8 @@ def run_episode(args):
                 },
                 "fusion_semantic": runtime.fusion.snapshot(reference_time=float(world.data.time))["semantic"] if runtime.fusion else {},
                 "execution": _jsonable(execution),
+                "execution_contract_violation": execution["execution_contract_violation"],
+                "execution_contract_reason": execution["execution_contract_reason"],
             })
             if backend.success():
                 break
@@ -136,7 +141,7 @@ def run_episode(args):
     (out / "summary.md").write_text(
         f"# LIBERO smoke run\n\n- task: `{args.task}`\n- seed: `{args.seed}`\n- method: `{args.provider}`\n- steps: `{len(rows)}`\n- success_at_step_end: `{successes > 0}`\n- oracle_state_used: `{not visual}` (only execution/success checks may read simulator state)\n- vision_semantic_used: `{visual}`\n\nEach action and preview contract is recorded in `episodes.jsonl`.\n",
         encoding="utf-8")
-    (out / "manifest.json").write_text(json.dumps({"run_id": run_id, "task": args.task, "seed": args.seed, "provider": args.provider, "oracle": not args.experiment.startswith("vision"), "vision": args.experiment.startswith("vision")}, indent=2), encoding="utf-8")
+    (out / "manifest.json").write_text(json.dumps({"run_id": run_id, "task": args.task, "seed": args.seed, "provider": args.provider, "oracle": not args.experiment.startswith("vision"), "vision": args.experiment.startswith("vision"), "temporal_config": temporal_config.__dict__ if visual else None}, indent=2), encoding="utf-8")
     print(out)
 
 
@@ -150,6 +155,7 @@ def main():
     ap.add_argument("--query", default="the top drawer of the cabinet")
     ap.add_argument("--locateanything-path", default="/home/junhongli/models/huggingface/LocateAnything-3B")
     ap.add_argument("--vision-warmup-s", type=float, default=3.0)
+    ap.add_argument("--temporal-config", help="JSON TemporalConfig overrides; resolved values are logged")
     ap.add_argument("--laya-path", default="/home/junhongli/models/huggingface/laya/typed-decisions")
     ap.add_argument("--device", default=None)
     ap.add_argument("--render", action="store_true")
@@ -163,5 +169,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
