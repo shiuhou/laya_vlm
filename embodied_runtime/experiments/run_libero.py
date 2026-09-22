@@ -33,7 +33,7 @@ def run_episode(args):
     run_id = args.run_id or time.strftime("%Y%m%d-%H%M%S")
     out = Path(args.output) / run_id
     out.mkdir(parents=True, exist_ok=True)
-    backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=args.render, libero_root=args.libero_root, config_dir=args.config_dir)
+    backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=(args.render or visual), libero_root=args.libero_root, config_dir=args.config_dir)
     world = backend.world
     provider = RuleProvider()
     visual = args.experiment.startswith("vision")
@@ -130,4 +130,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
