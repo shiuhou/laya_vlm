@@ -33,10 +33,10 @@ def run_episode(args):
     run_id = args.run_id or time.strftime("%Y%m%d-%H%M%S")
     out = Path(args.output) / run_id
     out.mkdir(parents=True, exist_ok=True)
+    visual = args.experiment.startswith("vision")
     backend = LiberoWorldBackend.from_task(args.task, seed=args.seed, render=(args.render or visual), libero_root=args.libero_root, config_dir=args.config_dir)
     world = backend.world
     provider = RuleProvider()
-    visual = args.experiment.startswith("vision")
     if args.provider == "laya":
         provider = load_laya_provider(args.laya_path, subfolder=None, device=args.device)
     candidate_builder = VisionCandidateBuilder() if visual else PhysicsPreviewCandidateBuilder(world)
