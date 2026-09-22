@@ -90,3 +90,4 @@ class LocateAnythingProvider:
             frame_id="camera", track_id=track_id or query, value=payload,
             quality=min(confidence, valid_ratio), valid_until_sim=capture_sim_time + 0.75,
         )
+
