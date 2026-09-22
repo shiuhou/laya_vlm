@@ -1,11 +1,12 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Latest stage: bounded reference-mechanism diagnostics after audit baseline
-`0da1596`. Use `git rev-parse HEAD` for the exact final checkout revision.
+Latest stage: bounded minimal-interface search after mechanism baseline
+`0f62862`. Use `git rev-parse HEAD` for the exact final checkout revision.
 Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
 
-Current report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
+Current report: [interface_search_handoff.md](interface_search_handoff.md).
+Mechanism report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
 Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
 Predeclared pilot and correction: [reference_pilot_protocol.md](reference_pilot_protocol.md).
 Conditional next experiment: [research.md](research.md).
@@ -30,10 +31,25 @@ Conditional next experiment: [research.md](research.md).
 - Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
   contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 211 tests, ruff and compileall pass. Dependencies, upstream repositories and
+- 226 tests, ruff and compileall pass. Dependencies, upstream repositories and
   model weights were not changed or downloaded.
 
 ## Scientific result and limitations
+
+Latest interface search: **744 bounded offline model calls**, no future effects
+or action execution. A spatial sentence + neutral candidate IDs passes simple
+single-axis approach tests but fails mixed geometry and goal reversal (archived
+oracle nominal labels: 1/18). A precomputed dominant-axis projection scores 25/25,
+but already performs the decision in code and has physical local support at only
+9/18 archived boundaries. It is an explicitly answer-equivalent control, not a
+replacement decision state.
+
+A narrower positive result: `observed articulation category + requested category`
+rendered as two short sentences yields correct DONE/CONTINUE judgments on all six
+combinations, both option orders, repeated twice. This is goal-sensitive task
+progress classification, **not a full-task action reference or a deployed policy**.
+Its oracle articulation category is unavailable to current perception. All 372
+same-fixture repeat comparisons are stable and unclipped. No new CDS promoted.
 
 Latest bounded mechanism evidence: 29 boundaries across init IDs 0/1/2,
 435 physical probes, exact restoration throughout. Native primary probes trigger
@@ -87,9 +103,10 @@ Reference state usable as a **validated useful-decision reference: NO**.
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Smallest next test: a tiny, predeclared model/interface capability ladder
-(explicit selection → signed relations → nominal geometric choice), alongside
-validation of controller-conditioned intervention semantics. Descriptive fidelity
-remains possible but is not a validated useful-reference experiment.
+Smallest next test: independently validate the narrow observed/requested
+articulation interface on held-out language, unknowns and boundary cases, while
+keeping a deterministic comparator. Review whether task-progress fidelity is a
+useful revised target. Full atomic-policy E0 still lacks a competent reference;
+do not silently rename the narrow classification result as that experiment.
 Do not silently settle loaded states or waive reset-envelope violations. Do not insert effects
 into the no-effect comparison, tune gates, or expand the benchmark without review.

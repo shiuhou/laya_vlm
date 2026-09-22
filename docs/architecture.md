@@ -128,6 +128,16 @@ The older `audit-json-v0` presentation is retained only for interpreting old rec
 
 ## Dependencies and evidence
 
+The separate `experiments.interface_search` diagnostic deliberately does not
+require the canonical schema. It compares smaller numeric/categorical/sentence
+projections, candidate presentations and typed question scopes without changing
+the runtime. Future effects remain absent. Its dominant-axis projection and
+hand-written applicability criteria are explicitly policy-bearing controls,
+not proposed belief fields. The observed/requested articulation classifier is
+an offline status judgment; DONE/CONTINUE must not be mapped to physical STOP
+or execution without a separately validated controller. See the
+[search handoff](interface_search_handoff.md) for evidence and claim boundaries.
+
 LIBERO/MuJoCo provide physical execution and evaluator state. Jev-LIBERO supplies the
 World/controller adapter, oracle preview and the existing recorded collection trace.
 Show-Harness inspires atomic token names, not an imported controller. LocateAnything

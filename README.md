@@ -7,7 +7,7 @@ typed embodied decision making. Laya is one replaceable decision backend.
 Current verified status and review gate: [docs/current_state.md](docs/current_state.md).
 Research question and proposed E0: [docs/research.md](docs/research.md).
 Interfaces: [docs/architecture.md](docs/architecture.md).
-Latest evidence and commands: [docs/reference_pilot_handoff.md](docs/reference_pilot_handoff.md).
+Latest evidence and commands: [docs/interface_search_handoff.md](docs/interface_search_handoff.md).
 No formal E0/E1 experiment has started.
 
 It separates temporal belief, compact decision state, candidate semantics/effects,

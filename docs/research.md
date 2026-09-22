@@ -42,6 +42,14 @@ of useful decision sufficiency; disagreement is not automatically perception err
 
 ## Current evidence and limitations
 
+The subsequent [bounded interface search](interface_search_handoff.md) tests
+smaller states rather than presuming CDS v0.1 is sufficient. It finds a narrow
+goal-sensitive articulation-status judgment, but no robust eleven-action policy.
+Perfect nominal scores appear when code precomputes the winning geometric axis;
+that transfers policy upstream and is not evidence of decision sufficiency.
+The proposed E0 below remains conditional, not superseded by a quiet change of
+task or decision vocabulary.
+
 The canonical interface and small paired replay work. A recorded Jev collector
 trajectory genuinely covers approach, contact and drawer closure. Its successful
 collection policy used simulator preview, different primitives and hierarchy; that
@@ -71,17 +79,17 @@ no-effect oracle-conditioned Laya as an expert reference. Preparatory choices ar
 not proved wrong merely by lacking one-step utility, but high-confidence agreement
 with an unvalidated reference cannot establish useful decision sufficiency.
 
-The smallest remaining gate is scientific: approve a **descriptive decision-fidelity**
-claim, or validate a revised oracle decision interface in a separate small pilot.
-For a useful-policy reference, first consider explicitly sourced task-relative
-interaction geometry (e.g. closing axis/contact mode), not another perception model.
-Do not assume adding those fields will fix the model. A fixed-effect condition is
-also a separate reviewed option: both branches would receive the *same* effects,
-and privileged effects would remain diagnostic. Do not quietly introduce them into
-the present no-effect comparison. No such interface/effect change was tested here.
-Also characterize the loaded/in-flight action operating regime: reset calibration
-does not establish realized pose-hold/10 mm motion at every collector boundary.
-Do not silently settle the simulator, discard flagged states, or loosen contracts.
+The remaining gate is scientific: approve a **descriptive decision-fidelity**
+claim, review the narrow task-progress target, or establish a competent atomic
+reference in a separate pilot. The capability ladder now shows why additional
+fields alone are not justified: even well-defined mixed geometry and reversed
+motion objectives fail. Loaded/in-flight action semantics have independently been
+characterized; reset calibration does not establish realized pose-hold/10 mm
+motion at every collector boundary. Do not silently settle the simulator, discard
+flagged states, or loosen contracts. A fixed-effect condition remains a separate
+reviewed option: both branches would receive the *same* effects, clearly marked
+privileged. None were supplied in the interface search; they must not quietly
+enter the present no-effect comparison.
 
 The smallest proposed formal E0 after this pilot:
 
