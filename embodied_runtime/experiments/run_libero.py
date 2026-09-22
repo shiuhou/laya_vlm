@@ -14,6 +14,7 @@ from ..adapters.physics_preview import (
     PhysicsPreviewCandidateBuilder,
     VisionCandidateBuilder,
 )
+from ..fusion import MultiRateFusion
 from ..runtime import Runtime
 from ..runtime_core import RuleProvider, load_laya_provider
 from ..vision import LocateAnythingProvider
@@ -40,7 +41,7 @@ def run_episode(args):
     if args.provider == "laya":
         provider = load_laya_provider(args.laya_path, subfolder=None, device=args.device)
     candidate_builder = VisionCandidateBuilder() if visual else PhysicsPreviewCandidateBuilder(world)
-    runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, candidate_builder)
+    runtime = Runtime(f"{args.task}-seed{args.seed}", provider, backend, candidate_builder, fusion=MultiRateFusion(lag_s=1.0) if visual else None)
     rgbd = LocateAnythingWorker(args.locateanything_path, device=args.device or "cuda") if visual else None
     vision_source = LiberoRgbdSource(world) if visual else None
     rows = []

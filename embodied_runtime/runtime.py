@@ -5,6 +5,7 @@ import time
 from collections.abc import Mapping
 from typing import Any
 
+from .fusion import MultiRateFusion
 from .runtime_core import (
     AtomicExecutor,
     BeliefStore,
@@ -17,16 +18,23 @@ from .runtime_core import (
 
 class Runtime:
     def __init__(self, episode_id: str, provider: DecisionProvider, backend: Any,
-                 candidate_builder: CandidateBuilder | None = None):
+                 candidate_builder: CandidateBuilder | None = None,
+                 fusion: MultiRateFusion | None = None):
         self.store = BeliefStore(episode_id)
         self.provider = provider
         self.backend = backend
         self.candidate_builder = candidate_builder or CandidateBuilder()
+        self.fusion = fusion
         self.executor = AtomicExecutor(backend)
         self.source_seq = 0
 
     def ingest(self, event: ObservationEvent, now_sim: float | None = None) -> bool:
-        return self.store.ingest(event, now_sim=now_sim)
+        accepted = self.store.ingest(event, now_sim=now_sim)
+        if self.fusion is not None:
+            reference = event.capture_sim_time if now_sim is None else float(now_sim)
+            self.fusion.ingest_event(event, reference_time=reference)
+            self.store.apply_fused_snapshot(self.fusion.snapshot(reference_time=reference), reference)
+        return accepted
 
     def observe(self, source: str, sim_time: float, value: Mapping[str, Any], *,
                 track_id: str | None = None, quality: float = 1.0,

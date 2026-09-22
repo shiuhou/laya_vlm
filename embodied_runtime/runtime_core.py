@@ -14,6 +14,8 @@ from dataclasses import dataclass, field
 from math import exp, isfinite, log
 from typing import Any
 
+import numpy as np
+
 MOVE = {
     "MV_FWD": (1.0, 0.0, 0.0), "MV_BACK": (-1.0, 0.0, 0.0),
     "MV_LEFT": (0.0, 1.0, 0.0), "MV_RIGHT": (0.0, -1.0, 0.0),
@@ -121,6 +123,7 @@ class BeliefStore:
         self._semantic: dict[str, dict[str, float]] = {}
         self._semantic_meta: dict[str, tuple[float, float]] = {}
         self._goal: dict[str, Any] = {}
+        self._fused_meta: dict[str, tuple[float, float]] = {}
         self.dropped_late = 0
         self.dropped_out_of_order = 0
 
@@ -172,10 +175,25 @@ class BeliefStore:
         self._semantic[track] = {k: v / normalizer for k, v in fused.items()}
         self._semantic_meta[track] = (event.valid_until_sim or now + 0.75, event.capture_sim_time)
 
+    def apply_fused_snapshot(self, fused: Mapping[str, Any], now_sim: float) -> None:
+        """Publish timestamp-aware fusion output into the model-facing belief."""
+        geometry = fused.get("geometry", {})
+        for track, state in geometry.items():
+            prefix = f"vision:{track}"
+            self._continuous[f"{prefix}:position_world_m"] = list(map(float, state.position_m))
+            self._continuous[f"{prefix}:velocity_mps"] = list(map(float, state.velocity_mps))
+            self._continuous[f"{prefix}:covariance"] = np.asarray(state.covariance).tolist() if hasattr(state.covariance, "tolist") else state.covariance
+            self._fused_meta[prefix] = (float(state.reference_time), float(state.age_s))
+        for track, probabilities in fused.get("semantic", {}).items():
+            self._semantic[track] = {str(k): float(v) for k, v in probabilities.items()}
+            self._semantic_meta[track] = (float(now_sim) + 0.75, float(now_sim))
+
     def snapshot(self, now_sim: float, candidates: tuple[Candidate, ...] = (), goal: Mapping[str, Any] | None = None) -> BeliefSnapshot:
         semantic = json.loads(json.dumps(self._semantic))
         ages: dict[str, float] = {}
         flags: dict[str, bool] = {}
+        for key, (captured, age) in self._fused_meta.items():
+            ages[f"{key}:age_s"] = max(0.0, float(age) + max(0.0, now_sim - captured))
         for track, (valid_until, captured) in self._semantic_meta.items():
             age = max(0.0, now_sim - captured)
             ages[f"semantic:{track}"] = age

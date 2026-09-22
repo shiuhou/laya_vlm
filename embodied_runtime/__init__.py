@@ -7,6 +7,12 @@ from .adapters.physics_preview import (
     PhysicsPreviewCandidateBuilder,
     VisionCandidateBuilder,
 )
+from .fusion import (
+    ConstantVelocityFusion3D,
+    MultiRateFusion,
+    PositionMeasurement,
+    SemanticEvidenceFusion,
+)
 from .runtime import Runtime
 from .runtime_core import (
     ATOMIC_ACTIONS,
@@ -38,6 +44,7 @@ __all__ = [
     "BeliefStore",
     "Candidate",
     "CandidateBuilder",
+    "ConstantVelocityFusion3D",
     "Decision",
     "DecisionProvider",
     "FakeBackend",
@@ -45,11 +52,14 @@ __all__ = [
     "LayaProvider",
     "LocateAnythingProvider",
     "LocateAnythingWorker",
+    "MultiRateFusion",
     "ObservationEvent",
     "PhysicsPreviewCandidateBuilder",
+    "PositionMeasurement",
     "ReplayProvider",
     "RuleProvider",
     "Runtime",
+    "SemanticEvidenceFusion",
     "VisionCandidateBuilder",
     "camera_to_world",
     "load_laya_provider",
