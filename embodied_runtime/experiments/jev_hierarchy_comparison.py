@@ -61,6 +61,16 @@ class FrozenOriginalAnswers:
                                           "criteria": criteria}}}
         if ((step, layer) != (original["step"], original["layer"])
                 or request != original["request"]):
+            mismatch = {
+                "call_index": self.index,
+                "fresh": {"step": step, "layer": layer, "request": request},
+                "archived": {"step": original["step"], "layer": original["layer"],
+                             "request": original["request"]},
+            }
+            (self.out / "request-mismatch.json").write_text(
+                json.dumps(mismatch, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
             raise RuntimeError(f"fresh hierarchy request diverged at call {self.index}: {step}/{layer}")
         response = original["response"]
         choice = response["answers"][layer]["choice"]
@@ -78,7 +88,11 @@ class FrozenOriginalAnswers:
 
     def close(self):
         if self.index != len(self.source_rows):
-            raise RuntimeError(f"fresh hierarchy consumed {self.index}/{len(self.source_rows)} answers")
+            (self.out / "answer-consumption.json").write_text(
+                json.dumps({"consumed": self.index, "available": len(self.source_rows),
+                            "complete": False}, indent=2) + "\n",
+                encoding="utf-8",
+            )
 
 
 def rotation_distance_deg(a, b):
