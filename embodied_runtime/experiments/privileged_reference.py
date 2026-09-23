@@ -15,6 +15,7 @@ from pathlib import Path
 import random
 import signal
 import sys
+import time
 
 import numpy as np
 
@@ -22,7 +23,7 @@ from ..adapters.laya_input import encoding_audit
 from ..adapters.libero import LiberoWorldBackend, CONTRACT_TOLERANCES
 from ..adapters.physics_preview import PhysicsPreviewCandidateBuilder
 from ..runtime import Runtime
-from ..runtime_core import AtomicExecutor, LayaProvider, load_laya_provider
+from ..runtime_core import AtomicExecutor, Decision, LayaProvider, load_laya_provider
 from .collect_pairs import initial_state_inventory
 from .engineering_demo import RecordingAgent, save_trajectory, replay_check
 from .operating_regime_probe import context_id
@@ -31,7 +32,7 @@ from .records import (
     package_directory, repository_identity, versions,
 )
 
-VERSION = "privileged-drawer-reference-v1-lookahead2"
+VERSION = "privileged-drawer-reference-v1-lookahead2-forced-singleton"
 PRIVILEGE = {"effect_source": "oracle_sim", "privileged": True,
              "candidate_filtering": "task_specific_effect_contract_union"}
 INSTRUCTION = (
@@ -206,7 +207,8 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
         self.sink("reference_preview", {"belief_id": belief.belief_id(), **PRIVILEGE,
                   "context_before": initial, "context_after": restored,
                   "restored": True, **self.last_preview})
-        ensure_real_choice(candidates, self.backend.gripper_command())
+        if not eligible:
+            raise RuntimeError("reference has no candidate after existing two-step witness processing")
         return candidates
 
 
@@ -312,8 +314,25 @@ class ReferenceProvider:
 
     def decide(self, snapshot):
         backend = self.builder.backend
-        names = ensure_real_choice(snapshot.candidates, backend.gripper_command())
+        names = [c.token for c in snapshot.candidates if c.feasible]
         preview = self.builder.last_preview
+        pool_source = "lookahead" if preview.get("lookahead_triggered", False) else "one_step"
+        if len(names) == 1:
+            token = names[0]
+            self.sink("reference_forced_singleton", {**PRIVILEGE,
+                "snapshot_id": snapshot.snapshot_id(), "belief_id": snapshot.belief_id(),
+                "candidate_set_id": snapshot.candidate_set_id(), "option_order": names,
+                "candidate_count": 1, "pool_source": pool_source, "token": token,
+                "forced_singleton": True, "model_called": False,
+                "previous_outcome_record_id": self.last_outcome_id})
+            return Decision(token=token, probabilities={}, confidence=0.0,
+                source="forced_singleton", input_revision=snapshot.revision,
+                input_sim_time=snapshot.asof_sim_time, completed_wall_time=time.time(),
+                valid_until_sim=snapshot.asof_sim_time + .5, latency_ms=0.0,
+                input_belief_id=snapshot.belief_id(),
+                candidate_set_id=snapshot.candidate_set_id(),
+                input_snapshot_id=snapshot.snapshot_id())
+        names = ensure_real_choice(snapshot.candidates, backend.gripper_command())
         state, questions = presentation(preview["before"], preview["predictions"], names,
                                         backend.gripper_command(), self.last)
         audit = encoding_audit(self.agent, state, questions)
@@ -321,6 +340,8 @@ class ReferenceProvider:
             "snapshot_id": snapshot.snapshot_id(), "belief_id": snapshot.belief_id(),
             "candidate_set_id": snapshot.candidate_set_id(),
             "option_order": names, "state": state, "questions": questions, "audit": audit,
+            "candidate_count": len(names), "pool_source": pool_source,
+            "forced_singleton": False, "model_called": True,
             "previous_outcome_record_id": self.last_outcome_id})
         if not audit.get("available") or audit["truncated"]:
             raise RuntimeError("reference input unavailable or truncated; no choices removed")
@@ -406,13 +427,22 @@ def run(args):
             outcome = measured_outcome(world, before, row["decision"].token, row["result"])
             comparison = compare_prediction(world,
                 builder.last_preview["predictions"][row["decision"].token], outcome, row["result"])
+            pool_source = "lookahead" if builder.last_preview["lookahead_triggered"] else "one_step"
+            forced_singleton = row["decision"].source == "forced_singleton"
             provider.last_outcome_id = recorder.record("reference_outcome", {
                 "step": step, "snapshot_id": row["snapshot_id"], **outcome,
                 "comparison": comparison, "nominal_tracking_flags": row["result"]["nominal_tracking_flags"],
+                "candidate_count": len(row["snapshot"].allowed()), "pool_source": pool_source,
+                "lookahead_recovery": pool_source == "lookahead",
+                "forced_singleton": forced_singleton,
+                "genuine_laya_decision": row["decision"].source == "laya",
                 "decision_source": row["decision"].source, "fallback": row["decision_invalid_reason"]})
             provider.last, previous_after = outcome, outcome["after"]
             print(json.dumps({"step": step, "offered": len(row["snapshot"].allowed()),
+                "pool_source": pool_source, "choice_source": row["decision"].source,
                 "choice": outcome["action"], "closure_mm": outcome["closure_mm"],
+                "gap_mm": outcome["after"]["distance_to_moving_geometry_mm"],
+                "contact": outcome["after"]["moving_contact"],
                 "remaining_mm": outcome["after"]["remaining_open_mm"],
                 "success": outcome["official_success"], "prediction_matches": comparison["passed"]}), flush=True)
             if not comparison["passed"] or row["decision_invalid_reason"]:
@@ -508,11 +538,17 @@ def summarize_reference(directory):
     if errors:
         raise ValueError(f"incomplete evidence chain: {errors}")
     inputs = {r["data"]["snapshot_id"]: r["data"] for r in rows if r["kind"] == "reference_model_input"}
+    forced = {r["data"]["snapshot_id"]: r["data"] for r in rows
+              if r["kind"] == "reference_forced_singleton"}
+    if set(inputs) & set(forced):
+        raise ValueError("snapshot cannot be both model input and forced singleton")
+    selections = {**inputs, **forced}
     decisions = {r["data"]["snapshot_id"]: r["data"]["decision"] for r in rows if r["kind"] == "decision"}
     previews = {r["data"]["belief_id"]: r["data"] for r in rows if r["kind"] == "reference_preview"}
     trajectories = {r["data"]["step"]: r["data"] for r in rows if r["kind"] == "demo_trajectory"}
     responses = {r["data"]["snapshot_id"]: r["data"] for r in rows if r["kind"] == "demo_model_response"}
-    for kind, mapping in (("reference_model_input", inputs), ("decision", decisions),
+    for kind, mapping in (("reference_model_input", inputs),
+                          ("reference_forced_singleton", forced), ("decision", decisions),
                           ("reference_preview", previews), ("demo_trajectory", trajectories),
                           ("demo_model_response", responses)):
         if len(mapping) != sum(r["kind"] == kind for r in rows):
@@ -522,27 +558,39 @@ def summarize_reference(directory):
         if row["kind"] != "reference_outcome":
             continue
         d = row["data"]
-        model_input, decision = inputs[d["snapshot_id"]], decisions[d["snapshot_id"]]
-        preview = previews[model_input["belief_id"]]
-        if model_input["previous_outcome_record_id"] != previous_id:
+        selection, decision = selections[d["snapshot_id"]], decisions[d["snapshot_id"]]
+        preview = previews[selection["belief_id"]]
+        if selection["previous_outcome_record_id"] != previous_id:
             raise ValueError("broken actual-outcome-to-input feedback link")
-        if decision["token"] != d["action"] or d["action"] not in model_input["option_order"]:
+        if decision["token"] != d["action"] or d["action"] not in selection["option_order"]:
             raise ValueError("decision/outcome membership mismatch")
         eligible = {name for pool in preview["pools"].values() for name in pool}
-        if set(model_input["option_order"]) != eligible or len(model_input["option_order"]) != len(eligible):
+        if set(selection["option_order"]) != eligible or len(selection["option_order"]) != len(eligible):
             raise ValueError("offered menu differs from complete effect-contract union")
-        # Recorder sorts dictionary keys, so option_order and actual forward tokens
-        # (rather than serialized criteria order) are authoritative.
-        response = responses[d["snapshot_id"]]
-        audit = model_input["audit"]
-        expected = audit["questions"]["action"]
-        forwards = response["forward_traces"]
-        if (audit["truncated"] or not audit["available"] or len(forwards) != 1
-                or forwards[0]["input_ids"] != [expected["effective_input_ids"]]
-                or forwards[0]["option_markers"] != [expected["option_markers"]]
-                or response["raw_response"]["answers"]["action"]["choice"] != d["action"]
-                or not preview["restored"]):
-            raise ValueError("invalid model consumption or restored-preview evidence")
+        is_forced = d["snapshot_id"] in forced
+        if is_forced:
+            if (len(selection["option_order"]) != 1 or not selection["forced_singleton"]
+                    or selection["model_called"] or selection["token"] != d["action"]
+                    or decision["source"] != "forced_singleton" or decision["probabilities"]
+                    or decision["confidence"] != 0.0 or d["snapshot_id"] in responses):
+                raise ValueError("invalid forced-singleton evidence")
+        else:
+            # Recorder sorts dictionary keys, so option_order and actual forward tokens
+            # (rather than serialized criteria order) are authoritative.
+            response = responses[d["snapshot_id"]]
+            audit = selection["audit"]
+            expected = audit["questions"]["action"]
+            forwards = response["forward_traces"]
+            if (len(selection["option_order"]) < 2 or selection.get("forced_singleton", False)
+                    or not selection.get("model_called", True)
+                    or audit["truncated"] or not audit["available"] or len(forwards) != 1
+                    or forwards[0]["input_ids"] != [expected["effective_input_ids"]]
+                    or forwards[0]["option_markers"] != [expected["option_markers"]]
+                    or response["raw_response"]["answers"]["action"]["choice"] != d["action"]
+                    or decision["source"] != "laya"):
+                raise ValueError("invalid model consumption evidence")
+        if not preview["restored"]:
+            raise ValueError("preview did not restore live context")
         artifact = trajectories[d["step"]]
         path = directory / artifact["artifact"]
         if file_hash(path) != artifact["sha256"]:
@@ -556,8 +604,18 @@ def summarize_reference(directory):
                            rtol=0, atol=TOLERANCE)
                 or d["official_success"] != d["after"]["success"]):
             raise ValueError("actual physical outcome inconsistent")
-        trace.append({"step": d["step"], "candidates": model_input["option_order"],
-            "rejected": preview["rejected"], "model_input": model_input,
+        pool_source = "lookahead" if preview.get("lookahead_triggered", False) else "one_step"
+        if (selection.get("pool_source", pool_source) != pool_source
+                or d.get("pool_source", pool_source) != pool_source
+                or d.get("candidate_count", len(selection["option_order"])) != len(selection["option_order"])
+                or d.get("forced_singleton", is_forced) != is_forced):
+            raise ValueError("choice classification disagrees with candidate evidence")
+        trace.append({"step": d["step"], "candidates": selection["option_order"],
+            "candidate_count": len(selection["option_order"]), "pool_source": pool_source,
+            "choice_source": "forced_singleton" if is_forced else "laya",
+            "forced_singleton": is_forced, "lookahead_recovery": pool_source == "lookahead",
+            "rejected": preview["rejected"], "selection": selection,
+            "model_input": None if is_forced else selection,
             "decision": decision, "selected_prediction": selected,
             "all_predictions": preview["predictions"], "effect_contract_pools": preview["pools"],
             "outcome": d})
@@ -566,22 +624,34 @@ def summarize_reference(directory):
     terminations = [r["data"] for r in rows if r["kind"] == "termination"]
     success = bool(trace and trace[-1]["outcome"]["official_success"])
     qualifies = (success and not failures and bool(terminations) and terminations[-1]["reason"] == "success"
-        and all(t["decision"]["source"] == "laya" and not t["outcome"]["fallback"]
-                and t["outcome"]["comparison"]["passed"] for t in trace))
+        and any(t["choice_source"] == "laya" for t in trace)
+        and all(not t["outcome"]["fallback"] and t["outcome"]["comparison"]["passed"]
+                and ((t["choice_source"] == "laya" and t["candidate_count"] >= 2)
+                     or (t["choice_source"] == "forced_singleton" and t["candidate_count"] == 1))
+                for t in trace))
+    counts = {
+        "genuine_laya_decisions": sum(t["choice_source"] == "laya" for t in trace),
+        "forced_singleton_continuations": sum(t["forced_singleton"] for t in trace),
+        "zero_pool_lookahead_recoveries": sum(t["lookahead_recovery"] for t in trace),
+    }
     summary = {"version": VERSION, **PRIVILEGE, "raw_sha256": file_hash(directory / "episodes.jsonl"),
         "actual_success": success, "qualifies_single_episode": qualifies,
         "independent_repeatability_not_established_by_one_episode": True,
-        "failures": failures, "terminations": terminations, "trace": trace,
+        **counts, "failures": failures, "terminations": terminations, "trace": trace,
         "unexecuted_previews": [p for p in previews.values()
-                               if p["belief_id"] not in {t["model_input"]["belief_id"] for t in trace}]}
+                               if p["belief_id"] not in {t["selection"]["belief_id"] for t in trace}]}
     (directory / "reference-evidence.json").write_text(json.dumps(summary, indent=2) + "\n")
     lines = ["# Privileged reference evidence", "", "Task-specific effect contracts perform candidate-policy filtering.",
-             f"Actual success: {success}. Single-episode qualification: {qualifies}.", "",
-             "| Step | Candidates | Laya action | Predicted closure mm | Actual closure mm | Remaining mm | Match |",
-             "|---|---|---|---:|---:|---:|---|"]
+             f"Actual success: {success}. Single-episode qualification: {qualifies}.",
+             (f"Genuine Laya decisions: {counts['genuine_laya_decisions']}; forced-singleton "
+              f"continuations: {counts['forced_singleton_continuations']}; zero-pool lookahead "
+              f"recoveries: {counts['zero_pool_lookahead_recoveries']}."), "",
+             "| Step | Pool | Candidates | Choice source | Action | Predicted closure mm | Actual closure mm | Remaining mm | Match |",
+             "|---|---|---|---|---|---:|---:|---:|---|"]
     for t in trace:
         o = t["outcome"]
-        lines.append(f"| {t['step']} | {', '.join(t['candidates'])} | {o['action']} | "
+        lines.append(f"| {t['step']} | {t['pool_source']} | {', '.join(t['candidates'])} | "
+            f"{t['choice_source']} | {o['action']} | "
             f"{t['selected_prediction']['closing_mm']:.6f} | {o['closure_mm']:.6f} | "
             f"{o['after']['remaining_open_mm']:.6f} | {o['comparison']['passed']} |")
     lines += ["", "Full inputs, predictions, feedback links and failures: reference-evidence.json.",

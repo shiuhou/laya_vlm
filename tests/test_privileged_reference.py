@@ -135,6 +135,59 @@ def test_reference_builder_does_not_run_lookahead_when_one_step_pool_exists(monk
     assert builder.last_preview["two_step_evaluations"] == 0
 
 
+def test_reference_builder_preserves_one_step_singleton_without_lookahead(monkeypatch):
+    import jev_libero.policy
+
+    predictions = {"z-3mm": prediction(closing_mm=.06),
+                   "open": prediction(geometry_approach_mm=1.)}
+
+    def contracts(_before, received, collision_aware, task_config):
+        return {"advance_target": {"z-3mm": received["z-3mm"]}}, {
+            "open": "no witnessed effect"}
+
+    world = SimpleNamespace(config={"test": True},
+        predict_all=lambda _grip: (features(), predictions),
+        two_step_witnesses=lambda _grip: pytest.fail("singleton is a non-empty one-step pool"))
+    backend = SimpleNamespace(world=world, gripper_command=lambda: -1.)
+    monkeypatch.setattr(jev_libero.policy, "contracts", contracts)
+    monkeypatch.setattr(ref, "actions", lambda: {name: {} for name in predictions})
+    monkeypatch.setattr(ref, "context_id", lambda _backend: "same")
+
+    builder = ref.ReferenceBuilder(backend, lambda *_: None)
+    result = builder.build(belief())
+
+    assert [candidate.token for candidate in result if candidate.feasible] == ["z-3mm"]
+    assert not builder.last_preview["lookahead_triggered"]
+
+
+def test_reference_provider_forces_singleton_without_model_call():
+    class NoModelAgent:
+        def system_one(self, *_args, **_kwargs):
+            raise AssertionError("singleton must not call Laya")
+
+    builder = SimpleNamespace(
+        backend=SimpleNamespace(gripper_command=lambda: -1.),
+        last_preview={"lookahead_triggered": False},
+    )
+    logged = []
+    provider = ref.ReferenceProvider(NoModelAgent(), builder,
+                                     lambda kind, data: logged.append((kind, data)))
+    snapshot = belief((Candidate("z-3mm", ""), Candidate("open", "", False)))
+
+    decision = provider.decide(snapshot)
+
+    assert decision.token == "z-3mm"
+    assert decision.source == "forced_singleton" and decision.status == "valid"
+    assert decision.probabilities == {} and decision.confidence == 0.0
+    assert logged == [("reference_forced_singleton", {
+        **ref.PRIVILEGE, "snapshot_id": snapshot.snapshot_id(),
+        "belief_id": snapshot.belief_id(), "candidate_set_id": snapshot.candidate_set_id(),
+        "option_order": ["z-3mm"], "candidate_count": 1, "pool_source": "one_step",
+        "token": "z-3mm", "forced_singleton": True, "model_called": False,
+        "previous_outcome_record_id": None,
+    })]
+
+
 def test_presentation_contains_effects_and_real_feedback_not_predicted_feedback():
     ps = {"x+40mm": prediction(closing_mm=10.)}
     last = {"action": "y-3mm", "closure_mm": -2., "gap_reduction_mm": -1.,
@@ -279,6 +332,50 @@ def test_summary_retains_empty_pool_boundary_and_does_not_claim_success(tmp_path
     assert not summary["actual_success"] and not summary["qualifies_single_episode"]
     assert len(summary["unexecuted_previews"]) == 1
     assert "Eligible actions: []" in (out / "reference-report.md").read_text()
+
+
+def test_summary_counts_forced_singleton_without_model_evidence(tmp_path):
+    out = tmp_path / "forced"
+    recorder = RunRecorder(out, {}, {"run_id": "forced"})
+    candidate = Candidate("z-3mm", "")
+    snapshot = belief((candidate,))
+    selected = prediction()
+    recorder.record("reference_preview", {"belief_id": snapshot.belief_id(),
+        "before": features(), "predictions": {"z-3mm": selected},
+        "pools": {"advance_target": {"z-3mm": selected}}, "rejected": {},
+        "lookahead_triggered": False, "restored": True})
+    builder = SimpleNamespace(backend=SimpleNamespace(gripper_command=lambda: -1.),
+                              last_preview={"lookahead_triggered": False})
+    agent = SimpleNamespace(system_one=lambda *_: pytest.fail("model must not run"))
+    provider = ref.ReferenceProvider(agent, builder, recorder.record)
+    decision = provider.decide(snapshot)
+    recorder.record("decision", {"snapshot_id": snapshot.snapshot_id(), "decision": decision})
+    trajectory = out / "trajectory" / "action-000.npz"
+    trajectory.parent.mkdir()
+    np.savez_compressed(trajectory, commands=np.zeros((8, 7)), states_before=np.zeros((8, 2)),
+                        frames=np.empty((0,)), state_after=np.array([0., 1.]))
+    recorder.record("demo_trajectory", {"step": 0,
+        "artifact": "trajectory/action-000.npz", "sha256": ref.file_hash(trajectory),
+        "frames": 0, "frame_timing": "test"})
+    recorder.record("reference_outcome", {"step": 0, "snapshot_id": snapshot.snapshot_id(),
+        "action": "z-3mm", "before": features(), "after": features(),
+        "actual_joint_qpos_m": -.15, "official_success": False,
+        "closure_mm": 0., "gap_reduction_mm": 0., "controls": 8,
+        "obstacle_peak_N": 0., "comparison": {"state_max_error": 0., "passed": True},
+        "candidate_count": 1, "pool_source": "one_step", "lookahead_recovery": False,
+        "forced_singleton": True, "genuine_laya_decision": False,
+        "decision_source": "forced_singleton", "fallback": None})
+    recorder.record("termination", {"reason": "action_budget", "success": False, "step": 0})
+    recorder.close()
+
+    summary = ref.summarize_reference(out)
+
+    assert summary["genuine_laya_decisions"] == 0
+    assert summary["forced_singleton_continuations"] == 1
+    assert summary["zero_pool_lookahead_recoveries"] == 0
+    assert summary["trace"][0]["model_input"] is None
+    assert summary["trace"][0]["decision"]["probabilities"] == {}
+    assert not summary["actual_success"] and not summary["qualifies_single_episode"]
 
 
 def test_summary_rejects_duplicate_preview_identity(tmp_path):
