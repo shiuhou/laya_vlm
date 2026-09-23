@@ -22,7 +22,17 @@ the 2 mm approach threshold. No fallback executed. All 18 selected previews matc
 actual endpoints exactly; 144 controls replayed at 163 boundaries with zero error.
 Three-run successful repeatability has not been established; no success repeats
 were started. Contracts remain frozen pending review of this concrete failure.
-Final reference verification: 405 pytest tests, ruff and compileall passed;
+The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
+reconstructed the exact state and all 27 previews. Original Jev's unchanged
+one-step `contracts()` and the current reference produced identical predictions,
+rejections and empty pools, ruling out a one-step port/integration bug. This is a
+**CONTRACT DEAD-END** classification at the frozen one-step boundary. The archived
+successful Jev run approached a similar gap in a materially different pose with
+closure-positive actions, but that does not prove the frozen state has no useful
+physical continuation. Jev's lookahead fallback was explicitly outside this audit.
+Final reference verification: 405 pytest tests passed before the boundary audit;
+the audit adds seven focused tests and the current full suite is **412 passed**.
+Ruff and compileall pass;
 raw-derived input/feedback/artifact audits and all 19 recomputed contract unions
 passed. The only inference episode used committed implementation f39e711.
 No hierarchy, planner, two-step lookahead, hard-invalid-only ablation, non-oracle
@@ -101,7 +111,9 @@ effects or preprocessing unnecessary. The legacy oracle path still contains
 PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
 normal visual path.
 
-The bounded privileged reference above is the selected next step. The broader
-judgment boundary and deployable effect sources remain open. The earlier blanket
-pause on Laya inference is superseded only by this reference. Prompt searches,
-binary predicate tests, new planners, CDS redesign and E0 remain outside scope.
+The bounded privileged reference above remains the selected track. Before another
+model run or reference revision, humans must decide whether and how to represent
+the excluded contact transition. Raising the numeric regression tolerance alone
+is not supported. The broader judgment boundary and deployable effect sources
+remain open. Prompt searches, binary predicate tests, new planners, CDS redesign,
+lookahead implementation and E0 remain outside scope.

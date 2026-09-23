@@ -16,6 +16,13 @@ coverage along the selected trajectory; it does not isolate model ranking, prove
 that an alternative choice succeeds, or establish that relaxing a threshold would
 solve the task. Contracts perform part of candidate-policy filtering and remain
 unchanged. Hard-invalid-only is a possible later ablation only after success.
+The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
+reconstructed the exact state and every primitive clause. Original Jev and the
+reference have identical empty one-step pools there, so the result is classified
+as a **CONTRACT DEAD-END**, not a port bug. The successful Jev trajectory avoids
+that contract state through a materially different pose and closure-positive
+contact transition. This does not prove physical continuation from the dead state
+impossible, and the original runner's two-step witness fallback was not evaluated.
 
 **Formal E0 is blocked. No useful manipulation reference is established.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
@@ -49,6 +56,7 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Goal placement](evidence/decision_interface/goal_placement_handoff.md) | Goal-last anonymous utility 9/16 → 11/16; native 0/16. Useful binding remains unestablished. |
 | [Selective grip](evidence/decision_interface/selective_grip_handoff.md) | Native 0/16 → 5/16, opening only; closing 0/8. Wording matters but is not the sole deficit. |
 | [Explicit consequence](evidence/decision_interface/explicit_consequence_handoff.md) | Explicit conjunction 5/16 → 4/16, no prior errors corrected; target predicates do not reliably repair ranking. |
+| [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -75,8 +83,11 @@ or binary verification successful.
 The reference boundary is now fixed: 27 primitive vocabulary, task-effect contract
 union, oracle predictions, one Laya atomic choice and real feedback, without intent
 hierarchy. The first attempt failed; humans must review the identified empty-menu
-boundary before changing reference semantics. The deployable judgment boundary and
-effect sources remain open, and usefulness still needs demonstration.
+contact boundary before changing reference semantics. The smallest issue is how a
+physically defensible contact transition could be admitted without accepting
+arbitrary drawer opening; the audit neither changes that contract nor authorizes
+lookahead. The deployable judgment boundary and effect sources remain open, and
+usefulness still needs demonstration.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

@@ -71,9 +71,10 @@ The historical Jev success used a hierarchy, so is not a Laya success reference.
 Before collection: 19 focused tests; 403 full pytest tests passed. Ruff, compileall,
 diff checks passed. Subsequent offline reporting adds two evidence-integrity tests;
 it does not alter the recorded policy or rerun inference.
-Final verification: 21 focused tests, **405 full tests passed**; ruff, compileall
-and diff checks passed. All 19 recorded contract unions were independently
-recomputed from the saved task config/predictions and matched. All 261 local
+Reference verification: 21 focused tests, **405 full tests passed**; ruff,
+compileall and diff checks passed. The later boundary audit adds seven focused
+tests; the current full suite is **412 passed**. All 19 recorded contract unions
+were independently recomputed from the saved task config/predictions and matched. All 261 local
 documentation links resolved before adding the progress-figure link below.
 Mechanical evidence: runs/privileged-reference/preflight-v01.
 All 27 primitives at reset, closed-gripper and archived loaded step 48 matched
@@ -193,6 +194,23 @@ alternative would complete the task, that a temporary opening would recover it,
 or that Laya's internal ranking mechanism is the sole cause. The directly
 demonstrated bottleneck is loss of admissible continuation under the frozen
 one-step effect contracts along this Laya-selected trajectory.
+
+### Bounded dead-end audit
+
+The [complete boundary audit](dead_end_boundary_audit.md) replayed the exact
+frozen state, recomputed all 27 previews and exposed every relevant contract
+clause. Original Jev commit `3bdad98` and the current reference produced identical
+predictions, rejection strings and empty one-step pools. Original
+`ValidatedPolicy.choose()` stopped before its policy API. The boundary is therefore
+classified **CONTRACT DEAD-END**, ruling out an incorrect one-step contract port.
+
+The archived successful Jev path reached a comparable 2.397 mm gap in a pose
+67.185 mm and 47.370 degrees away, where `y-40mm` predicted and produced
+30.946 mm closure. Its following `z-40mm` contact transition also predicted and
+produced 7.163 mm closure. It did not temporarily reopen the drawer. This shows
+that the successful trajectory avoided the same contract state; it does not prove
+the failed state lacks a useful physical continuation. The audit did not invoke
+Jev's optional two-step witness fallback and does not authorize adding it to v1.
 
 ### Replay and repeatability
 
