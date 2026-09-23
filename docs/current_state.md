@@ -2,6 +2,21 @@
 
 Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
 
+## Authorized next phase: privileged drawer reference v1
+
+The human has selected a bounded reference before ablations: Jev's full 27-action
+vocabulary, one-step World.predict_all(), and the union of existing collision-aware
+task-specific effect contracts, followed by a genuine multi-option Laya choice.
+These contracts explicitly perform part of candidate-policy filtering; this is
+not hard-invalid-only filtering. State and effects are explicitly privileged.
+The reference is opt-in; the visual path and CDS remain unchanged.
+
+The [reference record](evidence/decision_interface/privileged_reference.md) specifies
+the task, acceptance gate, implementation and results. The target is three
+independent successful runs from benchmark init 0 / seed 1 plus control replay.
+Success has not yet been established. No hierarchy, planner, two-step lookahead,
+hard-invalid-only ablation, non-oracle replacement or E0 is authorized.
+
 ## Integrated baseline
 
 Integration baseline: `33c7039e5f1f331fcac705498854c539a2568d42`, including research
@@ -60,7 +75,7 @@ not a remote backup; ignored artifacts are absent from fresh clones.
 ## Architecture-review stop point
 
 **Formal E0 remains blocked. No useful manipulation reference is established.
-Flat atomic choice is under review. No new architecture has been selected.**
+The deployable decision architecture remains under review.**
 
 State Gap and Effect Gap remain separate. Effects from oracle_sim, deterministic
 geometry, learned prediction and unknown/none must not be conflated. Geometry
@@ -73,8 +88,7 @@ effects or preprocessing unnecessary. The legacy oracle path still contains
 PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
 normal visual path.
 
-Humans must decide Laya's judgment boundary, full vocabulary versus processed
-subset, allowed effect sources and local intent responsibilities before choosing
-one falsifiable next experiment. No prompt optimization, binary predicate test,
-new Laya inference, planner, candidate processor, CDS redesign or E0 is authorized
-by this checkpoint.
+The bounded privileged reference above is the selected next step. The broader
+judgment boundary and deployable effect sources remain open. The earlier blanket
+pause on Laya inference is superseded only by this reference. Prompt searches,
+binary predicate tests, new planners, CDS redesign and E0 remain outside scope.

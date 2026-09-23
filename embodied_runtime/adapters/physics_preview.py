@@ -20,13 +20,18 @@ TOKEN_TO_JEV = {
 class PhysicsPreviewCandidateBuilder:
     """Run Jev's reversible one-step predictions and expose only feasible tokens."""
 
-    def __init__(self, world: Any, *, collision_aware: bool = True, grip_command=None):
+    def __init__(self, world: Any, *, collision_aware: bool = True, grip_command=None,
+                 action_map=None):
         self.version = "physics-preview-candidates-v1"
         self.oracle = True
         self.tracking_active = False
         self.world = world
         self.grip_command = grip_command
         self.collision_aware = collision_aware
+        # Explicit mappings opt into a native vocabulary without legacy STOP/DONE
+        # additions. Callers own empty-set handling; no synthetic alternatives.
+        self.action_map = dict(TOKEN_TO_JEV if action_map is None else action_map)
+        self.legacy_vocabulary = action_map is None
         self.last_preview: dict[str, Any] | None = None
 
     def build(self, belief):
@@ -37,10 +42,10 @@ class PhysicsPreviewCandidateBuilder:
         pools, rejected = contracts(before, predictions, collision_aware=self.collision_aware, task_config=self.world.config)
         eligible = {name for pool in pools.values() for name in pool}
         by_token: dict[str, list[str]] = {}
-        for token, action in TOKEN_TO_JEV.items():
+        for token, action in self.action_map.items():
             by_token.setdefault(action, []).append(token)
         candidates = []
-        for token, action in TOKEN_TO_JEV.items():
+        for token, action in self.action_map.items():
             p = predictions.get(action)
             reasons = []
             feasible = action in eligible
@@ -57,9 +62,9 @@ class PhysicsPreviewCandidateBuilder:
                 )
             risk = min(1.0, float(p.get("peak_obstacle_force_N", 0.0)) / 20.0) if p else 1.0
             candidates.append(Candidate(token, description, feasible, tuple(reasons), risk))
-        if before.get("success"):
+        if self.legacy_vocabulary and before.get("success"):
             candidates.append(Candidate("DONE", "finish only after the real LIBERO success predicate is true", True))
-        if not any(c.feasible for c in candidates):
+        if self.legacy_vocabulary and not any(c.feasible for c in candidates):
             candidates.append(Candidate("STOP", "hold because no physics-preview candidate satisfies the task contract", True, ("no_feasible_candidate",), 0.0))
         self.last_preview = {"before": before, "predictions": predictions, "pools": pools, "rejected": rejected}
         self.last_diagnostics = {

@@ -24,7 +24,7 @@ class Runtime:
     def __init__(self, episode_id: str, provider: DecisionProvider, backend: Any,
                  candidate_builder: CandidateBuilder | None = None,
                  fusion: MultiRateFusion | None = None, *, event_sink=None,
-                 sim_clock=None, oracle: bool | None = None):
+                 sim_clock=None, oracle: bool | None = None, executor=None):
         if fusion is not None:
             if fusion.episode_id not in (None, episode_id):
                 raise ValueError("fusion belongs to a different episode")
@@ -35,7 +35,7 @@ class Runtime:
         self.backend = backend
         self.candidate_builder = candidate_builder or CandidateBuilder()
         self.fusion = fusion
-        self.executor = AtomicExecutor(backend)
+        self.executor = AtomicExecutor(backend) if executor is None else executor
         self.source_seq = 0
         self.event_sink = event_sink
         self.sim_clock = sim_clock
