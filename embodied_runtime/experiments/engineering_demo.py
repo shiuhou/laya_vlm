@@ -300,15 +300,16 @@ def run(args):
     return out
 
 
-def replay_check(directory, task="top_drawer"):
+def replay_check(directory, task="top_drawer", backend_factory=None):
     """Replay actual controls, not model decisions; report every boundary error."""
     directory = Path(directory)
     rows, errors = load_records(directory / "episodes.jsonl")
     if errors:
         raise ValueError("cannot verify an incomplete record chain")
     config = next(r["data"]["resolved_config"] for r in rows if r["kind"] == "run_start")
-    backend = LiberoWorldBackend.from_task(task, seed=config["seed"], init_state_id=config["init_state_id"],
-        render=False, libero_root=config["libero_root"], config_dir=config["config_dir"])
+    backend = (backend_factory(config) if backend_factory else LiberoWorldBackend.from_task(
+        task, seed=config["seed"], init_state_id=config["init_state_id"], render=False,
+        libero_root=config["libero_root"], config_dir=config["config_dir"]))
     checks = []
     try:
         world = backend.world
