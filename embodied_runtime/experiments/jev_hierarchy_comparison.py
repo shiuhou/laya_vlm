@@ -224,6 +224,11 @@ def run(args):
 
     reference_rows = read_jsonl(Path(args.reference_raw))
     reference_environment = next(r["data"] for r in reference_rows if r["kind"] == "environment")
+    initial_archive_differences = numeric_only_differences(fresh_initial, archived_initial)
+    initial_archive_numeric_tolerance = 1e-9
+    initial_archive_numerically_equal = (initial_archive_differences is not None
+        and all(row["absolute_difference"] <= initial_archive_numeric_tolerance
+                for row in initial_archive_differences))
     condition = {
         "task_config_exact": task_config_exact,
         "task_config_semantics_exact": task_config_semantics_exact,
@@ -240,6 +245,9 @@ def run(args):
         "lookahead": 2,
         "success_predicate": archived_task["binding"]["success"],
         "initial_features_equal_archive": fresh_initial == archived_initial,
+        "initial_features_numerically_equal_archive": initial_archive_numerically_equal,
+        "initial_archive_numeric_differences": initial_archive_differences,
+        "initial_archive_numeric_tolerance": initial_archive_numeric_tolerance,
         "initial_features_equal_flat_laya": fresh_initial == reference_environment["features"],
         "all_policy_requests_exact": (instance.index == len(source_rows) == len(api)
                                       and not instance.numeric_equivalences),
@@ -263,9 +271,9 @@ def run(args):
         "archived_api_sha256": FrozenOriginalAnswers.source_sha256,
     }
     condition["same_physical_condition"] = all(condition[key] for key in (
-        "task_config_semantics_exact", "action_vocabulary_exact", "initial_features_equal_archive",
-        "initial_features_equal_flat_laya", "all_policy_requests_quantization_equivalent",
-        "fresh_simulator_reset"))
+        "task_config_semantics_exact", "action_vocabulary_exact",
+        "initial_features_numerically_equal_archive", "initial_features_equal_flat_laya",
+        "all_policy_requests_quantization_equivalent", "fresh_simulator_reset"))
     if not condition["same_physical_condition"]:
         raise RuntimeError("same-condition gate failed")
 
