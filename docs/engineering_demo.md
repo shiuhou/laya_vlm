@@ -1,170 +1,64 @@
-# A live visual Laya connectivity demonstration
+# Engineering demo: claims and evidence
 
-2026-09-23, after baseline `3be0fc5`. Engineering communication artifact only.
-One live trajectory; no policy search, task-success tuning, E0 or E1.
+The demo proves inspectable RGB-D → Laya → atomic executor → MuJoCo connectivity.
+It does **not** prove useful drawer manipulation, task competence, decision
+sufficiency or a useful oracle reference.
 
-For current commands, the offline HTML inspector and a fresh verified successor run,
-see [demo_runbook.md](demo_runbook.md). The historical result below is preserved.
-The [later feedback episode](closed_loop_demo.md) distinguishes existing embodied
-and asynchronous capability from the still-unmet goal of useful task-directed progress.
+## Supported path
 
-At the 2026-09-23 integration checkpoint, the latest completed feedback episode has
-eight Laya executions, seven verified next-decision feedback deliveries, and a
-recorded 64-control replay matching 73 boundaries. Drawer closure is zero, contact
-is false and task success is false. The report below remains the historical four-action
-run, not a claim about a new integrated rollout.
+`engineering_demo` is the live entry point; `demo_report` is the offline
+report/inspection entry point. `demo_inspector` and `demo_feedback` are libraries.
+The old --render-report alias and run_libero smoke runner remain for reproduction.
 
-Subsequent offline [distance-effect](frozen_step0_distance_effects.md) and
-[local-objective](frozen_step0_local_objective.md) interventions did not rescue the
-frozen choice. The latter also adds a contact premise, so decomposition alone is
-not isolated. [Candidate ordering](synthetic_negative_order_probe.md) substantially
-changes ranking but remains an unresolved diagnostic, not a live fix. Task
-decomposition is a hypothesis for architecture review. See the
-[integration review](integration_checkpoint.md); no task competence is established.
+The synchronous visual path uses LocateAnything + RGB-D, temporal belief, compact
+CDS and the existing visual gate's permitted nominal tokens. Choices pass
+identity/expiry/membership validation before atomic execution.
+Model history/effects remain empty. Simulator contact/progress/success are
+evaluator-only. Tracking is inactive; covariance/probabilities are uncalibrated.
 
-## Watch and inspect
+## Latest completed feedback episode
 
-- [12-second annotated MP4](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo.mp4)
-- [Animated GIF](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo.gif)
-- [Trajectory contact sheet](../runs/engineering-demo/top-drawer-init0-seed1-v01/contact-sheet.png)
-- [Generated trajectory report](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo.md)
-- [Full model inputs, outputs and execution evidence](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo-evidence.json)
-- [Raw hash-chained records](../runs/engineering-demo/top-drawer-init0-seed1-v01/episodes.jsonl)
-- [Control replay verification](../runs/engineering-demo/top-drawer-init0-seed1-v01/replay-check.json)
+Eight Laya choices, nine captures and seven verified feedback deliveries.
+All 64 recorded controls replay exactly at 73 checked boundaries.
+Drawer closure **zero**, target contact **false**, task success **false**.
+The preceding GPU-memory startup failure is retained.
 
-These are local, ignored run artifacts, not committed media. The commands below
-reproduce the data path in the existing environment. The video uses actual frames
-captured after each control, not reconstructed or generated robot motion. Motion
-plays at 0.5x; inference pauses are shortened. The side panel explicitly shows
-action-end telemetry even during the preceding decision pause. A green box on
-decision frames is the detector's selected support, not an oracle annotation.
+This supports local control replay and traceability, not reproducibility of a new
+model rollout or useful task-directed behavior. Gate changes alone do not prove
+the model uses feedback well. STOP/GRASP/RELEASE may drift in loaded states.
 
-## What actually ran
+## Evidence index
 
-```text
-LIBERO top_drawer, init_state_id=0, seed=1
-  -> calibrated agentview RGB-D, simulation paused
-  -> local LocateAnything + depth (existing first-box estimator)
-  -> ObservationEvent -> MultiRateFusion -> BeliefSnapshot
-  -> existing visual hard-validity candidate gates
-  -> compact CanonicalDecisionState v0.1 + permitted nominal action semantics
-  -> real local LayaProvider (audited tokens; no effects/history)
-  -> unchanged Runtime identity/expiry/membership validation
-  -> unchanged AtomicExecutor and native Jev/robosuite controller
-  -> MuJoCo execution, frames, actual gripper/TCP telemetry
-```
+| Record | Scope |
+|---|---|
+| [Original connectivity](evidence/demo/visual_connectivity.md) | Historical four-action run, media, telemetry and environment |
+| [Inspector runbook](evidence/demo/demo_runbook.md) | Reproduction and offline inspection |
+| [Feedback episode](evidence/demo/closed_loop_demo.md) | Eight-action run, feedback and replay |
+| [Decision autopsy](evidence/demo/decision_autopsy.md) | Decision-to-control trace/action semantics |
+| [Translations only](evidence/demo/frozen_step0_translations_only.md) | Frozen vocabulary intervention |
+| [Geometry sensitivity](evidence/demo/frozen_step0_geometry_sensitivity.md) | Frozen geometry intervention |
+| [Distance effects](evidence/demo/frozen_step0_distance_effects.md) | Kinematic annotations did not rescue frozen choice |
+| [Local objective](evidence/demo/frozen_step0_local_objective.md) | No rescue; contact premise confounds decomposition |
+| [Position swap](evidence/demo/frozen_step0_position_swap.md) | Candidate-position sensitivity |
+| [Synthetic direction](evidence/demo/synthetic_direction_probe.md) | Controlled directional semantics |
+| [Negative-direction order](evidence/demo/synthetic_negative_order_probe.md) | Ranking/order sensitivity, not a policy repair |
 
-The simplest verified configuration was the existing reset, not a new task.
-Task binding: `libero_90/KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet`.
-The fixed query is `the metal handle on the top drawer of the small freestanding
-wooden cabinet in the foreground`.
+Semantics/distance annotations alone do not establish useful atomic choice.
+Local objectives remain a hypothesis. New live collection requires separate review.
 
-The opt-in `engineering_demo` bridge reuses existing CDS fields and compact
-serialization. It offers **exactly** the live gate's permitted tokens, in the shared
-nominal vocabulary's order. It does not rank actions or insert recommended choices.
-Natural soft direction/progress metadata remains in the audit but is not supplied
-as candidate effects. Model history is empty. Its explicitly demo-specific question
-requests a task action and warns that validity is not collision approval; it does
-not call this live decision an offline probe. Neither the legacy runner nor the
-research pairing interface was changed.
+## Artifacts and inspection
 
-Each decision waits for a new RGB-D result at the same physical boundary. This is
-a disclosed synchronous demonstration schedule, not a relaxed uncertainty gate or
-a measurement of asynchronous robustness. All four geometry ages are 0 s; original
-validity thresholds, heuristic covariance and tracking-inactive status remain.
+Raw artifacts are preserved in the main worktree's ignored runs/engineering-demo.
+Historical checkout names in manifests are provenance, not required directories.
+Fresh clones do not contain runs/media/model weights or external simulator setup.
 
-## What Laya decided
-
-| Step | Laya choice = executed token | Returned P(choice) | Actual finger gap, mm | Actual TCP displacement XYZ, mm |
-|---|---|---:|---|---|
-| 0 | GRASP | .2886 | 76.45 -> 20.81 | +.035, +.118, +.028 |
-| 1 | RELEASE | .1879 | 20.81 -> 57.43 | +.019, +.106, +.015 |
-| 2 | GRASP | .3220 | 57.43 -> 20.57 | +.017, +.081, +.013 |
-| 3 | RELEASE | .1974 | 20.57 -> 57.43 | +.015, +.057, +.012 |
-
-Every boundary had **ten permitted choices**, including all translations, both
-rotations and STOP. The gripper gate alternates GRASP/RELEASE availability as the
-retained command changes; it does not force Laya to pick either. All four responses
-are genuine `source=laya`, with no singleton choices or validation fallbacks.
-We cannot infer an internal rationale from these choices.
-
-Four actions produce 32 low-level controls and 32 recorded execution frames,
-advancing simulation from .5 to 2.1 s. No failure events or reset-contract flags.
-Actual consumed tokens match the input audits: 588–594 tokens, under the unchanged
-1024-token model limit, with no heading/option/state clipping. Model latencies
-including observation hooks: 30.5–61.1 ms. Vision inference: 2.42–2.68 s per capture.
-Whole run: approximately 31.8 s including startup/hashing. Not a latency benchmark.
-
-The drawer remains at **151.659 mm remaining opening** throughout; no target
-contact, no task success. This is observable opening/closing of the gripper in
-free space, not a successful grasp or drawer operation. We retained the first live
-run rather than selecting a more successful or visually appealing trajectory.
-
-## Reproducibility and evidence boundaries
-
-The exact benchmark initial-state vector is fingerprinted in `demo_initial_identity`;
-seed and benchmark index are separate. RGB-D arrays, calibration, accepted events,
-full natural snapshots, compact inputs, questions, raw model responses/logits,
-token audits, validated intents and physical action outcomes are linked by IDs.
-Trajectory NPZ files contain controls, pre-control simulator states, endpoint state
-and rendered frames. All control and frame artifacts are hashed.
-
-A fresh simulator reset followed by replay of the **recorded low-level controls**
-reproduced all 37 checked boundaries (initial + 32 pre-control + four endpoints)
-with maximum recorded state error **0**. This establishes local trajectory replay,
-not bitwise reproducibility of a second full vision/model run or another machine.
-
-Simulator target/contact/progress telemetry is marked evaluator-only. Laya receives
-sensor-derived geometry, robot proprioception, task context, quality and explicit
-unknowns. Contact, holding, visibility and drawer progress remain unknown. No
-simulator preview, oracle target point or privileged progress enters this path.
-Camera calibration is supplied by the simulation sensor adapter.
-
-LocateAnything returned extra boxes; the unchanged provider uses its first box.
-No oracle filtering corrects detections. Target location/covariance accuracy is
-not validated by this demo. Tracking remains inactive; covariance/semantic scores
-and Laya probabilities are not calibrated. STOP/GRASP/RELEASE are active controller
-commands, not promises of no physical drift. Reset contract checks are not general
-safety certificates. Earlier loaded-state anomalies remain valid evidence.
-
-**Engineering conclusion:** the visual model-to-actuator path is genuinely live
-and auditable. **Research conclusion:** none about task competence, decision
-sufficiency, causal perception effects or the usefulness of an oracle policy.
-Formal E0 remains unfrozen and unjustified by this demonstration.
-
-## Commands and environment
+Offline CLI help (no inference):
 
 ```sh
-P=/home/junhongli/miniforge3/envs/laya-embodied/bin/python
-V=/home/junhongli/miniforge3/envs/locateanything/bin/python
-CUDA_VISIBLE_DEVICES=1 MUJOCO_GL=egl HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 $V \
-  -m embodied_runtime.experiments.engineering_demo \
-  --output runs/engineering-demo/top-drawer-init0-seed1-v01 --steps 4
-MUJOCO_GL=egl $V -m embodied_runtime.experiments.engineering_demo \
-  --output runs/engineering-demo/top-drawer-init0-seed1-v01 --replay-check
-$V -m embodied_runtime.experiments.engineering_demo \
-  --output runs/engineering-demo/top-drawer-init0-seed1-v01 --render-report
-$P -m pytest -q tests/test_engineering_demo.py tests/test_candidates.py tests/test_decision_interface.py
-$P -m pytest -q
-$P -m ruff check .
-$P -m compileall -q embodied_runtime tests
-git diff --check
+python -m embodied_runtime.experiments.demo_report --help
 ```
 
-Use a **fresh output directory** for new collection. The live command and replay
-both exited 0. Re-rendering media does not execute simulation or model inference.
-Verification: **28 focused tests, 244 full tests passed**; ruff, compileall and
-`git diff --check` passed. The full suite completed in 4.77 s.
-Media generation uses existing Pillow and system ffmpeg; no dependencies, upstream
-repositories, model weights or live policy code were modified/downloaded.
-
-Runtime: Python 3.10.21, MuJoCo 3.5.0, robosuite 1.4.1, NumPy 1.26.4,
-torch 2.2.0, transformers 4.57.3, laya 0.3.4, CUDA/bfloat16 on GPU 1.
-Model content IDs remain the previous local Laya `9fba4af58ef0...` and
-LocateAnything `4b5384cddeda...`; complete IDs/source hashes are in the manifest.
-Known upstream tokenizer/Gym/robosuite warnings were not patched or suppressed.
-
-The instrumentation was recorded against baseline `3be0fc5` plus logged working
-source hashes, not a frozen experimental release. New files are the opt-in demo
-runner/bridge, raw-derived media report and focused tests; existing research
-schema, live runner, candidate logic and executor semantics are untouched.
+The runbook describes inspection of existing artifacts. Reporting can write
+derived files; use copies when auditing archival evidence.
+No new replay or collection is required to interpret recorded findings.
+[Current state](current_state.md) supersedes all old next steps.

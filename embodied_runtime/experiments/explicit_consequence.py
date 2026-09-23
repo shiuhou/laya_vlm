@@ -23,7 +23,7 @@ from .reference_model_diagnostic import payload_id, run_call
 
 VERSION = "explicit-consequence-v0.1"
 SOURCE_SHA256 = "032444bf8fe439e6ac2a84a7e0f7a4c59b760fc64ab5e00bceab28e74b628ad6"
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/explicit_consequence_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/explicit_consequence_protocol.md"
 QUESTIONS = {
     "closed": "Choose an intervention with opening decreases, vs STOP lower, and obstacle no.",
     "open": "Choose an intervention with opening increases, vs STOP higher, and obstacle no.",

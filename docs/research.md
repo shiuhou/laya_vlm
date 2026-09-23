@@ -1,320 +1,76 @@
-# Research direction and the next experiment
+# Research direction and evidence boundaries
 
-This is the authoritative direction for **Track B — Decision Interface Research**.
-Track A demonstrates connectivity; its successful execution is not evidence for the
-scientific hypotheses below. Track responsibilities and shared foundations are in
-[development_tracks.md](development_tracks.md); verified status is in
-[current_state.md](current_state.md).
+The question is what information a decision interface must preserve for useful
+embodied decisions. The narrower “minimum world state” formulation is under
+review: candidate interpretation, effects, intent and selection may matter
+alongside CDS fields. This is not an adopted new thesis or architecture.
 
-**2026-09-23 integration checkpoint:** flat multi-candidate atomic ranking is under
-architecture review. The binary predicate proposal below is retained for traceability
-and is on hold, not the next authorized action. See the
-[integration review](integration_checkpoint.md). No prompt optimization, new Laya
-experiment, planner, CDS redesign, live oracle restoration or formal E0 follows
-from this merge. State Gap and Effect Gap remain separate.
+## Scientific gate
 
-Central question: **What information must the world expose to a robot decision
-model for useful decisions?** This runtime studies how sensor observations,
-proprioception and history can be converted into decision-sufficient state and
-separately identified candidate-effect evidence for typed embodied decisions.
-It does not aim to reconstruct the entire simulator or prove a particular model
-intelligent. The oracle-conditioned model is a reference to validate, not ground truth.
+**Formal E0 is blocked. No useful manipulation reference is established.**
+Oracle/perceptual agreement in the reference pilot did not imply useful progress.
+GRASP at step 140 reopened the drawer by 14.272 mm, 21.261 mm worse than STOP.
+An oracle-conditioned decision is not automatically an expert reference.
 
-Engineering first makes World/Sensors → Structured Interface → Typed Model → Robot
-work as a controllable, replaceable instrument. The science then asks which world
-and action-consequence information that interface must preserve—not how to reproduce
-the whole simulator or merely optimize wording.
+State Gap changes state evidence while holding effects/the decision problem fixed.
+Effect Gap changes consequences with state/candidates fixed. The primary paired
+State-Gap replay uses empty effects. Oracle preview, oracle-derived geometry,
+deployable geometry, learned predictions and unknowns retain distinct provenance.
+Evaluator outcomes cannot back-fill perceptual inputs.
 
-## Three-stage roadmap and review boundaries
+The visible-handle surface centroid is not a rigid grasp pose. Unknown
+contact/holding/progress remain unknown in visual state. Loaded controller
+anomalies remain evidence; reset calibration does not prove exact nominal motion
+or pose holding at every boundary.
 
-- **Stage 4, current:** reference/interface validation after the common-referent and
-  multi-init pilots. The manipulation-reference gate is still NO; diagnostics and
-  minimal-interface hypotheses do not themselves authorize a formal experiment.
-- **Stage 5, only after approval:** frozen formal E0 and field-family interventions,
-  yielding a decision sensitivity map, not just one agreement percentage.
-- **Stage 6, later:** closed-loop tests of the sensitive fields found in E0—temporal
-  validity, missing-state estimators, then separately controlled effect comparisons.
-  Provider comparisons follow under a matched interface, not a simultaneous change
-  to perception, candidate logic, effects and model. Each stage requires review.
+## Research evidence index
 
-The immediate comparison is **State Gap**:
+Sibling *_protocol.md files are preserved historical specifications, not work orders.
 
-```text
-D(oracle decision state, C, fixed history, no effects)
-vs
-D(perceptual decision state, C, fixed history, no effects)
-```
+| Record | Result and boundary |
+|---|---|
+| [Reference pilot](evidence/decision_interface/reference_pilot_handoff.md) | Agreement fails the usefulness gate. |
+| [Reference mechanism](evidence/decision_interface/reference_mechanism_handoff.md) | Loaded/in-flight execution limits nominal assumptions. |
+| [Interface search](evidence/decision_interface/interface_search_handoff.md) | Narrow status judgments can work; mixed geometry/atomic selection remain deficient. Precomputing winning axes transfers policy upstream. |
+| [Reference gate](evidence/decision_interface/reference_gate_handoff.md) | Status missingness and consequence use differ; neither qualifies a manipulation policy. |
+| [Effect binding](evidence/decision_interface/effect_binding_handoff.md) | Native/anonymous and absolute/STOP-relative effects separate presented consistency from physical utility. |
+| [Provider comparison](evidence/decision_interface/provider_comparison_handoff.md) | Provider-specific offline controls, not a live backend replacement. |
+| [Clause order](evidence/decision_interface/clause_order_handoff.md) | STOP-rule ordering is a presentation diagnostic. |
+| [Goal placement](evidence/decision_interface/goal_placement_handoff.md) | Goal-last anonymous utility 9/16 → 11/16; native 0/16. Useful binding remains unestablished. |
+| [Selective grip](evidence/decision_interface/selective_grip_handoff.md) | Native 0/16 → 5/16, opening only; closing 0/8. Wording matters but is not the sole deficit. |
+| [Explicit consequence](evidence/decision_interface/explicit_consequence_handoff.md) | Explicit conjunction 5/16 → 4/16, no prior errors corrected; target predicates do not reliably repair ranking. |
 
-Freshness, uncertainty, missingness and field provenance are dimensions of this gap.
-Temporal belief and delayed-event replay remain foundations, not a separate claim
-of architectural novelty. A later, separate **Effect Gap** comparison holds the
-perceptual state fixed and changes oracle-simulator versus non-privileged candidate
-effects. Oracle effects are privileged diagnostic evidence, never deployable vision
-policy input.
+These are bounded correlated fixtures/repeats, not population estimates.
+Anonymization, ordering and question edits are manipulations, not canonical
+candidate representations.
 
-Belief quality should ultimately be evaluated both geometrically and by its effect
-on decisions. Agreement with a useless oracle-conditioned policy is not evidence
-of useful decision sufficiency; disagreement is not automatically perception error.
+## Related demo diagnostics
 
-## Hypotheses, not schema requirements
+[Distance effects](evidence/demo/frozen_step0_distance_effects.md) and
+[direction probes](evidence/demo/synthetic_direction_probe.md) weaken the simple
+“only missing semantics” explanation without proving state/effects sufficient.
+[Local-objective text](evidence/demo/frozen_step0_local_objective.md) also adds a
+contact premise, so decomposition was not isolated.
+[Directional order](evidence/demo/synthetic_negative_order_probe.md) and
+[position swaps](evidence/demo/frozen_step0_position_swap.md) show ranking
+sensitivity; ordering is not a solved policy.
 
-| Information or mechanism | Evidence so far | What remains unresolved |
-|---|---|---|
-| Articulation + requested state | A finite categorical status interface is goal-sensitive; masking articulation reproduces the tested perceptual output | A legitimate sensor articulation estimate is absent; this is not an action-selection reference |
-| Explicit UNKNOWN response | Handles the tested missing-state cases that the binary vocabulary mishandles | Generalization to new wording, partial evidence and uncertain/stale observations; no calibrated abstention guarantee |
-| Task-relative geometry | Some sentence-form single-axis controls work; mixed-axis and goal-reversal controls fail | What geometry/abstraction a competent manipulation interface requires; an upstream winning-axis computation already performs policy |
-| Contact, holding and recent outcomes | Available evidence/provenance can be represented; unsupported perceptual fields remain unknown | Which family improves useful choices, rather than correlating with task phase or making outputs change |
-| Age, validity and uncertainty | Temporal contracts and metadata work | Whether these fields improve task-useful decisions; covariance is still heuristic |
-| Candidate-specific consequences | Explicit desired-consequence questions on selective fixtures change only 2/32 actions, with true utility 5/16 → 4/16 and appropriate goal reversal still 1/16 | Failure persists in consequence-to-candidate selection, weakening an upstream-only explanation; recognizing predicate satisfaction versus competitive selection remains unresolved; no useful reference exists |
+Flat atomic ranking is under review. Missing physical state remains possible;
+label interference, consequence binding and competition also remain plausible.
+No clean result proves a hierarchy necessary, geometry-only effects sufficient,
+or binary verification successful.
 
-Changing an output is not automatically improving a decision. Future field tests
-need a bounded question with an independent reference, matched model/candidates/
-question/history, one information-family intervention at a time, and same-input
-controls. Candidate clarification is a separately labeled condition, not a hidden
-change during a state comparison. Do not promote CDS v0.1, a proposed v0.2, or a
-larger field list as validated decision sufficiency.
+## Before further experiments
 
-## Current evidence and limitations
+Humans must agree on Laya's judgment boundary, full vocabulary versus subset,
+allowed candidate processing/effect sources and local intent.
+World.predict_all() can be reviewed as a privileged reference option, not a
+restoration decision; usefulness would still need demonstration.
 
-The [explicit-consequence diagnostic](explicit_consequence_handoff.md) changes only
-the question on selective goal-last fixtures to the required `decreases/lower/no`
-or `increases/higher/no` conjunction, derived from the existing evaluator. In 128
-Laya calls, every archived control and repeat matches raw scores exactly. Explicit
-criteria **do not materially help**: 2/32 actions change, no errors are corrected,
-one success is lost. True-effect utility falls **5/16 → 4/16**, with closing still
-**0/8** and opening **4/8**; shifted correctness stays **1/8 closed, 8/8 open**.
-Appropriate goal/consequence/action reversal stays **1/16**. Both assignments correct
-falls **5/16 → 4/16**; both orders correct stays **5/16**, all opening. Opening effects
-still win **24/32**, including **12/16 closing requests**. All 32 question changes
-alter scores, but the directional deficit persists. Inputs increase 336 → 344 tokens
-without clipping; no other input field, configuration or physical semantics changes.
-
-Supplying the target consequence is insufficient: **downstream matching/selection
-also fails under this presentation**, weakening an exclusively upstream goal-to-effect
-explanation. This does not establish upstream competence or failure under every
-possible explicit wording. Predicate recognition versus competitive selection and
-remaining description/identity/position interactions are still unseparated. No useful
-reference, additional physical fields, schema redesign or formal E0 is justified.
-
-The prior [selective grip-description diagnostic](selective_grip_handoff.md) changes only
-the GRASP/RELEASE nominal prefixes to `intervention` on native goal-last fixtures.
-All other descriptions and all state/effect text remain fixed. In 128 Laya calls,
-all repeats and archived controls reproduce exactly. True-effect utility improves
-**0/16 → 5/16**, entirely on opening requests; true closing stays **0/8**. Appropriate
-goal/consequence/action reversal improves only **0/16 → 1/16**. Effect-reassignment
-correctness improves **0/16 → 5/16**, all opening; no context/assignment passes both
-goals under both option orders. RELEASE falls 20/32 → 3/32 while GRASP rises 8/32 →
-23/32, so improvement is not simply avoidance of grip actions. Selected opening
-bundles dominate **25/32**, including **12/16 closing requests**.
-
-The two descriptions contribute to the original failure, but removing them exposes
-a remaining failure to select consequence direction according to the requested goal.
-The experiment also shortens inputs by eight tokens; it does not isolate lexical
-meaning from length/position or GRASP from RELEASE separately. Full CDS/no-effect
-sufficiency remains unestablished, and the useful-reference/E0 gate remains closed.
-No additional physical fields or provider search is justified.
-
-The prior [Laya goal-placement diagnostic](goal_placement_handoff.md) moves the unchanged
-requested-goal sentence after all rules, with all 64 originals and 64 transformed
-fixtures repeated in the same session (**256 calls**). Full unchanged controls and
-repeats reproduce exactly; token multisets/counts and option markers are preserved.
-Placement changes 25/64 choices. Native true utility stays **0/16**; anonymous true
-utility rises **9/16 → 11/16**, and appropriate goal/consequence/action reversal
-improves **2/32 → 6/32**, all anonymous. No context/assignment succeeds under both
-goals and both option orders. Anonymous opening bias falls 30/32 → 22/32, but paired
-effect-reassignment correctness stays 8/32 overall. Thus goal position matters
-without explaining the core failure.
-
-The new native pattern is more specific: **16/16 opening requests choose RELEASE**,
-including eight shifted cases where its stated drawer consequences are closing.
-This strengthens the hypothesis that gripper-description meaning competes with
-task-goal/consequence integration. It does not establish lexical matching as the
-internal mechanism or explain all anonymous failures. Laya remains primary; no
-Qwen inference was needed for this placement contrast. No new physical fields or
-CDS redesign is justified, and the useful-reference/E0 gate remains closed.
-
-The prior [STOP-clause order diagnostic](clause_order_handoff.md) changes only the order
-of the final closed/open rule clauses on both existing providers. All 264 new calls
-are valid, unclipped and exactly repeatable, including unchanged-control reproduction.
-Laya changes 23/64 actions and Qwen 2/64, but anonymous opening-effect selections
-remain **30/32 → 32/32** and **29/32 → 28/32** when closing moves last. Only one
-provider/fixture pair switches from opening to closing bundles. Native true-effect
-utility stays 0/16 and 8/16; neither reference gate passes. Clause order has a causal
-behavioral effect, including seven Laya native shifted-effect transitions into closing
-bundles, but final STOP-clause dominance does not explain the shared opening bias.
-That experiment left the earlier absolute rule, current-articulation wording and
-requested-goal placement unseparated. The goal-placement result above now tests
-the latter directly without resolving the other mechanisms. No additional physical
-fields are justified by either test.
-
-The [independent-provider comparison](provider_comparison_handoff.md) changes only
-the provider/checkpoint/adapter on the frozen full-effect fixtures. Qwen2.5-7B-Instruct
-improves native utility but fails the same qualification gate: only 3/32 goal pairs
-are correct under both goals. Anonymous conditions give 8/8 opening versus 0/8
-closing judgments; 29/32 selected fact bundles increase opening, similar to Laya's
-30/32. Reassignment changes choices, so effect binding is active without reliable
-goal conditioning. All 128 new outputs are valid, unclipped and exactly repeatable.
-This supports cross-provider persistence on this presentation, not a universal
-provider failure or a need for more physical fields. The frozen state is an
-exploratory sentence projection, not a full CDS v0.1 serialization.
-
-The [fixed-option effect diagnostic](effect_binding_handoff.md) resolves two prior
-confounds in 256 offline calls. Removing native descriptions improves local scores
-at the same option count, while adding the missing STOP-relative fact does not
-rescue native choices. Anonymous full-effect choices follow the same opening
-direction under opposite goals in seven of eight cases; reassignment changes which
-action carries that direction. This is a stable, presentation-sensitive failure
-to condition consequence selection on the goal, not total effect insensitivity.
-All factual inputs needed for the declared local predicate are supplied; this
-failure cannot be explained solely by omitted perceptual contact or geometry.
-It does not establish that CDS v0.1 suffices for no-effect manipulation.
-
-The [paired status and consequence gate](reference_gate_handoff.md) isolates a
-missing-articulation effect using exact field masking: the binary status model
-declares DONE on unknown input, while an explicit UNKNOWN option handles these
-tested cases. This is not a visual-estimation or manipulation E0 result. A
-separate actual-effect reference test fails despite a passing synthetic
-two-option consequence-use control. Effect presentation, native action semantics,
-option count, and absolute-versus-STOP-relative abstraction remain distinct
-scientific issues; supplying oracle consequences is not automatically sufficient.
-The successor diagnostic holds option count fixed and separates descriptions from
-STOP-relative information; both native and anonymous manipulation references
-still fail their goal-sensitive qualification.
-
-The preceding [bounded interface search](interface_search_handoff.md) tests
-smaller states rather than presuming CDS v0.1 is sufficient. It finds a narrow
-goal-sensitive articulation-status judgment, but no robust eleven-action policy.
-Perfect nominal scores appear when code precomputes the winning geometric axis;
-that transfers policy upstream and is not evidence of decision sufficiency.
-The proposed E0 below remains conditional, not superseded by a quiet change of
-task or decision vocabulary.
-
-The canonical interface and small paired replay work. A recorded Jev collector
-trajectory genuinely covers approach, contact and drawer closure. Its successful
-collection policy used simulator preview, different primitives and hierarchy; that
-does not validate the current no-effect Laya reference policy.
-
-The old visual query/depth proxy and simulator collision-AABB center remain
-incomparable. The reference-quality pilot instead defines the visible-pixel-weighted
-surface centroid of the foreground top-drawer handle. A sensor-only box-support
-RGB-D estimator and an independent first-hit visual-geometry ray oracle estimate
-that same quantity. Box contamination is measured, not corrected by the oracle.
-This is a view-dependent point, not rigid object pose or a grasp center. Current
-visibility, contact, holding and task progress are unknown unless their evidence
-source actually supports them. Tracking is inactive; visual covariance and semantic
-scores are uncalibrated.
-
-An initial replay exposed Laya input truncation. The replacement compact presentation
-is token-audited, rejects clipping, and records actual consumed tokens. Earlier
-truncated replay artifacts are retained but cannot support full-interface claims.
-See [the interface handoff](decision_interface_handoff.md) for measurements.
-
-## Prior next bounded experiment proposal — on hold for architecture review
-
-On Laya, test **candidate-by-candidate predicate verification**: does each unchanged
-candidate description/effect bundle satisfy the same explicit desired conjunction?
-Use two neutral answer IDs for `satisfies` and `does not satisfy`, reversed answer
-order and repeats. Cover every existing candidate under both directions and both
-true/reassigned provenance conditions; retain wrong-direction and mixed/neutral
-bundles and account for answer imbalance. Keep state/rules, model and numeric
-predicate fixed. No positive/negative labels enter the input.
-
-The latest question intervention affects every score distribution but barely changes
-choices and corrects no errors. Verification therefore separates recognizing a
-single bundle's predicate satisfaction from selection among eleven competing actions.
-Correct verification would support a competitive-selection bottleneck; failed
-directional verification would locate a deficit already in predicate recognition.
-This simpler binary task changes the response format and is a separately labeled
-diagnostic, not a policy or an isolated proof of an internal mechanism. Do not use
-its judgments to select or execute an action.
-
-This single next diagnostic is **proposed, not run**. Neither a useful manipulation
-reference nor full CDS sufficiency is established; formal E0 remains blocked.
-No additional provider, new physical fields or broad prompt search is justified.
-
-## Prior E0 collection proposal — conditional, not active or frozen
-
-The design below is retained for traceability, not as instructions to start
-collection. It requires a defensible reference/claim and renewed protocol review.
-The narrow status result and the engineering demo do not silently redefine or
-unblock the proposed manipulation comparison.
-
-The **reference-quality pilot** is predeclared in
-[reference_pilot_protocol.md](reference_pilot_protocol.md). Its result and raw evidence
-are in [reference_pilot_handoff.md](reference_pilot_handoff.md). It does **not** validate
-no-effect oracle-conditioned Laya as an expert reference. Preparatory choices are
-not proved wrong merely by lacking one-step utility, but high-confidence agreement
-with an unvalidated reference cannot establish useful decision sufficiency.
-
-The remaining gate is scientific: approve a **descriptive decision-fidelity**
-claim, review the narrow task-progress target, or establish a competent atomic
-reference in a separate pilot. The capability ladder now shows why additional
-fields alone are not justified: even well-defined mixed geometry and reversed
-motion objectives fail. Loaded/in-flight action semantics have independently been
-characterized; reset calibration does not establish realized pose-hold/10 mm
-motion at every collector boundary. Do not silently settle the simulator, discard
-flagged states, or loosen contracts. A fixed-effect condition remains a separate
-reviewed option: both branches would receive the *same* effects, clearly marked
-privileged. None were supplied in the interface search; they must not quietly
-enter the present no-effect comparison.
-
-The prior bounded collection proposal, still subject to that gate:
-
-- Task: `KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet`, LIBERO `libero_90`.
-- Actual benchmark initial-state IDs **0,1,2**, seed **1**, with benchmark-state,
-  task/assets and archived-control hashes. All three fixed-control trajectories
-  are verified; only init 0 completes the task. Do not discard init 1/2 or append
-  successful-only replacements. Near-completion is not pooled across these resets.
-- Select from boundaries at least eight controls after reset and before first
-  success. Five evaluator strata: far (surface gap >=20 mm); approach (5<=gap<20);
-  contact (measured target contact); progressing (>0.1 mm closure since prior
-  control); late (remaining opening <=25% of that reset's initial opening).
-  Select indices `round(q*(n-1))`, q=.25,.75, ties-to-even, in chronological order
-  per stratum. Deduplicate physical states across strata; preserve missing strata.
-  Overlapping phase names are not claims of monotonic task progression.
-- On the audited trajectories this selects **29 physical states**:
-  init 0 `[11,17,23,44,56,82,94,131,134,146]`;
-  init 1 `[13,24,32,48,61,132,147,153,155]`;
-  init 2 `[14,27,35,50,60,82,132,142,147,151]`.
-  Twenty show >0.1 mm drawer displacement over the preceding .4 s; the nine
-  static-target windows are controls. This is observed mechanism sensitivity,
-  not a model-outcome-derived selection rule.
-- **Fresh / .4-s-old** conditions at each boundary: 58 paired records total.
-  Collect RGB-D at every archived control boundary with simulation paused during
-  inference. Replay the identical history through temporal fusion: the stale
-  branch receives only captures through `step-8`, while fresh receives through
-  `step`; both use current, identical proprioception/history at the same physical
-  boundary. Log actual geometry reference age and temporal update identities.
-  No artificial occlusion condition yet; do not conflate wall latency with age.
-- One fixed 11-token semantics-only probe set, same order, same question, same last
-  robot outcome, empty effect bundle on both branches. These are offline choices,
-  not execution authorization. Record natural candidate availability separately.
-- One local Laya content revision/API/config/presentation for both branches, Rule as
-  a deterministic comparison. Three alternating-order repeats on every branch; seed
-  once per run rather than resetting before each call. Log actual device and tokens.
-
-Primary metrics: top-1 agreement; top-2-set agreement with ties explicit; Jensen–
-Shannon divergence in nats using normalized returned probabilities; oracle margin
-`p1-p2`; decision latency; same-input variability. Preserve raw rounded probabilities.
-Condition results on phase, actual age, missingness and natural candidate availability.
-Use position/relation error only for genuinely comparable referents. Candidate-set
-agreement is unknown when an oracle natural set has not been collected.
-
-First sensitivity families on fresh pairs: target position **and coherently
-recomputed relations**; remaining-opening missingness; contact missingness;
-age/validity/covariance as a coherent quality family (with separate labeled
-counterfactuals only later). Literal
-single-field counterfactuals can intentionally leave inconsistent relations, but must
-be labeled accordingly. Model-facing numeric precision and inclusion/exclusion of
-provenance are themselves frozen interface choices, not invisible implementation details.
-
-Report per-initial-state/trajectory results. Frames and repeat calls are correlated,
-not independent sample size. Three trajectories support a small descriptive
-benchmark, not population generalization or a convincing bootstrap interval over
-independent tasks. Show every reset; do not interpret non-significance as equivalence.
-Freeze code, model bytes, task assets, initial states, collection/phase selection,
-reference-point definition, candidate vocabulary, question, history, numeric
-presentation, temporal config, delay delivery and metrics before formal collection.
-
-No E0 freeze or formal collection is authorized by this document. Current readiness
-and next human gate are maintained in [current_state.md](current_state.md).
+The earlier binary predicate proposal and conditional E0 plan are on hold.
+Historical details remain in the
+[explicit-consequence record](evidence/decision_interface/explicit_consequence_handoff.md),
+[reference pilot protocol](evidence/decision_interface/reference_pilot_protocol.md)
+and [integration review](archive/historical_handoffs/integration_checkpoint.md).
+A next experiment requires one agreed falsifiable question and claim boundary.
+[Current state](current_state.md) is the operational authority.

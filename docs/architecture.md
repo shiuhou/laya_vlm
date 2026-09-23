@@ -1,6 +1,6 @@
 # Decision evidence interfaces
 
-Shared architecture for the two [development tracks](development_tracks.md).
+Implemented architecture of the integrated baseline; see [collaboration rules](development_tracks.md).
 This diagram separates concepts; the entry-point table below identifies which
 paths currently execute model decisions and which only replay them offline.
 
@@ -22,7 +22,7 @@ auditable embodied execution, not task competence or closed-loop research valida
 The non-oracle visual loop and two-step asynchronous smoke predate the demo branch.
 The engineering objective is sustained task-directed feedback and measurable task
 progress. Laya chooses atomic tokens; deterministic controllers own motor commands.
-The [feedback audit](closed_loop_demo.md) links execution endpoints to new RGB-D,
+The [feedback audit](evidence/demo/closed_loop_demo.md) links execution endpoints to new RGB-D,
 admitted observations, used fusion evidence and the next audited input. It distinguishes
 candidate-gate changes from evidence of model sensitivity; it does not change CDS,
 model questions, history, effects, candidate semantics or execution authorization.
@@ -63,7 +63,7 @@ candidate ordering or local-objective text to shared defaults.
 Candidate effects retain distinct sources: `oracle_sim`, deterministic `geometry`,
 `learned`, and `unknown` (or an empty bundle when none is supplied). Geometry derived
 from oracle inputs is still privileged. Supporting a source label does not establish
-a validated learned predictor. See [integration_checkpoint.md](integration_checkpoint.md)
+a validated learned predictor. See [integration_checkpoint.md](archive/historical_handoffs/integration_checkpoint.md)
 for history, claim boundaries and alternatives to review; no redesign is implemented.
 
 ## Roles
@@ -185,68 +185,10 @@ The older `audit-json-v0` presentation is retained only for interpreting old rec
 
 ## Dependencies and evidence
 
-The separate `experiments.interface_search` diagnostic deliberately does not
-require the canonical schema. It compares smaller numeric/categorical/sentence
-projections, candidate presentations and typed question scopes without changing
-the runtime. Future effects remain absent. Its dominant-axis projection and
-hand-written applicability criteria are explicitly policy-bearing controls,
-not proposed belief fields. The observed/requested articulation classifier is
-an offline status judgment; DONE/CONTINUE must not be mapped to physical STOP
-or execution without a separately validated controller. See the
-[search handoff](interface_search_handoff.md) for evidence and claim boundaries.
-
-`experiments.reference_gate` reuses that audited recorder for a narrow paired
-status-missingness test and separate consequence-use diagnostics. Only state and
-question/criteria enter inference; source identities, evaluator labels and raw
-physical outcomes remain outside it. Effect-bearing fixtures are explicitly marked.
-These exploratory projections do not replace the canonical live/offline interfaces
-or validate an atomic policy. See the [reference gate handoff](reference_gate_handoff.md).
-
-`experiments.effect_binding` holds all eleven options fixed while independently
-varying native/anonymous descriptions and absolute/STOP-relative consequence facts.
-True and deliberately reassigned privileged effects are labeled offline controls;
-presented-fact consistency is separate from actual numeric physical utility. It
-reuses archived probes and the same audited recorder, with no execution or changes
-to CDS/CandidateEffectBundle. See the [effect binding handoff](effect_binding_handoff.md).
-
-`experiments.provider_comparison` replays the archived full-effect fixtures through
-one offline Qwen instruction-model adapter. State, question and ordered criteria
-retain their logical payload identities; chat framing and output-format instruction
-are explicit provider-specific transport. Full generated sequences and vocabulary
-logits are recorded and audited. This adapter is not wired into the live runtime
-and the frozen sentence projection is not a full CDS serialization. See the
-[provider comparison handoff](provider_comparison_handoff.md).
-
-`experiments.clause_order` changes only the final STOP-rule clause order in those
-frozen full-effect sentence fixtures. It reuses both existing providers and numeric
-evaluators, preserving parent payloads, unchanged controls and complete raw outputs.
-Presented-effect direction remains separate from physical utility under reassignment.
-This offline intervention adds no state fields or live policy changes; it does not
-establish a useful manipulation reference. See the [clause-order handoff](clause_order_handoff.md).
-
-`experiments.goal_placement` moves only the unchanged requested-goal sentence after
-all rules on the frozen Laya full-effect fixtures, preserving the original STOP
-clause order. All originals rerun alongside interventions, with complete preflight,
-repeat and archived-control checks. This sentence projection remains separate from
-CDS and live execution. Its partial anonymous improvement does not qualify a native
-manipulation reference. See the [goal-placement handoff](goal_placement_handoff.md).
-
-`experiments.selective_grip` uses the accepted native goal-last fixtures and replaces
-only the nominal GRASP/RELEASE prefixes with `intervention`, preserving all effects
-and the other nine descriptions. It reruns every original control, records complete
-preflight/raw evidence and reuses existing numeric evaluators. Source metadata and
-physical identities stay intact; new presentation lineage is explicitly recorded.
-The partial opening-only gain does not establish goal binding or a manipulation
-reference. See the [selective-grip handoff](selective_grip_handoff.md).
-
-`experiments.explicit_consequence` changes only the question on accepted selective
-goal-last fixtures to the desired `decreases/lower/no` or `increases/higher/no`
-conjunction already implied by the rules/evaluator. Candidate criteria, complete
-state, mapping/order, source effects and inference configuration remain fixed.
-It supplies an intermediate target, never a winning identity, and reuses the same
-preflight, raw-output validators and numeric evaluator. The failure persists even
-with the target explicit; no original goal-binding, CDS or useful-reference claim
-is established. See the [explicit-consequence handoff](explicit_consequence_handoff.md).
+Offline diagnostic runners retain their alternate projections, presentation
+interventions and source identities. They do not change the shared CDS or live
+policy. The [research evidence index](research.md) records each intervention and
+its limitations; the protocols remain byte-identical historical specifications.
 
 LIBERO/MuJoCo provide physical execution and evaluator state. Jev-LIBERO supplies the
 World/controller adapter, oracle preview and the existing recorded collection trace.

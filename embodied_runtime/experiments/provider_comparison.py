@@ -22,7 +22,7 @@ SOURCE_SHA256 = "3875a25255eeb7880e1168579567758f68d616d39a023cc28c1ddef3e0c5eea
 MODEL_REPO = "Qwen/Qwen2.5-7B-Instruct"
 MODEL_REVISION = "a09a35458c702b33eeacc393d103063234e8bc28"
 SYSTEM = "Return exactly one option ID from the supplied options, with no other text."
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/provider_comparison_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/provider_comparison_protocol.md"
 
 
 def frozen_source(path):

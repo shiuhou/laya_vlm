@@ -21,7 +21,7 @@ from .records import RunRecorder, code_identity, file_hash, jsonable, load_recor
 from .reference_model_diagnostic import payload_id, run_call
 
 VERSION = "goal-placement-v0.1"
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/goal_placement_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/goal_placement_protocol.md"
 
 
 def move_fixture(parent):

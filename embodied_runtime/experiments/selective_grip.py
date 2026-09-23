@@ -21,7 +21,7 @@ from .reference_model_diagnostic import payload_id, run_call
 
 VERSION = "selective-grip-v0.1"
 SOURCE_SHA256 = "4f55a7e7bb193fe6856e36c9cfad1179c4bbbd24724dd2ca7605e72a697932cf"
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/selective_grip_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/selective_grip_protocol.md"
 PREFIXES = {"GRASP": "close grip; hold pose", "RELEASE": "open grip; hold pose"}
 
 

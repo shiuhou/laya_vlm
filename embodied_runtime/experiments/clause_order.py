@@ -19,7 +19,7 @@ from .records import RunRecorder, code_identity, file_hash, jsonable, load_recor
 from .reference_model_diagnostic import payload_id, run_call
 
 VERSION = "clause-order-v0.1"
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/clause_order_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/clause_order_protocol.md"
 ORIGINAL = ("When a STOP comparison is supplied, also require lower opening than STOP for closed, "
             "or higher opening than STOP for open.")
 SWAPPED = ("When a STOP comparison is supplied, also require higher opening than STOP for open, "

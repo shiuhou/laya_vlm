@@ -15,7 +15,7 @@ from .reference_gate import physical_assessment, physical_fixtures
 VERSION = "effect-binding-v0.1"
 TOLERANCE_MM = .25
 QUESTION = "Choose an intervention for the requested goal."
-PROTOCOL = Path(__file__).resolve().parents[2] / "docs/effect_binding_protocol.md"
+PROTOCOL = Path(__file__).resolve().parents[2] / "docs/evidence/decision_interface/effect_binding_protocol.md"
 
 
 def category(value, negative, positive, zero):
