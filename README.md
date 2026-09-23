@@ -5,17 +5,31 @@ actions; code owns estimation, validity checks and motor control.
 The integrated baseline demonstrates an inspectable visual model-to-actuator loop.
 That non-oracle demo still does not establish useful drawer manipulation.
 
+The current research direction is **Interaction-Structured Decision Interfaces for
+Foundation-Model Robotic Manipulation**. The question is what physical structure a
+runtime must expose to a frozen decision model so its closed-loop choices satisfy
+both task results and task-valid interaction relations. The interface under study is
+current state + predicted effects + local objective + interaction semantics. This
+phase remains explicitly privileged; perception, learned world models and sim-to-real
+are outside the present scope.
+
 The [local-objective privileged reference](docs/evidence/decision_interface/local_objective_reference.md)
 now exercises full Jev candidate previews, task-specific effect-contract filtering,
 an explicit local objective and original Jev's two-step witness fallback.
 Deterministic singleton continuations are explicitly separated from genuine Laya
 decisions. On top-drawer init 0 / seed 1, three fresh privileged runs each reached
 official success after 122 primitives, with exact preview/execution and control
-replay. This is a reproducible privileged reference, not deployable or non-oracle
-manipulation evidence.
+replay. This is a reproducible privileged **goal-completion** reference. A later
+contact-attribution replay found zero measured fingerpad/handle interaction, so it is
+not evidence of a learned drawer-closing manipulation skill.
 The frozen reference is tagged `privileged-drawer-reference-v1`. Its top-drawer
 semantics now live behind a `TaskSpec` / `TaskAdapter` boundary; three post-refactor
 fresh runs and full control replay reproduce the frozen trace exactly.
+The same runtime now hosts a wine-bottle/bottom-drawer TaskSpec plus generic contact
+relation and frame-relative placement measurements. Its latest fresh deterministic
+gate retained a valid grasp but stopped at a transport zero-pool before placement;
+Task-2 Laya has not run. See the
+[valid-interaction record](docs/evidence/privileged_reference/valid_interaction_semantics.md).
 
 ## Reading order
 

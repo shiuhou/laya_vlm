@@ -12,8 +12,11 @@ Remote branches are not removed. The bounded privileged reference was developed 
 `privileged-drawer-reference-v1`. A focused `refactor/task-spec-adapter` branch then
 isolated its drawer semantics behind `TaskSpec` / `TaskAdapter`; three fresh runs and
 replay established exact behavioral equivalence before integration. The main
-working directory has returned to the single `share_main` baseline. Further
-candidate-policy or architecture changes require a new decision.
+working directory then integrated the wine-bottle/bottom-drawer TaskSpec and generic
+valid-interaction measurements, including the failed strict Task-2 gate. It has
+returned to the single `share_main` baseline. Further candidate-policy or
+architecture changes require a new decision; the authorized next branch is an
+observational interaction-boundary audit only.
 
 ## Responsibilities for future work
 

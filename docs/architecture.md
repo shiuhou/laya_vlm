@@ -8,6 +8,8 @@ paths currently execute model decisions and which only replay them offline.
 ObservationEvent -> BeliefSnapshot -> CanonicalDecisionState
                                       + Candidate Set
                                       + CandidateEffectBundle
+                                      + Local Objective
+                                      + Interaction Semantics
                                       + one recent actual outcome
                                     -> DecisionProvider -> validation -> AtomicExecutor
                                     -> physical execution -> fresh ObservationEvent -> ...
@@ -32,7 +34,7 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
-| `privileged_reference` | Explicit oracle task reference, preflight, report and replay | `TaskSpec` / `TaskAdapter` supplies top-drawer identity, contracts, routing, presentation and measured outcome. The runner retains native Jev 27-action preview, original two-step witnesses only after an empty one-step union, genuine multi-option Laya calls, one-primitive execution and actual-outcome feedback. No hierarchy or visual/CDS changes. |
+| `privileged_reference` | Explicit oracle task reference, preflight, report and replay | `TaskSpec` / `TaskAdapter` supplies task identity, measurements, contracts, routing, presentation and measured outcome for top-drawer and wine-bottle/bottom-drawer tasks. The runner retains native Jev 27-action preview, original two-step witnesses only after an empty one-step union, genuine multi-option Laya calls, one-primitive execution and actual-outcome feedback. No hierarchy or visual/CDS changes. |
 | `two_step_lookahead_audit` | Frozen-snapshot audit of original Jev reversible witnesses | Replays the exact dead-end state, invokes unchanged original search, enumerates all qualifying pairs, checks full restoration and verifies the reference produces the same witness pool; no model or live policy episode. |
 | `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
@@ -109,6 +111,22 @@ builder accepts an injected contract function; callers that do not inject one ke
 the original Jev default. This extraction changes code ownership only. Three fresh
 post-refactor runs reproduced the frozen action/objective/pool/state trace exactly,
 and all old and new raw-control replays remained zero-error.
+
+The second TaskSpec reuses that runner for wine-bottle grasp, transport, placement,
+release and bottom-drawer closure. Generic Jev measurement declarations provide
+named contact relations and frame-relative object geometry. Task configuration owns
+entity selectors, designated relations, placement envelopes, objective routing and
+contracts. The runtime still owns preview scheduling, option presentation, model
+calls, execution, provenance and replay. `interaction_relations` retain complete
+per-control boolean values plus `ever`, `maintained`, `fraction` and `final`; two-step
+witnesses concatenate both primitives' relation traces. `geometry_in_frame` exposes
+object pose, rotation, bounds, extent, envelope margins, violations and fit.
+
+These mechanisms describe result validity and interaction evidence. They do not yet
+provide a causal contact classifier or a live joint-axis compatibility threshold.
+Official environment success and interaction-valid success therefore remain separate
+claims. The existing top-drawer success is official goal completion with 0 mm of
+measured designated fingerpad/handle closure.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.
