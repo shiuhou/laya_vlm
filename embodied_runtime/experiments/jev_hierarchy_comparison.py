@@ -2,8 +2,9 @@
 
 This is an architecture comparison, not a new model-quality sample.  The original
 Jev hierarchy and simulator run from reset; archived controls are never loaded.
-Every newly computed model request must equal the archived successful request
-before its original Jev answer can be returned.
+Every newly computed model request must equal the archived successful request,
+apart from logged one-unit numeric display quantization, before its original Jev
+answer can be returned.
 """
 from __future__ import annotations
 
@@ -74,7 +75,7 @@ def numeric_only_differences(fresh, archived, path=""):
 
 
 class FrozenOriginalAnswers:
-    """Original Jev responses, accepted only for byte-equivalent policy requests."""
+    """Original responses gated by exact or logged numeric-quantized requests."""
 
     source_rows = ()
     source_sha256 = None
@@ -186,28 +187,39 @@ def run(args):
     if ACTIONS != archived_config["candidate_controls"]:
         raise RuntimeError("current original Jev action vocabulary differs from archive")
 
-    original_decisions = runner.Decisions
-    runner.Decisions = FrozenOriginalAnswers
-    try:
-        result = runner.run("top_drawer", output, seed=1, init_state=0,
-            max_decisions=100, budget_usd=.1, lookahead=2, render=True,
-            libero_root=args.libero_root, config_dir=args.config_dir,
-            provider="openrouter")
-    finally:
-        runner.Decisions = original_decisions
-
-    instance = FrozenOriginalAnswers.instances[0]
+    if args.analyze_existing:
+        if not output.is_dir():
+            raise RuntimeError("--analyze-existing requires an existing output directory")
+        result = json.loads((output / "summary.json").read_text())
+        instance = FrozenOriginalAnswers(output)
+        existing_api = read_jsonl(output / "api.jsonl")
+        instance.index = len(existing_api)
+        equivalence_path = output / "request-numeric-equivalences.jsonl"
+        instance.numeric_equivalences = (read_jsonl(equivalence_path)
+                                         if equivalence_path.exists() else [])
+    else:
+        original_decisions = runner.Decisions
+        runner.Decisions = FrozenOriginalAnswers
+        try:
+            result = runner.run("top_drawer", output, seed=1, init_state=0,
+                max_decisions=100, budget_usd=.1, lookahead=2, render=True,
+                libero_root=args.libero_root, config_dir=args.config_dir,
+                provider="openrouter")
+        finally:
+            runner.Decisions = original_decisions
+        instance = FrozenOriginalAnswers.instances[0]
     if result["termination"] == "error":
         raise RuntimeError(f"fresh original Jev run failed: {result['error']}")
     fresh_initial = json.loads((output / "initial_state.json").read_text())
     trace = read_jsonl(output / "trace.jsonl")
     previews = read_jsonl(output / "predictions.jsonl")
     api = read_jsonl(output / "api.jsonl")
-    measurements = read_jsonl(output / "measurements.jsonl")
+    measurement_path = output / "measurements.jsonl"
+    measurements = read_jsonl(measurement_path) if measurement_path.exists() else []
     last_measurement = {}
     for row in measurements:
         last_measurement[row["decision"]] = row["features"]
-    if len(trace) != len(previews) or set(last_measurement) != set(range(len(trace))):
+    if len(trace) != len(previews):
         raise RuntimeError("fresh Jev physical evidence is incomplete")
 
     reference_rows = read_jsonl(Path(args.reference_raw))
@@ -259,7 +271,12 @@ def run(args):
 
     boundaries = []
     for t, p in zip(trace, previews, strict=True):
-        after = last_measurement[t["step"]]
+        if t["step"] in last_measurement:
+            after = last_measurement[t["step"]]
+            after_source = "recorded_execution_measurement"
+        else:
+            after = p["predictions"][t["choice"]]["after"]
+            after_source = "selected_preview_after_with_execution_state_check"
         by_intent = t["eligible_by_intent"]
         union = {name for pool in by_intent.values() for name in pool}
         boundaries.append({"step": t["step"], "intent": t["intent"],
@@ -270,7 +287,7 @@ def run(args):
             "motor_candidate_count": len(t["eligible_motor"]),
             "selected_primitive": t["choice"],
             "pool_source": "lookahead" if p["two_step_evaluations"] else "one_step",
-            "before": p["before"], "after": after,
+            "before": p["before"], "after": after, "after_source": after_source,
             "actual_closure_mm": t["actual_progress"], "official_success": t["success"],
             "prediction_state_max_error": t["prediction_state_max_error"]})
 
@@ -346,8 +363,12 @@ def run(args):
                 "intent_pool": b["intent_pool_count"], "motor_pool": b["motor_candidate_count"]}
                 for b in boundaries]},
         "artifact_sha256": {name: file_hash(output / name) for name in
-            ("api.jsonl", "predictions.jsonl", "trace.jsonl", "measurements.jsonl",
-             "sim_trajectory.npz", "summary.json", "task_config.json", "initial_state.json")}}
+            ("api.jsonl", "predictions.jsonl", "trace.jsonl", "sim_trajectory.npz",
+             "summary.json", "task_config.json", "initial_state.json")},
+        "execution_measurement_note": ("The original task config does not set record_features, "
+            "so boundary contact/gap/opening use the selected preview endpoint. Each endpoint is "
+            "backed by trace.prediction_state_max_error against the freshly executed simulator; "
+            "actual closure and official success come from the execution trace.")}
     evidence_path = output / "architecture-comparison.json"
     evidence_path.write_text(json.dumps(evidence, indent=2) + "\n")
 
@@ -382,6 +403,8 @@ def parser():
         "forced-singleton-episode-01/episodes.jsonl"))
     p.add_argument("--libero-root", default="/home/junhongli/projects/LIBERO")
     p.add_argument("--config-dir", default="/home/junhongli/runs/libero-config")
+    p.add_argument("--analyze-existing", action="store_true",
+        help="Finalize evidence from an already completed fresh run without rerunning it")
     return p
 
 
