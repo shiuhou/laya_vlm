@@ -1,5 +1,10 @@
 # Task 2 privileged feasibility gate
 
+This document preserves the earlier containment-only gate. The later
+result/valid-interaction implementation and its fresh bounded gate are recorded
+in [valid_interaction_semantics.md](valid_interaction_semantics.md); that gate also
+did not pass, and Task-2 Laya has still not been run.
+
 Status: **not passed; Task-2 Laya was not run**.
 
 This is a bounded engineering feasibility record, not a successful reference

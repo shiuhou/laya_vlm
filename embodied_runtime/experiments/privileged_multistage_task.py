@@ -26,11 +26,11 @@ WINE_BOTTLE_DRAWER_SPEC = TaskSpec(
         "approach_object": "Prefer greater bottle/gripper alignment gain and a graspable aperture without pushing the bottle.",
         "establish_grasp": "Prefer predicted bilateral fingerpad contact while limiting bottle displacement.",
         "transport_object": "Preserve bilateral contact while lifting for clearance or reducing horizontal drawer-goal error.",
-        "place_object": "Lower the held bottle into the drawer containment region while preserving the grasp.",
-        "release_object": "Release only when the prediction leaves the bottle inside the drawer.",
-        "approach_drawer": "Prefer substantial predicted gripper-to-drawer surface-gap reduction while preserving containment.",
-        "establish_drawer_contact": "Prefer useful bottom-drawer contact with nonnegative closure.",
-        "advance_drawer": "Prefer official task completion, otherwise greater bottom-drawer closure while preserving containment.",
+        "place_object": "Reduce full-object violation of the drawer close envelope while preserving the bilateral grasp.",
+        "release_object": "Release only when the bottle is inside and its full extent and orientation fit the drawer close envelope.",
+        "approach_drawer": "Prefer substantial gripper-to-drawer surface-gap reduction while preserving released placement_fit.",
+        "establish_drawer_contact": "Prefer useful bottom-drawer contact while preserving released placement_fit.",
+        "advance_drawer": "Prefer official task completion, otherwise greater closure while placement_fit remains valid.",
         "release_contact": "Remove obstructing drawer contact with the least loss of closure.",
         "release_obstruction": "Remove obstructing contact while preserving an existing bottle grasp.",
         "reposition": "Compare verified two-step effects; execute only the first primitive and reobserve.",
@@ -91,8 +91,9 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
 
     def prepare_world(self, world):
         state = world.features()
-        held = bool(state["bilateral_target_contact"])
+        held = bool(state["valid_grasp_relation"])
         inside = bool(state["object_inside_drawer"])
+        placement_fit = bool(state["placement_fit"])
         released = bool(state["object_released"])
         previous = self.phase
         if self.released_inside_seen and not inside:
@@ -118,6 +119,8 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
                 "active_joint_suffix": joint, "transition_reason": self.transition_reason,
                 "held": held, "object_inside_drawer": inside,
                 "object_released": released,
+                "placement_fit": placement_fit,
+                "placement_violation_mm": state["placement_violation_mm"],
                 "drawer_opening_mm": state["remaining_open_mm"]}
 
     def routing_context(self):
@@ -128,8 +131,9 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
         state = world.features()
         return {"task": self.spec.task_id, "instruction": world.task,
                 "satisfied": bool(state["success"]), "phase": self.phase,
-                "held": bool(state["bilateral_target_contact"]),
+                "held": bool(state["valid_grasp_relation"]),
                 "object_inside_drawer": bool(state["object_inside_drawer"]),
+                "placement_fit": bool(state["placement_fit"]),
                 "object_released": bool(state["object_released"]),
                 "drawer_closed": bool(state["drawer_closed"])}
 
@@ -140,7 +144,9 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
         rows = [
             f"Task: {self.spec.model_task}. effect_source=oracle_sim; privileged=true.",
             f"Current local objective: {objective}. Phase: {self.phase}. Active contact target: {self.active_target}.",
-            (f"State held={int(before['bilateral_target_contact'])} inside={int(before['object_inside_drawer'])} "
+            (f"State held={int(before['valid_grasp_relation'])} inside={int(before['object_inside_drawer'])} "
+             f"placement_fit={int(before['placement_fit'])} fit_violation="
+             f"{before['placement_violation_mm']:.2f}mm "
              f"released={int(before['object_released'])} "
              f"drawer_closed={int(before['drawer_closed'])} opening={before['remaining_open_mm']:.3f}mm "
              f"alignment={before['grasp_alignment_mm']:.2f}mm goal_xy={before['goal_xy_error_mm']:.2f}mm "
@@ -153,14 +159,16 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
         else:
             after = last["after"]
             rows.append(
-                f"Last actual: {last['action']} held={int(after['bilateral_target_contact'])} "
+                f"Last actual: {last['action']} held={int(after['valid_grasp_relation'])} "
                 f"inside={int(after['object_inside_drawer'])} released={int(after['object_released'])} "
+                f"placement_fit={int(after['placement_fit'])} "
                 f"closure={last['closure_mm']:.3f}mm "
                 f"success={int(last['official_success'])} controls={last['controls']}."
             )
         rows.append(
             "Effects: action|alignment_gain_mm|height_gain_mm|xy_gain_mm|delivery_progress_mm|"
-            "inside|held|released|closure_mm|gap_reduction_mm|target_contact|obstacle_peak_N|success|controls"
+            "inside|held|fit|fit_progress_mm|released|closure_mm|gap_reduction_mm|"
+            "target_contact|obstacle_peak_N|success|controls"
         )
         for name in names:
             p = predictions[name]
@@ -168,7 +176,8 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
             line = (
                 f"{name}|{p['alignment_gain_mm']:.2f}|{p['height_gain_mm']:.2f}|{p['xy_gain_mm']:.2f}|"
                 f"{p['delivery_progress_mm']:.2f}|{int(after['object_inside_drawer'])}|"
-                f"{int(after['bilateral_target_contact'])}|{int(after['object_released'])}|"
+                f"{int(after['valid_grasp_relation'])}|{int(after['placement_fit'])}|"
+                f"{p['placement_fit_progress_mm']:.2f}|{int(after['object_released'])}|"
                 f"{p['closing_mm']:.3f}|"
                 f"{p['geometry_approach_mm']:.2f}|{int(after['moving_contact'])}|"
                 f"{p['peak_obstacle_force_N']:.1f}|{int(after['success'])}|{p['steps']}"
@@ -203,8 +212,10 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
             "controls": execution["environment_step_count"],
             "obstacle_peak_N": execution["peak_obstacle_force_N"],
             "phase": self.phase, "objective_transition_reason": self.transition_reason,
-            "held": bool(after["bilateral_target_contact"]),
+            "held": bool(after["valid_grasp_relation"]),
             "object_inside_drawer": bool(after["object_inside_drawer"]),
+            "placement_fit": bool(after["placement_fit"]),
+            "placement_violation_mm": after["placement_violation_mm"],
             "object_released": bool(after["object_released"]),
             "drawer_opening_mm": after["remaining_open_mm"],
             "drawer_closed": bool(after["drawer_closed"]),
@@ -218,6 +229,7 @@ class WineBottleBottomDrawerAdapter(TaskAdapter):
         return {
             "phase": outcome["phase"], "held": outcome["held"],
             "inside": outcome["object_inside_drawer"],
+            "placement_fit": outcome["placement_fit"],
             "released": outcome["object_released"],
             "closure_mm": outcome["closure_mm"],
             "opening_mm": outcome["drawer_opening_mm"],
