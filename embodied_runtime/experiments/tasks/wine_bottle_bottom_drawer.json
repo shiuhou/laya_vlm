@@ -1,0 +1,2056 @@
+{
+  "schema_version": 1,
+  "name": "wine_bottle_into_bottom_drawer_then_close",
+  "binding": {
+    "suite": "libero_90",
+    "task": "KITCHEN_SCENE4_put_the_wine_bottle_in_the_bottom_drawer_of_the_cabinet",
+    "object": "wine_bottle_1",
+    "joint_suffix": null,
+    "success": "libero",
+    "drawer_object": "white_cabinet_1",
+    "drawer_joint_suffix": "bottom_level"
+  },
+  "contact": {
+    "min_normal_force_N": 0.05,
+    "allowed_other_geoms": [
+      "wine_bottle_1_g3",
+      "wine_bottle_1_g4",
+      "wine_bottle_1_g5",
+      "wine_bottle_1_g6",
+      "wine_bottle_1_g7",
+      "wine_bottle_1_g8",
+      "wine_bottle_1_g9",
+      "wine_bottle_1_g10",
+      "wine_bottle_1_g11",
+      "wine_bottle_1_g12",
+      "wine_bottle_1_g13",
+      "wine_bottle_1_g14",
+      "wine_bottle_1_g15",
+      "wine_bottle_1_g16",
+      "wine_bottle_1_g17",
+      "wine_bottle_1_g18",
+      "wine_bottle_1_g19",
+      "wine_bottle_1_g20",
+      "wine_bottle_1_g21",
+      "wine_bottle_1_g22",
+      "wine_bottle_1_g23"
+    ],
+    "parts": [
+      {
+        "contains": "pad",
+        "name": "fingerpad"
+      },
+      {
+        "contains": "finger",
+        "name": "finger"
+      }
+    ],
+    "default_part": "palm",
+    "reject_new_obstacles": true,
+    "require_obstacle_free_endpoint": true,
+    "release_priority": [
+      "blocked"
+    ]
+  },
+  "features": {
+    "jaw_center_mm": {
+      "ref": "raw.jaw_center_mm"
+    },
+    "jaw_axis": {
+      "ref": "raw.jaw_axis"
+    },
+    "target_center_mm": {
+      "ref": "raw.target_center_mm"
+    },
+    "target_bottom_mm": {
+      "ref": "raw.target_bottom_mm"
+    },
+    "target_top_mm": {
+      "ref": "raw.target_top_mm"
+    },
+    "target_lift_mm": {
+      "ref": "raw.target_lift_mm"
+    },
+    "target_span_in_jaw_mm": {
+      "ref": "raw.target_span_in_jaw_mm"
+    },
+    "initial_open_gap_mm": {
+      "ref": "raw.initial_open_gap_mm"
+    },
+    "grasp_alignment_mm": {
+      "ref": "raw.grasp_alignment_mm"
+    },
+    "bilateral_target_contact": {
+      "ref": "raw.bilateral_target_contact"
+    },
+    "target_contact_sides": {
+      "ref": "raw.target_contact_sides"
+    },
+    "target_external_contacts": {
+      "ref": "raw.target_external_contacts"
+    },
+    "target_external_contact_count": {
+      "ref": "raw.target_external_contact_count"
+    },
+    "destination_top_mm": {
+      "ref": "raw.destination_top_mm"
+    },
+    "destination_bounds_mm": {
+      "ref": "raw.destination_bounds_mm"
+    },
+    "goal_center_mm": {
+      "mul": [
+        {
+          "ref": "raw.site_positions.goal"
+        },
+        1000
+      ]
+    },
+    "goal_distance_mm": {
+      "norm": {
+        "sub": [
+          {
+            "ref": "raw.target_center_mm"
+          },
+          {
+            "mul": [
+              {
+                "ref": "raw.site_positions.goal"
+              },
+              1000
+            ]
+          }
+        ]
+      }
+    },
+    "goal_xy_error_mm": {
+      "norm": [
+        {
+          "index": [
+            {
+              "sub": [
+                {
+                  "ref": "raw.target_center_mm"
+                },
+                {
+                  "mul": [
+                    {
+                      "ref": "raw.site_positions.goal"
+                    },
+                    1000
+                  ]
+                }
+              ]
+            },
+            0
+          ]
+        },
+        {
+          "index": [
+            {
+              "sub": [
+                {
+                  "ref": "raw.target_center_mm"
+                },
+                {
+                  "mul": [
+                    {
+                      "ref": "raw.site_positions.goal"
+                    },
+                    1000
+                  ]
+                }
+              ]
+            },
+            1
+          ]
+        }
+      ]
+    },
+    "clearance_mm": {
+      "sub": [
+        {
+          "ref": "raw.target_bottom_mm"
+        },
+        {
+          "ref": "raw.destination_top_mm"
+        }
+      ]
+    },
+    "drawer_qpos_m": {
+      "ref": "raw.drawer_joint_position"
+    },
+    "remaining_open_mm": {
+      "mul": [
+        {
+          "ref": "raw.drawer_joint_position"
+        },
+        -1000.0
+      ]
+    },
+    "object_inside_drawer": {
+      "ref": "raw.object_inside_drawer"
+    },
+    "drawer_closed": {
+      "ref": "raw.drawer_closed"
+    },
+    "object_released": {
+      "all": [
+        {
+          "ref": "raw.object_inside_drawer"
+        },
+        {
+          "ref": "raw.drawer_frame_geometry.fits"
+        },
+        {
+          "eq": [
+            {
+              "count": {
+                "ref": "raw.target_contact_sides"
+              }
+            },
+            0
+          ]
+        }
+      ]
+    },
+    "qpos_m": {
+      "ref": "raw.drawer_joint_position"
+    },
+    "target_destination_contact": {
+      "eq": [
+        {
+          "count": {
+            "ref": "raw.target_destination_contacts"
+          }
+        },
+        1
+      ]
+    },
+    "contacting_robot_links": {
+      "ref": "raw.all_robot_bottle_contacts"
+    },
+    "left_fingerpad_target_contacts": {
+      "ref": "raw.left_fingerpad_bottle_contacts"
+    },
+    "right_fingerpad_target_contacts": {
+      "ref": "raw.right_fingerpad_bottle_contacts"
+    },
+    "valid_grasp_relation": {
+      "all": [
+        {
+          "gt": [
+            {
+              "count": {
+                "ref": "raw.left_fingerpad_bottle_contacts"
+              }
+            },
+            0
+          ]
+        },
+        {
+          "gt": [
+            {
+              "count": {
+                "ref": "raw.right_fingerpad_bottle_contacts"
+              }
+            },
+            0
+          ]
+        }
+      ]
+    },
+    "object_drawer_frame_position_mm": {
+      "ref": "raw.drawer_frame_geometry.body_position_mm"
+    },
+    "object_drawer_frame_rotation_matrix": {
+      "ref": "raw.drawer_frame_geometry.body_rotation_matrix"
+    },
+    "object_drawer_frame_bounds_mm": {
+      "ref": "raw.drawer_frame_geometry.object_bounds_mm"
+    },
+    "object_drawer_frame_extent_mm": {
+      "ref": "raw.drawer_frame_geometry.object_extent_mm"
+    },
+    "drawer_close_envelope_bounds_mm": {
+      "ref": "raw.drawer_frame_geometry.envelope_bounds_mm"
+    },
+    "placement_lower_margin_mm": {
+      "ref": "raw.drawer_frame_geometry.lower_margin_mm"
+    },
+    "placement_upper_margin_mm": {
+      "ref": "raw.drawer_frame_geometry.upper_margin_mm"
+    },
+    "placement_minimum_margin_mm": {
+      "ref": "raw.drawer_frame_geometry.minimum_margin_mm"
+    },
+    "placement_violation_mm": {
+      "ref": "raw.drawer_frame_geometry.violation_mm"
+    },
+    "placement_fit": {
+      "ref": "raw.drawer_frame_geometry.fits"
+    },
+    "placement_axis_violation_mm": {
+      "ref": "raw.drawer_frame_geometry.axis_violation_mm"
+    }
+  },
+  "predictions": {
+    "delivery_progress_mm": {
+      "sub": [
+        {
+          "ref": "before.goal_distance_mm"
+        },
+        {
+          "ref": "after.goal_distance_mm"
+        }
+      ]
+    },
+    "alignment_gain_mm": {
+      "sub": [
+        {
+          "ref": "before.grasp_alignment_mm"
+        },
+        {
+          "ref": "after.grasp_alignment_mm"
+        }
+      ]
+    },
+    "height_gain_mm": {
+      "sub": [
+        {
+          "ref": "after.target_bottom_mm"
+        },
+        {
+          "ref": "before.target_bottom_mm"
+        }
+      ]
+    },
+    "xy_gain_mm": {
+      "sub": [
+        {
+          "ref": "before.goal_xy_error_mm"
+        },
+        {
+          "ref": "after.goal_xy_error_mm"
+        }
+      ]
+    },
+    "width_reduction_mm": {
+      "sub": [
+        {
+          "ref": "before.target_span_in_jaw_mm"
+        },
+        {
+          "ref": "after.target_span_in_jaw_mm"
+        }
+      ]
+    },
+    "target_displacement_mm": {
+      "norm": {
+        "sub": [
+          {
+            "ref": "after.target_center_mm"
+          },
+          {
+            "ref": "before.target_center_mm"
+          }
+        ]
+      }
+    },
+    "closing_mm": {
+      "mul": [
+        {
+          "sub": [
+            {
+              "ref": "after.drawer_qpos_m"
+            },
+            {
+              "ref": "before.drawer_qpos_m"
+            }
+          ]
+        },
+        1000.0
+      ]
+    },
+    "task_progress_mm": {
+      "add": [
+        {
+          "sub": [
+            {
+              "ref": "before.goal_distance_mm"
+            },
+            {
+              "ref": "after.goal_distance_mm"
+            }
+          ]
+        },
+        {
+          "mul": [
+            {
+              "sub": [
+                {
+                  "ref": "after.drawer_qpos_m"
+                },
+                {
+                  "ref": "before.drawer_qpos_m"
+                }
+              ]
+            },
+            1000.0
+          ]
+        }
+      ]
+    },
+    "valid_grasp_maintained": {
+      "all": [
+        {
+          "ref": "before.valid_grasp_relation"
+        },
+        {
+          "ref": "after.valid_grasp_relation"
+        }
+      ]
+    },
+    "placement_fit_ever": {
+      "ref": "relations.placement_fit.ever"
+    },
+    "placement_fit_maintained": {
+      "ref": "relations.placement_fit.maintained"
+    },
+    "placement_fit_progress_mm": {
+      "sub": [
+        {
+          "ref": "before.placement_violation_mm"
+        },
+        {
+          "ref": "after.placement_violation_mm"
+        }
+      ]
+    },
+    "valid_grasp_continuous": {
+      "ref": "relations.valid_grasp_relation.maintained"
+    },
+    "valid_grasp_trace_fraction": {
+      "ref": "relations.valid_grasp_relation.fraction"
+    }
+  },
+  "thresholds": {
+    "ordinary": {
+      "progress": 2.0,
+      "alignment_tolerance_mm": 10.0,
+      "jaw_margin_mm": 2.0,
+      "clearance_mm": 10.0,
+      "goal_xy_mm": 15.0,
+      "max_approach_push_mm": 5.0,
+      "drawer_progress": 0.25,
+      "drawer_approach_mm": 2.0,
+      "placement_horizontal_violation_mm": 20.0
+    },
+    "collision_aware": {
+      "progress": 2.0,
+      "alignment_tolerance_mm": 10.0,
+      "jaw_margin_mm": 2.0,
+      "clearance_mm": 10.0,
+      "goal_xy_mm": 15.0,
+      "max_approach_push_mm": 5.0,
+      "drawer_progress": 0.01,
+      "drawer_approach_mm": 2.0,
+      "placement_horizontal_violation_mm": 20.0
+    }
+  },
+  "contracts": {
+    "release_object": {
+      "all": [
+        {
+          "ref": "before.object_inside_drawer"
+        },
+        {
+          "ref": "before.placement_fit"
+        },
+        {
+          "not": {
+            "ref": "before.object_released"
+          }
+        },
+        {
+          "ref": "after.object_inside_drawer"
+        },
+        {
+          "ref": "after.placement_fit"
+        },
+        {
+          "ref": "after.object_released"
+        },
+        {
+          "ge": [
+            {
+              "ref": "p.gap_change_mm"
+            },
+            2.0
+          ]
+        }
+      ]
+    },
+    "advance_drawer": {
+      "all": [
+        {
+          "ref": "before.placement_fit"
+        },
+        {
+          "ref": "after.placement_fit"
+        },
+        {
+          "ref": "p.placement_fit_maintained"
+        },
+        {
+          "all": [
+            {
+              "ref": "before.object_inside_drawer"
+            },
+            {
+              "ref": "before.object_released"
+            },
+            {
+              "ref": "after.object_inside_drawer"
+            },
+            {
+              "ref": "after.object_released"
+            },
+            {
+              "any": [
+                {
+                  "ge": [
+                    {
+                      "ref": "p.closing_mm"
+                    },
+                    {
+                      "ref": "thresholds.drawer_progress"
+                    }
+                  ]
+                },
+                {
+                  "ref": "after.success"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "establish_drawer_contact": {
+      "all": [
+        {
+          "ref": "before.placement_fit"
+        },
+        {
+          "ref": "after.placement_fit"
+        },
+        {
+          "ref": "p.placement_fit_maintained"
+        },
+        {
+          "all": [
+            {
+              "ref": "before.object_inside_drawer"
+            },
+            {
+              "ref": "before.object_released"
+            },
+            {
+              "ref": "after.object_inside_drawer"
+            },
+            {
+              "ref": "after.object_released"
+            },
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.moving_contact"
+                  }
+                },
+                {
+                  "ref": "after.moving_contact"
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.closing_mm"
+                    },
+                    {
+                      "mul": [
+                        {
+                          "ref": "thresholds.drawer_progress"
+                        },
+                        -1
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "approach_drawer": {
+      "all": [
+        {
+          "ref": "before.placement_fit"
+        },
+        {
+          "ref": "after.placement_fit"
+        },
+        {
+          "ref": "p.placement_fit_maintained"
+        },
+        {
+          "all": [
+            {
+              "ref": "before.object_inside_drawer"
+            },
+            {
+              "ref": "before.object_released"
+            },
+            {
+              "ref": "after.object_inside_drawer"
+            },
+            {
+              "ref": "after.object_released"
+            },
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.moving_contact"
+                  }
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.geometry_approach_mm"
+                    },
+                    {
+                      "ref": "thresholds.drawer_approach_mm"
+                    }
+                  ]
+                },
+                {
+                  "not": {
+                    "ref": "after.obstacle_contact"
+                  }
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.closing_mm"
+                    },
+                    {
+                      "mul": [
+                        {
+                          "ref": "thresholds.drawer_progress"
+                        },
+                        -1
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "place_object": {
+      "all": [
+        {
+          "ref": "before.valid_grasp_relation"
+        },
+        {
+          "all": [
+            {
+              "le": [
+                {
+                  "index": [
+                    {
+                      "ref": "before.placement_axis_violation_mm"
+                    },
+                    1
+                  ]
+                },
+                {
+                  "ref": "thresholds.placement_horizontal_violation_mm"
+                }
+              ]
+            },
+            {
+              "le": [
+                {
+                  "index": [
+                    {
+                      "ref": "before.placement_axis_violation_mm"
+                    },
+                    2
+                  ]
+                },
+                {
+                  "ref": "thresholds.placement_horizontal_violation_mm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "not": {
+            "ref": "before.placement_fit"
+          }
+        },
+        {
+          "ref": "after.valid_grasp_relation"
+        },
+        {
+          "ref": "p.valid_grasp_maintained"
+        },
+        {
+          "any": [
+            {
+              "ref": "after.placement_fit"
+            },
+            {
+              "ge": [
+                {
+                  "ref": "p.placement_fit_progress_mm"
+                },
+                {
+                  "ref": "thresholds.progress"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "transport_object": {
+      "all": [
+        {
+          "ref": "before.valid_grasp_relation"
+        },
+        {
+          "ref": "p.valid_grasp_maintained"
+        },
+        {
+          "all": [
+            {
+              "not": {
+                "ref": "before.object_inside_drawer"
+              }
+            },
+            {
+              "any": [
+                {
+                  "all": [
+                    {
+                      "ref": "before.bilateral_target_contact"
+                    },
+                    {
+                      "ref": "after.bilateral_target_contact"
+                    },
+                    {
+                      "not": {
+                        "le": [
+                          {
+                            "ref": "before.goal_xy_error_mm"
+                          },
+                          {
+                            "ref": "thresholds.goal_xy_mm"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "not": {
+                        "ge": [
+                          {
+                            "ref": "before.clearance_mm"
+                          },
+                          {
+                            "ref": "thresholds.clearance_mm"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "p.height_gain_mm"
+                        },
+                        {
+                          "ref": "thresholds.progress"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "ref": "before.bilateral_target_contact"
+                    },
+                    {
+                      "ref": "after.bilateral_target_contact"
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "before.clearance_mm"
+                        },
+                        {
+                          "ref": "thresholds.clearance_mm"
+                        }
+                      ]
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "after.clearance_mm"
+                        },
+                        {
+                          "ref": "thresholds.clearance_mm"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "ref": "after.target_external_contact_count"
+                        },
+                        0
+                      ]
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "p.xy_gain_mm"
+                        },
+                        {
+                          "ref": "thresholds.progress"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "ref": "after.valid_grasp_relation"
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "before.clearance_mm"
+                        },
+                        {
+                          "ref": "thresholds.clearance_mm"
+                        }
+                      ]
+                    },
+                    {
+                      "ge": [
+                        {
+                          "ref": "p.placement_fit_progress_mm"
+                        },
+                        {
+                          "ref": "thresholds.progress"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "establish_grasp": {
+      "all": [
+        {
+          "not": {
+            "ref": "before.object_inside_drawer"
+          }
+        },
+        {
+          "any": [
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.valid_grasp_relation"
+                  }
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "before.grasp_alignment_mm"
+                    },
+                    {
+                      "ref": "thresholds.alignment_tolerance_mm"
+                    }
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "after.target_span_in_jaw_mm"
+                    },
+                    {
+                      "sub": [
+                        {
+                          "ref": "after.initial_open_gap_mm"
+                        },
+                        {
+                          "ref": "thresholds.jaw_margin_mm"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.target_displacement_mm"
+                    },
+                    {
+                      "ref": "thresholds.max_approach_push_mm"
+                    }
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.gap_change_mm"
+                    },
+                    -2.0
+                  ]
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.valid_grasp_relation"
+                  }
+                },
+                {
+                  "ref": "after.valid_grasp_relation"
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.target_displacement_mm"
+                    },
+                    {
+                      "ref": "thresholds.max_approach_push_mm"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "approach_object": {
+      "all": [
+        {
+          "not": {
+            "ref": "before.object_inside_drawer"
+          }
+        },
+        {
+          "any": [
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.valid_grasp_relation"
+                  }
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "after.target_span_in_jaw_mm"
+                    },
+                    {
+                      "sub": [
+                        {
+                          "ref": "after.initial_open_gap_mm"
+                        },
+                        {
+                          "ref": "thresholds.jaw_margin_mm"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "after.finger_gap_mm"
+                    },
+                    {
+                      "add": [
+                        {
+                          "ref": "after.target_span_in_jaw_mm"
+                        },
+                        {
+                          "ref": "thresholds.jaw_margin_mm"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.target_displacement_mm"
+                    },
+                    {
+                      "ref": "thresholds.max_approach_push_mm"
+                    }
+                  ]
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.alignment_gain_mm"
+                    },
+                    {
+                      "ref": "thresholds.progress"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.valid_grasp_relation"
+                  }
+                },
+                {
+                  "gt": [
+                    {
+                      "ref": "before.target_span_in_jaw_mm"
+                    },
+                    {
+                      "sub": [
+                        {
+                          "ref": "before.initial_open_gap_mm"
+                        },
+                        {
+                          "ref": "thresholds.jaw_margin_mm"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.target_displacement_mm"
+                    },
+                    {
+                      "ref": "thresholds.max_approach_push_mm"
+                    }
+                  ]
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.width_reduction_mm"
+                    },
+                    1.0
+                  ]
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "not": {
+                    "ref": "before.valid_grasp_relation"
+                  }
+                },
+                {
+                  "lt": [
+                    {
+                      "ref": "before.finger_gap_mm"
+                    },
+                    {
+                      "add": [
+                        {
+                          "ref": "before.target_span_in_jaw_mm"
+                        },
+                        {
+                          "ref": "thresholds.jaw_margin_mm"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "ge": [
+                    {
+                      "ref": "p.gap_change_mm"
+                    },
+                    2.0
+                  ]
+                },
+                {
+                  "le": [
+                    {
+                      "ref": "p.target_displacement_mm"
+                    },
+                    {
+                      "ref": "thresholds.max_approach_push_mm"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "release_contact": {
+      "all": [
+        {
+          "ref": "before.object_inside_drawer"
+        },
+        {
+          "ref": "before.object_released"
+        },
+        {
+          "ref": "after.object_inside_drawer"
+        },
+        {
+          "ref": "after.object_released"
+        },
+        {
+          "ref": "released_required_contacts"
+        }
+      ]
+    },
+    "release_obstruction": {
+      "all": [
+        {
+          "not": {
+            "ref": "before.object_inside_drawer"
+          }
+        },
+        {
+          "all": [
+            {
+              "ref": "released_required_contacts"
+            },
+            {
+              "any": [
+                {
+                  "not": {
+                    "ref": "before.bilateral_target_contact"
+                  }
+                },
+                {
+                  "ref": "after.bilateral_target_contact"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "reposition": {
+      "all": [
+        {
+          "ref": "has_reposition_witness"
+        },
+        {
+          "any": [
+            {
+              "not": {
+                "ref": "before.valid_grasp_relation"
+              }
+            },
+            {
+              "ref": "after.valid_grasp_relation"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "policy": {
+    "intent_descriptions": {
+      "release_object": "Release only after the full object extent and orientation fit the drawer close envelope.",
+      "advance_drawer": "Close the drawer while released containment and placement_fit remain valid throughout the primitive.",
+      "establish_drawer_contact": "Establish useful gripper contact with the bottom drawer while preserving bottle containment.",
+      "approach_drawer": "Reduce gripper-to-bottom-drawer surface distance while preserving bottle containment.",
+      "place_object": "Reduce full-object violation of the articulated drawer close envelope while maintaining the bilateral grasp; completion requires placement_fit.",
+      "transport_object": "Lift or carry the held bottle toward the bottom drawer while preserving bilateral contact.",
+      "establish_grasp": "Close around the aligned bottle or establish bilateral fingerpad contact.",
+      "approach_object": "Align and, if needed, orient or open the gripper to prepare a bottle grasp.",
+      "release_contact": "Remove obstructing drawer contact while preserving bottle containment.",
+      "release_obstruction": "Remove an obstructing gripper contact without losing an existing bilateral bottle grasp.",
+      "reposition": "Use a safe first primitive with a verified two-step witness; execute only the first primitive and reobserve."
+    },
+    "motor_instructions": "Choose one primitive for the selected local objective using predicted alignment, grasp, transport, containment, drawer closure, contact, gap, and obstacle effects. Only the selected primitive executes.",
+    "intent_instructions": "Choose one feasible local physical objective for grasping the bottle, placing and releasing it inside the bottom drawer, then closing the drawer. Preserve a useful bilateral grasp before placement and preserve containment during drawer closure.",
+    "strategy_instructions": "Choose a contact/motion family that realizes the selected local physical objective. Every option is a simulator-witnessed short primitive.",
+    "task_text": "Pick up the wine bottle, place it inside the bottom drawer, release it, and close the drawer.",
+    "review_interval": 6,
+    "review_when_available": [
+      "release_object",
+      "advance_drawer",
+      "establish_grasp",
+      "transport_object",
+      "place_object"
+    ],
+    "review_transitions": {
+      "approach_object": [
+        "establish_grasp"
+      ],
+      "establish_grasp": [
+        "transport_object"
+      ],
+      "transport_object": [
+        "place_object"
+      ],
+      "place_object": [
+        "release_object"
+      ],
+      "approach_drawer": [
+        "establish_drawer_contact"
+      ]
+    },
+    "review_if_finish_elsewhere": true,
+    "prediction_scope": "Each primitive was simulated for up to 8 environment steps (0.4s). Reposition candidates additionally have a verified two-primitive witness. Only one selected primitive executes.",
+    "intent_state": {
+      "grasp_alignment_mm": {
+        "round": [
+          {
+            "ref": "before.grasp_alignment_mm"
+          },
+          2
+        ]
+      },
+      "finger_gap_mm": {
+        "round": [
+          {
+            "ref": "before.finger_gap_mm"
+          },
+          2
+        ]
+      },
+      "target_span_in_jaw_mm": {
+        "round": [
+          {
+            "ref": "before.target_span_in_jaw_mm"
+          },
+          2
+        ]
+      },
+      "target_lift_mm": {
+        "round": [
+          {
+            "ref": "before.target_lift_mm"
+          },
+          2
+        ]
+      },
+      "clearance_mm": {
+        "round": [
+          {
+            "ref": "before.clearance_mm"
+          },
+          2
+        ]
+      },
+      "goal_xy_error_mm": {
+        "round": [
+          {
+            "ref": "before.goal_xy_error_mm"
+          },
+          2
+        ]
+      },
+      "goal_distance_mm": {
+        "round": [
+          {
+            "ref": "before.goal_distance_mm"
+          },
+          2
+        ]
+      },
+      "bilateral_fingerpad_contact": {
+        "ref": "before.bilateral_target_contact"
+      },
+      "external_target_contacts": {
+        "ref": "before.target_external_contact_count"
+      },
+      "object_inside_drawer": {
+        "ref": "before.object_inside_drawer"
+      },
+      "drawer_closed": {
+        "ref": "before.drawer_closed"
+      },
+      "remaining_open_mm": {
+        "round": [
+          {
+            "ref": "before.remaining_open_mm"
+          },
+          2
+        ]
+      },
+      "placement_fit": {
+        "ref": "before.placement_fit"
+      },
+      "placement_violation_mm": {
+        "round": [
+          {
+            "ref": "before.placement_violation_mm"
+          },
+          2
+        ]
+      },
+      "placement_axis_violation_mm": {
+        "ref": "before.placement_axis_violation_mm"
+      }
+    },
+    "strategy_state": {
+      "grasp_alignment_mm": {
+        "round": [
+          {
+            "ref": "before.grasp_alignment_mm"
+          },
+          2
+        ]
+      },
+      "finger_gap_mm": {
+        "round": [
+          {
+            "ref": "before.finger_gap_mm"
+          },
+          2
+        ]
+      },
+      "target_span_in_jaw_mm": {
+        "round": [
+          {
+            "ref": "before.target_span_in_jaw_mm"
+          },
+          2
+        ]
+      },
+      "target_lift_mm": {
+        "round": [
+          {
+            "ref": "before.target_lift_mm"
+          },
+          2
+        ]
+      },
+      "clearance_mm": {
+        "round": [
+          {
+            "ref": "before.clearance_mm"
+          },
+          2
+        ]
+      },
+      "goal_xy_error_mm": {
+        "round": [
+          {
+            "ref": "before.goal_xy_error_mm"
+          },
+          2
+        ]
+      },
+      "goal_distance_mm": {
+        "round": [
+          {
+            "ref": "before.goal_distance_mm"
+          },
+          2
+        ]
+      },
+      "bilateral_fingerpad_contact": {
+        "ref": "before.bilateral_target_contact"
+      },
+      "external_target_contacts": {
+        "ref": "before.target_external_contact_count"
+      },
+      "object_inside_drawer": {
+        "ref": "before.object_inside_drawer"
+      },
+      "drawer_closed": {
+        "ref": "before.drawer_closed"
+      },
+      "remaining_open_mm": {
+        "round": [
+          {
+            "ref": "before.remaining_open_mm"
+          },
+          2
+        ]
+      },
+      "valid_grasp_relation": {
+        "ref": "before.valid_grasp_relation"
+      },
+      "placement_fit": {
+        "ref": "before.placement_fit"
+      },
+      "placement_violation_mm": {
+        "round": [
+          {
+            "ref": "before.placement_violation_mm"
+          },
+          2
+        ]
+      },
+      "object_drawer_frame_extent_mm": {
+        "ref": "before.object_drawer_frame_extent_mm"
+      },
+      "object_drawer_frame_rotation_matrix": {
+        "ref": "before.object_drawer_frame_rotation_matrix"
+      }
+    },
+    "motor_options": {
+      "target_alignment_mm": {
+        "round": [
+          {
+            "ref": "after.grasp_alignment_mm"
+          },
+          2
+        ]
+      },
+      "alignment_gain_mm": {
+        "round": [
+          {
+            "ref": "p.alignment_gain_mm"
+          },
+          2
+        ]
+      },
+      "jaw_gap_mm": {
+        "round": [
+          {
+            "ref": "after.finger_gap_mm"
+          },
+          2
+        ]
+      },
+      "target_width_in_jaw_mm": {
+        "round": [
+          {
+            "ref": "after.target_span_in_jaw_mm"
+          },
+          2
+        ]
+      },
+      "bilateral_fingerpad_contact": {
+        "ref": "after.bilateral_target_contact"
+      },
+      "target_lift_mm": {
+        "round": [
+          {
+            "ref": "after.target_lift_mm"
+          },
+          2
+        ]
+      },
+      "height_gain_mm": {
+        "round": [
+          {
+            "ref": "p.height_gain_mm"
+          },
+          2
+        ]
+      },
+      "basket_rim_clearance_mm": {
+        "round": [
+          {
+            "ref": "after.clearance_mm"
+          },
+          2
+        ]
+      },
+      "goal_xy_error_mm": {
+        "round": [
+          {
+            "ref": "after.goal_xy_error_mm"
+          },
+          2
+        ]
+      },
+      "goal_distance_mm": {
+        "round": [
+          {
+            "ref": "after.goal_distance_mm"
+          },
+          2
+        ]
+      },
+      "external_target_contacts": {
+        "ref": "after.target_external_contact_count"
+      },
+      "task_complete": {
+        "ref": "after.success"
+      },
+      "object_inside_drawer": {
+        "ref": "after.object_inside_drawer"
+      },
+      "drawer_closed": {
+        "ref": "after.drawer_closed"
+      },
+      "predicted_closing_mm": {
+        "round": [
+          {
+            "ref": "p.closing_mm"
+          },
+          3
+        ]
+      },
+      "predicted_surface_gap_reduction_mm": {
+        "round": [
+          {
+            "ref": "p.geometry_approach_mm"
+          },
+          2
+        ]
+      },
+      "predicted_target_contact": {
+        "ref": "after.moving_contact"
+      },
+      "predicted_obstacle_peak_force_N": {
+        "round": [
+          {
+            "ref": "p.peak_obstacle_force_N"
+          },
+          1
+        ]
+      },
+      "valid_grasp_relation": {
+        "ref": "after.valid_grasp_relation"
+      },
+      "grasp_relation_maintained": {
+        "ref": "p.valid_grasp_maintained"
+      },
+      "placement_fit": {
+        "ref": "after.placement_fit"
+      },
+      "placement_fit_maintained": {
+        "ref": "p.placement_fit_maintained"
+      },
+      "placement_violation_mm": {
+        "round": [
+          {
+            "ref": "after.placement_violation_mm"
+          },
+          2
+        ]
+      },
+      "placement_fit_progress_mm": {
+        "round": [
+          {
+            "ref": "p.placement_fit_progress_mm"
+          },
+          2
+        ]
+      },
+      "object_drawer_frame_extent_mm": {
+        "ref": "after.object_drawer_frame_extent_mm"
+      },
+      "object_drawer_frame_rotation_matrix": {
+        "ref": "after.object_drawer_frame_rotation_matrix"
+      },
+      "grasp_relation_continuous": {
+        "ref": "p.valid_grasp_continuous"
+      },
+      "grasp_relation_trace_fraction": {
+        "round": [
+          {
+            "ref": "p.valid_grasp_trace_fraction"
+          },
+          2
+        ]
+      },
+      "placement_axis_violation_mm": {
+        "ref": "after.placement_axis_violation_mm"
+      }
+    },
+    "feedback": {
+      "bilateral_fingerpad_contact": {
+        "ref": "after.bilateral_target_contact"
+      },
+      "target_lift_mm": {
+        "round": [
+          {
+            "ref": "after.target_lift_mm"
+          },
+          2
+        ]
+      },
+      "alignment_mm": {
+        "round": [
+          {
+            "ref": "after.grasp_alignment_mm"
+          },
+          2
+        ]
+      },
+      "goal_distance_mm": {
+        "round": [
+          {
+            "ref": "after.goal_distance_mm"
+          },
+          2
+        ]
+      },
+      "external_target_contacts": {
+        "ref": "after.target_external_contact_count"
+      },
+      "success": {
+        "ref": "after.success"
+      },
+      "object_inside_drawer": {
+        "ref": "after.object_inside_drawer"
+      },
+      "drawer_closed": {
+        "ref": "after.drawer_closed"
+      },
+      "actual_closing_mm": {
+        "round": [
+          {
+            "mul": [
+              {
+                "sub": [
+                  {
+                    "ref": "after.drawer_qpos_m"
+                  },
+                  {
+                    "ref": "before.drawer_qpos_m"
+                  }
+                ]
+              },
+              1000.0
+            ]
+          },
+          3
+        ]
+      },
+      "valid_grasp_relation": {
+        "ref": "after.valid_grasp_relation"
+      },
+      "placement_fit": {
+        "ref": "after.placement_fit"
+      },
+      "placement_violation_mm": {
+        "round": [
+          {
+            "ref": "after.placement_violation_mm"
+          },
+          2
+        ]
+      }
+    },
+    "summary": {
+      "can_finish_task": {
+        "field": "after.success",
+        "reduce": "any"
+      },
+      "can_hold_bottle": {
+        "field": "after.bilateral_target_contact",
+        "reduce": "any"
+      },
+      "can_contain_bottle": {
+        "field": "after.object_inside_drawer",
+        "reduce": "any"
+      },
+      "can_close_drawer": {
+        "field": "after.drawer_closed",
+        "reduce": "any"
+      },
+      "alignment_gain_mm_range": {
+        "field": "alignment_gain_mm",
+        "reduce": "range",
+        "digits": 2
+      },
+      "delivery_progress_mm_range": {
+        "field": "delivery_progress_mm",
+        "reduce": "range",
+        "digits": 2
+      },
+      "closing_mm_range": {
+        "field": "closing_mm",
+        "reduce": "range",
+        "digits": 3
+      }
+    }
+  },
+  "search": {
+    "progress_field": "task_progress_mm",
+    "score": [
+      {
+        "ref": "after.success"
+      },
+      {
+        "ref": "effects.release_object"
+      },
+      {
+        "ref": "effects.advance_drawer"
+      },
+      {
+        "ref": "effects.establish_drawer_contact"
+      },
+      {
+        "ref": "effects.approach_drawer"
+      },
+      {
+        "ref": "effects.place_object"
+      },
+      {
+        "ref": "effects.transport_object"
+      },
+      {
+        "ref": "effects.establish_grasp"
+      },
+      {
+        "ref": "effects.approach_object"
+      },
+      {
+        "ref": "effects.release_contact"
+      },
+      {
+        "ref": "effects.release_obstruction"
+      },
+      {
+        "ref": "p.task_progress_mm"
+      },
+      {
+        "ref": "p.alignment_gain_mm"
+      }
+    ]
+  },
+  "display": {
+    "field": "remaining_open_mm",
+    "label": "remaining_open",
+    "unit": "mm",
+    "progress_field": "task_progress_mm"
+  },
+  "measurements": {
+    "jaw_center_mm": {
+      "kind": "pair_center_mm",
+      "left": {
+        "group": "left_fingerpad"
+      },
+      "right": {
+        "group": "right_fingerpad"
+      }
+    },
+    "jaw_axis": {
+      "kind": "axis",
+      "left": {
+        "group": "left_fingerpad"
+      },
+      "right": {
+        "group": "right_fingerpad"
+      }
+    },
+    "target_bounds_mm": {
+      "kind": "bounds_mm",
+      "entity": {
+        "object": "wine_bottle_1"
+      }
+    },
+    "target_center_mm": {
+      "kind": "center_mm",
+      "entity": {
+        "object": "wine_bottle_1"
+      }
+    },
+    "target_bottom_mm": {
+      "kind": "expression",
+      "value": {
+        "index": [
+          {
+            "index": [
+              {
+                "ref": "raw.target_bounds_mm"
+              },
+              0
+            ]
+          },
+          2
+        ]
+      }
+    },
+    "target_top_mm": {
+      "kind": "expression",
+      "value": {
+        "index": [
+          {
+            "index": [
+              {
+                "ref": "raw.target_bounds_mm"
+              },
+              1
+            ]
+          },
+          2
+        ]
+      }
+    },
+    "initial_bottom_mm": {
+      "kind": "initial",
+      "source": "target_bottom_mm"
+    },
+    "target_lift_mm": {
+      "kind": "expression",
+      "value": {
+        "sub": [
+          {
+            "ref": "raw.target_bottom_mm"
+          },
+          {
+            "ref": "raw.initial_bottom_mm"
+          }
+        ]
+      }
+    },
+    "target_span_in_jaw_mm": {
+      "kind": "span_mm",
+      "entity": {
+        "object": "wine_bottle_1"
+      },
+      "axis": "jaw_axis"
+    },
+    "jaw_gap_mm": {
+      "kind": "gap_mm",
+      "left": {
+        "group": "left_fingerpad"
+      },
+      "right": {
+        "group": "right_fingerpad"
+      }
+    },
+    "initial_open_gap_mm": {
+      "kind": "initial",
+      "source": "jaw_gap_mm"
+    },
+    "grasp_alignment_mm": {
+      "kind": "expression",
+      "value": {
+        "norm": {
+          "sub": [
+            {
+              "ref": "raw.target_center_mm"
+            },
+            {
+              "ref": "raw.jaw_center_mm"
+            }
+          ]
+        }
+      }
+    },
+    "target_contact_sides": {
+      "kind": "contact_groups",
+      "entity": {
+        "object": "wine_bottle_1"
+      },
+      "groups": {
+        "left_fingerpad": {
+          "group": "left_fingerpad"
+        },
+        "right_fingerpad": {
+          "group": "right_fingerpad"
+        }
+      }
+    },
+    "bilateral_target_contact": {
+      "kind": "expression",
+      "value": {
+        "eq": [
+          {
+            "count": {
+              "ref": "raw.target_contact_sides"
+            }
+          },
+          2
+        ]
+      }
+    },
+    "target_external_contacts": {
+      "kind": "external_contacts",
+      "entity": {
+        "object": "wine_bottle_1"
+      },
+      "exclude": [
+        {
+          "group": "gripper"
+        }
+      ]
+    },
+    "target_external_contact_count": {
+      "kind": "expression",
+      "value": {
+        "count": {
+          "ref": "raw.target_external_contacts"
+        }
+      }
+    },
+    "destination_bounds_mm": {
+      "kind": "site_bounds_mm",
+      "name": "white_cabinet_1_bottom_region"
+    },
+    "destination_top_mm": {
+      "kind": "expression",
+      "value": {
+        "index": [
+          {
+            "index": [
+              {
+                "ref": "raw.destination_bounds_mm"
+              },
+              1
+            ]
+          },
+          2
+        ]
+      }
+    },
+    "site_positions": {
+      "kind": "positions",
+      "entity": "site",
+      "names": {
+        "goal": "white_cabinet_1_bottom_region"
+      }
+    },
+    "drawer_joint_position": {
+      "kind": "joint_position",
+      "object": "white_cabinet_1",
+      "joint_suffix": "bottom_level"
+    },
+    "object_inside_drawer": {
+      "kind": "libero_predicate",
+      "name": "In",
+      "arguments": [
+        "wine_bottle_1",
+        "white_cabinet_1_bottom_region"
+      ]
+    },
+    "drawer_closed": {
+      "kind": "libero_predicate",
+      "name": "Close",
+      "arguments": [
+        "white_cabinet_1_bottom_region"
+      ]
+    },
+    "target_destination_contacts": {
+      "kind": "contact_groups",
+      "entity": {
+        "object": "wine_bottle_1"
+      },
+      "groups": {
+        "drawer": {
+          "object_joint": {
+            "object": "white_cabinet_1",
+            "joint_suffix": "bottom_level"
+          }
+        }
+      }
+    },
+    "drawer_frame_geometry": {
+      "kind": "geometry_in_frame",
+      "entity": {
+        "object": "wine_bottle_1"
+      },
+      "frame_site": "white_cabinet_1_bottom_region",
+      "body": "wine_bottle_1_main",
+      "margin_mm": 0.0
+    },
+    "all_robot_bottle_contacts": {
+      "kind": "contact_relation",
+      "left": {
+        "group": "robot"
+      },
+      "right": {
+        "object": "wine_bottle_1"
+      }
+    },
+    "left_fingerpad_bottle_contacts": {
+      "kind": "contact_relation",
+      "left": {
+        "group": "left_fingerpad"
+      },
+      "right": {
+        "object": "wine_bottle_1"
+      }
+    },
+    "right_fingerpad_bottle_contacts": {
+      "kind": "contact_relation",
+      "left": {
+        "group": "right_fingerpad"
+      },
+      "right": {
+        "object": "wine_bottle_1"
+      }
+    }
+  },
+  "record_features": [
+    "jaw_center_mm",
+    "jaw_axis",
+    "target_center_mm",
+    "target_bottom_mm",
+    "target_top_mm",
+    "target_lift_mm",
+    "target_span_in_jaw_mm",
+    "initial_open_gap_mm",
+    "grasp_alignment_mm",
+    "bilateral_target_contact",
+    "target_contact_sides",
+    "target_external_contacts",
+    "target_external_contact_count",
+    "destination_top_mm",
+    "destination_bounds_mm",
+    "goal_center_mm",
+    "goal_distance_mm",
+    "goal_xy_error_mm",
+    "clearance_mm",
+    "finger_gap_mm",
+    "success",
+    "object_inside_drawer",
+    "drawer_closed",
+    "drawer_qpos_m",
+    "remaining_open_mm",
+    "contacting_robot_links",
+    "valid_grasp_relation",
+    "object_drawer_frame_position_mm",
+    "object_drawer_frame_rotation_matrix",
+    "object_drawer_frame_bounds_mm",
+    "object_drawer_frame_extent_mm",
+    "drawer_close_envelope_bounds_mm",
+    "placement_lower_margin_mm",
+    "placement_upper_margin_mm",
+    "placement_minimum_margin_mm",
+    "placement_violation_mm",
+    "placement_fit",
+    "placement_axis_violation_mm"
+  ],
+  "interaction_relations": [
+    "valid_grasp_relation",
+    "placement_fit"
+  ]
+}

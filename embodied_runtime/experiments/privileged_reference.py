@@ -16,6 +16,7 @@ import random
 import signal
 import sys
 import time
+from types import SimpleNamespace
 
 import numpy as np
 
@@ -32,7 +33,7 @@ from .records import (
     package_directory, repository_identity, versions,
 )
 
-VERSION = "privileged-drawer-reference-v1-lookahead2-forced-singleton"
+VERSION = "privileged-reference-v2-task-adapter"
 PRIVILEGE = {"effect_source": "oracle_sim", "privileged": True,
              "candidate_filtering": "task_specific_effect_contract_union"}
 TASK_SPEC = TOP_DRAWER_SPEC
@@ -43,6 +44,28 @@ OBJECTIVE_PRIORITY = TASK_SPEC.objective_priority
 OBJECTIVE_CRITERIA = TASK_SPEC.objective_criteria
 ROUTING_VERSION = TASK_SPEC.routing_version
 COMPACT_WITNESS_VERSION = "compact-witness-effects-v1"
+
+
+def configure_task(name):
+    """Select one TaskAdapter; runtime policy/execution machinery stays shared."""
+    global TASK_SPEC, TASK_ADAPTER, INSTRUCTION, TOLERANCE
+    global OBJECTIVE_PRIORITY, OBJECTIVE_CRITERIA, ROUTING_VERSION
+    if name == "top_drawer":
+        TASK_ADAPTER = TOP_DRAWER_ADAPTER
+        TASK_SPEC = TOP_DRAWER_SPEC
+    elif name == "wine_bottle_bottom_drawer":
+        from .privileged_multistage_task import (
+            WINE_BOTTLE_DRAWER_ADAPTER, WINE_BOTTLE_DRAWER_SPEC,
+        )
+        TASK_ADAPTER = WINE_BOTTLE_DRAWER_ADAPTER
+        TASK_SPEC = WINE_BOTTLE_DRAWER_SPEC
+    else:
+        raise ValueError(f"unknown privileged reference task: {name}")
+    INSTRUCTION = TASK_SPEC.flat_instruction
+    TOLERANCE = TASK_SPEC.comparison_tolerance
+    OBJECTIVE_PRIORITY = TASK_SPEC.objective_priority
+    OBJECTIVE_CRITERIA = TASK_SPEC.objective_criteria
+    ROUTING_VERSION = TASK_SPEC.routing_version
 
 
 def objective_routing(pools, order):
@@ -191,6 +214,7 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
         routing = None
         if self.condition == "local_objective":
             routing = objective_routing(pools, list(actions()))
+            routing.update(TASK_ADAPTER.routing_context())
             self.last_preview["objective_routing"] = routing
             eligible = set(routing["motor_pool"])
         candidates = tuple(replace(
@@ -337,7 +361,7 @@ def run(args):
             ("CUDA_VISIBLE_DEVICES", "MUJOCO_GL", "HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")}})
         identity = model_identity(args.laya_path)
         baseline_manifest = None
-        if args.condition == "local_objective":
+        if args.condition == "local_objective" and TASK_SPEC.requires_flat_baseline:
             baseline = Path(args.baseline)
             baseline_manifest = json.loads((baseline / "manifest.json").read_text())
             baseline_config = json.loads((baseline / "resolved_config.yaml").read_text())
@@ -356,6 +380,7 @@ def run(args):
             "benchmark_state_id": inventory["state_ids"][args.init_state_id]})
         backend = make_backend(args, render=True)
         world = backend.world
+        preparation = TASK_ADAPTER.prepare_world(world)
         import jev_libero.world
         import libero
         recorder.manifest_update({"environment_repositories": {
@@ -363,7 +388,8 @@ def run(args):
             "libero": repository_identity(package_directory(libero))}})
         recorder.record("environment", {"purpose": "explicit_privileged_reference", **PRIVILEGE,
             "task_config": world.config, "sim_state": world.env.sim.get_state().flatten(),
-            "initial_state": backend.execution_state(), "features": world.features()})
+            "initial_state": backend.execution_state(), "features": world.features(),
+            "task_preparation": preparation})
         if backend.success():
             raise RuntimeError("initial state already successful")
         agent = load_laya_provider(args.laya_path, subfolder=None, device=args.device).agent
@@ -381,16 +407,25 @@ def run(args):
             sim_clock=lambda: world.data.time, event_sink=recorder.record,
             executor=JevAtomicExecutor(backend))
         previous_after = None
+        previous_target = None
         for step in range(args.steps):
+            context_before_prepare = context_id(backend)
+            preparation = TASK_ADAPTER.prepare_world(world)
+            if context_id(backend) != context_before_prepare:
+                raise RuntimeError("task target preparation changed simulator/controller state")
             before = world.features()
-            if previous_after is not None and before != previous_after:
+            target_changed = (previous_after is not None
+                              and preparation.get("active_target") != previous_target)
+            if previous_after is not None and before != previous_after and not target_changed:
                 raise RuntimeError("actual outcome not preserved at next observation")
             if not runtime.observe("oracle_sim", float(world.data.time), before):
                 raise RuntimeError("oracle observation rejected")
             recorder.record("reference_feedback", {"step": step,
                 "previous_outcome_record_id": provider.last_outcome_id,
                 "observation_source_seq": runtime.source_seq,
-                "matches_previous_outcome": previous_after is None or before == previous_after})
+                "matches_previous_outcome": previous_after is None or before == previous_after,
+                "target_rebound_without_simulation": target_changed,
+                "task_preparation": preparation})
             row = runtime.step(float(world.data.time), goal=TASK_ADAPTER.goal(world))
             save_trajectory(backend, out, step, recorder)
             outcome = measured_outcome(world, before, row["decision"].token, row["result"])
@@ -408,13 +443,11 @@ def run(args):
                 "genuine_laya_decision": row["decision"].source == "laya",
                 "decision_source": row["decision"].source, "fallback": row["decision_invalid_reason"]})
             provider.last, previous_after = outcome, outcome["after"]
+            previous_target = preparation.get("active_target")
             print(json.dumps({"step": step, "offered": len(row["snapshot"].allowed()),
                 "pool_source": pool_source, "choice_source": row["decision"].source,
                 "objective": builder.last_preview.get("objective_routing", {}).get("objective"),
-                "choice": outcome["action"], "closure_mm": outcome["closure_mm"],
-                "gap_mm": outcome["after"]["distance_to_moving_geometry_mm"],
-                "contact": outcome["after"]["moving_contact"],
-                "remaining_mm": outcome["after"]["remaining_open_mm"],
+                "choice": outcome["action"], **TASK_ADAPTER.console_outcome(outcome),
                 "success": outcome["official_success"], "prediction_matches": comparison["passed"]}), flush=True)
             if not comparison["passed"] or row["decision_invalid_reason"]:
                 raise RuntimeError("preview/executor mismatch or fallback")
@@ -448,9 +481,10 @@ def preflight(args):
         {"run_id": out.name, "code": code_identity(), "versions": versions()})
     backend = None
     try:
-        for fixture in ("reset", "closed_gripper", "loaded_step48"):
+        for fixture in TASK_ADAPTER.preflight_fixtures():
             backend = make_backend(args, render=False)
             world = backend.world
+            TASK_ADAPTER.prepare_world(world)
             executor = JevAtomicExecutor(backend)
             if fixture == "closed_gripper":
                 executor.execute("close")
@@ -545,7 +579,8 @@ def summarize_reference(directory):
             if routing["primitive_order"] != config.get("primitive_order", routing["primitive_order"]):
                 raise ValueError("objective primitive order mismatch")
             expected_routing = objective_routing(preview["pools"], routing["primitive_order"])
-            if (routing != expected_routing or selection.get("objective_routing") != routing
+            if (any(routing.get(key) != value for key, value in expected_routing.items())
+                    or selection.get("objective_routing") != routing
                     or selection.get("local_objective") != routing["objective"]
                     or d.get("local_objective") != routing["objective"]
                     or selection["option_order"] != routing["motor_pool"]):
@@ -663,6 +698,8 @@ def summarize_reference(directory):
 def parser():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output", required=True)
+    p.add_argument("--task", choices=("top_drawer", "wine_bottle_bottom_drawer"),
+                   default="top_drawer")
     p.add_argument("--mode", choices=("run", "preflight", "summarize", "replay"), default="run")
     p.add_argument("--baseline", default="runs/privileged-reference/forced-singleton-episode-01")
     p.add_argument("--condition", choices=("flat", "local_objective"), default="flat")
@@ -680,15 +717,22 @@ def parser():
 
 def main():
     args = parser().parse_args()
+    configure_task(args.task)
     if args.steps <= 0 or args.timeout_s <= 0:
         raise ValueError("positive action/time budgets required")
+    if args.task == "wine_bottle_bottom_drawer" and args.condition != "local_objective":
+        raise ValueError("multi-stage reference requires explicit local-objective routing")
     if args.mode == "preflight":
         preflight(args)
     elif args.mode == "summarize":
         summary = summarize_reference(args.output)
         print(json.dumps({k: v for k, v in summary.items() if k != "trace"}, indent=2))
     elif args.mode == "replay":
-        result = replay_check(args.output, task=TASK_SPEC.task_id)
+        result = replay_check(
+            args.output, task=TASK_SPEC.task_id,
+            backend_factory=lambda config: TASK_ADAPTER.make_backend(
+                SimpleNamespace(**config), render=False),
+        )
         print(json.dumps(result, indent=2))
         if not result["passed"]:
             raise SystemExit(1)

@@ -1,9 +1,39 @@
 # Research direction and evidence boundaries
 
-The question is what information a decision interface must preserve for useful
-embodied decisions. The narrower “minimum world state” formulation is under
-review: candidate interpretation, effects, intent and selection may matter
-alongside CDS fields. This is not an adopted new thesis or architecture.
+The adopted research direction is **Interaction-Structured Decision Interfaces for
+Foundation-Model Robotic Manipulation**:
+
+> In the absence of task-specific robot-policy retraining, what interaction
+> structure must a physical runtime expose to a frozen foundation decision model so
+> its closed-loop choices are interaction-valid rather than merely sufficient to
+> trigger a terminal success predicate?
+
+The research object is the complete decision interface: current state, predicted
+effects, local objective and interaction semantics. The last term covers target
+affordance, designated effector, required/maintained relation, geometric
+compatibility and forbidden contact. It constrains what counts as valid progress; it
+must not encode an action sequence or winning primitive. The aim is physically
+meaningful, task-valid interaction, not human-looking motion.
+
+The present phase is privileged and deliberately holds Laya, primitives, controller,
+executor and MuJoCo preview fixed. RGB-D replacement, CLAP or other learned world
+models, sim-to-real, real robots, RL, deeper hierarchy, model scaling and trajectory
+efficiency are later extensions rather than current variables.
+
+## Latest specification evidence
+
+Task 1 and Task 2 expose the same missing distinction. Official top-drawer success
+was reproducible 3/3, but a control-level audit found zero designated fingerpad/handle
+contact; goal completion did not establish drawer manipulation skill. In Task 2,
+LIBERO `In(object, drawer)` admitted a bottle configuration that obstructed later
+closure; symbolic containment did not establish a closeable placement.
+
+Generic contact-relation and articulated-frame geometry measurements now let TaskSpec
+express designated interaction and placement fit. The latest strict Task-2 fresh gate
+did not validate that interface end to end: it retained a bilateral grasp but reached
+an empty one-step and two-step transport pool before placement. This negative result
+is the current boundary. Interaction semantics have not yet been shown sufficient to
+improve a Laya trajectory, and Task-2 Laya has not run.
 
 ## Scientific gate
 
@@ -130,6 +160,12 @@ has met its engineering success and three-run reproducibility gate. That success
 does not identify which privileged component is necessary, validate the non-oracle
 path or authorize an ablation automatically. The deployable judgment boundary and
 effect sources remain open.
+
+The next work is limited to observational classification of the frozen Task-1 trace
+and exact audit of the frozen Task-2 transport boundary. It must preserve raw contact
+evidence, allow an ambiguous attribution class and measure joint-axis compatibility
+before choosing any new live threshold. A new feasibility or Laya run requires a
+separate decision after that audit.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

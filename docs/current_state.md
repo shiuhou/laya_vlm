@@ -1,6 +1,41 @@
 # Current project state
 
-Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
+Reviewed 2026-09-24. This document supersedes historical plans, not raw evidence.
+
+## Interaction-structured research checkpoint
+
+The current research direction is **Interaction-Structured Decision Interfaces for
+Foundation-Model Robotic Manipulation**. The implemented privileged decision
+boundary is now understood as four jointly relevant parts: current state, predicted
+effects, a local objective and task-declared interaction semantics. The objective is
+interaction-valid manipulation without task-specific policy training or a hard-coded
+action sequence. It is not human-motion imitation.
+
+Generic Jev measurements now expose exact contact geom/body attribution, boolean
+relation traces and object geometry in an articulated frame. Task-specific selectors
+and contracts use those measurements to identify designated effectors/affordances,
+grasp relations and placement fit. No scheduler, Laya, primitive, executor, CDS,
+planner or hierarchy change was introduced.
+
+The frozen top-drawer runs remain reproducible privileged goal-completion references.
+Replaying all three 970-control trajectories under the new observer produced the same
+152.051897 mm net closure and official success, but found **zero** control endpoints
+with designated fingerpad/handle contact and therefore 0 mm of measured
+interaction-valid closure. Direct non-designated robot/drawer contact accounted for
+46.086120 mm net closure; the remaining 105.965776 mm occurred at endpoints with no
+current contact and includes inertia/settling that cannot be causally assigned to a
+designated interaction. See
+[the valid-interaction record](evidence/privileged_reference/valid_interaction_semantics.md).
+
+The wine-bottle/bottom-drawer TaskSpec now requires full object extent/orientation to
+fit the articulated drawer close envelope before release, and preserves that fit while
+closing. A fresh deterministic privileged gate established a bilateral grasp and exact
+preview/execution agreement, but stopped before decision 22: grasp remained valid,
+the object was not inside, placement violation was 177.149474 mm, all one-step pools
+were empty and all 729 existing two-step pairs had no witness. No Task-2 Laya call was
+made. This is the current first failure boundary; the older continuation that reached
+`In`, explicit release and 53.62 mm opening remains diagnostic rather than a canonical
+fresh feasibility success.
 
 ## Local-objective privileged reference: reproducible success
 
@@ -31,7 +66,7 @@ decisions, 11 forced singletons and one lookahead recovery. Opening changed from
 traces were identical. All selected previews matched real execution exactly; all
 three control replays passed 1,093 boundaries with zero error.
 
-This establishes the first reproducible successful **privileged** Laya manipulation
+This establishes the first reproducible successful **privileged Laya goal-completion**
 reference. Oracle effects, task-specific contracts and deterministic objective
 routing remain part of the policy boundary. The result does not establish a
 deployable visual policy, flat atomic-choice success or which components are
@@ -107,8 +142,10 @@ The earlier research/demo integration is `33c7039`, and the cleanup baseline is
 tag above. The behavior-preserving task-adapter extraction is also integrated into
 `share_main`; use `git rev-parse HEAD` for the current baseline.
 
-The single local worktree is `laya-embodied-runtime` on `share_main` after this
-checkpoint. No new architecture branch or worktree has been created.
+The integrated baseline is `laya-embodied-runtime` on `share_main`. The Task-2 adapter
+and valid-interaction measurement phase were developed as focused commits and
+integrated only after preserving the failed fresh gate. No successful Task-2 tag or
+new architecture claim was created.
 The [cleanup audit](archive/maintenance/cleanup_20260923.md) records old track
 retirement and verification. No focused development track remains active; no
 deployable architecture or ablation has been selected.
@@ -119,7 +156,8 @@ Experimental records live in evidence; historical handoffs live in archive.
 Their proposed next steps are not current work orders.
 Use the [research](research.md) and [demo](engineering_demo.md) evidence indexes.
 
-Current verification: 436 tests passed; ruff, compileall, `git diff --check`,
+Current verification: 441 Laya-runtime tests, 43 non-simulation Jev tests and three
+LIBERO measurement simulation tests passed; ruff, compileall, `git diff --check`,
 byte-identical input reconstruction, and six replayed runs (three frozen and three
 post-refactor). The cleanup baseline separately passed 13 CLI/import checks,
 archival evidence audits and 249 local Markdown links/anchors.
@@ -159,10 +197,11 @@ SHA-256 `3e6a6f4510b95def5d9e2ba32a459f477b0674f431dac4a8f5bd1dea020433df`.
 Original run identities/source hashes remain unchanged. This is local preservation,
 not a remote backup; ignored artifacts are absent from fresh clones.
 
-## Architecture-review stop point
+## Current stop point
 
-**A reproducible privileged manipulation reference is established. Formal E0 has
-not begun, and the deployable decision architecture remains under review.**
+**A reproducible privileged goal-completion reference is established. Its interaction
+mechanism is invalid under the new designated-handle definition. Task-2 strict
+mechanical feasibility is not established. Formal E0 has not begun.**
 
 State Gap and Effect Gap remain separate. Effects from oracle_sim, deterministic
 geometry, learned prediction and unknown/none must not be conflated. Geometry
@@ -178,8 +217,9 @@ normal visual path.
 The existing witness mechanism repairs the original empty-pool boundary, the
 explicit singleton rule continues without counting model competence, and compact
 serialization admits the complete 25-option witness pool. With only the authorized
-budget extension, this unchanged policy completed the task reproducibly. The next
-human decision concerns what the privileged success permits us to test and which
-component, if any, should be isolated first. The broader judgment boundary and
-deployable effect sources remain open. Prompt searches, binary predicate tests,
-new planners, CDS redesign, new contracts and E0 remain outside the completed task.
+budget extension, this unchanged policy completed the goal reproducibly, but through
+non-designated contact. The next bounded work is an observational interaction audit
+and an exact reconstruction of the Task-2 transport zero-pool. It must not alter
+contracts, scoring, planning or model behavior. Non-oracle replacement, prompt
+searches, binary predicate tests, new planners, CDS redesign and E0 remain outside
+the current phase.

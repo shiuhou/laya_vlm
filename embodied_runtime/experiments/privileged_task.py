@@ -24,6 +24,7 @@ class TaskSpec:
     routing_version: str
     default_trajectory: str
     comparison_tolerance: float = 1e-8
+    requires_flat_baseline: bool = True
 
 
 class TaskAdapter(ABC):
@@ -49,6 +50,25 @@ class TaskAdapter(ABC):
     def goal(self, world):
         return {"task": self.spec.task_id, "instruction": world.task, "satisfied": False}
 
+    def reset_episode(self):
+        """Reset adapter-only phase evidence before constructing a fresh world."""
+
+    def prepare_world(self, world):
+        """Bind task-selected measurement target without choosing an action."""
+        return {"phase": self.spec.task_id, "active_target": world.active_target_object,
+                "transition_reason": "single_target_task"}
+
+    def console_outcome(self, outcome):
+        return {
+            "closure_mm": outcome["closure_mm"],
+            "gap_mm": outcome["after"]["distance_to_moving_geometry_mm"],
+            "contact": outcome["after"]["moving_contact"],
+            "remaining_mm": outcome["after"]["remaining_open_mm"],
+        }
+
+    def preflight_fixtures(self):
+        return ("reset", "closed_gripper", "loaded_step48")
+
     def objective_routing(self, pools, order: Sequence[str]):
         """Select the first nonempty task objective without ranking primitives."""
         priority = self.spec.objective_priority
@@ -69,6 +89,9 @@ class TaskAdapter(ABC):
                 "objective_excluded": {
                     name: "outside_selected_objective" for name in order
                     if name in union and name not in members}}
+
+    def routing_context(self):
+        return {}
 
     def presentation_format(self, predictions, names, objective, compact_version):
         has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
