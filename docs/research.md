@@ -36,6 +36,17 @@ lookahead returned no candidates. Official success remained false. Existing
 lookahead and forced continuations repair earlier local boundaries; they have not
 established a successful flat Laya reference policy.
 
+The subsequent local-objective run first stopped at a different boundary after
+96.168 mm net closure: all 25 lookahead candidates existed, but their complete
+witness presentation exceeded the input budget. A lossless compact serializer
+then retained the same pool/order and rounded effects while factoring repeated
+metadata. Frozen replay fit at 943/1,024 total tokens with no clipping. A fresh run
+reproduced the 87-action prefix exactly, consumed that 25-option input, and continued
+to 111.488 mm net closure. It stopped at the fixed 100-action budget with 40.171 mm
+remaining and official success false. Prediction/execution fidelity stayed exact.
+This removes input capacity as that boundary's cause; it does not establish useful
+reference success or show whether continuation beyond the registered budget works.
+
 **Formal E0 is blocked. No useful manipulation reference is established.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
 GRASP at step 140 reopened the drawer by 14.272 mm, 21.261 mm worse than STOP.
@@ -71,6 +82,7 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
 | [Two-step witness audit](evidence/decision_interface/two_step_lookahead.md) | Existing Jev lookahead returns 23 first-action witnesses at the dead end; closed-loop Laya selects `open`, then the acceptance gate stops at a singleton `z-3mm` pool. |
 | [Forced-singleton reference](evidence/decision_interface/forced_singleton_reference.md) | Explicit non-model singleton execution yields 15.173 mm closure over 92 actions, then one-step and two-step processing both return an empty pool; success remains false. |
+| [Local-objective privileged reference](evidence/decision_interface/local_objective_reference.md) | Lossless compact witness input repairs the 25-option boundary; the fresh run reaches 111.488 mm closure over 100 actions, then stops at its fixed action budget without official success. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -95,11 +107,12 @@ or binary verification successful.
 ## Before further experiments
 
 The reference boundary now includes existing two-step witnesses after an empty
-one-step union and explicit forced-singleton execution without model attribution.
-The first unresolved boundary is later: both existing one-step and two-step
-processing return no candidates. The run alone does not distinguish contract/
-lookahead coverage from a trajectory regime caused by flat Laya choices. No new
-contract or change is authorized. The deployable judgment boundary and effect
+one-step union, explicit forced-singleton execution without model attribution and
+lossless presentation of a full witness pool. The latest run's first unresolved
+boundary is its fixed 100-action limit, not an empty pool or clipped input. Because
+no post-budget candidate build occurred, the evidence does not justify changing
+the budget or predict what continued execution would do. No new contract or
+architecture change is authorized. The deployable judgment boundary and effect
 sources remain open, and usefulness still needs demonstration.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.

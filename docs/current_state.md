@@ -2,7 +2,7 @@
 
 Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
 
-## Local-objective privileged reference: bounded failure
+## Local-objective privileged reference: capacity repaired, task still incomplete
 
 The same-condition [Jev hierarchy comparison](evidence/decision_interface/jev_hierarchy_same_condition.md)
 completed top-drawer closure in 20 decisions and 155 fresh controls. This proves
@@ -23,12 +23,22 @@ It achieved 96.168 mm net closure, from 151.659 to 55.491 mm, without official
 success. All 696 controls matched preview exactly; replay passed 784 boundaries
 with zero error.
 
-The first failure was boundary 87. One-step contracts were empty, and unchanged
-two-step processing supplied 25 valid `reposition` first actions. The complete
-witness input exceeded Laya's existing token audit (`truncated=true`), so no model
-call or action occurred. This is a candidate-consumption/interface-capacity
-failure, not zero candidate coverage or physical execution failure. The first run
-did not succeed, so reproduction runs were not started. Strategy, candidate
+The boundary-87 capacity failure is repaired without changing the decision
+architecture. A lossless compact witness presentation factors repeated wording,
+common invariant fields and action names already present in canonical option order.
+It retains all 25 candidates and the same rounded effects. Full raw predictions and
+witnesses remain in evidence. Offline replay used 768 state tokens against an
+849-token budget and 943 total tokens against 1,024; state, heading and options all
+fit without truncation.
+
+A fresh run reproduced the first 87 actions exactly. At boundary 87, Laya consumed
+the audited 25-option input, selected `open`, and real execution exactly matched its
+preview. The run continued through 100 actions: 91 genuine Laya choices, nine
+forced singletons and one lookahead recovery. It achieved 111.488 mm net closure,
+from 151.659 to 40.171 mm, but official success remained false. All selected
+previews matched execution with zero error. The first new failure is the fixed
+100-action budget; no post-budget pool was built, so continuation is unknown.
+The conditional second/third runs and replay were not started. Strategy, candidate
 truncation/top-k, prompt/model-limit changes, contract/threshold changes, deeper
 lookahead, non-oracle work and E0 require a new decision.
 
@@ -75,7 +85,7 @@ once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
 recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
 remained false. At boundary 92, both the one-step union and unchanged two-step
 witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
-with zero error. Current verification is **431 pytest tests**, ruff and compileall.
+with zero error. Current verification is **434 pytest tests**, ruff and compileall.
 Three-run success is not established.
 No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
 non-oracle replacement or E0 is authorized.
@@ -155,10 +165,10 @@ normal visual path.
 
 The existing witness mechanism repairs the original empty-pool boundary, and the
 explicit singleton rule correctly continues without counting model competence.
-The first remaining failure is now a later state where one-step contracts are empty
-and the original two-step search also returns no witnesses after 702 evaluated
-branches. This is a zero-pool contract/lookahead dead end on the Laya-produced
-trajectory. Current evidence does not distinguish an inherent two-step coverage
-limit from a regime the original hierarchy would avoid. The broader judgment
-boundary and deployable effect sources remain open. Prompt searches, binary
-predicate tests, new planners, CDS redesign, new contracts and E0 remain outside scope.
+The compact representation also repairs the later 25-option capacity boundary
+without changing pool membership or physical semantics. The latest run stopped at
+the fixed action budget with 40.171 mm remaining, rather than at a contract,
+lookahead, execution or input-capacity failure. It does not establish that more
+actions would finish the task. The broader judgment boundary and deployable effect
+sources remain open. Prompt searches, binary predicate tests, new planners, CDS
+redesign, new contracts and E0 remain outside scope.

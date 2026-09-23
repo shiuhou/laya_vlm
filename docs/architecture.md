@@ -88,6 +88,13 @@ token, the reference executes that token once as `forced_singleton`, records no
 model probabilities and does not call or credit Laya. A pool with two or more
 physically distinct actions reaches Laya. Zero candidates after lookahead fail
 closed. Every execution is followed by a real observation and fresh candidate build.
+For a local-objective witness pool, the model-facing serializer binds numbered
+effect rows to the unchanged canonical question-option order and factors common
+metadata once. It does not rank, prune, merge or reorder candidates. The raw
+`reference_preview` record retains every full-precision prediction and witness;
+the compact view retains the previous rounded model-visible fields. One-step and
+flat presentations remain unchanged. Token audit still fails closed before inference,
+and the recording hook verifies the model consumed exactly the audited token IDs.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.

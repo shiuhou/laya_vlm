@@ -54,8 +54,9 @@ fresh simulation, not new Jev inference; it does not isolate hierarchy causality
 
 ## Results
 
-Implementation commits are `056034a` and `d3becbb`. The full suite passed with
-431 tests; ruff, compileall and `git diff --check` passed. Mechanical preflight
+Implementation commits are `056034a`, `d3becbb`, and compact-presentation commit
+`9372329`. The full suite passed with 434 tests; ruff, compileall and
+`git diff --check` passed. Mechanical preflight
 reproduced the flat initial state, retained all seven `approach_target` actions,
 matched all 27 preview/execution branches and restored the simulator/controller
 snapshot. Raw SHA-256:
@@ -97,7 +98,70 @@ zero-pool, contract-coverage or physical-execution failure. It also does not
 establish that the selected objective architecture would eventually succeed.
 Since the first run failed, the two reproduction runs were not started.
 
-### Complete executed trace
+### Lossless compact witness presentation and fresh episode
+
+The authorized capacity repair changes presentation only. Witness effect rows
+use numbered positions bound to the unchanged canonical action-option order;
+task/state/feedback/schema and common invariant fields appear once. No action,
+effect field or physically distinct candidate is ranked, pruned, merged or
+reordered. Full-precision predictions, witnesses, contracts and rejection records
+remain unchanged in `reference_preview`; model-visible numeric precision is the
+same as before. One-step and flat presentations remain byte-identical.
+
+The offline boundary-87 replay reconstructed the same closed-gripper snapshot and
+all 25 `reposition` candidates in their stored order. The compact state used 768
+tokens against an 849-token state budget; the complete input used 943 of 1,024
+tokens. State, heading and options all reported `truncated=false`; no model
+inference or execution occurred. Raw audit hashes:
+
+- offline audit records: `6fece7e2c82c49084d099de599d1aa317cc4bf83459a688d5b99ab5c4e6691d9`;
+- compact boundary audit: `da4ce22369d66bbd5f8465c76ecb72856e69e8d261ddcdc5e85d8f9aec478588`.
+
+The fresh episode reproduced the original 87-action prefix exactly. At boundary
+87 all 25 candidates reached Laya. The forward-hook record matched the audited
+943-token input. Laya selected `open`; only `open` executed. Predicted and actual
+effects matched exactly: closure `0.009825927` mm, gap reduction
+`-5.589761827` mm, no target contact, no obstacle force and no success. Its stored
+`z-10mm` witness predicted two-step net closure `0.515421708` mm, but was not
+executed automatically. The next real state produced a singleton `z-10mm`, which
+was executed under the existing forced-singleton rule before replanning.
+
+The episode reached the fixed 100-action budget without official success. It made
+91 genuine Laya choices, nine forced-singleton continuations and one executed
+lookahead recovery. Opening changed from `151.659012956` to `40.171227260` mm,
+for `111.487785695` mm net closure. All 100 selected previews matched execution
+with zero state/effect error. There was no truncation, zero-pool, invalid decision,
+fallback or physical mismatch. The first new failure boundary is therefore the
+pre-registered action budget, not candidate capacity. No post-budget candidate
+pool was built, so this run does not establish whether continued execution would
+succeed or encounter another decision boundary. Under the stop rule, no second or
+third fresh process and no replay run were started.
+
+Raw compact-episode hashes:
+
+- episode records: `079e01ba1f71b31fbc972a2dede7e7f0c2d9b7537ea39b98313a1147dc52f2ba`;
+- derived evidence: `3e69f63ee1d342eaeb7c6744cc81c61b075e46cadf14577bf01b6964aabaafd7`;
+- manifest: `f6d7502d4197dcf7d609a58c5f08c3f92ceb0f47a2dc1c8b88698cbc9422ba43`.
+
+Continuation after the repaired boundary:
+
+```text
+087 reposition      25 lookahead Laya   open               0.009826 55.481349  8.036585 false false
+088 advance_target   1 one_step  forced z-10mm             0.505596 54.975753  5.529505 false false
+089 advance_target   7 one_step  Laya   rotate_z-10deg     2.106161 52.869592 15.744538 false false
+090 advance_target   1 one_step  forced rotate_x+10deg     2.570606 50.298986 26.309501 false false
+091 advance_target  22 one_step  Laya   close              0.200340 50.098645 26.331676 false false
+092 advance_target   8 one_step  Laya   rotate_z+10deg     5.438790 44.659855 27.422114 false false
+093 advance_target  24 one_step  Laya   close              2.231118 42.428736 28.174671 false false
+094 advance_target  27 one_step  Laya   close              0.112106 42.316631 27.997772 false false
+095 advance_target  14 one_step  Laya   x+3mm              0.034926 42.281705 27.381745 false false
+096 advance_target  27 one_step  Laya   close              0.116397 42.165308 27.464329 false false
+097 advance_target  13 one_step  Laya   rotate_y+10deg     0.922258 41.243050 32.646015 false false
+098 advance_target   3 one_step  Laya   rotate_z-10deg     0.435816 40.807234 39.159171 false false
+099 advance_target   1 one_step  forced z-40mm             0.636007 40.171227 38.348289 false false
+```
+
+### Original capacity-failed episode trace
 
 Columns are step, objective, candidate count, choice source, primitive, actual
 closure, remaining opening, surface gap, target contact and official success.
