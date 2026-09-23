@@ -55,6 +55,13 @@ Laya choices, 11 forced singletons and one lookahead recovery; all previews and
 monotonic with local plateaus, rather than oscillatory. This establishes a useful,
 reproducible privileged reference under the local-objective condition.
 
+Freezing and the later `TaskSpec` / `TaskAdapter` extraction did not add research
+behavior. The annotated `privileged-drawer-reference-v1` tag preserves the original
+successful implementation. All frozen model inputs/routing boundaries were
+reconstructed exactly under the adapter, and three new fresh-process runs plus
+control replay reproduced the same trace and success. This validates the refactor;
+it is not a new architecture comparison or evidence that the task logic generalizes.
+
 **Formal E0 has not begun. Its previous missing-reference prerequisite is now
 satisfied only for this explicitly privileged condition; the next scientific
 comparison and claim boundary still require a human decision.**

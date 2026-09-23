@@ -32,7 +32,7 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
-| `privileged_reference` | Explicit oracle drawer reference, preflight, report and replay | Native Jev 27-action preview; union of collision-aware task-effect contracts; original two-step witnesses only after an empty one-step union; genuine multi-option Laya call; execute one chosen first primitive; actual outcome to next input. No hierarchy or visual/CDS changes. |
+| `privileged_reference` | Explicit oracle task reference, preflight, report and replay | `TaskSpec` / `TaskAdapter` supplies top-drawer identity, contracts, routing, presentation and measured outcome. The runner retains native Jev 27-action preview, original two-step witnesses only after an empty one-step union, genuine multi-option Laya calls, one-primitive execution and actual-outcome feedback. No hierarchy or visual/CDS changes. |
 | `two_step_lookahead_audit` | Frozen-snapshot audit of original Jev reversible witnesses | Replays the exact dead-end state, invokes unchanged original search, enumerates all qualifying pairs, checks full restoration and verifies the reference produces the same witness pool; no model or live policy episode. |
 | `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
@@ -98,6 +98,17 @@ and the recording hook verifies the model consumed exactly the audited token IDs
 With a 200-primitive execution ceiling, this implemented path reached official
 success in three fresh runs at primitive 122; the ceiling changes termination only,
 not any decision or execution contract.
+
+Drawer-specific semantics are isolated in `privileged_task.TopDrawerTaskAdapter`
+and its immutable `TaskSpec`. The runner owns task-independent reference mechanics:
+preview scheduling, zero/singleton/multi-option handling, Laya invocation, execution,
+record linkage and replay. The adapter owns the task ID/text, primitive source,
+Jev contract call, objective priority/criteria, model-facing task formatting,
+backend construction, outcome measurement and prediction comparison. The preview
+builder accepts an injected contract function; callers that do not inject one keep
+the original Jev default. This extraction changes code ownership only. Three fresh
+post-refactor runs reproduced the frozen action/objective/pool/state trace exactly,
+and all old and new raw-control replays remained zero-error.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.

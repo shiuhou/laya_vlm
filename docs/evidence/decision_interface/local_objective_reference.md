@@ -169,7 +169,7 @@ evidence is
 SHA-256 `036a931bed15c685825ab35f56dd2d368b59132c94b2186a9c7d5125265c16d6`.
 Complete raw events, model inputs/responses, previews, witnesses and controls
 remain in the three run directories.
-Current verification is 435 pytest tests, ruff, compileall, `git diff --check`
+Current verification is 436 pytest tests, ruff, compileall, `git diff --check`
 and local Markdown-link validation.
 
 | Run | Episode records | Derived evidence | Replay check |
@@ -192,6 +192,44 @@ opening  78.122  59.733  52.870  40.171   8.786   0.972  -0.393
 This is sustained progress with local plateaus, not oscillation. Some intervals
 contained repeated low-closure gripper or pose transitions, but opening never
 increased and later actions resumed substantial closure.
+
+### Frozen version and TaskSpec / TaskAdapter extraction
+
+The successful reference was merged to `share_main` at `5ba99de` and frozen by
+annotated tag `privileged-drawer-reference-v1`. The tag retains the three original
+successful runs, whose clean execution revision is `4e26719`; it is not moved by
+the later refactor.
+
+Commit `3ee18b2` extracts top-drawer identity, task text, primitive source, existing
+Jev contract call, objective priority/criteria, presentation, backend construction,
+independent outcome measurement and prediction comparison into
+`privileged_task.TopDrawerTaskAdapter` with an immutable `TaskSpec`. The reference
+runner continues to own preview scheduling, lookahead triggering, singleton/model
+choice semantics, execution and evidence linkage. `PhysicsPreviewCandidateBuilder`
+accepts an injected contract function while preserving its original Jev default.
+No prompt, objective route, contract, threshold, lookahead, primitive, executor,
+model setting or task condition changed.
+
+Before live execution, the refactored code reconstructed all 111 model inputs in
+each original successful run byte-for-byte and matched all 122 objective routes and
+candidate pools per run. It also replayed every original control trace at 1,093
+boundaries with maximum state error `0.0`. Three further clean-revision fresh
+processes then reproduced the same 122-action physical trace, official success,
+111 genuine Laya choices, 11 forced singletons and one lookahead recovery. All
+three new control replays again passed 1,093 boundaries with maximum error `0.0`.
+
+Post-refactor raw evidence hashes:
+
+| Run | Episode records | Derived evidence | Replay check |
+|---|---|---|---|
+| 01 | `9b77651de9474ecb8cdf24d67ea54a71bfc8d19be33a4e3c1d5ee70c514cc3f2` | `063ad9585ca4bd5c9c5e7dbedff39efe522d51261a5a5e2e8246a94653cba008` | `f1807ff9a234bc6728f901cc54b3055fa635b6fcc3d6e78968e7f54ff7bc597e` |
+| 02 | `cdd8894d34421678a69d5bfa3c6d0b5e0e9f33052560089a341d53e07ab8cb1e` | `bcc4bff825df91d3c339ee5cd5e5e54f05187c0147a7179c3a80e06bb66728e4` | `35d05f6e3b25085345fdc50f73ee7613e94f45f4bc05866c08cfa0f34955dd96` |
+| 03 | `804c94fd194310c435b13bb5a0970ca99010d9125ca407bff65982310a8a4128` | `a9f651c248b4e420e863e8d210e5b4050157cccbbc3a4423c2c68450853bf2ab` | `09345755662ed2e773c6ce1cb5515c08e924bced984a36955664e665f29edee3` |
+
+The post-refactor canonical evidence is
+`runs/privileged-reference/local-objective-task-adapter-success/canonical-success-evidence.json`,
+SHA-256 `b119aa422d81fc4bfb5fbb28230071eb59dd825cdc3d370735d56b74203160ae`.
+This local path is ignored by Git, as are the complete control artifacts.
 
 The last 20 actions are shown below. Predicted and actual closure are equal in
 every row.

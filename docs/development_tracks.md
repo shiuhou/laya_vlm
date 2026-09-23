@@ -7,12 +7,13 @@ Former tracks `research/decision-interface` (tip `84cd781`) and
 `feat/mujoco_demo` (tip `59dae8a`) are fully integrated.
 The [cleanup audit](archive/maintenance/cleanup_20260923.md) records their
 worktree/local-branch disposition. Their history remains reachable.
-Remote branches are not removed. The human has now selected the bounded privileged
-reference on `feat/privileged-reference` in the main working directory, based on
-share_main 7c27705; no additional worktree was created. The branch adds the explicit
-oracle 27-action/effect-contract reference and its evidence, not visual changes.
-See [current state](current_state.md) for the failed first episode and stop point.
-Further candidate-policy or architecture changes require a new decision.
+Remote branches are not removed. The bounded privileged reference was developed on
+`feat/privileged-reference`, integrated into `share_main`, and frozen as
+`privileged-drawer-reference-v1`. A focused `refactor/task-spec-adapter` branch then
+isolated its drawer semantics behind `TaskSpec` / `TaskAdapter`; three fresh runs and
+replay established exact behavioral equivalence before integration. The main
+working directory has returned to the single `share_main` baseline. Further
+candidate-policy or architecture changes require a new decision.
 
 ## Responsibilities for future work
 

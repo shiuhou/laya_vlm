@@ -13,6 +13,9 @@ decisions. On top-drawer init 0 / seed 1, three fresh privileged runs each reach
 official success after 122 primitives, with exact preview/execution and control
 replay. This is a reproducible privileged reference, not deployable or non-oracle
 manipulation evidence.
+The frozen reference is tagged `privileged-drawer-reference-v1`. Its top-drawer
+semantics now live behind a `TaskSpec` / `TaskAdapter` boundary; three post-refactor
+fresh runs and full control replay reproduce the frozen trace exactly.
 
 ## Reading order
 
