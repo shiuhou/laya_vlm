@@ -2052,5 +2052,122 @@
   "interaction_relations": [
     "valid_grasp_relation",
     "placement_fit"
-  ]
+  ],
+  "interaction_evaluation": {
+    "establish_grasp": {
+      "result": {
+        "ref": "after.valid_grasp_relation"
+      },
+      "required": {
+        "ref": "after.valid_grasp_relation"
+      },
+      "forbidden": {
+        "eq": [
+          1,
+          0
+        ]
+      }
+    },
+    "transport_object": {
+      "result": {
+        "any": [
+          {
+            "ge": [
+              {
+                "ref": "p.height_gain_mm"
+              },
+              {
+                "ref": "thresholds.progress"
+              }
+            ]
+          },
+          {
+            "ge": [
+              {
+                "ref": "p.xy_gain_mm"
+              },
+              {
+                "ref": "thresholds.progress"
+              }
+            ]
+          },
+          {
+            "ge": [
+              {
+                "ref": "p.placement_fit_progress_mm"
+              },
+              {
+                "ref": "thresholds.progress"
+              }
+            ]
+          }
+        ]
+      },
+      "required": {
+        "ref": "relations.valid_grasp_relation.maintained"
+      },
+      "forbidden": {
+        "eq": [
+          1,
+          0
+        ]
+      }
+    },
+    "place_object": {
+      "result": {
+        "ref": "after.placement_fit"
+      },
+      "required": {
+        "ref": "relations.valid_grasp_relation.maintained"
+      },
+      "forbidden": {
+        "eq": [
+          1,
+          0
+        ]
+      }
+    },
+    "release_object": {
+      "result": {
+        "ref": "after.object_released"
+      },
+      "required": {
+        "ref": "relations.placement_fit.maintained"
+      },
+      "forbidden": {
+        "eq": [
+          1,
+          0
+        ]
+      }
+    },
+    "advance_drawer": {
+      "result": {
+        "any": [
+          {
+            "ge": [
+              {
+                "ref": "p.closing_mm"
+              },
+              {
+                "ref": "thresholds.drawer_progress"
+              }
+            ]
+          },
+          {
+            "ref": "after.success"
+          }
+        ]
+      },
+      "required": {
+        "ref": "relations.placement_fit.maintained"
+      },
+      "forbidden": {
+        "eq": [
+          1,
+          0
+        ]
+      }
+    }
+  }
 }
