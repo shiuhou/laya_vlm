@@ -1,6 +1,7 @@
 """Explicit oracle drawer reference: Jev effect-contract union -> one Laya choice.
 
-No hierarchy, winner selection, lookahead, visual changes or CDS changes.
+No hierarchy, winner selection, visual changes or CDS changes. Existing Jev
+two-step reposition witnesses are used only when the one-step union is empty.
 Contracts perform task-specific candidate-policy filtering, not just safety.
 """
 from __future__ import annotations
@@ -30,7 +31,7 @@ from .records import (
     package_directory, repository_identity, versions,
 )
 
-VERSION = "privileged-drawer-reference-v1"
+VERSION = "privileged-drawer-reference-v1-lookahead2"
 PRIVILEGE = {"effect_source": "oracle_sim", "privileged": True,
              "candidate_filtering": "task_specific_effect_contract_union"}
 INSTRUCTION = (
@@ -153,18 +154,58 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
         self.backend, self.sink = backend, sink
 
     def build(self, belief):
+        from jev_libero.policy import contracts
+
         initial = context_id(self.backend)
         candidates = super().build(belief)
+        one_step_pools = self.last_preview["pools"]
+        one_step_rejected = self.last_preview["rejected"]
+        witnesses, evaluations = {}, 0
+        if not one_step_pools:
+            witnesses, evaluations = self.world.two_step_witnesses(
+                self.backend.gripper_command()
+            )
+            for name, witness in witnesses.items():
+                self.last_preview["predictions"][name]["reposition_witness"] = witness
+            pools, rejected = contracts(
+                self.last_preview["before"], self.last_preview["predictions"],
+                collision_aware=self.collision_aware, task_config=self.world.config,
+            )
+            self.last_preview["pools"] = pools
+            self.last_preview["rejected"] = rejected
+        self.last_preview.update({
+            "one_step_pools": one_step_pools,
+            "one_step_rejected": one_step_rejected,
+            "lookahead_triggered": not bool(one_step_pools),
+            "two_step_evaluations": evaluations,
+            "reposition_witnesses": witnesses,
+        })
         restored = context_id(self.backend)
-        self.sink("reference_preview", {"belief_id": belief.belief_id(), **PRIVILEGE,
-                  "context_before": initial, "context_after": restored,
-                  "restored": initial == restored, **self.last_preview})
         if initial != restored:
             raise RuntimeError("physics preview changed live controller/integration context")
         pools = self.last_preview["pools"]
-        self.last_diagnostics.update(PRIVILEGE)
-        candidates = tuple(replace(c, metadata={**PRIVILEGE,
-            "effect_contracts": [k for k, pool in pools.items() if c.token in pool]}) for c in candidates)
+        eligible = {name for pool in pools.values() for name in pool}
+        candidates = tuple(replace(
+            c,
+            feasible=c.token in eligible,
+            reason_codes=() if c.token in eligible else (
+                self.last_preview["rejected"].get(c.token, "no_feasible_contract"),
+            ),
+            metadata={
+                **PRIVILEGE,
+                "effect_contracts": [k for k, pool in pools.items() if c.token in pool],
+                "lookahead_triggered": not bool(one_step_pools),
+                "reposition_witness": witnesses.get(c.token),
+            },
+        ) for c in candidates)
+        self.last_diagnostics.update({**PRIVILEGE,
+            "lookahead_triggered": not bool(one_step_pools),
+            "two_step_evaluations": evaluations,
+            "reposition_witness_count": len(witnesses),
+            "candidate_veto_count": sum(not c.feasible for c in candidates)})
+        self.sink("reference_preview", {"belief_id": belief.belief_id(), **PRIVILEGE,
+                  "context_before": initial, "context_after": restored,
+                  "restored": True, **self.last_preview})
         ensure_real_choice(candidates, self.backend.gripper_command())
         return candidates
 
@@ -189,13 +230,57 @@ def presentation(before, predictions, names, grip, last):
                   f"target_contact={int(after['moving_contact'])} "
                   f"obstacle_contact={int(after['obstacle_contact'])} "
                   f"success={int(last['official_success'])} controls={last['controls']}.\n")
-    state += ("Effects: action|closure_mm (positive closes)|gap_reduction_mm (positive approaches)"
-              "|target_contact|obstacle_peak_N|success|controls\n")
+    has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
+    if has_witnesses:
+        effect_codes = {"advance_target": "A", "establish_contact": "E",
+                        "approach_target": "P", "release_contact": "R",
+                        "reposition": "W"}
+        common_values = {
+            "fp": {f"{predictions[name]['peak_obstacle_force_N']:.1f}" for name in names},
+            "fs": {str(int(predictions[name]["after"]["success"])) for name in names},
+            "n": {str(predictions[name]["steps"]) for name in names},
+            "wp": {f"{predictions[name]['reposition_witness']['peak_obstacle_force_N']:.1f}"
+                   for name in names},
+            "ws": {str(int(predictions[name]["reposition_witness"]["terminal_success"]))
+                   for name in names},
+        }
+        varying = [key for key, values in common_values.items() if len(values) != 1]
+        common = ",".join(f"{key}={next(iter(values))}" for key, values in common_values.items()
+                          if len(values) == 1)
+        state += (
+            "W rows: a c g t > w C G T e"
+            f"{' ' + ' '.join(varying) if varying else ''}. "
+            "c/g/t=first closure/gap/contact; w=verified second; "
+            "C/G/T=two-step net closure/gap/final contact; "
+            "e=A advance,E establish,P approach,R release. "
+            "Execute a only; replan. "
+            "fp/fs/n=first obstacleN/success/controls; "
+            "wp/ws=witness obstacleN/success. "
+            f"Common: {common}.\n"
+        )
+    else:
+        state += ("Effects: action|closure_mm (positive closes)|gap_reduction_mm (positive approaches)"
+                  "|target_contact|obstacle_peak_N|success|controls\n")
     for name in names:
         p = predictions[name]
-        state += (f"{name}|{p['closing_mm']:.3f}|{p['geometry_approach_mm']:.2f}|"
-                  f"{int(p['after']['moving_contact'])}|{p['peak_obstacle_force_N']:.1f}|"
-                  f"{int(p['after']['success'])}|{p['steps']}\n")
+        witness = p.get("reposition_witness")
+        if witness is None:
+            state += (f"{name}|{p['closing_mm']:.3f}|{p['geometry_approach_mm']:.2f}|"
+                      f"{int(p['after']['moving_contact'])}|{p['peak_obstacle_force_N']:.1f}|"
+                      f"{int(p['after']['success'])}|{p['steps']}\n")
+            continue
+        codes = "".join(effect_codes[value] for value in witness["witnessed_effects"])
+        values = {"fp": f"{p['peak_obstacle_force_N']:.1f}",
+                  "fs": str(int(p["after"]["success"])), "n": str(p["steps"]),
+                  "wp": f"{witness['peak_obstacle_force_N']:.1f}",
+                  "ws": str(int(witness["terminal_success"]))}
+        suffix = "".join(f" {values[key]}" for key in varying)
+        state += (
+            f"{name} {p['closing_mm']:.3f} {p['geometry_approach_mm']:.2f} "
+            f"{int(p['after']['moving_contact'])} > {witness['second_input']} "
+            f"{witness['net_progress']:.3f} {witness['net_gap_reduction_mm']:.2f} "
+            f"{int(witness['terminal_contact'])} {codes}{suffix}\n"
+        )
     questions = {"action": {"type": "choice", "instructions": INSTRUCTION,
                              "criteria": {name: "" for name in names}}}
     return state, questions
@@ -256,7 +341,8 @@ def run(args):
     out = Path(args.output)
     recorder = RunRecorder(out, {**vars(args), "version": VERSION, "oracle": True,
         **PRIVILEGE, "scheduling": "paused observation/preview/inference at action boundary",
-        "primitive_order": list(actions()), "lookahead": 1, "hierarchy": False,
+        "primitive_order": list(actions()), "lookahead": 2,
+        "two_step_reposition_witnesses": True, "hierarchy": False,
         "checkpoint_context_unchanged": True, "success_predicate": "official_LIBERO",
         "candidate_policy_filtering": "union of all task-specific effect contracts; no winner/top-k"},
         {"run_id": out.name, "code": code_identity(), "versions": versions()})

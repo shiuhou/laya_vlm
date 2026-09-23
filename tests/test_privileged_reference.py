@@ -61,6 +61,80 @@ def test_real_choice_keeps_all_legal_candidates_in_order():
     assert ref.ensure_real_choice(cs, -1.) == ["y-3mm", "x+40mm"]
 
 
+def test_reference_builder_uses_existing_witnesses_only_after_empty_one_step_pool(monkeypatch):
+    import jev_libero.policy
+
+    predictions = {
+        "x+3mm": prediction(geometry_approach_mm=1.),
+        "z-3mm": prediction(closing_mm=-.1, geometry_approach_mm=2.7),
+        "hold": prediction(geometry_approach_mm=1.),
+    }
+    witnesses = {
+        "x+3mm": {"second_input": "z-3mm", "net_progress": .1,
+            "net_gap_reduction_mm": 2.7, "terminal_contact": True,
+            "terminal_success": False, "peak_obstacle_force_N": 0.,
+            "witnessed_effects": ["advance_target", "establish_contact"]},
+        "z-3mm": {"second_input": "x+3mm", "net_progress": 1.,
+            "net_gap_reduction_mm": 2.6, "terminal_contact": False,
+            "terminal_success": False, "peak_obstacle_force_N": 0.,
+            "witnessed_effects": ["advance_target"]},
+    }
+    calls = []
+
+    def contracts(_before, received, collision_aware, task_config):
+        calls.append({name: "reposition_witness" in value for name, value in received.items()})
+        eligible = {name: value for name, value in received.items()
+                    if value.get("reposition_witness")}
+        rejected = {name: "no witnessed effect" for name in received if name not in eligible}
+        return ({"reposition": eligible} if eligible else {}), rejected
+
+    world = SimpleNamespace(config={"test": True},
+        predict_all=lambda _grip: (features(), predictions),
+        two_step_witnesses=lambda _grip: (witnesses, 729))
+    backend = SimpleNamespace(world=world, gripper_command=lambda: -1.)
+    logged = []
+    monkeypatch.setattr(jev_libero.policy, "contracts", contracts)
+    monkeypatch.setattr(ref, "actions", lambda: {name: {} for name in predictions})
+    monkeypatch.setattr(ref, "context_id", lambda _backend: "same")
+    builder = ref.ReferenceBuilder(backend, lambda kind, data: logged.append((kind, data)))
+    result = builder.build(belief())
+
+    assert calls == [
+        {"x+3mm": False, "z-3mm": False, "hold": False},
+        {"x+3mm": True, "z-3mm": True, "hold": False},
+    ]
+    assert [candidate.token for candidate in result if candidate.feasible] == ["x+3mm", "z-3mm"]
+    assert builder.last_preview["one_step_pools"] == {}
+    assert builder.last_preview["pools"] == {"reposition": {
+        "x+3mm": predictions["x+3mm"], "z-3mm": predictions["z-3mm"]}}
+    assert builder.last_preview["two_step_evaluations"] == 729
+    assert result[0].metadata["reposition_witness"] == witnesses["x+3mm"]
+    assert logged[0][0] == "reference_preview" and logged[0][1]["restored"]
+
+
+def test_reference_builder_does_not_run_lookahead_when_one_step_pool_exists(monkeypatch):
+    import jev_libero.policy
+
+    predictions = {"x+3mm": prediction(closing_mm=1.),
+                   "z-3mm": prediction(closing_mm=2.)}
+
+    def contracts(_before, received, collision_aware, task_config):
+        return {"advance_target": dict(received)}, {}
+
+    world = SimpleNamespace(config={"test": True},
+        predict_all=lambda _grip: (features(), predictions),
+        two_step_witnesses=lambda _grip: pytest.fail("non-empty pool must not trigger lookahead"))
+    backend = SimpleNamespace(world=world, gripper_command=lambda: -1.)
+    monkeypatch.setattr(jev_libero.policy, "contracts", contracts)
+    monkeypatch.setattr(ref, "actions", lambda: {name: {} for name in predictions})
+    monkeypatch.setattr(ref, "context_id", lambda _backend: "same")
+    builder = ref.ReferenceBuilder(backend, lambda *_: None)
+    result = builder.build(belief())
+    assert all(candidate.feasible for candidate in result)
+    assert not builder.last_preview["lookahead_triggered"]
+    assert builder.last_preview["two_step_evaluations"] == 0
+
+
 def test_presentation_contains_effects_and_real_feedback_not_predicted_feedback():
     ps = {"x+40mm": prediction(closing_mm=10.)}
     last = {"action": "y-3mm", "closure_mm": -2., "gap_reduction_mm": -1.,
@@ -70,7 +144,38 @@ def test_presentation_contains_effects_and_real_feedback_not_predicted_feedback(
     assert "Last actual: y-3mm; closure=-2.000mm" in state
     assert "x+40mm|10.000|2.00" in state
     assert "grip=closed" in state
+    assert "verified_transition" not in state
     assert questions["action"]["criteria"] == {"x+40mm": ""}
+
+
+def test_one_step_presentation_remains_byte_identical_to_v1():
+    state, _ = ref.presentation(features(), {"x+40mm": prediction(closing_mm=10.)},
+                                ["x+40mm"], -1., None)
+    assert state == (
+        "Task: close top drawer. effect_source=oracle_sim; privileged=true. "
+        "Preview up to 8 controls/0.4s. XYZ world mm; rotations world degrees; "
+        "nominal commands, predicted dynamics; grip retained except open/close.\n"
+        "Current opening=150.000mm gap=40.00mm target_contact=0 "
+        "obstacle_contact=0 grip=open finger_gap=70.00mm.\n"
+        "Last actual: none.\n"
+        "Effects: action|closure_mm (positive closes)|gap_reduction_mm (positive approaches)"
+        "|target_contact|obstacle_peak_N|success|controls\n"
+        "x+40mm|10.000|2.00|0|0.0|0|8\n"
+    )
+
+
+def test_presentation_exposes_witness_as_evidence_for_first_action_only():
+    witness = {"second_input": "y-40mm", "net_progress": 1.547539,
+        "net_gap_reduction_mm": 2.652469, "terminal_contact": False,
+        "terminal_success": False, "peak_obstacle_force_N": 0.,
+        "witnessed_effects": ["advance_target", "approach_target"]}
+    ps = {"z-3mm": prediction(closing_mm=-.108773,
+        geometry_approach_mm=2.732324, reposition_witness=witness)}
+    state, questions = ref.presentation(features(), ps, ["z-3mm"], -1., None)
+    assert "Execute a only; replan." in state
+    assert "Common: fp=0.0,fs=0,n=8,wp=0.0,ws=0." in state
+    assert "z-3mm -0.109 2.73 0 > y-40mm 1.548 2.65 0 AP" in state
+    assert questions["action"]["criteria"] == {"z-3mm": ""}
 
 
 def test_view_preserves_live_authorization_identity():
