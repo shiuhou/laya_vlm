@@ -2,8 +2,17 @@
 
 Engineering and research runtime for embodied decisions. Laya selects typed
 actions; code owns estimation, validity checks and motor control.
-The integrated baseline demonstrates an inspectable visual model-to-actuator loop,
-not useful drawer manipulation or a useful reference policy.
+The integrated baseline demonstrates an inspectable visual model-to-actuator loop.
+That non-oracle demo still does not establish useful drawer manipulation.
+
+The [local-objective privileged reference](docs/evidence/decision_interface/local_objective_reference.md)
+now exercises full Jev candidate previews, task-specific effect-contract filtering,
+an explicit local objective and original Jev's two-step witness fallback.
+Deterministic singleton continuations are explicitly separated from genuine Laya
+decisions. On top-drawer init 0 / seed 1, three fresh privileged runs each reached
+official success after 122 primitives, with exact preview/execution and control
+replay. This is a reproducible privileged reference, not deployable or non-oracle
+manipulation evidence.
 
 ## Reading order
 

@@ -7,7 +7,57 @@ alongside CDS fields. This is not an adopted new thesis or architecture.
 
 ## Scientific gate
 
-**Formal E0 is blocked. No useful manipulation reference is established.**
+The authorized [privileged drawer reference v1](evidence/decision_interface/privileged_reference.md)
+tests the strong original-style architecture before ablation. One-step preview and
+task contracts produced 18 genuine approach decisions, exact effects and then an
+empty menu. Contracts perform candidate-policy filtering and remain unchanged.
+Hard-invalid-only remains a possible later ablation only after success.
+The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
+reconstructed the exact state and every primitive clause. Original Jev and the
+reference have identical empty one-step pools there, so the result is classified
+as a **CONTRACT DEAD-END**, not a port bug. The successful Jev trajectory avoids
+that contract state through a materially different pose and closure-positive
+contact transition. This does not prove physical continuation from the dead state
+impossible, and the original runner's two-step witness fallback was not evaluated.
+That fallback has now been evaluated separately in the
+[two-step witness record](evidence/decision_interface/two_step_lookahead.md). It
+found 23 witness-backed first actions on the exact state, including multiple
+temporary-regression contact transitions with positive two-step net closure. This
+weakens the claim that the original architecture lacks transition coverage.
+
+In a fresh closed-loop run, Laya selected `open` from the complete 23-option
+witness menu. Only `open` executed and its real effect matched prediction. The
+next one-step pool contained only `z-3mm`. The subsequent
+[forced-singleton run](evidence/decision_interface/forced_singleton_reference.md)
+executed such singleton pools without calling or crediting Laya. Across 92 actions,
+86 were genuine Laya decisions and six were forced continuations; net closure was
+15.173 mm. At the first new failure, both one-step contracts and existing two-step
+lookahead returned no candidates. Official success remained false. Existing
+lookahead and forced continuations repair earlier local boundaries; they have not
+established a successful flat Laya reference policy.
+
+The subsequent local-objective run first stopped at a different boundary after
+96.168 mm net closure: all 25 lookahead candidates existed, but their complete
+witness presentation exceeded the input budget. A lossless compact serializer
+then retained the same pool/order and rounded effects while factoring repeated
+metadata. Frozen replay fit at 943/1,024 total tokens with no clipping. A fresh run
+reproduced the 87-action prefix exactly, consumed that 25-option input, and continued
+to 111.488 mm net closure. It stopped at the fixed 100-action budget with 40.171 mm
+remaining and official success false. Prediction/execution fidelity stayed exact.
+This removes input capacity as that boundary's cause; it does not establish useful
+reference success or show whether continuation beyond the registered budget works.
+
+The authorized budget-only continuation answered that bounded question. With the
+same architecture and all policy/interface settings fixed, three fresh processes
+each reached official success after 122 primitives. Each contained 111 genuine
+Laya choices, 11 forced singletons and one lookahead recovery; all previews and
+1,093 replayed control boundaries per run matched exactly. The opening curve was
+monotonic with local plateaus, rather than oscillatory. This establishes a useful,
+reproducible privileged reference under the local-objective condition.
+
+**Formal E0 has not begun. Its previous missing-reference prerequisite is now
+satisfied only for this explicitly privileged condition; the next scientific
+comparison and claim boundary still require a human decision.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
 GRASP at step 140 reopened the drawer by 14.272 mm, 21.261 mm worse than STOP.
 An oracle-conditioned decision is not automatically an expert reference.
@@ -39,6 +89,10 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Goal placement](evidence/decision_interface/goal_placement_handoff.md) | Goal-last anonymous utility 9/16 → 11/16; native 0/16. Useful binding remains unestablished. |
 | [Selective grip](evidence/decision_interface/selective_grip_handoff.md) | Native 0/16 → 5/16, opening only; closing 0/8. Wording matters but is not the sole deficit. |
 | [Explicit consequence](evidence/decision_interface/explicit_consequence_handoff.md) | Explicit conjunction 5/16 → 4/16, no prior errors corrected; target predicates do not reliably repair ranking. |
+| [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
+| [Two-step witness audit](evidence/decision_interface/two_step_lookahead.md) | Existing Jev lookahead returns 23 first-action witnesses at the dead end; closed-loop Laya selects `open`, then the acceptance gate stops at a singleton `z-3mm` pool. |
+| [Forced-singleton reference](evidence/decision_interface/forced_singleton_reference.md) | Explicit non-model singleton execution yields 15.173 mm closure over 92 actions, then one-step and two-step processing both return an empty pool; success remains false. |
+| [Local-objective privileged reference](evidence/decision_interface/local_objective_reference.md) | Lossless compact witness input repairs the 25-option boundary; after a budget-only extension, three fresh privileged runs each reach official success after 122 actions with exact preview/execution and replay. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -62,10 +116,13 @@ or binary verification successful.
 
 ## Before further experiments
 
-Humans must agree on Laya's judgment boundary, full vocabulary versus subset,
-allowed candidate processing/effect sources and local intent.
-World.predict_all() can be reviewed as a privileged reference option, not a
-restoration decision; usefulness would still need demonstration.
+The reference boundary now includes existing two-step witnesses after an empty
+one-step union, explicit forced-singleton execution without model attribution and
+lossless presentation of a full witness pool. The registered privileged reference
+has met its engineering success and three-run reproducibility gate. That success
+does not identify which privileged component is necessary, validate the non-oracle
+path or authorize an ablation automatically. The deployable judgment boundary and
+effect sources remain open.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

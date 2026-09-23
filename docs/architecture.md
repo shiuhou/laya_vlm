@@ -32,6 +32,8 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
+| `privileged_reference` | Explicit oracle drawer reference, preflight, report and replay | Native Jev 27-action preview; union of collision-aware task-effect contracts; original two-step witnesses only after an empty one-step union; genuine multi-option Laya call; execute one chosen first primitive; actual outcome to next input. No hierarchy or visual/CDS changes. |
+| `two_step_lookahead_audit` | Frozen-snapshot audit of original Jev reversible witnesses | Replays the exact dead-end state, invokes unchanged original search, enumerates all qualifying pairs, checks full restoration and verifies the reference produces the same witness pool; no model or live policy episode. |
 | `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
 | `interface_search` / `reference_gate` / `effect_binding` / `provider_comparison` / `clause_order` / `goal_placement` / `selective_grip` / `explicit_consequence` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
@@ -67,6 +69,35 @@ a validated learned predictor. See [integration_checkpoint.md](archive/historica
 for history, claim boundaries and alternatives to review; no redesign is implemented.
 
 ## Roles
+
+The human-authorized [privileged reference v1](evidence/decision_interface/privileged_reference.md)
+uses the existing BeliefStore with an audited compact oracle presentation,
+not CanonicalDecisionInput. Runtime's optional executor argument defaults to the
+original AtomicExecutor; this reference injects a Jev-native AtomicExecutor
+adapter. The preview builder's explicit action mapping opts into the 27 primitives
+without legacy STOP/DONE additions. Candidate metadata declares oracle_sim,
+privileged=true and task_specific_effect_contract_union. Contracts implement
+part of candidate-policy filtering, not only hard validity; this attribution is
+part of the reference definition. If that union is empty, the opt-in reference
+uses original Jev two-step witnesses as `reposition` evidence. Each witness proves
+a second primitive can satisfy an existing combined contract; it does not authorize
+that second primitive. Laya chooses among witness-backed first actions, only one
+first primitive executes, and the next decision uses the real endpoint. All
+defaults outside this opt-in path remain. If the complete admitted pool has one
+token, the reference executes that token once as `forced_singleton`, records no
+model probabilities and does not call or credit Laya. A pool with two or more
+physically distinct actions reaches Laya. Zero candidates after lookahead fail
+closed. Every execution is followed by a real observation and fresh candidate build.
+For a local-objective witness pool, the model-facing serializer binds numbered
+effect rows to the unchanged canonical question-option order and factors common
+metadata once. It does not rank, prune, merge or reorder candidates. The raw
+`reference_preview` record retains every full-precision prediction and witness;
+the compact view retains the previous rounded model-visible fields. One-step and
+flat presentations remain unchanged. Token audit still fails closed before inference,
+and the recording hook verifies the model consumed exactly the audited token IDs.
+With a 200-primitive execution ceiling, this implemented path reached official
+success in three fresh runs at primitive 122; the ceiling changes termination only,
+not any decision or execution contract.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.
