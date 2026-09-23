@@ -47,7 +47,17 @@ remaining and official success false. Prediction/execution fidelity stayed exact
 This removes input capacity as that boundary's cause; it does not establish useful
 reference success or show whether continuation beyond the registered budget works.
 
-**Formal E0 is blocked. No useful manipulation reference is established.**
+The authorized budget-only continuation answered that bounded question. With the
+same architecture and all policy/interface settings fixed, three fresh processes
+each reached official success after 122 primitives. Each contained 111 genuine
+Laya choices, 11 forced singletons and one lookahead recovery; all previews and
+1,093 replayed control boundaries per run matched exactly. The opening curve was
+monotonic with local plateaus, rather than oscillatory. This establishes a useful,
+reproducible privileged reference under the local-objective condition.
+
+**Formal E0 has not begun. Its previous missing-reference prerequisite is now
+satisfied only for this explicitly privileged condition; the next scientific
+comparison and claim boundary still require a human decision.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
 GRASP at step 140 reopened the drawer by 14.272 mm, 21.261 mm worse than STOP.
 An oracle-conditioned decision is not automatically an expert reference.
@@ -82,7 +92,7 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
 | [Two-step witness audit](evidence/decision_interface/two_step_lookahead.md) | Existing Jev lookahead returns 23 first-action witnesses at the dead end; closed-loop Laya selects `open`, then the acceptance gate stops at a singleton `z-3mm` pool. |
 | [Forced-singleton reference](evidence/decision_interface/forced_singleton_reference.md) | Explicit non-model singleton execution yields 15.173 mm closure over 92 actions, then one-step and two-step processing both return an empty pool; success remains false. |
-| [Local-objective privileged reference](evidence/decision_interface/local_objective_reference.md) | Lossless compact witness input repairs the 25-option boundary; the fresh run reaches 111.488 mm closure over 100 actions, then stops at its fixed action budget without official success. |
+| [Local-objective privileged reference](evidence/decision_interface/local_objective_reference.md) | Lossless compact witness input repairs the 25-option boundary; after a budget-only extension, three fresh privileged runs each reach official success after 122 actions with exact preview/execution and replay. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -108,12 +118,11 @@ or binary verification successful.
 
 The reference boundary now includes existing two-step witnesses after an empty
 one-step union, explicit forced-singleton execution without model attribution and
-lossless presentation of a full witness pool. The latest run's first unresolved
-boundary is its fixed 100-action limit, not an empty pool or clipped input. Because
-no post-budget candidate build occurred, the evidence does not justify changing
-the budget or predict what continued execution would do. No new contract or
-architecture change is authorized. The deployable judgment boundary and effect
-sources remain open, and usefulness still needs demonstration.
+lossless presentation of a full witness pool. The registered privileged reference
+has met its engineering success and three-run reproducibility gate. That success
+does not identify which privileged component is necessary, validate the non-oracle
+path or authorize an ablation automatically. The deployable judgment boundary and
+effect sources remain open.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

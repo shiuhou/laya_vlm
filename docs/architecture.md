@@ -95,6 +95,9 @@ metadata once. It does not rank, prune, merge or reorder candidates. The raw
 the compact view retains the previous rounded model-visible fields. One-step and
 flat presentations remain unchanged. Token audit still fails closed before inference,
 and the recording hook verifies the model consumed exactly the audited token IDs.
+With a 200-primitive execution ceiling, this implemented path reached official
+success in three fresh runs at primitive 122; the ceiling changes termination only,
+not any decision or execution contract.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.

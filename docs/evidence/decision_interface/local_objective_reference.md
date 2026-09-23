@@ -143,6 +143,88 @@ Raw compact-episode hashes:
 - derived evidence: `3e69f63ee1d342eaeb7c6744cc81c61b075e46cadf14577bf01b6964aabaafd7`;
 - manifest: `f6d7502d4197dcf7d609a58c5f08c3f92ceb0f47a2dc1c8b88698cbc9422ba43`.
 
+### Successful 200-action reference and reproduction
+
+The only behavioral change after the 100-action stop was the authorized maximum
+executed-primitive budget from 100 to 200. Commit
+`4e2671990970bf4b7560a3c8f1eb9d5269198d3f` records that allowance; all three
+runs used that clean revision. Task/init/seed, 1,800-second wall limit, model and
+configuration, prompts, serialization, routing, contracts, thresholds, previews,
+lookahead, singleton handling, action vocabulary, executor and oracle provenance
+were unchanged. Normalized resolved-config ID (excluding only each output path):
+`7248fcf79eeb7dbcf710acae763e1d5e7dcb11a96d4f09f155cce107cf63264a`.
+
+Three separate fresh processes produced the same physical decision trace and
+reached the official LIBERO predicate at step 121, after 122 executed primitives.
+Every run had 111 genuine multi-option Laya decisions, 11 forced singletons and
+one lookahead recovery. Opening changed from `151.659012956` to
+`-0.392883787` mm, net closure `152.051896742` mm. There was no truncation,
+zero-pool, invalid response, fallback, hidden retry or runtime failure. Every
+selected prediction matched execution exactly.
+
+Full control replay passed independently for every run: 1,093 checked boundaries
+per run, maximum state error `0.0` at tolerance `1e-8`. The combined canonical
+evidence is
+`runs/privileged-reference/local-objective-compact-200-success/canonical-success-evidence.json`,
+SHA-256 `036a931bed15c685825ab35f56dd2d368b59132c94b2186a9c7d5125265c16d6`.
+Complete raw events, model inputs/responses, previews, witnesses and controls
+remain in the three run directories.
+Current verification is 435 pytest tests, ruff, compileall, `git diff --check`
+and local Markdown-link validation.
+
+| Run | Episode records | Derived evidence | Replay check |
+|---|---|---|---|
+| 01 | `40b5f8c55c6b4eb5e7bfc1c74e874b67ef2f970308d2f02204d21492f30f3309` | `3ecbfd73cc4183752701c9d7244666349e59187f9d15cd9732ba83b75a2f84b2` | `f845618ddd30a466c92119333da5b67bf151f46950fa57230bef0bded3005a0d` |
+| 02 | `09f100667ac2d948368de2ed7872a7e6e8ebf3718d166b8fe8ad0bc392eff357` | `97c1b17850766c6754449be04f0145624fa2ba98d5594dcd2cba7137feb5cd97` | `7b96fbddf83e6fb533ec036fec228847611985cf50b9cbc65d62a2470dd6408a` |
+| 03 | `e317b759e856217e87ba672b349c9407f53a7b347c659f5f59359d4580f6d022` | `9a03b187c205416195287ca561b007e380feb91bed3097f8b489ec0b9c2c69da` | `1f665924bec82c63e7451f9fc1ba046d92872cef2f8f052d620883e7090368f0` |
+
+The opening curve was monotonic and every 10-action bin, including the terminal
+partial bin, made positive closure progress:
+
+```text
+actions       0      10      20      30      40      50      60
+opening 151.659 147.809 140.882 135.229 119.104 106.829  90.841
+
+actions      70      80      90     100     110     120     122
+opening  78.122  59.733  52.870  40.171   8.786   0.972  -0.393
+```
+
+This is sustained progress with local plateaus, not oscillation. Some intervals
+contained repeated low-closure gripper or pose transitions, but opening never
+increased and later actions resumed substantial closure.
+
+The last 20 actions are shown below. Predicted and actual closure are equal in
+every row.
+
+```text
+step objective        n  pool      source             action              closure   opening      gap contact success
+102  advance_target   8  one_step  Laya               rotate_x-10deg      2.392354  35.873859 33.150809   0       0
+103  advance_target   1  one_step  forced_singleton   z-40mm              5.486216  30.387643 40.248097   0       0
+104  advance_target  26  one_step  Laya               close               1.115922  29.271721 41.387734   0       0
+105  advance_target   5  one_step  Laya               rotate_x-10deg      1.439871  27.831850 37.039115   0       0
+106  advance_target   2  one_step  Laya               y-40mm              8.468274  19.363576 14.026373   0       0
+107  advance_target  22  one_step  Laya               open                1.768738  17.594838 14.037126   0       0
+108  advance_target   9  one_step  Laya               rotate_z+10deg      6.430529  11.164309 14.433987   0       0
+109  advance_target  25  one_step  Laya               open                2.378046   8.786263 15.227767   0       0
+110  advance_target  12  one_step  Laya               open                0.026061   8.760202 15.196290   0       0
+111  advance_target   6  one_step  Laya               rotate_z-10deg      0.382860   8.377342 23.047242   0       0
+112  advance_target   1  one_step  forced_singleton   rotate_x+10deg      1.735876   6.641466 33.715533   0       0
+113  advance_target  27  one_step  Laya               close               4.330553   2.310913 36.356336   0       0
+114  advance_target  27  one_step  Laya               close               0.014953   2.295960 36.282794   0       0
+115  approach_target  2  one_step  Laya               rotate_z+10deg      0.000021   2.295939 31.998284   0       0
+116  advance_target  16  one_step  Laya               close               1.292357   1.003582 30.042276   0       0
+117  advance_target  27  one_step  Laya               close               0.031878   0.971705 30.132168   0       0
+118  approach_target  3  one_step  Laya               x+40mm              0.000045   0.971659 25.936976   0       0
+119  approach_target 19  one_step  Laya               close               0.000000   0.971659 18.947717   0       0
+120  approach_target  6  one_step  Laya               x+40mm              0.000000   0.971659  9.609225   0       0
+121  advance_target   2  one_step  Laya               z-40mm              1.364543  -0.392884  4.941391   0       1
+```
+
+This establishes the first reproducible successful **privileged** Laya drawer
+reference under the current local-objective architecture. It does not establish
+deployability, non-oracle competence, flat-policy success or the necessity of any
+individual component. No ablation or E0 was begun.
+
 Continuation after the repaired boundary:
 
 ```text

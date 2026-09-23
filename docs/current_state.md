@@ -2,7 +2,7 @@
 
 Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
 
-## Local-objective privileged reference: capacity repaired, task still incomplete
+## Local-objective privileged reference: reproducible success
 
 The same-condition [Jev hierarchy comparison](evidence/decision_interface/jev_hierarchy_same_condition.md)
 completed top-drawer closure in 20 decisions and 155 fresh controls. This proves
@@ -16,31 +16,26 @@ approach, release, reposition. This router is new task policy; it is not origina
 Jev's model-selected intent. It retains the complete selected pool in primitive
 order and adds no strategy or motion-family filtering.
 
-On frozen flat boundaries, the objective condition changed step 0 from `x+3mm`
-to `x+40mm`, but both conditions selected `x+3mm` at flat boundary 1. The fresh
-episode executed 87 primitives: 81 genuine Laya choices and six forced singletons.
-It achieved 96.168 mm net closure, from 151.659 to 55.491 mm, without official
-success. All 696 controls matched preview exactly; replay passed 784 boundaries
-with zero error.
+The boundary-87 capacity failure was repaired without changing the decision
+architecture. A lossless compact witness presentation retains all 25 candidates,
+their canonical order and the same rounded effects while factoring repeated
+metadata. Offline replay used 943 of 1,024 total tokens without clipping. Full raw
+predictions and witnesses remain in evidence.
 
-The boundary-87 capacity failure is repaired without changing the decision
-architecture. A lossless compact witness presentation factors repeated wording,
-common invariant fields and action names already present in canonical option order.
-It retains all 25 candidates and the same rounded effects. Full raw predictions and
-witnesses remain in evidence. Offline replay used 768 state tokens against an
-849-token budget and 943 total tokens against 1,024; state, heading and options all
-fit without truncation.
+The only subsequent behavioral change was the authorized executed-primitive budget
+from 100 to 200. On clean revision `4e26719`, three separate fresh processes with
+the same task/init/seed/model/configuration each reached official LIBERO success at
+step 121 after 122 primitives. Each run contained 111 genuine Laya multi-option
+decisions, 11 forced singletons and one lookahead recovery. Opening changed from
+151.659 to -0.393 mm, for 152.052 mm net closure. The complete physical decision
+traces were identical. All selected previews matched real execution exactly; all
+three control replays passed 1,093 boundaries with zero error.
 
-A fresh run reproduced the first 87 actions exactly. At boundary 87, Laya consumed
-the audited 25-option input, selected `open`, and real execution exactly matched its
-preview. The run continued through 100 actions: 91 genuine Laya choices, nine
-forced singletons and one lookahead recovery. It achieved 111.488 mm net closure,
-from 151.659 to 40.171 mm, but official success remained false. All selected
-previews matched execution with zero error. The first new failure is the fixed
-100-action budget; no post-budget pool was built, so continuation is unknown.
-The conditional second/third runs and replay were not started. Strategy, candidate
-truncation/top-k, prompt/model-limit changes, contract/threshold changes, deeper
-lookahead, non-oracle work and E0 require a new decision.
+This establishes the first reproducible successful **privileged** Laya manipulation
+reference. Oracle effects, task-specific contracts and deterministic objective
+routing remain part of the policy boundary. The result does not establish a
+deployable visual policy, flat atomic-choice success or which components are
+necessary. No ablation, strategy layer, non-oracle work or E0 has begun.
 
 ## Privileged drawer reference v1: existing lookahead evaluated
 
@@ -85,8 +80,9 @@ once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
 recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
 remained false. At boundary 92, both the one-step union and unchanged two-step
 witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
-with zero error. Current verification is **434 pytest tests**, ruff and compileall.
-Three-run success is not established.
+with zero error. Current verification is **435 pytest tests**, ruff and compileall.
+Three-run success is not established for that earlier flat condition; it is now
+established for the local-objective privileged condition described above.
 No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
 non-oracle replacement or E0 is authorized.
 
@@ -149,8 +145,8 @@ not a remote backup; ignored artifacts are absent from fresh clones.
 
 ## Architecture-review stop point
 
-**Formal E0 remains blocked. No useful manipulation reference is established.
-The deployable decision architecture remains under review.**
+**A reproducible privileged manipulation reference is established. Formal E0 has
+not begun, and the deployable decision architecture remains under review.**
 
 State Gap and Effect Gap remain separate. Effects from oracle_sim, deterministic
 geometry, learned prediction and unknown/none must not be conflated. Geometry
@@ -163,12 +159,11 @@ effects or preprocessing unnecessary. The legacy oracle path still contains
 PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
 normal visual path.
 
-The existing witness mechanism repairs the original empty-pool boundary, and the
-explicit singleton rule correctly continues without counting model competence.
-The compact representation also repairs the later 25-option capacity boundary
-without changing pool membership or physical semantics. The latest run stopped at
-the fixed action budget with 40.171 mm remaining, rather than at a contract,
-lookahead, execution or input-capacity failure. It does not establish that more
-actions would finish the task. The broader judgment boundary and deployable effect
-sources remain open. Prompt searches, binary predicate tests, new planners, CDS
-redesign, new contracts and E0 remain outside scope.
+The existing witness mechanism repairs the original empty-pool boundary, the
+explicit singleton rule continues without counting model competence, and compact
+serialization admits the complete 25-option witness pool. With only the authorized
+budget extension, this unchanged policy completed the task reproducibly. The next
+human decision concerns what the privileged success permits us to test and which
+component, if any, should be isolated first. The broader judgment boundary and
+deployable effect sources remain open. Prompt searches, binary predicate tests,
+new planners, CDS redesign, new contracts and E0 remain outside the completed task.
