@@ -104,8 +104,13 @@ def run(args):
     archived_config = json.loads((archive / "config.json").read_text())
     archived_initial = json.loads((archive / "initial_state.json").read_text())
     current_task = load_task("top_drawer")
-    if current_task != archived_task:
-        raise RuntimeError("current original Jev task config differs from archived successful run")
+    task_config_exact = current_task == archived_task
+    normalized_current_task = dict(current_task)
+    measurement_declaration = normalized_current_task.pop("measurements", None)
+    task_config_semantics_exact = (normalized_current_task == archived_task
+        and measurement_declaration == {"joint_position": {"kind": "joint_position"}})
+    if not task_config_semantics_exact:
+        raise RuntimeError("current original Jev task config has a behavioral archive mismatch")
     if ACTIONS != archived_config["candidate_controls"]:
         raise RuntimeError("current original Jev action vocabulary differs from archive")
 
@@ -134,7 +139,12 @@ def run(args):
     reference_rows = read_jsonl(Path(args.reference_raw))
     reference_environment = next(r["data"] for r in reference_rows if r["kind"] == "environment")
     condition = {
-        "task_config_exact": current_task == archived_task,
+        "task_config_exact": task_config_exact,
+        "task_config_semantics_exact": task_config_semantics_exact,
+        "task_config_mismatch": ({"current_only": {
+            "measurements": measurement_declaration},
+            "classification": "explicit declaration of the archived legacy joint-position default"}
+            if not task_config_exact else None),
         "action_vocabulary_exact": ACTIONS == archived_config["candidate_controls"],
         "task": archived_task["binding"]["task"],
         "init_state": archived_config["initial_state"],
@@ -161,7 +171,7 @@ def run(args):
         "archived_api_sha256": FrozenOriginalAnswers.source_sha256,
     }
     condition["same_physical_condition"] = all(condition[key] for key in (
-        "task_config_exact", "action_vocabulary_exact", "initial_features_equal_archive",
+        "task_config_semantics_exact", "action_vocabulary_exact", "initial_features_equal_archive",
         "initial_features_equal_flat_laya", "all_policy_requests_exact", "fresh_simulator_reset"))
     if not condition["same_physical_condition"]:
         raise RuntimeError("same-condition gate failed")
