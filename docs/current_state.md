@@ -1,25 +1,27 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Shared baseline: **`eddbcde04649419d8d5d44e62e433882578328eb`**, including the live
-demo at `f806468` and research gate at `3be0fc5`. The research worktree now adds the
+Previous shared baseline: **`eddbcde04649419d8d5d44e62e433882578328eb`**, including the live
+demo at `f806468` and research gate at `3be0fc5`. This integration combines research
+commit `84cd781` and demo commits `84abdb8` / `59dae8a`. Research adds the
 [fixed-option effect diagnostic](effect_binding_handoff.md) and
 [independent-provider comparison](provider_comparison_handoff.md), followed by the
 [STOP-clause order diagnostic](clause_order_handoff.md) and the
 [Laya goal-placement diagnostic](goal_placement_handoff.md), then the
 [selective grip-description diagnostic](selective_grip_handoff.md) and the
 [explicit-consequence diagnostic](explicit_consequence_handoff.md); their manifests
-record working-source hashes. Use `git rev-parse HEAD` and `git status --short` for the
-exact checkout and uncommitted diagnostic changes.
+record working-source hashes. Demo instrumentation, feedback and subsequent frozen
+diagnostics are also integrated. Use `git rev-parse HEAD` for the exact integration
+checkout. Historical run identities remain unchanged; merging does not rerun them.
 Experiment status: **bounded diagnostics only; no formal E0/E1 or freeze tag**.
 
 ## Branches and collaboration
 
-Current checkout: **`research/decision-interface`**, in `laya-decision-interface`.
-Existing sibling worktrees are `laya-embodied-runtime` on `share_main` and
-`laya-mujoco-demo` on `feat/mujoco_demo`; all three had baseline `eddbcde` when this
-diagnostic began. No branches, remote settings or other worktrees were modified.
-The earlier documentation's proposed track branches now exist.
+Integration target: **`laya-embodied-runtime` on `share_main`**. Separate worktrees
+remain `laya-decision-interface` on `research/decision-interface` and
+`laya-mujoco-demo` on `feat/mujoco_demo`. Relevant working changes were committed
+on their own tracks before merging research, then demo, with normal merge history.
+No remote update, branch rename or new model experiment accompanies integration.
 
 Read [development_tracks.md](development_tracks.md) for track responsibilities,
 shared components and integration rules. [research.md](research.md) remains the
@@ -34,9 +36,19 @@ Prior clause-order report: [clause_order_handoff.md](clause_order_handoff.md).
 Prior provider comparison: [provider_comparison_handoff.md](provider_comparison_handoff.md).
 Prior effect-binding diagnostic: [effect_binding_handoff.md](effect_binding_handoff.md).
 Prior status/consequence gate: [reference_gate_handoff.md](reference_gate_handoff.md).
-Latest engineering-only artifact: [live visual demo](engineering_demo.md), after
-baseline `3be0fc5`. Four actual Laya choices drove GRASP/RELEASE commands; all 32
-recorded controls replay exactly. No task success; no change to the research gate.
+Latest engineering-only artifact: [embodied feedback audit](closed_loop_demo.md),
+on baseline `84abdb8` plus recorded working-source hashes. Eight Laya choices,
+nine sensor captures and seven verified feedback deliveries still produce zero
+drawer progress. All 64 controls replay exactly at 73 checked boundaries.
+One GPU-memory startup failure was retained before the completed episode.
+The [four-action inspector milestone](demo_runbook.md) is preserved.
+The [original live visual demo](engineering_demo.md) remains historical evidence.
+No task success; no change to the research gate.
+Latest engineering diagnostic: [negative-direction option ordering](synthetic_negative_order_probe.md).
+The [decision autopsy](decision_autopsy.md), [distance effects](frozen_step0_distance_effects.md),
+[local objective](frozen_step0_local_objective.md), [translations-only](frozen_step0_translations_only.md)
+and [synthetic direction](synthetic_direction_probe.md) reports retain their bounded,
+offline scope. None is a new live policy or a task-completion result.
 Prior interface search: [interface_search_handoff.md](interface_search_handoff.md).
 Mechanism report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
 Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
@@ -45,10 +57,27 @@ Conditional next experiment: [research.md](research.md).
 
 ## Track A — verified engineering demonstration
 
+- **Goal:** sustained task-directed embodied decisions and measurable task progress.
+  The real non-oracle RGB-D → LocateAnything → fusion/belief → Laya → executor path
+  and a two-step asynchronous smoke predate this branch. This work makes existing
+  capability reproducible and auditable; it does not create the first embodied loop.
+  Connectivity is an achieved milestone, not the complete engineering objective.
+- Latest episode: eight genuine GRASP/RELEASE decisions; fresh observations and
+  used fusion evidence reach all seven subsequent Laya decisions. Optional final
+  sensing adds no action. All six translations remain available, but none is chosen.
+  Every choice change coincides with veto of the previous choice. Updated inputs
+  and output alternation therefore do not isolate useful model sensitivity.
+  **No task-directed progress; the next engineering milestone remains unmet.**
+- Demo-specific live console and offline HTML inspector now expose the full chain,
+  including raw-response/proposal and executor/trajectory agreement, forced choices,
+  fallbacks, missing outcomes and evaluator-only measurements. Shared runtime,
+  interfaces, gates, providers and executor semantics are unchanged. The new run
+  has eight verified Laya executions and zero replay error across 73 boundaries.
+  Current demo-branch verification: 266 tests, ruff and compileall pass.
 - Real RGB-D → temporal belief → compact CDS → Laya → validation → atomic executor
   → MuJoCo execution. The opt-in demo bridge leaves the legacy runner and research
   pairing interface unchanged.
-- Four choices, GRASP/RELEASE/GRASP/RELEASE, each from ten natural feasible tokens;
+- Earlier four-action milestone: GRASP/RELEASE/GRASP/RELEASE, each from ten natural feasible tokens;
   no forced singleton, fallback, clipping or contract violation. Actual gripper
   movement, 32 controls and video are recorded. Control replay matches 37 boundaries
   exactly; it is not a second independent model-driven rollout.
@@ -250,14 +279,15 @@ but matching this model is not yet evidence of useful decision sufficiency.
 
 ## Evidence and review gate
 
-Prior evidence is in the sibling `laya-embodied-runtime` worktree. Under its ignored
+Historical baseline evidence remains in `laya-embodied-runtime`. Under its ignored
 `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`,
 `replay-init0-v02/`, `raw-referent-audit-v02/`. Old `init*-attempt1/`,
 `replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
 Older Stage 1/2/interface handoffs remain historical.
 Prior research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
 Prior engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
-New research evidence in **this** worktree: `runs/effect-binding/factorial-v01/`,
+New research evidence remains in **`laya-decision-interface`**, starting with
+`runs/effect-binding/factorial-v01/`,
 including raw calls, manifests, a raw-derived report and fixture/contrast audit.
 Prior: `runs/provider-comparison/qwen-v01/`, with full raw vocabulary logits,
 report and audit; sibling `preflight-v01/` and `acquisition-v0{1,2,3}/` preserve
@@ -265,6 +295,11 @@ input preflight, pinned model acquisition, interrupted transfers and verificatio
 Prior: `runs/clause-order/{preflight-v01,laya-v01,qwen-v01,qwen-v02}/`, independent
 `audit.json`/script and `matched_pairs.csv`. Full presentations and raw logits are
 retained; Qwen v01 is a zero-inference harness failure, v02 the completed run.
+New demo evidence remains in **`laya-mujoco-demo`**:
+Latest completed engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-feedback-v02/`.
+Preserved startup failure: `runs/engineering-demo/top-drawer-init0-seed1-feedback-v01/`.
+Earlier inspector artifact: `runs/engineering-demo/top-drawer-init0-seed1-inspector-v01/`.
+Subsequent frozen and synthetic diagnostic directories are linked from their reports.
 All are local/ignored, not included in a fresh clone; share their manifests and
 referenced artifacts separately. See the collaboration guide's evidence handoff rules.
 Prior: `runs/goal-placement/{preflight-v01,laya-v01}/`, independent `audit.py` /
@@ -283,7 +318,37 @@ Reference state usable as a **validated useful manipulation-decision reference: 
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Single next manipulation diagnostic: candidate-by-candidate predicate verification.
+## Integration stop point — architecture review before further experiments
+
+Flat multi-candidate atomic ranking is under architectural review. Goal-last
+placement and selective GRASP/RELEASE anonymization improved some bounded cases;
+neither established useful goal/effect binding. Explicit desired-consequence
+predicates failed to repair selection. Candidate ordering substantially affects
+ranking: the demo's frozen swap changes GRASP to MV_BACK; a synthetic negative-axis
+permutation corrects two of three errors but leaves -Y wrong. These observations
+favor investigating decision-interface/candidate consumption over an explanation
+based solely on missing raw physical state. They do not identify a unique cause.
+
+Action-semantics/distance annotations did not make atomic choices reliably useful.
+The local-objective intervention also added a contact premise and did not rescue
+the choice; it is a diagnostic hypothesis, not accepted task decomposition.
+Anonymization and reorderings remain offline manipulations, not canonical semantics.
+
+The architectural question is what processing belongs between belief/world state
+and Laya so the model performs judgment rather than low-level geometry, physics or
+logical candidate matching. The earlier PhysicsPreviewCandidateBuilder /
+World.predict_all() combined privileged facts with useful candidate processing.
+It still exists in the explicit oracle path; isolation from visual/research inputs
+must not be confused with deleting the implementation or proving that processing
+unnecessary. Restoring oracle preview is not an approved solution.
+
+Keep oracle_sim, deterministic geometry (`geometry`), learned prediction (`learned`)
+and unknown/no effects distinct, with source and privilege propagated from inputs.
+State Gap and Effect Gap remain separate. No scientifically defensible useful
+manipulation reference has been established; formal E0 remains blocked.
+
+The following historical next-test proposal is **on hold for architecture review**;
+it is not authorized by this integration: candidate-by-candidate predicate verification.
 Ask whether each unchanged candidate description/effect bundle satisfies the same
 explicit desired conjunction, with neutral `satisfies` / `does not satisfy` answer
 IDs, both answer orders and repeats. Cover both directions and all existing bundles,

@@ -1,4 +1,4 @@
-"""Opt-in visual connectivity demo, not an E0 experiment or a success policy.
+"""Auditable visual embodied demo, not an E0 experiment or a success policy.
 
 Reuses CDS v0.1, natural visual gates, LayaProvider, Runtime validation and the
 native executor. Simulation waits for perception. No oracle previews or effects.
@@ -8,9 +8,11 @@ from __future__ import annotations
 import argparse
 from dataclasses import asdict
 import json
+import os
 from pathlib import Path
 import random
 import signal
+import sys
 import time
 
 import numpy as np
@@ -40,6 +42,44 @@ QUERY = "the metal handle on the top drawer of the small freestanding wooden cab
 INSTRUCTION = ("Choose one allowed atomic action for the task. Null means unknown. "
                "Moves retain orientation/grip; rotations retain position/grip. "
                "Collision freedom is not established.")
+
+
+class DemoTelemetry:
+    """Persist first, then show selected stages without affecting decisions."""
+    def __init__(self, recorder):
+        self.recorder = recorder
+
+    def __call__(self, kind, data):
+        record_id = self.recorder.record(kind, data)
+        display = None
+        if kind in {"demo_boundary", "demo_sensing_complete", "failure", "termination"}:
+            display = data
+        elif kind == "demo_model_input":
+            display = {"allowed": list(data["questions"]["action"]["criteria"]),
+                       "singleton_forced_not_model": data["singleton_forced_not_model"]}
+        elif kind == "decision":
+            display = {"step": data["step"], "source": data["decision"]["source"],
+                       "proposed": data["decision"]["token"], "latency_ms": data["decision_latency_ms"]}
+        elif kind == "execution_started":
+            display = {"step": data["step"], "executed_intent": data["decision"]["token"],
+                       "source": data["decision"]["source"], "fallback_reason": data["fallback_reason"]}
+        elif kind == "evaluation" and data["phase"] == "after":
+            display = {"step": data["step"], "evaluator_only": True,
+                       **{k: data["features"][k] for k in
+                          ("remaining_open_mm", "finger_gap_mm", "moving_contact", "success")}}
+        elif kind == "action":
+            execution = data["execution"]
+            display = {"step": data["step"], "executed": execution["token"],
+                       "controls": execution["environment_step_count"],
+                       "tcp_delta_mm": (np.asarray(execution["delta_m"])*1000).tolist(),
+                       "contract_violation": execution["execution_contract_violation"]}
+        if display is not None:
+            try:
+                print(f"[demo:{kind}] {json.dumps(display)}", flush=True)
+            except (OSError, ValueError):
+                # A closed presentation pipe must not interrupt physical execution.
+                pass
+        return record_id
 
 
 class DemoView:
@@ -153,14 +193,19 @@ def run(args):
         "no_formal_experiment": True, "tracking_active": False, "covariance_calibrated": False},
         {"run_id": out.name, "code": code_identity(), "versions": versions()})
     backend = None
+    emit = DemoTelemetry(recorder)
     old_handlers = {}
     success = False
     step = None
+    last_action_step = None
 
     def interrupted(signum, _frame):
         raise TimeoutError(f"demo interrupted by signal {signum}")
 
     try:
+        recorder.record("demo_invocation", {"argv": sys.argv, "cwd": str(Path.cwd()),
+            "python": sys.executable, "environment": {key: os.environ.get(key) for key in
+                ("CUDA_VISIBLE_DEVICES", "MUJOCO_GL", "HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")}})
         for sig in (signal.SIGALRM, signal.SIGTERM):
             old_handlers[sig] = signal.signal(sig, interrupted)
         signal.setitimer(signal.ITIMER_REAL, args.timeout_s)
@@ -187,16 +232,20 @@ def run(args):
             "instruction": world.task, "sim_state": world.env.sim.get_state().flatten(),
             "initial_state": backend.execution_state()})
         agent = load_laya_provider(args.laya_path, subfolder=None, device=args.device).agent
-        provider = DemoProvider(agent, QUERY, recorder.record)
+        provider = DemoProvider(agent, QUERY, emit)
         runtime = Runtime(f"demo-top_drawer-init{args.init_state_id}-seed{args.seed}", provider, backend, builder,
-            fusion=MultiRateFusion(config=temporal), event_sink=recorder.record,
+            fusion=MultiRateFusion(config=temporal), event_sink=emit,
             sim_clock=lambda: world.data.time, oracle=False)
         locator = LocateAnythingWorker(args.locateanything_path, device=args.device)
         source = LiberoRgbdSource(world)
         vision = None
-        for step in range(args.steps):
+        for step in range(args.steps + int(args.observe_final)):
+            terminal_observation = step == args.steps or success
             frame = source.capture()
             recorder.capture(frame)
+            emit("demo_boundary", {"step": step, "capture_seq": frame["capture_seq"],
+                                  "capture_sim_time": frame["capture_sim_time"],
+                                  "phase": "terminal_observation" if terminal_observation else "sensing"})
             if vision is None:
                 vision = LocateAnythingProvider(lambda _rgb, _query: {}, frame["intrinsics"])
             before = world.env.sim.get_state().flatten().copy()
@@ -209,25 +258,34 @@ def run(args):
             recorder.record("vision_completed", {"capture_seq": frame["capture_seq"], "result": result, "event": event})
             if not np.array_equal(before, world.env.sim.get_state().flatten()):
                 raise RuntimeError("physical state moved during paused perception")
+            visual_admitted = False
             if event is None:
-                recorder.record("failure", {"category": "vision_missing", "step": step})
+                emit("failure", {"category": "vision_missing", "step": step})
             else:
-                runtime.ingest(event, now_sim=float(world.data.time))
-            runtime.observe("proprio", float(world.data.time), backend.proprioception())
+                visual_admitted = runtime.ingest(event, now_sim=float(world.data.time))
+            proprio_admitted = runtime.observe("proprio", float(world.data.time), backend.proprioception())
+            emit("demo_sensing_complete", {"step": step, "capture_seq": frame["capture_seq"],
+                "capture_sim_time": frame["capture_sim_time"], "proprio_source_seq": runtime.source_seq,
+                "visual_event_admitted": visual_admitted, "proprio_event_admitted": proprio_admitted,
+                "after_action_step": last_action_step, "terminal_observation": terminal_observation})
+            if terminal_observation:
+                break  # Observe the final outcome without inventing another model decision.
             recorder.record("evaluation", {"step": step, "phase": "before", "oracle_evaluator": True,
                                             "features": world.features()})
             row = runtime.step(float(world.data.time), goal={"task": "top_drawer", "instruction": world.task,
                                "target_query": QUERY, "satisfied": False})
             save_trajectory(backend, out, step, recorder)
-            recorder.record("evaluation", {"step": step, "phase": "after", "oracle_evaluator": True,
+            emit("evaluation", {"step": step, "phase": "after", "oracle_evaluator": True,
                                             "features": world.features()})
             success = row["result"]["success"]
-            if success:
+            last_action_step = step
+            if success and not args.observe_final:
                 break
-        recorder.record("termination", {"reason": "success" if success else "action_budget", "success": success, "step": step})
+        emit("termination", {"reason": "success" if success else "action_budget", "success": success,
+                             "step": last_action_step})
     except BaseException as exc:
-        recorder.record("failure", {"category": "demo_error", "step": step, "exception": repr(exc)})
-        recorder.record("termination", {"reason": "demo_error", "success": success, "step": step})
+        emit("failure", {"category": "demo_error", "step": step, "exception": repr(exc)})
+        emit("termination", {"reason": "demo_error", "success": success, "step": step})
         raise
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
@@ -292,6 +350,8 @@ def parser():
     p.add_argument("--libero-root", default="/home/junhongli/projects/LIBERO")
     p.add_argument("--config-dir", default="/home/junhongli/runs/libero-config")
     p.add_argument("--timeout-s", type=float, default=300.)
+    p.add_argument("--observe-final", action="store_true",
+                   help="capture and fuse the final physical outcome after the action budget or success")
     p.add_argument("--replay-check", action="store_true")
     p.add_argument("--render-report", action="store_true")
     return p
