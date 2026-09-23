@@ -1,20 +1,25 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Implementation/evidence baseline: **`f8064688f84b0c7dffbcf6b8dc89fb64d1c59779`**
-(live visual demo), including research diagnostics at `3be0fc5`. The documentation
-alignment on top changes no implementation or experimental conclusion. Use
-`git rev-parse HEAD` for the exact checkout/documentation commit.
+Shared baseline: **`eddbcde04649419d8d5d44e62e433882578328eb`**, including the live
+demo at `f806468` and research gate at `3be0fc5`. The research worktree now adds the
+[fixed-option effect diagnostic](effect_binding_handoff.md) and
+[independent-provider comparison](provider_comparison_handoff.md), followed by the
+[STOP-clause order diagnostic](clause_order_handoff.md) and the
+[Laya goal-placement diagnostic](goal_placement_handoff.md), then the
+[selective grip-description diagnostic](selective_grip_handoff.md) and the
+[explicit-consequence diagnostic](explicit_consequence_handoff.md); their manifests
+record working-source hashes. Use `git rev-parse HEAD` and `git status --short` for the
+exact checkout and uncommitted diagnostic changes.
 Experiment status: **bounded diagnostics only; no formal E0/E1 or freeze tag**.
 
 ## Branches and collaboration
 
-Current branch: **`share_main`**. At this review, local `master` also points to
-`f806468`; `origin/master` and `origin/share_main` are present as local remote-tracking
-refs, with `origin/HEAD -> origin/master`. No fetch or server/default-branch change
-was performed. `research/decision-interface` and `feat/mujoco_demo` are recommended
-future branches, absent from the inspected refs. No branches were created, renamed
-or deleted by this documentation alignment.
+Current checkout: **`research/decision-interface`**, in `laya-decision-interface`.
+Existing sibling worktrees are `laya-embodied-runtime` on `share_main` and
+`laya-mujoco-demo` on `feat/mujoco_demo`; all three had baseline `eddbcde` when this
+diagnostic began. No branches, remote settings or other worktrees were modified.
+The earlier documentation's proposed track branches now exist.
 
 Read [development_tracks.md](development_tracks.md) for track responsibilities,
 shared components and integration rules. [research.md](research.md) remains the
@@ -22,7 +27,13 @@ single research-direction document; historical handoffs are revision-specific.
 
 ## Evidence entry points
 
-Latest research report: [reference_gate_handoff.md](reference_gate_handoff.md).
+Latest research report: [explicit_consequence_handoff.md](explicit_consequence_handoff.md).
+Prior selective-grip report: [selective_grip_handoff.md](selective_grip_handoff.md).
+Prior goal-placement report: [goal_placement_handoff.md](goal_placement_handoff.md).
+Prior clause-order report: [clause_order_handoff.md](clause_order_handoff.md).
+Prior provider comparison: [provider_comparison_handoff.md](provider_comparison_handoff.md).
+Prior effect-binding diagnostic: [effect_binding_handoff.md](effect_binding_handoff.md).
+Prior status/consequence gate: [reference_gate_handoff.md](reference_gate_handoff.md).
 Latest engineering-only artifact: [live visual demo](engineering_demo.md), after
 baseline `3be0fc5`. Four actual Laya choices drove GRASP/RELEASE commands; all 32
 recorded controls replay exactly. No task success; no change to the research gate.
@@ -68,8 +79,9 @@ Conditional next experiment: [research.md](research.md).
   collector: each yields approach, contact and progress. Only collector init 0
   completes; this is **not Laya task success**. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 244 tests, ruff and compileall pass. Dependencies, upstream repositories and
-  model weights were not changed or downloaded.
+- 362 tests, ruff and compileall pass. Dependencies and upstream repositories are
+  unchanged. One pinned independent Qwen checkpoint was acquired separately;
+  existing model weights were not modified.
 
 Verified runtime versions: Python 3.10.21, MuJoCo 3.5.0, robosuite 1.4.1,
 NumPy 1.26.4, torch 2.2.0, transformers 4.57.3, laya 0.3.4. Commands and local
@@ -78,7 +90,94 @@ demo audit model tokens; this does not retroactively validate legacy/truncated i
 
 ## Track B — scientific result and limitations
 
-Latest bounded evidence: **212 offline calls**, all repeated inputs stable and
+Latest bounded evidence: **128 Laya calls**, replacing only the generic question
+on selective goal-last fixtures with the explicit desired conjunction: `opening
+decreases, vs STOP lower, and obstacle no` for closing; `increases/higher` for
+opening. All 64 repeat pairs and 64 archived controls match raw scores exactly.
+Only **2/32 choices** change, with no corrections and one lost success. True utility
+falls **5/16 → 4/16**: closing **0/8**, opening **4/8**. Shifted fact correctness
+stays **1/8 closing, 8/8 opening**. Appropriate goal reversal stays **1/16**;
+both-assignments correctness falls **5/16 → 4/16**; both-orders correctness remains
+**5/16**, all opening. Opening consequences still dominate **24/32** choices,
+including **12/16 closing requests**. Explicit criteria do not materially help;
+the failure also exists in desired-consequence-to-candidate matching under this
+presentation. An upstream-only goal-transformation explanation is weakened.
+All 32 question changes affect logits/probabilities, so this is not a zero-effect
+intervention. Inputs increase 336 → 344 tokens, without clipping; all other model
+input fields remain identical. All 32 explicit choices retain contract flags.
+No new provider, physical field, effects, controller or live change. Finite matching
+gate FAIL; useful reference/E0 remain NO.
+
+Prior bounded evidence: **128 Laya calls**, replacing only native GRASP/RELEASE
+description prefixes with `intervention` on the 32 goal-last native fixtures, with
+all matched controls and variants repeated twice. All 64 repeat pairs and 64 archived
+control comparisons match logits/probabilities exactly. True-effect utility improves
+**0/16 → 5/16**, entirely for opening; true closing remains **0/8**. Appropriate goal
+reversal improves only **0/16 → 1/16**; effect-reassignment pairs correct under both
+assignments improve **0/16 → 5/16**, all opening requests. No boundary/assignment
+passes both goals under both option orders. RELEASE selections fall 20/32 → 3/32,
+but GRASP rises 8/32 → 23/32: combined grip selection remains 26/32. Opening bundles
+dominate 25/32 choices, including 12/16 closing requests. The two descriptions
+contribute, but their removal exposes a remaining directional preference rather than
+reliable goal binding. Inputs shorten 344 → 336 tokens without clipping; this does
+not isolate lexical meaning from length/position. All 32 transformed first-repeat
+choices retain contract flags. No new provider, field, effect or live change.
+Useful reference/E0 remain NO.
+
+Prior bounded evidence: **256 Laya calls**, moving only the unchanged requested-goal
+sentence after all rules, with all 64 original and 64 transformed fixtures repeated
+twice in one session. Every original control reproduces its archive; all 128 repeat
+comparisons match raw logits/probabilities. Token multisets/counts and option markers
+are unchanged. Placement changes 25/64 choices, but native true-effect utility stays
+**0/16**. Anonymous true utility improves **9/16 → 11/16**, and appropriate paired
+goal/consequence/action reversal improves **2/32 → 6/32**, all anonymous. No context/
+assignment passes both goals under both option orders. Anonymous opening selections
+fall **30/32 → 22/32**; effect-reassignment pairs with both choices correct stay
+**8/32** overall. Native opening requests now select RELEASE **16/16**, including
+eight shifted cases with explicitly closing effects. This strengthens a specific
+gripper-wording interference hypothesis while broader integration remains unresolved.
+61/64 transformed choices retain execution-contract flags. No Qwen inference,
+new physical fields or live changes. Useful manipulation reference/E0 remain NO.
+
+Prior bounded evidence: **264 new calls** on the same frozen full-effect fixtures,
+changing only the final STOP-rule closed/open clause order on both existing providers.
+Clause order changes 23/64 Laya and 2/64 Qwen choices, but anonymous opening-effect
+selections remain dominant: **30/32 → 32/32** and **29/32 → 28/32**, respectively,
+when closing moves last. Opening → closing switches occur in only 0/64 and 1/64
+pairs. Native true-effect utility remains **0/16 Laya, 8/16 Qwen**; anonymous true
+closing remains 0/8 for both. All 66 repeat comparisons per provider are exact,
+including raw logits; unchanged controls reproduce the archives. A Qwen configuration
+serialization-check failure occurred before inference and is preserved separately.
+The final STOP-clause dominance hypothesis is weakened; stable order sensitivity
+does not explain the broader failure to bind the goal to consequences. No reference
+passes and no physical state fields, model settings or live interfaces changed.
+
+Prior bounded evidence: **128 new Qwen2.5-7B-Instruct calls**, paired with the 128
+archived Laya full-effect calls on exactly the same 64 logical fixtures. Native
+true-effect utility improves from Laya 0/16 to Qwen **8/16**, but Qwen passes only
+**3/32** paired goal reversals across all conditions. Anonymous true and reassigned
+facts both score open **8/8**, closed **0/8**; 29/32 anonymous choices select
+`increases / higher` facts. Reassignment changes 25/32 choices but both choices
+follow their supplied facts in only 13/32 pairs. All outputs are valid, unclipped
+and exactly stable across repeats, including vocabulary logits. The gate still
+fails. Cross-provider failure strengthens investigation of goal/rule presentation;
+it does not establish a specific cause or a need for more state. Frozen fixtures
+are a sentence projection, not the full CDS serialization. No interface was changed.
+
+Prior bounded evidence: **256 offline calls**, fixed eleven-option factorial on
+the same four loaded contexts. With true absolute AND STOP-relative consequences,
+native descriptions yield **0/16** locally supported choices; anonymous descriptions
+yield **9/16**, comprising open 8/8 and closed 1/8. Anonymous full-effect choices
+stay identical under goal reversal in 7/8 matched cases. Moving effect bundles
+changes 15/16 anonymous full-effect action identities; across true/shifted bindings,
+30/32 choices follow `opening increases / vs STOP higher`, regardless of goal.
+This supports presentation-sensitive, inadequate goal-conditioned consequence
+selection, rather than complete effect insensitivity or a missing STOP fact alone.
+All 128 repeat comparisons are stable; all calls are unclipped. No native local
+reference passes. Privileged effects remain confined to this offline diagnostic;
+no new CDS or live policy is promoted. See the latest handoff for claim limits.
+
+Prior bounded evidence: **212 offline calls**, all repeated inputs stable and
 unclipped. Three archived oracle/perceptual status pairs isolate missing
 articulation: correct oracle CONTINUE at open/intermediate states becomes DONE
 when that field is unknown. Oracle-field masking exactly reproduces perceptual
@@ -151,14 +250,32 @@ but matching this model is not yet evidence of useful decision sufficiency.
 
 ## Evidence and review gate
 
-Under ignored `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`,
+Prior evidence is in the sibling `laya-embodied-runtime` worktree. Under its ignored
+`runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`,
 `replay-init0-v02/`, `raw-referent-audit-v02/`. Old `init*-attempt1/`,
 `replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
 Older Stage 1/2/interface handoffs remain historical.
-Latest research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
-Latest engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
+Prior research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
+Prior engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
+New research evidence in **this** worktree: `runs/effect-binding/factorial-v01/`,
+including raw calls, manifests, a raw-derived report and fixture/contrast audit.
+Prior: `runs/provider-comparison/qwen-v01/`, with full raw vocabulary logits,
+report and audit; sibling `preflight-v01/` and `acquisition-v0{1,2,3}/` preserve
+input preflight, pinned model acquisition, interrupted transfers and verification.
+Prior: `runs/clause-order/{preflight-v01,laya-v01,qwen-v01,qwen-v02}/`, independent
+`audit.json`/script and `matched_pairs.csv`. Full presentations and raw logits are
+retained; Qwen v01 is a zero-inference harness failure, v02 the completed run.
 All are local/ignored, not included in a fresh clone; share their manifests and
 referenced artifacts separately. See the collaboration guide's evidence handoff rules.
+Prior: `runs/goal-placement/{preflight-v01,laya-v01}/`, independent `audit.py` /
+`audit.json` and `matched_pairs.csv`. Full prompts, tokens, raw logits/probabilities,
+all unchanged controls and working-source/model identities are retained.
+Prior: `runs/selective-grip/{preflight-v01,laya-v01}/`, independent `audit.py` /
+`audit.json`, `matched_pairs.csv` and `verification.json`. All original and selective
+prompts/outputs, raw scores, source lineage and configuration checks are preserved.
+Latest: `runs/explicit-consequence/{preflight-v01,laya-v01}/`, independent `audit.py`
+/ `audit.json`, `matched_pairs.csv` and `verification.json`. Full matched prompts,
+raw scores, token audits, source lineage and predicate equivalence checks are retained.
 
 Geometric reference comparable: **YES**, under the stated camera/visibility definition.
 Bounded known-state status judgment: **YES**, only for the tested finite interface.
@@ -166,11 +283,17 @@ Reference state usable as a **validated useful manipulation-decision reference: 
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 
-Smallest next tests: validate explicit UNKNOWN status outputs and obtain a
-legitimate sensor-derived articulation estimate for anything beyond the observed
-missingness effect. For manipulation, isolate effect binding from native action
-semantics at fixed option count, and expose STOP-relative effects if incremental
-utility is the objective. Full atomic-policy E0 still lacks a competent reference;
-do not silently rename the narrow status result as that experiment.
+Single next manipulation diagnostic: candidate-by-candidate predicate verification.
+Ask whether each unchanged candidate description/effect bundle satisfies the same
+explicit desired conjunction, with neutral `satisfies` / `does not satisfy` answer
+IDs, both answer orders and repeats. Cover both directions and all existing bundles,
+including wrong-direction and mixed/neutral effects. Keep state/rules/model and
+numeric predicate fixed. This separates recognizing predicate satisfaction from
+selection among eleven competing candidates; it is a separate binary diagnostic,
+not a new policy or validation of the original interface. Proposed, not run.
+See the latest handoff for scope and interpretation limits.
+No additional provider search or schema redesign is justified. The narrower status result still lacks a
+sensor articulation estimator and broader UNKNOWN validation, but does not replace
+the manipulation task. Full atomic-policy E0 still lacks a competent reference.
 Do not silently settle loaded states or waive reset-envelope violations. Do not insert effects
 into the no-effect comparison, tune gates, or expand the benchmark without review.

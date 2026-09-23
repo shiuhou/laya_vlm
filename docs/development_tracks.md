@@ -37,14 +37,28 @@ CDS v0.1 is an implemented hypothesis, not an established sufficient state.
 
 Current entry points include [collect_pairs.py](../embodied_runtime/experiments/collect_pairs.py),
 [replay_equivalence.py](../embodied_runtime/experiments/replay_equivalence.py),
-[interface_search.py](../embodied_runtime/experiments/interface_search.py) and
-[reference_gate.py](../embodied_runtime/experiments/reference_gate.py).
+[interface_search.py](../embodied_runtime/experiments/interface_search.py),
+[reference_gate.py](../embodied_runtime/experiments/reference_gate.py),
+[effect_binding.py](../embodied_runtime/experiments/effect_binding.py) and
+[provider_comparison.py](../embodied_runtime/experiments/provider_comparison.py) and
+[clause_order.py](../embodied_runtime/experiments/clause_order.py) and
+[goal_placement.py](../embodied_runtime/experiments/goal_placement.py) and
+[selective_grip.py](../embodied_runtime/experiments/selective_grip.py) and
+[explicit_consequence.py](../embodied_runtime/experiments/explicit_consequence.py).
 Collectors and simulator probes can execute physical controls, but the research
 decision replays do not drive those source trajectories. A successful archived
 Jev collector is not evidence that the current Laya policy solved the task.
 
-The [latest bounded findings](reference_gate_handoff.md) support an interpretable
-status-missingness result, not a useful manipulation reference. State Gap and
+The [latest bounded findings](explicit_consequence_handoff.md) show that explicitly
+stating the desired consequence does not materially help: true utility falls 5/16
+to 4/16, true closing stays 0/8, and appropriate goal reversal stays 1/16. The
+desired-consequence-to-candidate operation remains unreliable, weakening an
+upstream-only explanation. The proposed next diagnostic tests individual bundle
+predicate verification to distinguish recognition from competitive selection.
+No new provider or schema is justified. The earlier selective-grip,
+cross-provider, clause-order and goal-placement findings retain their bounded scope;
+Laya is the primary research system. The prior
+status-missingness result remains narrower than a manipulation reference. State Gap and
 Effect Gap remain separate; an E0 freeze needs review, not just functioning tools.
 
 ## Shared foundations, not two implementations
@@ -70,12 +84,12 @@ can differ. Record those choices; do not pool the resulting measurements.
 | `research/decision-interface` | Track B diagnostics, hypotheses and protocols | Keep experimental configurations/results identifiable; no automatic promotion to live policy |
 | `feat/mujoco_demo` | Track A demos, visualization and reproducibility | Keep demo-specific adapters opt-in; no silent change to research comparisons |
 
-`share_main` is already checked out. The two track branches are **proposed**, not
-created by this documentation work; see the dated branch inventory in
-[current_state.md](current_state.md). Existing `master` and remote default-branch
-settings are not renamed or deleted here. A human can create the two branches from
-the documentation-aligned `share_main` commit after review. This is an integration
-baseline, not an `exp-e0-v0` experimental freeze.
+The three branches now have separate worktrees: `laya-embodied-runtime` on
+`share_main`, `laya-decision-interface` on `research/decision-interface`, and
+`laya-mujoco-demo` on `feat/mujoco_demo`. This research review found them already
+created from `eddbcde`; see [current_state.md](current_state.md). No branch or
+remote default setting was changed by the diagnostic. The shared baseline is
+not an `exp-e0-v0` experimental freeze.
 
 Prefer small reviewed merges back to `share_main`, then bring shared changes into
 both tracks. Shared-module fixes belong in focused changes, not duplicate forks
