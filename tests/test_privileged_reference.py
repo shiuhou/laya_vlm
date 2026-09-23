@@ -10,6 +10,9 @@ from embodied_runtime.adapters.physics_preview import PhysicsPreviewCandidateBui
 from embodied_runtime.runtime import Runtime
 from embodied_runtime.runtime_core import BeliefSnapshot, Candidate, FakeBackend, RuleProvider
 from embodied_runtime.experiments import privileged_reference as ref
+from embodied_runtime.experiments.privileged_task import (
+    TaskAdapter, TaskSpec, TopDrawerTaskAdapter,
+)
 from embodied_runtime.experiments.records import RunRecorder
 
 
@@ -35,6 +38,19 @@ def witness(**extra):
 
 def belief(candidates=()):
     return BeliefSnapshot("test", 1, 0., {}, {}, {}, candidates)
+
+
+def test_top_drawer_task_boundary_owns_reference_specific_semantics():
+    assert isinstance(ref.TASK_SPEC, TaskSpec)
+    assert isinstance(ref.TASK_ADAPTER, (TaskAdapter, TopDrawerTaskAdapter))
+    assert ref.TASK_SPEC.task_id == "top_drawer"
+    assert ref.TASK_SPEC.model_task == "close top drawer"
+    assert ref.OBJECTIVE_PRIORITY is ref.TASK_SPEC.objective_priority
+    assert ref.OBJECTIVE_CRITERIA is ref.TASK_SPEC.objective_criteria
+    assert ref.ROUTING_VERSION == ref.TASK_SPEC.routing_version
+    assert ref.TASK_ADAPTER.goal(SimpleNamespace(task="Close the top drawer")) == {
+        "task": "top_drawer", "instruction": "Close the top drawer", "satisfied": False,
+    }
 
 
 def test_native_mapping_keeps_union_without_ranking_or_synthetic_fallback(monkeypatch):

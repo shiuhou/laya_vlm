@@ -37,6 +37,20 @@ routing remain part of the policy boundary. The result does not establish a
 deployable visual policy, flat atomic-choice success or which components are
 necessary. No ablation, strategy layer, non-oracle work or E0 has begun.
 
+The successful implementation is frozen by annotated tag
+`privileged-drawer-reference-v1` at merge commit `5ba99de`; the three original runs
+record execution revision `4e26719`. Drawer-specific task identity, contracts,
+objective routing, outcome measurement and presentation were subsequently moved
+behind `TaskSpec` / `TaskAdapter` at `3ee18b2`, without changing the decision
+architecture. Before new execution, all 111 Laya inputs in each frozen run were
+reconstructed byte-for-byte, all 122 routing/pool boundaries per run matched, and
+the three frozen control traces replayed at 1,093 zero-error boundaries each.
+Three further clean-revision fresh processes then reproduced the same 122-action
+trace and official success exactly; their three replays also passed 1,093 boundaries
+with zero error. The post-refactor canonical local evidence is
+`runs/privileged-reference/local-objective-task-adapter-success/canonical-success-evidence.json`
+(SHA-256 `b119aa422d81fc4bfb5fbb28230071eb59dd825cdc3d370735d56b74203160ae`).
+
 ## Privileged drawer reference v1: existing lookahead evaluated
 
 The bounded reference uses Jev's full 27-action vocabulary, `World.predict_all()`
@@ -80,7 +94,7 @@ once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
 recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
 remained false. At boundary 92, both the one-step union and unchanged two-step
 witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
-with zero error. Current verification is **435 pytest tests**, ruff and compileall.
+with zero error. Current verification is **436 pytest tests**, ruff and compileall.
 Three-run success is not established for that earlier flat condition; it is now
 established for the local-objective privileged condition described above.
 No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
@@ -88,16 +102,16 @@ non-oracle replacement or E0 is authorized.
 
 ## Integrated baseline
 
-Integration baseline: `33c7039e5f1f331fcac705498854c539a2568d42`, including research
-tip `84cd781c400e66568e35d8d6ccf45d3b8fb15ad1` and demo tip
-`59dae8ac074e601913251637176771d9d1004c09`.
-The clean cleanup baseline is 7c27705. Use `git rev-parse HEAD` for this checkout.
+The earlier research/demo integration is `33c7039`, and the cleanup baseline is
+`7c27705`. The privileged reference was integrated at `5ba99de` and frozen by the
+tag above. The behavior-preserving task-adapter extraction is also integrated into
+`share_main`; use `git rev-parse HEAD` for the current baseline.
 
-The single local worktree is `laya-embodied-runtime`, currently on the focused
-`feat/privileged-reference` branch. The reviewed share_main baseline is retained.
+The single local worktree is `laya-embodied-runtime` on `share_main` after this
+checkpoint. No new architecture branch or worktree has been created.
 The [cleanup audit](archive/maintenance/cleanup_20260923.md) records old track
-retirement and verification. The bounded privileged reference is the only new track;
-no deployable architecture or ablation has been selected.
+retirement and verification. No focused development track remains active; no
+deployable architecture or ablation has been selected.
 [Development tracks](development_tracks.md) defines collaboration responsibilities.
 
 README plus the five documents directly under docs are authoritative.
@@ -105,8 +119,10 @@ Experimental records live in evidence; historical handoffs live in archive.
 Their proposed next steps are not current work orders.
 Use the [research](research.md) and [demo](engineering_demo.md) evidence indexes.
 
-Cleanup verification: 384 tests passed; ruff, compileall, 13 CLI/import checks,
-archival evidence audits and 249 local Markdown links/anchors passed.
+Current verification: 436 tests passed; ruff, compileall, `git diff --check`,
+byte-identical input reconstruction, and six replayed runs (three frozen and three
+post-refactor). The cleanup baseline separately passed 13 CLI/import checks,
+archival evidence audits and 249 local Markdown links/anchors.
 Both old worktrees and their fully integrated local track branches were removed;
 remote branches and the local master branch remain unchanged.
 
