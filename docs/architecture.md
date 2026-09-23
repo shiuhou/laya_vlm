@@ -26,7 +26,7 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 |---|---|---|
 | `engineering_demo` / `demo_report` | Track A live demo and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
-| `interface_search` / `reference_gate` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
+| `interface_search` / `reference_gate` / `effect_binding` / `provider_comparison` / `clause_order` / `goal_placement` / `selective_grip` / `explicit_consequence` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
 | `run_libero` | Legacy Stage 2 live smoke path | BeliefSnapshot presentation, optional asynchronous visual worker or explicitly oracle preview branch; not the demo's compact audited path |
 
 The shared implementation map is in [development_tracks.md](development_tracks.md).
@@ -170,6 +170,52 @@ question/criteria enter inference; source identities, evaluator labels and raw
 physical outcomes remain outside it. Effect-bearing fixtures are explicitly marked.
 These exploratory projections do not replace the canonical live/offline interfaces
 or validate an atomic policy. See the [reference gate handoff](reference_gate_handoff.md).
+
+`experiments.effect_binding` holds all eleven options fixed while independently
+varying native/anonymous descriptions and absolute/STOP-relative consequence facts.
+True and deliberately reassigned privileged effects are labeled offline controls;
+presented-fact consistency is separate from actual numeric physical utility. It
+reuses archived probes and the same audited recorder, with no execution or changes
+to CDS/CandidateEffectBundle. See the [effect binding handoff](effect_binding_handoff.md).
+
+`experiments.provider_comparison` replays the archived full-effect fixtures through
+one offline Qwen instruction-model adapter. State, question and ordered criteria
+retain their logical payload identities; chat framing and output-format instruction
+are explicit provider-specific transport. Full generated sequences and vocabulary
+logits are recorded and audited. This adapter is not wired into the live runtime
+and the frozen sentence projection is not a full CDS serialization. See the
+[provider comparison handoff](provider_comparison_handoff.md).
+
+`experiments.clause_order` changes only the final STOP-rule clause order in those
+frozen full-effect sentence fixtures. It reuses both existing providers and numeric
+evaluators, preserving parent payloads, unchanged controls and complete raw outputs.
+Presented-effect direction remains separate from physical utility under reassignment.
+This offline intervention adds no state fields or live policy changes; it does not
+establish a useful manipulation reference. See the [clause-order handoff](clause_order_handoff.md).
+
+`experiments.goal_placement` moves only the unchanged requested-goal sentence after
+all rules on the frozen Laya full-effect fixtures, preserving the original STOP
+clause order. All originals rerun alongside interventions, with complete preflight,
+repeat and archived-control checks. This sentence projection remains separate from
+CDS and live execution. Its partial anonymous improvement does not qualify a native
+manipulation reference. See the [goal-placement handoff](goal_placement_handoff.md).
+
+`experiments.selective_grip` uses the accepted native goal-last fixtures and replaces
+only the nominal GRASP/RELEASE prefixes with `intervention`, preserving all effects
+and the other nine descriptions. It reruns every original control, records complete
+preflight/raw evidence and reuses existing numeric evaluators. Source metadata and
+physical identities stay intact; new presentation lineage is explicitly recorded.
+The partial opening-only gain does not establish goal binding or a manipulation
+reference. See the [selective-grip handoff](selective_grip_handoff.md).
+
+`experiments.explicit_consequence` changes only the question on accepted selective
+goal-last fixtures to the desired `decreases/lower/no` or `increases/higher/no`
+conjunction already implied by the rules/evaluator. Candidate criteria, complete
+state, mapping/order, source effects and inference configuration remain fixed.
+It supplies an intermediate target, never a winning identity, and reuses the same
+preflight, raw-output validators and numeric evaluator. The failure persists even
+with the target explicit; no original goal-binding, CDS or useful-reference claim
+is established. See the [explicit-consequence handoff](explicit_consequence_handoff.md).
 
 LIBERO/MuJoCo provide physical execution and evaluator state. Jev-LIBERO supplies the
 World/controller adapter, oracle preview and the existing recorded collection trace.

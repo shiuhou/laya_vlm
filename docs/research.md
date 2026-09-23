@@ -58,7 +58,7 @@ of useful decision sufficiency; disagreement is not automatically perception err
 | Task-relative geometry | Some sentence-form single-axis controls work; mixed-axis and goal-reversal controls fail | What geometry/abstraction a competent manipulation interface requires; an upstream winning-axis computation already performs policy |
 | Contact, holding and recent outcomes | Available evidence/provenance can be represented; unsupported perceptual fields remain unknown | Which family improves useful choices, rather than correlating with task phase or making outputs change |
 | Age, validity and uncertainty | Temporal contracts and metadata work | Whether these fields improve task-useful decisions; covariance is still heuristic |
-| Candidate-specific consequences | Candidate-local facts help synthetic contrasts; the tested physical eleven-action reference still fails | Neither necessity nor general sufficiency of effects has been established |
+| Candidate-specific consequences | Explicit desired-consequence questions on selective fixtures change only 2/32 actions, with true utility 5/16 → 4/16 and appropriate goal reversal still 1/16 | Failure persists in consequence-to-candidate selection, weakening an upstream-only explanation; recognizing predicate satisfaction versus competitive selection remains unresolved; no useful reference exists |
 
 Changing an output is not automatically improving a decision. Future field tests
 need a bounded question with an independent reference, matched model/candidates/
@@ -69,6 +69,99 @@ larger field list as validated decision sufficiency.
 
 ## Current evidence and limitations
 
+The [explicit-consequence diagnostic](explicit_consequence_handoff.md) changes only
+the question on selective goal-last fixtures to the required `decreases/lower/no`
+or `increases/higher/no` conjunction, derived from the existing evaluator. In 128
+Laya calls, every archived control and repeat matches raw scores exactly. Explicit
+criteria **do not materially help**: 2/32 actions change, no errors are corrected,
+one success is lost. True-effect utility falls **5/16 → 4/16**, with closing still
+**0/8** and opening **4/8**; shifted correctness stays **1/8 closed, 8/8 open**.
+Appropriate goal/consequence/action reversal stays **1/16**. Both assignments correct
+falls **5/16 → 4/16**; both orders correct stays **5/16**, all opening. Opening effects
+still win **24/32**, including **12/16 closing requests**. All 32 question changes
+alter scores, but the directional deficit persists. Inputs increase 336 → 344 tokens
+without clipping; no other input field, configuration or physical semantics changes.
+
+Supplying the target consequence is insufficient: **downstream matching/selection
+also fails under this presentation**, weakening an exclusively upstream goal-to-effect
+explanation. This does not establish upstream competence or failure under every
+possible explicit wording. Predicate recognition versus competitive selection and
+remaining description/identity/position interactions are still unseparated. No useful
+reference, additional physical fields, schema redesign or formal E0 is justified.
+
+The prior [selective grip-description diagnostic](selective_grip_handoff.md) changes only
+the GRASP/RELEASE nominal prefixes to `intervention` on native goal-last fixtures.
+All other descriptions and all state/effect text remain fixed. In 128 Laya calls,
+all repeats and archived controls reproduce exactly. True-effect utility improves
+**0/16 → 5/16**, entirely on opening requests; true closing stays **0/8**. Appropriate
+goal/consequence/action reversal improves only **0/16 → 1/16**. Effect-reassignment
+correctness improves **0/16 → 5/16**, all opening; no context/assignment passes both
+goals under both option orders. RELEASE falls 20/32 → 3/32 while GRASP rises 8/32 →
+23/32, so improvement is not simply avoidance of grip actions. Selected opening
+bundles dominate **25/32**, including **12/16 closing requests**.
+
+The two descriptions contribute to the original failure, but removing them exposes
+a remaining failure to select consequence direction according to the requested goal.
+The experiment also shortens inputs by eight tokens; it does not isolate lexical
+meaning from length/position or GRASP from RELEASE separately. Full CDS/no-effect
+sufficiency remains unestablished, and the useful-reference/E0 gate remains closed.
+No additional physical fields or provider search is justified.
+
+The prior [Laya goal-placement diagnostic](goal_placement_handoff.md) moves the unchanged
+requested-goal sentence after all rules, with all 64 originals and 64 transformed
+fixtures repeated in the same session (**256 calls**). Full unchanged controls and
+repeats reproduce exactly; token multisets/counts and option markers are preserved.
+Placement changes 25/64 choices. Native true utility stays **0/16**; anonymous true
+utility rises **9/16 → 11/16**, and appropriate goal/consequence/action reversal
+improves **2/32 → 6/32**, all anonymous. No context/assignment succeeds under both
+goals and both option orders. Anonymous opening bias falls 30/32 → 22/32, but paired
+effect-reassignment correctness stays 8/32 overall. Thus goal position matters
+without explaining the core failure.
+
+The new native pattern is more specific: **16/16 opening requests choose RELEASE**,
+including eight shifted cases where its stated drawer consequences are closing.
+This strengthens the hypothesis that gripper-description meaning competes with
+task-goal/consequence integration. It does not establish lexical matching as the
+internal mechanism or explain all anonymous failures. Laya remains primary; no
+Qwen inference was needed for this placement contrast. No new physical fields or
+CDS redesign is justified, and the useful-reference/E0 gate remains closed.
+
+The prior [STOP-clause order diagnostic](clause_order_handoff.md) changes only the order
+of the final closed/open rule clauses on both existing providers. All 264 new calls
+are valid, unclipped and exactly repeatable, including unchanged-control reproduction.
+Laya changes 23/64 actions and Qwen 2/64, but anonymous opening-effect selections
+remain **30/32 → 32/32** and **29/32 → 28/32** when closing moves last. Only one
+provider/fixture pair switches from opening to closing bundles. Native true-effect
+utility stays 0/16 and 8/16; neither reference gate passes. Clause order has a causal
+behavioral effect, including seven Laya native shifted-effect transitions into closing
+bundles, but final STOP-clause dominance does not explain the shared opening bias.
+That experiment left the earlier absolute rule, current-articulation wording and
+requested-goal placement unseparated. The goal-placement result above now tests
+the latter directly without resolving the other mechanisms. No additional physical
+fields are justified by either test.
+
+The [independent-provider comparison](provider_comparison_handoff.md) changes only
+the provider/checkpoint/adapter on the frozen full-effect fixtures. Qwen2.5-7B-Instruct
+improves native utility but fails the same qualification gate: only 3/32 goal pairs
+are correct under both goals. Anonymous conditions give 8/8 opening versus 0/8
+closing judgments; 29/32 selected fact bundles increase opening, similar to Laya's
+30/32. Reassignment changes choices, so effect binding is active without reliable
+goal conditioning. All 128 new outputs are valid, unclipped and exactly repeatable.
+This supports cross-provider persistence on this presentation, not a universal
+provider failure or a need for more physical fields. The frozen state is an
+exploratory sentence projection, not a full CDS v0.1 serialization.
+
+The [fixed-option effect diagnostic](effect_binding_handoff.md) resolves two prior
+confounds in 256 offline calls. Removing native descriptions improves local scores
+at the same option count, while adding the missing STOP-relative fact does not
+rescue native choices. Anonymous full-effect choices follow the same opening
+direction under opposite goals in seven of eight cases; reassignment changes which
+action carries that direction. This is a stable, presentation-sensitive failure
+to condition consequence selection on the goal, not total effect insensitivity.
+All factual inputs needed for the declared local predicate are supplied; this
+failure cannot be explained solely by omitted perceptual contact or geometry.
+It does not establish that CDS v0.1 suffices for no-effect manipulation.
+
 The [paired status and consequence gate](reference_gate_handoff.md) isolates a
 missing-articulation effect using exact field masking: the binary status model
 declares DONE on unknown input, while an explicit UNKNOWN option handles these
@@ -77,6 +170,9 @@ separate actual-effect reference test fails despite a passing synthetic
 two-option consequence-use control. Effect presentation, native action semantics,
 option count, and absolute-versus-STOP-relative abstraction remain distinct
 scientific issues; supplying oracle consequences is not automatically sufficient.
+The successor diagnostic holds option count fixed and separates descriptions from
+STOP-relative information; both native and anonymous manipulation references
+still fail their goal-sensitive qualification.
 
 The preceding [bounded interface search](interface_search_handoff.md) tests
 smaller states rather than presuming CDS v0.1 is sufficient. It finds a narrow
@@ -105,6 +201,29 @@ An initial replay exposed Laya input truncation. The replacement compact present
 is token-audited, rejects clipping, and records actual consumed tokens. Earlier
 truncated replay artifacts are retained but cannot support full-interface claims.
 See [the interface handoff](decision_interface_handoff.md) for measurements.
+
+## Single next bounded experiment
+
+On Laya, test **candidate-by-candidate predicate verification**: does each unchanged
+candidate description/effect bundle satisfy the same explicit desired conjunction?
+Use two neutral answer IDs for `satisfies` and `does not satisfy`, reversed answer
+order and repeats. Cover every existing candidate under both directions and both
+true/reassigned provenance conditions; retain wrong-direction and mixed/neutral
+bundles and account for answer imbalance. Keep state/rules, model and numeric
+predicate fixed. No positive/negative labels enter the input.
+
+The latest question intervention affects every score distribution but barely changes
+choices and corrects no errors. Verification therefore separates recognizing a
+single bundle's predicate satisfaction from selection among eleven competing actions.
+Correct verification would support a competitive-selection bottleneck; failed
+directional verification would locate a deficit already in predicate recognition.
+This simpler binary task changes the response format and is a separately labeled
+diagnostic, not a policy or an isolated proof of an internal mechanism. Do not use
+its judgments to select or execute an action.
+
+This single next diagnostic is **proposed, not run**. Neither a useful manipulation
+reference nor full CDS sufficiency is established; formal E0 remains blocked.
+No additional provider, new physical fields or broad prompt search is justified.
 
 ## Prior E0 collection proposal — conditional, not active or frozen
 
