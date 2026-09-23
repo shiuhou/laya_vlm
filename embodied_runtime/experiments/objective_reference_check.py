@@ -32,7 +32,7 @@ def run(args):
         "model": manifest["models"]["decision"], "model_execution": manifest["model_execution"]}
     rec = RunRecorder(args.output, {"mode": args.mode, **ref.PRIVILEGE,
         "routing_version": ref.ROUTING_VERSION, "no_live_policy": True},
-        {"code": code_identity(), "versions": versions(), "baseline": identity})
+        {"run_id": Path(args.output).name, "code": code_identity(), "versions": versions(), "baseline": identity})
     backend = None
     try:
         if args.mode == "mechanical":
