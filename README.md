@@ -10,6 +10,10 @@ Interfaces: [docs/architecture.md](docs/architecture.md).
 Latest evidence and commands: [docs/reference_gate_handoff.md](docs/reference_gate_handoff.md).
 No formal E0/E1 experiment has started.
 
+Watch the [live visual connectivity demo](docs/engineering_demo.md): actual RGB-D
+input, Laya choices and physical gripper execution, with recorded video and replay
+verification. It demonstrates wiring, **not successful drawer control**.
+
 It separates temporal belief, compact decision state, candidate semantics/effects,
 typed decisions, validation and physical execution. Checkpoints are excluded.
 

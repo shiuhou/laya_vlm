@@ -6,6 +6,9 @@ after baseline `a7da3d8`. Use `git rev-parse HEAD` for the exact final checkout 
 Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
 
 Current report: [reference_gate_handoff.md](reference_gate_handoff.md).
+Latest engineering-only artifact: [live visual demo](engineering_demo.md), after
+baseline `3be0fc5`. Four actual Laya choices drove GRASP/RELEASE commands; all 32
+recorded controls replay exactly. No task success; no change to the research gate.
 Prior interface search: [interface_search_handoff.md](interface_search_handoff.md).
 Mechanism report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
 Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
@@ -32,7 +35,7 @@ Conditional next experiment: [research.md](research.md).
 - Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
   contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 236 tests, ruff and compileall pass. Dependencies, upstream repositories and
+- 244 tests, ruff and compileall pass. Dependencies, upstream repositories and
   model weights were not changed or downloaded.
 
 ## Scientific result and limitations

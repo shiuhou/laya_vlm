@@ -8,10 +8,13 @@ ObservationEvent -> BeliefSnapshot -> CanonicalDecisionState
                                     -> DecisionProvider -> validation -> AtomicExecutor
 ```
 
-The last two steps execute only in the existing Stage 2 live path. The new canonical
-path is currently an **offline, diagnostic decision probe**: its outputs cannot
-drive the paired-state collector. Stage 2 live validity/execution contracts remain
-unchanged. We do not claim the compact interface has passed closed-loop validation.
+The primary canonical research path remains an **offline diagnostic decision probe**:
+its outputs cannot drive the paired-state collector. An opt-in
+[engineering demo](engineering_demo.md) now bridges the same compact fields and
+nominal semantics to the existing live validity/validation/execution path. It
+preserves natural feasible tokens and supplies no effects. This demonstrates
+connectivity only, not task competence or closed-loop research validation.
+The Stage 2 runner and validity/execution contracts remain unchanged.
 
 ## Roles
 
