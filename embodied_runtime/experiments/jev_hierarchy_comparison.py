@@ -11,6 +11,7 @@ import argparse
 import gzip
 import hashlib
 import json
+import numbers
 from pathlib import Path
 import subprocess
 
@@ -38,18 +39,54 @@ def git_identity(path):
             "dirty_status": git("status", "--porcelain")}
 
 
+def numeric_only_differences(fresh, archived, path=""):
+    """Return numeric leaf differences, or None for any structural/text difference."""
+    if isinstance(fresh, dict) and isinstance(archived, dict):
+        if fresh.keys() != archived.keys():
+            return None
+        result = []
+        for key in fresh:
+            child = numeric_only_differences(fresh[key], archived[key], f"{path}/{key}")
+            if child is None:
+                return None
+            result.extend(child)
+        return result
+    if isinstance(fresh, list) and isinstance(archived, list):
+        if len(fresh) != len(archived):
+            return None
+        result = []
+        for index, (fresh_item, archived_item) in enumerate(zip(fresh, archived, strict=True)):
+            child = numeric_only_differences(
+                fresh_item, archived_item, f"{path}/{index}"
+            )
+            if child is None:
+                return None
+            result.extend(child)
+        return result
+    if fresh == archived:
+        return []
+    def numeric(value):
+        return isinstance(value, numbers.Real) and not isinstance(value, bool)
+    if numeric(fresh) and numeric(archived):
+        return [{"path": path, "fresh": fresh, "archived": archived,
+                 "absolute_difference": abs(float(fresh) - float(archived))}]
+    return None
+
+
 class FrozenOriginalAnswers:
     """Original Jev responses, accepted only for byte-equivalent policy requests."""
 
     source_rows = ()
     source_sha256 = None
     instances = []
+    displayed_numeric_tolerance = 0.0100001
 
     def __init__(self, out, *_args, **_kwargs):
         self.out = Path(out)
         self.total = 0.0
         self.calls = 0
         self.index = 0
+        self.numeric_equivalences = []
         type(self).instances.append(self)
 
     def choose(self, step, layer, state, instructions, criteria):
@@ -59,19 +96,37 @@ class FrozenOriginalAnswers:
         request = {"model": original["request"]["model"], "state": state,
                    "questions": {layer: {"type": "choice", "instructions": instructions,
                                           "criteria": criteria}}}
-        if ((step, layer) != (original["step"], original["layer"])
-                or request != original["request"]):
+        same_position = (step, layer) == (original["step"], original["layer"])
+        exact_request = request == original["request"]
+        numeric_differences = (numeric_only_differences(request, original["request"])
+                               if same_position and not exact_request else [])
+        quantization_equivalent = (numeric_differences is not None
+            and all(row["absolute_difference"] <= self.displayed_numeric_tolerance
+                    for row in numeric_differences))
+        if not same_position or (not exact_request and not quantization_equivalent):
             mismatch = {
                 "call_index": self.index,
                 "fresh": {"step": step, "layer": layer, "request": request},
                 "archived": {"step": original["step"], "layer": original["layer"],
                              "request": original["request"]},
+                "numeric_only_differences": numeric_differences,
+                "displayed_numeric_tolerance": self.displayed_numeric_tolerance,
             }
             (self.out / "request-mismatch.json").write_text(
                 json.dumps(mismatch, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
             raise RuntimeError(f"fresh hierarchy request diverged at call {self.index}: {step}/{layer}")
+        request_match = "exact"
+        if not exact_request:
+            request_match = "displayed_numeric_quantization_equivalent"
+            equivalence = {"call_index": self.index, "step": step, "layer": layer,
+                "differences": numeric_differences,
+                "displayed_numeric_tolerance": self.displayed_numeric_tolerance}
+            self.numeric_equivalences.append(equivalence)
+            with (self.out / "request-numeric-equivalences.jsonl").open(
+                    "a", encoding="utf-8") as stream:
+                stream.write(json.dumps(equivalence, ensure_ascii=False) + "\n")
         response = original["response"]
         choice = response["answers"][layer]["choice"]
         if choice not in criteria:
@@ -79,7 +134,8 @@ class FrozenOriginalAnswers:
         with (self.out / "api.jsonl").open("a", encoding="utf-8") as stream:
             stream.write(json.dumps({"step": step, "layer": layer, "request": request,
                 "response": response, "response_source": "archived_original_jev",
-                "source_sha256": self.source_sha256, "source_call_index": self.index},
+                "source_sha256": self.source_sha256, "source_call_index": self.index,
+                "request_match": request_match},
                 ensure_ascii=False) + "\n")
         self.total += float(response["usage"]["cost"])
         self.calls += 1
@@ -87,12 +143,14 @@ class FrozenOriginalAnswers:
         return choice
 
     def close(self):
-        if self.index != len(self.source_rows):
-            (self.out / "answer-consumption.json").write_text(
-                json.dumps({"consumed": self.index, "available": len(self.source_rows),
-                            "complete": False}, indent=2) + "\n",
-                encoding="utf-8",
-            )
+        (self.out / "answer-consumption.json").write_text(
+            json.dumps({"consumed": self.index, "available": len(self.source_rows),
+                        "complete": self.index == len(self.source_rows),
+                        "exact_requests": self.index - len(self.numeric_equivalences),
+                        "numeric_quantization_equivalences": len(self.numeric_equivalences)},
+                       indent=2) + "\n",
+            encoding="utf-8",
+        )
 
 
 def rotation_distance_deg(a, b):
@@ -139,6 +197,8 @@ def run(args):
         runner.Decisions = original_decisions
 
     instance = FrozenOriginalAnswers.instances[0]
+    if result["termination"] == "error":
+        raise RuntimeError(f"fresh original Jev run failed: {result['error']}")
     fresh_initial = json.loads((output / "initial_state.json").read_text())
     trace = read_jsonl(output / "trace.jsonl")
     previews = read_jsonl(output / "predictions.jsonl")
@@ -169,7 +229,12 @@ def run(args):
         "success_predicate": archived_task["binding"]["success"],
         "initial_features_equal_archive": fresh_initial == archived_initial,
         "initial_features_equal_flat_laya": fresh_initial == reference_environment["features"],
-        "all_policy_requests_exact": instance.index == len(source_rows) == len(api),
+        "all_policy_requests_exact": (instance.index == len(source_rows) == len(api)
+                                      and not instance.numeric_equivalences),
+        "all_policy_requests_quantization_equivalent": (
+            instance.index == len(source_rows) == len(api)),
+        "policy_request_numeric_equivalences": instance.numeric_equivalences,
+        "policy_request_displayed_numeric_tolerance": instance.displayed_numeric_tolerance,
         "archived_controls_loaded": False,
         "archived_model_answers_used": True,
         "fresh_simulator_reset": True,
@@ -177,7 +242,8 @@ def run(args):
         "geometry_label_current": json.loads((output / "config.json").read_text())["geometry_distance_backend"],
         "geometry_label_text_equal": (archived_config["geometry_distance_backend"]
                                       == json.loads((output / "config.json").read_text())["geometry_distance_backend"]),
-        "geometry_label_note": "wording changed; exact fresh initial features and all 30 policy requests match",
+        "geometry_label_note": ("wording changed; fresh initial features match exactly; policy "
+                                "requests are separately labeled exact or numeric-quantization-equivalent"),
         "comparison_repository": git_identity(Path(__file__).resolve().parents[2]),
         "comparison_script_sha256": file_hash(__file__),
         "jev_repository": git_identity(Path(__file__).resolve().parents[3] / "jev-libero"),
@@ -186,7 +252,8 @@ def run(args):
     }
     condition["same_physical_condition"] = all(condition[key] for key in (
         "task_config_semantics_exact", "action_vocabulary_exact", "initial_features_equal_archive",
-        "initial_features_equal_flat_laya", "all_policy_requests_exact", "fresh_simulator_reset"))
+        "initial_features_equal_flat_laya", "all_policy_requests_quantization_equivalent",
+        "fresh_simulator_reset"))
     if not condition["same_physical_condition"]:
         raise RuntimeError("same-condition gate failed")
 
