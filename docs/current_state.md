@@ -34,9 +34,19 @@ offers all witness-backed first actions, executes only Laya's chosen first actio
 then replans from reality. A clean fresh run reproduced the first 18 actions. At
 boundary 18, Laya selected `open` from 23 options; real execution matched its
 preview but produced zero closure. The next one-step pool contained only `z-3mm`.
-The genuine-choice guard stopped before Laya or execution. Official success is
-false; three-run success is not established. Replay passed 172 boundaries with
-zero error. Current verification is **418 pytest tests**, ruff and compileall.
+The genuine-choice guard stopped before Laya or execution.
+
+The authorized [forced-singleton continuation](evidence/decision_interface/forced_singleton_reference.md)
+then inspected original Jev: it calls its model even for singleton intent/strategy/
+motor pools and has no forced-continuation attribution. The reference therefore
+uses the specified explicit rule: zero invokes existing lookahead, one executes
+once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
+86 genuine Laya decisions, six forced continuations and two executed lookahead
+recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
+remained false. At boundary 92, both the one-step union and unchanged two-step
+witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
+with zero error. Current verification is **421 pytest tests**, ruff and compileall.
+Three-run success is not established.
 No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
 non-oracle replacement or E0 is authorized.
 
@@ -113,11 +123,12 @@ effects or preprocessing unnecessary. The legacy oracle path still contains
 PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
 normal visual path.
 
-The existing witness mechanism has now been evaluated and repairs the original
-empty-pool boundary. The first remaining failure is the singleton `z-3mm` pool
-after Laya chose a passive witness-backed `open` transition. Before another run,
-humans must decide how the reference should treat contract-forced singleton
-continuations without falsely counting them as Laya competence. The broader
-judgment boundary and deployable effect sources remain open. Prompt searches,
-binary predicate tests, new planners, CDS redesign, new contracts and E0 remain
-outside scope.
+The existing witness mechanism repairs the original empty-pool boundary, and the
+explicit singleton rule correctly continues without counting model competence.
+The first remaining failure is now a later state where one-step contracts are empty
+and the original two-step search also returns no witnesses after 702 evaluated
+branches. This is a zero-pool contract/lookahead dead end on the Laya-produced
+trajectory. Current evidence does not distinguish an inherent two-step coverage
+limit from a regime the original hierarchy would avoid. The broader judgment
+boundary and deployable effect sources remain open. Prompt searches, binary
+predicate tests, new planners, CDS redesign, new contracts and E0 remain outside scope.

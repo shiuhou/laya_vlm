@@ -276,3 +276,20 @@ zero error. Official success remained false and no successful repeat runs began.
 The first remaining failure is the singleton one-step continuation after Laya's
 passive witness-backed transition. No threshold, prompt instruction, hierarchy,
 planner, new contract, visual path, CDS, ablation or E0 change followed.
+
+## Forced-singleton continuation result
+
+The subsequent [complete record](forced_singleton_reference.md) establishes that
+original Jev calls its model for singleton pools and provides no explicit forced
+attribution. The reference implements the authorized minimal rule instead: one
+candidate executes once with `forced_singleton=true`, no model call and no model
+probabilities; zero candidates invoke unchanged lookahead; genuine multi-option
+pools reach Laya.
+
+On clean commit `8075713`, a fresh episode made 86 genuine Laya decisions, six
+forced continuations and two executed lookahead recoveries. All 92 selected previews
+matched execution exactly. Net drawer closure was 15.173 mm, but official success
+remained false. At boundary 92, one-step contracts were empty and unchanged
+two-step search found zero witnesses across 702 evaluated second branches. The
+reference failed closed before Laya or execution. Replay passed 829 boundaries
+with zero error. No success repeats were started and no further policy change was made.

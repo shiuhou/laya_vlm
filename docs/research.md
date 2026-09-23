@@ -27,10 +27,14 @@ weakens the claim that the original architecture lacks transition coverage.
 
 In a fresh closed-loop run, Laya selected `open` from the complete 23-option
 witness menu. Only `open` executed and its real effect matched prediction. The
-next one-step pool contained only `z-3mm`, so the genuine-choice gate stopped
-before another model call or action. Drawer closure and official success remained
-zero/false. Existing lookahead is sufficient to repair the original empty pool;
-it has not established a successful flat Laya reference policy.
+next one-step pool contained only `z-3mm`. The subsequent
+[forced-singleton run](evidence/decision_interface/forced_singleton_reference.md)
+executed such singleton pools without calling or crediting Laya. Across 92 actions,
+86 were genuine Laya decisions and six were forced continuations; net closure was
+15.173 mm. At the first new failure, both one-step contracts and existing two-step
+lookahead returned no candidates. Official success remained false. Existing
+lookahead and forced continuations repair earlier local boundaries; they have not
+established a successful flat Laya reference policy.
 
 **Formal E0 is blocked. No useful manipulation reference is established.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
@@ -66,6 +70,7 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Explicit consequence](evidence/decision_interface/explicit_consequence_handoff.md) | Explicit conjunction 5/16 → 4/16, no prior errors corrected; target predicates do not reliably repair ranking. |
 | [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
 | [Two-step witness audit](evidence/decision_interface/two_step_lookahead.md) | Existing Jev lookahead returns 23 first-action witnesses at the dead end; closed-loop Laya selects `open`, then the acceptance gate stops at a singleton `z-3mm` pool. |
+| [Forced-singleton reference](evidence/decision_interface/forced_singleton_reference.md) | Explicit non-model singleton execution yields 15.173 mm closure over 92 actions, then one-step and two-step processing both return an empty pool; success remains false. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -89,13 +94,13 @@ or binary verification successful.
 
 ## Before further experiments
 
-The reference boundary now includes the existing two-step witness fallback after
-an empty one-step union, without intent hierarchy. That mechanism supplies the
-missing contact transition and a genuine decision menu. The smallest unresolved
-issue is how a reference should handle a contract-forced singleton after the
-chosen first transition while preserving the rule that singleton execution is not
-model competence. No new contract or change is authorized. The deployable judgment
-boundary and effect sources remain open, and usefulness still needs demonstration.
+The reference boundary now includes existing two-step witnesses after an empty
+one-step union and explicit forced-singleton execution without model attribution.
+The first unresolved boundary is later: both existing one-step and two-step
+processing return no candidates. The run alone does not distinguish contract/
+lookahead coverage from a trajectory regime caused by flat Laya choices. No new
+contract or change is authorized. The deployable judgment boundary and effect
+sources remain open, and usefulness still needs demonstration.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

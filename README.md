@@ -7,9 +7,10 @@ not useful drawer manipulation or a useful reference policy.
 
 The [privileged reference v1](docs/evidence/decision_interface/privileged_reference.md)
 now exercises full Jev candidate previews, task-specific effect-contract filtering
-and original Jev's two-step witness fallback. Lookahead repaired the audited empty
-pool and produced a genuine 23-option Laya decision, but the selected transition
-led to a singleton next pool. Drawer closure and task success remain unestablished.
+and original Jev's two-step witness fallback. Deterministic singleton continuations
+are now explicitly separated from genuine Laya decisions. A fresh run achieved
+15.173 mm net closure before both one-step contracts and two-step lookahead became
+empty; official task success remains unestablished.
 
 ## Reading order
 

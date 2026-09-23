@@ -194,6 +194,13 @@ The acceptance rule correctly refused to treat or execute that singleton as mode
 competence. No prompt tuning, threshold change, hierarchy, planner, new contract,
 CDS change, ablation, non-oracle work or E0 followed.
 
+The later authorized [forced-singleton continuation](forced_singleton_reference.md)
+executes such one-candidate pools without calling or crediting Laya. It passes this
+boundary and accumulates 15.173 mm net closure, but eventually reaches a later
+state where unchanged one-step contracts and two-step witnesses are both empty.
+Thus the singleton boundary is resolved as an attribution/control-flow issue; it
+was not the final task-success boundary.
+
 ## Preserved attempts and artifact identity
 
 `lookahead-episode-01` was deliberately interrupted after discovering that an

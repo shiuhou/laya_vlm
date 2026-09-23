@@ -83,7 +83,11 @@ uses original Jev two-step witnesses as `reposition` evidence. Each witness prov
 a second primitive can satisfy an existing combined contract; it does not authorize
 that second primitive. Laya chooses among witness-backed first actions, only one
 first primitive executes, and the next decision uses the real endpoint. All
-defaults outside this opt-in path remain.
+defaults outside this opt-in path remain. If the complete admitted pool has one
+token, the reference executes that token once as `forced_singleton`, records no
+model probabilities and does not call or credit Laya. A pool with two or more
+physically distinct actions reaches Laya. Zero candidates after lookahead fail
+closed. Every execution is followed by a real observation and fresh candidate build.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.
