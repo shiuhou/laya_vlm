@@ -8,9 +8,11 @@ from __future__ import annotations
 import argparse
 from dataclasses import asdict
 import json
+import os
 from pathlib import Path
 import random
 import signal
+import sys
 import time
 
 import numpy as np
@@ -40,6 +42,44 @@ QUERY = "the metal handle on the top drawer of the small freestanding wooden cab
 INSTRUCTION = ("Choose one allowed atomic action for the task. Null means unknown. "
                "Moves retain orientation/grip; rotations retain position/grip. "
                "Collision freedom is not established.")
+
+
+class DemoTelemetry:
+    """Persist first, then show selected stages without affecting decisions."""
+    def __init__(self, recorder):
+        self.recorder = recorder
+
+    def __call__(self, kind, data):
+        record_id = self.recorder.record(kind, data)
+        display = None
+        if kind in {"demo_boundary", "failure", "termination"}:
+            display = data
+        elif kind == "demo_model_input":
+            display = {"allowed": list(data["questions"]["action"]["criteria"]),
+                       "singleton_forced_not_model": data["singleton_forced_not_model"]}
+        elif kind == "decision":
+            display = {"step": data["step"], "source": data["decision"]["source"],
+                       "proposed": data["decision"]["token"], "latency_ms": data["decision_latency_ms"]}
+        elif kind == "execution_started":
+            display = {"step": data["step"], "executed_intent": data["decision"]["token"],
+                       "source": data["decision"]["source"], "fallback_reason": data["fallback_reason"]}
+        elif kind == "evaluation" and data["phase"] == "after":
+            display = {"step": data["step"], "evaluator_only": True,
+                       **{k: data["features"][k] for k in
+                          ("remaining_open_mm", "finger_gap_mm", "moving_contact", "success")}}
+        elif kind == "action":
+            execution = data["execution"]
+            display = {"step": data["step"], "executed": execution["token"],
+                       "controls": execution["environment_step_count"],
+                       "tcp_delta_mm": (np.asarray(execution["delta_m"])*1000).tolist(),
+                       "contract_violation": execution["execution_contract_violation"]}
+        if display is not None:
+            try:
+                print(f"[demo:{kind}] {json.dumps(display)}", flush=True)
+            except (OSError, ValueError):
+                # A closed presentation pipe must not interrupt physical execution.
+                pass
+        return record_id
 
 
 class DemoView:
@@ -153,6 +193,7 @@ def run(args):
         "no_formal_experiment": True, "tracking_active": False, "covariance_calibrated": False},
         {"run_id": out.name, "code": code_identity(), "versions": versions()})
     backend = None
+    emit = DemoTelemetry(recorder)
     old_handlers = {}
     success = False
     step = None
@@ -161,6 +202,9 @@ def run(args):
         raise TimeoutError(f"demo interrupted by signal {signum}")
 
     try:
+        recorder.record("demo_invocation", {"argv": sys.argv, "cwd": str(Path.cwd()),
+            "python": sys.executable, "environment": {key: os.environ.get(key) for key in
+                ("CUDA_VISIBLE_DEVICES", "MUJOCO_GL", "HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")}})
         for sig in (signal.SIGALRM, signal.SIGTERM):
             old_handlers[sig] = signal.signal(sig, interrupted)
         signal.setitimer(signal.ITIMER_REAL, args.timeout_s)
@@ -187,9 +231,9 @@ def run(args):
             "instruction": world.task, "sim_state": world.env.sim.get_state().flatten(),
             "initial_state": backend.execution_state()})
         agent = load_laya_provider(args.laya_path, subfolder=None, device=args.device).agent
-        provider = DemoProvider(agent, QUERY, recorder.record)
+        provider = DemoProvider(agent, QUERY, emit)
         runtime = Runtime(f"demo-top_drawer-init{args.init_state_id}-seed{args.seed}", provider, backend, builder,
-            fusion=MultiRateFusion(config=temporal), event_sink=recorder.record,
+            fusion=MultiRateFusion(config=temporal), event_sink=emit,
             sim_clock=lambda: world.data.time, oracle=False)
         locator = LocateAnythingWorker(args.locateanything_path, device=args.device)
         source = LiberoRgbdSource(world)
@@ -197,6 +241,8 @@ def run(args):
         for step in range(args.steps):
             frame = source.capture()
             recorder.capture(frame)
+            emit("demo_boundary", {"step": step, "capture_seq": frame["capture_seq"],
+                                  "capture_sim_time": frame["capture_sim_time"], "phase": "sensing"})
             if vision is None:
                 vision = LocateAnythingProvider(lambda _rgb, _query: {}, frame["intrinsics"])
             before = world.env.sim.get_state().flatten().copy()
@@ -210,7 +256,7 @@ def run(args):
             if not np.array_equal(before, world.env.sim.get_state().flatten()):
                 raise RuntimeError("physical state moved during paused perception")
             if event is None:
-                recorder.record("failure", {"category": "vision_missing", "step": step})
+                emit("failure", {"category": "vision_missing", "step": step})
             else:
                 runtime.ingest(event, now_sim=float(world.data.time))
             runtime.observe("proprio", float(world.data.time), backend.proprioception())
@@ -219,15 +265,15 @@ def run(args):
             row = runtime.step(float(world.data.time), goal={"task": "top_drawer", "instruction": world.task,
                                "target_query": QUERY, "satisfied": False})
             save_trajectory(backend, out, step, recorder)
-            recorder.record("evaluation", {"step": step, "phase": "after", "oracle_evaluator": True,
+            emit("evaluation", {"step": step, "phase": "after", "oracle_evaluator": True,
                                             "features": world.features()})
             success = row["result"]["success"]
             if success:
                 break
-        recorder.record("termination", {"reason": "success" if success else "action_budget", "success": success, "step": step})
+        emit("termination", {"reason": "success" if success else "action_budget", "success": success, "step": step})
     except BaseException as exc:
-        recorder.record("failure", {"category": "demo_error", "step": step, "exception": repr(exc)})
-        recorder.record("termination", {"reason": "demo_error", "success": success, "step": step})
+        emit("failure", {"category": "demo_error", "step": step, "exception": repr(exc)})
+        emit("termination", {"reason": "demo_error", "success": success, "step": step})
         raise
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)

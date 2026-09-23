@@ -19,7 +19,8 @@ Start here:
 3. [Architecture](docs/architecture.md): active paths and interface boundaries.
 4. [Research direction](docs/research.md): hypotheses, findings and the E0 gate.
 
-Watch the [engineering demo](docs/engineering_demo.md), or inspect the latest
+Run or inspect the [live engineering demo](docs/demo_runbook.md), read the
+[historical demo report](docs/engineering_demo.md), or inspect the latest
 [research diagnostic handoff](docs/reference_gate_handoff.md). Demo connectivity
 does not establish task competence, and oracle-conditioned decisions are not expert
 ground truth. No formal E0/E1 experiment has started.

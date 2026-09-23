@@ -20,6 +20,8 @@ are [engineering_demo.py](../embodied_runtime/experiments/engineering_demo.py) a
 [demo_report.py](../embodied_runtime/experiments/demo_report.py). The older
 [run_libero.py](../embodied_runtime/experiments/run_libero.py) is a separate legacy
 smoke path, not the same model presentation/scheduling configuration.
+The [demo runbook](demo_runbook.md) documents the current live console, offline
+HTML evidence inspector, reproduction commands and verified engineering artifact.
 
 The [verified demo](engineering_demo.md) uses visual belief, fresh synchronous
 captures, natural candidate gates and no effects. Four actual Laya choices operate
@@ -70,12 +72,11 @@ can differ. Record those choices; do not pool the resulting measurements.
 | `research/decision-interface` | Track B diagnostics, hypotheses and protocols | Keep experimental configurations/results identifiable; no automatic promotion to live policy |
 | `feat/mujoco_demo` | Track A demos, visualization and reproducibility | Keep demo-specific adapters opt-in; no silent change to research comparisons |
 
-`share_main` is already checked out. The two track branches are **proposed**, not
-created by this documentation work; see the dated branch inventory in
-[current_state.md](current_state.md). Existing `master` and remote default-branch
-settings are not renamed or deleted here. A human can create the two branches from
-the documentation-aligned `share_main` commit after review. This is an integration
-baseline, not an `exp-e0-v0` experimental freeze.
+All three branches now have separate worktrees; see the dated checkout inventory in
+[current_state.md](current_state.md). This checkout owns `feat/mujoco_demo`.
+The earlier branch recommendations have been realized; no default-branch change
+or integration follows automatically. The shared baseline is not an `exp-e0-v0`
+experimental freeze.
 
 Prefer small reviewed merges back to `share_main`, then bring shared changes into
 both tracks. Shared-module fixes belong in focused changes, not duplicate forks

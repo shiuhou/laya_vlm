@@ -24,7 +24,7 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
-| `engineering_demo` / `demo_report` | Track A live demo and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute |
+| `engineering_demo` / `demo_report` / `demo_inspector` | Track A live demo, console, offline evidence inspector and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; raw-derived audits expose fallbacks and partial outcomes |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
 | `interface_search` / `reference_gate` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
 | `run_libero` | Legacy Stage 2 live smoke path | BeliefSnapshot presentation, optional asynchronous visual worker or explicitly oracle preview branch; not the demo's compact audited path |

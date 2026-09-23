@@ -1,20 +1,21 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Implementation/evidence baseline: **`f8064688f84b0c7dffbcf6b8dc89fb64d1c59779`**
+Shared reviewed implementation/evidence baseline: **`f8064688f84b0c7dffbcf6b8dc89fb64d1c59779`**
 (live visual demo), including research diagnostics at `3be0fc5`. The documentation
-alignment on top changes no implementation or experimental conclusion. Use
+alignment on top changed no implementation or experimental conclusion. The demo
+branch's instrumentation successor is described below and in the runbook. Use
 `git rev-parse HEAD` for the exact checkout/documentation commit.
 Experiment status: **bounded diagnostics only; no formal E0/E1 or freeze tag**.
 
 ## Branches and collaboration
 
-Current branch: **`share_main`**. At this review, local `master` also points to
-`f806468`; `origin/master` and `origin/share_main` are present as local remote-tracking
-refs, with `origin/HEAD -> origin/master`. No fetch or server/default-branch change
-was performed. `research/decision-interface` and `feat/mujoco_demo` are recommended
-future branches, absent from the inspected refs. No branches were created, renamed
-or deleted by this documentation alignment.
+Track checkout verified 2026-09-23: **`laya-mujoco-demo` on `feat/mujoco_demo`**,
+starting clean at `eddbcde04649419d8d5d44e62e433882578328eb`. Separate worktrees
+exist for `laya-embodied-runtime` (`share_main`) and `laya-decision-interface`
+(`research/decision-interface`). The demo tooling changes described in the
+[new runbook](demo_runbook.md) are scoped to the demo branch; no integration,
+branch rename, remote update or research experiment was performed.
 
 Read [development_tracks.md](development_tracks.md) for track responsibilities,
 shared components and integration rules. [research.md](research.md) remains the
@@ -23,9 +24,12 @@ single research-direction document; historical handoffs are revision-specific.
 ## Evidence entry points
 
 Latest research report: [reference_gate_handoff.md](reference_gate_handoff.md).
-Latest engineering-only artifact: [live visual demo](engineering_demo.md), after
-baseline `3be0fc5`. Four actual Laya choices drove GRASP/RELEASE commands; all 32
-recorded controls replay exactly. No task success; no change to the research gate.
+Latest engineering-only artifact: [live demo inspector and runbook](demo_runbook.md),
+on baseline `eddbcde` plus recorded working-source hashes. A fresh four-action run
+again drove GRASP/RELEASE commands; all 32 controls replay exactly. The new offline
+inspector exposes exact inputs, candidates, validation, outcomes and partial failures.
+The [original live visual demo](engineering_demo.md) remains historical evidence.
+No task success; no change to the research gate.
 Prior interface search: [interface_search_handoff.md](interface_search_handoff.md).
 Mechanism report: [reference_mechanism_handoff.md](reference_mechanism_handoff.md).
 Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
@@ -34,6 +38,12 @@ Conditional next experiment: [research.md](research.md).
 
 ## Track A — verified engineering demonstration
 
+- Demo-specific live console and offline HTML inspector now expose the full chain,
+  including raw-response/proposal and executor/trajectory agreement, forced choices,
+  fallbacks, missing outcomes and evaluator-only measurements. Shared runtime,
+  interfaces, gates, providers and executor semantics are unchanged. The new run
+  has four verified Laya executions and zero replay error across 37 boundaries.
+  Current demo-branch verification: 254 tests, ruff and compileall pass.
 - Real RGB-D → temporal belief → compact CDS → Laya → validation → atomic executor
   → MuJoCo execution. The opt-in demo bridge leaves the legacy runner and research
   pairing interface unchanged.
@@ -156,7 +166,8 @@ Under ignored `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`
 `replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
 Older Stage 1/2/interface handoffs remain historical.
 Latest research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
-Latest engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
+Latest engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-inspector-v01/`.
+Historical engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
 All are local/ignored, not included in a fresh clone; share their manifests and
 referenced artifacts separately. See the collaboration guide's evidence handoff rules.
 

@@ -3,6 +3,9 @@
 2026-09-23, after baseline `3be0fc5`. Engineering communication artifact only.
 One live trajectory; no policy search, task-success tuning, E0 or E1.
 
+For current commands, the offline HTML inspector and a fresh verified successor run,
+see [demo_runbook.md](demo_runbook.md). The historical result below is preserved.
+
 ## Watch and inspect
 
 - [12-second annotated MP4](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo.mp4)
