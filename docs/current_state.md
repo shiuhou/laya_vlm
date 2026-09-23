@@ -1,11 +1,28 @@
 # Verified current state
 
 Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
-Latest stage: paired status missingness pilot and consequence-reference gate
-after baseline `a7da3d8`. Use `git rev-parse HEAD` for the exact final checkout revision.
-Experiment status: **reference-quality pilot only; no formal E0/E1 or freeze tag**.
+Implementation/evidence baseline: **`f8064688f84b0c7dffbcf6b8dc89fb64d1c59779`**
+(live visual demo), including research diagnostics at `3be0fc5`. The documentation
+alignment on top changes no implementation or experimental conclusion. Use
+`git rev-parse HEAD` for the exact checkout/documentation commit.
+Experiment status: **bounded diagnostics only; no formal E0/E1 or freeze tag**.
 
-Current report: [reference_gate_handoff.md](reference_gate_handoff.md).
+## Branches and collaboration
+
+Current branch: **`share_main`**. At this review, local `master` also points to
+`f806468`; `origin/master` and `origin/share_main` are present as local remote-tracking
+refs, with `origin/HEAD -> origin/master`. No fetch or server/default-branch change
+was performed. `research/decision-interface` and `feat/mujoco_demo` are recommended
+future branches, absent from the inspected refs. No branches were created, renamed
+or deleted by this documentation alignment.
+
+Read [development_tracks.md](development_tracks.md) for track responsibilities,
+shared components and integration rules. [research.md](research.md) remains the
+single research-direction document; historical handoffs are revision-specific.
+
+## Evidence entry points
+
+Latest research report: [reference_gate_handoff.md](reference_gate_handoff.md).
 Latest engineering-only artifact: [live visual demo](engineering_demo.md), after
 baseline `3be0fc5`. Four actual Laya choices drove GRASP/RELEASE commands; all 32
 recorded controls replay exactly. No task success; no change to the research gate.
@@ -15,16 +32,31 @@ Previous pilot: [reference_pilot_handoff.md](reference_pilot_handoff.md).
 Predeclared pilot and correction: [reference_pilot_protocol.md](reference_pilot_protocol.md).
 Conditional next experiment: [research.md](research.md).
 
-## Active and verified
+## Track A — verified engineering demonstration
+
+- Real RGB-D → temporal belief → compact CDS → Laya → validation → atomic executor
+  → MuJoCo execution. The opt-in demo bridge leaves the legacy runner and research
+  pairing interface unchanged.
+- Four choices, GRASP/RELEASE/GRASP/RELEASE, each from ten natural feasible tokens;
+  no forced singleton, fallback, clipping or contract violation. Actual gripper
+  movement, 32 controls and video are recorded. Control replay matches 37 boundaries
+  exactly; it is not a second independent model-driven rollout.
+- **No drawer movement or task success.** Sensing is synchronous with simulation
+  paused; this is not asynchronous robustness evidence. Visual model inputs contain
+  no oracle target/contact/progress or candidate effects.
+
+## Shared foundations and Track B tooling
 
 - Stage 1/2 atomic, fusion, visual validity, isolation and durable-record tests
   remain passing. Legacy live runtime behavior is not silently changed.
 - Offline CanonicalDecisionState v0.1 and separate CandidateEffectBundle remain;
   primary replay has shared 11-token semantics-only candidates and **no effects**.
-- New referent **v0.2**: visible-pixel-weighted foreground top-handle surface
+- Research-pilot referent **v0.2**: visible-pixel-weighted foreground top-handle surface
   centroid. Sensor uses its own approximate bbox support/RGB-D. Oracle uses
   independent first-hit visual-mesh rays at calibrated raster centers. No oracle
   membership corrects perception. Raw old AABB and bbox-depth proxies survive.
+  The live demo still uses the existing query-box/interior-median-depth estimator;
+  it must not be described as running the pilot's common-referent estimator.
 - Twelve phase-diverse init-0 states plus three pairs each on init 1/2 were
   collected at exactly matched physical boundaries. All 18 raw sensor/oracle
   centroid readouts reproduce; all 18 snapshot restorations/STOP replays have
@@ -32,13 +64,19 @@ Conditional next experiment: [research.md](research.md).
 - Final Rule/Laya replay: 144 decisions, 72 complete paired comparisons, three
   repeats per input. All 72 Laya calls fit the checkpoint, with stable consumed
   tokens, choice and returned probabilities. No probe choices control collection.
-- Three actual benchmark resets (0,1,2), fixed seed 1: each yields approach,
-  contact and progress. Only init 0 completes. Init 1/2 finish at 29.879/15.696 mm
+- Three actual benchmark resets (0,1,2), fixed seed 1, with the external recorded
+  collector: each yields approach, contact and progress. Only collector init 0
+  completes; this is **not Laya task success**. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
 - 244 tests, ruff and compileall pass. Dependencies, upstream repositories and
   model weights were not changed or downloaded.
 
-## Scientific result and limitations
+Verified runtime versions: Python 3.10.21, MuJoCo 3.5.0, robosuite 1.4.1,
+NumPy 1.26.4, torch 2.2.0, transformers 4.57.3, laya 0.3.4. Commands and local
+model hashes are in the linked evidence reports. Compact canonical probes and the
+demo audit model tokens; this does not retroactively validate legacy/truncated inputs.
+
+## Track B — scientific result and limitations
 
 Latest bounded evidence: **212 offline calls**, all repeated inputs stable and
 unclipped. Three archived oracle/perceptual status pairs isolate missing
@@ -86,7 +124,8 @@ well as incomplete physical semantics, not merely missing perceptual fields.
 Privileged physical diagnostic evidence never enters these model controls.
 
 **The current no-effect oracle-conditioned Laya is not validated as a useful task
-reference.** All twelve choices are GRASP/RELEASE; most RELEASE probes equal STOP
+reference.** In the original twelve-state reference pilot, all choices are
+GRASP/RELEASE; most RELEASE probes equal STOP
 because the retained command was already open. One GRASP reopens the drawer by
 14.272 mm. Independent offered actions demonstrate useful closure at several
 states. Lack of one-step utility does not rule out every preparatory strategy,
@@ -116,9 +155,14 @@ Under ignored `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`
 `replay-init0-v02/`, `raw-referent-audit-v02/`. Old `init*-attempt1/`,
 `replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
 Older Stage 1/2/interface handoffs remain historical.
+Latest research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
+Latest engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
+All are local/ignored, not included in a fresh clone; share their manifests and
+referenced artifacts separately. See the collaboration guide's evidence handoff rules.
 
 Geometric reference comparable: **YES**, under the stated camera/visibility definition.
-Reference state usable as a **validated useful-decision reference: NO**.
+Bounded known-state status judgment: **YES**, only for the tested finite interface.
+Reference state usable as a **validated useful manipulation-decision reference: NO**.
 Multi-init collection viable: **YES**, with incomplete near-completion coverage.
 Ready to freeze `exp-e0-v0`: **NO**. Ready to run formal E0: **NO**.
 

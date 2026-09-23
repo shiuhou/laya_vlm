@@ -1,7 +1,15 @@
 # Research direction and the next experiment
 
-This runtime studies how asynchronous sensor observations can be converted into
-decision-sufficient state and candidate-effect evidence for typed embodied decisions.
+This is the authoritative direction for **Track B — Decision Interface Research**.
+Track A demonstrates connectivity; its successful execution is not evidence for the
+scientific hypotheses below. Track responsibilities and shared foundations are in
+[development_tracks.md](development_tracks.md); verified status is in
+[current_state.md](current_state.md).
+
+Central question: **What information must the world expose to a robot decision
+model for useful decisions?** This runtime studies how sensor observations,
+proprioception and history can be converted into decision-sufficient state and
+separately identified candidate-effect evidence for typed embodied decisions.
 It does not aim to reconstruct the entire simulator or prove a particular model
 intelligent. The oracle-conditioned model is a reference to validate, not ground truth.
 
@@ -12,8 +20,9 @@ the whole simulator or merely optimize wording.
 
 ## Three-stage roadmap and review boundaries
 
-- **Stage 4, current:** common referent, reference-quality pilot, actual initial-state
-  collection and a freeze recommendation. Stop for review, including a NO result.
+- **Stage 4, current:** reference/interface validation after the common-referent and
+  multi-init pilots. The manipulation-reference gate is still NO; diagnostics and
+  minimal-interface hypotheses do not themselves authorize a formal experiment.
 - **Stage 5, only after approval:** frozen formal E0 and field-family interventions,
   yielding a decision sensitivity map, not just one agreement percentage.
 - **Stage 6, later:** closed-loop tests of the sensitive fields found in E0—temporal
@@ -39,6 +48,24 @@ policy input.
 Belief quality should ultimately be evaluated both geometrically and by its effect
 on decisions. Agreement with a useless oracle-conditioned policy is not evidence
 of useful decision sufficiency; disagreement is not automatically perception error.
+
+## Hypotheses, not schema requirements
+
+| Information or mechanism | Evidence so far | What remains unresolved |
+|---|---|---|
+| Articulation + requested state | A finite categorical status interface is goal-sensitive; masking articulation reproduces the tested perceptual output | A legitimate sensor articulation estimate is absent; this is not an action-selection reference |
+| Explicit UNKNOWN response | Handles the tested missing-state cases that the binary vocabulary mishandles | Generalization to new wording, partial evidence and uncertain/stale observations; no calibrated abstention guarantee |
+| Task-relative geometry | Some sentence-form single-axis controls work; mixed-axis and goal-reversal controls fail | What geometry/abstraction a competent manipulation interface requires; an upstream winning-axis computation already performs policy |
+| Contact, holding and recent outcomes | Available evidence/provenance can be represented; unsupported perceptual fields remain unknown | Which family improves useful choices, rather than correlating with task phase or making outputs change |
+| Age, validity and uncertainty | Temporal contracts and metadata work | Whether these fields improve task-useful decisions; covariance is still heuristic |
+| Candidate-specific consequences | Candidate-local facts help synthetic contrasts; the tested physical eleven-action reference still fails | Neither necessity nor general sufficiency of effects has been established |
+
+Changing an output is not automatically improving a decision. Future field tests
+need a bounded question with an independent reference, matched model/candidates/
+question/history, one information-family intervention at a time, and same-input
+controls. Candidate clarification is a separately labeled condition, not a hidden
+change during a state comparison. Do not promote CDS v0.1, a proposed v0.2, or a
+larger field list as validated decision sufficiency.
 
 ## Current evidence and limitations
 
@@ -79,7 +106,12 @@ is token-audited, rejects clipping, and records actual consumed tokens. Earlier
 truncated replay artifacts are retained but cannot support full-interface claims.
 See [the interface handoff](decision_interface_handoff.md) for measurements.
 
-## Proposed E0, conditional on review — not frozen or run
+## Prior E0 collection proposal — conditional, not active or frozen
+
+The design below is retained for traceability, not as instructions to start
+collection. It requires a defensible reference/claim and renewed protocol review.
+The narrow status result and the engineering demo do not silently redefine or
+unblock the proposed manipulation comparison.
 
 The **reference-quality pilot** is predeclared in
 [reference_pilot_protocol.md](reference_pilot_protocol.md). Its result and raw evidence
@@ -100,7 +132,7 @@ reviewed option: both branches would receive the *same* effects, clearly marked
 privileged. None were supplied in the interface search; they must not quietly
 enter the present no-effect comparison.
 
-The smallest proposed formal E0 after this pilot:
+The prior bounded collection proposal, still subject to that gate:
 
 - Task: `KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet`, LIBERO `libero_90`.
 - Actual benchmark initial-state IDs **0,1,2**, seed **1**, with benchmark-state,

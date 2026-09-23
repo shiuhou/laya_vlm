@@ -1,21 +1,33 @@
 # Laya Embodied Runtime
 
-This is a research runtime for studying how asynchronous sensor observations can
-be converted into decision-sufficient state and candidate-effect evidence for
-typed embodied decision making. Laya is one replaceable decision backend.
+Research runtime for studying decision-sufficient interfaces between the physical
+world and typed embodied decision models. Laya is one replaceable decision backend.
 
-Current verified status and review gate: [docs/current_state.md](docs/current_state.md).
-Research question and proposed E0: [docs/research.md](docs/research.md).
-Interfaces: [docs/architecture.md](docs/architecture.md).
-Latest evidence and commands: [docs/reference_gate_handoff.md](docs/reference_gate_handoff.md).
-No formal E0/E1 experiment has started.
+Two tracks share the same foundations:
 
-Watch the [live visual connectivity demo](docs/engineering_demo.md): actual RGB-D
-input, Laya choices and physical gripper execution, with recorded video and replay
-verification. It demonstrates wiring, **not successful drawer control**.
+| Track | Question | Current evidence and boundary |
+|---|---|---|
+| A — Embodied demonstration | Can World/Sensors → Structured Interface → Typed Model → Robot Execution run end to end? | A live visual Laya trajectory physically opens/closes the gripper. It does **not** solve the drawer task. |
+| B — Decision-interface research | What information must the interface preserve for useful decisions? | Paired replay and bounded missing-information findings exist. A useful manipulation reference is **not** validated; formal E0 is not frozen. |
 
-It separates temporal belief, compact decision state, candidate semantics/effects,
-typed decisions, validation and physical execution. Checkpoints are excluded.
+Start here:
+
+1. [Current state](docs/current_state.md): verified implementation, actual branches,
+   evidence and limitations.
+2. [Development tracks](docs/development_tracks.md): collaboration rules, shared
+   components and proposed branch responsibilities.
+3. [Architecture](docs/architecture.md): active paths and interface boundaries.
+4. [Research direction](docs/research.md): hypotheses, findings and the E0 gate.
+
+Watch the [engineering demo](docs/engineering_demo.md), or inspect the latest
+[research diagnostic handoff](docs/reference_gate_handoff.md). Demo connectivity
+does not establish task competence, and oracle-conditioned decisions are not expert
+ground truth. No formal E0/E1 experiment has started.
+
+Historical handoffs describe their own revisions, not current instructions.
+`docs/mix.md` is personal scratch material, not project documentation. Model weights,
+raw runs and demo media are excluded from Git; a fresh clone does not contain them.
+Artifact locations and reproduction commands are in the relevant evidence reports.
 
 ## Model-free smoke test
 

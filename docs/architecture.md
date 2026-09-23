@@ -1,5 +1,9 @@
 # Decision evidence interfaces
 
+Shared architecture for the two [development tracks](development_tracks.md).
+This diagram separates concepts; the entry-point table below identifies which
+paths currently execute model decisions and which only replay them offline.
+
 ```text
 ObservationEvent -> BeliefSnapshot -> CanonicalDecisionState
                                       + Candidate Set
@@ -15,6 +19,21 @@ nominal semantics to the existing live validity/validation/execution path. It
 preserves natural feasible tokens and supplies no effects. This demonstrates
 connectivity only, not task competence or closed-loop research validation.
 The Stage 2 runner and validity/execution contracts remain unchanged.
+
+## Active paths and their boundaries
+
+| Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
+|---|---|---|
+| `engineering_demo` / `demo_report` | Track A live demo and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute |
+| `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
+| `interface_search` / `reference_gate` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
+| `run_libero` | Legacy Stage 2 live smoke path | BeliefSnapshot presentation, optional asynchronous visual worker or explicitly oracle preview branch; not the demo's compact audited path |
+
+The shared implementation map is in [development_tracks.md](development_tracks.md).
+Track wrappers may differ in schedule, question, history and candidate selection;
+shared classes alone do not establish a matched scientific comparison. Simulator
+execution/evaluation telemetry is separate from visual decision evidence in both
+tracks. Only explicitly privileged diagnostics may supply oracle states/effects.
 
 ## Roles
 
@@ -73,10 +92,14 @@ both coherent family interventions and explicitly inconsistent counterfactuals.
 
 ## Candidate semantics and effects
 
-Canonical v0.1 accepts the fixed shared atomic offline probe vocabulary only. It
-rejects embedded metadata, free-form oracle preview descriptions, risk scores or
+Canonical v0.1 accepts the fixed shared atomic semantics, including a permitted
+subset used by the opt-in demo. It rejects embedded metadata, free-form oracle
+preview descriptions, risk scores or
 alternative candidate semantics. Existing natural live candidates are recorded
 separately; a probe's feasibility flag means inclusion in a question, not safe execution.
+The demo takes its permitted subset from the existing visual gate and binds the
+model response back to the original live snapshot for validation. It does not use
+the unrestricted eleven-token research probes as execution authorization.
 
 ```text
 CandidateEffectBundle:
