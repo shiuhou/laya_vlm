@@ -1,6 +1,6 @@
-"""Explicit oracle drawer reference: Jev effect-contract union -> one Laya choice.
+"""Explicit oracle drawer reference: flat union or fixed local-objective pool.
 
-No hierarchy, winner selection, visual changes or CDS changes. Existing Jev
+No strategy, winner selection, visual changes or CDS changes. Existing Jev
 two-step reposition witnesses are used only when the one-step union is empty.
 Contracts perform task-specific candidate-policy filtering, not just safety.
 """
@@ -40,6 +40,36 @@ INSTRUCTION = (
     "Prefer completion, closure, then contact or approach; avoid obstacle force."
 )
 TOLERANCE = 1e-8
+OBJECTIVE_PRIORITY = ("advance_target", "establish_contact", "approach_target",
+                      "release_contact", "reposition")
+OBJECTIVE_CRITERIA = {
+    "advance_target": "Prefer actual task completion, otherwise greater predicted closure without unnecessary obstacle force.",
+    "establish_contact": "Prefer useful contact with closure.",
+    "approach_target": "Prefer substantial predicted surface-gap reduction.",
+    "release_contact": "Release the obstruction with less loss of task progress.",
+    "reposition": "Compare the verified two-step net effects rather than demanding immediate progress from the first input. Execute only the first input; replan.",
+}
+ROUTING_VERSION = "fixed-contract-objective-v1"
+
+
+def objective_routing(pools, order):
+    """New explicit task policy: first nonempty contract, never rank primitives."""
+    if set(pools) - set(OBJECTIVE_PRIORITY):
+        raise ValueError("unknown objective contract")
+    objective = next((name for name in OBJECTIVE_PRIORITY if pools.get(name)), None)
+    union = {name for pool in pools.values() for name in pool}
+    if not union.issubset(order) or len(order) != len(set(order)):
+        raise ValueError("invalid primitive order or contract membership")
+    members = set(pools[objective]) if objective else set()
+    return {"version": ROUTING_VERSION, "source": "deterministic_task_policy",
+            "priority": list(OBJECTIVE_PRIORITY), "objective": objective,
+            "reason": "first_nonempty_contract" if objective else "all_contract_pools_empty",
+            "primitive_order": list(order),
+            "contract_union": [name for name in order if name in union],
+            "motor_pool": [name for name in order if name in members],
+            "objective_excluded": {name: "outside_selected_objective" for name in order
+                                   if name in union and name not in members}}
+
 
 
 def actions():
@@ -149,7 +179,8 @@ def ensure_real_choice(candidates, grip):
 
 
 class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
-    def __init__(self, backend, sink):
+    def __init__(self, backend, sink, condition="flat"):
+        self.condition = condition
         super().__init__(backend.world, grip_command=backend.gripper_command,
                          action_map={name: name for name in actions()})
         self.backend, self.sink = backend, sink
@@ -186,15 +217,23 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
             raise RuntimeError("physics preview changed live controller/integration context")
         pools = self.last_preview["pools"]
         eligible = {name for pool in pools.values() for name in pool}
+        routing = None
+        if self.condition == "local_objective":
+            routing = objective_routing(pools, list(actions()))
+            self.last_preview["objective_routing"] = routing
+            eligible = set(routing["motor_pool"])
         candidates = tuple(replace(
             c,
             feasible=c.token in eligible,
             reason_codes=() if c.token in eligible else (
-                self.last_preview["rejected"].get(c.token, "no_feasible_contract"),
+                ("outside_selected_objective" if routing and c.token in routing["contract_union"]
+                 else self.last_preview["rejected"].get(c.token, "no_feasible_contract")),
             ),
             metadata={
                 **PRIVILEGE,
                 "effect_contracts": [k for k, pool in pools.items() if c.token in pool],
+                **({"local_objective": routing["objective"],
+                    "candidate_filtering": "task_specific_objective_contract_pool"} if routing else {}),
                 "lookahead_triggered": not bool(one_step_pools),
                 "reposition_witness": witnesses.get(c.token),
             },
@@ -212,7 +251,7 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
         return candidates
 
 
-def presentation(before, predictions, names, grip, last):
+def presentation(before, predictions, names, grip, last, objective=None):
     state = (
         "Task: close top drawer. effect_source=oracle_sim; privileged=true. "
         "Preview up to 8 controls/0.4s. XYZ world mm; rotations world degrees; "
@@ -283,7 +322,12 @@ def presentation(before, predictions, names, grip, last):
             f"{witness['net_progress']:.3f} {witness['net_gap_reduction_mm']:.2f} "
             f"{int(witness['terminal_contact'])} {codes}{suffix}\n"
         )
-    questions = {"action": {"type": "choice", "instructions": INSTRUCTION,
+    instruction = INSTRUCTION
+    if objective is not None:
+        state = f"Current local objective: {objective}.\n" + state
+        instruction = ("Choose one atomic action that best advances the stated local objective. "
+                       + OBJECTIVE_CRITERIA[objective])
+    questions = {"action": {"type": "choice", "instructions": instruction,
                              "criteria": {name: "" for name in names}}}
     return state, questions
 
@@ -317,9 +361,13 @@ class ReferenceProvider:
         names = [c.token for c in snapshot.candidates if c.feasible]
         preview = self.builder.last_preview
         pool_source = "lookahead" if preview.get("lookahead_triggered", False) else "one_step"
+        routing = preview.get("objective_routing")
+        objective_fields = ({"local_objective": routing["objective"], "objective_routing": routing,
+                             "candidate_filtering": "task_specific_objective_contract_pool"}
+                            if routing else {})
         if len(names) == 1:
             token = names[0]
-            self.sink("reference_forced_singleton", {**PRIVILEGE,
+            self.sink("reference_forced_singleton", {**PRIVILEGE, **objective_fields,
                 "snapshot_id": snapshot.snapshot_id(), "belief_id": snapshot.belief_id(),
                 "candidate_set_id": snapshot.candidate_set_id(), "option_order": names,
                 "candidate_count": 1, "pool_source": pool_source, "token": token,
@@ -334,9 +382,10 @@ class ReferenceProvider:
                 input_snapshot_id=snapshot.snapshot_id())
         names = ensure_real_choice(snapshot.candidates, backend.gripper_command())
         state, questions = presentation(preview["before"], preview["predictions"], names,
-                                        backend.gripper_command(), self.last)
+                                        backend.gripper_command(), self.last,
+                                        routing["objective"] if routing else None)
         audit = encoding_audit(self.agent, state, questions)
-        self.sink("reference_model_input", {**PRIVILEGE,
+        self.sink("reference_model_input", {**PRIVILEGE, **objective_fields,
             "snapshot_id": snapshot.snapshot_id(), "belief_id": snapshot.belief_id(),
             "candidate_set_id": snapshot.candidate_set_id(),
             "option_order": names, "state": state, "questions": questions, "audit": audit,
@@ -361,11 +410,16 @@ def run(args):
     import torch
     out = Path(args.output)
     recorder = RunRecorder(out, {**vars(args), "version": VERSION, "oracle": True,
-        **PRIVILEGE, "scheduling": "paused observation/preview/inference at action boundary",
+        **PRIVILEGE,
+        "candidate_filtering": ("task_specific_objective_contract_pool"
+            if args.condition == "local_objective" else PRIVILEGE["candidate_filtering"]),
+        "scheduling": "paused observation/preview/inference at action boundary",
         "primitive_order": list(actions()), "lookahead": 2,
         "two_step_reposition_witnesses": True, "hierarchy": False,
         "checkpoint_context_unchanged": True, "success_predicate": "official_LIBERO",
-        "candidate_policy_filtering": "union of all task-specific effect contracts; no winner/top-k"},
+        "candidate_policy_filtering": ("fixed objective contract pool; no winner/top-k"
+            if args.condition == "local_objective" else "union of all task-specific effect contracts; no winner/top-k"),
+        "objective_routing_version": ROUTING_VERSION if args.condition == "local_objective" else None},
         {"run_id": out.name, "code": code_identity(), "versions": versions()})
     backend = None
     step, success, termination = None, False, "action_budget"
@@ -383,7 +437,21 @@ def run(args):
         recorder.record("reference_invocation", {"argv": sys.argv, "cwd": str(Path.cwd()),
             "python": sys.executable, "environment": {k: os.environ.get(k) for k in
             ("CUDA_VISIBLE_DEVICES", "MUJOCO_GL", "HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")}})
-        recorder.manifest_update({"models": {"decision": model_identity(args.laya_path)}})
+        identity = model_identity(args.laya_path)
+        baseline_manifest = None
+        if args.condition == "local_objective":
+            baseline = Path(args.baseline)
+            baseline_manifest = json.loads((baseline / "manifest.json").read_text())
+            baseline_config = json.loads((baseline / "resolved_config.yaml").read_text())
+            if identity != baseline_manifest["models"]["decision"]:
+                raise RuntimeError("local-objective model differs from flat baseline")
+            for key in ("seed", "init_state_id", "device", "steps", "timeout_s"):
+                if getattr(args, key) != baseline_config[key]:
+                    raise RuntimeError(f"baseline setting differs: {key}")
+            recorder.manifest_update({"flat_baseline": {"path": str(baseline.resolve()),
+                "sha256": {name: file_hash(baseline / name) for name in
+                    ("episodes.jsonl", "manifest.json", "resolved_config.yaml")}}})
+        recorder.manifest_update({"models": {"decision": identity}})
         inventory = initial_state_inventory("top_drawer", args.libero_root, args.config_dir)
         recorder.record("reference_initial_identity", {"task": "top_drawer", "binding": inventory["binding"],
             "init_state_id": args.init_state_id, "seed": args.seed,
@@ -405,7 +473,11 @@ def run(args):
             raise RuntimeError("unexpected model device fallback")
         recorder.manifest_update({"model_execution": {"device": str(agent.device), "dtype": str(agent.dtype),
             "config": agent.cfg, "torch_deterministic": torch.are_deterministic_algorithms_enabled()}})
-        builder = ReferenceBuilder(backend, recorder.record)
+        if baseline_manifest is not None:
+            old = baseline_manifest["model_execution"]
+            if agent.cfg != old["config"] or str(agent.dtype) != old["dtype"]:
+                raise RuntimeError("baseline model configuration/dtype differs")
+        builder = ReferenceBuilder(backend, recorder.record, args.condition)
         provider = ReferenceProvider(agent, builder, recorder.record)
         runtime = Runtime(out.name, provider, backend, builder, oracle=True,
             sim_clock=lambda: world.data.time, event_sink=recorder.record,
@@ -435,11 +507,13 @@ def run(args):
                 "candidate_count": len(row["snapshot"].allowed()), "pool_source": pool_source,
                 "lookahead_recovery": pool_source == "lookahead",
                 "forced_singleton": forced_singleton,
+                "local_objective": builder.last_preview.get("objective_routing", {}).get("objective"),
                 "genuine_laya_decision": row["decision"].source == "laya",
                 "decision_source": row["decision"].source, "fallback": row["decision_invalid_reason"]})
             provider.last, previous_after = outcome, outcome["after"]
             print(json.dumps({"step": step, "offered": len(row["snapshot"].allowed()),
                 "pool_source": pool_source, "choice_source": row["decision"].source,
+                "objective": builder.last_preview.get("objective_routing", {}).get("objective"),
                 "choice": outcome["action"], "closure_mm": outcome["closure_mm"],
                 "gap_mm": outcome["after"]["distance_to_moving_geometry_mm"],
                 "contact": outcome["after"]["moving_contact"],
@@ -537,6 +611,8 @@ def summarize_reference(directory):
     rows, errors = load_records(directory / "episodes.jsonl")
     if errors:
         raise ValueError(f"incomplete evidence chain: {errors}")
+    config = next(r["data"]["resolved_config"] for r in rows if r["kind"] == "run_start")
+    local_condition = config.get("condition") == "local_objective"
     inputs = {r["data"]["snapshot_id"]: r["data"] for r in rows if r["kind"] == "reference_model_input"}
     forced = {r["data"]["snapshot_id"]: r["data"] for r in rows
               if r["kind"] == "reference_forced_singleton"}
@@ -565,6 +641,19 @@ def summarize_reference(directory):
         if decision["token"] != d["action"] or d["action"] not in selection["option_order"]:
             raise ValueError("decision/outcome membership mismatch")
         eligible = {name for pool in preview["pools"].values() for name in pool}
+        routing = preview.get("objective_routing")
+        if local_condition and not routing:
+            raise ValueError("missing objective routing evidence")
+        if routing:
+            if routing["primitive_order"] != config.get("primitive_order", routing["primitive_order"]):
+                raise ValueError("objective primitive order mismatch")
+            expected_routing = objective_routing(preview["pools"], routing["primitive_order"])
+            if (routing != expected_routing or selection.get("objective_routing") != routing
+                    or selection.get("local_objective") != routing["objective"]
+                    or d.get("local_objective") != routing["objective"]
+                    or selection["option_order"] != routing["motor_pool"]):
+                raise ValueError("objective routing or motor pool evidence mismatch")
+            eligible = set(routing["motor_pool"])
         if set(selection["option_order"]) != eligible or len(selection["option_order"]) != len(eligible):
             raise ValueError("offered menu differs from complete effect-contract union")
         is_forced = d["snapshot_id"] in forced
@@ -611,6 +700,7 @@ def summarize_reference(directory):
                 or d.get("forced_singleton", is_forced) != is_forced):
             raise ValueError("choice classification disagrees with candidate evidence")
         trace.append({"step": d["step"], "candidates": selection["option_order"],
+            "local_objective": routing["objective"] if routing else None,
             "candidate_count": len(selection["option_order"]), "pool_source": pool_source,
             "choice_source": "forced_singleton" if is_forced else "laya",
             "forced_singleton": is_forced, "lookahead_recovery": pool_source == "lookahead",
@@ -634,7 +724,11 @@ def summarize_reference(directory):
         "forced_singleton_continuations": sum(t["forced_singleton"] for t in trace),
         "zero_pool_lookahead_recoveries": sum(t["lookahead_recovery"] for t in trace),
     }
-    summary = {"version": VERSION, **PRIVILEGE, "raw_sha256": file_hash(directory / "episodes.jsonl"),
+    summary = {"version": VERSION, **PRIVILEGE,
+        "condition": config.get("condition", "flat"),
+        "candidate_filtering": ("task_specific_objective_contract_pool" if local_condition
+                                else PRIVILEGE["candidate_filtering"]),
+        "raw_sha256": file_hash(directory / "episodes.jsonl"),
         "actual_success": success, "qualifies_single_episode": qualifies,
         "independent_repeatability_not_established_by_one_episode": True,
         **counts, "failures": failures, "terminations": terminations, "trace": trace,
@@ -673,6 +767,8 @@ def parser():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--output", required=True)
     p.add_argument("--mode", choices=("run", "preflight", "summarize", "replay"), default="run")
+    p.add_argument("--baseline", default="runs/privileged-reference/forced-singleton-episode-01")
+    p.add_argument("--condition", choices=("flat", "local_objective"), default="flat")
     p.add_argument("--steps", type=int, default=100)
     p.add_argument("--timeout-s", type=float, default=1800.)
     p.add_argument("--seed", type=int, default=1)

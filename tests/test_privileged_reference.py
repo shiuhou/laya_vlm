@@ -334,18 +334,22 @@ def test_summary_retains_empty_pool_boundary_and_does_not_claim_success(tmp_path
     assert "Eligible actions: []" in (out / "reference-report.md").read_text()
 
 
-def test_summary_counts_forced_singleton_without_model_evidence(tmp_path):
+@pytest.mark.parametrize("condition", ["flat", "local_objective", "tampered_objective"])
+def test_summary_counts_forced_singleton_without_model_evidence(tmp_path, condition):
     out = tmp_path / "forced"
-    recorder = RunRecorder(out, {}, {"run_id": "forced"})
+    recorder = RunRecorder(out, {"condition": "flat" if condition == "flat" else "local_objective",
+                                 "primitive_order": ["z-3mm"]}, {"run_id": "forced"})
     candidate = Candidate("z-3mm", "")
     snapshot = belief((candidate,))
     selected = prediction()
+    routing = ref.objective_routing({"advance_target": {"z-3mm": selected}}, ["z-3mm"])
+    extra = {"objective_routing": routing} if condition != "flat" else {}
     recorder.record("reference_preview", {"belief_id": snapshot.belief_id(),
         "before": features(), "predictions": {"z-3mm": selected},
         "pools": {"advance_target": {"z-3mm": selected}}, "rejected": {},
-        "lookahead_triggered": False, "restored": True})
+        "lookahead_triggered": False, "restored": True, **extra})
     builder = SimpleNamespace(backend=SimpleNamespace(gripper_command=lambda: -1.),
-                              last_preview={"lookahead_triggered": False})
+                              last_preview={"lookahead_triggered": False, **extra})
     agent = SimpleNamespace(system_one=lambda *_: pytest.fail("model must not run"))
     provider = ref.ReferenceProvider(agent, builder, recorder.record)
     decision = provider.decide(snapshot)
@@ -364,10 +368,15 @@ def test_summary_counts_forced_singleton_without_model_evidence(tmp_path):
         "obstacle_peak_N": 0., "comparison": {"state_max_error": 0., "passed": True},
         "candidate_count": 1, "pool_source": "one_step", "lookahead_recovery": False,
         "forced_singleton": True, "genuine_laya_decision": False,
-        "decision_source": "forced_singleton", "fallback": None})
+        "decision_source": "forced_singleton", "fallback": None,
+        "local_objective": "approach_target" if condition == "tampered_objective" else "advance_target"})
     recorder.record("termination", {"reason": "action_budget", "success": False, "step": 0})
     recorder.close()
 
+    if condition == "tampered_objective":
+        with pytest.raises(ValueError, match="objective routing"):
+            ref.summarize_reference(out)
+        return
     summary = ref.summarize_reference(out)
 
     assert summary["genuine_laya_decisions"] == 0
@@ -386,3 +395,58 @@ def test_summary_rejects_duplicate_preview_identity(tmp_path):
     recorder.close()
     with pytest.raises(ValueError, match="duplicate reference_preview"):
         ref.summarize_reference(out)
+
+
+@pytest.mark.parametrize("objective", ref.OBJECTIVE_PRIORITY)
+def test_objective_pool_keeps_all_actions_and_original_order(objective):
+    pool = {"x+40mm": prediction(closing_mm=100.), "rotate_x+10deg": prediction(),
+            "x+3mm": prediction(closing_mm=-100.)}
+    order = ["close", "x+3mm", "rotate_x+10deg", "x+40mm"]
+    routing = ref.objective_routing({objective: pool}, order)
+    assert routing["objective"] == objective
+    assert routing["motor_pool"] == order[1:]
+    assert routing["objective_excluded"] == {}
+
+
+def test_objective_priority_is_pool_presence_not_maximum_utility():
+    pools = {"approach_target": {"x+40mm": prediction(closing_mm=100.)},
+             "advance_target": {"hold": prediction(closing_mm=.01)}}
+    routing = ref.objective_routing(pools, ["x+40mm", "hold"])
+    assert routing["objective"] == "advance_target"
+    assert routing["motor_pool"] == ["hold"]
+    assert routing["objective_excluded"] == {"x+40mm": "outside_selected_objective"}
+    assert not ref.objective_routing({}, ["hold"])["motor_pool"]
+    with pytest.raises(ValueError, match="unknown"):
+        ref.objective_routing({"invented_phase": {"hold": {}}}, ["hold"])
+
+
+def test_objective_presentation_preserves_effect_table_and_question_options():
+    predictions = {"x+3mm": prediction(), "rotate_x+10deg": prediction()}
+    state, question = ref.presentation(features(), predictions, list(predictions), -1., None)
+    local, local_question = ref.presentation(features(), predictions, list(predictions), -1., None,
+                                            "approach_target")
+    assert local == "Current local objective: approach_target.\n" + state
+    assert local_question["action"]["criteria"] == question["action"]["criteria"]
+    assert "substantial predicted surface-gap reduction" in local_question["action"]["instructions"]
+
+
+def test_objective_builder_preserves_contract_rejections_and_forces_true_singleton(monkeypatch):
+    import jev_libero.policy
+    predictions = {"x+3mm": prediction(closing_mm=.01), "rotate_x+10deg": prediction(),
+                   "close": prediction()}
+    pools = {"advance_target": {"x+3mm": predictions["x+3mm"]},
+             "approach_target": {"rotate_x+10deg": predictions["rotate_x+10deg"]}}
+    monkeypatch.setattr(jev_libero.policy, "contracts", lambda *a, **kw: (pools, {"close": "obstacle"}))
+    monkeypatch.setattr(ref, "actions", lambda: {name: {} for name in predictions})
+    monkeypatch.setattr(ref, "context_id", lambda _: "same")
+    backend = SimpleNamespace(world=SimpleNamespace(config={}, predict_all=lambda _: (features(), predictions),
+        two_step_witnesses=lambda _: pytest.fail("nonempty union")), gripper_command=lambda: -1.)
+    builder = ref.ReferenceBuilder(backend, lambda *_: None, "local_objective")
+    candidates = builder.build(belief())
+    assert [c.token for c in candidates if c.feasible] == ["x+3mm"]
+    assert candidates[1].reason_codes == ("outside_selected_objective",)
+    assert candidates[2].reason_codes == ("obstacle",)
+    assert builder.last_preview["pools"] is pools
+    provider = ref.ReferenceProvider(SimpleNamespace(system_one=lambda *_: pytest.fail("singleton")),
+                                     builder, lambda *_: None)
+    assert provider.decide(belief(candidates)).source == "forced_singleton"
