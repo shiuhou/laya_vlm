@@ -26,6 +26,8 @@ No remote update, branch rename or new model experiment accompanies integration.
 Read [development_tracks.md](development_tracks.md) for track responsibilities,
 shared components and integration rules. [research.md](research.md) remains the
 single research-direction document; historical handoffs are revision-specific.
+The [integration review](integration_checkpoint.md) records merge scope, verification,
+architectural history and options for review. It authorizes no next experiment.
 
 ## Evidence entry points
 
@@ -73,7 +75,7 @@ Conditional next experiment: [research.md](research.md).
   fallbacks, missing outcomes and evaluator-only measurements. Shared runtime,
   interfaces, gates, providers and executor semantics are unchanged. The new run
   has eight verified Laya executions and zero replay error across 73 boundaries.
-  Current demo-branch verification: 266 tests, ruff and compileall pass.
+  Pre-merge demo verification: 266 tests, ruff and compileall passed.
 - Real RGB-D → temporal belief → compact CDS → Laya → validation → atomic executor
   → MuJoCo execution. The opt-in demo bridge leaves the legacy runner and research
   pairing interface unchanged.
@@ -108,7 +110,8 @@ Conditional next experiment: [research.md](research.md).
   collector: each yields approach, contact and progress. Only collector init 0
   completes; this is **not Laya task success**. Init 1/2 finish at 29.879/15.696 mm
   remaining opening; lack of near-completion coverage is preserved.
-- 362 tests, ruff and compileall pass. Dependencies and upstream repositories are
+- Integrated verification: **384 tests passed**, ruff and compileall passed.
+  Pre-merge research verification was 362 tests. Dependencies and upstream repositories are
   unchanged. One pinned independent Qwen checkpoint was acquired separately;
   existing model weights were not modified.
 
@@ -302,6 +305,7 @@ Earlier inspector artifact: `runs/engineering-demo/top-drawer-init0-seed1-inspec
 Subsequent frozen and synthetic diagnostic directories are linked from their reports.
 All are local/ignored, not included in a fresh clone; share their manifests and
 referenced artifacts separately. See the collaboration guide's evidence handoff rules.
+The following research paths are relative to `laya-decision-interface`:
 Prior: `runs/goal-placement/{preflight-v01,laya-v01}/`, independent `audit.py` /
 `audit.json` and `matched_pairs.csv`. Full prompts, tokens, raw logits/probabilities,
 all unchanged controls and working-source/model identities are retained.

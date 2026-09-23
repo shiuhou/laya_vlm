@@ -6,6 +6,13 @@ scientific hypotheses below. Track responsibilities and shared foundations are i
 [development_tracks.md](development_tracks.md); verified status is in
 [current_state.md](current_state.md).
 
+**2026-09-23 integration checkpoint:** flat multi-candidate atomic ranking is under
+architecture review. The binary predicate proposal below is retained for traceability
+and is on hold, not the next authorized action. See the
+[integration review](integration_checkpoint.md). No prompt optimization, new Laya
+experiment, planner, CDS redesign, live oracle restoration or formal E0 follows
+from this merge. State Gap and Effect Gap remain separate.
+
 Central question: **What information must the world expose to a robot decision
 model for useful decisions?** This runtime studies how sensor observations,
 proprioception and history can be converted into decision-sufficient state and
@@ -202,7 +209,7 @@ is token-audited, rejects clipping, and records actual consumed tokens. Earlier
 truncated replay artifacts are retained but cannot support full-interface claims.
 See [the interface handoff](decision_interface_handoff.md) for measurements.
 
-## Single next bounded experiment
+## Prior next bounded experiment proposal — on hold for architecture review
 
 On Laya, test **candidate-by-candidate predicate verification**: does each unchanged
 candidate description/effect bundle satisfy the same explicit desired conjunction?

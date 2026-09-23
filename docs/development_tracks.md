@@ -69,8 +69,9 @@ The [latest bounded findings](explicit_consequence_handoff.md) show that explici
 stating the desired consequence does not materially help: true utility falls 5/16
 to 4/16, true closing stays 0/8, and appropriate goal reversal stays 1/16. The
 desired-consequence-to-candidate operation remains unreliable, weakening an
-upstream-only explanation. The proposed next diagnostic tests individual bundle
-predicate verification to distinguish recognition from competitive selection.
+upstream-only explanation. The historical next diagnostic proposes individual bundle
+predicate verification to distinguish recognition from competitive selection;
+it is now on hold for the integration checkpoint's architecture review.
 No new provider or schema is justified. The earlier selective-grip,
 cross-provider, clause-order and goal-placement findings retain their bounded scope;
 Laya is the primary research system. The prior

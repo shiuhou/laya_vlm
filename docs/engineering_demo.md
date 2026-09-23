@@ -8,6 +8,20 @@ see [demo_runbook.md](demo_runbook.md). The historical result below is preserved
 The [later feedback episode](closed_loop_demo.md) distinguishes existing embodied
 and asynchronous capability from the still-unmet goal of useful task-directed progress.
 
+At the 2026-09-23 integration checkpoint, the latest completed feedback episode has
+eight Laya executions, seven verified next-decision feedback deliveries, and a
+recorded 64-control replay matching 73 boundaries. Drawer closure is zero, contact
+is false and task success is false. The report below remains the historical four-action
+run, not a claim about a new integrated rollout.
+
+Subsequent offline [distance-effect](frozen_step0_distance_effects.md) and
+[local-objective](frozen_step0_local_objective.md) interventions did not rescue the
+frozen choice. The latter also adds a contact premise, so decomposition alone is
+not isolated. [Candidate ordering](synthetic_negative_order_probe.md) substantially
+changes ranking but remains an unresolved diagnostic, not a live fix. Task
+decomposition is a hypothesis for architecture review. See the
+[integration review](integration_checkpoint.md); no task competence is established.
+
 ## Watch and inspect
 
 - [12-second annotated MP4](../runs/engineering-demo/top-drawer-init0-seed1-v01/demo.mp4)

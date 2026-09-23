@@ -43,6 +43,29 @@ shared classes alone do not establish a matched scientific comparison. Simulator
 execution/evaluation telemetry is separate from visual decision evidence in both
 tracks. Only explicitly privileged diagnostics may supply oracle states/effects.
 
+## Integration checkpoint: candidate processing remains an open question
+
+The 2026-09-23 integration preserves all interfaces above. The legacy nonvisual
+runner still constructs `PhysicsPreviewCandidateBuilder`, which calls
+`World.predict_all()` and Jev contracts. Its predicted success/contact/approach/force
+descriptions are privileged. The visual path uses `VisionCandidateBuilder` instead;
+it computes validity and soft geometric metadata, but the compact demo passes only
+permitted nominal candidate descriptions, with no effect bundle. The primary
+State-Gap replay likewise keeps effects empty.
+
+Thus oracle preview was isolated from those decision paths, not deleted from the
+repository. Whether this also left too much geometry/consequence matching to the
+model is an open architectural question, not a demonstrated causal explanation.
+The review asks what code should compute before model judgment. It does not approve
+restoring preview, preselecting a winner or promoting diagnostic anonymization,
+candidate ordering or local-objective text to shared defaults.
+
+Candidate effects retain distinct sources: `oracle_sim`, deterministic `geometry`,
+`learned`, and `unknown` (or an empty bundle when none is supplied). Geometry derived
+from oracle inputs is still privileged. Supporting a source label does not establish
+a validated learned predictor. See [integration_checkpoint.md](integration_checkpoint.md)
+for history, claim boundaries and alternatives to review; no redesign is implemented.
+
 ## Roles
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
