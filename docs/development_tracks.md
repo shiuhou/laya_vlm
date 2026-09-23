@@ -7,10 +7,12 @@ Former tracks `research/decision-interface` (tip `84cd781`) and
 `feat/mujoco_demo` (tip `59dae8a`) are fully integrated.
 The [cleanup audit](archive/maintenance/cleanup_20260923.md) records their
 worktree/local-branch disposition. Their history remains reachable.
-Remote branches are not removed. There are no active successor tracks.
-
-Do not create a new branch or start diagnostics until humans decide the
-architecture boundary.
+Remote branches are not removed. The human has now selected the bounded privileged
+reference on `feat/privileged-reference` in the main working directory, based on
+share_main 7c27705; no additional worktree was created. The branch adds the explicit
+oracle 27-action/effect-contract reference and its evidence, not visual changes.
+See [current state](current_state.md) for the failed first episode and stop point.
+Further candidate-policy or architecture changes require a new decision.
 
 ## Responsibilities for future work
 

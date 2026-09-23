@@ -10,6 +10,7 @@ from embodied_runtime.adapters.physics_preview import PhysicsPreviewCandidateBui
 from embodied_runtime.runtime import Runtime
 from embodied_runtime.runtime_core import BeliefSnapshot, Candidate, FakeBackend, RuleProvider
 from embodied_runtime.experiments import privileged_reference as ref
+from embodied_runtime.experiments.records import RunRecorder
 
 
 def features(**extra):
@@ -158,3 +159,28 @@ def test_executor_passes_native_primitive_and_retains_grip(monkeypatch, name):
     assert backend.gripper_command() == (-1. if name == "open" else 1.)
     assert result["token"] == name and not result["execution_contract_violation"]
     assert not result["reset_envelope_validated_for_all_27"]
+
+
+def test_summary_retains_empty_pool_boundary_and_does_not_claim_success(tmp_path):
+    out = tmp_path / "failed"
+    recorder = RunRecorder(out, {}, {"run_id": "failed"})
+    recorder.record("reference_preview", {"belief_id": "boundary", "before": features(),
+        "predictions": {"x+40mm": prediction()}, "pools": {},
+        "rejected": {"x+40mm": "no witnessed effect"}, "restored": True})
+    recorder.record("failure", {"category": "reference_error"})
+    recorder.record("termination", {"reason": "reference_error", "success": False})
+    recorder.close()
+    summary = ref.summarize_reference(out)
+    assert not summary["actual_success"] and not summary["qualifies_single_episode"]
+    assert len(summary["unexecuted_previews"]) == 1
+    assert "Eligible actions: []" in (out / "reference-report.md").read_text()
+
+
+def test_summary_rejects_duplicate_preview_identity(tmp_path):
+    out = tmp_path / "duplicate"
+    recorder = RunRecorder(out, {}, {"run_id": "duplicate"})
+    for _ in range(2):
+        recorder.record("reference_preview", {"belief_id": "same"})
+    recorder.close()
+    with pytest.raises(ValueError, match="duplicate reference_preview"):
+        ref.summarize_reference(out)

@@ -7,6 +7,16 @@ alongside CDS fields. This is not an adopted new thesis or architecture.
 
 ## Scientific gate
 
+The authorized [privileged drawer reference v1](evidence/decision_interface/privileged_reference.md)
+now tests the strong original-style architecture before any ablation. Full Jev
+preview plus task-specific effect contracts produced 18 genuine approach decisions
+with exact predicted/actual effects, then an empty admissible menu near contact.
+Drawer closure remained zero. The concrete first failure is one-step contract
+coverage along the selected trajectory; it does not isolate model ranking, prove
+that an alternative choice succeeds, or establish that relaxing a threshold would
+solve the task. Contracts perform part of candidate-policy filtering and remain
+unchanged. Hard-invalid-only is a possible later ablation only after success.
+
 **Formal E0 is blocked. No useful manipulation reference is established.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
 GRASP at step 140 reopened the drawer by 14.272 mm, 21.261 mm worse than STOP.
@@ -62,10 +72,11 @@ or binary verification successful.
 
 ## Before further experiments
 
-Humans must agree on Laya's judgment boundary, full vocabulary versus subset,
-allowed candidate processing/effect sources and local intent.
-World.predict_all() can be reviewed as a privileged reference option, not a
-restoration decision; usefulness would still need demonstration.
+The reference boundary is now fixed: 27 primitive vocabulary, task-effect contract
+union, oracle predictions, one Laya atomic choice and real feedback, without intent
+hierarchy. The first attempt failed; humans must review the identified empty-menu
+boundary before changing reference semantics. The deployable judgment boundary and
+effect sources remain open, and usefulness still needs demonstration.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

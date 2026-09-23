@@ -424,6 +424,13 @@ def summarize_reference(directory):
     inputs = {r["data"]["snapshot_id"]: r["data"] for r in rows if r["kind"] == "reference_model_input"}
     decisions = {r["data"]["snapshot_id"]: r["data"]["decision"] for r in rows if r["kind"] == "decision"}
     previews = {r["data"]["belief_id"]: r["data"] for r in rows if r["kind"] == "reference_preview"}
+    trajectories = {r["data"]["step"]: r["data"] for r in rows if r["kind"] == "demo_trajectory"}
+    responses = {r["data"]["snapshot_id"]: r["data"] for r in rows if r["kind"] == "demo_model_response"}
+    for kind, mapping in (("reference_model_input", inputs), ("decision", decisions),
+                          ("reference_preview", previews), ("demo_trajectory", trajectories),
+                          ("demo_model_response", responses)):
+        if len(mapping) != sum(r["kind"] == kind for r in rows):
+            raise ValueError(f"duplicate {kind} identity")
     trace, previous_id = [], None
     for row in rows:
         if row["kind"] != "reference_outcome":
@@ -435,9 +442,38 @@ def summarize_reference(directory):
             raise ValueError("broken actual-outcome-to-input feedback link")
         if decision["token"] != d["action"] or d["action"] not in model_input["option_order"]:
             raise ValueError("decision/outcome membership mismatch")
+        eligible = {name for pool in preview["pools"].values() for name in pool}
+        if set(model_input["option_order"]) != eligible or len(model_input["option_order"]) != len(eligible):
+            raise ValueError("offered menu differs from complete effect-contract union")
+        # Recorder sorts dictionary keys, so option_order and actual forward tokens
+        # (rather than serialized criteria order) are authoritative.
+        response = responses[d["snapshot_id"]]
+        audit = model_input["audit"]
+        expected = audit["questions"]["action"]
+        forwards = response["forward_traces"]
+        if (audit["truncated"] or not audit["available"] or len(forwards) != 1
+                or forwards[0]["input_ids"] != [expected["effective_input_ids"]]
+                or forwards[0]["option_markers"] != [expected["option_markers"]]
+                or response["raw_response"]["answers"]["action"]["choice"] != d["action"]
+                or not preview["restored"]):
+            raise ValueError("invalid model consumption or restored-preview evidence")
+        artifact = trajectories[d["step"]]
+        path = directory / artifact["artifact"]
+        if file_hash(path) != artifact["sha256"]:
+            raise ValueError("trajectory artifact hash mismatch")
+        selected = preview["predictions"][d["action"]]
+        with np.load(path) as saved:
+            error = float(np.max(np.abs(saved["state_after"] - selected["sim_state_after"])))
+            if error != d["comparison"]["state_max_error"] or len(saved["commands"]) != d["controls"]:
+                raise ValueError("cached comparison differs from raw trajectory")
+        if (not np.isclose(d["closure_mm"], 1000 * (d["actual_joint_qpos_m"] - d["before"]["qpos_m"]),
+                           rtol=0, atol=TOLERANCE)
+                or d["official_success"] != d["after"]["success"]):
+            raise ValueError("actual physical outcome inconsistent")
         trace.append({"step": d["step"], "candidates": model_input["option_order"],
             "rejected": preview["rejected"], "model_input": model_input,
-            "decision": decision, "selected_prediction": preview["predictions"][d["action"]],
+            "decision": decision, "selected_prediction": selected,
+            "all_predictions": preview["predictions"], "effect_contract_pools": preview["pools"],
             "outcome": d})
         previous_id = row["record_id"]
     failures = [r["data"] for r in rows if r["kind"] == "failure"]
@@ -449,7 +485,9 @@ def summarize_reference(directory):
     summary = {"version": VERSION, **PRIVILEGE, "raw_sha256": file_hash(directory / "episodes.jsonl"),
         "actual_success": success, "qualifies_single_episode": qualifies,
         "independent_repeatability_not_established_by_one_episode": True,
-        "failures": failures, "terminations": terminations, "trace": trace}
+        "failures": failures, "terminations": terminations, "trace": trace,
+        "unexecuted_previews": [p for p in previews.values()
+                               if p["belief_id"] not in {t["model_input"]["belief_id"] for t in trace}]}
     (directory / "reference-evidence.json").write_text(json.dumps(summary, indent=2) + "\n")
     lines = ["# Privileged reference evidence", "", "Task-specific effect contracts perform candidate-policy filtering.",
              f"Actual success: {success}. Single-episode qualification: {qualifies}.", "",
@@ -462,6 +500,15 @@ def summarize_reference(directory):
             f"{o['after']['remaining_open_mm']:.6f} | {o['comparison']['passed']} |")
     lines += ["", "Full inputs, predictions, feedback links and failures: reference-evidence.json.",
               "This report is not a new model run or a repeatability claim."]
+    for preview in summary["unexecuted_previews"]:
+        eligible = sorted({name for pool in preview["pools"].values() for name in pool})
+        lines += ["", f"Unexecuted boundary: {preview['belief_id']}",
+                  f"Eligible actions: {eligible}. No action executed at this boundary.",
+                  "| Primitive | Predicted closure mm | Gap reduction mm | Contact | Rejection |",
+                  "|---|---:|---:|---|---|"]
+        for name, p in preview["predictions"].items():
+            lines.append(f"| {name} | {p['closing_mm']:.6f} | {p['geometry_approach_mm']:.6f} | "
+                         f"{p['after']['moving_contact']} | {preview['rejected'].get(name, '')} |")
     (directory / "reference-report.md").write_text("\n".join(lines) + "\n")
     return summary
 

@@ -32,6 +32,7 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
+| `privileged_reference` | Explicit oracle drawer reference, preflight, report and replay | Native Jev 27-action preview; union of collision-aware task-effect contracts; genuine multi-option Laya call; real executor; actual outcome to next input. No hierarchy/lookahead; no visual/CDS changes. |
 | `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
 | `interface_search` / `reference_gate` / `effect_binding` / `provider_comparison` / `clause_order` / `goal_placement` / `selective_grip` / `explicit_consequence` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
@@ -67,6 +68,16 @@ a validated learned predictor. See [integration_checkpoint.md](archive/historica
 for history, claim boundaries and alternatives to review; no redesign is implemented.
 
 ## Roles
+
+The human-authorized [privileged reference v1](evidence/decision_interface/privileged_reference.md)
+uses the existing BeliefStore with an audited compact oracle presentation,
+not CanonicalDecisionInput. Runtime's optional executor argument defaults to the
+original AtomicExecutor; this reference injects a Jev-native AtomicExecutor
+adapter. The preview builder's explicit action mapping opts into the 27 primitives
+without legacy STOP/DONE additions. Candidate metadata declares oracle_sim,
+privileged=true and task_specific_effect_contract_union. Contracts implement
+part of candidate-policy filtering, not only hard validity; this attribution is
+part of the reference definition. All defaults outside this opt-in path remain.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.

@@ -5,6 +5,11 @@ actions; code owns estimation, validity checks and motor control.
 The integrated baseline demonstrates an inspectable visual model-to-actuator loop,
 not useful drawer manipulation or a useful reference policy.
 
+The [privileged reference v1](docs/evidence/decision_interface/privileged_reference.md)
+now exercises full Jev candidate previews and task-specific effect-contract
+filtering. Its first episode approached the drawer but stopped with no admitted
+continuation; drawer closure and task success remain unestablished.
+
 ## Reading order
 
 1. [Current state](docs/current_state.md): operational truth and stop point.

@@ -4,6 +4,11 @@ The demo proves inspectable RGB-D → Laya → atomic executor → MuJoCo connec
 It does **not** prove useful drawer manipulation, task competence, decision
 sufficiency or a useful oracle reference.
 
+The separate [privileged reference v1](evidence/decision_interface/privileged_reference.md)
+is explicitly oracle-assisted and is not a visual demo successor. It approached
+the drawer without closing it, then stopped at an empty effect-contract menu.
+Its exact replay does not establish task competence.
+
 ## Supported path
 
 `engineering_demo` is the live entry point; `demo_report` is the offline

@@ -14,19 +14,32 @@ The reference is opt-in; the visual path and CDS remain unchanged.
 The [reference record](evidence/decision_interface/privileged_reference.md) specifies
 the task, acceptance gate, implementation and results. The target is three
 independent successful runs from benchmark init 0 / seed 1 plus control replay.
-Success has not yet been established. No hierarchy, planner, two-step lookahead,
-hard-invalid-only ablation, non-oracle replacement or E0 is authorized.
+The first episode on implementation f39e711 made 18 genuine multi-candidate Laya
+choices and reduced surface gap from 93.484 to 2.732 mm, but closure stayed 0 mm.
+At boundary 18 the effect-contract union was empty: contact-producing actions
+predicted opening beyond the -0.01 mm tolerance; non-regressing actions fell below
+the 2 mm approach threshold. No fallback executed. All 18 selected previews matched
+actual endpoints exactly; 144 controls replayed at 163 boundaries with zero error.
+Three-run successful repeatability has not been established; no success repeats
+were started. Contracts remain frozen pending review of this concrete failure.
+Final reference verification: 405 pytest tests, ruff and compileall passed;
+raw-derived input/feedback/artifact audits and all 19 recomputed contract unions
+passed. The only inference episode used committed implementation f39e711.
+No hierarchy, planner, two-step lookahead, hard-invalid-only ablation, non-oracle
+replacement or E0 is authorized.
 
 ## Integrated baseline
 
 Integration baseline: `33c7039e5f1f331fcac705498854c539a2568d42`, including research
 tip `84cd781c400e66568e35d8d6ccf45d3b8fb15ad1` and demo tip
 `59dae8ac074e601913251637176771d9d1004c09`.
-Use `git rev-parse HEAD` for the current cleanup revision.
+The clean cleanup baseline is 7c27705. Use `git rev-parse HEAD` for this checkout.
 
-The single local worktree is `laya-embodied-runtime` / `share_main`.
+The single local worktree is `laya-embodied-runtime`, currently on the focused
+`feat/privileged-reference` branch. The reviewed share_main baseline is retained.
 The [cleanup audit](archive/maintenance/cleanup_20260923.md) records old track
-retirement and verification. No new branch or architecture is selected.
+retirement and verification. The bounded privileged reference is the only new track;
+no deployable architecture or ablation has been selected.
 [Development tracks](development_tracks.md) defines collaboration responsibilities.
 
 README plus the five documents directly under docs are authoritative.
