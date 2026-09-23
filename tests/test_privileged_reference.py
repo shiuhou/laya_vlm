@@ -26,6 +26,13 @@ def prediction(**extra):
             "steps": 8, "sim_state_after": [0., 1.], **extra}
 
 
+def witness(**extra):
+    return {"second_input": "y-40mm", "net_progress": 1.547539,
+            "net_gap_reduction_mm": 2.652469, "terminal_contact": False,
+            "terminal_success": False, "peak_obstacle_force_N": 0.,
+            "witnessed_effects": ["advance_target", "approach_target"], **extra}
+
+
 def belief(candidates=()):
     return BeliefSnapshot("test", 1, 0., {}, {}, {}, candidates)
 
@@ -218,17 +225,99 @@ def test_one_step_presentation_remains_byte_identical_to_v1():
 
 
 def test_presentation_exposes_witness_as_evidence_for_first_action_only():
-    witness = {"second_input": "y-40mm", "net_progress": 1.547539,
-        "net_gap_reduction_mm": 2.652469, "terminal_contact": False,
-        "terminal_success": False, "peak_obstacle_force_N": 0.,
-        "witnessed_effects": ["advance_target", "approach_target"]}
     ps = {"z-3mm": prediction(closing_mm=-.108773,
-        geometry_approach_mm=2.732324, reposition_witness=witness)}
+        geometry_approach_mm=2.732324, reposition_witness=witness())}
     state, questions = ref.presentation(features(), ps, ["z-3mm"], -1., None)
     assert "Execute a only; replan." in state
     assert "Common: fp=0.0,fs=0,n=8,wp=0.0,ws=0." in state
     assert "z-3mm -0.109 2.73 0 > y-40mm 1.548 2.65 0 AP" in state
     assert questions["action"]["criteria"] == {"z-3mm": ""}
+
+
+def test_compact_witness_presentation_is_lossless_and_preserves_canonical_order():
+    names = ["x+3mm", "rotate_z-10deg", "hold"]
+    predictions = {
+        "x+3mm": prediction(closing_mm=-.108773, geometry_approach_mm=2.732324,
+            reposition_witness=witness()),
+        "rotate_z-10deg": prediction(closing_mm=1.2344, geometry_approach_mm=-4.567,
+            reposition_witness=witness(second_input="x-10mm", net_progress=7.8912,
+                net_gap_reduction_mm=-2.345, terminal_contact=True,
+                witnessed_effects=["advance_target", "establish_contact"])),
+        "hold": prediction(closing_mm=.01, geometry_approach_mm=-5.59,
+            reposition_witness=witness(second_input="z-10mm", net_progress=.514,
+                net_gap_reduction_mm=-3.08)),
+    }
+    last = {"action": "close", "closure_mm": .01, "gap_reduction_mm": -.25,
+            "after": features(moving_contact=True, obstacle_contact=True),
+            "official_success": False, "controls": 8}
+
+    state, questions = ref.presentation(
+        features(), predictions, names, 1., last, "reposition"
+    )
+
+    assert ref.presentation_format(predictions, names, "reposition") == ref.COMPACT_WITNESS_VERSION
+    assert list(questions["action"]["criteria"]) == names
+    assert "Rows follow numbered option order" in state
+    assert "1 -0.109 2.73 0 > y-40mm 1.548 2.65 0 AP" in state
+    assert "2 1.234 -4.57 0 > x-10mm 7.891 -2.35 1 AE" in state
+    assert "3 0.010 -5.59 0 > z-10mm 0.514 -3.08 0 AP" in state
+    assert "Common first_force 0.0 first_success 0 controls 8 witness_force 0.0 witness_success 0" in state
+    assert "effect_source oracle_sim; privileged true" in state
+    assert "Execute first action only; replan" in state
+
+
+def test_compact_witness_presentation_keeps_varying_invariants_per_row():
+    names = ["x+3mm", "hold"]
+    predictions = {
+        "x+3mm": prediction(peak_obstacle_force_N=1.2, steps=7,
+            after=features(success=True), reposition_witness=witness(
+                peak_obstacle_force_N=2.3, terminal_success=True)),
+        "hold": prediction(peak_obstacle_force_N=3.4, steps=8,
+            reposition_witness=witness(peak_obstacle_force_N=4.5)),
+    }
+
+    state, _ = ref.presentation(features(), predictions, names, -1., None, "reposition")
+
+    assert ("effects first_force first_success controls witness_force witness_success."
+            in state)
+    assert "Common ." in state
+    assert "1 0.000 2.00 0 > y-40mm 1.548 2.65 0 AP 1.2 1 7 2.3 1" in state
+    assert "2 0.000 2.00 0 > y-40mm 1.548 2.65 0 AP 3.4 0 8 4.5 0" in state
+
+
+def test_reference_provider_records_compact_witness_format(monkeypatch):
+    names = ["x+3mm", "hold"]
+    predictions = {name: prediction(reposition_witness=witness()) for name in names}
+    routing = ref.objective_routing({"reposition": predictions}, names)
+    builder = SimpleNamespace(
+        backend=SimpleNamespace(gripper_command=lambda: -1.),
+        last_preview={"before": features(), "predictions": predictions,
+                      "lookahead_triggered": True, "objective_routing": routing},
+    )
+    logged = []
+    agent = SimpleNamespace(system_one=lambda *_: {
+        "answers": {"action": {"choice": "x+3mm", "probabilities": {
+            "x+3mm": .6, "hold": .4}}}})
+    monkeypatch.setattr(ref, "encoding_audit", lambda *a: {
+        "available": True, "truncated": False,
+        "questions": {"action": {"effective_input_ids": [], "option_markers": []}},
+    })
+    provider = ref.ReferenceProvider(agent, builder,
+                                     lambda kind, data: logged.append((kind, data)))
+    provider.provider = SimpleNamespace(decide=lambda view: ref.Decision(
+        token="x+3mm", probabilities={"x+3mm": .6, "hold": .4}, confidence=.6,
+        source="laya", input_revision=view.revision,
+        input_sim_time=view.asof_sim_time, completed_wall_time=0.,
+        valid_until_sim=view.asof_sim_time + .5,
+    ))
+
+    decision = provider.decide(belief(tuple(Candidate(name, "") for name in names)))
+
+    model_input = next(data for kind, data in logged if kind == "reference_model_input")
+    assert decision.token == "x+3mm"
+    assert model_input["presentation_format"] == ref.COMPACT_WITNESS_VERSION
+    assert model_input["option_order"] == names
+    assert list(model_input["questions"]["action"]["criteria"]) == names
 
 
 def test_view_preserves_live_authorization_identity():

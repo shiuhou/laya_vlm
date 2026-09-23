@@ -50,6 +50,7 @@ OBJECTIVE_CRITERIA = {
     "reposition": "Compare the verified two-step net effects rather than demanding immediate progress from the first input. Execute only the first input; replan.",
 }
 ROUTING_VERSION = "fixed-contract-objective-v1"
+COMPACT_WITNESS_VERSION = "compact-witness-effects-v1"
 
 
 def objective_routing(pools, order):
@@ -69,6 +70,79 @@ def objective_routing(pools, order):
             "motor_pool": [name for name in order if name in members],
             "objective_excluded": {name: "outside_selected_objective" for name in order
                                    if name in union and name not in members}}
+
+
+def presentation_format(predictions, names, objective):
+    has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
+    return COMPACT_WITNESS_VERSION if objective is not None and has_witnesses else "verbose-v1"
+
+
+def compact_witness_state(before, predictions, names, grip, last, objective):
+    """Lossless model view of prior witness fields with shared invariants factored once."""
+    effect_codes = {"advance_target": "A", "establish_contact": "E",
+                    "approach_target": "P", "release_contact": "R",
+                    "reposition": "W"}
+    if not names or any(not predictions[name].get("reposition_witness") for name in names):
+        raise ValueError("compact witness serialization requires a witness for every candidate")
+    common_values = {
+        "fp": {f"{predictions[name]['peak_obstacle_force_N']:.1f}" for name in names},
+        "fs": {str(int(predictions[name]["after"]["success"])) for name in names},
+        "n": {str(predictions[name]["steps"]) for name in names},
+        "wp": {f"{predictions[name]['reposition_witness']['peak_obstacle_force_N']:.1f}"
+               for name in names},
+        "ws": {str(int(predictions[name]["reposition_witness"]["terminal_success"]))
+               for name in names},
+    }
+    field_labels = {"fp": "first_force", "fs": "first_success", "n": "controls",
+                    "wp": "witness_force", "ws": "witness_success"}
+    varying = [key for key, values in common_values.items() if len(values) != 1]
+    common = " ".join(f"{field_labels[key]} {next(iter(values))}"
+                      for key, values in common_values.items() if len(values) == 1)
+    lines = [
+        "Close top drawer. effect_source oracle_sim; privileged true. Preview 8 controls/0.4 s; "
+        "world mm/degrees; nominal motion; retained grip except open/close. "
+        "Execute first action only; replan.",
+        f"Objective {objective}.",
+        (f"State opening {before['remaining_open_mm']:.3f} gap "
+         f"{before['distance_to_moving_geometry_mm']:.2f} target "
+         f"{int(before['moving_contact'])} obstacle {int(before['obstacle_contact'])} "
+         f"grip {'open' if grip < 0 else 'closed'} finger {before['finger_gap_mm']:.2f}."),
+    ]
+    if last is None:
+        lines.append("Last none.")
+    else:
+        after = last["after"]
+        lines.append(
+            f"Last {last['action']} closure {last['closure_mm']:.3f} gap "
+            f"{last['gap_reduction_mm']:.2f} target {int(after['moving_contact'])} "
+            f"obstacle {int(after['obstacle_contact'])} success "
+            f"{int(last['official_success'])} controls {last['controls']}."
+        )
+    schema = ("Rows follow numbered option order: closure gap target > witness "
+              "net_closure net_gap final_target effects")
+    if varying:
+        schema += " " + " ".join(field_labels[key] for key in varying)
+    lines.extend([
+        schema + ".",
+        "Effects A advance E establish P approach R release W reposition. "
+        f"Common {common}.",
+    ])
+    for index, name in enumerate(names, 1):
+        p = predictions[name]
+        witness = p["reposition_witness"]
+        codes = "".join(effect_codes[value] for value in witness["witnessed_effects"])
+        values = {"fp": f"{p['peak_obstacle_force_N']:.1f}",
+                  "fs": str(int(p["after"]["success"])), "n": str(p["steps"]),
+                  "wp": f"{witness['peak_obstacle_force_N']:.1f}",
+                  "ws": str(int(witness["terminal_success"]))}
+        suffix = "".join(f" {values[key]}" for key in varying)
+        lines.append(
+            f"{index} {p['closing_mm']:.3f} {p['geometry_approach_mm']:.2f} "
+            f"{int(p['after']['moving_contact'])} > {witness['second_input']} "
+            f"{witness['net_progress']:.3f} {witness['net_gap_reduction_mm']:.2f} "
+            f"{int(witness['terminal_contact'])} {codes}{suffix}"
+        )
+    return "\n".join(lines) + "\n"
 
 
 
@@ -252,6 +326,13 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
 
 
 def presentation(before, predictions, names, grip, last, objective=None):
+    format_version = presentation_format(predictions, names, objective)
+    if format_version == COMPACT_WITNESS_VERSION:
+        state = compact_witness_state(before, predictions, names, grip, last, objective)
+        instruction = ("Choose one atomic action that best advances the stated local objective. "
+                       + OBJECTIVE_CRITERIA[objective])
+        return state, {"action": {"type": "choice", "instructions": instruction,
+                                   "criteria": {name: "" for name in names}}}
     state = (
         "Task: close top drawer. effect_source=oracle_sim; privileged=true. "
         "Preview up to 8 controls/0.4s. XYZ world mm; rotations world degrees; "
@@ -384,11 +465,14 @@ class ReferenceProvider:
         state, questions = presentation(preview["before"], preview["predictions"], names,
                                         backend.gripper_command(), self.last,
                                         routing["objective"] if routing else None)
+        format_version = presentation_format(preview["predictions"], names,
+                                             routing["objective"] if routing else None)
         audit = encoding_audit(self.agent, state, questions)
         self.sink("reference_model_input", {**PRIVILEGE, **objective_fields,
             "snapshot_id": snapshot.snapshot_id(), "belief_id": snapshot.belief_id(),
             "candidate_set_id": snapshot.candidate_set_id(),
             "option_order": names, "state": state, "questions": questions, "audit": audit,
+            "presentation_format": format_version,
             "candidate_count": len(names), "pool_source": pool_source,
             "forced_singleton": False, "model_called": True,
             "previous_outcome_record_id": self.last_outcome_id})

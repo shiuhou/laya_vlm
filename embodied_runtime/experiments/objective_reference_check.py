@@ -15,7 +15,7 @@ from ..runtime_core import BeliefSnapshot
 
 
 def run(args):
-    baseline = Path(args.baseline)
+    baseline = Path(args.boundary_source if args.mode == "compact-boundary" else args.baseline)
     config = json.loads((baseline / "resolved_config.yaml").read_text())
     manifest = json.loads((baseline / "manifest.json").read_text())
     rows, errors = load_records(baseline / "episodes.jsonl")
@@ -67,7 +67,7 @@ def run(args):
             if ref.context_id(backend) != context:
                 raise RuntimeError("source snapshot not restored")
             rec.record("mechanical_passed", {"actions": 27, "restored": True, "routing": routing})
-        else:
+        elif args.mode == "paired":
             import torch
             if model_identity(config["laya_path"]) != manifest["models"]["decision"]:
                 raise RuntimeError("model bytes changed")
@@ -113,6 +113,84 @@ def run(args):
                     results.append(result)
                     print(json.dumps(result), flush=True)
             (Path(args.output) / "paired-results.json").write_text(json.dumps(results, indent=2)+"\n")
+        else:
+            import torch
+            if model_identity(config["laya_path"]) != manifest["models"]["decision"]:
+                raise RuntimeError("model bytes changed")
+            random.seed(config["seed"])
+            np.random.seed(config["seed"])
+            torch.manual_seed(config["seed"])
+            agent = ref.load_laya_provider(
+                config["laya_path"], subfolder=None, device=config["device"]
+            ).agent
+            expected_model = manifest["model_execution"]
+            if (agent.cfg != expected_model["config"] or str(agent.dtype) != expected_model["dtype"]
+                    or str(agent.device) != expected_model["device"]):
+                raise RuntimeError("model execution configuration changed")
+            if evidence["actual_success"] or len(evidence["trace"]) != 87:
+                raise RuntimeError("source is not the frozen boundary-87 failure")
+            if len(evidence["unexecuted_previews"]) != 1:
+                raise RuntimeError("expected exactly one unexecuted preview")
+            preview = evidence["unexecuted_previews"][0]
+            routing = preview["objective_routing"]
+            names = routing["motor_pool"]
+            if (routing != ref.objective_routing(preview["pools"], routing["primitive_order"])
+                    or routing["objective"] != "reposition" or len(names) != 25
+                    or not preview["lookahead_triggered"] or preview["one_step_pools"]):
+                raise RuntimeError("unexpected frozen objective/lookahead boundary")
+            if set(names) != set(preview["reposition_witnesses"]):
+                raise RuntimeError("motor pool and complete raw witnesses differ")
+            for name in names:
+                witness = preview["predictions"][name].get("reposition_witness")
+                if witness != preview["reposition_witnesses"].get(name):
+                    raise RuntimeError(f"missing or altered raw witness: {name}")
+            grip = -1.
+            for item in evidence["trace"]:
+                grip = {"open": -1., "close": 1.}.get(item["outcome"]["action"], grip)
+            if grip != 1.:
+                raise RuntimeError("frozen boundary gripper command was not closed")
+            last = evidence["trace"][-1]["outcome"]
+            state, questions = ref.presentation(
+                preview["before"], preview["predictions"], names, grip, last, "reposition"
+            )
+            if list(questions["action"]["criteria"]) != names:
+                raise RuntimeError("compact presentation changed canonical candidate order")
+            audit = ref.encoding_audit(agent, state, questions)
+            if not audit.get("available") or audit["truncated"]:
+                raise RuntimeError("compact boundary input remains truncated")
+            row = audit["questions"]["action"]
+            if any(row[key] for key in
+                   ("state_truncated", "heading_truncated", "options_truncated")):
+                raise RuntimeError("compact boundary component remains truncated")
+            result = {
+                "source_boundary": 87,
+                "source_belief_id": preview["belief_id"],
+                "presentation_format": ref.presentation_format(
+                    preview["predictions"], names, "reposition"
+                ),
+                "objective": "reposition",
+                "candidate_count": len(names),
+                "option_order": names,
+                "grip_command": grip,
+                "state": state,
+                "questions": questions,
+                "audit": audit,
+                "raw_source_hashes": identity["baseline_artifacts"],
+                "no_model_inference": True,
+            }
+            rec.record("compact_boundary_fixture", {
+                "before": preview["before"], "predictions": preview["predictions"],
+                "reposition_witnesses": preview["reposition_witnesses"],
+                "objective_routing": routing, "last_actual": last,
+            })
+            rec.record("compact_boundary_audit", result)
+            (Path(args.output) / "compact-boundary-audit.json").write_text(
+                json.dumps(result, indent=2) + "\n"
+            )
+            print(json.dumps({"candidate_count": len(names),
+                "state_tokens": row["state_tokens"], "state_budget": row["state_budget"],
+                "effective_token_count": row["effective_token_count"],
+                "truncated": audit["truncated"]}), flush=True)
         rec.record("termination", {"reason": "checks_passed"})
     except BaseException as exc:
         rec.record("failure", {"exception": repr(exc)})
@@ -126,8 +204,10 @@ def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--mode", choices=("mechanical", "paired"), required=True)
+    parser.add_argument("--mode", choices=("mechanical", "paired", "compact-boundary"), required=True)
     parser.add_argument("--baseline", default="runs/privileged-reference/forced-singleton-episode-01")
+    parser.add_argument("--boundary-source",
+        default="runs/privileged-reference/local-objective-episode-01")
     run(parser.parse_args())
 
 
