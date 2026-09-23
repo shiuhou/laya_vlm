@@ -198,6 +198,10 @@ def evidence(directory):
         replay = json.loads((directory / "replay-check.json").read_text())
         replay = {"record": replay, "matches_raw_source": replay.get("raw_source_sha256") == source_hash}
     terminations = [r["data"] for r in rows if r["kind"] == "termination"]
+    from .demo_feedback import feedback_audit
+    feedback = feedback_audit(rows, attempts, expect_final=config.get("observe_final", False))
+    terminal_capture_ids = {t["post_capture"]["capture_seq"] for t in feedback["transitions"]
+                            if t["terminal_observation"] and t["post_capture"]}
     source_root = Path(__file__).resolve().parents[2]
     return {"source_sha256": source_hash, "steps": completed, "attempts": attempts,
         "report_generator": {"version": "demo-inspector-v1", "source_sha256": {
@@ -207,10 +211,13 @@ def evidence(directory):
         "termination": terminations, "run_incomplete": not terminations,
         "config": config, "manifest": manifest, "replay": replay,
         "invocation": [r["data"] for r in rows if r["kind"] == "demo_invocation"],
+        "terminal_captures": [captures[seq] for seq in sorted(terminal_capture_ids)],
         "unassigned_captures": [c for seq, c in captures.items()
-                                if seq not in {a["capture"]["capture_seq"] for a in attempts if a["capture"]}],
+                                if seq not in terminal_capture_ids
+                                and seq not in {a["capture"]["capture_seq"] for a in attempts if a["capture"]}],
         "verified_laya_executions": sum(a["verified_laya_execution"] for a in attempts),
-        "purpose": "engineering connectivity; not task competence or research validation"}
+        "feedback": feedback,
+        "purpose": "auditable embodied feedback loop; not task competence or research validation"}
 
 
 def render_report(directory):
@@ -221,7 +228,8 @@ def render_report(directory):
     inspector = write_inspector(directory, data)
     if not data["steps"]:
         return inspector
-    if data["run_incomplete"] or any(a["issues"] for a in data["attempts"]):
+    if (data["run_incomplete"] or any(a["issues"] for a in data["attempts"])
+        or any(t["issues"] for t in data["feedback"]["transitions"])):
         # The inspector includes partial evidence; media requires a complete audit.
         return inspector
     small = ImageFont.truetype("DejaVuSans.ttf", 14)
@@ -232,7 +240,7 @@ def render_report(directory):
         canvas = Image.new("RGB", (1088, 704), "#101b29")
         draw = ImageDraw.Draw(canvas)
         draw.text((16, 10), "Laya -> atomic executor -> LIBERO / MuJoCo", font=large, fill="white")
-        draw.text((16, 42), "ENGINEERING CONNECTIVITY DEMO | visual input | not a task-success claim", font=small, fill="#9bd5ed")
+        draw.text((16, 42), "EMBODIED FEEDBACK DEMO | visual input | task competence not established", font=small, fill="#9bd5ed")
         canvas.paste(Image.fromarray(rgb).resize((576, 576)), (16, 80))
         if label.startswith("DECISION") and row["observed_box_xyxy"]:
             x1, y1, x2, y2 = row["observed_box_xyxy"]
@@ -282,6 +290,20 @@ def render_report(directory):
             sim_time = row["sim_start"]+(i+1)*(row["sim_end"]-row["sim_start"])/len(rgbs)
             frames.append(annotated(rgb, row, "PHYSICAL EXECUTION", sim_time))
             durations.append(100)
+        transition = next(t for t in data["feedback"]["transitions"] if t["from_step"] == row["step"])
+        if transition["post_capture"]:
+            with np.load(directory / transition["post_capture"]["artifact"]) as rgbd:
+                caption = (f"FEEDBACK -> decision {transition['to_step']}" if transition['to_step'] is not None
+                           else "FINAL SENSOR OBSERVATION (no decision)")
+                canvas = annotated(rgbd["rgb"], row, caption, transition["post_capture"]["capture_sim_time"])
+            draw = ImageDraw.Draw(canvas)
+            note = (f"Next choice: {transition['proposed_after']}; previous choice gated out: {transition['previous_choice_removed_by_gate']}"
+                    if transition['to_step'] is not None else "Action budget ended. Final RGB-D and proprioception recorded.")
+            draw.rectangle((602, 625, 1088, 669), fill="#101b29")
+            for j, line in enumerate(textwrap.wrap(note, 55)):
+                draw.text((612, 627+j*18), line, font=small, fill="#9bd5ed")
+            frames.append(canvas)
+            durations.append(1800)
         tiles.append(frames[-1])
         table.append(f"| {row['step']} | {row['source']} | {row['proposed']} / {row['executed']} | {row['fallback_reason']} | "
             f"{row['probabilities'].get(row['proposed'],0):.4f} | {len(row['allowed'])} | "
@@ -297,7 +319,12 @@ def render_report(directory):
     if shutil.which("ffmpeg"):
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(directory/"demo.gif"),
             "-an", "-movflags", "+faststart", "-pix_fmt", "yuv420p", str(directory/"demo.mp4")], check=True)
-    text = ("# Visual Laya connectivity demonstration\n\n"
+    feedback_table = ["| Executed step | Next decision | Feedback verified | Next choice | Previous choice gated out | Drawer closure mm (evaluator only) |",
+                      "|---|---|---|---|---|---:|"]
+    for transition in data["feedback"]["transitions"]:
+        feedback_table.append(f"| {transition['from_step']} | {transition['to_step']} | {transition['feedback_delivery_verified']} | "
+            f"{transition['proposed_after']} | {transition['previous_choice_removed_by_gate']} | {transition['drawer_closure_mm_evaluator_only']} |")
+    text = ("# Visual Laya embodied demonstration\n\n"
         "This is one short live trajectory, not a successful drawer policy or an E0 result.\n\n"
         "[Open the full evidence inspector](demo.html) — exact inputs, candidate vetoes, validation, physical outcomes and failures.\n\n"
         "[MP4 video](demo.mp4) | [Animated GIF](demo.gif)\n\n"
@@ -309,6 +336,9 @@ def render_report(directory):
         "contact or progress enter model input. Full natural soft metadata remains audit-only. "
         "Actual raw inputs, probabilities, consumed tokens, commands and simulator states are retained. "
         "A selected command is not evidence that Laya understood the task; no rationale is inferred.\n\n"
+        "Execution -> fresh RGB-D/proprioception -> updated belief/candidates -> next audited Laya input. "
+        "Changed choices do not isolate model sensitivity when the prior choice was gated out. "
+        "The model still receives empty history and no candidate effects.\n\n" + "\n".join(feedback_table) + "\n\n"
         f"Recorded failures: {len(data['failures'])}. Termination: `{data['termination']}`.\n\n"
         "Unknown perceptual contact/progress stay unknown. Tracking inactive; covariance heuristic. "
         "Reset contract flags are not collision/safety guarantees. A singleton is a forced gate result, "

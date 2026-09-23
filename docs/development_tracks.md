@@ -7,21 +7,35 @@ for the scientific direction. Neither track's success implies the other's.
 
 ## Track A — Embodied demonstration
 
-Question: **Can the complete embodied pipeline actually run?**
+Question: **Can observed world changes drive sustained, useful atomic decisions
+and measurable task progress through an embodied feedback loop?**
 
 ```text
 World / Sensors -> Structured Interface -> Typed Decision Model
                 -> Validation -> Atomic Executor -> Physical Execution
+                -> Observed Outcome -> Updated State -> Next Decision
 ```
 
-Scope: reproducible live wiring, observable model choices, execution telemetry,
-video/trajectory communication, and clear failure reporting. Current entry points
+Laya makes robotic decisions; deterministic code owns geometry, action semantics,
+validity checks and low-level control. A real non-oracle RGB-D/LocateAnything/fusion/
+Laya/executor path and a two-step asynchronous `vision_laya` smoke were verified
+before this branch (see [historical handoff](handoff.md) and [Stage 0 audit](stage0_audit.md)).
+This track makes that capability reproducible, observable, replayable and auditable;
+it is not creating an embodied loop from zero. Connectivity is a milestone, not
+the full engineering objective. Choice alternation is not useful adaptation merely
+because candidate gates removed the previous choice.
+
+Scope: sustained task-directed execution, feedback provenance, observable model
+choices, execution telemetry, video/trajectory communication and honest failure
+diagnosis. Current entry points
 are [engineering_demo.py](../embodied_runtime/experiments/engineering_demo.py) and
 [demo_report.py](../embodied_runtime/experiments/demo_report.py). The older
 [run_libero.py](../embodied_runtime/experiments/run_libero.py) is a separate legacy
 smoke path, not the same model presentation/scheduling configuration.
 The [demo runbook](demo_runbook.md) documents the current live console, offline
 HTML evidence inspector, reproduction commands and verified engineering artifact.
+The [feedback successor](closed_loop_demo.md) audits outcome-to-next-input links
+and exposes where task progress fails without substituting a scripted policy.
 
 The [verified demo](engineering_demo.md) uses visual belief, fresh synchronous
 captures, natural candidate gates and no effects. Four actual Laya choices operate

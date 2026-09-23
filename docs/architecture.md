@@ -10,6 +10,7 @@ ObservationEvent -> BeliefSnapshot -> CanonicalDecisionState
                                       + CandidateEffectBundle
                                       + one recent actual outcome
                                     -> DecisionProvider -> validation -> AtomicExecutor
+                                    -> physical execution -> fresh ObservationEvent -> ...
 ```
 
 The primary canonical research path remains an **offline diagnostic decision probe**:
@@ -17,14 +18,21 @@ its outputs cannot drive the paired-state collector. An opt-in
 [engineering demo](engineering_demo.md) now bridges the same compact fields and
 nominal semantics to the existing live validity/validation/execution path. It
 preserves natural feasible tokens and supplies no effects. This demonstrates
-connectivity only, not task competence or closed-loop research validation.
+auditable embodied execution, not task competence or closed-loop research validation.
+The non-oracle visual loop and two-step asynchronous smoke predate the demo branch.
+The engineering objective is sustained task-directed feedback and measurable task
+progress. Laya chooses atomic tokens; deterministic controllers own motor commands.
+The [feedback audit](closed_loop_demo.md) links execution endpoints to new RGB-D,
+admitted observations, used fusion evidence and the next audited input. It distinguishes
+candidate-gate changes from evidence of model sensitivity; it does not change CDS,
+model questions, history, effects, candidate semantics or execution authorization.
 The Stage 2 runner and validity/execution contracts remain unchanged.
 
 ## Active paths and their boundaries
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
-| `engineering_demo` / `demo_report` / `demo_inspector` | Track A live demo, console, offline evidence inspector and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; raw-derived audits expose fallbacks and partial outcomes |
+| `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
 | `interface_search` / `reference_gate` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
 | `run_libero` | Legacy Stage 2 live smoke path | BeliefSnapshot presentation, optional asynchronous visual worker or explicitly oracle preview branch; not the demo's compact audited path |

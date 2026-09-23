@@ -44,7 +44,7 @@ def write_inspector(directory, data):
     directory = Path(directory)
     terminal = data["termination"][-1] if data["termination"] else {}
     success = terminal.get("success")
-    issues = sum(len(a["issues"]) for a in data["attempts"])
+    issues = sum(len(a["issues"]) for a in data["attempts"]) + sum(len(t["issues"]) for t in data['feedback']['transitions'])
     parts = ['''<!doctype html><html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Laya embodied demonstration — evidence inspector</title>
@@ -61,8 +61,8 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:480px;overflow:auto;f
 summary{cursor:pointer;padding:10px 0;color:#94d9ff}code{overflow-wrap:anywhere}.bar{background:#83d6c2;height:5px;display:block}
 .bad{color:#ffc58a}article{scroll-margin-top:15px}.selected{background:#24483f}
 </style><header><p class="muted">Laya Embodied Runtime · engineering demonstration</p>
-<h1>Follow the decision to the robot</h1>
-<p class="flow">RGB-D → visual belief → compact state → Laya → validation → atomic executor → MuJoCo</p>
+<h1>Follow observations through decisions and back</h1>
+<p class="flow">RGB-D → visual belief → compact state → Laya → executor → MuJoCo → next observation</p>
 <p class="banner">This demonstrates connectivity when the recorded chain verifies. A selected command is not evidence of task understanding or task competence. No E0 or research validation follows.</p>''']
     parts.append(f'<p><b>{data["verified_laya_executions"]} verified Laya executions</b> · '
                  f'{len(data["attempts"])} decision attempts · {len(data["failures"])} failure events · {issues} audit issues</p>')
@@ -74,6 +74,15 @@ summary{cursor:pointer;padding:10px 0;color:#94d9ff}code{overflow-wrap:anywhere}
                  'Hashes establish consistency of this recording, not independent attestation of the model or machine.</p></header>')
     parts.append('<nav>' + ''.join(f'<a href="#step-{a["step"]}">Step {a["step"]}</a>' for a in data["attempts"])
                  + '<a href="#failures">Failures</a><a href="#provenance">Reproduce / audit</a></nav>')
+    feedback = data['feedback']
+    parts.append('<section class="panel"><h2>Feedback and task progress</h2>')
+    parts.append(f'<p>Verified deliveries into the next Laya execution: <b>{feedback["verified_feedback_deliveries"]}</b> · '
+                 f'Final observations verified: <b>{feedback["terminal_observations"]}</b> · '
+                 f'Translation actions: <b>{feedback["translation_actions"]}</b></p>')
+    parts.append(f'<p>Net drawer closure (evaluator only): <b>{_text(feedback["net_drawer_closure_mm_evaluator_only"])} mm</b>.</p>')
+    parts.append('<p class="banner">The embodied loop predates this inspector. Feedback reaching a model and changes in its output '
+                 'do not by themselves prove task-directed sensitivity. Candidate gates can remove the previous choice. '
+                 'Laya selects atomic decisions; deterministic controllers own geometry and motor control.</p></section>')
     for attempt in data["attempts"]:
         step = attempt["step"]
         decision, intent, execution = attempt["decision"] or {}, attempt["intent"] or {}, attempt["execution"] or {}
@@ -132,6 +141,25 @@ summary{cursor:pointer;padding:10px 0;color:#94d9ff}code{overflow-wrap:anywhere}
                      'A clear flag is not a general safety certificate. STOP is an active controller command.</p>')
         parts.append(_details('Raw evaluator records and trajectory identity',
                               {"evaluation": attempt['evaluation'], "trajectory": attempt['trajectory']}))
+        transition = next((t for t in feedback['transitions'] if t['from_step'] == step), None)
+        if transition:
+            parts.append('<h3>6. Outcome → next observation → next decision</h3>')
+            parts.append(_picture(directory, transition['post_capture'], 'rgb',
+                                  'Fresh post-action sensor capture; separate from the execution frame'))
+            parts.append(f'<p>Next proposed choice: <b>{_text(transition["proposed_after"])}</b> · '
+                         f'Feedback delivery verified: <b>{transition["feedback_delivery_verified"]}</b> · '
+                         f'Final observation only: <b>{transition["terminal_observation"]}</b></p>')
+            parts.append(f'<p class="banner">{escape(transition["interpretation"])}</p>')
+            if transition['issues']:
+                parts.append('<p class="bad">Feedback audit issues: ' + '; '.join(map(escape, transition['issues'])) + '</p>')
+            parts.append('<table><tr><th>Model input field</th><th>Before</th><th>Next decision</th></tr>')
+            for key, delta in transition['changed_model_state'].items():
+                if key.startswith(('robot.', 'relations.', 'target.')):
+                    parts.append(f'<tr><td>{escape(key)}</td><td>{_text(delta["before"])}</td><td>{_text(delta["after"])}</td></tr>')
+            parts.append('</table>')
+            parts.append(_details('Changed candidates, raw admitted observations and complete feedback audit', transition))
+            if transition['to_step'] is not None:
+                parts.append(f'<p><a href="#step-{transition["to_step"]}">Inspect the next exact model input and choice</a></p>')
         parts.append(_details('Raw record sequence and content identities', attempt.get('record_links')) + '</article>')
     parts.append('<section class="panel" id="failures"><h2>Failures and unfinished work</h2>')
     parts.append(_details('All recorded failure events', data['failures'], opened=True))

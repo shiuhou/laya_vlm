@@ -4,6 +4,11 @@
 `feat/mujoco_demo`. This is engineering instrumentation and communication work.
 No shared runtime, CDS, provider, gate, executor or research interface was changed.
 
+This records the inspector/connectivity milestone. The non-oracle embodied loop
+and asynchronous smoke already existed before this branch. See the
+[feedback successor](closed_loop_demo.md) for the corrected task-directed goal,
+cross-decision audits, final sensing and the next bounded live episode.
+
 ## Start here
 
 Open the new local [evidence inspector](../runs/engineering-demo/top-drawer-init0-seed1-inspector-v01/demo.html).

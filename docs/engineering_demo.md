@@ -5,6 +5,8 @@ One live trajectory; no policy search, task-success tuning, E0 or E1.
 
 For current commands, the offline HTML inspector and a fresh verified successor run,
 see [demo_runbook.md](demo_runbook.md). The historical result below is preserved.
+The [later feedback episode](closed_loop_demo.md) distinguishes existing embodied
+and asynchronous capability from the still-unmet goal of useful task-directed progress.
 
 ## Watch and inspect
 

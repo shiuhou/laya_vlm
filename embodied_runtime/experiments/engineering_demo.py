@@ -1,4 +1,4 @@
-"""Opt-in visual connectivity demo, not an E0 experiment or a success policy.
+"""Auditable visual embodied demo, not an E0 experiment or a success policy.
 
 Reuses CDS v0.1, natural visual gates, LayaProvider, Runtime validation and the
 native executor. Simulation waits for perception. No oracle previews or effects.
@@ -52,7 +52,7 @@ class DemoTelemetry:
     def __call__(self, kind, data):
         record_id = self.recorder.record(kind, data)
         display = None
-        if kind in {"demo_boundary", "failure", "termination"}:
+        if kind in {"demo_boundary", "demo_sensing_complete", "failure", "termination"}:
             display = data
         elif kind == "demo_model_input":
             display = {"allowed": list(data["questions"]["action"]["criteria"]),
@@ -197,6 +197,7 @@ def run(args):
     old_handlers = {}
     success = False
     step = None
+    last_action_step = None
 
     def interrupted(signum, _frame):
         raise TimeoutError(f"demo interrupted by signal {signum}")
@@ -238,11 +239,13 @@ def run(args):
         locator = LocateAnythingWorker(args.locateanything_path, device=args.device)
         source = LiberoRgbdSource(world)
         vision = None
-        for step in range(args.steps):
+        for step in range(args.steps + int(args.observe_final)):
+            terminal_observation = step == args.steps or success
             frame = source.capture()
             recorder.capture(frame)
             emit("demo_boundary", {"step": step, "capture_seq": frame["capture_seq"],
-                                  "capture_sim_time": frame["capture_sim_time"], "phase": "sensing"})
+                                  "capture_sim_time": frame["capture_sim_time"],
+                                  "phase": "terminal_observation" if terminal_observation else "sensing"})
             if vision is None:
                 vision = LocateAnythingProvider(lambda _rgb, _query: {}, frame["intrinsics"])
             before = world.env.sim.get_state().flatten().copy()
@@ -255,11 +258,18 @@ def run(args):
             recorder.record("vision_completed", {"capture_seq": frame["capture_seq"], "result": result, "event": event})
             if not np.array_equal(before, world.env.sim.get_state().flatten()):
                 raise RuntimeError("physical state moved during paused perception")
+            visual_admitted = False
             if event is None:
                 emit("failure", {"category": "vision_missing", "step": step})
             else:
-                runtime.ingest(event, now_sim=float(world.data.time))
-            runtime.observe("proprio", float(world.data.time), backend.proprioception())
+                visual_admitted = runtime.ingest(event, now_sim=float(world.data.time))
+            proprio_admitted = runtime.observe("proprio", float(world.data.time), backend.proprioception())
+            emit("demo_sensing_complete", {"step": step, "capture_seq": frame["capture_seq"],
+                "capture_sim_time": frame["capture_sim_time"], "proprio_source_seq": runtime.source_seq,
+                "visual_event_admitted": visual_admitted, "proprio_event_admitted": proprio_admitted,
+                "after_action_step": last_action_step, "terminal_observation": terminal_observation})
+            if terminal_observation:
+                break  # Observe the final outcome without inventing another model decision.
             recorder.record("evaluation", {"step": step, "phase": "before", "oracle_evaluator": True,
                                             "features": world.features()})
             row = runtime.step(float(world.data.time), goal={"task": "top_drawer", "instruction": world.task,
@@ -268,9 +278,11 @@ def run(args):
             emit("evaluation", {"step": step, "phase": "after", "oracle_evaluator": True,
                                             "features": world.features()})
             success = row["result"]["success"]
-            if success:
+            last_action_step = step
+            if success and not args.observe_final:
                 break
-        emit("termination", {"reason": "success" if success else "action_budget", "success": success, "step": step})
+        emit("termination", {"reason": "success" if success else "action_budget", "success": success,
+                             "step": last_action_step})
     except BaseException as exc:
         emit("failure", {"category": "demo_error", "step": step, "exception": repr(exc)})
         emit("termination", {"reason": "demo_error", "success": success, "step": step})
@@ -338,6 +350,8 @@ def parser():
     p.add_argument("--libero-root", default="/home/junhongli/projects/LIBERO")
     p.add_argument("--config-dir", default="/home/junhongli/runs/libero-config")
     p.add_argument("--timeout-s", type=float, default=300.)
+    p.add_argument("--observe-final", action="store_true",
+                   help="capture and fuse the final physical outcome after the action budget or success")
     p.add_argument("--replay-check", action="store_true")
     p.add_argument("--render-report", action="store_true")
     return p

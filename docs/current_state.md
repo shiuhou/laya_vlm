@@ -4,17 +4,17 @@ Reviewed 2026-09-23. This index supersedes historical plans, not raw evidence.
 Shared reviewed implementation/evidence baseline: **`f8064688f84b0c7dffbcf6b8dc89fb64d1c59779`**
 (live visual demo), including research diagnostics at `3be0fc5`. The documentation
 alignment on top changed no implementation or experimental conclusion. The demo
-branch's instrumentation successor is described below and in the runbook. Use
+branch's instrumentation and feedback successors are described below. Use
 `git rev-parse HEAD` for the exact checkout/documentation commit.
 Experiment status: **bounded diagnostics only; no formal E0/E1 or freeze tag**.
 
 ## Branches and collaboration
 
 Track checkout verified 2026-09-23: **`laya-mujoco-demo` on `feat/mujoco_demo`**,
-starting clean at `eddbcde04649419d8d5d44e62e433882578328eb`. Separate worktrees
+latest phase starting clean at `84abdb844151aeb3fa89f346390921e2b4b2c721`. Separate worktrees
 exist for `laya-embodied-runtime` (`share_main`) and `laya-decision-interface`
 (`research/decision-interface`). The demo tooling changes described in the
-[new runbook](demo_runbook.md) are scoped to the demo branch; no integration,
+[feedback report](closed_loop_demo.md) are scoped to the demo branch; no integration,
 branch rename, remote update or research experiment was performed.
 
 Read [development_tracks.md](development_tracks.md) for track responsibilities,
@@ -24,10 +24,12 @@ single research-direction document; historical handoffs are revision-specific.
 ## Evidence entry points
 
 Latest research report: [reference_gate_handoff.md](reference_gate_handoff.md).
-Latest engineering-only artifact: [live demo inspector and runbook](demo_runbook.md),
-on baseline `eddbcde` plus recorded working-source hashes. A fresh four-action run
-again drove GRASP/RELEASE commands; all 32 controls replay exactly. The new offline
-inspector exposes exact inputs, candidates, validation, outcomes and partial failures.
+Latest engineering-only artifact: [embodied feedback audit](closed_loop_demo.md),
+on baseline `84abdb8` plus recorded working-source hashes. Eight Laya choices,
+nine sensor captures and seven verified feedback deliveries still produce zero
+drawer progress. All 64 controls replay exactly at 73 checked boundaries.
+One GPU-memory startup failure was retained before the completed episode.
+The [four-action inspector milestone](demo_runbook.md) is preserved.
 The [original live visual demo](engineering_demo.md) remains historical evidence.
 No task success; no change to the research gate.
 Prior interface search: [interface_search_handoff.md](interface_search_handoff.md).
@@ -38,16 +40,27 @@ Conditional next experiment: [research.md](research.md).
 
 ## Track A — verified engineering demonstration
 
+- **Goal:** sustained task-directed embodied decisions and measurable task progress.
+  The real non-oracle RGB-D → LocateAnything → fusion/belief → Laya → executor path
+  and a two-step asynchronous smoke predate this branch. This work makes existing
+  capability reproducible and auditable; it does not create the first embodied loop.
+  Connectivity is an achieved milestone, not the complete engineering objective.
+- Latest episode: eight genuine GRASP/RELEASE decisions; fresh observations and
+  used fusion evidence reach all seven subsequent Laya decisions. Optional final
+  sensing adds no action. All six translations remain available, but none is chosen.
+  Every choice change coincides with veto of the previous choice. Updated inputs
+  and output alternation therefore do not isolate useful model sensitivity.
+  **No task-directed progress; the next engineering milestone remains unmet.**
 - Demo-specific live console and offline HTML inspector now expose the full chain,
   including raw-response/proposal and executor/trajectory agreement, forced choices,
   fallbacks, missing outcomes and evaluator-only measurements. Shared runtime,
   interfaces, gates, providers and executor semantics are unchanged. The new run
-  has four verified Laya executions and zero replay error across 37 boundaries.
-  Current demo-branch verification: 254 tests, ruff and compileall pass.
+  has eight verified Laya executions and zero replay error across 73 boundaries.
+  Current demo-branch verification: 266 tests, ruff and compileall pass.
 - Real RGB-D → temporal belief → compact CDS → Laya → validation → atomic executor
   → MuJoCo execution. The opt-in demo bridge leaves the legacy runner and research
   pairing interface unchanged.
-- Four choices, GRASP/RELEASE/GRASP/RELEASE, each from ten natural feasible tokens;
+- Earlier four-action milestone: GRASP/RELEASE/GRASP/RELEASE, each from ten natural feasible tokens;
   no forced singleton, fallback, clipping or contract violation. Actual gripper
   movement, 32 controls and video are recorded. Control replay matches 37 boundaries
   exactly; it is not a second independent model-driven rollout.
@@ -166,7 +179,9 @@ Under ignored `runs/reference-pilot/`: `multi-init/`, `init{0,1,2}-raycast-v02/`
 `replay-init0/`, and `raw-referent-audit-attempt1/` remain intact.
 Older Stage 1/2/interface handoffs remain historical.
 Latest research artifacts: `runs/reference-gate/{status,consequences,abstention,physical}-v01/`.
-Latest engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-inspector-v01/`.
+Latest completed engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-feedback-v02/`.
+Preserved startup failure: `runs/engineering-demo/top-drawer-init0-seed1-feedback-v01/`.
+Earlier inspector artifact: `runs/engineering-demo/top-drawer-init0-seed1-inspector-v01/`.
 Historical engineering artifact: `runs/engineering-demo/top-drawer-init0-seed1-v01/`.
 All are local/ignored, not included in a fresh clone; share their manifests and
 referenced artifacts separately. See the collaboration guide's evidence handoff rules.

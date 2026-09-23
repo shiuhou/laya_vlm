@@ -1,13 +1,14 @@
 # Laya Embodied Runtime
 
-Research runtime for studying decision-sufficient interfaces between the physical
-world and typed embodied decision models. Laya is one replaceable decision backend.
+Engineering and research runtime for embodied decision systems. Laya selects typed
+robotic decisions; deterministic code owns geometry, validity checks and motor control.
+Laya is one replaceable decision backend.
 
 Two tracks share the same foundations:
 
 | Track | Question | Current evidence and boundary |
 |---|---|---|
-| A — Embodied demonstration | Can World/Sensors → Structured Interface → Typed Model → Robot Execution run end to end? | A live visual Laya trajectory physically opens/closes the gripper. It does **not** solve the drawer task. |
+| A — Embodied demonstration | Can observed world changes drive sustained, useful decisions and measurable task progress through an embodied feedback loop? | A real non-oracle loop and asynchronous smoke predate this branch. Current demos make it auditable; useful drawer manipulation is **not** demonstrated. |
 | B — Decision-interface research | What information must the interface preserve for useful decisions? | Paired replay and bounded missing-information findings exist. A useful manipulation reference is **not** validated; formal E0 is not frozen. |
 
 Start here:
@@ -19,7 +20,8 @@ Start here:
 3. [Architecture](docs/architecture.md): active paths and interface boundaries.
 4. [Research direction](docs/research.md): hypotheses, findings and the E0 gate.
 
-Run or inspect the [live engineering demo](docs/demo_runbook.md), read the
+Run or inspect the [embodied feedback demo](docs/closed_loop_demo.md), read the
+[connectivity inspector runbook](docs/demo_runbook.md) and
 [historical demo report](docs/engineering_demo.md), or inspect the latest
 [research diagnostic handoff](docs/reference_gate_handoff.md). Demo connectivity
 does not establish task competence, and oracle-conditioned decisions are not expert
