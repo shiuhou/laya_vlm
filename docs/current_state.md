@@ -2,6 +2,36 @@
 
 Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
 
+## Local-objective privileged reference: bounded failure
+
+The same-condition [Jev hierarchy comparison](evidence/decision_interface/jev_hierarchy_same_condition.md)
+completed top-drawer closure in 20 decisions and 155 fresh controls. This proves
+the fixed physical machinery admits a successful trajectory; it does not isolate
+hierarchy from archived Jev motor answers.
+
+The authorized [minimal local-objective reference](evidence/decision_interface/local_objective_reference.md)
+adds one deterministic routing boundary before Laya motor selection. It selects
+the first nonempty existing contract pool in the fixed order advance, establish,
+approach, release, reposition. This router is new task policy; it is not original
+Jev's model-selected intent. It retains the complete selected pool in primitive
+order and adds no strategy or motion-family filtering.
+
+On frozen flat boundaries, the objective condition changed step 0 from `x+3mm`
+to `x+40mm`, but both conditions selected `x+3mm` at flat boundary 1. The fresh
+episode executed 87 primitives: 81 genuine Laya choices and six forced singletons.
+It achieved 96.168 mm net closure, from 151.659 to 55.491 mm, without official
+success. All 696 controls matched preview exactly; replay passed 784 boundaries
+with zero error.
+
+The first failure was boundary 87. One-step contracts were empty, and unchanged
+two-step processing supplied 25 valid `reposition` first actions. The complete
+witness input exceeded Laya's existing token audit (`truncated=true`), so no model
+call or action occurred. This is a candidate-consumption/interface-capacity
+failure, not zero candidate coverage or physical execution failure. The first run
+did not succeed, so reproduction runs were not started. Strategy, candidate
+truncation/top-k, prompt/model-limit changes, contract/threshold changes, deeper
+lookahead, non-oracle work and E0 require a new decision.
+
 ## Privileged drawer reference v1: existing lookahead evaluated
 
 The bounded reference uses Jev's full 27-action vocabulary, `World.predict_all()`
@@ -45,7 +75,7 @@ once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
 recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
 remained false. At boundary 92, both the one-step union and unchanged two-step
 witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
-with zero error. Current verification is **421 pytest tests**, ruff and compileall.
+with zero error. Current verification is **431 pytest tests**, ruff and compileall.
 Three-run success is not established.
 No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
 non-oracle replacement or E0 is authorized.
