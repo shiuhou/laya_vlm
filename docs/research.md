@@ -8,14 +8,10 @@ alongside CDS fields. This is not an adopted new thesis or architecture.
 ## Scientific gate
 
 The authorized [privileged drawer reference v1](evidence/decision_interface/privileged_reference.md)
-now tests the strong original-style architecture before any ablation. Full Jev
-preview plus task-specific effect contracts produced 18 genuine approach decisions
-with exact predicted/actual effects, then an empty admissible menu near contact.
-Drawer closure remained zero. The concrete first failure is one-step contract
-coverage along the selected trajectory; it does not isolate model ranking, prove
-that an alternative choice succeeds, or establish that relaxing a threshold would
-solve the task. Contracts perform part of candidate-policy filtering and remain
-unchanged. Hard-invalid-only is a possible later ablation only after success.
+tests the strong original-style architecture before ablation. One-step preview and
+task contracts produced 18 genuine approach decisions, exact effects and then an
+empty menu. Contracts perform candidate-policy filtering and remain unchanged.
+Hard-invalid-only remains a possible later ablation only after success.
 The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
 reconstructed the exact state and every primitive clause. Original Jev and the
 reference have identical empty one-step pools there, so the result is classified
@@ -23,6 +19,18 @@ as a **CONTRACT DEAD-END**, not a port bug. The successful Jev trajectory avoids
 that contract state through a materially different pose and closure-positive
 contact transition. This does not prove physical continuation from the dead state
 impossible, and the original runner's two-step witness fallback was not evaluated.
+That fallback has now been evaluated separately in the
+[two-step witness record](evidence/decision_interface/two_step_lookahead.md). It
+found 23 witness-backed first actions on the exact state, including multiple
+temporary-regression contact transitions with positive two-step net closure. This
+weakens the claim that the original architecture lacks transition coverage.
+
+In a fresh closed-loop run, Laya selected `open` from the complete 23-option
+witness menu. Only `open` executed and its real effect matched prediction. The
+next one-step pool contained only `z-3mm`, so the genuine-choice gate stopped
+before another model call or action. Drawer closure and official success remained
+zero/false. Existing lookahead is sufficient to repair the original empty pool;
+it has not established a successful flat Laya reference policy.
 
 **Formal E0 is blocked. No useful manipulation reference is established.**
 Oracle/perceptual agreement in the reference pilot did not imply useful progress.
@@ -57,6 +65,7 @@ Sibling *_protocol.md files are preserved historical specifications, not work or
 | [Selective grip](evidence/decision_interface/selective_grip_handoff.md) | Native 0/16 → 5/16, opening only; closing 0/8. Wording matters but is not the sole deficit. |
 | [Explicit consequence](evidence/decision_interface/explicit_consequence_handoff.md) | Explicit conjunction 5/16 → 4/16, no prior errors corrected; target predicates do not reliably repair ranking. |
 | [Dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md) | Original Jev and the reference exactly agree on an empty one-step contract pool; the successful Jev path avoids the same pose regime. |
+| [Two-step witness audit](evidence/decision_interface/two_step_lookahead.md) | Existing Jev lookahead returns 23 first-action witnesses at the dead end; closed-loop Laya selects `open`, then the acceptance gate stops at a singleton `z-3mm` pool. |
 
 These are bounded correlated fixtures/repeats, not population estimates.
 Anonymization, ordering and question edits are manipulations, not canonical
@@ -80,14 +89,13 @@ or binary verification successful.
 
 ## Before further experiments
 
-The reference boundary is now fixed: 27 primitive vocabulary, task-effect contract
-union, oracle predictions, one Laya atomic choice and real feedback, without intent
-hierarchy. The first attempt failed; humans must review the identified empty-menu
-contact boundary before changing reference semantics. The smallest issue is how a
-physically defensible contact transition could be admitted without accepting
-arbitrary drawer opening; the audit neither changes that contract nor authorizes
-lookahead. The deployable judgment boundary and effect sources remain open, and
-usefulness still needs demonstration.
+The reference boundary now includes the existing two-step witness fallback after
+an empty one-step union, without intent hierarchy. That mechanism supplies the
+missing contact transition and a genuine decision menu. The smallest unresolved
+issue is how a reference should handle a contract-forced singleton after the
+chosen first transition while preserving the rule that singleton execution is not
+model competence. No new contract or change is authorized. The deployable judgment
+boundary and effect sources remain open, and usefulness still needs demonstration.
 
 The earlier binary predicate proposal and conditional E0 plan are on hold.
 Historical details remain in the

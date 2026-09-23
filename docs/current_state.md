@@ -2,41 +2,43 @@
 
 Reviewed 2026-09-23. This document supersedes historical plans, not raw evidence.
 
-## Authorized next phase: privileged drawer reference v1
+## Privileged drawer reference v1: existing lookahead evaluated
 
-The human has selected a bounded reference before ablations: Jev's full 27-action
-vocabulary, one-step World.predict_all(), and the union of existing collision-aware
-task-specific effect contracts, followed by a genuine multi-option Laya choice.
-These contracts explicitly perform part of candidate-policy filtering; this is
-not hard-invalid-only filtering. State and effects are explicitly privileged.
-The reference is opt-in; the visual path and CDS remain unchanged.
+The bounded reference uses Jev's full 27-action vocabulary, `World.predict_all()`
+and existing collision-aware task contracts before a genuine Laya choice. When
+the one-step union is empty, it now invokes original Jev's unchanged two-step
+witness fallback. Contracts explicitly perform candidate-policy filtering beyond
+hard validity. State/effects remain privileged; the visual path and CDS are unchanged.
 
-The [reference record](evidence/decision_interface/privileged_reference.md) specifies
-the task, acceptance gate, implementation and results. The target is three
-independent successful runs from benchmark init 0 / seed 1 plus control replay.
-The first episode on implementation f39e711 made 18 genuine multi-candidate Laya
-choices and reduced surface gap from 93.484 to 2.732 mm, but closure stayed 0 mm.
-At boundary 18 the effect-contract union was empty: contact-producing actions
-predicted opening beyond the -0.01 mm tolerance; non-regressing actions fell below
-the 2 mm approach threshold. No fallback executed. All 18 selected previews matched
-actual endpoints exactly; 144 controls replayed at 163 boundaries with zero error.
-Three-run successful repeatability has not been established; no success repeats
-were started. Contracts remain frozen pending review of this concrete failure.
+The [reference record](evidence/decision_interface/privileged_reference.md) retains
+the fixed acceptance gate and all attempts. The original one-step episode made 18
+genuine decisions, reduced gap from 93.484 to 2.732 mm, produced zero closure and
+stopped at an empty contract union. Its 144 controls replayed exactly.
 The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
 reconstructed the exact state and all 27 previews. Original Jev's unchanged
 one-step `contracts()` and the current reference produced identical predictions,
 rejections and empty pools, ruling out a one-step port/integration bug. This is a
 **CONTRACT DEAD-END** classification at the frozen one-step boundary. The archived
 successful Jev run approached a similar gap in a materially different pose with
-closure-positive actions, but that does not prove the frozen state has no useful
-physical continuation. Jev's lookahead fallback was explicitly outside this audit.
-Final reference verification: 405 pytest tests passed before the boundary audit;
-the audit adds seven focused tests and the current full suite is **412 passed**.
-Ruff and compileall pass;
-raw-derived input/feedback/artifact audits and all 19 recomputed contract unions
-passed. The only inference episode used committed implementation f39e711.
-No hierarchy, planner, two-step lookahead, hard-invalid-only ablation, non-oracle
-replacement or E0 is authorized.
+closure-positive actions.
+
+The subsequent [two-step audit and run](evidence/decision_interface/two_step_lookahead.md)
+show that original Jev already contains the excluded transition capability. On
+the exact frozen state it evaluated 729 branches, found 32 qualifying pairs, and
+returned 23 first-action witnesses representing 22 physical operations. Multiple
+contact-producing first actions temporarily regress closure and recover positive
+two-step net closure. Simulator/controller restoration was exact.
+
+The minimal extension triggers this fallback only after an empty one-step pool,
+offers all witness-backed first actions, executes only Laya's chosen first action,
+then replans from reality. A clean fresh run reproduced the first 18 actions. At
+boundary 18, Laya selected `open` from 23 options; real execution matched its
+preview but produced zero closure. The next one-step pool contained only `z-3mm`.
+The genuine-choice guard stopped before Laya or execution. Official success is
+false; three-run success is not established. Replay passed 172 boundaries with
+zero error. Current verification is **418 pytest tests**, ruff and compileall.
+No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
+non-oracle replacement or E0 is authorized.
 
 ## Integrated baseline
 
@@ -111,9 +113,11 @@ effects or preprocessing unnecessary. The legacy oracle path still contains
 PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
 normal visual path.
 
-The bounded privileged reference above remains the selected track. Before another
-model run or reference revision, humans must decide whether and how to represent
-the excluded contact transition. Raising the numeric regression tolerance alone
-is not supported. The broader judgment boundary and deployable effect sources
-remain open. Prompt searches, binary predicate tests, new planners, CDS redesign,
-lookahead implementation and E0 remain outside scope.
+The existing witness mechanism has now been evaluated and repairs the original
+empty-pool boundary. The first remaining failure is the singleton `z-3mm` pool
+after Laya chose a passive witness-backed `open` transition. Before another run,
+humans must decide how the reference should treat contract-forced singleton
+continuations without falsely counting them as Laya competence. The broader
+judgment boundary and deployable effect sources remain open. Prompt searches,
+binary predicate tests, new planners, CDS redesign, new contracts and E0 remain
+outside scope.

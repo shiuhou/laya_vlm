@@ -13,10 +13,12 @@ independently read actual outcome -> next observation and model input.
 
 **Task-specific effect contracts perform part of candidate-policy filtering.**
 They exclude more than hard-invalid actions. Existing approach/contact/closure/
-release contracts and thresholds remain unchanged. All admitted actions are
-offered in Jev vocabulary order; no selected intent, top-k, best-action code,
-hierarchy or two-step witness. Hard-invalid-only is a possible later ablation,
-not part of v1. No CDS or visual default changes.
+release/reposition contracts and thresholds remain unchanged. All admitted actions
+are offered in Jev vocabulary order; there is no selected intent, top-k,
+best-action code or hierarchy. After the original one-step dead end was audited,
+v1 was minimally extended to invoke original Jev two-step witnesses only when the
+one-step union is empty. Hard-invalid-only remains a possible later ablation.
+No CDS or visual default changes.
 
 The opt-in builder mapping preserves the old eleven-token default. Runtime accepts
 an optional executor; its default is unchanged. The reference executor uses the
@@ -44,6 +46,9 @@ State/effects are explicitly effect_source=oracle_sim, privileged=true.
 Input contains current opening, surface gap, target/obstacle contact, grip/gap,
 one previous actual outcome, and each admitted action's closure, gap reduction,
 target contact, obstacle peak force, success and number of controls.
+Witness-backed first actions additionally expose the original second action,
+two-step net closure/gap, terminal contact/success, peak force and combined
+contract membership. The second action is evidence and never executes open-loop.
 Closure uses three decimal mm, gap two decimal mm, force one decimal N; raw
 full-precision values remain recorded. Preview is up to eight controls / 0.4 s,
 with early success stopping disclosed. Fixed instruction:
@@ -73,7 +78,7 @@ diff checks passed. Subsequent offline reporting adds two evidence-integrity tes
 it does not alter the recorded policy or rerun inference.
 Reference verification: 21 focused tests, **405 full tests passed**; ruff,
 compileall and diff checks passed. The later boundary audit adds seven focused
-tests; the current full suite is **412 passed**. All 19 recorded contract unions
+tests; the suite at that checkpoint was **412 passed**. All 19 recorded contract unions
 were independently recomputed from the saved task config/predictions and matched. All 261 local
 documentation links resolved before adding the progress-figure link below.
 Mechanical evidence: runs/privileged-reference/preflight-v01.
@@ -99,7 +104,10 @@ $P -m embodied_runtime.experiments.privileged_reference \
   --mode summarize --output runs/privileged-reference/episode-01
 ```
 
-## Result: genuine approach, no drawer closure, empty effect-contract union
+The lookahead extension adds six more regression tests. Current verification is
+**418 full tests passed**, ruff and compileall passed.
+
+## Original one-step result: genuine approach, no drawer closure
 
 One model episode, on committed implementation
 f39e7111dca4906a378d5baa1151968d5eeba01c. The full runtime source was clean.
@@ -212,7 +220,7 @@ that the successful trajectory avoided the same contract state; it does not prov
 the failed state lacks a useful physical continuation. The audit did not invoke
 Jev's optional two-step witness fallback and does not authorize adding it to v1.
 
-### Replay and repeatability
+### Original one-step replay and repeatability
 
 The failed trajectory's 144 recorded controls replayed from the original reset
 with **0 error at all 163 checked boundaries**. This reproduces the physical
@@ -239,12 +247,32 @@ Trajectory NPZ files preserve rendered frames, controls and physical states.
 Offline summaries also verify hashes, consumed tokens, candidate coverage,
 raw endpoint comparisons and actual-outcome links.
 
-### Stop point
+### Original one-step stop point
 
-The reference is implemented, exercised and mechanically verified, but **failed
-its task-success milestone**. Contracts remain unchanged. No hard-invalid-only
-ablation, planner, hierarchy, lookahead, prompt search, visual replacement or E0
-was started. Before another model run, the concrete issue to review is how the
-fixed one-step effect-contract reference handles this empty-menu contact boundary;
-changing its thresholds or continuation logic would be a new reference revision,
-not an invisible repair to this result.
+The one-step reference was implemented, exercised and mechanically verified, but
+failed its task-success milestone. Contracts remained unchanged. This stop point
+led to the bounded dead-end audit and then the separately authorized evaluation
+of original Jev lookahead below.
+
+## Existing Jev lookahead result
+
+The complete [two-step witness audit and closed-loop record](two_step_lookahead.md)
+shows that the original mechanism repairs the exact empty one-step pool. It finds
+32 qualifying pairs and returns 23 witness-backed first tokens, representing 22
+physical operations. Several contact-producing first actions temporarily open the
+drawer but have positive two-step net closure. The reference implementation
+matches original Jev's pool and witness payloads exactly.
+
+On clean commit `3fe6b0d`, a fresh run reproduced the first 18 one-step choices.
+At boundary 18, all 23 witness-backed first actions reached Laya without tokenizer
+truncation. Laya selected `open`; only that primitive executed, reducing gap from
+2.732324 to 1.506793 mm with zero closure and no contact. At the next real state,
+one-step contracts admitted only `z-3mm`, predicting `+0.060077 mm` closure and
+new contact. The genuine-choice guard stopped before another Laya call or action.
+
+The run made 19 genuine decisions and executions, used 152 controls, and retained
+exact prediction/execution agreement. Replay passed 172 state boundaries with
+zero error. Official success remained false and no successful repeat runs began.
+The first remaining failure is the singleton one-step continuation after Laya's
+passive witness-backed transition. No threshold, prompt instruction, hierarchy,
+planner, new contract, visual path, CDS, ablation or E0 change followed.

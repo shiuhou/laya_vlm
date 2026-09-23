@@ -6,9 +6,10 @@ The integrated baseline demonstrates an inspectable visual model-to-actuator loo
 not useful drawer manipulation or a useful reference policy.
 
 The [privileged reference v1](docs/evidence/decision_interface/privileged_reference.md)
-now exercises full Jev candidate previews and task-specific effect-contract
-filtering. Its first episode approached the drawer but stopped with no admitted
-continuation; drawer closure and task success remain unestablished.
+now exercises full Jev candidate previews, task-specific effect-contract filtering
+and original Jev's two-step witness fallback. Lookahead repaired the audited empty
+pool and produced a genuine 23-option Laya decision, but the selected transition
+led to a singleton next pool. Drawer closure and task success remain unestablished.
 
 ## Reading order
 

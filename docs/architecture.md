@@ -32,7 +32,8 @@ The Stage 2 runner and validity/execution contracts remain unchanged.
 
 | Entry point in `embodied_runtime.experiments` | Role | Model/execution boundary |
 |---|---|---|
-| `privileged_reference` | Explicit oracle drawer reference, preflight, report and replay | Native Jev 27-action preview; union of collision-aware task-effect contracts; genuine multi-option Laya call; real executor; actual outcome to next input. No hierarchy/lookahead; no visual/CDS changes. |
+| `privileged_reference` | Explicit oracle drawer reference, preflight, report and replay | Native Jev 27-action preview; union of collision-aware task-effect contracts; original two-step witnesses only after an empty one-step union; genuine multi-option Laya call; execute one chosen first primitive; actual outcome to next input. No hierarchy or visual/CDS changes. |
+| `two_step_lookahead_audit` | Frozen-snapshot audit of original Jev reversible witnesses | Replays the exact dead-end state, invokes unchanged original search, enumerates all qualifying pairs, checks full restoration and verifies the reference produces the same witness pool; no model or live policy episode. |
 | `engineering_demo` / `demo_report` / `demo_inspector` / `demo_feedback` | Track A live demo, feedback audit and raw-derived media | Fresh synchronous RGB-D; compact CDS; natural permitted token subset; no effects/history; Laya choices pass live validation and execute; next-input audits expose gate changes and task outcomes; optional final sensing executes no further action |
 | `collect_pairs` / `replay_equivalence` | Track B source collection and paired decision replay | Source controls are external/recorded, not selected by replay decisions; primary oracle/perceptual comparison shares semantics-only candidates/history and no effects |
 | `interface_search` / `reference_gate` / `effect_binding` / `provider_comparison` / `clause_order` / `goal_placement` / `selective_grip` / `explicit_consequence` | Track B bounded capability/missingness diagnostics | Alternate projections and explicitly labeled diagnostic conditions, never a silently deployed replacement policy |
@@ -77,7 +78,12 @@ adapter. The preview builder's explicit action mapping opts into the 27 primitiv
 without legacy STOP/DONE additions. Candidate metadata declares oracle_sim,
 privileged=true and task_specific_effect_contract_union. Contracts implement
 part of candidate-policy filtering, not only hard validity; this attribution is
-part of the reference definition. All defaults outside this opt-in path remain.
+part of the reference definition. If that union is empty, the opt-in reference
+uses original Jev two-step witnesses as `reposition` evidence. Each witness proves
+a second primitive can satisfy an existing combined contract; it does not authorize
+that second primitive. Laya chooses among witness-backed first actions, only one
+first primitive executes, and the next decision uses the real endpoint. All
+defaults outside this opt-in path remain.
 
 `BeliefSnapshot` remains generic temporal estimation: position/velocity/covariance,
 semantic evidence, capture/reference times, age, validity, consistency and provenance.
