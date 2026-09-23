@@ -20,13 +20,13 @@ import time
 import numpy as np
 
 from ..adapters.laya_input import encoding_audit
-from ..adapters.libero import LiberoWorldBackend, CONTRACT_TOLERANCES
+from ..adapters.libero import CONTRACT_TOLERANCES
 from ..adapters.physics_preview import PhysicsPreviewCandidateBuilder
 from ..runtime import Runtime
 from ..runtime_core import AtomicExecutor, Decision, LayaProvider, load_laya_provider
-from .collect_pairs import initial_state_inventory
 from .engineering_demo import RecordingAgent, save_trajectory, replay_check
 from .operating_regime_probe import context_id
+from .privileged_task import TOP_DRAWER_ADAPTER, TOP_DRAWER_SPEC
 from .records import (
     RunRecorder, code_identity, file_hash, load_records, model_identity,
     package_directory, repository_identity, versions,
@@ -35,41 +35,18 @@ from .records import (
 VERSION = "privileged-drawer-reference-v1-lookahead2-forced-singleton"
 PRIVILEGE = {"effect_source": "oracle_sim", "privileged": True,
              "candidate_filtering": "task_specific_effect_contract_union"}
-INSTRUCTION = (
-    "Choose one action to close the drawer using its predicted effects. "
-    "Prefer completion, closure, then contact or approach; avoid obstacle force."
-)
-TOLERANCE = 1e-8
-OBJECTIVE_PRIORITY = ("advance_target", "establish_contact", "approach_target",
-                      "release_contact", "reposition")
-OBJECTIVE_CRITERIA = {
-    "advance_target": "Prefer actual task completion, otherwise greater predicted closure without unnecessary obstacle force.",
-    "establish_contact": "Prefer useful contact with closure.",
-    "approach_target": "Prefer substantial predicted surface-gap reduction.",
-    "release_contact": "Release the obstruction with less loss of task progress.",
-    "reposition": "Compare the verified two-step net effects rather than demanding immediate progress from the first input. Execute only the first input; replan.",
-}
-ROUTING_VERSION = "fixed-contract-objective-v1"
+TASK_SPEC = TOP_DRAWER_SPEC
+TASK_ADAPTER = TOP_DRAWER_ADAPTER
+INSTRUCTION = TASK_SPEC.flat_instruction
+TOLERANCE = TASK_SPEC.comparison_tolerance
+OBJECTIVE_PRIORITY = TASK_SPEC.objective_priority
+OBJECTIVE_CRITERIA = TASK_SPEC.objective_criteria
+ROUTING_VERSION = TASK_SPEC.routing_version
 COMPACT_WITNESS_VERSION = "compact-witness-effects-v1"
 
 
 def objective_routing(pools, order):
-    """New explicit task policy: first nonempty contract, never rank primitives."""
-    if set(pools) - set(OBJECTIVE_PRIORITY):
-        raise ValueError("unknown objective contract")
-    objective = next((name for name in OBJECTIVE_PRIORITY if pools.get(name)), None)
-    union = {name for pool in pools.values() for name in pool}
-    if not union.issubset(order) or len(order) != len(set(order)):
-        raise ValueError("invalid primitive order or contract membership")
-    members = set(pools[objective]) if objective else set()
-    return {"version": ROUTING_VERSION, "source": "deterministic_task_policy",
-            "priority": list(OBJECTIVE_PRIORITY), "objective": objective,
-            "reason": "first_nonempty_contract" if objective else "all_contract_pools_empty",
-            "primitive_order": list(order),
-            "contract_union": [name for name in order if name in union],
-            "motor_pool": [name for name in order if name in members],
-            "objective_excluded": {name: "outside_selected_objective" for name in order
-                                   if name in union and name not in members}}
+    return TASK_ADAPTER.objective_routing(pools, order)
 
 
 def validate_baseline_settings(args, baseline_config):
@@ -82,97 +59,29 @@ def validate_baseline_settings(args, baseline_config):
 
 
 def presentation_format(predictions, names, objective):
-    has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
-    return COMPACT_WITNESS_VERSION if objective is not None and has_witnesses else "verbose-v1"
+    return TASK_ADAPTER.presentation_format(
+        predictions, names, objective, COMPACT_WITNESS_VERSION
+    )
 
 
 def compact_witness_state(before, predictions, names, grip, last, objective):
-    """Lossless model view of prior witness fields with shared invariants factored once."""
-    effect_codes = {"advance_target": "A", "establish_contact": "E",
-                    "approach_target": "P", "release_contact": "R",
-                    "reposition": "W"}
-    if not names or any(not predictions[name].get("reposition_witness") for name in names):
-        raise ValueError("compact witness serialization requires a witness for every candidate")
-    common_values = {
-        "fp": {f"{predictions[name]['peak_obstacle_force_N']:.1f}" for name in names},
-        "fs": {str(int(predictions[name]["after"]["success"])) for name in names},
-        "n": {str(predictions[name]["steps"]) for name in names},
-        "wp": {f"{predictions[name]['reposition_witness']['peak_obstacle_force_N']:.1f}"
-               for name in names},
-        "ws": {str(int(predictions[name]["reposition_witness"]["terminal_success"]))
-               for name in names},
-    }
-    field_labels = {"fp": "first_force", "fs": "first_success", "n": "controls",
-                    "wp": "witness_force", "ws": "witness_success"}
-    varying = [key for key, values in common_values.items() if len(values) != 1]
-    common = " ".join(f"{field_labels[key]} {next(iter(values))}"
-                      for key, values in common_values.items() if len(values) == 1)
-    lines = [
-        "Close top drawer. effect_source oracle_sim; privileged true. Preview 8 controls/0.4 s; "
-        "world mm/degrees; nominal motion; retained grip except open/close. "
-        "Execute first action only; replan.",
-        f"Objective {objective}.",
-        (f"State opening {before['remaining_open_mm']:.3f} gap "
-         f"{before['distance_to_moving_geometry_mm']:.2f} target "
-         f"{int(before['moving_contact'])} obstacle {int(before['obstacle_contact'])} "
-         f"grip {'open' if grip < 0 else 'closed'} finger {before['finger_gap_mm']:.2f}."),
-    ]
-    if last is None:
-        lines.append("Last none.")
-    else:
-        after = last["after"]
-        lines.append(
-            f"Last {last['action']} closure {last['closure_mm']:.3f} gap "
-            f"{last['gap_reduction_mm']:.2f} target {int(after['moving_contact'])} "
-            f"obstacle {int(after['obstacle_contact'])} success "
-            f"{int(last['official_success'])} controls {last['controls']}."
-        )
-    schema = ("Rows follow numbered option order: closure gap target > witness "
-              "net_closure net_gap final_target effects")
-    if varying:
-        schema += " " + " ".join(field_labels[key] for key in varying)
-    lines.extend([
-        schema + ".",
-        "Effects A advance E establish P approach R release W reposition. "
-        f"Common {common}.",
-    ])
-    for index, name in enumerate(names, 1):
-        p = predictions[name]
-        witness = p["reposition_witness"]
-        codes = "".join(effect_codes[value] for value in witness["witnessed_effects"])
-        values = {"fp": f"{p['peak_obstacle_force_N']:.1f}",
-                  "fs": str(int(p["after"]["success"])), "n": str(p["steps"]),
-                  "wp": f"{witness['peak_obstacle_force_N']:.1f}",
-                  "ws": str(int(witness["terminal_success"]))}
-        suffix = "".join(f" {values[key]}" for key in varying)
-        lines.append(
-            f"{index} {p['closing_mm']:.3f} {p['geometry_approach_mm']:.2f} "
-            f"{int(p['after']['moving_contact'])} > {witness['second_input']} "
-            f"{witness['net_progress']:.3f} {witness['net_gap_reduction_mm']:.2f} "
-            f"{int(witness['terminal_contact'])} {codes}{suffix}"
-        )
-    return "\n".join(lines) + "\n"
-
+    return TASK_ADAPTER.compact_witness_state(
+        before, predictions, names, grip, last, objective
+    )
 
 
 def actions():
-    from jev_libero.actions import ACTIONS
-    return ACTIONS
+    return TASK_ADAPTER.actions()
+
+
+def task_contracts(before, predictions, *, collision_aware, task_config):
+    return TASK_ADAPTER.contracts(
+        before, predictions, collision_aware=collision_aware, task_config=task_config
+    )
 
 
 def measured_outcome(world, before, token, execution):
-    """Fresh live measurements, never taken from candidate predictions."""
-    after = world.features()
-    joint = float(world.data.qpos[world.qindex])
-    success = bool(world.env.check_success())
-    if joint != after["qpos_m"] or success != after["success"]:
-        raise RuntimeError("independent live evaluator disagrees with feature reading")
-    return {"action": token, "before": before, "after": after,
-            "actual_joint_qpos_m": joint, "official_success": success,
-            "closure_mm": 1000. * (joint - before["qpos_m"]),
-            "gap_reduction_mm": before["distance_to_moving_geometry_mm"] - after["distance_to_moving_geometry_mm"],
-            "controls": execution["environment_step_count"],
-            "obstacle_peak_N": execution["peak_obstacle_force_N"]}
+    return TASK_ADAPTER.measured_outcome(world, before, token, execution)
 
 
 class JevAtomicExecutor(AtomicExecutor):
@@ -229,27 +138,7 @@ class JevAtomicExecutor(AtomicExecutor):
 
 
 def compare_prediction(world, prediction, outcome, execution):
-    error = float(np.max(np.abs(world.env.sim.get_state().flatten() -
-                               np.asarray(prediction["sim_state_after"]))))
-    comparisons = {
-        "state_max_error": error,
-        "closure_error_mm": abs(outcome["closure_mm"] - prediction["closing_mm"]),
-        "gap_reduction_error_mm": abs(outcome["gap_reduction_mm"] - prediction["geometry_approach_mm"]),
-        "obstacle_force_error_N": abs(execution["peak_obstacle_force_N"] - prediction["peak_obstacle_force_N"]),
-        "controls_match": outcome["controls"] == prediction["steps"],
-        "success_match": outcome["official_success"] == prediction["after"]["success"],
-        "target_contact_match": outcome["after"]["moving_contact"] == prediction["after"]["moving_contact"],
-        "obstacle_contact_match": outcome["after"]["obstacle_contact"] == prediction["after"]["obstacle_contact"],
-        "obstacle_pairs_match": sorted(execution["obstacle_pairs_seen"]) == sorted(prediction["obstacle_pairs_seen"]),
-    }
-    comparisons["passed"] = (
-        all(comparisons[k] <= TOLERANCE for k in
-            ("state_max_error", "closure_error_mm", "gap_reduction_error_mm", "obstacle_force_error_N"))
-        and all(comparisons[k] for k in ("controls_match", "success_match", "target_contact_match",
-                                       "obstacle_contact_match", "obstacle_pairs_match"))
-        and not execution["execution_contract_violation"]
-    )
-    return comparisons
+    return TASK_ADAPTER.compare_prediction(world, prediction, outcome, execution)
 
 
 def ensure_real_choice(candidates, grip):
@@ -265,12 +154,11 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
     def __init__(self, backend, sink, condition="flat"):
         self.condition = condition
         super().__init__(backend.world, grip_command=backend.gripper_command,
-                         action_map={name: name for name in actions()})
+                         action_map={name: name for name in actions()},
+                         contract_fn=task_contracts)
         self.backend, self.sink = backend, sink
 
     def build(self, belief):
-        from jev_libero.policy import contracts
-
         initial = context_id(self.backend)
         candidates = super().build(belief)
         one_step_pools = self.last_preview["pools"]
@@ -282,7 +170,7 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
             )
             for name, witness in witnesses.items():
                 self.last_preview["predictions"][name]["reposition_witness"] = witness
-            pools, rejected = contracts(
+            pools, rejected = task_contracts(
                 self.last_preview["before"], self.last_preview["predictions"],
                 collision_aware=self.collision_aware, task_config=self.world.config,
             )
@@ -335,91 +223,9 @@ class ReferenceBuilder(PhysicsPreviewCandidateBuilder):
 
 
 def presentation(before, predictions, names, grip, last, objective=None):
-    format_version = presentation_format(predictions, names, objective)
-    if format_version == COMPACT_WITNESS_VERSION:
-        state = compact_witness_state(before, predictions, names, grip, last, objective)
-        instruction = ("Choose one atomic action that best advances the stated local objective. "
-                       + OBJECTIVE_CRITERIA[objective])
-        return state, {"action": {"type": "choice", "instructions": instruction,
-                                   "criteria": {name: "" for name in names}}}
-    state = (
-        "Task: close top drawer. effect_source=oracle_sim; privileged=true. "
-        "Preview up to 8 controls/0.4s. XYZ world mm; rotations world degrees; "
-        "nominal commands, predicted dynamics; grip retained except open/close.\n"
-        f"Current opening={before['remaining_open_mm']:.3f}mm "
-        f"gap={before['distance_to_moving_geometry_mm']:.2f}mm "
-        f"target_contact={int(before['moving_contact'])} "
-        f"obstacle_contact={int(before['obstacle_contact'])} "
-        f"grip={'open' if grip < 0 else 'closed'} finger_gap={before['finger_gap_mm']:.2f}mm.\n"
+    return TASK_ADAPTER.presentation(
+        before, predictions, names, grip, last, objective, COMPACT_WITNESS_VERSION
     )
-    if last is None:
-        state += "Last actual: none.\n"
-    else:
-        after = last["after"]
-        state += (f"Last actual: {last['action']}; closure={last['closure_mm']:.3f}mm "
-                  f"gap_reduction={last['gap_reduction_mm']:.2f}mm "
-                  f"target_contact={int(after['moving_contact'])} "
-                  f"obstacle_contact={int(after['obstacle_contact'])} "
-                  f"success={int(last['official_success'])} controls={last['controls']}.\n")
-    has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
-    if has_witnesses:
-        effect_codes = {"advance_target": "A", "establish_contact": "E",
-                        "approach_target": "P", "release_contact": "R",
-                        "reposition": "W"}
-        common_values = {
-            "fp": {f"{predictions[name]['peak_obstacle_force_N']:.1f}" for name in names},
-            "fs": {str(int(predictions[name]["after"]["success"])) for name in names},
-            "n": {str(predictions[name]["steps"]) for name in names},
-            "wp": {f"{predictions[name]['reposition_witness']['peak_obstacle_force_N']:.1f}"
-                   for name in names},
-            "ws": {str(int(predictions[name]["reposition_witness"]["terminal_success"]))
-                   for name in names},
-        }
-        varying = [key for key, values in common_values.items() if len(values) != 1]
-        common = ",".join(f"{key}={next(iter(values))}" for key, values in common_values.items()
-                          if len(values) == 1)
-        state += (
-            "W rows: a c g t > w C G T e"
-            f"{' ' + ' '.join(varying) if varying else ''}. "
-            "c/g/t=first closure/gap/contact; w=verified second; "
-            "C/G/T=two-step net closure/gap/final contact; "
-            "e=A advance,E establish,P approach,R release. "
-            "Execute a only; replan. "
-            "fp/fs/n=first obstacleN/success/controls; "
-            "wp/ws=witness obstacleN/success. "
-            f"Common: {common}.\n"
-        )
-    else:
-        state += ("Effects: action|closure_mm (positive closes)|gap_reduction_mm (positive approaches)"
-                  "|target_contact|obstacle_peak_N|success|controls\n")
-    for name in names:
-        p = predictions[name]
-        witness = p.get("reposition_witness")
-        if witness is None:
-            state += (f"{name}|{p['closing_mm']:.3f}|{p['geometry_approach_mm']:.2f}|"
-                      f"{int(p['after']['moving_contact'])}|{p['peak_obstacle_force_N']:.1f}|"
-                      f"{int(p['after']['success'])}|{p['steps']}\n")
-            continue
-        codes = "".join(effect_codes[value] for value in witness["witnessed_effects"])
-        values = {"fp": f"{p['peak_obstacle_force_N']:.1f}",
-                  "fs": str(int(p["after"]["success"])), "n": str(p["steps"]),
-                  "wp": f"{witness['peak_obstacle_force_N']:.1f}",
-                  "ws": str(int(witness["terminal_success"]))}
-        suffix = "".join(f" {values[key]}" for key in varying)
-        state += (
-            f"{name} {p['closing_mm']:.3f} {p['geometry_approach_mm']:.2f} "
-            f"{int(p['after']['moving_contact'])} > {witness['second_input']} "
-            f"{witness['net_progress']:.3f} {witness['net_gap_reduction_mm']:.2f} "
-            f"{int(witness['terminal_contact'])} {codes}{suffix}\n"
-        )
-    instruction = INSTRUCTION
-    if objective is not None:
-        state = f"Current local objective: {objective}.\n" + state
-        instruction = ("Choose one atomic action that best advances the stated local objective. "
-                       + OBJECTIVE_CRITERIA[objective])
-    questions = {"action": {"type": "choice", "instructions": instruction,
-                             "criteria": {name: "" for name in names}}}
-    return state, questions
 
 
 class ReferenceView:
@@ -495,8 +301,7 @@ class ReferenceProvider:
 
 
 def make_backend(args, render):
-    return LiberoWorldBackend.from_task("top_drawer", seed=args.seed, init_state_id=args.init_state_id,
-        render=render, libero_root=args.libero_root, config_dir=args.config_dir)
+    return TASK_ADAPTER.make_backend(args, render=render)
 
 
 def run(args):
@@ -544,8 +349,9 @@ def run(args):
                     ("episodes.jsonl", "manifest.json", "resolved_config.yaml")}},
                 "execution_budget": budget})
         recorder.manifest_update({"models": {"decision": identity}})
-        inventory = initial_state_inventory("top_drawer", args.libero_root, args.config_dir)
-        recorder.record("reference_initial_identity", {"task": "top_drawer", "binding": inventory["binding"],
+        inventory = TASK_ADAPTER.inventory(args)
+        recorder.record("reference_initial_identity", {"task": TASK_SPEC.task_id,
+            "binding": inventory["binding"],
             "init_state_id": args.init_state_id, "seed": args.seed,
             "benchmark_state_id": inventory["state_ids"][args.init_state_id]})
         backend = make_backend(args, render=True)
@@ -585,8 +391,7 @@ def run(args):
                 "previous_outcome_record_id": provider.last_outcome_id,
                 "observation_source_seq": runtime.source_seq,
                 "matches_previous_outcome": previous_after is None or before == previous_after})
-            row = runtime.step(float(world.data.time), goal={"task": "top_drawer",
-                "instruction": world.task, "satisfied": False})
+            row = runtime.step(float(world.data.time), goal=TASK_ADAPTER.goal(world))
             save_trajectory(backend, out, step, recorder)
             outcome = measured_outcome(world, before, row["decision"].token, row["result"])
             comparison = compare_prediction(world,
@@ -869,7 +674,7 @@ def parser():
     p.add_argument("--laya-path", default="/home/junhongli/models/huggingface/laya/typed-decisions")
     p.add_argument("--libero-root", default="/home/junhongli/projects/LIBERO")
     p.add_argument("--config-dir", default="/home/junhongli/runs/libero-config")
-    p.add_argument("--trajectory", default="/home/junhongli/projects/jev-libero/examples/records/top_drawer_seed1")
+    p.add_argument("--trajectory", default=TASK_SPEC.default_trajectory)
     return p
 
 
@@ -883,7 +688,7 @@ def main():
         summary = summarize_reference(args.output)
         print(json.dumps({k: v for k, v in summary.items() if k != "trace"}, indent=2))
     elif args.mode == "replay":
-        result = replay_check(args.output)
+        result = replay_check(args.output, task=TASK_SPEC.task_id)
         print(json.dumps(result, indent=2))
         if not result["passed"]:
             raise SystemExit(1)

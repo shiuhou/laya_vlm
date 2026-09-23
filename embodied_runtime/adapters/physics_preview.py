@@ -21,13 +21,14 @@ class PhysicsPreviewCandidateBuilder:
     """Run Jev's reversible one-step predictions and expose only feasible tokens."""
 
     def __init__(self, world: Any, *, collision_aware: bool = True, grip_command=None,
-                 action_map=None):
+                 action_map=None, contract_fn=None):
         self.version = "physics-preview-candidates-v1"
         self.oracle = True
         self.tracking_active = False
         self.world = world
         self.grip_command = grip_command
         self.collision_aware = collision_aware
+        self.contract_fn = contract_fn
         # Explicit mappings opt into a native vocabulary without legacy STOP/DONE
         # additions. Callers own empty-set handling; no synthetic alternatives.
         self.action_map = dict(TOKEN_TO_JEV if action_map is None else action_map)
@@ -35,7 +36,10 @@ class PhysicsPreviewCandidateBuilder:
         self.last_preview: dict[str, Any] | None = None
 
     def build(self, belief):
-        from jev_libero.policy import contracts
+        if self.contract_fn is None:
+            from jev_libero.policy import contracts
+        else:
+            contracts = self.contract_fn
 
         grip = self.grip_command() if self.grip_command else -1.0
         before, predictions = self.world.predict_all(grip)
