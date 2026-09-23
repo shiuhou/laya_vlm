@@ -72,6 +72,15 @@ def objective_routing(pools, order):
                                    if name in union and name not in members}}
 
 
+def validate_baseline_settings(args, baseline_config):
+    """Hold policy/runtime settings fixed while allowing an explicit action budget."""
+    for key in ("seed", "init_state_id", "device", "timeout_s"):
+        if getattr(args, key) != baseline_config[key]:
+            raise RuntimeError(f"baseline setting differs: {key}")
+    return {"baseline_steps": baseline_config["steps"], "requested_steps": args.steps,
+            "only_execution_budget_may_differ": True}
+
+
 def presentation_format(predictions, names, objective):
     has_witnesses = any(predictions[name].get("reposition_witness") for name in names)
     return COMPACT_WITNESS_VERSION if objective is not None and has_witnesses else "verbose-v1"
@@ -529,12 +538,11 @@ def run(args):
             baseline_config = json.loads((baseline / "resolved_config.yaml").read_text())
             if identity != baseline_manifest["models"]["decision"]:
                 raise RuntimeError("local-objective model differs from flat baseline")
-            for key in ("seed", "init_state_id", "device", "steps", "timeout_s"):
-                if getattr(args, key) != baseline_config[key]:
-                    raise RuntimeError(f"baseline setting differs: {key}")
+            budget = validate_baseline_settings(args, baseline_config)
             recorder.manifest_update({"flat_baseline": {"path": str(baseline.resolve()),
                 "sha256": {name: file_hash(baseline / name) for name in
-                    ("episodes.jsonl", "manifest.json", "resolved_config.yaml")}}})
+                    ("episodes.jsonl", "manifest.json", "resolved_config.yaml")}},
+                "execution_budget": budget})
         recorder.manifest_update({"models": {"decision": identity}})
         inventory = initial_state_inventory("top_drawer", args.libero_root, args.config_dir)
         recorder.record("reference_initial_identity", {"task": "top_drawer", "binding": inventory["binding"],

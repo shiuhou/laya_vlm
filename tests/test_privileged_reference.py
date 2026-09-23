@@ -509,6 +509,19 @@ def test_objective_priority_is_pool_presence_not_maximum_utility():
         ref.objective_routing({"invented_phase": {"hold": {}}}, ["hold"])
 
 
+def test_baseline_check_allows_only_execution_budget_to_differ():
+    baseline = {"seed": 1, "init_state_id": 0, "device": "cuda",
+                "timeout_s": 1800., "steps": 100}
+    args = SimpleNamespace(**{**baseline, "steps": 200})
+    assert ref.validate_baseline_settings(args, baseline) == {
+        "baseline_steps": 100, "requested_steps": 200,
+        "only_execution_budget_may_differ": True,
+    }
+    args.seed = 2
+    with pytest.raises(RuntimeError, match="seed"):
+        ref.validate_baseline_settings(args, baseline)
+
+
 def test_objective_presentation_preserves_effect_table_and_question_options():
     predictions = {"x+3mm": prediction(), "rotate_x+10deg": prediction()}
     state, question = ref.presentation(features(), predictions, list(predictions), -1., None)
