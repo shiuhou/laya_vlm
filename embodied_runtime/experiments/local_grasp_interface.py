@@ -143,6 +143,8 @@ def collect(args):
     from .native_substep_observability import stepping_identity
     from .records import repository_identity, package_directory
     import jev_libero.world
+    from jev_libero.environment import load_libero
+    load_libero(args.libero_root,args.config_dir)
 
     source = load_source()
     code = code_identity()
@@ -304,6 +306,8 @@ def replay(args):
     from .native_substep_observability import stepping_identity
     from .records import repository_identity, package_directory
     import jev_libero.world
+    from jev_libero.environment import load_libero
+    load_libero(args.libero_root,args.config_dir)
     equal(repository_identity(package_directory(jev_libero.world)),frozen['jev'],'replay jev')
     equal(stepping_identity(),frozen['stepping_sources'],'replay stepping sources')
     equal(versions(),frozen['versions'],'replay package versions')

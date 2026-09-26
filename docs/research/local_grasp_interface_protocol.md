@@ -76,3 +76,20 @@ requires the same clean scientific source identity, protocol, Jev repository,
 stepping-source hashes, packages and GPU environment as collection. Replay is verification, not a new
 policy attempt. After a failure, stop this condition and interpret it; any next
 experiment needs a separate stated question. No production runtime file changes.
+
+
+## Recorded setup failure and infrastructure correction
+
+Collection attempt01 at ef58bf9 failed during source introspection, before
+RunRecorder or any world construction, because LIBERO was not importable before
+the normal World initialization installed its configured path. The complete
+terminal log remains `runs/autonomous-research/local-grasp-interface-run-01.log`.
+No simulation reset, control, image or physical outcome occurred. This attempt
+remains failed; it is not relabeled as a successful run or erased.
+
+The correction calls existing `jev_libero.environment.load_libero` with the same
+explicit root/config before source introspection in collection and replay. This
+is package/config initialization, without world construction or dynamics. Freeze
+and review this change, perform import/source preflight without a world, then
+use a separately named attempt02. Scientific arms, stop rules, controls,
+measurements, acceptance and executor thresholds remain exactly as declared.
