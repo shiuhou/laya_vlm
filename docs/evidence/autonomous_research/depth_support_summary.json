@@ -1,0 +1,302 @@
+{
+  "source_artifacts": {
+    "runs/autonomous-research/depth-support-probe-01/probe.json": "791b7da90a2cc0330cdae875afdeb00039f65d8690b2a66708de1e0496ebaf8b",
+    "runs/autonomous-research/depth-support-probe-01/report.md": "08630da0313a2c5098cbeed4a3df643efa008b9bd53aed0b0de38499c7639f4b",
+    "runs/autonomous-research/depth-support-probe-01/artifact-sha256.json": "53763a4d4ff8bf047f1fca9524a3edc283a386c7bfb85d854756399483461836"
+  },
+  "summary": {
+    "n": 18,
+    "known": 18,
+    "unknown": 0,
+    "zero_gap_ambiguous": 0,
+    "error_improved_n": 18,
+    "error_worsened_n": 0,
+    "error_unchanged_n": 0,
+    "full_bbox_error_mm": {
+      "n": 18,
+      "min": 38.25064998592911,
+      "median": 79.20497377910696,
+      "max": 101.42083139916724
+    },
+    "foreground_error_mm": {
+      "n": 18,
+      "min": 7.1850275546598885,
+      "median": 9.057284780930392,
+      "max": 91.80247018163966
+    },
+    "full_bbox_purity": {
+      "n": 18,
+      "min": 0.11720021703743896,
+      "median": 0.4942632850241546,
+      "max": 0.5555555555555556
+    },
+    "foreground_purity": {
+      "n": 18,
+      "min": 0.12356979405034325,
+      "median": 0.632385047586286,
+      "max": 0.7169811320754716
+    },
+    "full_bbox_recall": {
+      "n": 18,
+      "min": 0.9722222222222222,
+      "median": 0.9749089679567208,
+      "max": 1.0
+    },
+    "foreground_recall": {
+      "n": 18,
+      "min": 0.9648711943793911,
+      "median": 0.9719624637657425,
+      "max": 1.0
+    },
+    "full_bbox_direction": {
+      "n": 18,
+      "preferred_set_intersects_oracle_n": 10,
+      "all_preferred_improve_n": 15,
+      "worst_regret_mm": 8.599861176570133
+    },
+    "foreground_direction": {
+      "n": 18,
+      "preferred_set_intersects_oracle_n": 12,
+      "all_preferred_improve_n": 15,
+      "worst_regret_mm": 8.599861176570133
+    }
+  },
+  "source_module_sha256": "e7057e95b4c122330c418cae7733e0f3c8e975978c9d0653cb477a14966a3b83",
+  "code": {
+    "commit": "dee27ea56d74b1ecc0eac913666fe216b6622dc5",
+    "dirty_status": "?? docs/research/depth_support_probe_protocol.md\n?? embodied_runtime/experiments/depth_support_probe.py\n?? tests/test_depth_support_probe.py",
+    "source_sha256": {
+      "embodied_runtime/__init__.py": "76438b042b8aca6b6ec4e074ea4dc17511222772781dacb5ebb3b06537564826",
+      "embodied_runtime/adapters/base.py": "5a867e9395a577b2fc8426f8980f6a619aacd694e96435340361958019d64a7b",
+      "embodied_runtime/adapters/callback_backend.py": "9f9f1b3ad5ad6fc236779a5eefbc39d3739cb32e2495c75ee1052193a0dce8f4",
+      "embodied_runtime/adapters/laya_input.py": "11d412905ac087ef5b3af34facec3d9eafcbbc180cc25301c67cf615f4ff464d",
+      "embodied_runtime/adapters/libero.py": "f6988f2d72d63b8832e7323a583397eb41b5a3bc8cb6cc380ac420cf0833454f",
+      "embodied_runtime/adapters/libero_rgbd.py": "b9b2e58081f336517d97397037cb7a2e7a31198e18167670b96b6386d2844ab4",
+      "embodied_runtime/adapters/locateanything.py": "5dbc90c5004571cec07486635775040e0bf952df7555b0205d7d367ee67c2704",
+      "embodied_runtime/adapters/physics_preview.py": "f8bee042c9ed8066acf7742e177ae3716d5d7b9fa83513061fb15c4cd41dcc79",
+      "embodied_runtime/association.py": "cfe2f358c12e41d14d85402877a84ce5827286a152943995152fcb6135669aeb",
+      "embodied_runtime/decision_interface.py": "92c87afe4b28e90bc50ec25293bb09ca6a93c8d52b598ae465e36d4d54f4c917",
+      "embodied_runtime/experiments/audit_initial_states.py": "ee3e53eaa087f74f712f3d64641abdb5d914889c19865a7555d20e676be851b7",
+      "embodied_runtime/experiments/calibrate_atomic_actions.py": "fa168398d084c09a565a8d8d614b4d60430f53e593e890c4e98fb311c45b9338",
+      "embodied_runtime/experiments/clause_order.py": "d2a23908f99ee314ddedf92ce94006f4fcb1eb439983b487d46094a64ad4ab91",
+      "embodied_runtime/experiments/collect_pairs.py": "6cc5b23d6b5c5b64c0ccd3187f0e79185d7672a7805b41f4d49093ff71d3b1b9",
+      "embodied_runtime/experiments/dead_end_boundary_audit.py": "a791dd5017a993be9992c32c26e8819b62d10b198f3d15cf53475ff140163556",
+      "embodied_runtime/experiments/demo_feedback.py": "162aa448d6157c989a2b4783fb4df6a8d89108a0f10c68002098027ed14b1bb1",
+      "embodied_runtime/experiments/demo_inspector.py": "10c54dfdfa6a0bf72e808194289ed0808ac45ea271146d305ec6d029cde77fa6",
+      "embodied_runtime/experiments/demo_report.py": "12f09edd6cfc2ab361f1182e864f203d41192b3d4fb281819cfd61f0f551159d",
+      "embodied_runtime/experiments/depth_support_probe.py": "e7057e95b4c122330c418cae7733e0f3c8e975978c9d0653cb477a14966a3b83",
+      "embodied_runtime/experiments/effect_binding.py": "435dd8a383f47e2d9c767c7b2b89c243462dcc98997dc474465c74a9e5861180",
+      "embodied_runtime/experiments/engineering_demo.py": "800c2c5c4205dd1415c062060f4e1f107344a7b6f3736a4e093af4a6d2215d56",
+      "embodied_runtime/experiments/equivalence.py": "8319e15aca64bbb0400edad2ccfb64190bde6c6ba405dd594b330e65e32b8486",
+      "embodied_runtime/experiments/explicit_consequence.py": "2fe9f68b8799c355f77b34954694b8e2d332b337cecd4b62075751c4ac59e89e",
+      "embodied_runtime/experiments/goal_placement.py": "0052e41afa42b26151c16b5509a95855a9c520ddbe8a02037b68fa288e2d9008",
+      "embodied_runtime/experiments/inspect_decision_pair.py": "1edcdaff9f98d65f3c903f95789321784988d2f1bbe7d02e13c83da20253459f",
+      "embodied_runtime/experiments/interaction_boundary_audit.py": "cd4cc86372f2518174530ad1c386c0152816f929a0e5bc80e100771d8ff4ac84",
+      "embodied_runtime/experiments/interface_search.py": "e05420c21f316e2449cf52c5f18842769e4a3ab01633126def692cdf3aeb1e9b",
+      "embodied_runtime/experiments/jev_hierarchy_comparison.py": "26e018a38f1630e742a0e91fc8ece536d53c6f923acbcaaf9c407e27da3c1585",
+      "embodied_runtime/experiments/matched_fixture.py": "1a7be3b7cd8e3276795d523761691781e22d08f6dd52c07f6aa32ead61321536",
+      "embodied_runtime/experiments/objective_reference_check.py": "92cdbbd32a203852bb84131591f7c89b8c85a18c0fd87d782878d33f8853e0f3",
+      "embodied_runtime/experiments/operating_regime_probe.py": "19deb1dcf9dd2dc8c72b6831a8e8e7d76aa96d1d9026e884c50cd8d072b9e882",
+      "embodied_runtime/experiments/operating_regime_report.py": "c99475683e3f73eadbfa843d53ac0ed4785930d047628fde9e1084c8b0afac32",
+      "embodied_runtime/experiments/perception_support_audit.py": "7c4710d25d350c49d3e07901470df5cbb759b957fe0ccf86afb7cca9a11e8e12",
+      "embodied_runtime/experiments/predicate_verification.py": "04eea96309fe24b05460f223a851650ee223d7f94554397eb41c9dd2792eeb84",
+      "embodied_runtime/experiments/predicate_verification_audit.py": "26a2729bce909b7aab266dcc63521d2ea1d9e724a67a7385125aa580ffc2dbbb",
+      "embodied_runtime/experiments/privileged_multistage_task.py": "2c716660fd56d0995b73597d195b0334fecd5c220ef78cfe3da1443e00979a77",
+      "embodied_runtime/experiments/privileged_reference.py": "6c92b868d5e4105bc687e72c656fe6d4bf5b6e4defef0d544df7fe9ccc7eae85",
+      "embodied_runtime/experiments/privileged_task.py": "ba6c2700dc7e54733eab1f19b1b6e5d697a404147740ae38388352c2ef6da2bf",
+      "embodied_runtime/experiments/provider_comparison.py": "f4f3f4697af5a04ccbc4ddc3241f6450c0e387a7c0416fb606251aabdbc6494c",
+      "embodied_runtime/experiments/records.py": "50220d3104642b4b48a90b64d0bdff5e756b60197aefa64aa38ad87d7999807b",
+      "embodied_runtime/experiments/reference_gate.py": "384418838038b798c2b686f56ad7c29da83cde2b6f6b56f6e63e632199d9aa01",
+      "embodied_runtime/experiments/reference_model_diagnostic.py": "d79017e8eaae76134ef47cd4785b0a3ff5f5188d51c30aa66ddf2192f6400509",
+      "embodied_runtime/experiments/reference_quality.py": "98b32f24c0a8e1b8565e91a8a51f36080b88201968b479d33a015671a644b228",
+      "embodied_runtime/experiments/replay_equivalence.py": "91f803fe77b37b58598464341421dee689d78184ca2b177726f13abc23d3bf7b",
+      "embodied_runtime/experiments/run_libero.py": "b53a49a5418c5abe6d91aa223efdda8d43c9374456ed29698762503d95ac1efb",
+      "embodied_runtime/experiments/selective_grip.py": "48985cad77455a3ba1c5c2002d3a54a669e984d2feba91750a23ef7138cb5189",
+      "embodied_runtime/experiments/summarize.py": "cfa2edf27fa71ff11b8e0fdb68b0a22e372e751d9af9213f835fb7338961bc27",
+      "embodied_runtime/experiments/summarize_equivalence.py": "04aac535bc1f6a5f8963dd031535b51f863d9281b45461999afacbab2bda3322",
+      "embodied_runtime/experiments/target_referent.py": "93be27ca947be16f1d846d104843b08327a3105829e8ab8eda02d015945192dc",
+      "embodied_runtime/experiments/two_step_lookahead_audit.py": "1f1e659f0d50cb38d7e8adc149dab2a1d7332846f84655f67f5faa39b41eb1cb",
+      "embodied_runtime/fusion.py": "e829fb20cc050ec43db6fbde0107506e3c9720ebfcbbb15de1b2845b9edd4f68",
+      "embodied_runtime/replay.py": "e72483453d5623a6f4a1709444494afcc680d1bec3ac56ddca92d77934ce1812",
+      "embodied_runtime/runtime.py": "f233fc0516f8056b311b10fa71e8285ed658f9ccc887898259a726716144187d",
+      "embodied_runtime/runtime_core.py": "04be07b6be4d287d9b93e6376fb837cfa1a914eb0f81d9d2cf90b7c7f16763c7",
+      "embodied_runtime/vision.py": "bf428addd6bf1ebc9e6a896ab97dc630c1c16855b61ef1429ef73fcbf93f2b3b"
+    }
+  },
+  "protocol_sha256": "4172cc9b7dc0f5c69cc21ed8cf8c58c80b127d05e46099ec3596292663b8350f",
+  "per_init": {
+    "0": {
+      "n": 12,
+      "known": 12,
+      "unknown": 0,
+      "zero_gap_ambiguous": 0,
+      "error_improved_n": 12,
+      "error_worsened_n": 0,
+      "error_unchanged_n": 0,
+      "full_bbox_error_mm": {
+        "n": 12,
+        "min": 38.25064998592911,
+        "median": 82.75046642370586,
+        "max": 101.42083139916724
+      },
+      "foreground_error_mm": {
+        "n": 12,
+        "min": 7.1850275546598885,
+        "median": 12.058827183297804,
+        "max": 90.75676981601592
+      },
+      "full_bbox_purity": {
+        "n": 12,
+        "min": 0.11720021703743896,
+        "median": 0.4313424096032792,
+        "max": 0.5252525252525253
+      },
+      "foreground_purity": {
+        "n": 12,
+        "min": 0.12356979405034325,
+        "median": 0.5265649417661802,
+        "max": 0.7010135135135135
+      },
+      "full_bbox_recall": {
+        "n": 12,
+        "min": 0.9727272727272728,
+        "median": 0.9747598873773122,
+        "max": 1.0
+      },
+      "foreground_recall": {
+        "n": 12,
+        "min": 0.9648711943793911,
+        "median": 0.9723776223776224,
+        "max": 1.0
+      },
+      "full_bbox_direction": {
+        "n": 12,
+        "preferred_set_intersects_oracle_n": 6,
+        "all_preferred_improve_n": 10,
+        "worst_regret_mm": 8.599861176570133
+      },
+      "foreground_direction": {
+        "n": 12,
+        "preferred_set_intersects_oracle_n": 8,
+        "all_preferred_improve_n": 10,
+        "worst_regret_mm": 8.599861176570133
+      }
+    },
+    "1": {
+      "n": 3,
+      "known": 3,
+      "unknown": 0,
+      "zero_gap_ambiguous": 0,
+      "error_improved_n": 3,
+      "error_worsened_n": 0,
+      "error_unchanged_n": 0,
+      "full_bbox_error_mm": {
+        "n": 3,
+        "min": 52.686555530681886,
+        "median": 76.88094770930667,
+        "max": 86.53973319256089
+      },
+      "foreground_error_mm": {
+        "n": 3,
+        "min": 7.658731739958799,
+        "median": 8.53562645050754,
+        "max": 18.437596171529886
+      },
+      "full_bbox_purity": {
+        "n": 3,
+        "min": 0.38755555555555554,
+        "median": 0.5189393939393939,
+        "max": 0.5555555555555556
+      },
+      "foreground_purity": {
+        "n": 3,
+        "min": 0.44250513347022585,
+        "median": 0.7010309278350515,
+        "max": 0.7169811320754716
+      },
+      "full_bbox_recall": {
+        "n": 3,
+        "min": 0.9722222222222222,
+        "median": 0.9762470308788599,
+        "max": 0.9931662870159453
+      },
+      "foreground_recall": {
+        "n": 3,
+        "min": 0.9675925925925926,
+        "median": 0.9691211401425178,
+        "max": 0.9817767653758542
+      },
+      "full_bbox_direction": {
+        "n": 3,
+        "preferred_set_intersects_oracle_n": 2,
+        "all_preferred_improve_n": 3,
+        "worst_regret_mm": 2.1309588567080677
+      },
+      "foreground_direction": {
+        "n": 3,
+        "preferred_set_intersects_oracle_n": 2,
+        "all_preferred_improve_n": 3,
+        "worst_regret_mm": 2.1309588567080677
+      }
+    },
+    "2": {
+      "n": 3,
+      "known": 3,
+      "unknown": 0,
+      "zero_gap_ambiguous": 0,
+      "error_improved_n": 3,
+      "error_worsened_n": 0,
+      "error_unchanged_n": 0,
+      "full_bbox_error_mm": {
+        "n": 3,
+        "min": 71.07345087742944,
+        "median": 74.1083058977274,
+        "max": 100.36815385667933
+      },
+      "foreground_error_mm": {
+        "n": 3,
+        "min": 7.413674746712193,
+        "median": 8.563144381429982,
+        "max": 91.80247018163966
+      },
+      "full_bbox_purity": {
+        "n": 3,
+        "min": 0.14594414893617022,
+        "median": 0.4861111111111111,
+        "max": 0.5315656565656566
+      },
+      "foreground_purity": {
+        "n": 3,
+        "min": 0.15392706872370265,
+        "median": 0.6192592592592593,
+        "max": 0.6813725490196079
+      },
+      "full_bbox_recall": {
+        "n": 3,
+        "min": 0.9722222222222222,
+        "median": 0.9745370370370371,
+        "max": 1.0
+      },
+      "foreground_recall": {
+        "n": 3,
+        "min": 0.9652777777777778,
+        "median": 0.9675925925925926,
+        "max": 1.0
+      },
+      "full_bbox_direction": {
+        "n": 3,
+        "preferred_set_intersects_oracle_n": 2,
+        "all_preferred_improve_n": 2,
+        "worst_regret_mm": 7.919581820896221
+      },
+      "foreground_direction": {
+        "n": 3,
+        "preferred_set_intersects_oracle_n": 2,
+        "all_preferred_improve_n": 2,
+        "worst_regret_mm": 7.919581820896221
+      }
+    }
+  },
+  "policy_changed": false,
+  "live_execution": false
+}

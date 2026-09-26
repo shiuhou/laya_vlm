@@ -52,9 +52,13 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   candidates. See [preregistered protocol](predicate_verification_protocol.md).
 - **Metrics:** Per-goal confusion/recall/balanced accuracy; answer-order and repeat
   consistency; matched original-selection errors; token/config/raw-output integrity.
-- **Result:** Pending. No new inference at registration.
-- **Artifacts:** Planned `runs/autonomous-research/predicate-verification-*`.
-- **Interpretation:** Pending; no controller promotion or manipulation claim.
+- **Result:** Complete 768-call run, all control/repeat/raw-token checks pass.
+  Binary TP96/TN33/FP223/FN0; balanced accuracy 56.45%; opening goal always
+  receives `satisfies`. Independent audit agrees.
+- **Artifacts:** `runs/autonomous-research/predicate-verification-{preflight,run}-01`;
+  [audited findings](../evidence/autonomous_research/initial_findings.md).
+- **Interpretation:** Reliable predicate recognition cannot be assumed beneath
+  failed multi-option ranking. No controller promotion or manipulation claim.
 - **Remaining uncertainty:** Binary versus multi-option presentation is a compound
   task-format intervention; model cardinality calibration differs.
 - **Next experiment rule:** Decompose predicate failures if recognition fails;
@@ -71,10 +75,42 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   oracle support restricted to the evaluator. No new perception inference/rollout.
 - **Metrics:** Exact raw reconstruction, support purity, raw versus fused target
   error, valid/missing samples, and explicit covariance calibration status.
-- **Result:** Pending.
-- **Artifacts:** Planned `runs/autonomous-research/perception-support-audit-01`.
+- **Result:** All 18 boundaries reconstruct exactly. Support-membership component
+  exceeds same-support depth residual in all 18; all covariances uncalibrated.
+- **Artifacts:** `runs/autonomous-research/perception-support-audit-01`.
 - **Next decision:** Only improve a sensor component after identifying an error
   that can change downstream decisions. Do not add a segmentation model by default.
+
+### Parallel probe 002 — fixed depth separation
+
+- **Question / hypothesis:** Can fixed sensor-only depth grouping repair dominant
+  support errors without a new model?
+- **Intervention:** [Fixed near-depth split](depth_support_probe_protocol.md), all
+  18 development frames; no threshold tuning or oracle support correction.
+- **Result:** Median surface-centroid error 79.20 to 9.06 mm, preferred nominal
+  direction agreement 10/18 to 12/18, three adverse nominal directions unchanged.
+- **Artifacts:** `runs/autonomous-research/depth-support-probe-01`.
+- **Interpretation:** Improvement in raw geometry does not establish correct
+  semantic target support, a grasp pose or physically useful action selection.
+- **Remaining uncertainty / next:** Existing LocateAnything POINT grounding can
+  test target identity; no high-level planning model is required for that probe.
+
+### Iteration 002 — registered discriminators after iteration 001
+
+- **Decision recognition:** Four fixed binary conditions on 74 unique payloads
+  retaining all 176 source lineages: original full rule, negative-label spacing
+  only, absolute-direction clause, STOP-relative clause; two orders/two repeats,
+  1,184 calls. Separates answer-form sensitivity from recognition deficits.
+- **Current interface:** Reproduce five prospectively selected current-reference
+  boundaries unchanged (first two genuine decisions per objective plus first
+  lookahead: 0, 1, 9, 10, 87), two repeats, ten calls. All admitted candidates are
+  contract-positive, so old positive/negative labels would be uninformative here.
+- **Grounding:** Matched 36 BOX/POINT calls on the same 18 full-RGB development
+  frames, existing checkpoint/query/settings, no new model or live execution.
+- **Status:** Protocol/instrumentation preparation; no results claimed yet.
+- **Why these:** These discriminate known model-interface and semantic-support
+  failures before adding a high-level planner around them. They do not protect
+  Laya or exclude a different model/responsibility split if the evidence warrants it.
 
 ## Iteration and stopping rules
 
