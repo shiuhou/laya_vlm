@@ -11,7 +11,9 @@ must not be passed to own-body FK or exported as a sensor estimate.
 Use the same frozen `coarse-initial-point-02` archive and the same pre24/pre25
 RGB-D frames pinned by the two preceding proximity protocols. Start the
 standard seed-1/init-0 top_drawer world with the original configuration and
-GPU-4 EGL rendering. Count constructor/setup controls and MuJoCo stepping
+EGL rendering. The physical source used GPU 4; the evaluator uses GPU 5 under
+the coordinator's final allocation before measurement. Exact image gates must
+still pass, with no device-switch retry. Count constructor/setup controls and MuJoCo stepping
 separately from historical-prefix reconstruction. Do not disguise bootstrap
 steps as zero dynamics. Replay exactly the first 200 archived control commands
 (actions 0–24); do not execute any action-25 command or a new candidate.
@@ -53,6 +55,10 @@ through the same RGB-D adapter. Verify time/qpos/qvel, all checked robot/scene
 render-pose arrays and camera caches remain exactly unchanged. If the native
 actual sample count was already zero, record that the comparison is degenerate.
 Do not create an additional fresh-FK image condition or change geometry groups.
+Enforce equality of native and intervention geometry groups, collision/visual
+render flags, framebuffer width/height, depth-map mode, scene flags, integrator
+and timestep both after buffer rebuild and after each capture. A non-sampling
+configuration change fails the run rather than being reinterpreted.
 
 Report native-versus-zero whole-frame RGB/depth differences and the fixed
 witness samples below. A difference supports a sampling contribution; lack of
