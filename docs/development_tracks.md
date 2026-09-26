@@ -1,5 +1,16 @@
 # Collaboration and document authority
 
+## Active mission — 2026-09-26
+
+The user authorized the autonomous embodied-interface mission on
+`research/embodied-interface-discovery`, based on `share_main` at `b73b5b4`.
+Parallel agents have disjoint implementation/evaluation/perception-audit ownership;
+the research lead schedules GPU/physical experiments and reviews independent results.
+This supersedes earlier restrictions on which research branches/experiments may
+begin. Preserve the integration baseline and normal history; do not automatically
+merge or publish exploratory results. See the
+[research log](research/autonomous_research_log.md).
+
 ## One integrated baseline
 
 `laya-embodied-runtime` / `share_main` is the shared reviewed baseline.

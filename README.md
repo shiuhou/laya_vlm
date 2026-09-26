@@ -5,6 +5,13 @@ actions; code owns estimation, validity checks and motor control.
 The integrated baseline demonstrates an inspectable visual model-to-actuator loop.
 That non-oracle demo still does not establish useful drawer manipulation.
 
+The active autonomous research mission (2026-09-26) starts from `b73b5b4` and tests
+which perceptual information and planning/decision boundaries are actually needed.
+VLM planning plus Laya is a hypothesis. See [current beliefs](CURRENT_BELIEFS.md)
+and the [research log](docs/research/autonomous_research_log.md). The privileged
+results below remain preserved baselines; prior phase scope restrictions do not
+limit the newly authorized experiments.
+
 The current research direction is **Interaction-Structured Decision Interfaces for
 Foundation-Model Robotic Manipulation**. The question is what physical structure a
 runtime must expose to a frozen decision model so its closed-loop choices satisfy

@@ -1,6 +1,22 @@
 # Current project state
 
-Reviewed 2026-09-24. This document supersedes historical plans, not raw evidence.
+Reviewed 2026-09-26. This document supersedes historical plans, not raw evidence.
+
+## Active autonomous research mission
+
+The user has authorized autonomous research into the smallest decision interface
+for manipulation under perceptual uncertainty, starting at `b73b5b4`. VLM planning,
+Laya, perception, candidate effects and their responsibility split are hypotheses.
+The former phase restrictions below remain historical scope, not current prohibitions.
+Execution semantics, strict information provenance and historical evidence remain
+protected. No new competent visual or interaction-valid policy is established.
+
+Work proceeds on `research/embodied-interface-discovery`. The first registered
+experiment separates per-candidate predicate recognition from eleven-option motor
+selection using frozen inputs; a parallel audit recomputes archived RGB-D support.
+See [current beliefs](../CURRENT_BELIEFS.md) and the
+[research log](research/autonomous_research_log.md) for current hypotheses/results.
+The following sections describe the preserved baseline.
 
 ## Interaction-structured research checkpoint
 

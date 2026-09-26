@@ -1,5 +1,12 @@
 # Research direction and evidence boundaries
 
+**2026-09-26 mission update:** autonomous investigation now includes visual/perceptual
+uncertainty and alternative planning/decision boundaries. The scope restrictions in
+the historical phase descriptions below are superseded by this user-authorized
+mission. Begin with the [research log](research/autonomous_research_log.md) and
+[current beliefs](../CURRENT_BELIEFS.md); previous evidence and negative results
+remain binding evidence, not immutable architecture choices.
+
 The adopted research direction is **Interaction-Structured Decision Interfaces for
 Foundation-Model Robotic Manipulation**:
 
