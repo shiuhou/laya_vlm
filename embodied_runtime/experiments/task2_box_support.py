@@ -201,7 +201,8 @@ def generate(output):
         ids = inputs['input_ids'].detach().cpu().tolist()[0]
         pixels = inputs['pixel_values'].to(worker.dtype)
         grid = inputs.get('image_grid_hws')
-        grid_list = None if grid is None else grid.detach().cpu().tolist()
+        grid_list = (None if grid is None else grid.detach().cpu().tolist()
+                     if hasattr(grid, 'detach') else np.asarray(grid).tolist())
         original_decode, observed = worker.tokenizer.batch_decode, []
         def audit_decode(sequences, *args, **kwargs):
             observed.append(sequences.detach().cpu().tolist())
