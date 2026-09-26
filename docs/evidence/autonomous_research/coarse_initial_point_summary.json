@@ -1,0 +1,680 @@
+{
+  "all_checks_passed": true,
+  "checks": 761,
+  "raw": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/coarse-initial-point-02",
+  "commit": "30f49f42d37c49f7965c1e674ec46fa9bbff804d",
+  "raw_sha256": "e09300d6ce11b86ba21339d92f52c86a24ac584f585a9fed8208ca51df7607cf",
+  "initial_calls": 1,
+  "executed_primitives": 26,
+  "controls": 208,
+  "termination": {
+    "boundary": 25,
+    "executed_primitives": 26,
+    "laya_decisions": 0,
+    "manipulation_success_claim": false,
+    "reason": "external_oracle_new_robot_contact"
+  },
+  "camera_calibration_exactly_stable": true,
+  "initial_point_world_m": [
+    0.003321375780614755,
+    -0.06019141953353715,
+    1.0961857009378837
+  ],
+  "initial_ray_evaluator": {
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/coarse-point-boundary-grounding-audit-01.json",
+    "sha256": "ddc36aa8c7549fbd68a5d109762e3799883acc5ef39e70fdb16a37afb1c7ae63",
+    "row": {
+      "capture_seq": 1,
+      "capture_record_id": "fb7097771b9eeba0332182689414aec79b2195ae24e8e7d0b4e33848bb726f89",
+      "frame_sha256": "b6a420d3fd5433b6ff5b5742e14d2937544931f987110759185c99bf37b519d6",
+      "source": "oracle_sim",
+      "privileged": true,
+      "raw_output": "<ref>the metal handle on the top drawer of the small freestanding wooden cabinet in the foreground</ref><box><412><483></box><|im_end|>",
+      "parsed": {
+        "status": "single_point",
+        "points": [
+          {
+            "normalized": [
+              412,
+              483
+            ],
+            "continuous_xy": [
+              158.208,
+              185.47199999999998
+            ],
+            "sample_pixel_xy": [
+              158,
+              185
+            ]
+          }
+        ],
+        "boxes": [],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "generation_audit": {
+        "actual_generated_token_ids": [
+          151672,
+          1782,
+          9317,
+          3705,
+          389,
+          279,
+          1909,
+          26482,
+          315,
+          279,
+          2613,
+          3457,
+          477,
+          25591,
+          22360,
+          21921,
+          304,
+          279,
+          39305,
+          151673,
+          151668,
+          152089,
+          152160,
+          151669,
+          151645
+        ],
+        "actual_generated_token_count": 25,
+        "input_token_count": 244,
+        "model_max_length": 16384,
+        "eos_token_id": 151645,
+        "effective_limit": 256,
+        "terminal_eos_observed": true,
+        "length_limit_reached": false,
+        "complete_generation": true,
+        "truncation_status": "eos_terminated"
+      },
+      "status": "evaluated",
+      "boundary": 0,
+      "capture_sim_time": 0.5000000000000003,
+      "sample_pixel_xy": [
+        158,
+        185
+      ],
+      "sensor_point_world_m": [
+        0.003321375780614755,
+        -0.06019141953353715,
+        1.0961857009378837
+      ],
+      "selected_primitive": "MV_FWD",
+      "terminal_observation": false,
+      "ray_origin_world_m": [
+        0.6586131746834771,
+        0.0,
+        1.6103500240372424
+      ],
+      "ray_direction_world_unit": [
+        -0.7846847722279423,
+        -0.07207673040594773,
+        -0.6156904686346626
+      ],
+      "ray_range_m": 0.8357643134031543,
+      "raw_hit_geom_id": 151,
+      "designated_handle_geom_id": 151,
+      "sensor_optical_depth_m": 0.832848072052002,
+      "membership": "designated_top_handle",
+      "target_member": true,
+      "ray_surface_world_m": [
+        0.002801644784480417,
+        -0.06023915910007115,
+        1.0957779022499272
+      ],
+      "ray_optical_depth_m": 0.8335086280956467,
+      "sensor_minus_ray_optical_depth_mm": -0.6605560436447888,
+      "absolute_depth_residual_mm": 0.6605560436447888,
+      "geom_name": "wooden_cabinet_1_g17",
+      "body_name": "wooden_cabinet_1_cabinet_top",
+      "mesh_name": "wooden_cabinet_1_wooden_cabinet_top_handle_vis"
+    },
+    "basis": "Inherited evaluator evidence only after exact initial state/image/point equality; no new ray or policy input."
+  },
+  "first_divergence": {
+    "boundary": 21,
+    "matching_primitives": 21,
+    "matching_controls": 168,
+    "matching_boundary_RGBD_captures": 22,
+    "state_and_proprioception_exactly_equal": true,
+    "prefix_sensor_distance_metric_differences": [
+      12
+    ],
+    "rules": {
+      "initial": "MV_FWD",
+      "fresh": "MV_RIGHT"
+    },
+    "initial_point_world_m": [
+      0.003321375780614755,
+      -0.06019141953353715,
+      1.0961857009378837
+    ],
+    "fresh_point_world_m": [
+      -0.03797194253431624,
+      -0.20532275500224048,
+      1.0637855666942517
+    ]
+  },
+  "contact_samples": [
+    {
+      "step": 25,
+      "control": 0,
+      "contacts": [
+        {
+          "distance_m": -7.310049069312382e-05,
+          "geom_ids": [
+            77,
+            145
+          ],
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "normal_force_N": 4.839180784535814,
+          "position_world_m": [
+            -0.019031453213251604,
+            -0.07967020821600317,
+            1.1223489455299358
+          ],
+          "robot_sides": [
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "step": 25,
+      "control": 2,
+      "contacts": [
+        {
+          "distance_m": -1.0894998405960676e-06,
+          "geom_ids": [
+            77,
+            145
+          ],
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "normal_force_N": 2.670218771510337,
+          "position_world_m": [
+            -0.01876690903345264,
+            -0.08192376029251236,
+            1.1223598352468631
+          ],
+          "robot_sides": [
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "step": 25,
+      "control": 4,
+      "contacts": [
+        {
+          "distance_m": -7.840926297641977e-07,
+          "geom_ids": [
+            77,
+            145
+          ],
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "normal_force_N": 0.9941167908240971,
+          "position_world_m": [
+            -0.018681859064861854,
+            -0.08429007655753575,
+            1.1223598811338564
+          ],
+          "robot_sides": [
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "step": 25,
+      "control": 5,
+      "contacts": [
+        {
+          "distance_m": -6.367136356084227e-07,
+          "geom_ids": [
+            77,
+            145
+          ],
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "normal_force_N": 0.7807973245831102,
+          "position_world_m": [
+            -0.01868627078327314,
+            -0.08519943669455363,
+            1.1223599033769713
+          ],
+          "robot_sides": [
+            false,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "step": 25,
+      "control": 7,
+      "contacts": [
+        {
+          "distance_m": -1.5774218723662588e-07,
+          "geom_ids": [
+            77,
+            145
+          ],
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "normal_force_N": 0.6527847608303695,
+          "position_world_m": [
+            -0.018722761426927723,
+            -0.08643614808877612,
+            1.1223599760383542
+          ],
+          "robot_sides": [
+            false,
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "first_oracle": {
+    "contacts": [],
+    "gripper_to_designated_handle_surface_mm": 167.13065903301927,
+    "handle_center_m": [
+      -0.005519115772604409,
+      -0.06644989137970915,
+      1.08893
+    ],
+    "official_success": false,
+    "privileged": true,
+    "purpose": "evaluation_and_external_abort_only",
+    "remaining_open_mm": 151.65901295563316,
+    "tcp_to_designated_handle_center_m": 0.22725789210476255,
+    "valid_handle_contact": false
+  },
+  "last_oracle": {
+    "contacts": [
+      {
+        "distance_m": -1.5774218723662588e-07,
+        "geom_ids": [
+          77,
+          145
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "normal_force_N": 0.6527847608303695,
+        "position_world_m": [
+          -0.018722761426927723,
+          -0.08643614808877612,
+          1.1223599760383542
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      }
+    ],
+    "gripper_to_designated_handle_surface_mm": 25.24160014561298,
+    "handle_center_m": [
+      -0.005519115772604409,
+      -0.0732760729456531,
+      1.08893
+    ],
+    "official_success": false,
+    "privileged": true,
+    "purpose": "evaluation_and_external_abort_only",
+    "remaining_open_mm": 144.81434219198692,
+    "tcp_to_designated_handle_center_m": 0.061532991761461577,
+    "valid_handle_contact": false
+  },
+  "target_handle_center_max_change_before_final_primitive_mm": 0.0,
+  "replay": {
+    "controls": 208,
+    "max_state_error": 0.0,
+    "checks": 417,
+    "sha256": "121a713bc543283316a771a49695db43369f54da5edb9b5dded757321c80998e"
+  },
+  "limitations": [
+    "One init/seed physical condition; GPU assignment differs from historical baseline.",
+    "Processor evidence reconstructs generate arguments, not actual forward hooks or full-vocabulary logits.",
+    "Current visibility/identity and target motion are unobserved by the selector after initialization.",
+    "Contact abort is privileged and occurs after completing the native atomic action.",
+    "Contact is sampled after native controls, not every integration substep."
+  ],
+  "setup_failure": {
+    "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/coarse-initial-point-01",
+    "worlds": 0,
+    "model_calls": 0,
+    "controls": 0,
+    "reason": "EGL device4 absent from CUDA_VISIBLE_DEVICES=1; corrected before any physical attempt"
+  },
+  "frozen_prephysical_revision": "30f49f4",
+  "protocol_sha256": "9678dbf5d82464e79224951175605a8e2f7f6a3318fb7d5a5ae5db2014797c0a",
+  "first_contact": {
+    "step": 25,
+    "control": 0,
+    "sim_time_s": 10.550000000000193,
+    "rows": [
+      {
+        "distance_m": -7.310049069312382e-05,
+        "geom_ids": [
+          77,
+          145
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "normal_force_N": 4.839180784535814,
+        "position_world_m": [
+          -0.019031453213251604,
+          -0.07967020821600317,
+          1.1223489455299358
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      }
+    ]
+  },
+  "target_age_at_first_divergence_s": 8.399999999999642,
+  "target_age_at_contact_action_s": 10.000000000000176,
+  "initial_admission_metadata_caveat": "admitted is the immutable initial measurement and retains its fresh-at-initial-admission string; canonical current policy explicitly admits stale initial geometry with age and unverified stationarity.",
+  "fixed_point_distance_initial_mm": 231.18720120451925,
+  "fixed_point_distance_final_mm": 52.37462861565544,
+  "collider_mapping": {
+    "recorded_robot_geom": "gripper0_finger1_collision",
+    "recorded_other_geom": "wooden_cabinet_1_g11",
+    "configured_nonhandle_geoms": [
+      "wooden_cabinet_1_g11",
+      "wooden_cabinet_1_g12",
+      "wooden_cabinet_1_g13",
+      "wooden_cabinet_1_g14",
+      "wooden_cabinet_1_g15",
+      "wooden_cabinet_1_g16"
+    ],
+    "configured_handle_geoms": [
+      "wooden_cabinet_1_g18",
+      "wooden_cabinet_1_g19",
+      "wooden_cabinet_1_g20"
+    ],
+    "source_xml": "/home/junhongli/projects/LIBERO/libero/libero/assets/articulated_objects/wooden_cabinet.xml",
+    "source_xml_sha256": "eca251258c7ff6a05fa181a316c767508801812f4ea870921f3ce28fd82ea7af",
+    "robosuite_implicit_geom_naming_source": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/objects/objects.py",
+    "naming_source_sha256": "91e7e0e00ecd0ffaeb26bf089437ade0d2a97d7c30b94cfb9493bce3ea3411e6",
+    "xml_geom_zero_based_index": 11,
+    "xml_parent_body": {
+      "name": "cabinet_top",
+      "pos": "0 0.0 0"
+    },
+    "xml_geom_attributes": {
+      "solimp": "0.998 0.998 0.001",
+      "solref": "0.001 1",
+      "density": "100",
+      "friction": "0.95 0.3 0.1",
+      "type": "box",
+      "pos": "0.00334 -0.07524 0.18309",
+      "quat": "0.50000 0.50000 -0.50000 -0.50000",
+      "size": "0.00271 0.03427 0.10934",
+      "group": "0",
+      "rgba": "0.8 0.8 0.8 0.3"
+    },
+    "interpretation": "Top drawer non-handle front panel collision box; finger body contact, not fingerpad/handle."
+  },
+  "drawer_motion": {
+    "identified_flattened_state_component": 38,
+    "identification": "Unique initial-state value equals negative evaluator opening; before/after equality independently checked against all26 action labels. No model was reconstructed.",
+    "component_change_before_action25_m": 0.0,
+    "first_contact_sample_closing_mm": 0.047614899491350116,
+    "final_closing_mm": 6.844670763646235,
+    "final_cached_handle_center_shift_mm": 6.826181565943945,
+    "sampling_note": "Direct state joint displacement and cached geometry handle-center displacement differ slightly; do not merge their sample semantics.",
+    "last_action_controls": [
+      {
+        "step": 25,
+        "control": 0,
+        "before_sim_time_s": 10.500000000000176,
+        "after_sim_time_s": 10.550000000000193,
+        "state_component_before_m": -0.15165901295563317,
+        "state_component_after_m": -0.15161139805614182,
+        "closing_since_initial_mm": 0.047614899491350116,
+        "contact_rows": [
+          {
+            "distance_m": -7.310049069312382e-05,
+            "geom_ids": [
+              77,
+              145
+            ],
+            "geom_names": [
+              "wooden_cabinet_1_g11",
+              "gripper0_finger1_collision"
+            ],
+            "normal_force_N": 4.839180784535814,
+            "position_world_m": [
+              -0.019031453213251604,
+              -0.07967020821600317,
+              1.1223489455299358
+            ],
+            "robot_sides": [
+              false,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "step": 25,
+        "control": 1,
+        "before_sim_time_s": 10.550000000000193,
+        "after_sim_time_s": 10.60000000000021,
+        "state_component_before_m": -0.15161139805614182,
+        "state_component_after_m": -0.15057534598365616,
+        "closing_since_initial_mm": 1.08366697197701,
+        "contact_rows": []
+      },
+      {
+        "step": 25,
+        "control": 2,
+        "before_sim_time_s": 10.60000000000021,
+        "after_sim_time_s": 10.650000000000226,
+        "state_component_before_m": -0.15057534598365616,
+        "state_component_after_m": -0.14929352067704638,
+        "closing_since_initial_mm": 2.365492278586771,
+        "contact_rows": [
+          {
+            "distance_m": -1.0894998405960676e-06,
+            "geom_ids": [
+              77,
+              145
+            ],
+            "geom_names": [
+              "wooden_cabinet_1_g11",
+              "gripper0_finger1_collision"
+            ],
+            "normal_force_N": 2.670218771510337,
+            "position_world_m": [
+              -0.01876690903345264,
+              -0.08192376029251236,
+              1.1223598352468631
+            ],
+            "robot_sides": [
+              false,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "step": 25,
+        "control": 3,
+        "before_sim_time_s": 10.650000000000226,
+        "after_sim_time_s": 10.700000000000243,
+        "state_component_before_m": -0.14929352067704638,
+        "state_component_after_m": -0.14804602162864391,
+        "closing_since_initial_mm": 3.6129913269892313,
+        "contact_rows": []
+      },
+      {
+        "step": 25,
+        "control": 4,
+        "before_sim_time_s": 10.700000000000243,
+        "after_sim_time_s": 10.75000000000026,
+        "state_component_before_m": -0.14804602162864391,
+        "state_component_after_m": -0.14693792796850602,
+        "closing_since_initial_mm": 4.721084987127142,
+        "contact_rows": [
+          {
+            "distance_m": -7.840926297641977e-07,
+            "geom_ids": [
+              77,
+              145
+            ],
+            "geom_names": [
+              "wooden_cabinet_1_g11",
+              "gripper0_finger1_collision"
+            ],
+            "normal_force_N": 0.9941167908240971,
+            "position_world_m": [
+              -0.018681859064861854,
+              -0.08429007655753575,
+              1.1223598811338564
+            ],
+            "robot_sides": [
+              false,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "step": 25,
+        "control": 5,
+        "before_sim_time_s": 10.75000000000026,
+        "after_sim_time_s": 10.800000000000276,
+        "state_component_before_m": -0.14693792796850602,
+        "state_component_after_m": -0.14603782834135676,
+        "closing_since_initial_mm": 5.621184614276416,
+        "contact_rows": [
+          {
+            "distance_m": -6.367136356084227e-07,
+            "geom_ids": [
+              77,
+              145
+            ],
+            "geom_names": [
+              "wooden_cabinet_1_g11",
+              "gripper0_finger1_collision"
+            ],
+            "normal_force_N": 0.7807973245831102,
+            "position_world_m": [
+              -0.01868627078327314,
+              -0.08519943669455363,
+              1.1223599033769713
+            ],
+            "robot_sides": [
+              false,
+              true
+            ]
+          }
+        ]
+      },
+      {
+        "step": 25,
+        "control": 6,
+        "before_sim_time_s": 10.800000000000276,
+        "after_sim_time_s": 10.850000000000293,
+        "state_component_before_m": -0.14603782834135676,
+        "state_component_after_m": -0.14533997494504056,
+        "closing_since_initial_mm": 6.319038010592607,
+        "contact_rows": []
+      },
+      {
+        "step": 25,
+        "control": 7,
+        "before_sim_time_s": 10.850000000000293,
+        "after_sim_time_s": 10.90000000000031,
+        "state_component_before_m": -0.14533997494504056,
+        "state_component_after_m": -0.1448143421919869,
+        "closing_since_initial_mm": 6.844670763646235,
+        "contact_rows": [
+          {
+            "distance_m": -1.5774218723662588e-07,
+            "geom_ids": [
+              77,
+              145
+            ],
+            "geom_names": [
+              "wooden_cabinet_1_g11",
+              "gripper0_finger1_collision"
+            ],
+            "normal_force_N": 0.6527847608303695,
+            "position_world_m": [
+              -0.018722761426927723,
+              -0.08643614808877612,
+              1.1223599760383542
+            ],
+            "robot_sides": [
+              false,
+              true
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "image_inspection": {
+    "reviewed": [
+      "independent-contact-sheet.png",
+      "contact-control-0-rgb-crop.png",
+      "contact-control-7-rgb-crop.png"
+    ],
+    "interpretation": "Finger lies at the drawer front panel upper edge, above the visible handle; exact contact is partly self-occluded. Geometry classification relies on recorded contact identifiers and source mapping, not RGB alone.",
+    "after_contact_depth_available": false,
+    "last_depth": "frames/capture-000026.npz, before action25; later trajectory frames contain RGB only."
+  },
+  "artifact_sha256": {
+    "coarse-initial-point-02/manifest.json": "13ee01f5a7c5e2bd920d0bfcb000bbe09b30eef23db4d020de966b5d57bc93cc",
+    "coarse-initial-point-02/episodes.jsonl": "e09300d6ce11b86ba21339d92f52c86a24ac584f585a9fed8208ca51df7607cf",
+    "coarse-initial-point-02/protocol.md": "9678dbf5d82464e79224951175605a8e2f7f6a3318fb7d5a5ae5db2014797c0a",
+    "coarse-initial-point-02/replay-check.json": "121a713bc543283316a771a49695db43369f54da5edb9b5dded757321c80998e",
+    "coarse-initial-point-02/independent-audit.json": "51a36d04d61e5492d5e81ebd00d3e713a8f85e89bf4412c89472f5f1cb363827",
+    "coarse-initial-point-02/independent-audit-script.py": "8e31fa17c3098029d117ae31a22ca7039c0fe7c0307a200c647c2e27db8e02b6",
+    "coarse-initial-point-02/independent-audit-v2.py": "d4520276211af9ee2c31f038b8820712ac7e6e6a0019c5e20fac197dc09abbbe",
+    "coarse-initial-point-02/contact-geometry-audit.py": "36837301c6e0a22821cc55aadc03c71f6f84037c733bbaf4b123657cc34657ea",
+    "coarse-initial-point-02/contact-geometry-audit.json": "7546484d6f1ac64c02ac9803f0e702a98ef61d4e6b4e4329ca525935107c8f6b",
+    "coarse-initial-point-02/independent-contact-sheet.png": "7604c411627a0f3a44204613a5635905f9166358094e6ec30698d4ba9ab09fb2",
+    "coarse-initial-point-02/contact-control-0-rgb-crop.png": "4a2f7c2f12b8b1c64968fa1883b76a4aff110f983bce3a0b0a3398054770ea63",
+    "coarse-initial-point-02/contact-control-7-rgb-crop.png": "f7347d59afd859403e42805fb6d9cb542e307bdd44c63403a5f38448985dfd52",
+    "coarse-initial-point-02/findings.md": "4787e330696aa2dcdfd55daccdac2a85dd2cc956c6f1349a34cbf842e6274bb0",
+    "coarse-initial-point-01/episodes.jsonl": "ceac38238ae18d83dfb655af986e4b2c5afeb6e6f931af4851000eac45a5fbe1",
+    "coarse-initial-point-02-audit.log": "57d81b4158bd2d0806b280bf3a7ec5c9ba1fb264502d237cab0154b167c8b792",
+    "coarse-initial-point-02-audit-v2.log": "6806520c2ee13881bc56133435c977035bff0931e997a29a07eab6e222f58e41",
+    "coarse-initial-point-02-replay.log": "98461c0f688779fa58effcc2496ad823b92e69514a93da99fbdd6cd08a5c9915"
+  },
+  "focused_tests": {
+    "passed": 35,
+    "note": "34 passed in focused pre-run suite; one archived-evidence test skipped for worktree-relative raw path then passed separately from main raw root."
+  }
+}
