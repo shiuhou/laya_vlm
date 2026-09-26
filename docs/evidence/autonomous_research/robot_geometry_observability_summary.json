@@ -1,0 +1,290 @@
+{
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/robot-geometry-observability-03",
+  "producer_commit": "554d2e7a23cbbfadd90ceefe019c263f1e5f86ed",
+  "protocol_sha256": "0227d585e70718e5875f72bbf7d018b44e7afe6723bbc5115f199f836206926f",
+  "source_sha256": "e09300d6ce11b86ba21339d92f52c86a24ac584f585a9fed8208ca51df7607cf",
+  "raw_artifact_hashes": {
+    "archive-admission-map.json": "f60adc5b01aa0ccd527459d5711269a66f85b70b8b4cc32105033768251fec51",
+    "constructor-half-step-evaluator-only.json": "ff0c24d77bb9e217fa2aeebcab3455d4a626340e3938bc843bae958e89af1251",
+    "encoder-packets.json": "5b6ae9866d4fde887b0236a8d735c981fd010fe85ca156997473ab4277051e25",
+    "estimator-input.json": "071bcde0a7a80d62f66c6a8ee14ae50447f201c064454b28eae84897f492c614",
+    "evaluator-recomputed-poses.json": "0e67254c95e588e32b7c01e99a9357bc4ff733e63f533e83a451a4c6f38b27e1",
+    "manifest.json": "04ad26e756c414fb439e87de6deb2b4db750b42e76cd63dc6c76c85283dff35e",
+    "protocol.md": "0227d585e70718e5875f72bbf7d018b44e7afe6723bbc5115f199f836206926f",
+    "robot-calibration.json": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa",
+    "sensor-estimates-seal.json": "1d10bcaf656520396e45cb5c4b1e5b4bac336d7223703cf713dc0bb65fb045f8",
+    "sensor-estimates.json": "9649e90b531730f078fa68ebc66161d246e4b871684ebd43b51eba1ae63394d0",
+    "static-setup.json": "cd500c2464cd9692796e89ce5a9ce1485576d8ba8c17398a490b89f8f2be2bab",
+    "summary.json": "e4bee02dc4507af2bf57fe18fff19995a5b80893bc2180447d0f9f93333768c4"
+  },
+  "artifacts_manifest_sha256": "8a23a3464173f37759342733d36f07dd92cb3bdae00b1c859d0c5349852ccb23",
+  "passed": true,
+  "post_result_audit_check_count": 366,
+  "state_metadata": [
+    {
+      "label": "initial",
+      "read_sim_time_s": 0.5000000000000003,
+      "archive_record": {
+        "record_id": "0b6b92322f6e64a54ca9cb81075f5b394d582f2efca9aad13ec0e2f2fea2518a",
+        "seq": 5,
+        "kind": "environment",
+        "state_field": "sim_state"
+      },
+      "own_qpos_count": 9,
+      "excluded_qpos_count": 31
+    },
+    {
+      "label": "pre_action25",
+      "read_sim_time_s": 10.500000000000176,
+      "archive_record": {
+        "record_id": "ff40a0f0ca46320c2163f3173db48dcee180e085f4aa8c5e1640b197736c22dd",
+        "seq": 617,
+        "kind": "control_observation",
+        "state_field": "state_before"
+      },
+      "own_qpos_count": 9,
+      "excluded_qpos_count": 31
+    },
+    {
+      "label": "first_contact_sample",
+      "read_sim_time_s": 10.550000000000193,
+      "archive_record": {
+        "record_id": "ff40a0f0ca46320c2163f3173db48dcee180e085f4aa8c5e1640b197736c22dd",
+        "seq": 617,
+        "kind": "control_observation",
+        "state_field": "state_after"
+      },
+      "own_qpos_count": 9,
+      "excluded_qpos_count": 31
+    },
+    {
+      "label": "endpoint",
+      "read_sim_time_s": 10.90000000000031,
+      "archive_record": {
+        "record_id": "95d70575eb20e02fbf60c121640c56ed4e26ab07518402ab31f3142a23e4436b",
+        "seq": 631,
+        "kind": "control_observation",
+        "state_field": "state_after"
+      },
+      "own_qpos_count": 9,
+      "excluded_qpos_count": 31
+    }
+  ],
+  "exported_robot_counts": {
+    "bodies": 21,
+    "sites": 2,
+    "geometries": 5
+  },
+  "own_joint_kinds": {
+    "robot0_joint1": "hinge",
+    "robot0_joint2": "hinge",
+    "robot0_joint3": "hinge",
+    "robot0_joint4": "hinge",
+    "robot0_joint5": "hinge",
+    "robot0_joint6": "hinge",
+    "robot0_joint7": "hinge",
+    "gripper0_finger_joint1": "slide",
+    "gripper0_finger_joint2": "slide"
+  },
+  "own_joint_count": 9,
+  "comparison_item_rows": 112,
+  "max_errors_recomputed": {
+    "position_world_m": 8.881784197001252e-16,
+    "rotation_world": 3.6637359812630166e-15,
+    "vertices_world_m": 1.1102230246251565e-15,
+    "aabb_world_m": 1.1102230246251565e-15
+  },
+  "frozen_tolerance": 1e-10,
+  "poison_variant_count": 8,
+  "poison_output_float64_bits_equal": true,
+  "positive_max_vertex_coordinate_changes_m": {
+    "own_hinge_plus_0.01rad": 0.006718752190032635,
+    "own_slide_plus_0.001m": 0.0009999992315404549
+  },
+  "cached_tcp_difference_norms_m": {
+    "initial": 3.0720845908740783e-06,
+    "pre_action25": 5.7350903880422615e-05,
+    "endpoint": 3.379538716332842e-05
+  },
+  "cached_tcp_sample_times_unknown": true,
+  "base_calibration": {
+    "root_body_name": "robot0_base",
+    "root_position_world_m": [
+      -0.66,
+      0.0,
+      0.912
+    ],
+    "root_quaternion_world_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "base_calibration_source": "static robot root transform from standard task construction; assumed known fixed base"
+  },
+  "pre_action25_tcp_world_m": [
+    -0.02491459232661774,
+    -0.024159451826734627,
+    1.1308722422727866
+  ],
+  "pre_action25_gripper_bounds_tcp_frame_mm": [
+    [
+      -100.42587848106216,
+      -31.635917302881587,
+      -122.92480125531162
+    ],
+    [
+      103.98971991233125,
+      31.615783469326626,
+      9.249034365359783
+    ]
+  ],
+  "pre_action25_geometries": {
+    "gripper0_hand_collision": {
+      "bounds_tcp_frame_mm": [
+        [
+          -100.42587848106216,
+          -31.635917302881587,
+          -122.92480125531162
+        ],
+        [
+          103.98971991233125,
+          31.615783469326626,
+          -31.037848856733554
+        ]
+      ],
+      "bounds_world_m": [
+        [
+          -0.05164061343104596,
+          -0.12457385207979824,
+          1.1613451312963115
+        ],
+        [
+          0.011775312016983643,
+          0.07986919645724878,
+          1.2536847618195384
+        ]
+      ],
+      "vertex_count": 102
+    },
+    "gripper0_finger1_collision": {
+      "bounds_tcp_frame_mm": [
+        [
+          -66.40277193345916,
+          -10.479453063115164,
+          -44.46830437671382
+        ],
+        [
+          -39.86674675254914,
+          10.494819149012788,
+          9.24903436535963
+        ]
+      ],
+      "bounds_world_m": [
+        [
+          -0.03399936957546766,
+          -0.09053110706421379,
+          1.1213896147613474
+        ],
+        [
+          -0.01205446225369725,
+          -0.06401843391335217,
+          1.1758476934084825
+        ]
+      ],
+      "vertex_count": 18
+    },
+    "gripper0_finger1_pad_collision": {
+      "bounds_tcp_frame_mm": [
+        [
+          -47.49938918909635,
+          -8.000000000000032,
+          -11.600000000000112
+        ],
+        [
+          -39.499389189096306,
+          8.000000000000007,
+          4.400000000000115
+        ]
+      ],
+      "bounds_world_m": [
+        [
+          -0.03309152990671912,
+          -0.07166999533566162,
+          1.1260653474906435
+        ],
+        [
+          -0.016249742865984275,
+          -0.06364454015041485,
+          1.1429005928181502
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "gripper0_finger2_collision": {
+      "bounds_tcp_frame_mm": [
+        [
+          39.86630585299434,
+          -10.494819149012782,
+          -44.46830437671373
+        ],
+        [
+          66.40233103390436,
+          10.479453063115168,
+          9.249034365359783
+        ]
+      ],
+      "bounds_world_m": [
+        [
+          -0.03406121360756409,
+          0.015694327623535724,
+          1.1213345126547627
+        ],
+        [
+          -0.012215850712222701,
+          0.04224978417477941,
+          1.1758048320064496
+        ]
+      ],
+      "vertex_count": 18
+    },
+    "gripper0_finger2_pad_collision": {
+      "bounds_tcp_frame_mm": [
+        [
+          39.4989482895415,
+          -7.999999999999993,
+          -11.599999999999845
+        ],
+        [
+          47.49894828954154,
+          8.000000000000044,
+          4.400000000000381
+        ]
+      ],
+      "bounds_world_m": [
+        [
+          -0.033194605318551396,
+          0.015328275288271047,
+          1.1260335992404953
+        ],
+        [
+          -0.016352818277816556,
+          0.02335373047351781,
+          1.142868844568002
+        ]
+      ],
+      "vertex_count": 8
+    }
+  },
+  "constructor_mj_step1_calls": 1,
+  "constructor_time_qpos_qvel_unchanged": true,
+  "dynamic_controls_or_integration_steps": 0,
+  "scope": "same-qpos FK correctness and input dependency; known static robot calibration",
+  "limitations": [
+    "simulator-state-derived encoder analogues, not independent physical sensors",
+    "shared static model; physical calibration/model accuracy unvalidated",
+    "fresh MjData evaluator does not recover original cached contact-time transforms",
+    "gripper collision proxy extents only; arm link collision extents untested",
+    "no scene, contact, safety, action admission or policy claim"
+  ]
+}
