@@ -1,8 +1,9 @@
 # Task2 approach: fixed point versus saved jaw geometry
 
-The fixed proxy P remains outside the finite pad-gap prism at the first-contact
+The fixed proxy P remains outside the finite pad-gap prism at the force-threshold-crossing
 control and at termination. The raw contact pair is **`gripper0_hand_collision`
-(palm) / `wine_bottle_1_g6`**, at 0.081748 N in the first observed sample. This
+(palm) / `wine_bottle_1_g6`**. The first raw contact is 0.017556 N at 9.672 s;
+the later first crossing of 0.05 N is 0.081748 N at 10.106 s. This
 corrects the earlier RGB-based finger impression. Images may suggest contact near
 the cap/neck, but that qualitative impression does not identify the contacting
 robot geometry; the raw geometry attribution is primary.
@@ -22,23 +23,26 @@ boxes, not finger-body/palm collision geometry or observed bottle extent.
 | Saved own packet | Read/control time | P in TCP axes (mm) | Facing pad gap (mm) | Nearest pad-box distance to P (mm) |
 |---|---:|---|---:|---:|
 | Start | 0.500 s | `[58.900, 101.763, 172.023]` | 76.446 | 192.483 |
-| Before first-contact control | 10.100 s | `[29.328, 33.999, 34.505]` | 78.997 | 41.058 |
-| After first-contact control | 10.150 s | `[29.130, 33.920, 33.367]` | 78.997 | 40.230 |
+| Before threshold-crossing control | 10.100 s | `[29.328, 33.999, 34.505]` | 78.997 | 41.058 |
+| After threshold-crossing control | 10.150 s | `[29.130, 33.920, 33.367]` | 78.997 | 40.230 |
 | Termination | 10.500 s | `[29.225, 33.336, 25.113]` | 78.998 | 34.300 |
 
-At both contact-control boundaries and termination, P lies between the facing
+At both threshold-crossing-control boundaries and termination, P lies between the facing
 pad X planes but outside their finite Y and Z ranges. Its terminal offsets from
 the facing-gap midpoint are `[29.224, 33.336, 28.713] mm`. Thus an open gap of
 about 79 mm does not by itself establish alignment with even this single point.
 The terminal encoder aperture is 79.998 mm, 1 mm larger than the static facing
 gap; the jaw command remains OPEN. Terminal TCP-to-P distance is 50.951275 mm.
 
-The first observed contact is action 24 (`MV_DOWN`), control 0, native BEFORE
-index 3 at 10.106 s. The preceding native AFTER index 2 has the same recorded
+The first raw pair appears at action 22, control 7, native BEFORE index 186
+at 9.672 s (record 9654), below the producer's 0.05 N detector threshold. This
+report does not compute point-to-pad geometry at that earlier raw-contact
+control. The four selected packets instead describe the first **threshold
+crossing** at action 24 (`MV_DOWN`), control 0, native BEFORE index 3 at 10.106 s. The preceding native AFTER index 2 has the same recorded
 time. These are native cached contact stages, not an exact contact-onset clock.
 No own pose packet is saved at that native contact stage. The two control packets
 above bracket its control interval; exact observable sample times are unknown,
-so no pose is interpolated at contact. The source stops after the already-started
+so no pose is interpolated at either raw contact or threshold crossing. The source stops after the already-started
 atomic primitive, not immediately at the detected native sample.
 
 P is the initial integer-box center ray at crop-median depth. It is neither a
@@ -69,7 +73,10 @@ Pure math/tests are commit `9e61588`; the bound four-packet interpreter is
 `5fb06cc`. Three synthetic tests pass. The [portable summary](task2_point_jaw_interpretation_summary.json)
 retains exact own packets, all scalar results, source record IDs and timestamps.
 Selected source record sequences are 2, 10109, 10161 and 10528. No other trajectory
-pose is used for point-to-pad geometry.
+pose is used for point-to-pad geometry. The sealed raw interpreter retains the
+producer's legacy `first_contact` field names; this report and portable summary
+correct their meaning to the first crossing of 0.05 N. Raw artifacts and frozen
+code remain unchanged.
 
 | Artifact | SHA-256 |
 |---|---|

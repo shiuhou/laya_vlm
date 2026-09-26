@@ -9,49 +9,6 @@
     0.05615888976955092,
     0.9855272687809821
   ],
-  "first_contact_evaluator_only": {
-    "cache_semantics": "native derived buffers; timestamps need not identify contact solve time",
-    "first_observed_sample": {
-      "control": 0,
-      "index": 3,
-      "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7",
-      "stage": "native_before",
-      "step": 24,
-      "time_s": 10.106000000000044
-    },
-    "new_pairs": [
-      {
-        "class": "other_gripper/bottle",
-        "geom_ids": [
-          75,
-          134
-        ]
-      }
-    ],
-    "previous_observed_sample": {
-      "control": 0,
-      "index": 2,
-      "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c",
-      "stage": "native_after",
-      "step": 24,
-      "time_s": 10.106000000000044
-    },
-    "stop_granularity": "after already-started atomic primitive"
-  },
-  "first_contact_descriptions_evaluator_only": [
-    {
-      "geom_ids": [
-        134,
-        75
-      ],
-      "geom_names": [
-        "wine_bottle_1_g6",
-        "gripper0_hand_collision"
-      ],
-      "normal_force_N": 0.08174774260265072
-    }
-  ],
-  "first_contact_exact_pose_available": false,
   "snapshots": [
     {
       "label": "start",
@@ -120,7 +77,7 @@
       }
     },
     {
-      "label": "first_contact_control_before",
+      "label": "threshold_crossing_control_before",
       "source_record_seq": 10109,
       "source_record_id": "e676dbc5382dfe8a78dee9670e1d16a75138a92c59201a77d6c876fb4f90793a",
       "source_field": "previous_returned_own_observations",
@@ -186,7 +143,7 @@
       }
     },
     {
-      "label": "first_contact_control_after",
+      "label": "threshold_crossing_control_after",
       "source_record_seq": 10161,
       "source_record_id": "f33c2d34feeb199f752cb23cd8c46b8928d532ea95188100eb94b8c49e85de45",
       "source_field": "returned_own_observations",
@@ -324,7 +281,7 @@
   "limitations": [
     "P is an unqualified fixed proxy, not bottle center/extent",
     "returned position/quaternion/finger exact sample times unknown",
-    "native contact time is bracketed by control packets, not an exact pose sample",
+    "threshold-crossing control is bracketed by own packets; no exact native contact pose sample",
     "static pad geometry does not include finger-body or hand collision proxies",
     "no prepose comparison, target fitting or new policy"
   ],
@@ -339,5 +296,73 @@
     "translation_10mm_count": 6,
     "rotation_tokens": 0,
     "successful_prepose_coordinates_read_or_fit": false
+  },
+  "threshold_crossing_evaluator_only": {
+    "cache_semantics": "native derived buffers; timestamps need not identify contact solve time",
+    "first_observed_sample": {
+      "control": 0,
+      "index": 3,
+      "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7",
+      "stage": "native_before",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "new_pairs": [
+      {
+        "class": "other_gripper/bottle",
+        "geom_ids": [
+          75,
+          134
+        ]
+      }
+    ],
+    "previous_observed_sample": {
+      "control": 0,
+      "index": 2,
+      "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c",
+      "stage": "native_after",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "stop_granularity": "after already-started atomic primitive"
+  },
+  "threshold_crossing_descriptions_evaluator_only": [
+    {
+      "geom_ids": [
+        134,
+        75
+      ],
+      "geom_names": [
+        "wine_bottle_1_g6",
+        "gripper0_hand_collision"
+      ],
+      "normal_force_N": 0.08174774260265072
+    }
+  ],
+  "threshold_crossing_exact_pose_available": false,
+  "first_raw_contact_evaluator_only": {
+    "source_record_seq": 9654,
+    "source_record_id": "8f7eca440cfab6444448a8cc96b2e09343d3673d77651ae649fc34926186322e",
+    "step": 22,
+    "control": 7,
+    "stage": "native_before",
+    "index": 186,
+    "time_s": 9.6719999999999,
+    "normal_force_N": 0.0175559689573816,
+    "geom_ids": [
+      134,
+      75
+    ],
+    "geom_names": [
+      "wine_bottle_1_g6",
+      "gripper0_hand_collision"
+    ],
+    "own_pose_geometry_computed": false,
+    "exact_pose_available": false
+  },
+  "reporting_correction": {
+    "force_detector_threshold_N": 0.05,
+    "meaning": "Selected middle control is first threshold crossing, not first raw contact; raw interpreter legacy field names preserved in immutable artifact.",
+    "numerical_geometry_changed": false
   }
 }
