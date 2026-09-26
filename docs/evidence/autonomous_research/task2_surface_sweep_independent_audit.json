@@ -1,0 +1,617 @@
+{
+  "status": "pass",
+  "freeze": "cb394fdaaa90f4dd0ba984f657130c70bcae9dad",
+  "request_sha256": "b1e815e896c4059163cc367deb0c84abfa960f3146f829278fdaadebd61183ed",
+  "feature_seal_sha256": "2272dd32051a5965b1188360c993bf89e0b1a77d9f569b053351b5e65c8e9601",
+  "features_sha256": "4468151c3cf9e9abecb199131189fab02752ebdd7bf179234d30725c7bc9a55b",
+  "evaluator_sha256": "ee6be86bf83ccdc90ab826506a23b50727a92c73347a4fc5cf762a7a1db6a905",
+  "samples": 2,
+  "candidates_per_sample": 7,
+  "proxies": 5,
+  "modes": 3,
+  "full_points": 1340,
+  "inner_points": 492,
+  "max_stored_closest_point_distance_residual_m": 5.551115123125783e-17,
+  "union_results": {
+    "sample0": {
+      "MV_FWD": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.016859457214192214,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.016859457214192214,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.004948461277604608,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.004948461277604608,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_BACK": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.03653079248051477,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.02011079946499308,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_LEFT": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.029822229977584155,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.0109749514903288,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.0109749514903288,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_RIGHT": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.026050073201733217,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.026050073201733217,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.010985658840476432,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_UP": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.027503355683490147,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.017489663191014776,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_DOWN": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.025198352879129846,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025198352879129846,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.007557041136792967,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.007557041136792967,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "STOP": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.026650254504571785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.010980200502264443,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      }
+    },
+    "sample1": {
+      "MV_FWD": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.01608100582582851,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.01608100582582851,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.0,
+            "contained_point_count": 1,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.0,
+            "contained_point_count": 1,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_BACK": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.0329829286015279,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.01721360660160308,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_LEFT": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.025570112265578933,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025570112265578933,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.007685985654429882,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_RIGHT": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.025076890573270703,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025076890573270703,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.0076680883245651785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.0076680883245651785,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_UP": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.026620050107508425,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.011252701776331933,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "MV_DOWN": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.019137165071905157,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.019137165071905157,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.004668090337451137,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.004668090337451137,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      },
+      "STOP": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "endpoint": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "exact_minimizer_count": 1
+          }
+        }
+      }
+    }
+  },
+  "all_contained_pixels": {
+    "sample0": {
+      "MV_FWD": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_BACK": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_LEFT": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_RIGHT": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_UP": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_DOWN": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "STOP": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      }
+    },
+    "sample1": {
+      "MV_FWD": {
+        "current": [],
+        "endpoint": [
+          [
+            221,
+            158
+          ]
+        ],
+        "sweep": [
+          [
+            221,
+            158
+          ]
+        ]
+      },
+      "MV_BACK": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_LEFT": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_RIGHT": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_UP": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "MV_DOWN": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      },
+      "STOP": {
+        "current": [],
+        "endpoint": [],
+        "sweep": []
+      }
+    }
+  },
+  "limits": [
+    "stored hashes, schemas, exact source values and array/scalar arithmetic only; no FK, projection or hull recomputation",
+    "seal-before-evaluator order source-reviewed; no wall-time journal in this adapter",
+    "conditional historic own calibration; exact asset-byte identity not established",
+    "all six unexecuted outcomes at each sample remain UNKNOWN; no clearance or policy claim"
+  ]
+}

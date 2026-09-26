@@ -31,3 +31,34 @@ The producer's preflight checks static body transforms, signed-joint definitions
 | `tests/test_task2_observed_surface_sweep.py` | `e1f4ac2355bb62b874f0f7db64ae12e6b3c99309e6c4f25a6a62d78e2ab4a296` |
 
 No archived feature result was available during this review. Preserve a failed computation and partial artifacts without changing definitions or automatically retrying. Later result auditing is limited to seals, stored arrays and arithmetic; any geometric recomputation or new physical test requires its own allocation. All proposal limits and UNKNOWN unexecuted-candidate outcomes remain in force.
+
+## Independent sealed-result audit
+
+**Stored-evidence PASS for `task2-observed-surface-sweep-run-01`, produced at the reviewed clean freeze.** [The checker](../../../experiments/task2_surface_sweep_evidence_audit.py) and [complete arithmetic receipt](task2_surface_sweep_independent_audit.json) verify the sanitized input and review/protocol identities, exact preflight/admission equality, all original source hashes, both unmodified returned own packets, normalized static own subtree, all archived inner-support values and full-BOX pixel/depth inclusion, and all 15 numerical artifact seals. The checker recomputes every per-proxy/union summary, containment count, primary witness and exact-tie count from all stored arrays. It also checks identical current arrays across candidates, exact STOP equivalence, sweep/current/endpoint and full/inner minimum inequalities, and the complete separate evaluator records. It does not execute own FK, support projection, hull construction or point-to-solid distance computation.
+
+For every stored point/proxy/mode, the displacement norm between the stored support point and stored closest-solid witness agrees with the stored distance; maximum arithmetic residual is `5.551115123125783e-17` m. This checks array consistency, not an independent reconstruction of the solid. The feature-seal-before-evaluator ordering is verified in the frozen source; this adapter does not emit a separate timestamped event journal, so that ordering is not independently reconstructed from raw event timestamps.
+
+The following table includes all candidates in the registered order. Values are swept union minima in millimetres; the actual executed candidate is indicated in the last column. Every unexecuted candidate outcome remains UNKNOWN.
+
+| Candidate | Pre-21 inner | Pre-21 full | Pre-22 inner | Pre-22 full | Actual execution |
+| --- | ---: | ---: | ---: | ---: | --- |
+| FWD | 16.859457 | 4.948461 | 16.081006 | 0.000000 | Step 22 |
+| BACK | 26.650255 | 10.980201 | 25.589299 | 7.677037 | None |
+| LEFT | 26.650255 | 10.974951 | 25.570112 | 7.677037 | None |
+| RIGHT | 26.050073 | 10.980201 | 25.076891 | 7.668088 | None |
+| UP | 26.650255 | 10.980201 | 25.589299 | 7.677037 | None |
+| DOWN | 25.198353 | 7.557041 | 19.137165 | 4.668090 | Step 21 |
+| STOP | 26.650255 | 10.980201 | 25.589299 | 7.677037 | None |
+
+There is no current-solid containment at either sample. At pre-22 FWD, full support has exactly one contained point in the hand proxy, in both the endpoint and swept solid: source pixel `[221,158]`, unmodified depth `0.9664809107780457` m, world point `[-0.13719116338778747,0.061508817852240764,1.057485005518255]`. It lies outside the inner crop. It is the sole exact minimizing pixel/proxy tie. There is no contained point in any other registered candidate/sample/mode, or anywhere in inner support. Thus the registered current-overlap degeneracy is absent here; it remains an intrinsic limitation of this feature.
+
+For the two actually executed motions, pre-21 DOWN retains full minimum 7.557041 mm with a hand witness and inner minimum 25.198353 mm with a hand witness; pre-22 FWD has the contained full hand witness while the inner minimum is 16.081006 mm at finger 2. The full-support primary witness for both executed sweeps is `[221,158]`; the inner primary witness is `[217,169]` with depth `0.9750217199325562` m. The separately extracted evaluator contains zero raw robot contacts at step 21 and all 26 raw stage records at step 22 (13 BEFORE and 13 AFTER), matching the already-audited first raw hand/bottle boundary. The >0.05 N crossing remains the later step 24 and is not relabeled first contact.
+
+The full-support superset necessarily weakly lowers every candidate minimum; a lower number alone is tautological. The observed full-support containment at the known first-raw boundary is a descriptive conditional match for this retained resolved-depth point and nominal hand sweep. It is not object ownership, a physical collision prediction, a seven-way validated classifier, a safe alternative action, grasp readiness or evidence that another policy succeeds. Initial-surface age/stationarity, exact own-observation sample times, historical asset-byte identity, finite sampling, hidden space and nominal-versus-executed path differences remain unresolved.
+
+| Audited artifact | SHA-256 |
+| --- | --- |
+| Sanitized request | `b1e815e896c4059163cc367deb0c84abfa960f3146f829278fdaadebd61183ed` |
+| Complete feature seal | `2272dd32051a5965b1188360c993bf89e0b1a77d9f569b053351b5e65c8e9601` |
+| Feature summary | `4468151c3cf9e9abecb199131189fab02752ebdd7bf179234d30725c7bc9a55b` |
+| Separate actual-outcome evaluator | `ee6be86bf83ccdc90ab826506a23b50727a92c73347a4fc5cf762a7a1db6a905` |
