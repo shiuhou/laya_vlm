@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration030. This is a short living assessment;
+Updated 2026-09-27 after iteration031. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -25,24 +25,26 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 | **Observed:** existing visual atomic execution supports a local bilateral bottle lift. | Fresh close/open paired slice: +9.279539/+0.001081mm; all4 hard validations pass; closed lift bilateral8/8 endpoints and200/200 each native stage;240-control replay exact. | Scripted privileged pregrasp prefix, no model/sensor-selected approach, one init. Setup01 failed before physics and is retained. | High for this local mechanism. Falsifier: independent audit or prospective sensor-selected approach cannot reproduce the qualified relation. |
 | **Observed:** one bottle BOX supplies a plausible point but mixed ROI support. | One12-token/EOS query; center and median contributors match the limited bottle-label proxy;414/492 crop pixels agree. Actual RGB shows tabletop beside the neck. | Depth ownership, grasp center, object width and opposing surfaces remain unknown. One inspected initial fixture; no generalization. | High for recorded support mixture. Falsifier: independent contributor/source audit contradicts the representation. Physical approach utility remains to be tested. |
 | **Observed:** calibrated sample footprints explain potential self contribution omitted by center rays. | All6 registered large-depth-jump centers miss own triangles at center but have1–2/4 sample hits; all99 registered neighborhoods agree between own-qpos and cached-pose coverage. | This is potential coverage, not resolved depth ownership or clearance. Whole-frame pose comparisons still differ at7/2 samples, with discontinuity depth differences up to7.10/16.52mm. | High for frozen geometry. Falsifier: independent geometry or array audit contradicts it. Renderer investigation closes without a live gate. |
+| **Observed:** the bottle point-distance rule reaches palm contact before a qualified grasp relation. | Fresh25-action/200-control approach reduces TCP-to-P208.367→50.951mm. First raw palm/bottle row occurs at action22/FWD; first>0.05N at24/DOWN. All25 validators pass; exact replay of controls/native snapshots/26 images. | One inspected init; fixed cached point and oracle-assisted monitoring. No Laya decisions or GRASP. The original scripted pregrasp used translations too, so missing rotations are not established as the cause. | High for first observed boundary. Falsifier: independent trace/contact audit contradicts it. Target-region semantics versus missing surface constraints remain competing explanations. |
 
 ## Current discriminating experiments
 
-1. **Task2 fresh point-cue approach:** exact initial RGB/depth/K/T identity qualifies
-   reuse of the one sealed BOX point, unchanged, with live own-proprioception and
-   the existing seven-option10mm rule. No offset fitted from the successful pose.
-   Finish each atomic primitive, record native contacts, then stop before another
-   action at contact or validator failure. Oracle-assisted diagnostic monitoring
-   remains explicit. Approach-only: nominal STOP does not authorize GRASP.
-2. **Frame accounting:**240 saved observations support the fixed body-to-site
-   rotation: unadjusted disagreement is about90°, corrected maximum0.045301°.
-   Current model/proprio packets omit orientation and remain unchanged under
-   quaternion poisoning in240/240 cases. No live mixed pose was found. Use the
-   checked transform only for offline interpretation of the new point approach;
-   timing residuals and target shape remain unknown.
-3. **Physical qualification:** scripted local grasp/lift proves an available
-   mechanism, not a sensory approach or a model policy. Interpret the next physical
-   boundary before constructing any richer manipulation decision interface.
+1. **Observed surfaces versus a point:** retrospectively inspect pre-action21/22
+   using the original inner crop versus full BOX depth support and calibrated own
+   gripper geometry. Seven nominal candidate sweeps, no new dynamics or live gate.
+   Only executed actions have contact outcomes; other outcomes remain unknown.
+   Full BOX points are generic observed surfaces, not bottle segmentation. No
+   threshold fitting, oracle cleanup or renewed rendering/masking investigation.
+2. **Semantic target region:** one new fixed description, `the neck of the wine
+   bottle`, same initial RGB/checkpoint/BOX template/depth extraction. Preserve the
+   object-level baseline; no retries, offsets or prompt alternatives. This is a
+   researcher-specified semantic condition, not autonomous VLM planning or proof
+   of grasp readiness. Compare only after the single output is sealed.
+3. **Frame accounting is qualified locally:**240 saved observations support the
+   fixed body-to-site rotation; model packets currently omit orientation. The
+   checked transform shows final P remains outside the finite pad Y/Z span, with
+   nearest-pad distance34.300mm. It does not explain full palm/object geometry or
+   supply a replacement grasp target. Exact observation times remain unknown.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -60,7 +62,7 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated BOX/footprint regression:872 tests pass. Production
+- Integrated approach/frame regression:886 tests pass;3 added jaw-math tests pass. Production
   `runtime_core.py` and `adapters/libero.py` remain unchanged from the baseline.
 
 ## Evidence entry points
@@ -83,6 +85,8 @@ measured interaction and available action behavior must not be conflated.
 - [Calibrated sample footprint](docs/evidence/autonomous_research/pixel_sample_footprint_findings.md)
 - [Point versus TCP/pad relationship](docs/evidence/autonomous_research/task2_point_tcp_pad_evidence_review.md)
 - [Stored proprioceptive frame audit](docs/evidence/autonomous_research/proprio_frame_consistency_findings.md)
+- [Fresh Task2 approach audit](docs/evidence/autonomous_research/task2_box_point_boundary_independent_review.md)
+- [Point and jaw interpretation](docs/evidence/autonomous_research/task2_point_jaw_interpretation.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)

@@ -1052,6 +1052,62 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   boundary in jaw coordinates. This cannot supply unseen bottle extent, fit a
   target offset or authorize grasp. Independent trace audit proceeds separately.
 
+### Parallel iteration 031 — fresh bottle point approach reaches palm contact
+
+- **Question:** can the unchanged sensor-derived BOX point guide the existing
+  seven-option nominal-distance rule toward a qualified local grasp context?
+- **Freeze/control:** `9de837c`, after source `aee75a9`, actual-input no-world
+  preflights and independent `cbf132a`. One fresh Task2 init0/seed1 world; initial
+  RGB/depth/K/T shape/dtype/bytes match the original source. Explicit reuse of one
+  cached inference; no new model calls, historical controls or state restore.
+  Fixed P, live own observations, unchanged10mm rule/tie-break/executor/validator;
+  open jaws,40-action/900s cap. Passive native contact recording through a complete
+  primitive, then stop before another action at a new pair>0.05N. No GRASP/lift.
+- **Observed:**25 complete actions/200 controls/5,000 integrations. TCP-to-P drops
+  208.367227535→50.951274876mm. All25 execution validations pass; maximum translation
+  residual1.27866mm, rotation0.22724°. First threshold crossing is action24/DOWN,
+  control0, native BEFORE index3 at10.106s: hand collision mesh75 versus bottle
+  geom134,0.081747743N. The previous AFTER has the same recorded time, so this is
+  a cached-stage observation, not precise continuous contact onset. No further
+  primitive follows; jaws remain open, holding unknown, official success false.
+- **Independent correction:** raw hand/bottle rows already begin during action22/
+  FWD, control7, BEFORE index186 at9.672s,0.017555969N. Action23 is LEFT, action24
+  DOWN. Across these actions249 raw rows per stage; no raw pad, arm, other-scene or
+  self rows. Action24 has40 above-threshold rows per stage, peak0.185976166N BEFORE.
+  The last raw row is below threshold again. Preserve the difference between first
+  raw observation and first threshold crossing; do not change the historical gate.
+- **Actual inspection:** root views six RGB stages and raw journal. Initial image
+  impression suggested a finger near the cap; raw names identify the palm, and
+  that attribution overrides the image impression. The fixed point at threshold
+  and terminal packets lies outside finite pad Y/Z spans despite≈79mm facing gap;
+  final nearest-pad distance34.300mm. Body-to-site transform is the separately
+  checked one; exact native contact pose and bottle extent remain unknown.
+- **Competing explanation check:** source-only original successful local-grasp
+  preclose prefix consists of13 translations, not rotations. Missing pitch/roll
+  alone is therefore not established. That privileged route, step sizes and
+  information differ; no successful target coordinates or offset are fitted.
+- **Verification:**200-control fresh raw-command replay passes every saved state,
+  all10,000 native snapshots and26 complete RGB/depth/K/T captures. Producer
+  compares full snapshots/images; reviewer independently checks exported states/
+  fingerprints and source code, without reexported replay contact/image arrays.
+  Independent raw audit `409e8c2` PASS; root reruns it. Raw run journal SHA
+  `f834673a379523f8c90619d2fd00dd69174f4dd7499cb91a8340742de225e771`, replay result SHA
+  `5c3a02fb731d3d8c120ec6f89327762b942d36ab62716a48552ebfc348faa5f9`.
+  Raw directories `task2-box-point-boundary-run-01` and `-replay-01` preserve both.
+  Integrated approach/frame suite886 tests passes at `0fb3a44`;3 additional jaw
+  tests pass. Production runtime/adapter/decision interface remain unchanged.
+- **Belief update:** nominal point progress does not establish a valid approach
+  relation. This is a deterministic-policy boundary, not a Laya decision failure,
+  executor failure, grasp attempt or proof of global geometric impossibility.
+- **Next, parallel:** (A) exploratory retrospective observed-surface measurement
+  at pre21/pre22: original inner crop versus full BOX, all five calibrated gripper
+  proxies and seven nominal candidate sweeps, no thresholds/gates/labels as input.
+  Only executed actions have measured contact outcomes. (B) exactly one fixed
+  semantic-region query `the neck of the wine bottle` under the same initial RGB,
+  model and BOX/depth extraction, no retries or offsets. This researcher-specified
+  region tests semantic target selection, not autonomous planning. Seal outputs
+  before evaluation; choose a new physical intervention only after these results.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

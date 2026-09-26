@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration030. This is the authoritative current
+Reviewed 2026-09-27 after research iteration031. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -71,6 +71,7 @@ No Task2 Laya run or success is claimed. See
 | Does the actual visual executor support a local grasp/lift? | Fresh paired scripted-pregrasp test: GRASP+10mm lift moves bottle9.279539mm versus open0.001081mm, all4 unchanged hard validations pass, bilateral pads8/8 endpoints and200/200 each native stage.240 controls replay exactly. Approach and action choice were scripted, not sensor/model-selected. |
 | Does one bottle BOX provide useful geometry? | One full-RGB query produces a plausible point.414/492 fixed crop pixels agree with a limited rendered-mask proxy; visible tabletop contaminates the rest. The cloud is not bottle-only geometry, and the point is not a certified grasp center. |
 | Can calibrated sampling explain edge returns? | All6 registered large-depth-jump center rays miss own triangles but have partial native sample support. This explains potential self contribution, not resolved depth ownership, target extent or action clearance. The geometry investigation is closed. |
+| Can the unchanged bottle point guide a grasp approach? | Fresh25-action approach reduces TCP-to-P208.367→50.951mm but reaches palm/bottle contact. First raw row: action22/FWD; first>0.05N:24/DOWN. All25 validators pass;200 controls,10,000 native snapshots and26 frames replay exactly. No GRASP or Laya call; no qualified grasp relation. |
 
 Detailed entry points: [mechanical local witness](evidence/autonomous_research/local_grasp_interface_findings.md),
 [wrist history](evidence/autonomous_research/offline_wrist_history_findings.md),
@@ -80,17 +81,17 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 
 ## Active next questions
 
-1. Fresh Task2 reset: exact initial RGB/depth/K/T match permits explicitly cached
-   BOX-point reuse with live proprioception and the existing seven-option10mm rule.
-   No fitted target offset or archived-control initialization. Native contacts are
-   passively observed; complete the atomic action, then stop before the next one.
-   This is an approach-only diagnostic with oracle-assisted stop monitoring.
-2. Interpret the new endpoint in jaw coordinates using the checked body-to-site
-   rotation. Stored audit:240 rows, corrected max0.045301° versus about90° when
-   omitted; current model input does not consume quaternion. No runtime pose bug
-   was found. See [frame audit](evidence/autonomous_research/proprio_frame_consistency_findings.md).
-3. Inspect the resulting first physical boundary before adding grasp routing,
-   model hierarchy or full-task complexity. Point convergence alone is not grasp.
+1. Offline observed-surface diagnosis before the first raw palm/bottle contact:
+   same inner crop versus full BOX depths, all five own gripper proxies, seven
+   nominal candidate sweeps. No new policy, dynamics, fitted margin or mask.
+   Only the originally executed actions have observed physical outcomes.
+2. One semantic-region grounding alternative: `the neck of the wine bottle`,
+   same RGB/model/template/depth rule. Researcher-specified region; no autonomous
+   planner claim, retries, offsets or successful-prepose information.
+3. Use these competing explanations to decide the next physical test. The checked
+   own-frame transform supports bounded jaw interpretation, not a new estimator:
+   final P remains outside the pad Y/Z span. The earlier successful scripted
+   pregrasp used translations only, so missing pitch/roll is not established.
 
 ## Protected execution and evidence boundaries
 
@@ -107,9 +108,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `b924819`: **872 tests pass** in31.68s, including
-contact/render/wrist/local-grasp/BOX/footprint additions. Log:
-`runs/autonomous-research/regression-box-footprint-integration.log`.
+Latest integrated regression at `0fb3a44`: **886 tests pass** in32.68s, including
+the new approach/frame additions;3 subsequently added jaw-math tests also pass.
+Log: `runs/autonomous-research/regression-task2-point-frame-integration.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
