@@ -33,9 +33,14 @@ The only improving arm with no control-end contact rows violates the unchanged
 2-mm translation contract. Exact finer replay reveals nonhandle contacts in7
 native integrations, peaking14.914N, while all8 control-end samples miss them.
 Sensor-only proximity with partial collision silhouettes is also contaminated by
-apparent gripper-housing pixels. Current work compares known visual self-geometry
-and audits one frozen successful Task1 trajectory at finer sampling, with exact
-archived execution required.
+apparent gripper-housing pixels. Known visual self-geometry alone does not repair that contamination; a bounded
+render-semantics diagnosis is next. The canonical Task1 replay is now complete:
+122 primitives/970 controls/24,250 native integrations exactly reproduce the
+archived states and official success, with zero raw designated pad/handle contact
+rows in48,500 before/after snapshots. Finer sampling finds non-designated contacts
+in288 controls rather than134 endpoints. This is measured association, not causal
+allocation of all closure. Offline wrist-history observability and a read-only
+inventory of qualified grasp capabilities guide the next controlled experiment.
 These results do not constitute an interaction-valid manipulation policy or a
 new runtime architecture.
 

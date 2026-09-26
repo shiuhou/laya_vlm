@@ -809,6 +809,42 @@ Later independent visual-mask checker/report `68bed76` adds no producer change;
 root reruns it into `gripper-visual-mask-root-audit-01.json`. It verifies24
 witnesses and stored selection arithmetic, without rerunning geometry or physics.
 
+### Parallel iteration 024 — canonical success lacks designated native-stage contact
+
+- **Question:** did historical control-end sampling miss the intended pad/handle
+  interaction during the successful drawer trajectory?
+- **Frozen experiment:** ONE canonical Task1 source, fresh init0/seed1 reset,
+  original970 control arrays, no policy/model/preview or extra control. Producer
+  `f6efbcb`, reviewed before run01; raw SHA
+  `e8e253cefe4c694c6091e1bf944a8f269cfc47c7ed08c053419d97e1a73615d4`.
+  Native observer adds no forward, physics call or cache refresh. Existing wrist
+  buffers are recorded separately, without entering contact classes.
+- **Observed:** all available control/primitive states and official success match
+  exactly.122 primitives,24,250 integrations,48,500 snapshots. Zero raw designated
+  pad/handle rows at either stage, including subthreshold/unforced contacts.
+  Non-designated contact appears within288 controls versus134 endpoints, adding154
+  contact-bearing controls. Net closure remains152.05189674218448mm.
+- **Partition:** stages agree on3035 non-designated intervals/55.953266mm net and
+  21209 neither-relation intervals/96.074782mm;6 disagreements contribute0.023849mm.
+  Historical endpoint134/46.086120mm and836/105.965776mm are reproduced. These
+  partitions describe association, not exact causal allocation; neither can
+  contain inertia, subthreshold or other contacts. Snapshot stages are not
+  independent impacts or continuous-time contact durations.
+- **Evidence:** independent raw-only streaming audit passes100,158 records,
+  source/command/state identities, sensor metadata, native chronology and all
+  partition sums. Root inspects the actual attribution figure and source/report.
+  Findings `task1_native_contact_attribution_findings.md`, independent review
+  `task1_substep_independent_review.md`. Main integrations `6a9354d`, `a7b10c0`,
+  `6e5850a`; historical tags/evidence unchanged.
+- **Belief update:** native-stage observation strengthens the interpretation of
+  Task1 as goal completion without measured designated interaction. It does not
+  establish that the machinery cannot perform intended manipulation.
+- **Next:** preregistered OFFLINE wrist endpoint-versus-history comparison using
+  sealed sensor inputs and separate gripper/upstream-arm evaluator labels.
+  Concurrent bounded renderer diagnosis and existing grasp/action-family inventory
+  should identify a defensible next local physical skill experiment. No additional
+  hierarchy, wording tournament, threshold change or live safety claim follows.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

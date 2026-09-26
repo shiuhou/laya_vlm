@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations018–020. This is a short living assessment;
+Updated 2026-09-27 after iteration024. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -14,7 +14,7 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 
 | Belief / kind | Supporting evidence | Against or unresolved | Confidence and falsifier |
 |---|---|---|---|
-| **Observed:** privileged goal completion is reproducible; interaction validity is separate. | Frozen drawer:3/3,122 primitives, exact preview/execution and replay. Control-end audit measures0mm designated-valid handle closure. | Between-control interaction was not sampled; no full causal attribution. Strict Task2 ends before22 with no witness among729 pairs. | High for recorded outcomes. Falsifier: independent replay or finer attribution contradicts the bounded measurement. |
+| **Observed:** privileged goal completion is reproducible; interaction validity is separate. | Frozen drawer:3/3,122 primitives, exact preview/execution and replay. Native replay:0 raw pad/handle rows in48,500 snapshots, exact970-control trace;154 contact-bearing controls missed at endpoints. | No continuous-time or full causal attribution. Strict Task2 ends before22 with no witness among729 pairs. | High for recorded outcomes. Falsifier: independent replay or finer attribution contradicts the bounded measurement. |
 | **Observed:** supplied correct context does not suffice for tested Laya motor ranking. | Original choices reproduce exactly; situation, action definitions, joint prefixes and native progress-value criteria fail to repair weak advance ranking. | Development states and presentations are limited; choices are not new physical rollouts. 11-action visual and27-action privileged interfaces differ. | High within fixtures; no general incapacity claim. Falsifier: a prospectively different interface transfers to held-out decisions/behavior. No more prefix micro-variants here. |
 | **Observed:** neither tested VLM checkpoint earns the planner role. | 3B/7B: useful relations2/18→9/18, coherent scenes0/6 both; primary subgoals1/3→0/3, each equal to its own task-only control. Exact native inputs/logits/EOS audited. | Most7B gains follow constant labels; lossy development images, dependent mirrors and non-blinded labels. | High for fixed calls; architectural inference weak. Falsifier: image-sensitive useful proposals with matched downstream benefit. No model tournament. |
 | **Observed:** one initial semantic point supports coarse approach but not intended contact. | First21 actions/168 controls identical to repeated grounding. Fixed initial POINT passes fresh-grounding error, then finger body hits nonhandle panel at25;26 primitives/208 controls replay exactly. | Target stationary; age reaches10s, current identity/visibility unknown; external oracle abort. Not generic temporal-fusion or manipulation success. | High within this physical control. Falsifier: changed source/prefix or contact evidence. Generality requires held-out conditions. |
@@ -29,7 +29,7 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    maximum14.913734N, despite0/8 control-end samples. Commands, states and full
    executor results remain exact. Before/after cache rows are not independent
    events; contact-associated motion is not sole-cause attribution of tracking
-   error. Next: observational substep audit of ONE canonical Task1 successful run.
+   error. Canonical replay now also passes:0 raw designated contacts, including subthreshold rows; all archived states exact. Next: fixed offline wrist-history versus endpoint features, with gripper/arm contact labels separated from sensor inputs.
 2. **Sensor-point / gripper proximity:** partial collision masks leave apparent
    housing-edge minima0.127/0.109mm. Replacing only the mask with calibrated
    visual silhouettes removes those witnesses but leaves new hand-edge minima
@@ -68,6 +68,7 @@ measured interaction and available action behavior must not be conflated.
 - [Robot-only geometry](docs/evidence/autonomous_research/robot_geometry_observability_findings.md)
 - [Seven physical options](docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md)
 - [Native contact sampling](docs/evidence/autonomous_research/native_substep_observability_findings.md)
+- [Canonical Task1 native attribution](docs/evidence/autonomous_research/task1_native_contact_attribution_findings.md)
 - [Observed-point proximity](docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md)
 - [Calibrated visual-mask control](docs/evidence/autonomous_research/gripper_visual_mask_findings.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
