@@ -30,12 +30,13 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    executor results remain exact. Before/after cache rows are not independent
    events; contact-associated motion is not sole-cause attribution of tracking
    error. Next: observational substep audit of ONE canonical Task1 successful run.
-2. **Sensor-point / gripper proximity:** nearest all-point distances are zero;
-   partial collision-silhouette masking leaves global minima0.127/0.109mm with
-   apparent gripper-housing witnesses in both development frames. This is not
-   environment clearance. Next: change only mask source to known gripper visual
-   geometry, keeping depth/qpos and collision-proxy distance maps fixed. No margin
-   tuning, new dynamics or action gate. Missing geometry remains unknown.
+2. **Sensor-point / gripper proximity:** partial collision masks leave apparent
+   housing-edge minima0.127/0.109mm. Replacing only the mask with calibrated
+   visual silhouettes removes those witnesses but leaves new hand-edge minima
+   below0.3mm and reintroduces a zero pad distance through nonnested masks.
+   This is not environment clearance. Next: inspect rendering/measurement
+   semantics before another mask intervention. No margin tuning, new dynamics
+   or action gate. Missing geometry remains unknown.
 3. Independent review checks both experiments; producers and reviewer use isolated
    worktrees. Reassign completed agents to the next evidence-driven question.
 
@@ -68,6 +69,7 @@ measured interaction and available action behavior must not be conflated.
 - [Seven physical options](docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md)
 - [Native contact sampling](docs/evidence/autonomous_research/native_substep_observability_findings.md)
 - [Observed-point proximity](docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md)
+- [Calibrated visual-mask control](docs/evidence/autonomous_research/gripper_visual_mask_findings.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)
 

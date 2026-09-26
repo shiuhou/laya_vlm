@@ -770,6 +770,39 @@ experimental starting commit `b73b5b4`.
   `7fce36f5df64da7009d3ddb71b98f01d2383065c13d3b88069af39aed997337a`.
   Main source/report/audit integration `35df10c`, `c10e555`, `cbaed8d`, `b144436`.
 
+### Parallel iteration 023 — known gripper visual geometry replaces the mask
+
+- **Question:** do residual housing-edge minima arise because collision proxy
+  silhouettes omit the gripper's known visible geometry?
+- **Frozen intervention:** only replace the five collision-mask silhouettes with
+  projected convex enclosures of three static gripper-owned visual meshes. Same
+  pixel-center convention, no expansion, same two depth/K/T/own-joint packets,
+  and all five stored collision-distance arrays byte-identical. Static export
+  `ea89ca8` preserves the original full robot chain/collision calibration; one
+  nonintegrating constructor half-step, no rendering or dynamics. Measurement
+  freeze `9c5e40f`, independent pre-execution review, first run01.
+- **Result:** masks add/remove35/13 pixels at24 and13/10 at25. Both old hand
+  witnesses disappear, but new hand minima0.278252/0.233802mm remain at apparent
+  housing/cable-side edges. At25, a newly admitted pad-edge point has distance0.
+  All eight previous finger/pad nearest witnesses remain eligible. Root views
+  actual fixed RGB witness patches; these are interpretation, not geom-ID truth.
+- **Interpretation:** calibrated visual replacement alone does not establish
+  environmental proximity. The masks are not nested; excluding one problematic
+  point does not monotonically improve the whole measurement. Pixel footprint,
+  render groups, geometry/cache/calibration differences remain competing causes.
+  No margin, mask union, policy gate or outcome-driven repair is introduced.
+- **Verification:**17 focused tests and334 post-seal report checks pass. Static
+  visual calibration SHA `c86706370d8442f85365d1e1d7e962ffb0f2346c235d968146694ed6e3fb4c98`;
+  hand3,613 vertices/7,078 faces, each finger318/624, all opaque. Identity/seals,
+  fixed-map selection and previous baseline summaries preserved.
+- **Next:** read-only rendering/source diagnosis before any third mask experiment.
+  Distinguish actual pixel sampling from ideal center rays and rendered geometry
+  inclusion; missing historical settings must remain unknown.
+- **Artifacts:** [findings](../evidence/autonomous_research/gripper_visual_mask_findings.md),
+  complete summary and RGB/depth/witness figures; `gripper-visual-calibration-01`
+  and `gripper-visual-mask-control-01`. Main integration `96c91b9`, `c61c038`,
+  `936526a`. Original collision-mask evidence remains unchanged.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
