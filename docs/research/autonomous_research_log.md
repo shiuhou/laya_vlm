@@ -1178,7 +1178,9 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   `2272dd32051a5965b1188360c993bf89e0b1a77d9f569b053351b5e65c8e9601`.
   Producer report `e8e3a0f`, main `aba6e71`; prospective/result/factual reviews
   `c062ed6`,`6cb5825`,`e1c799e`; independent interpretation `49c324b`.
- 23 producer/reviewer analytic tests pass; no new full-suite result yet.
+  23 producer/reviewer analytic tests pass. Integrated suite at `7dc4aae`:
+  899 passed in32.91s; `regression-surface-sweep-integration.log`. Protected
+  production runtime/adapter/decision files remain byte-identical to baseline.
 - **Next decision:** execute all seven original candidates individually from
   fresh exact pre22-prefix reproductions, first qualifying archived FWD states,
   controls and native contacts. Record raw and>0.05N contacts and unchanged
