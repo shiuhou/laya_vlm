@@ -29,9 +29,13 @@ handle target correctly grounded. Nearby precontact depth support is visible;
 standalone calibrated own-joint FK recovers the gripper geometry without object
 state. A seven-option diagnostic finds no contract-valid positive-handle-gap
 continuation with zero recorded robot-contact rows at the examined boundary.
-The only contact-row-free improving arm violates the unchanged2-mm translation
-contract and still moves the drawer. Current parallel work tests sensor-only
-proximity and finer contact sampling, with exact original execution required.
+The only improving arm with no control-end contact rows violates the unchanged
+2-mm translation contract. Exact finer replay reveals nonhandle contacts in7
+native integrations, peaking14.914N, while all8 control-end samples miss them.
+Sensor-only proximity with partial collision silhouettes is also contaminated by
+apparent gripper-housing pixels. Current work compares known visual self-geometry
+and audits one frozen successful Task1 trajectory at finer sampling, with exact
+archived execution required.
 These results do not constitute an interaction-valid manipulation policy or a
 new runtime architecture.
 

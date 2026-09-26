@@ -728,6 +728,48 @@ experimental starting commit `b73b5b4`.
   `56dcb32aca328d3a2e09af393d310f5abd44af3b62b206034e9f0830af86da49`.
   Main integration `ce7e550`, `bc2cb3b`, `51f0893`.
 
+### Parallel iteration 022 — contact aliasing at native integration boundaries
+
+- **Question:** did coarse contact sampling miss interaction during DOWN's drawer
+  movement, or is another source needed to explain the apparent contact-free arm?
+- **Frozen paired diagnostic:** RIGHT then DOWN, each fresh reset plus exact200
+  archived prefix controls. Pass-through wrappers observe native Euler2ms calls
+  before/after without added forward, integration, cache update or controller
+  changes. Same original8 controls/action and2mm motion tolerance. Freeze `ef5a4e0`,
+  independent pre-execution review; preflight01/run01 complete without retries.
+- **Results:** commands, all400 prefix/16 native control states, returned fields,
+  endpoint contacts and both full executor results exactly reproduce the reference.
+  RIGHT has contacts in112/200 native integrations, peak6.912957N; DOWN7/200,
+  peak14.913734N, all finger-body/nonhandle front-panel contacts. DOWN's8 original
+  control-end samples remain empty. First contact and first direct drawer motion
+  occur in the same native interval,10.590–10.592s for DOWN; prior drawer velocity0.
+  All applied generalized/Cartesian forces are0. Drawer movement and failed
+  translation residual remain unchanged.
+- **Interpretation:** contact aliasing is demonstrated. The14 DOWN before/after
+  contact rows bracket7 native calls; forces change during the solve, and these
+  are not14 independent impacts or literal duplicate rows. Cached geometry may
+  lag qpos. This is contact-associated motion, not isolated sole-cause evidence
+  for the controller's tracking residual or continuous-time impulse attribution.
+- **Independent verification:** 2,451 record hashes,400 native integrations/800
+  snapshots, all source/reference chains, membership/force/address/chronology
+  arithmetic and6 RGB-D/trajectory artifacts pass. Root reruns independent checker
+  and views actual contact/drawer chronology plot; native execution is unchanged.
+- **Regression correction:** integration initially fails one test because it asks
+  the expanded main checkout to equal an older frozen whole scientific source.
+  The experiment guard correctly refuses that. Main-only test change `0c4cdc2`
+  verifies the guard with a synthetic source mutation and separately checks local
+  archive identity; all8 focused tests then pass. Frozen producer/guard unchanged;
+  this is not a physical experiment failure or outcome retry.
+- **Next:** one canonical122-primitive/970-control Task1 observational replay with
+  native-substep attribution, exact all archived boundaries and official success.
+  Retain historical control-end evidence. Passive wrist sensor buffers may be
+  recorded separately before protocol freeze, without entering oracle classes.
+- **Artifacts:** [findings](../evidence/autonomous_research/native_substep_observability_findings.md),
+  timing figure, compact summary, independent review and
+  `native-substep-observability-run-01`. Raw SHA
+  `7fce36f5df64da7009d3ddb71b98f01d2383065c13d3b88069af39aed997337a`.
+  Main source/report/audit integration `35df10c`, `c10e555`, `cbaed8d`, `b144436`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
