@@ -694,6 +694,40 @@ The root raw audit and integrated independent boundary checker also pass.
 Production `runtime_core.py` and `adapters/libero.py` remain byte-identical to the
 experimental starting commit `b73b5b4`.
 
+### Parallel iteration 021 — sensor-only observed-point proximity
+
+- **Question:** can sealed raw depth and known own geometry support a useful
+  proximity measurement, or does the robot's own appearance dominate it?
+- **Frozen comparison:** all finite-positive depth versus outside the projected
+  five collision-proxy silhouettes, at two registered development boundaries24/25.
+  Same calibrated camera/robot and own-joint packets; no target, scene geometry,
+  contact, force, candidate or outcome input to the standalone numerical worker.
+  RGB is opened for interpretation only after numerical outputs are sealed.
+  Producer `f20476d`; first run01 completes without a revised measurement.
+- **Results:** every all-point proxy minimum is0. Masks exclude6,169/6,265 pixels;
+  residual union minima0.126722/0.109195mm remain on apparent housing edges.
+  Finger1/pad1 nearest pixels are visually mixed/ambiguous, so their declining
+  distance cannot be called environmental clearance or an imminent-contact label.
+  Root inspected both full RGB/depth overlays and fixed17×17 witness patches.
+- **Independent evidence:** 15 analytic/FK tests and333 reporting checks pass.
+  Separate checker verifies11 artifacts/seals, raw sensor arrays/own packets,
+  all stored-map summaries and24 witness backprojections/distances without FK,
+  hull or mask recomputation. Root reruns that checker and15 focused tests.
+- **Interpretation:** a sensor-only numerical measurement is available, but its
+  minimum lacks the surface identity needed for a scene-proximity claim. The
+  visible housing extends beyond the collision silhouette; exact cause may also
+  include raster/cache/calibration effects. Omitted arm links are not established
+  as the dominant nearest witnesses. No safe gate or policy is earned.
+- **Next experiment:** known gripper visual silhouettes versus existing collision
+  silhouettes, exact same depth/qpos and stored distance maps; no margin tuning,
+  extra arm export, dynamic rendering or action selection. Independently review
+  static robot ownership and projection before measurement.
+- **Artifacts:** [findings](../evidence/autonomous_research/sensor_gripper_proximity_findings.md),
+  summary/overlays/witnesses and independent review; `sensor-gripper-proximity-01`.
+  Input/output artifact manifest SHA
+  `56dcb32aca328d3a2e09af393d310f5abd44af3b62b206034e9f0830af86da49`.
+  Main integration `ce7e550`, `bc2cb3b`, `51f0893`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

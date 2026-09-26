@@ -24,15 +24,18 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 
 ## Current discriminating experiments
 
-1. **Within-control observability:** paired native RIGHT/DOWN diagnostic, read-only
-   integrator snapshots with exact original control commands/states/full results
-   required. Test whether control-end contact sampling misses physical events.
-   If confirmed, finer observational attribution of the frozen Task1 trajectory
-   may be more valuable than immediate policy changes. No such result assumed.
-2. **Sensor-point / gripper proximity:** sealed raw depth and known own geometry,
-   with explicitly partial gripper masking. No target/contact/scene truth input,
-   no action gate. Test whether nearest observed surfaces are informative or
-   dominated by robot self observations. Missing geometry remains unknown.
+1. **Within-control observability:** paired RIGHT/DOWN replay now demonstrates
+   missed contacts. DOWN has nonhandle contacts in7 native integration calls,
+   maximum14.913734N, despite0/8 control-end samples. Commands, states and full
+   executor results remain exact. Before/after cache rows are not independent
+   events; contact-associated motion is not sole-cause attribution of tracking
+   error. Next: observational substep audit of ONE canonical Task1 successful run.
+2. **Sensor-point / gripper proximity:** nearest all-point distances are zero;
+   partial collision-silhouette masking leaves global minima0.127/0.109mm with
+   apparent gripper-housing witnesses in both development frames. This is not
+   environment clearance. Next: change only mask source to known gripper visual
+   geometry, keeping depth/qpos and collision-proxy distance maps fixed. No margin
+   tuning, new dynamics or action gate. Missing geometry remains unknown.
 3. Independent review checks both experiments; producers and reviewer use isolated
    worktrees. Reassign completed agents to the next evidence-driven question.
 
@@ -63,6 +66,7 @@ measured interaction and available action behavior must not be conflated.
 - [Visibility audit](docs/evidence/autonomous_research/first_contact_observability_findings.md)
 - [Robot-only geometry](docs/evidence/autonomous_research/robot_geometry_observability_findings.md)
 - [Seven physical options](docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md)
+- [Observed-point proximity](docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)
 
