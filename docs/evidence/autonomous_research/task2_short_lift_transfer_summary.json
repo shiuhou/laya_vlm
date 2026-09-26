@@ -1,0 +1,4053 @@
+{
+  "source_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-lift-transfer-run-01",
+  "source_archive": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/local-grasp-interface-run-02",
+  "sensor_seal_sha256": "3388cc54c79f29feb9a1ca313a88ac5e6d4f50c0d7a1b324574f8a4a002dcf4e",
+  "journal_sha256": "6cbd58b87ac3bbcc7c819f7b61acf0bd88ea32a8e0bb397f7f84c07b1b24c81e",
+  "prefix_agreement": {
+    "arms": {
+      "close": {
+        "expected_rows": 6888,
+        "compared_native_fields": [
+          "frame",
+          "status",
+          "point_pixel_index_xy",
+          "attempted_backward_point_pixel_index_xy",
+          "forward_status",
+          "backward_status",
+          "forward_backward_residual_px",
+          "forward_patch_error",
+          "backward_patch_error"
+        ],
+        "exact_agreement": true,
+        "disagreements": []
+      },
+      "open_hold": {
+        "expected_rows": 6888,
+        "compared_native_fields": [
+          "frame",
+          "status",
+          "point_pixel_index_xy",
+          "attempted_backward_point_pixel_index_xy",
+          "forward_status",
+          "backward_status",
+          "forward_backward_residual_px",
+          "forward_patch_error",
+          "backward_patch_error"
+        ],
+        "exact_agreement": true,
+        "disagreements": []
+      }
+    },
+    "comparison_uses_masks": false
+  },
+  "initial_own_tcp_world_m": null,
+  "initial_reference_metrics": null,
+  "arms": {
+    "close": {
+      "sensor_curves": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 2.7943163793398007e-06,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 4.834735093833516e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.978702427051786e-07,
+                  "q25": 6.978702427051786e-07,
+                  "q75": 3.4921866220449793e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00025015673818146785,
+                  "q25": 0.00025015673818146785,
+                  "q75": 0.0002507057595473953,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 3.1486357422449984e-06,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 5.017532657807349e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 2.366305878243047e-06,
+                  "q25": 2.366305878243047e-06,
+                  "q75": 5.514941620488045e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003426353715546479,
+                  "q25": 0.0003426353715546479,
+                  "q75": 0.00034328220575714264,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.318526424815003e-05,
+                  "q75": 1.2490717628488301e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.9657353358868795e-05,
+                  "q25": 4.95627214538074e-06,
+                  "q75": 3.460775993763828e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 4.172325365314755e-06,
+                  "q25": -9.012938882835275e-06,
+                  "q75": 1.6663042993803057e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.000347425618082089,
+                  "q25": 0.00034593013960021717,
+                  "q75": 0.0003509477257367903,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.137037404164154e-05,
+                  "q75": 1.2742850864611022e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.9737476858214615e-05,
+                  "q25": 5.01548033842262e-06,
+                  "q75": 4.648154765936176e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 5.291075270807966e-06,
+                  "q25": -6.079298770833574e-06,
+                  "q75": 1.8033926135418987e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003276620388692267,
+                  "q25": 0.0003265126929109477,
+                  "q75": 0.0003324921269750864,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.3449811724908223e-05,
+                  "q75": 1.2721009790939153e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.311849904961992e-05,
+                  "q25": 8.093195251626067e-06,
+                  "q75": 6.672222158269188e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.047268190756405e-06,
+                  "q25": -7.4025435341518175e-06,
+                  "q75": 1.8768277981695558e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003111248866994659,
+                  "q25": 0.0003092333946922794,
+                  "q75": 0.0003196013068041985,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.344981171802484e-05,
+                  "q75": 1.9646503204517884e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.8655293753647637e-05,
+                  "q25": 9.73390968402839e-06,
+                  "q75": 0.0003702602269536969,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.600173520721064e-06,
+                  "q25": -6.849638197303776e-06,
+                  "q75": 2.624667672523895e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0002991276822334078,
+                  "q25": 0.0002964181052392277,
+                  "q75": 0.0004403913700267018,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0004247707230908837,
+                  "q25": 0.0,
+                  "q75": 0.0029694122749768237,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002486540151739617,
+                  "q25": 0.002083021776726526,
+                  "q75": 0.0036283908308436656,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0004307307912716496,
+                  "q25": 5.960068180765887e-06,
+                  "q75": 0.0029753723431575896,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0027084777152052105,
+                  "q25": 0.002367877988372931,
+                  "q75": 0.003753449373813545,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0005947837741293593,
+                  "q25": 1.4104092693201231e-06,
+                  "q75": 0.0029934829238437433,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002646413127710211,
+                  "q25": 0.0018204355682817325,
+                  "q75": 0.003678076168460828,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0005825860600463528,
+                  "q25": -1.0787304813686394e-05,
+                  "q75": 0.0029812852097607367,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002722799177528579,
+                  "q25": 0.0019071989379790557,
+                  "q75": 0.0037094322909464947,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0029244702141742462,
+                  "q25": 7.031345755909024e-05,
+                  "q75": 0.0035401763778692974,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0034014935245107306,
+                  "q25": 0.0026108604392217818,
+                  "q75": 0.004146008027803986,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0016062745355517882,
+                  "q25": -0.0012478822210633678,
+                  "q75": 0.0022219806992468394,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0026200717949410616,
+                  "q25": 0.0019171056224562462,
+                  "q75": 0.004022522746068013,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0034102819895465153,
+                  "q25": 0.0026160755914124145,
+                  "q75": 0.0057084834650056315,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.005488022714664474,
+                  "q25": 0.003396100490584322,
+                  "q75": 0.006506395158281311,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -8.148218080172853e-05,
+                  "q25": -0.0008756885789358293,
+                  "q75": 0.0022167192946573877,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0026391641050739446,
+                  "q25": 0.002061039423753545,
+                  "q75": 0.004085289274153503,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005834520683802469,
+                  "q25": 0.004853975247791575,
+                  "q75": 0.0065636073445026755,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0060473354624755934,
+                  "q25": 0.0056449813590670915,
+                  "q75": 0.008156886287343113,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0003671798348394151,
+                  "q25": -0.0006133656011714783,
+                  "q75": 0.0010962664955396217,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002763496114201047,
+                  "q25": 0.0008525904833985737,
+                  "q75": 0.0036136000633218896,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.007945332852518305,
+                  "q25": 0.005398608905759439,
+                  "q75": 0.00865742452851323,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.008335270210113965,
+                  "q25": 0.00572290936841354,
+                  "q75": 0.009615477706090987,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0009720936420285486,
+                  "q25": -0.0015746303047303178,
+                  "q75": 0.0016841853180234734,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0022710851702159285,
+                  "q25": 0.0015958353002401748,
+                  "q75": 0.00416539990943833,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.008360525850834521,
+                  "q25": 0.005499662262526517,
+                  "q75": 0.009014447028976746,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00863923972448349,
+                  "q25": 0.008154319687490773,
+                  "q75": 0.011005024069154845,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.00033341435483597026,
+                  "q25": -0.0025274492334720344,
+                  "q75": 0.0009873355329781952,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002676635939003736,
+                  "q25": 0.001046146185094431,
+                  "q75": 0.0038329379872216384,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.008450432681711972,
+                  "q25": 0.007365649609019059,
+                  "q75": 0.009680960528882565,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.008697431707896656,
+                  "q25": 0.008262440140828503,
+                  "q75": 0.011520095069339193,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.00027846685734556065,
+                  "q25": -0.0013632499300384737,
+                  "q75": 0.0009520609898250321,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0024956364679229507,
+                  "q25": 0.0010218618561633217,
+                  "q75": 0.004062079375702735,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.008556675384822965,
+                  "q25": 0.007739411098198978,
+                  "q75": 0.0109772259694218,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.009782041505561397,
+                  "q25": 0.008376912220851417,
+                  "q75": 0.01168702304408186,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.0006204711597749268,
+                  "q25": -0.0014377354463989134,
+                  "q75": 0.0018000794248239083,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00226200400006549,
+                  "q25": 0.0014041718345754373,
+                  "q75": 0.004331870143272522,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.008584707967935867,
+                  "q25": 0.007726460996844875,
+                  "q75": 0.011034964172832562,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.010661585131253712,
+                  "q25": 0.008408715192566755,
+                  "q75": 0.011777077996207677,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.000866431444566218,
+                  "q25": -0.0017246784156572104,
+                  "q75": 0.0015838247603304767,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002064049528821325,
+                  "q25": 0.001614263074710945,
+                  "q75": 0.004285130504749114,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        }
+      ],
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 413,
+          "proxy_false": 79,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 406,
+          "proxy_false": 86,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 415,
+          "proxy_false": 77,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 412,
+          "proxy_false": 80,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 416,
+          "proxy_false": 76,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 416,
+          "proxy_false": 76,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 409,
+          "proxy_false": 83,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 409,
+          "proxy_false": 83,
+          "proxy_unknown": 0
+        }
+      ],
+      "first_native_failure": null,
+      "first_proxy_departure": {
+        "seed_id": 124,
+        "capture_id": 6,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          216,
+          178
+        ]
+      },
+      "first_adjacent_lift_proxy_departure": {
+        "seed_id": 205,
+        "capture_id": 22,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          213,
+          190
+        ]
+      },
+      "first_proxy_departure_context": [
+        {
+          "frame": 5,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.00177001953125,
+            178.99261474609375
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.08648681640625,
+            178.0014190673828
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 1.0021618604660034,
+          "forward_patch_error": 3.5519416332244873,
+          "backward_patch_error": 7.953018665313721,
+          "sample_pixel_xy": [
+            216,
+            179
+          ],
+          "depth_m": 0.9924848675727844,
+          "surface_point_world_m": [
+            -0.13035346754156263,
+            0.05245801226833149,
+            1.0076277025265075
+          ],
+          "depth_status": "valid",
+          "capture_id": 5,
+          "after_step": 4,
+          "control": 7,
+          "artifact": "close/0005.npz",
+          "artifact_sha256": "e2c53ecbb287c4014436feaffec594c3a66f1fc8849b1e253dfd8049b09e490b",
+          "capture_read_sim_time_s": 2.4999999999999463,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 2.4999999999999463,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.17693972126175705,
+            -0.002406139551125783,
+            1.009887650473053
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": true
+        },
+        {
+          "frame": 6,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.08856201171875,
+            178.00608825683594
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.1244354248047,
+            177.85906982421875
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 1.140162706375122,
+          "forward_patch_error": 8.663973808288574,
+          "backward_patch_error": 7.267998695373535,
+          "sample_pixel_xy": [
+            216,
+            178
+          ],
+          "depth_m": 1.1717296838760376,
+          "surface_point_world_m": [
+            -0.27443063262390455,
+            0.06193203777968674,
+            0.9007414661199463
+          ],
+          "depth_status": "valid",
+          "capture_id": 6,
+          "after_step": 5,
+          "control": 7,
+          "artifact": "close/0006.npz",
+          "artifact_sha256": "9cb068786e03a7e025dfcce7423a5720c25a39438fdde5c635d52a07c5543c27",
+          "capture_read_sim_time_s": 2.899999999999902,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 2.899999999999902,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.17838607985334337,
+            0.03673908077610355,
+            1.0091740973351189
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        },
+        {
+          "frame": 7,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.4939422607422,
+            180.45835876464844
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.15426635742188,
+            177.77569580078125
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.2395782619714737,
+          "forward_patch_error": 6.890589714050293,
+          "backward_patch_error": 5.919075965881348,
+          "sample_pixel_xy": [
+            216,
+            180
+          ],
+          "depth_m": 1.165277361869812,
+          "surface_point_world_m": [
+            -0.26613384356694303,
+            0.061590998473484614,
+            0.9007373830481379
+          ],
+          "depth_status": "valid",
+          "capture_id": 7,
+          "after_step": 6,
+          "control": 7,
+          "artifact": "close/0007.npz",
+          "artifact_sha256": "1291a2b773016c1d4d5508d542a06fa25ab02dfbd75bce7860766ad987e96d8b",
+          "capture_read_sim_time_s": 3.299999999999858,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 3.299999999999858,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.14067042345065203,
+            0.037022279668953315,
+            1.008825308299548
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        }
+      ],
+      "first_adjacent_lift_proxy_departure_context": [
+        {
+          "frame": 21,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            213.4971923828125,
+            190.712890625
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            213.2825927734375,
+            190.73451232910156
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.0008941702544689178,
+          "forward_patch_error": 2.7547476291656494,
+          "backward_patch_error": 2.759141206741333,
+          "sample_pixel_xy": [
+            213,
+            191
+          ],
+          "depth_m": 0.9919392466545105,
+          "surface_point_world_m": [
+            -0.11378605688355858,
+            0.046009254468929374,
+            0.9879803148803541
+          ],
+          "depth_status": "valid",
+          "capture_id": 21,
+          "after_step": 13,
+          "control": 7,
+          "artifact": "close/0021.npz",
+          "artifact_sha256": "c8d2248b132c5f072efead83b17bde643990642fd6325ffe1337e367d76e5108",
+          "capture_read_sim_time_s": 6.09999999999955,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.09999999999955,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 205,
+          "seed_pixel_index_xy": [
+            213,
+            186
+          ],
+          "own_tcp_world_m": [
+            -0.1287964156088154,
+            0.05654398377578855,
+            0.9818270387183466
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -0.00010007200402939453,
+                0.00016294248983366594,
+                1.2197714083006517e-05
+              ],
+              "point_delta_m": [
+                -0.0018450428363014915,
+                2.986943872766712e-05,
+                0.0012597704351139383
+              ],
+              "point_minus_tcp_delta_m": [
+                -0.001744970832272097,
+                -0.00013307305110599882,
+                0.0012475727210309318
+              ],
+              "point_delta_z_m": 0.0012597704351139383,
+              "point_delta_norm_m": 0.002234300069450055,
+              "point_minus_tcp_delta_z_m": 0.0012475727210309318,
+              "point_minus_tcp_delta_norm_m": 0.0021492020232336366
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": true
+        },
+        {
+          "frame": 22,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            213.4842071533203,
+            190.33787536621094
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            213.49754333496094,
+            190.71322631835938
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.0004856515733990818,
+          "forward_patch_error": 2.865150213241577,
+          "backward_patch_error": 2.8668508529663086,
+          "sample_pixel_xy": [
+            213,
+            190
+          ],
+          "depth_m": 0.9952716827392578,
+          "surface_point_world_m": [
+            -0.11772993430890855,
+            0.046163823466116846,
+            0.9875599416492614
+          ],
+          "depth_status": "valid",
+          "capture_id": 22,
+          "after_step": 14,
+          "control": 0,
+          "artifact": "close/0022.npz",
+          "artifact_sha256": "1788aa806f122912cdb22846334133083f811cca2dbc54c60527c8987d801402",
+          "capture_read_sim_time_s": 6.149999999999545,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.149999999999545,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 205,
+          "seed_pixel_index_xy": [
+            213,
+            186
+          ],
+          "own_tcp_world_m": [
+            -0.12881389388359174,
+            0.05656033283265813,
+            0.9831330366828861
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -0.00011755027880572255,
+                0.00017929154670324327,
+                0.001318195678622458
+              ],
+              "point_delta_m": [
+                -0.0057889202616514535,
+                0.00018443843591513936,
+                0.0008393972040212638
+              ],
+              "point_minus_tcp_delta_m": [
+                -0.005671369982845731,
+                5.1468892118961e-06,
+                -0.0004787984746011942
+              ],
+              "point_delta_z_m": 0.0008393972040212638,
+              "point_delta_norm_m": 0.005852367298668145,
+              "point_minus_tcp_delta_z_m": -0.0004787984746011942,
+              "point_minus_tcp_delta_norm_m": 0.005691547412793165
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        },
+        {
+          "frame": 23,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            213.57443237304688,
+            189.52870178222656
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            213.4844970703125,
+            190.33724975585938
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.0006895217229612172,
+          "forward_patch_error": 2.2703373432159424,
+          "backward_patch_error": 2.2696287631988525,
+          "sample_pixel_xy": [
+            214,
+            190
+          ],
+          "depth_m": 0.9831787943840027,
+          "surface_point_world_m": [
+            -0.10829710249845947,
+            0.047723990229992574,
+            0.9951270519615208
+          ],
+          "depth_status": "valid",
+          "capture_id": 23,
+          "after_step": 14,
+          "control": 1,
+          "artifact": "close/0023.npz",
+          "artifact_sha256": "ad3e12bf993b1dd4f9afb28a592bba6362aeec405ee50af34e680a97286eb8e9",
+          "capture_read_sim_time_s": 6.199999999999539,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.199999999999539,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 205,
+          "seed_pixel_index_xy": [
+            213,
+            186
+          ],
+          "own_tcp_world_m": [
+            -0.12887233243176324,
+            0.05662411148624846,
+            0.9853066051746119
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -0.00017598882697722473,
+                0.00024307020029357834,
+                0.003491764170348244
+              ],
+              "point_delta_m": [
+                0.003643911548797618,
+                0.0017446051997908676,
+                0.008406507516280692
+              ],
+              "point_minus_tcp_delta_m": [
+                0.003819900375774843,
+                0.0015015349994972893,
+                0.0049147433459324485
+              ],
+              "point_delta_z_m": 0.008406507516280692,
+              "point_delta_norm_m": 0.009326902342143492,
+              "point_minus_tcp_delta_z_m": 0.0049147433459324485,
+              "point_minus_tcp_delta_norm_m": 0.006403198293973676
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": true
+        }
+      ],
+      "seeds_with_observed_departure": 23,
+      "preclose_tcp_world_m": [
+        -0.12869634360478602,
+        0.056381041285954885,
+        0.9818148410042636
+      ],
+      "final_tcp_world_m": [
+        -0.1288886852284502,
+        0.056689302226544974,
+        0.9912659804167657
+      ],
+      "final_tcp_delta_from_preclose_m": [
+        -0.0001923416236641884,
+        0.00030826094059008963,
+        0.009451139412502085
+      ]
+    },
+    "open_hold": {
+      "sensor_curves": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": false,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null,
+                  "missing_count": 492
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 2.783291285168854e-06,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 4.793756668714025e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.966246574036106e-07,
+                  "q25": 6.966246574036106e-07,
+                  "q75": 3.4799159425724646e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.000250196199692375,
+                  "q25": 0.000250196199692375,
+                  "q75": 0.00025074042409129816,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 3.1404323151962288e-06,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 5.012629873081886e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 2.3622601501571694e-06,
+                  "q25": 2.3622601501571694e-06,
+                  "q75": 5.502692465353398e-06,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003428050429912491,
+                  "q25": 0.0003428050429912491,
+                  "q75": 0.0003434508624618683,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.3311740073490563e-05,
+                  "q75": 1.1927135369821373e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.9657353358868795e-05,
+                  "q25": 4.95627214538074e-06,
+                  "q75": 3.295703634781662e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 4.167959342660232e-06,
+                  "q25": -9.143780730830331e-06,
+                  "q75": 1.6095094712481606e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003476322721484849,
+                  "q25": 0.0003461069694585043,
+                  "q75": 0.0003509800007904946,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.1888169042129082e-05,
+                  "q75": 1.2561729280435863e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.959669682523137e-05,
+                  "q25": 4.956300874338764e-06,
+                  "q75": 3.840087426063634e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 5.289173718892037e-06,
+                  "q25": -6.598995323237045e-06,
+                  "q75": 1.78509029993279e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0003277850493316127,
+                  "q25": 0.0003262676932478546,
+                  "q75": 0.00033127036160551646,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.3449811724908223e-05,
+                  "q75": 1.2561729280435863e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.982635495724128e-05,
+                  "q25": 4.956421532605688e-06,
+                  "q75": 3.616682587689125e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.047978110323982e-06,
+                  "q25": -7.401833614584241e-06,
+                  "q75": 1.8609707390759844e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00031042870295880826,
+                  "q25": 0.0003088509859918849,
+                  "q75": 0.0003147101485124427,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.3449811724908223e-05,
+                  "q75": 1.2561729280435863e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.0416096981807837e-05,
+                  "q25": 4.8972902336160455e-06,
+                  "q75": 3.745937063506897e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 6.602416606216188e-06,
+                  "q25": -6.8473951186920345e-06,
+                  "q75": 1.916414588665205e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00029751804225674816,
+                  "q25": 0.00029581396625084395,
+                  "q75": 0.0003019016453294668,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.5979821689410256e-05,
+                  "q75": 1.1927135369821373e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.0537013842852086e-05,
+                  "q25": 4.95627214538074e-06,
+                  "q75": 4.0230039359920094e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 7.024450483283928e-06,
+                  "q25": -8.955371206126328e-06,
+                  "q75": 1.89515858531053e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00028765400311018126,
+                  "q25": 0.00028590212618518143,
+                  "q75": 0.00029206186118602064,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -9.880144363316745e-06,
+                  "q75": 1.2632941011170296e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.9196842700191153e-05,
+                  "q25": 5.013921521627829e-06,
+                  "q75": 3.778656921986162e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 7.4149232287545885e-06,
+                  "q25": -2.4652211345621566e-06,
+                  "q75": 2.0047864239924884e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00027869883657543644,
+                  "q25": 0.00027709480559739747,
+                  "q75": 0.00028349915722610295,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.2269331559872088e-05,
+                  "q75": 1.2632941011170296e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.014297725690673e-05,
+                  "q25": 5.0158525212289654e-06,
+                  "q75": 4.210270083745766e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.001292588789901461,
+                  "q25": -0.001304858121461333,
+                  "q75": -0.0012799558488902907,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0013283444189094611,
+                  "q25": 0.0013169288418683708,
+                  "q75": 0.001341483757359869,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.1754408249853299e-05,
+                  "q75": 1.5663863637271902e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 2.4602870561109094e-05,
+                  "q25": 9.897061414906e-06,
+                  "q75": 6.679941671571168e-05,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.0034785568380716336,
+                  "q25": -0.003490311246321487,
+                  "q75": -0.0034628929744343617,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.003499561685364956,
+                  "q25": 0.003484717292243945,
+                  "q75": 0.003515502991539126,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 2.0014798773893006e-06,
+                  "q25": -1.0087358788379852e-05,
+                  "q75": 1.9007008522087254e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 3.068910895398108e-05,
+                  "q25": 1.0152024482205248e-05,
+                  "q75": 0.002969204975583015,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.005467908576745506,
+                  "q25": -0.005479997415411275,
+                  "q75": -0.005450903048100808,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.005488594742770455,
+                  "q25": 0.005470405496004434,
+                  "q75": 0.005508008156171751,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 2.0018555499379254e-06,
+                  "q25": -1.3202371409865021e-05,
+                  "q75": 2.3086962947393985e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 3.559657186488013e-05,
+                  "q25": 1.5134886408911947e-05,
+                  "q75": 0.0030956742095258998,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.00698813943091342,
+                  "q25": -0.007003343657873223,
+                  "q75": -0.006967054323515964,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.007007082351159676,
+                  "q25": 0.0069848344739983055,
+                  "q75": 0.007029661127896236,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.1199237292556248e-06,
+                  "q25": -9.964343451851487e-06,
+                  "q75": 3.3513258780315525e-05,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 4.209110797669855e-05,
+                  "q25": 1.916441074982509e-05,
+                  "q75": 0.0033238452915540615,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.008052549735128589,
+                  "q25": -0.008065634002309696,
+                  "q75": -0.00802215640007753,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.008070457341076058,
+                  "q25": 0.00803803453570124,
+                  "q75": 0.008093596065478464,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.239696748369436e-06,
+                  "q25": -9.95794077085499e-06,
+                  "q75": 0.00141850398261259,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 4.6369421200523315e-05,
+                  "q25": 1.986487919931735e-05,
+                  "q75": 0.003326593558166225,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.00876311893805376,
+                  "q25": -0.008776316575572984,
+                  "q75": -0.007347854652189539,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.008778992056165898,
+                  "q25": 0.007506105132164187,
+                  "q75": 0.00880126087807992,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.834694394133642e-06,
+                  "q25": -9.905555008904443e-06,
+                  "q75": 0.0020373594165724596,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 5.0544019649102016e-05,
+                  "q25": 2.0416096981807837e-05,
+                  "q75": 0.0033402731844954176,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.009214326338721324,
+                  "q25": -0.009228066588124362,
+                  "q75": -0.007180801616542998,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.009227901920005003,
+                  "q25": 0.00732606071776366,
+                  "q75": 0.009252276985135055,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "valid_surface_count": 492,
+          "references": {
+            "preclose": {
+              "reference_capture_id": 13,
+              "available": true,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.83469038367501e-06,
+                  "q25": -9.95794077085499e-06,
+                  "q75": 0.001956903450924058,
+                  "missing_count": 0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 4.9081053992340146e-05,
+                  "q25": 2.0177873944056538e-05,
+                  "q75": 0.0033402731844954176,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.009490987775604753,
+                  "q25": -0.009504780406759283,
+                  "q75": -0.0075379190150643705,
+                  "missing_count": 0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.009502292726451237,
+                  "q25": 0.007692349135762388,
+                  "q75": 0.00952913475834473,
+                  "missing_count": 0
+                }
+              }
+            }
+          }
+        }
+      ],
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 413,
+          "proxy_false": 79,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 406,
+          "proxy_false": 86,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 415,
+          "proxy_false": 77,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 409,
+          "proxy_false": 83,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        }
+      ],
+      "first_native_failure": null,
+      "first_proxy_departure": {
+        "seed_id": 124,
+        "capture_id": 6,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          216,
+          178
+        ]
+      },
+      "first_adjacent_lift_proxy_departure": {
+        "seed_id": 181,
+        "capture_id": 22,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          213,
+          190
+        ]
+      },
+      "first_proxy_departure_context": [
+        {
+          "frame": 5,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.00177001953125,
+            178.99261474609375
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.08648681640625,
+            178.0014190673828
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 1.0021618604660034,
+          "forward_patch_error": 3.5519416332244873,
+          "backward_patch_error": 7.953018665313721,
+          "sample_pixel_xy": [
+            216,
+            179
+          ],
+          "depth_m": 0.9924848675727844,
+          "surface_point_world_m": [
+            -0.13035346754156263,
+            0.05245801226833149,
+            1.0076277025265075
+          ],
+          "depth_status": "valid",
+          "capture_id": 5,
+          "after_step": 4,
+          "control": 7,
+          "artifact": "open_hold/0005.npz",
+          "artifact_sha256": "e2c53ecbb287c4014436feaffec594c3a66f1fc8849b1e253dfd8049b09e490b",
+          "capture_read_sim_time_s": 2.4999999999999463,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 2.4999999999999463,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.17693972126175705,
+            -0.002406139551125783,
+            1.009887650473053
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": true
+        },
+        {
+          "frame": 6,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.08856201171875,
+            178.00608825683594
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.1244354248047,
+            177.85906982421875
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 1.140162706375122,
+          "forward_patch_error": 8.663973808288574,
+          "backward_patch_error": 7.267998695373535,
+          "sample_pixel_xy": [
+            216,
+            178
+          ],
+          "depth_m": 1.1717296838760376,
+          "surface_point_world_m": [
+            -0.27443063262390455,
+            0.06193203777968674,
+            0.9007414661199463
+          ],
+          "depth_status": "valid",
+          "capture_id": 6,
+          "after_step": 5,
+          "control": 7,
+          "artifact": "open_hold/0006.npz",
+          "artifact_sha256": "9cb068786e03a7e025dfcce7423a5720c25a39438fdde5c635d52a07c5543c27",
+          "capture_read_sim_time_s": 2.899999999999902,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 2.899999999999902,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.17838607985334337,
+            0.03673908077610355,
+            1.0091740973351189
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        },
+        {
+          "frame": 7,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            216.4939422607422,
+            180.45835876464844
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            216.15426635742188,
+            177.77569580078125
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.2395782619714737,
+          "forward_patch_error": 6.890589714050293,
+          "backward_patch_error": 5.919075965881348,
+          "sample_pixel_xy": [
+            216,
+            180
+          ],
+          "depth_m": 1.165277361869812,
+          "surface_point_world_m": [
+            -0.26613384356694303,
+            0.061590998473484614,
+            0.9007373830481379
+          ],
+          "depth_status": "valid",
+          "capture_id": 7,
+          "after_step": 6,
+          "control": 7,
+          "artifact": "open_hold/0007.npz",
+          "artifact_sha256": "1291a2b773016c1d4d5508d542a06fa25ab02dfbd75bce7860766ad987e96d8b",
+          "capture_read_sim_time_s": 3.299999999999858,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 3.299999999999858,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 124,
+          "seed_pixel_index_xy": [
+            216,
+            179
+          ],
+          "own_tcp_world_m": [
+            -0.14067042345065203,
+            0.037022279668953315,
+            1.008825308299548
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": null
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        }
+      ],
+      "first_adjacent_lift_proxy_departure_context": [
+        {
+          "frame": 21,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            212.6313934326172,
+            190.7425079345703
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            212.63104248046875,
+            190.7427978515625
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.00011917495430679992,
+          "forward_patch_error": 0.004180838819593191,
+          "backward_patch_error": 0.004676870536059141,
+          "sample_pixel_xy": [
+            213,
+            191
+          ],
+          "depth_m": 0.9948726296424866,
+          "surface_point_world_m": [
+            -0.11607021165759968,
+            0.046145313975399956,
+            0.9861398304724331
+          ],
+          "depth_status": "valid",
+          "capture_id": 21,
+          "after_step": 13,
+          "control": 7,
+          "artifact": "open_hold/0021.npz",
+          "artifact_sha256": "96add30f2134bdb1cc6d27f16045e9bf2621dd9cec188c2206c9766dab054abb",
+          "capture_read_sim_time_s": 6.09999999999955,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.09999999999955,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 181,
+          "seed_pixel_index_xy": [
+            213,
+            184
+          ],
+          "own_tcp_world_m": [
+            -0.12872326139431756,
+            0.056658338045814695,
+            0.9818074260810349
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -2.6917789531538672e-05,
+                0.0002772967598598103,
+                -7.4149232287545885e-06
+              ],
+              "point_delta_m": [
+                -8.929804090807014e-05,
+                5.319187435459671e-06,
+                -7.195294023731869e-05
+              ],
+              "point_minus_tcp_delta_m": [
+                -6.238025137653147e-05,
+                -0.0002719775724243506,
+                -6.45380170085641e-05
+              ],
+              "point_delta_z_m": -7.195294023731869e-05,
+              "point_delta_norm_m": 0.00011480269802486384,
+              "point_minus_tcp_delta_z_m": -6.45380170085641e-05,
+              "point_minus_tcp_delta_norm_m": 0.0002864057459323047
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": true
+        },
+        {
+          "frame": 22,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            212.75604248046875,
+            190.4774169921875
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            212.6288299560547,
+            190.7460479736328
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.004370730835944414,
+          "forward_patch_error": 1.6839568614959717,
+          "backward_patch_error": 1.7074121236801147,
+          "sample_pixel_xy": [
+            213,
+            190
+          ],
+          "depth_m": 1.1340528726577759,
+          "surface_point_world_m": [
+            -0.22598361249501986,
+            0.052600930502241114,
+            0.9007177756334727
+          ],
+          "depth_status": "valid",
+          "capture_id": 22,
+          "after_step": 14,
+          "control": 0,
+          "artifact": "open_hold/0022.npz",
+          "artifact_sha256": "bf7f7a7369a2dae18990c4eeb2f6444e40fe11cb9483247bfd3bbd2244132508",
+          "capture_read_sim_time_s": 6.149999999999545,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.149999999999545,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 181,
+          "seed_pixel_index_xy": [
+            213,
+            184
+          ],
+          "own_tcp_world_m": [
+            -0.12873255202560305,
+            0.05668501836688522,
+            0.9831074297941651
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -3.620842081702991e-05,
+                0.00030397708093033576,
+                0.001292588789901461
+              ],
+              "point_delta_m": [
+                -0.11000269887832825,
+                0.006460935714276618,
+                -0.0854940077791978
+              ],
+              "point_minus_tcp_delta_m": [
+                -0.10996649045751122,
+                0.006156958633346282,
+                -0.08678659656909926
+              ],
+              "point_delta_z_m": -0.0854940077791978,
+              "point_delta_norm_m": 0.1394688596675606,
+              "point_minus_tcp_delta_z_m": -0.08678659656909926,
+              "point_minus_tcp_delta_norm_m": 0.14022286014485028
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        },
+        {
+          "frame": 23,
+          "status": "native_status_ok",
+          "point_pixel_index_xy": [
+            212.97686767578125,
+            190.0536651611328
+          ],
+          "attempted_backward_point_pixel_index_xy": [
+            212.75283813476562,
+            190.48291015625
+          ],
+          "forward_status": 1,
+          "backward_status": 1,
+          "forward_backward_residual_px": 0.006359456107020378,
+          "forward_patch_error": 3.1842403411865234,
+          "backward_patch_error": 3.1955783367156982,
+          "sample_pixel_xy": [
+            213,
+            190
+          ],
+          "depth_m": 1.1340528726577759,
+          "surface_point_world_m": [
+            -0.22598361249501986,
+            0.052600930502241114,
+            0.9007177756334727
+          ],
+          "depth_status": "valid",
+          "capture_id": 23,
+          "after_step": 14,
+          "control": 1,
+          "artifact": "open_hold/0023.npz",
+          "artifact_sha256": "07ac7a1a5436ce098a197135e21eeedea3fef355937d48fd6fe98b2ca1eabc41",
+          "capture_read_sim_time_s": 6.199999999999539,
+          "cached_geometry_sample_time_s": null,
+          "tcp_read_sim_time_s": 6.199999999999539,
+          "tcp_source_field": "sensors.json.sensor.tcp_fk_world_m",
+          "tcp_status": "saved_own_sensor",
+          "exact_observation_sample_time_s": null,
+          "seed_id": 181,
+          "seed_pixel_index_xy": [
+            213,
+            184
+          ],
+          "own_tcp_world_m": [
+            -0.1287812628743083,
+            0.056754354869478565,
+            0.9852933978423353
+          ],
+          "sampling_convention": "nearest_center_index_floor_xy_plus_half",
+          "reference_deltas": {
+            "preclose": {
+              "tcp_delta_m": [
+                -8.491926952228224e-05,
+                0.0003733135835236809,
+                0.0034785568380716336
+              ],
+              "point_delta_m": [
+                -0.11000269887832825,
+                0.006460935714276618,
+                -0.0854940077791978
+              ],
+              "point_minus_tcp_delta_m": [
+                -0.10991777960880597,
+                0.006087622130752937,
+                -0.08897256461726943
+              ],
+              "point_delta_z_m": -0.0854940077791978,
+              "point_delta_norm_m": 0.1394688596675606,
+              "point_minus_tcp_delta_z_m": -0.08897256461726943,
+              "point_minus_tcp_delta_norm_m": 0.1415453802563371
+            }
+          },
+          "identity_verified": null,
+          "holding": null,
+          "proxy_membership": false
+        }
+      ],
+      "seeds_with_observed_departure": 23,
+      "preclose_tcp_world_m": [
+        -0.12869634360478602,
+        0.056381041285954885,
+        0.9818148410042636
+      ],
+      "final_tcp_world_m": [
+        -0.12876590841975846,
+        0.05682165209134198,
+        0.9913096634702521
+      ],
+      "final_tcp_delta_from_preclose_m": [
+        -6.956481497244482e-05,
+        0.0004406108053870983,
+        0.009494822465988428
+      ]
+    }
+  }
+}
