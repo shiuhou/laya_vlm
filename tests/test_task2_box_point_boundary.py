@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 
 from embodied_runtime.experiments.task2_box_point_boundary import (
-    OBS_KEYS, PassiveContactRecorder, above_threshold_robot_pairs, contact_class,
+    OBS_KEYS, NativeReplayVerifier, PassiveContactRecorder, above_threshold_robot_pairs, contact_class,
     decision, observe_controls, require_exact_frame,
 )
 
@@ -113,10 +113,27 @@ def test_control_observer_preserves_eight_calls_open_jaws_and_restores_method():
             self.calls += 1
             return ({key: np.zeros(3) for key in OBS_KEYS}, None)
     env, tracking = Env(), {'control': None}
-    with observe_controls(SimpleNamespace(env=env), Recorder(), 0, tracking) as controls:
+    world = SimpleNamespace(env=env, obs={key: np.zeros(3) for key in OBS_KEYS})
+    with observe_controls(world, Recorder(), 0, tracking) as controls:
         for _ in range(8):
             env.step(np.array([0., 0, 0, 0, 0, 0, -1]))
         with pytest.raises(RuntimeError, match='control'):
             env.step(np.array([0., 0, 0, 0, 0, 0, -1]))
     assert len(controls) == env.calls == 8 and 'step' not in env.__dict__
     assert tracking['control'] is None
+
+
+def test_native_replay_rejects_state_or_contact_changes_and_requires_all_stages():
+    row = {'step': 0, 'control': 0, 'index': 0, 'time_s': 1., 'qpos': [0.], 'qvel': [0.],
+           'integration_fingerprint': 'a', 'contacts': []}
+    source = [{'kind': 'native_before', 'data': row}, {'kind': 'native_after', 'data': row}]
+    verifier = NativeReplayVerifier(source)
+    verifier.record('native_before', dict(row))
+    assert len(verifier.states) == 1 and len(verifier.expected) == 1
+    with pytest.raises(ValueError, match='snapshot mismatch'):
+        verifier.record('native_after', {**row, 'contacts': [{'normal_force_N': 1.}]})
+    assert verifier.mismatch['source_key'] == ['native_after', 0, 0, 0]
+    assert verifier.mismatch['actual_snapshot']['contacts'] == [{'normal_force_N': 1.}]
+    verifier = NativeReplayVerifier(source)
+    with pytest.raises(ValueError, match='snapshot mismatch'):
+        verifier.record('native_before', {**row, 'qpos': [1e-16]})

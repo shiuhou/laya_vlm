@@ -156,7 +156,8 @@ def observe_controls(world, recorder, step, tracking):
             raise RuntimeError('Unexpected control count/command/grip')
         tracking['control'] = control
         recorder.record('control_started', {'step': step, 'control': control,
-            'command': np.asarray(command).tolist(), 'state_before': world.env.sim.get_state().flatten().tolist()})
+            'command': np.asarray(command).tolist(), 'state_before': world.env.sim.get_state().flatten().tolist(),
+            'previous_returned_own_observations': {key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS}})
         returned = original(command)
         tracking['control'] = None
         row = {'step': step, 'control': control, 'command': np.asarray(command).tolist(),
@@ -248,6 +249,7 @@ def collect(args):
             'fresh_capture_sim_time_s': frame['capture_sim_time'], 'cached_point': point,
             'new_model_calls': 0, 'groups_evaluator_only': {k: sorted(v) for k, v in groups.items()},
             'initial_contact_snapshot_evaluator_only': initial, 'initial_proprioception': proprio,
+            'initial_own_observations': {key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS},
             'initial_above_threshold_robot_pairs': [list(pair) for pair in sorted(passive.baseline)]})
         source_time, history, reason = float(frame['capture_sim_time']), (), 'action_budget'
         for step in range(40):
@@ -281,6 +283,7 @@ def collect(args):
                 proprio = backend.proprioception()
             recorder.capture(frame)
             recorder.record('endpoint', {'step': step, 'proprioception': proprio,
+                'own_observations': {key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS},
                 'live_tcp_to_fixed_proxy_m': float(np.linalg.norm(np.asarray(proprio['tcp_pos_world_m']) - point['position_world_m'])),
                 'capture_seq': frame['capture_seq']})
             if passive.first is not None or result['execution_contract_violation']:
@@ -310,10 +313,137 @@ def collect(args):
             recorder.close()
 
 
+class NativeReplayVerifier:
+    """Compare saved native snapshots while replaying only recorded controls."""
+    def __init__(self, records):
+        self.expected = {(r['kind'], r['data']['step'], r['data']['control'], r['data']['index']): r['data']
+                         for r in records if r['kind'] in ('native_before', 'native_after')}
+        self.states = []
+        self.mismatch = None
+
+    def record(self, kind, row):
+        key = (kind, row['step'], row['control'], row['index'])
+        expected = self.expected.pop(key, None)
+        if row != expected:
+            self.mismatch = {'kind': 'native_snapshot', 'source_key': list(key), 'actual_snapshot': row}
+            raise ValueError('Exact native replay snapshot mismatch: ' + str(key))
+        self.states.append({'stage': kind, **{name: row[name] for name in
+            ('step', 'control', 'index', 'time_s', 'qpos', 'qvel', 'integration_fingerprint')},
+            'entire_snapshot_exact': True})
+
+
+def replay(args):
+    from .privileged_multistage_task import WineBottleBottomDrawerAdapter
+    from ..adapters.libero_rgbd import LiberoRgbdSource
+
+    source = Path(args.source)
+    records, errors = load_records(source / 'episodes.jsonl')
+    if errors or any(r['kind'] == 'failure' for r in records):
+        raise ValueError('Completed source without partial runtime failure required')
+    def rows(kind):
+        return [r['data'] for r in records if r['kind'] == kind]
+    if len(rows('termination')) != 1 or len(rows('initial_frame_gate')) != 1:
+        raise ValueError('One complete source condition required')
+    frozen = rows('run_start')[0]['manifest']
+    actual, _, _ = preflight(args)
+    for name in ('code', 'source_sha256', 'unchanged_source_sha256', 'point', 'protocol_sha256',
+                 'versions', 'stepping_sources', 'jev', 'environment'):
+        if actual[name] != frozen[name]:
+            raise ValueError('Exact replay provenance mismatch: ' + name)
+    if file_hash(source / 'review.txt') != frozen['review_sha256']:
+        raise ValueError('Archived review receipt changed')
+    starts, afters, actions, captures = rows('control_started'), rows('control_completed'), rows('action_completed'), rows('vision_capture')
+    if not (len(starts) == len(afters) == 8 * len(actions) <= 320 and len(captures) == len(actions) + 1):
+        raise ValueError('Complete fixed-budget controls/captures required')
+    for capture in captures:
+        if file_hash(source / capture['artifact']) != capture['artifact_sha256']:
+            raise ValueError('Source capture artifact changed')
+    output = Path(args.output)
+    output.mkdir(parents=True, exist_ok=False)
+    backend, controls, frames, mismatch = None, [], [], None
+    verifier = NativeReplayVerifier(records)
+    try:
+        backend = WineBottleBottomDrawerAdapter().make_backend(args, render=True)
+        world, camera = backend.world, LiberoRgbdSource(backend.world)
+        groups = {key: set(value) for key, value in rows('initial_frame_gate')[0]['groups_evaluator_only'].items()}
+        def capture(index):
+            nonlocal mismatch
+            with read_only_measurement(world):
+                frame = camera.capture()
+            try:
+                with np.load(source / captures[index]['artifact'], allow_pickle=False) as archive:
+                    checks = require_exact_frame(frame, archive)
+                if frame['capture_sim_time'] != captures[index]['capture_sim_time']:
+                    raise ValueError('Exact replay capture time mismatch')
+            except ValueError:
+                name = f'mismatched-capture-{index:04d}.npz'
+                np.savez_compressed(output / name, **{key: frame[key] for key in FRAME_KEYS})
+                mismatch = {'kind': 'capture', 'source_artifact': captures[index]['artifact'],
+                    'actual_artifact': name, 'actual_artifact_sha256': file_hash(output / name),
+                    'actual_capture_sim_time': frame['capture_sim_time'],
+                    'expected_capture_sim_time': captures[index]['capture_sim_time']}
+                raise
+            frames.append({'capture_seq': frame['capture_seq'], 'array_bytes_exact': checks})
+        capture(0)
+        for action_index, action in enumerate(actions):
+            step, tracking = action['step'], {'control': None}
+            with native_observer(world, verifier, 'approach', step, tracking, groups):
+                for control in range(8):
+                    before, after = starts[8 * action_index + control], afters[8 * action_index + control]
+                    if before['step'] != step or before['control'] != control or after['step'] != step or after['control'] != control:
+                        raise ValueError('Source control order mismatch')
+                    state = world.env.sim.get_state().flatten().tolist()
+                    if state != before['state_before']:
+                        mismatch = {'kind': 'control_before', 'step': step, 'control': control, 'actual_state': state}
+                        raise ValueError('Exact control-before state mismatch')
+                    previous_obs = {key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS}
+                    if previous_obs != before['previous_returned_own_observations']:
+                        mismatch = {'kind': 'control_before_observation', 'step': step, 'control': control,
+                                    'actual_own_observations': previous_obs}
+                        raise ValueError('Exact previous own-observation mismatch')
+                    tracking['control'] = control
+                    world.obs, _, _, _ = world.env.step(before['command'])
+                    tracking['control'] = None
+                    state_after = world.env.sim.get_state().flatten().tolist()
+                    if state_after != after['state_after']:
+                        mismatch = {'kind': 'control_after', 'step': step, 'control': control, 'actual_state': state_after}
+                        raise ValueError('Exact control-after state mismatch')
+                    returned_obs = {key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS}
+                    if returned_obs != after['returned_own_observations']:
+                        mismatch = {'kind': 'control_after_observation', 'step': step, 'control': control,
+                                    'actual_own_observations': returned_obs}
+                        raise ValueError('Exact returned own-observation mismatch')
+                    controls.append({'step': step, 'control': control, 'state_before': state,
+                                     'state_after': state_after, 'exact': True})
+            capture(action_index + 1)
+        if verifier.expected:
+            raise ValueError('Unmatched native source snapshots')
+        result = {'status': 'passed', 'source_journal_sha256': file_hash(source / 'episodes.jsonl'),
+            'code': actual['code'], 'exact_controls': len(controls), 'exact_native_snapshots': len(verifier.states),
+            'exact_captures': len(frames), 'control_states': controls, 'frame_checks': frames,
+            'native_states': verifier.states, 'policy_or_model_rerun': False,
+            'scope': 'recorded control/state/image reproduction; observer remains installed, not an observer-removal intervention'}
+        with (output / 'result.json').open('x') as stream:
+            json.dump(result, stream, indent=2, allow_nan=False)
+            stream.write('\n')
+        print(json.dumps({key: result[key] for key in ('status', 'exact_controls', 'exact_native_snapshots', 'exact_captures')}))
+    except BaseException as exc:
+        with (output / 'failure.json').open('x') as stream:
+            json.dump({'error': str(exc), 'exact_controls_before_failure': len(controls),
+                       'exact_native_snapshots_before_failure': len(verifier.states), 'no_retry': True,
+                       'first_mismatch_evidence': verifier.mismatch or mismatch}, stream, indent=2, allow_nan=False)
+        raise
+    finally:
+        if backend is not None:
+            backend.close()
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', required=True)
     parser.add_argument('--review')
+    parser.add_argument('--mode', choices=('collect', 'replay'), default='collect')
+    parser.add_argument('--source')
     parser.add_argument('--preflight', action='store_true')
     parser.add_argument('--libero-root', default='/home/junhongli/projects/LIBERO')
     parser.add_argument('--config-dir', default='/home/junhongli/runs/libero-config')
@@ -326,4 +456,4 @@ if __name__ == '__main__':
             stream.write('\n')
         print(json.dumps({'preflight': 'passed', 'output': args.output}))
     else:
-        collect(args)
+        (collect if args.mode == 'collect' else replay)(args)
