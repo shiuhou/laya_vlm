@@ -23,6 +23,8 @@ Exact question:
 Use the existing LocateAnything-3B checkpoint at
 `/home/junhongli/models/huggingface/LocateAnything-3B`, content ID
 `4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f`.
+Use `/home/junhongli/miniforge3/envs/locateanything/bin/python` for processor and
+model modes. The separate `laya-embodied` environment is for tests/text only.
 Keep GPU0, BF16, the existing native hybrid greedy SETTINGS and 256 generated
 token cap. Budget is exactly one new model query, with 300 s inference timeout,
 no inference retries, alternate wording, extra models, offsets, new capture,
@@ -100,3 +102,23 @@ baseline sensor SHA-256:
 One inspected fixture cannot establish generalization, grasp success, policy
 quality, or that semantic-region wording resolves the metric geometry problem.
 No subsequent physical action is authorized by this probe.
+
+## Reproduction and preserved processor setup failure
+
+Run from the clean frozen worktree using these exact command forms:
+
+```sh
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m embodied_runtime.experiments.task2_neck_box_support processor-preflight --output /home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-neck-box-support-processor-preflight-02.json
+CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m embodied_runtime.experiments.task2_neck_box_support generate --output /home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-neck-box-support-run-01
+```
+
+Processor preflight 01 at `4d88bde` used the wrong `laya-embodied` interpreter
+and failed importing decord/lmdb/torchvision inside AutoProcessor. No model was
+constructed, no inference ran and no processor result JSON was created. Its
+transcribed command-failure receipt is preserved as
+`task2-neck-box-support-processor-preflight-01-failure.json`, SHA-256
+`801acd729f6063def94c01f4ebde3c27fe1117ce8a930eddea5b9d64324aa5cd`.
+The separately numbered preflight 02 uses the existing LocateAnything environment,
+without installing packages or altering query, settings or source. The root's
+standing authorization covers this zero-inference environment correction;
+independent technical review also confirmed it before continuation.
