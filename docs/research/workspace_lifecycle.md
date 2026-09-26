@@ -17,6 +17,11 @@ The full inventory, planned mutations and completed receipts are retained at
 
 ## Routine closeout
 
+Before a new producer runs a model or simulator, check the actual frozen input
+schema and dependency imports without computing outcome-sensitive features.
+Synthetic API tests alone did not catch two recent bootstrap/schema failures.
+Retain such failed setup attempts and separate corrected attempts by identity.
+
 After each lane completes: review and integrate its useful source/report; seal
 and retain raw evidence and failures in the canonical runs directory; preserve
 exact source/configuration identities; remove the idle checkout after confirming
