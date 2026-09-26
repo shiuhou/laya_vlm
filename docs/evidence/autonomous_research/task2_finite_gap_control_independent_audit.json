@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "producer_commit": "1fd6324fd35c5e42fe05923b4986ccf6f69e8a7c",
+  "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-finite-gap-control-run-01",
+  "result_sha256": "dc569f9a564c59faa3686254f6fa726ad304fdcdce37b753a10108e05e821a13",
+  "seal_sha256": "af9d221f996c1ad5cefab7cb5a92fcba5b71d258bcf58370d4273d05ebe64d6e",
+  "source_journal_sha256": "17f504c75f9898ec515f474588dac730503c5bd4bef85c3782310b09212de36b",
+  "source_chained_records_checked": 11793,
+  "all_frozen_sensor_fields_guards_P_effects_exact": true,
+  "independent_formula": "SciPy quaternion rotation \u00d7 ideal audited Rz(-90); explicit calibrated finite pad bounds; Euclidean point minus coordinatewise projection",
+  "maximum_pad_bound_error_m": 2.7755575615628914e-17,
+  "maximum_mount_matrix_error": 3.3306690738754696e-16,
+  "maximum_gap_distance_error_m": 2.7755575615628914e-17,
+  "current_gap_distance_m": 0.036772006875590756,
+  "original_selected": "STOP",
+  "gap_selected": "MV_LEFT",
+  "gate_pass": true,
+  "independent_selected_reduction_m": 1.958848724274709e-06,
+  "saved_selected_reduction_m": 1.958848724274709e-06,
+  "selected_point_site_coordinate_delta_m": [
+    -0.0099999997187779,
+    -2.2540796556988485e-06,
+    7.372698104992498e-07
+  ],
+  "selected_distance_change_axis_contributions_m": [
+    0.0,
+    -2.1645605766297196e-06,
+    2.0571185234946383e-07
+  ],
+  "candidates": [
+    {
+      "token": "MV_FWD",
+      "independent_gap_distance_m": 0.02754102330444893,
+      "saved_gap_distance_m": 0.027541023304448947,
+      "distance_error_m": 1.734723475976807e-17,
+      "excluded": true,
+      "closest_point_in_site_m": [
+        0.0006359766443433533,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "MV_BACK",
+      "independent_gap_distance_m": 0.04632335268691832,
+      "saved_gap_distance_m": 0.04632335268691834,
+      "distance_error_m": 2.0816681711721685e-17,
+      "excluded": false,
+      "closest_point_in_site_m": [
+        0.000631393159534945,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "MV_LEFT",
+      "independent_gap_distance_m": 0.03677004802686648,
+      "saved_gap_distance_m": 0.0367700480268665,
+      "distance_error_m": 2.0816681711721685e-17,
+      "excluded": false,
+      "closest_point_in_site_m": [
+        -0.009366314816838752,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "MV_RIGHT",
+      "independent_gap_distance_m": 0.03677396577291881,
+      "saved_gap_distance_m": 0.03677396577291884,
+      "distance_error_m": 2.7755575615628914e-17,
+      "excluded": false,
+      "closest_point_in_site_m": [
+        0.01063368462071705,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "MV_UP",
+      "independent_gap_distance_m": 0.04118855555318976,
+      "saved_gap_distance_m": 0.04118855555318979,
+      "distance_error_m": 2.7755575615628914e-17,
+      "excluded": false,
+      "closest_point_in_site_m": [
+        0.000634295113886323,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "MV_DOWN",
+      "independent_gap_distance_m": 0.03475433598868019,
+      "saved_gap_distance_m": 0.034754335988680204,
+      "distance_error_m": 1.3877787807814457e-17,
+      "excluded": true,
+      "closest_point_in_site_m": [
+        0.0006330746899919752,
+        0.008,
+        0.0044
+      ]
+    },
+    {
+      "token": "STOP",
+      "independent_gap_distance_m": 0.036772006875590756,
+      "saved_gap_distance_m": 0.036772006875590776,
+      "distance_error_m": 2.0816681711721685e-17,
+      "excluded": false,
+      "closest_point_in_site_m": [
+        0.0006336849019391492,
+        0.008,
+        0.0044
+      ]
+    }
+  ],
+  "new_experiment_or_physics_run": false,
+  "interpretation": "Formal registered strict-improvement gate passes by approximately1.96micrometres; no new threshold, physical qualification or automatic extension is inferred."
+}
