@@ -1,0 +1,1775 @@
+{
+  "frozen_code": {
+    "commit": "ce698e6bc73b27f0feb984527407494c32404e2b",
+    "dirty_status": "",
+    "source_sha256": {
+      "embodied_runtime/__init__.py": "76438b042b8aca6b6ec4e074ea4dc17511222772781dacb5ebb3b06537564826",
+      "embodied_runtime/adapters/base.py": "5a867e9395a577b2fc8426f8980f6a619aacd694e96435340361958019d64a7b",
+      "embodied_runtime/adapters/callback_backend.py": "9f9f1b3ad5ad6fc236779a5eefbc39d3739cb32e2495c75ee1052193a0dce8f4",
+      "embodied_runtime/adapters/laya_input.py": "11d412905ac087ef5b3af34facec3d9eafcbbc180cc25301c67cf615f4ff464d",
+      "embodied_runtime/adapters/libero.py": "f6988f2d72d63b8832e7323a583397eb41b5a3bc8cb6cc380ac420cf0833454f",
+      "embodied_runtime/adapters/libero_rgbd.py": "b9b2e58081f336517d97397037cb7a2e7a31198e18167670b96b6386d2844ab4",
+      "embodied_runtime/adapters/locateanything.py": "5dbc90c5004571cec07486635775040e0bf952df7555b0205d7d367ee67c2704",
+      "embodied_runtime/adapters/physics_preview.py": "f8bee042c9ed8066acf7742e177ae3716d5d7b9fa83513061fb15c4cd41dcc79",
+      "embodied_runtime/association.py": "cfe2f358c12e41d14d85402877a84ce5827286a152943995152fcb6135669aeb",
+      "embodied_runtime/decision_interface.py": "92c87afe4b28e90bc50ec25293bb09ca6a93c8d52b598ae465e36d4d54f4c917",
+      "embodied_runtime/experiments/approach_family_control.py": "4bd1c900b3688f068ff088731c09786de7bf4032b8195edb6a2c16849b4fe147",
+      "embodied_runtime/experiments/approach_selector_probe.py": "a8bed024a503c24cd07e3d38b60c99cd1cfee481fc2cfe9e75174594ad5a3df9",
+      "embodied_runtime/experiments/audit_initial_states.py": "ee3e53eaa087f74f712f3d64641abdb5d914889c19865a7555d20e676be851b7",
+      "embodied_runtime/experiments/calibrate_atomic_actions.py": "fa168398d084c09a565a8d8d614b4d60430f53e593e890c4e98fb311c45b9338",
+      "embodied_runtime/experiments/clause_order.py": "d2a23908f99ee314ddedf92ce94006f4fcb1eb439983b487d46094a64ad4ab91",
+      "embodied_runtime/experiments/coarse_point_boundary_probe.py": "832dd3bce68444d9fed92fc71d50497c8d40e3d75f2043ae7363cf39a469db4b",
+      "embodied_runtime/experiments/coarse_point_grounding_audit.py": "08fa8824ffa01945db87762a0747bb0c06f7e43f0eb542b1805790c9b6d45475",
+      "embodied_runtime/experiments/coarse_point_probe.py": "7ac856b4148db01e0d30385d251a21639c4ba0ca6b7136035ec2187c0db812a7",
+      "embodied_runtime/experiments/collect_pairs.py": "6cc5b23d6b5c5b64c0ccd3187f0e79185d7672a7805b41f4d49093ff71d3b1b9",
+      "embodied_runtime/experiments/current_motor_provider_control.py": "a50c4401ae4a12a910806534b8efaae8e57cc0ff9dd351bf0a0bb91a116de7db",
+      "embodied_runtime/experiments/current_motor_replication.py": "462cd8e3076e07b56232d0e34c8fc6542af045442f43d5deb0f8a1645562f3d8",
+      "embodied_runtime/experiments/dead_end_boundary_audit.py": "a791dd5017a993be9992c32c26e8819b62d10b198f3d15cf53475ff140163556",
+      "embodied_runtime/experiments/demo_feedback.py": "162aa448d6157c989a2b4783fb4df6a8d89108a0f10c68002098027ed14b1bb1",
+      "embodied_runtime/experiments/demo_inspector.py": "10c54dfdfa6a0bf72e808194289ed0808ac45ea271146d305ec6d029cde77fa6",
+      "embodied_runtime/experiments/demo_report.py": "12f09edd6cfc2ab361f1182e864f203d41192b3d4fb281819cfd61f0f551159d",
+      "embodied_runtime/experiments/depth_support_probe.py": "e7057e95b4c122330c418cae7733e0f3c8e975978c9d0653cb477a14966a3b83",
+      "embodied_runtime/experiments/effect_binding.py": "435dd8a383f47e2d9c767c7b2b89c243462dcc98997dc474465c74a9e5861180",
+      "embodied_runtime/experiments/engineering_demo.py": "800c2c5c4205dd1415c062060f4e1f107344a7b6f3736a4e093af4a6d2215d56",
+      "embodied_runtime/experiments/equivalence.py": "8319e15aca64bbb0400edad2ccfb64190bde6c6ba405dd594b330e65e32b8486",
+      "embodied_runtime/experiments/explicit_consequence.py": "2fe9f68b8799c355f77b34954694b8e2d332b337cecd4b62075751c4ac59e89e",
+      "embodied_runtime/experiments/goal_placement.py": "0052e41afa42b26151c16b5509a95855a9c520ddbe8a02037b68fa288e2d9008",
+      "embodied_runtime/experiments/inspect_decision_pair.py": "1edcdaff9f98d65f3c903f95789321784988d2f1bbe7d02e13c83da20253459f",
+      "embodied_runtime/experiments/interaction_boundary_audit.py": "cd4cc86372f2518174530ad1c386c0152816f929a0e5bc80e100771d8ff4ac84",
+      "embodied_runtime/experiments/interface_search.py": "e05420c21f316e2449cf52c5f18842769e4a3ab01633126def692cdf3aeb1e9b",
+      "embodied_runtime/experiments/jev_hierarchy_comparison.py": "26e018a38f1630e742a0e91fc8ece536d53c6f923acbcaaf9c407e27da3c1585",
+      "embodied_runtime/experiments/matched_fixture.py": "1a7be3b7cd8e3276795d523761691781e22d08f6dd52c07f6aa32ead61321536",
+      "embodied_runtime/experiments/objective_reference_check.py": "92cdbbd32a203852bb84131591f7c89b8c85a18c0fd87d782878d33f8853e0f3",
+      "embodied_runtime/experiments/operating_regime_probe.py": "19deb1dcf9dd2dc8c72b6831a8e8e7d76aa96d1d9026e884c50cd8d072b9e882",
+      "embodied_runtime/experiments/operating_regime_report.py": "c99475683e3f73eadbfa843d53ac0ed4785930d047628fde9e1084c8b0afac32",
+      "embodied_runtime/experiments/perception_support_audit.py": "7c4710d25d350c49d3e07901470df5cbb759b957fe0ccf86afb7cca9a11e8e12",
+      "embodied_runtime/experiments/point_grounding_probe.py": "bdd39fc30195e28d2a1a151bd78383a568f81f77fca81baa26765b3f81f4a09a",
+      "embodied_runtime/experiments/point_replay_order_probe.py": "f448f0023632743c7651e6b79c2478cd79af8d7df8af1e261a3dfa47b9da8031",
+      "embodied_runtime/experiments/point_temporal_probe.py": "86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36",
+      "embodied_runtime/experiments/predicate_decomposition.py": "23e51efc9976768f203e1a5b2ce64bc636e7f4e984f366732ef34e6c48003cbb",
+      "embodied_runtime/experiments/predicate_verification.py": "04eea96309fe24b05460f223a851650ee223d7f94554397eb41c9dd2792eeb84",
+      "embodied_runtime/experiments/predicate_verification_audit.py": "26a2729bce909b7aab266dcc63521d2ea1d9e724a67a7385125aa580ffc2dbbb",
+      "embodied_runtime/experiments/privileged_multistage_task.py": "2c716660fd56d0995b73597d195b0334fecd5c220ef78cfe3da1443e00979a77",
+      "embodied_runtime/experiments/privileged_reference.py": "6c92b868d5e4105bc687e72c656fe6d4bf5b6e4defef0d544df7fe9ccc7eae85",
+      "embodied_runtime/experiments/privileged_task.py": "ba6c2700dc7e54733eab1f19b1b6e5d697a404147740ae38388352c2ef6da2bf",
+      "embodied_runtime/experiments/provider_comparison.py": "f4f3f4697af5a04ccbc4ddc3241f6450c0e387a7c0416fb606251aabdbc6494c",
+      "embodied_runtime/experiments/records.py": "50220d3104642b4b48a90b64d0bdff5e756b60197aefa64aa38ad87d7999807b",
+      "embodied_runtime/experiments/reference_gate.py": "384418838038b798c2b686f56ad7c29da83cde2b6f6b56f6e63e632199d9aa01",
+      "embodied_runtime/experiments/reference_model_diagnostic.py": "d79017e8eaae76134ef47cd4785b0a3ff5f5188d51c30aa66ddf2192f6400509",
+      "embodied_runtime/experiments/reference_quality.py": "98b32f24c0a8e1b8565e91a8a51f36080b88201968b479d33a015671a644b228",
+      "embodied_runtime/experiments/replay_equivalence.py": "91f803fe77b37b58598464341421dee689d78184ca2b177726f13abc23d3bf7b",
+      "embodied_runtime/experiments/run_libero.py": "b53a49a5418c5abe6d91aa223efdda8d43c9374456ed29698762503d95ac1efb",
+      "embodied_runtime/experiments/selective_grip.py": "48985cad77455a3ba1c5c2002d3a54a669e984d2feba91750a23ef7138cb5189",
+      "embodied_runtime/experiments/summarize.py": "cfa2edf27fa71ff11b8e0fdb68b0a22e372e751d9af9213f835fb7338961bc27",
+      "embodied_runtime/experiments/summarize_equivalence.py": "04aac535bc1f6a5f8963dd031535b51f863d9281b45461999afacbab2bda3322",
+      "embodied_runtime/experiments/target_referent.py": "93be27ca947be16f1d846d104843b08327a3105829e8ab8eda02d015945192dc",
+      "embodied_runtime/experiments/two_step_lookahead_audit.py": "1f1e659f0d50cb38d7e8adc149dab2a1d7332846f84655f67f5faa39b41eb1cb",
+      "embodied_runtime/experiments/visual_marker_control.py": "48ab7493234f515d8ca5b9d34a6ddd2ec0a6f40d1f41c4b52ab9158e3aaf3cda",
+      "embodied_runtime/experiments/visual_subgoal_probe.py": "40d60c05649fbb534158ca429587cb45912f66e9b4866a2e43005b97f7a630e0",
+      "embodied_runtime/experiments/visual_target_verification.py": "027d17fbb2eb899cca431775ae718b1e6f3bc6f2da1988d319c60e3d8cb3edd4",
+      "embodied_runtime/experiments/visual_target_verification_run.py": "4f217bf2e3ceb93935a9feb56c544d0e66ade907f9adff15f24629a67fdf9992",
+      "embodied_runtime/experiments/vlm_capability_control.py": "4bbebb4d650eded054b132e504cb783dcd88e42ac8f69eb84a88429f399d4e88",
+      "embodied_runtime/experiments/vlm_world_relations.py": "4bf2ed7babcf5b1e10a0f17b13d152b241579bbbb2b5a39e68c3d0719008a4a3",
+      "embodied_runtime/experiments/vlm_world_single_relation.py": "d55d4eb33fe8025ba545ec013a92aa76eb1103c8a417d25d2df73408ec4504b3",
+      "embodied_runtime/fusion.py": "e829fb20cc050ec43db6fbde0107506e3c9720ebfcbbb15de1b2845b9edd4f68",
+      "embodied_runtime/replay.py": "e72483453d5623a6f4a1709444494afcc680d1bec3ac56ddca92d77934ce1812",
+      "embodied_runtime/runtime.py": "f233fc0516f8056b311b10fa71e8285ed658f9ccc887898259a726716144187d",
+      "embodied_runtime/runtime_core.py": "04be07b6be4d287d9b93e6376fb837cfa1a914eb0f81d9d2cf90b7c7f16763c7",
+      "embodied_runtime/vision.py": "bf428addd6bf1ebc9e6a896ab97dc630c1c16855b61ef1429ef73fcbf93f2b3b"
+    }
+  },
+  "raw_root": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research",
+  "checkpoint": {
+    "path": "/home/junhongli/projects/research-models/Qwen2.5-VL-7B-Instruct",
+    "content_id": "c4c1156e0c3419c0103b28bae5df90fb4b4c0d348172fa55cff23898ec6e51a1",
+    "repo": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5"
+  },
+  "registration_sha256": "909fd2ebc9051e7a75ace59b106a06de906e13ceec69b5e59fdd022ea8258297",
+  "protocol_sha256": "ddb1265bc40cee1a3d152d1f2688ca3fd2943309461167e488f5e9e0874d3c51",
+  "acquisition_sha256": "91d286757069b13148e4cb1f008cdb6623997a79a2ee708cdc110be100a67f4f",
+  "unique_queries": 31,
+  "model_retries": 0,
+  "physical_execution": false,
+  "root_independent_audit": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/vlm7b-root-independent-audit-01/summary.json",
+  "probes": {
+    "relations": {
+      "raw_sha256": "50603ec41159cca96f3e55549a5203c00641718849e217a3abb4f538712fea89",
+      "evaluation_sha256": "441cc0baccefbab5ab105cd701aa73ad3f8632a3173dc3bce3e469c4b91dbe80",
+      "rows": [
+        {
+          "call_id": "horizontal-text",
+          "condition": "horizontal",
+          "generated_token_count": 3,
+          "image_index": null,
+          "label": "uncertain",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "uncertain",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": true,
+          "useful_correct": false
+        },
+        {
+          "call_id": "horizontal-gray",
+          "condition": "horizontal",
+          "generated_token_count": 3,
+          "image_index": 6,
+          "label": "uncertain",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "uncertain",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": true,
+          "useful_correct": false
+        },
+        {
+          "call_id": "horizontal-original-0",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 0,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "left"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "horizontal-mirror-0",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 1,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "right"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "horizontal-original-2",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 2,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "left"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "horizontal-mirror-2",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 3,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "right"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "horizontal-original-4",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 4,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "aligned"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "horizontal-mirror-4",
+          "condition": "horizontal",
+          "generated_token_count": 2,
+          "image_index": 5,
+          "label": "left",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "left",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "aligned"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "gap-text",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": null,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "gap-gray",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 6,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "gap-original-0",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 0,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "separated"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "gap-mirror-0",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 1,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "separated"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "gap-original-2",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 2,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "adjacent"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "gap-mirror-2",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 3,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "adjacent"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "gap-original-4",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 4,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "separated"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "gap-mirror-4",
+          "condition": "gap",
+          "generated_token_count": 3,
+          "image_index": 5,
+          "label": "separated",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "separated",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "separated"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "orientation-text",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": null,
+          "label": "uncertain",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "uncertain",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": true,
+          "useful_correct": false
+        },
+        {
+          "call_id": "orientation-gray",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 6,
+          "label": "uncertain",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "uncertain",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "uncertain"
+          ],
+          "correct": true,
+          "useful_correct": false
+        },
+        {
+          "call_id": "orientation-original-0",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 0,
+          "label": "diagonal",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "diagonal",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "upright"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "orientation-mirror-0",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 1,
+          "label": "upright",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "upright",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "upright"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "orientation-original-2",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 2,
+          "label": "diagonal",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "diagonal",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "upright"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "orientation-mirror-2",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 3,
+          "label": "diagonal",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "diagonal",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "upright"
+          ],
+          "correct": false,
+          "useful_correct": false
+        },
+        {
+          "call_id": "orientation-original-4",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 4,
+          "label": "diagonal",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "diagonal",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "diagonal"
+          ],
+          "correct": true,
+          "useful_correct": true
+        },
+        {
+          "call_id": "orientation-mirror-4",
+          "condition": "orientation",
+          "generated_token_count": 3,
+          "image_index": 5,
+          "label": "diagonal",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "diagonal",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "acceptable_labels": [
+            "diagonal"
+          ],
+          "correct": true,
+          "useful_correct": true
+        }
+      ],
+      "scene_fields": {
+        "denominator": 18,
+        "correct": 9,
+        "useful_correct": 9,
+        "invalid": 0,
+        "uncertain": 0
+      },
+      "abstention_controls": {
+        "denominator": 6,
+        "correct": 4,
+        "useful_correct": 0,
+        "invalid": 0,
+        "uncertain": 4
+      },
+      "fields": {
+        "horizontal": {
+          "scenes": {
+            "denominator": 6,
+            "correct": 2,
+            "useful_correct": 2,
+            "invalid": 0,
+            "uncertain": 0
+          },
+          "controls": {
+            "denominator": 2,
+            "correct": 2,
+            "useful_correct": 0,
+            "invalid": 0,
+            "uncertain": 2
+          }
+        },
+        "gap": {
+          "scenes": {
+            "denominator": 6,
+            "correct": 4,
+            "useful_correct": 4,
+            "invalid": 0,
+            "uncertain": 0
+          },
+          "controls": {
+            "denominator": 2,
+            "correct": 0,
+            "useful_correct": 0,
+            "invalid": 0,
+            "uncertain": 0
+          }
+        },
+        "orientation": {
+          "scenes": {
+            "denominator": 6,
+            "correct": 3,
+            "useful_correct": 3,
+            "invalid": 0,
+            "uncertain": 0
+          },
+          "controls": {
+            "denominator": 2,
+            "correct": 2,
+            "useful_correct": 0,
+            "invalid": 0,
+            "uncertain": 2
+          }
+        }
+      },
+      "mirror_pairs": [
+        {
+          "field": "horizontal",
+          "original_image_index": 0,
+          "valid_pair": true,
+          "mirror_consistent": false,
+          "both_correct": false
+        },
+        {
+          "field": "horizontal",
+          "original_image_index": 2,
+          "valid_pair": true,
+          "mirror_consistent": false,
+          "both_correct": false
+        },
+        {
+          "field": "horizontal",
+          "original_image_index": 4,
+          "valid_pair": true,
+          "mirror_consistent": false,
+          "both_correct": false
+        },
+        {
+          "field": "gap",
+          "original_image_index": 0,
+          "valid_pair": true,
+          "mirror_consistent": true,
+          "both_correct": true
+        },
+        {
+          "field": "gap",
+          "original_image_index": 2,
+          "valid_pair": true,
+          "mirror_consistent": true,
+          "both_correct": false
+        },
+        {
+          "field": "gap",
+          "original_image_index": 4,
+          "valid_pair": true,
+          "mirror_consistent": true,
+          "both_correct": true
+        },
+        {
+          "field": "orientation",
+          "original_image_index": 0,
+          "valid_pair": true,
+          "mirror_consistent": false,
+          "both_correct": false
+        },
+        {
+          "field": "orientation",
+          "original_image_index": 2,
+          "valid_pair": true,
+          "mirror_consistent": true,
+          "both_correct": false
+        },
+        {
+          "field": "orientation",
+          "original_image_index": 4,
+          "valid_pair": true,
+          "mirror_consistent": true,
+          "both_correct": true
+        }
+      ],
+      "coherent_scenes_from_independent_questions": [
+        {
+          "image_index": 0,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "diagonal"
+          ]
+        },
+        {
+          "image_index": 1,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "upright"
+          ]
+        },
+        {
+          "image_index": 2,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "diagonal"
+          ]
+        },
+        {
+          "image_index": 3,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "diagonal"
+          ]
+        },
+        {
+          "image_index": 4,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "diagonal"
+          ]
+        },
+        {
+          "image_index": 5,
+          "all_fields_correct": false,
+          "independent_answers": [
+            "left",
+            "separated",
+            "diagonal"
+          ]
+        }
+      ],
+      "coherent_scene_count": 0,
+      "coherent_scene_denominator": 6,
+      "scope": "three independent single-image geometry questions; no physical inference; dependent mirrors",
+      "control_registration_sha256": "909fd2ebc9051e7a75ace59b106a06de906e13ceec69b5e59fdd022ea8258297",
+      "native_and_checkpoint_audit": "pass",
+      "baseline_raw_sha256": "1692a09b52ba8284d70e14a33cb176f77d4066d949b420b21a515817cda2923f",
+      "processor_comparison": [
+        {
+          "call_id": "horizontal-text",
+          "baseline_token_count": 101,
+          "control_token_count": 101,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-gray",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-original-0",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-mirror-0",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-original-2",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-mirror-2",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-original-4",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "horizontal-mirror-4",
+          "baseline_token_count": 544,
+          "control_token_count": 544,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-text",
+          "baseline_token_count": 108,
+          "control_token_count": 108,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-gray",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-original-0",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-mirror-0",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-original-2",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-mirror-2",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-original-4",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "gap-mirror-4",
+          "baseline_token_count": 551,
+          "control_token_count": 551,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-text",
+          "baseline_token_count": 87,
+          "control_token_count": 87,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-gray",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-original-0",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-mirror-0",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-original-2",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-mirror-2",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-original-4",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "orientation-mirror-4",
+          "baseline_token_count": 530,
+          "control_token_count": 530,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        }
+      ],
+      "responses": [
+        {
+          "call_id": "horizontal-text",
+          "decoded_text": "uncertain",
+          "latency_s": 0.45364347309805453,
+          "peak_allocated_bytes": 16665074176,
+          "peak_reserved_bytes": 16877879296
+        },
+        {
+          "call_id": "horizontal-gray",
+          "decoded_text": "uncertain",
+          "latency_s": 0.3091073369141668,
+          "peak_allocated_bytes": 16771629568,
+          "peak_reserved_bytes": 17043554304
+        },
+        {
+          "call_id": "horizontal-original-0",
+          "decoded_text": "left",
+          "latency_s": 0.16264587501063943,
+          "peak_allocated_bytes": 16796073984,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "horizontal-mirror-0",
+          "decoded_text": "left",
+          "latency_s": 0.16072623408399522,
+          "peak_allocated_bytes": 16796370944,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "horizontal-original-2",
+          "decoded_text": "left",
+          "latency_s": 0.16154203098267317,
+          "peak_allocated_bytes": 16795408384,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "horizontal-mirror-2",
+          "decoded_text": "left",
+          "latency_s": 0.1598830739967525,
+          "peak_allocated_bytes": 16796370944,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "horizontal-original-4",
+          "decoded_text": "left",
+          "latency_s": 0.15915945800952613,
+          "peak_allocated_bytes": 16795408384,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "horizontal-mirror-4",
+          "decoded_text": "left",
+          "latency_s": 0.16261909599415958,
+          "peak_allocated_bytes": 16796370944,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "gap-text",
+          "decoded_text": "separated",
+          "latency_s": 0.08224191307090223,
+          "peak_allocated_bytes": 16699975680,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "gap-gray",
+          "decoded_text": "separated",
+          "latency_s": 0.1872395279351622,
+          "peak_allocated_bytes": 16772644864,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "gap-original-0",
+          "decoded_text": "separated",
+          "latency_s": 0.19188668695278466,
+          "peak_allocated_bytes": 16798113280,
+          "peak_reserved_bytes": 17079205888
+        },
+        {
+          "call_id": "gap-mirror-0",
+          "decoded_text": "separated",
+          "latency_s": 0.19347677496261895,
+          "peak_allocated_bytes": 16798051840,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "gap-original-2",
+          "decoded_text": "separated",
+          "latency_s": 0.19262850610539317,
+          "peak_allocated_bytes": 16798113280,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "gap-mirror-2",
+          "decoded_text": "separated",
+          "latency_s": 0.18824168294668198,
+          "peak_allocated_bytes": 16798051840,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "gap-original-4",
+          "decoded_text": "separated",
+          "latency_s": 0.18889798410236835,
+          "peak_allocated_bytes": 16798113280,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "gap-mirror-4",
+          "decoded_text": "separated",
+          "latency_s": 0.18860619189217687,
+          "peak_allocated_bytes": 16798051840,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-text",
+          "decoded_text": "uncertain",
+          "latency_s": 0.08345648203976452,
+          "peak_allocated_bytes": 16695962112,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-gray",
+          "decoded_text": "uncertain",
+          "latency_s": 0.1864467840641737,
+          "peak_allocated_bytes": 16769601024,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-original-0",
+          "decoded_text": "diagonal",
+          "latency_s": 0.18633845215663314,
+          "peak_allocated_bytes": 16794045440,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-mirror-0",
+          "decoded_text": "upright",
+          "latency_s": 0.19114432483911514,
+          "peak_allocated_bytes": 16795008000,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-original-2",
+          "decoded_text": "diagonal",
+          "latency_s": 0.18674009898677468,
+          "peak_allocated_bytes": 16794045440,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-mirror-2",
+          "decoded_text": "diagonal",
+          "latency_s": 0.19014840107411146,
+          "peak_allocated_bytes": 16795008000,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-original-4",
+          "decoded_text": "diagonal",
+          "latency_s": 0.1900480450130999,
+          "peak_allocated_bytes": 16794045440,
+          "peak_reserved_bytes": 17087594496
+        },
+        {
+          "call_id": "orientation-mirror-4",
+          "decoded_text": "diagonal",
+          "latency_s": 0.23709929594770074,
+          "peak_allocated_bytes": 16795008000,
+          "peak_reserved_bytes": 17087594496
+        }
+      ],
+      "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/vlm7b-capability-relations-run-01",
+      "summary_sha256": "77ffc63f6a0b7d25424acab510a536eebb67b2a3d743a3968d163f3cdb7e79ec",
+      "generation_latency_sum_s": 4.593967730179429,
+      "peak_allocated_MiB": 16019.92919921875,
+      "peak_reserved_MiB": 16296.0
+    },
+    "subgoals": {
+      "raw_sha256": "a4d29b33d9c4e36213e76bceaa31550b2e93a5e91f965f60d05f9c46371c6b5c",
+      "evaluation_sha256": "0daf94eabbfd4c6e09989800f942143b88cf8d837eb57b9ed285a85ebf243237",
+      "task_only": {
+        "call_id": "text-only",
+        "generated_token_count": 4,
+        "image_index": null,
+        "label": "approach_drawer",
+        "length_limit_reached": false,
+        "no_terminal_eos": false,
+        "parsed_label": {
+          "label": "approach_drawer",
+          "status": "valid"
+        },
+        "status": "valid",
+        "terminal_eos": true,
+        "unexpected_special_token": false
+      },
+      "rows": [
+        {
+          "call_id": "rgb-0",
+          "generated_token_count": 4,
+          "image_index": 0,
+          "label": "establish_grasp",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "establish_grasp",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": true,
+          "acceptable_labels": [
+            "approach_object"
+          ],
+          "annotation_agreement": false,
+          "useful_accepted_proposal": false,
+          "task_only_annotation_agreement": false,
+          "changed_from_task_only": true
+        },
+        {
+          "call_id": "rgb-1",
+          "generated_token_count": 4,
+          "image_index": 1,
+          "label": "approach_drawer",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "approach_drawer",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": true,
+          "acceptable_labels": [
+            "approach_object",
+            "establish_grasp"
+          ],
+          "annotation_agreement": false,
+          "useful_accepted_proposal": false,
+          "task_only_annotation_agreement": false,
+          "changed_from_task_only": false
+        },
+        {
+          "call_id": "rgb-2",
+          "generated_token_count": 4,
+          "image_index": 2,
+          "label": "establish_grasp",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "establish_grasp",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": true,
+          "acceptable_labels": [
+            "transport_object"
+          ],
+          "annotation_agreement": false,
+          "useful_accepted_proposal": false,
+          "task_only_annotation_agreement": false,
+          "changed_from_task_only": true
+        },
+        {
+          "call_id": "rgb-3",
+          "generated_token_count": 4,
+          "image_index": 3,
+          "label": "establish_grasp",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "establish_grasp",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": false,
+          "acceptable_labels": null,
+          "annotation_agreement": null,
+          "useful_accepted_proposal": null,
+          "task_only_annotation_agreement": null,
+          "changed_from_task_only": true
+        },
+        {
+          "call_id": "rgb-4",
+          "generated_token_count": 4,
+          "image_index": 4,
+          "label": "establish_grasp",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "establish_grasp",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": false,
+          "acceptable_labels": null,
+          "annotation_agreement": null,
+          "useful_accepted_proposal": null,
+          "task_only_annotation_agreement": null,
+          "changed_from_task_only": true
+        },
+        {
+          "call_id": "rgb-5",
+          "generated_token_count": 4,
+          "image_index": 5,
+          "label": "approach_drawer",
+          "length_limit_reached": false,
+          "no_terminal_eos": false,
+          "parsed_label": {
+            "label": "approach_drawer",
+            "status": "valid"
+          },
+          "status": "valid",
+          "terminal_eos": true,
+          "unexpected_special_token": false,
+          "primary_evaluation": false,
+          "acceptable_labels": null,
+          "annotation_agreement": null,
+          "useful_accepted_proposal": null,
+          "task_only_annotation_agreement": null,
+          "changed_from_task_only": false
+        }
+      ],
+      "primary_denominator": 3,
+      "primary_annotation_agreements": 0,
+      "primary_useful_accepted_proposals": 0,
+      "task_only_primary_annotation_agreements": 0,
+      "rgb_uncertain_count": 0,
+      "rgb_invalid_count": 0,
+      "scope": "three primary visual-label cases; three descriptive cases; no physical authorization",
+      "control_registration_sha256": "909fd2ebc9051e7a75ace59b106a06de906e13ceec69b5e59fdd022ea8258297",
+      "native_and_checkpoint_audit": "pass",
+      "baseline_raw_sha256": "c6b24951478e99f2fff808ad7fa3539edeb644de28467bd92cd11aacfc395365",
+      "processor_comparison": [
+        {
+          "call_id": "text-only",
+          "baseline_token_count": 126,
+          "control_token_count": 126,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-0",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-1",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-2",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-3",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-4",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        },
+        {
+          "call_id": "rgb-5",
+          "baseline_token_count": 569,
+          "control_token_count": 569,
+          "token_count_delta": 0,
+          "equal": {
+            "messages": true,
+            "prompt": true,
+            "input_ids": true,
+            "attention_mask": true,
+            "image_grid_thw": true,
+            "processor_pixel_values": true,
+            "consumed_pixel_values": true,
+            "rgb_sha256": true,
+            "processed_image_size_wh": true,
+            "image_pad_token_count": true
+          }
+        }
+      ],
+      "responses": [
+        {
+          "call_id": "text-only",
+          "decoded_text": "approach_drawer",
+          "latency_s": 0.4043671020772308,
+          "peak_allocated_bytes": 16670442496,
+          "peak_reserved_bytes": 16879976448
+        },
+        {
+          "call_id": "rgb-0",
+          "decoded_text": "establish_grasp",
+          "latency_s": 0.29252344788983464,
+          "peak_allocated_bytes": 16778258432,
+          "peak_reserved_bytes": 17091788800
+        },
+        {
+          "call_id": "rgb-1",
+          "decoded_text": "approach_drawer",
+          "latency_s": 0.19792501092888415,
+          "peak_allocated_bytes": 16803210240,
+          "peak_reserved_bytes": 17125343232
+        },
+        {
+          "call_id": "rgb-2",
+          "decoded_text": "establish_grasp",
+          "latency_s": 0.19875349290668964,
+          "peak_allocated_bytes": 16803664896,
+          "peak_reserved_bytes": 17125343232
+        },
+        {
+          "call_id": "rgb-3",
+          "decoded_text": "establish_grasp",
+          "latency_s": 0.19744986714795232,
+          "peak_allocated_bytes": 16803210240,
+          "peak_reserved_bytes": 17125343232
+        },
+        {
+          "call_id": "rgb-4",
+          "decoded_text": "establish_grasp",
+          "latency_s": 0.19756630389019847,
+          "peak_allocated_bytes": 16803664896,
+          "peak_reserved_bytes": 17125343232
+        },
+        {
+          "call_id": "rgb-5",
+          "decoded_text": "approach_drawer",
+          "latency_s": 0.19607184291817248,
+          "peak_allocated_bytes": 16803210240,
+          "peak_reserved_bytes": 17125343232
+        }
+      ],
+      "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/vlm7b-capability-subgoals-run-01",
+      "summary_sha256": "761f73765399b41264b0c72461746d7910d8c4bb94f97d671416d021af566a89",
+      "generation_latency_sum_s": 1.6846570677589625,
+      "peak_allocated_MiB": 16025.2236328125,
+      "peak_reserved_MiB": 16332.0
+    }
+  },
+  "baseline_comparison": {
+    "relations": {
+      "scene_fields_3b": 2,
+      "scene_fields_7b": 9,
+      "scene_field_denominator": 18,
+      "coherent_scenes_3b": 0,
+      "coherent_scenes_7b": 0,
+      "scene_denominator": 6,
+      "abstention_correct_3b": 4,
+      "abstention_correct_7b": 4,
+      "abstention_denominator": 6
+    },
+    "subgoals": {
+      "primary_3b": 1,
+      "primary_7b": 0,
+      "task_only_3b": 1,
+      "task_only_7b": 0,
+      "primary_denominator": 3
+    }
+  }
+}
