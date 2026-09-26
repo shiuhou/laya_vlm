@@ -379,6 +379,30 @@ Raw 7B inputs/results and independent audit are under
 `runs/autonomous-research/vlm7b-capability-*-run-01` and
 `runs/autonomous-research/vlm7b-root-independent-audit-01`.
 
+## Update after all seven original physical options
+
+- **Observed:** exact200-control diagnostic prefixes followed by each of the
+  seven native options produce no contract-valid, positive-handle-gap-gain arm
+  with zero sampled robot-contact rows. The original RIGHT continuation exactly
+  reproduces commands, states, contacts and its full executor result.
+- **Observed distinction:** FWD and RIGHT approach the supplied target point
+  while increasing handle surface gap. DOWN reduces handle gap8.466454mm but
+  has2.114787mm translation error against the unchanged2mm tolerance. It also
+  moves the drawer1.406205mm despite no control-end robot-contact rows.
+- **Limits:** no rows is not no physical contact. Only one-step behavior, one
+  pose/open-jaw configuration and the original seven-action pool were tested.
+  A useful detour can temporarily worsen the gap; neither global unreachability
+  nor insufficiency of information alone follows. The cause of DOWN's tracking
+  residual remains unresolved. Its contract is not relaxed retrospectively.
+- **Next:** a separate paired RIGHT/DOWN observer at every native integration
+  step, with all original control boundaries and complete results required to
+  remain exact. In parallel, sensor proximity measures an information source;
+  it must not be called a sufficient fix for the action/controller regime.
+
+See [seven-option findings](docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md),
+[independent boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
+and [7B fixed-query findings](docs/evidence/autonomous_research/vlm_capability_control_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

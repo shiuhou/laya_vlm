@@ -651,6 +651,49 @@ from a one-step failure nor deployable safety from one successful alternative.
   `50603ec41159cca96f3e55549a5203c00641718849e217a3abb4f538712fea89`
   and `a4d29b33d9c4e36213e76bceaa31550b2e93a5e91f965f60d05f9c46371c6b5c`.
 
+### Parallel iteration 020 — every original native option at boundary25
+
+- **Question:** does the original seven-option family contain a useful native
+  one-step alternative at the first nonhandle-contact boundary, independently of
+  target/perception/model selection? A positive answer would constrain a pure
+  action-coverage explanation; a negative answer is only local.
+- **Frozen intervention:** seven canonical options, each after exact archived
+  200-control prefix from its own reset. Same initial POINT, native10mm/eight
+  controls, open gripper, executor and validator. Explicit evaluator-only prefix
+  diagnostic, not a fresh autonomous policy. Freeze `812d99e`; preflight import
+  failure preserved before worlds/controls, corrected `e13bc36` precedes first
+  physical attempt. No actual-outcome retry, selection or threshold changes.
+- **Result:** all7 arms/56 new controls complete. No contract-valid option both
+  reduces designated-handle surface gap and has zero sampled robot-contact rows.
+  DOWN gives8.466454mm gap gain but2.114787mm translation residual (>2mm), and
+  drawer motion1.406205mm despite no control-end contacts. RIGHT reproduces the
+  archived8 commands/states/contacts/full result exactly and moves drawer6.844671mm
+  through sampled nonhandle contact. FWD improves point distance4.143665mm while
+  worsening handle gap0.036381mm. No arm has designated-handle contact or success.
+- **Independent review:** all2,971 record-chain identities,1,400 prefix and56 arm
+  controls,21 artifacts/trajectories, metric/contract arithmetic pass an independent
+  stdlib/NumPy checker. Root reran it and inspected the seven endpoint RGB images
+  (`coarse-native-counterfactual-run-01/root-visual-review/seven-arm-endpoints.jpg`).
+- **Interpretation:** scene visibility and known own shape do not prove a useful
+  action exists under this local regime. Contact-end sampling may hide within-step
+  interaction. No global reachability, continuous-time safety or model competence
+  claim follows; no causal attribution of tracking error yet.
+- **Next experiment:** independently reviewed paired RIGHT/DOWN integration-step
+  observer, no dynamics modifications, exact original per-control/result guard.
+  Concurrent partial-mask RGB-D proximity remains a measurement-only question.
+- **Artifacts:** [seven-option findings](../evidence/autonomous_research/coarse_native_counterfactual_findings.md),
+  [independent review](../evidence/autonomous_research/information_boundary_review.md),
+  `coarse-native-counterfactual-run-01`; SHA
+  `23a5e0ea9a59317ad843141a4ec0017958d0c180fdbc7c2aed90cf41697943fa`.
+  Main integrations `54ee10b`, `e1dc0a8`, `6ac3d18`, `0755742`, `d5ed5ab`.
+
+Integrated regression after geometry/VLM/counterfactual integration: **805 passed**
+in30.65s; log `runs/autonomous-research/regression-geometry-vlm-counterfactual-integration.log`.
+Tested code at `0755742`; subsequent `d5ed5ab` is only a report-path correction.
+The root raw audit and integrated independent boundary checker also pass.
+Production `runtime_core.py` and `adapters/libero.py` remain byte-identical to the
+experimental starting commit `b73b5b4`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
