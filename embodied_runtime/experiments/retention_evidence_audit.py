@@ -173,6 +173,18 @@ def audit(source, replay, repository):
           (r['after_step'] == -1 or r['sim_time_s'] == lookup[r['arm'],r['after_step'],r['control']]['sensor']['read_sim_time_s'])
           for r in labels), states=len(labels))
     summary = read(source/'evaluation-audit/summary.json')
+    reported_landmarks_equal = True
+    for arm in ('close', 'open_hold'):
+        reported = summary['arms'][arm]
+        for role, result in landmarks[arm].items():
+            claim = reported['landmarks'][role]
+            reported_landmarks_equal &= result['on_bottle'] == claim['on_bottle_including_seed']
+            claimed_delta = claim['endpoint_surface_point_delta_m']
+            reported_landmarks_equal &= (result['endpoint_displacement_mm'] is None if claimed_delta is None else
+                np.array_equal(result['endpoint_displacement_mm'], np.asarray(claimed_delta)*1000))
+        reported_landmarks_equal &= reported['oracle_bilateral_after_seed_controls'] == sum(
+            r['valid_grasp_relation'] for r in labels if r['arm'] == arm and r['after_step'] >= 13)
+    check('reported_landmark_and_relation_aggregates', reported_landmarks_equal)
     check('evaluator_and_sensor_summary_hash_chain',
           summary['oracle_labels_sha256'] == digest(source/'evaluator-only/labels.json') and
           summary['sensor_analysis_sha256'] == digest(source/'sensor-analysis.json') and
@@ -187,6 +199,21 @@ def audit(source, replay, repository):
           for name in ('summary.json','membership.json','trajectory-contact-sheet.png','trajectory-sensors.png','first-cap-failure.png')))
     replay_manifest = read(replay/'manifest.json')
     replay_result = read(replay/'result.json')
+    portable = read(repository/'docs/evidence/autonomous_research/interaction_observability_summary.json')
+    check('portable_artifact_and_replay_anchors', all(digest(source/name) == expected for name,expected
+          in portable['artifacts_sha256'].items()) and portable['replay']['result_sha256'] == digest(replay/'result.json'))
+    width = portable['archived_width_counterexample']
+    width_source = Path(width['source'])
+    width_rows = [json.loads(line) for line in width_source.read_text().splitlines()]
+    width_equal = digest(width_source) == width['source_sha256']
+    for claimed in width['records']:
+        actual = width_rows[claimed['source_record_seq']]['data']['actual']
+        width_equal &= (actual['action'] == claimed['action'] and actual['controls'] == claimed['controls'] and
+            actual['before']['finger_gap_mm'] == claimed['geometric_gap_before_mm'] and
+            actual['after']['finger_gap_mm'] == claimed['geometric_gap_after_mm'] and
+            actual['after']['contacts'] == claimed['contact_rows_after'] and
+            actual['after']['bilateral_target_contact'] == claimed['bilateral_target_contact_after'])
+    check('archived_empty_close_counterexample_source_and_rows', width_equal, records=[26,54])
     check('replay_source_hash_chain', replay_manifest['sensor_controls_sha256'] == digest(source/'sensors.jsonl') and
           replay_manifest['original_diagnostic_state_sha256'] == digest(source/'evaluator-only/labels.json'))
     check('recorded_replay_all_controls_exact_and_ordered', replay_result['controls'] == 272 and
