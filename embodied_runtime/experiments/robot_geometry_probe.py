@@ -12,7 +12,7 @@ import time
 
 import numpy as np
 
-from .records import code_identity, file_hash, jsonable, load_records, repository_identity, versions
+from .records import code_identity, file_hash, jsonable, load_records, package_directory, repository_identity, versions
 from .robot_only_geometry import VERSION, extract_own_positions
 
 PROTOCOL = Path(__file__).resolve().parents[2]/'docs/research/robot_geometry_probe_protocol.md'
@@ -193,7 +193,7 @@ def run(source,output):
             'rendering':False,'world_class_used':False,'reset_or_set_init_state_called':False,
             'construction_note':'ControlEnv constructor initializes state/caches and invokes counted mj_step1; mj_step/mj_step2 integration is forbidden. All stepping is forbidden after construction.',
             'environment_repositories':{'jev':repository_identity(Path(jev_libero.world.__file__).parent),
-                'libero':repository_identity(Path(libero.__file__).parent)},
+                'libero':repository_identity(package_directory(libero))},
             'flattened_state_decoder_source_sha256':file_hash(binding_utils.__file__),
             'full_model_dimensions_evaluator_only':{'nbody':int(model.nbody),'ngeom':int(model.ngeom),'nq':int(model.nq),'nv':int(model.nv)},
             'exported_robot_counts':{key:len(calibration[key]) for key in ('bodies','sites','geometries')}})

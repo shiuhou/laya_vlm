@@ -119,3 +119,16 @@ initialization remains explicit; zero dynamic controls/integration are claimed,
 not zero calls whose names contain `step`. No scene-bearing setup artifact enters
 the standalone estimator. The original four states, FK algorithm, tolerance,
 poisoning procedure and positive controls remain unchanged.
+
+## Append-only package provenance correction before numerical comparison
+
+`robot-geometry-observability-02` constructed the static environment with one
+counted `mj_step1` call that left time/qpos/qvel exactly unchanged and exported
+static calibration. It stopped while recording repository provenance because
+the installed `libero` namespace package has `__file__ = None`. No archived
+encoder extraction, standalone FK or numerical comparison occurred. Preserve
+this attempt as a metadata setup failure. The next attempt,
+`robot-geometry-observability-03`, uses the existing namespace-aware
+`package_directory` helper solely for that provenance lookup. The kinematic
+algorithm, static export, state selection, estimator boundary, tolerance and
+dependency controls are unchanged.
