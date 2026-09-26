@@ -1,0 +1,209 @@
+{
+  "status": "pass",
+  "protocol_sha256": "9226db3ae4af643864f710a41ba451d74a1c1a90cad3e455f5d9e727162dec45",
+  "source_sha256": {
+    "local-grasp-interface-run-02/episodes.jsonl": "9347eab2f1b48fe3799ccfbc3164f60406b6451bd194819ef66632df7d6464bb",
+    "local-grasp-interface-run-02/manifest.json": "42bf3cb122acb8c05bd9320e3d914a678235099f5842b5f693dc258bc29b550a",
+    "local-grasp-interface-run-02/sensors.json": "f3eead6a1556e2bbb64ea095aca6c251c6df7e95797099510d5aeb52fe662b58",
+    "local-grasp-interface-run-02/sensor-seal.json": "2ac164126dcd9ca32e851c97da90db29657c0a7f0c6bf4a464cdd68862fd1326",
+    "interaction-observability-paired-01/endpoints.json": "c28136d9e0e67b359491a3d270b0566e49a7f5939287363a18cdd8192ab7abe5",
+    "robot-geometry-observability-03/robot-calibration.json": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa",
+    "task2-box-support-run-02/sensor-representation.json": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+    "interaction-observability-paired-01/close/0000.npz": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+    "local-grasp-interface-run-02/close/0000.npz": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969"
+  },
+  "interface_source_matches_archived_producer": [
+    "embodied_runtime/adapters/libero.py",
+    "embodied_runtime/runtime_core.py",
+    "embodied_runtime/decision_interface.py",
+    "embodied_runtime/experiments/interaction_observability.py"
+  ],
+  "no_physics_inference_render_or_FK": true,
+  "static_body_to_site_translation_m": [
+    0.0,
+    0.0,
+    0.097
+  ],
+  "static_body_to_site_rotation": [
+    [
+      -2.220446049250313e-16,
+      1.0000000000000002,
+      0.0
+    ],
+    [
+      -1.0000000000000002,
+      -2.220446049250313e-16,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "static_chain_site_to_body": [
+    "gripper0_eef",
+    "gripper0_right_gripper"
+  ],
+  "sensor_summary": {
+    "uncorrected_vs_saved_site_deg": {
+      "count": 240,
+      "min": 89.98977277320802,
+      "median": 89.99998772499495,
+      "max": 90.0197173088864
+    },
+    "corrected_vs_saved_site_deg": {
+      "count": 240,
+      "min": 4.121092267086149e-05,
+      "median": 0.0036433011683888834,
+      "max": 0.045301377509111784
+    },
+    "corrected_vs_saved_site_max_matrix_error": {
+      "count": 240,
+      "min": 6.108095472723805e-07,
+      "median": 5.621096396622033e-05,
+      "max": 0.0007897472509740683
+    },
+    "saved_wrist_vs_saved_site_deg": {
+      "count": 240,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 0.0
+    },
+    "saved_wrist_site_max_matrix_error": {
+      "count": 240,
+      "min": 0.0,
+      "median": 0.0,
+      "max": 0.0
+    },
+    "returned_vs_saved_fk_site_position_mm": {
+      "count": 240,
+      "min": 0.0006559224678550881,
+      "median": 0.13927460556465177,
+      "max": 0.6977023440466678
+    }
+  },
+  "hypothetical_pad_center_error_mm": {
+    "count": 480,
+    "min": 26.03317633845876,
+    "median": 61.351077020749585,
+    "max": 61.510204506855
+  },
+  "cached_endpoint_summary": {
+    "uncorrected_body_vs_cached_site_deg": {
+      "count": 30,
+      "min": 89.99836956962804,
+      "median": 90.00000461190159,
+      "max": 90.00067114391877
+    },
+    "corrected_body_vs_cached_site_deg": {
+      "count": 30,
+      "min": 3.284761497014014e-05,
+      "median": 0.0008371776260137384,
+      "max": 0.010974125787036293
+    },
+    "saved_fk_vs_cached_site_deg": {
+      "count": 30,
+      "min": 3.264153951893983e-05,
+      "median": 0.0008177371254021039,
+      "max": 0.010915517769880322
+    }
+  },
+  "atomic_interventions": [
+    {
+      "arm": "close",
+      "step": 13,
+      "token": "GRASP",
+      "stored_validator_rotation_deg": 0.02873680317303438,
+      "recomputed_cached_site_rotation_deg": 0.02873680269494103,
+      "returned_body_relative_rotation_deg": 0.02936988748932869,
+      "body_relative_vs_cached_relative_deg": 0.0006828355564346436,
+      "mount_cancellation_max_matrix_error": 4.440892098500626e-16,
+      "hold_rotation_limit_deg": 1.0,
+      "recorded_contract_violation": false,
+      "all_low_level_rotation_commands_zero": true
+    },
+    {
+      "arm": "close",
+      "step": 14,
+      "token": "MV_UP",
+      "stored_validator_rotation_deg": 0.028998160264538327,
+      "recomputed_cached_site_rotation_deg": 0.028998159726546957,
+      "returned_body_relative_rotation_deg": 0.02921263354693959,
+      "body_relative_vs_cached_relative_deg": 0.00021835814197715243,
+      "mount_cancellation_max_matrix_error": 5.551115123125783e-16,
+      "hold_rotation_limit_deg": 1.0,
+      "recorded_contract_violation": false,
+      "all_low_level_rotation_commands_zero": true
+    },
+    {
+      "arm": "open_hold",
+      "step": 13,
+      "token": "STOP",
+      "stored_validator_rotation_deg": 0.022353621325486753,
+      "recomputed_cached_site_rotation_deg": 0.02235362081284433,
+      "returned_body_relative_rotation_deg": 0.022966294043863345,
+      "body_relative_vs_cached_relative_deg": 0.0006289209728060759,
+      "mount_cancellation_max_matrix_error": 4.440892098500626e-16,
+      "hold_rotation_limit_deg": 1.0,
+      "recorded_contract_violation": false,
+      "all_low_level_rotation_commands_zero": true
+    },
+    {
+      "arm": "open_hold",
+      "step": 14,
+      "token": "MV_UP",
+      "stored_validator_rotation_deg": 0.024102204413250543,
+      "recomputed_cached_site_rotation_deg": 0.024102204054100424,
+      "returned_body_relative_rotation_deg": 0.02426997553238322,
+      "body_relative_vs_cached_relative_deg": 0.00017031347761335285,
+      "mount_cancellation_max_matrix_error": 4.440892098500626e-16,
+      "hold_rotation_limit_deg": 1.0,
+      "recorded_contract_violation": false,
+      "all_low_level_rotation_commands_zero": true
+    }
+  ],
+  "guarded_model_input_effect_invariance_rows": 240,
+  "model_state_orientation_fields": [],
+  "GRASP_geometric_effect": "unknown for all240 offline dependency packets",
+  "historical_initial_sensor": {
+    "uncorrected_vs_saved_site_deg": 90.00078328482684,
+    "corrected_vs_saved_site_deg": 0.007192223427677646,
+    "corrected_vs_saved_site_max_matrix_error": 0.0001234950011927971,
+    "saved_wrist_vs_saved_site_deg": 0.0,
+    "saved_wrist_site_max_matrix_error": 0.0,
+    "returned_vs_saved_fk_site_position_mm": 0.02083285945938722,
+    "hypothetical_pad_center_errors_mm": [
+      59.718542481942094,
+      59.7235659980431
+    ],
+    "sample_time_known": false,
+    "body_world_position_available": false,
+    "provenance": "paired-01 endpoint -1; local02 initial robot packet absent",
+    "fixed_BOX_P_world_m": [
+      -0.12371558041536501,
+      0.05615888976955092,
+      0.9855272687809821
+    ],
+    "P_in_unadjusted_body_axes_at_site_origin_m": [
+      0.10176333435861884,
+      -0.058899585314590545,
+      0.1720231500135107
+    ],
+    "P_in_corrected_site_axes_at_site_origin_m": [
+      0.05889958531459053,
+      0.10176333435861888,
+      0.1720231500135107
+    ]
+  },
+  "unknowns": [
+    "independent_world_body_position_not_saved",
+    "actual_returned_sample_times_unknown",
+    "exact_same_time_body_to_site_agreement_not_established",
+    "BOX_surface_ownership_unqualified"
+  ],
+  "scope": "stored frame arithmetic and current interface dependency; no action selection or target fit",
+  "frozen_audit_commit": "a083645bfb0cf4c2a5df79c31eb46713bb47b432",
+  "raw_audit_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/proprio-frame-consistency-01/audit.json",
+  "raw_audit_sha256": "deb58e4e61f08935f95d9f47b484af2ebda54da59d04047a87bf500c523e8765"
+}
