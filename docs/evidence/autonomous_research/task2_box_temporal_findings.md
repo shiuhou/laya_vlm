@@ -95,6 +95,10 @@ prospective review **`ee05831`**; that reviewer ran 12 focused/helper tests.
 The actual source preflight did no LK or projection. Exactly one registered
 batch ran, with no retries. The sensor seal preceded the separate evaluator;
 reporting only reads stored rows and masks, without rerunning tracking.
+The independent stored-result audit **`b06377f`** verifies all 45,264 rows,
+saved-TCP/depth/delta arithmetic, summaries, proxy membership and departures
+without rerunning LK. It distinguishes fidelity to the frozen floor rule from
+the newly exposed coordinate-association concern.
 
 Neighboring seeds share overlapping LK windows and dependent surface errors.
 They are one paired trajectory, not 984 independent trials. Unchanged native
