@@ -241,6 +241,39 @@ See [action definitions](docs/evidence/autonomous_research/action_semantics_bind
 [visual relations](docs/evidence/autonomous_research/vlm_world_understanding_findings.md),
 and [sensor observability](docs/evidence/autonomous_research/interaction_observability_findings.md).
 
+## Update after joint sufficiency and independent sensor audit
+
+- **Observed:** W+A selects the same actions as W on steps 0/1/10: rotations
+  with 4.128/7.282-mm gap gain and gripper close with 0.05684-mm drawer closure.
+  All six calls exactly repeat and root independently reconstructs every actual
+  consumed token/option marker and selected predicted effect. There is no repair
+  from combining these particular prefixes. Step 9 was prospectively excluded:
+  full 1,085-token input exceeds 1,024, with no truncation or model call.
+- **Next interface discriminator:** a single existing progress number duplicated
+  verbatim into each native criterion, with the entire original state preserved.
+  This tests placement/association/salience jointly, not pure semantic binding.
+  Full six-column relocation is infeasible for the advance pools under the native
+  256-token heading/options cap; total input count alone can hide option clipping.
+  No model setting, ranking, pruning or task policy is changed.
+- **Observed, independently audited:** 30 retention checks pass, including all
+  188 sealed sensor artifacts, independent LK and backprojection. A fixed 31×31
+  table RGB-D patch remains identical across all 66 frames and fits a plane with
+  0.001284-mm RMS residual. The table LK eigenvalue is below its native texture
+  threshold. Failed image tracking therefore does not imply missing depth geometry.
+  These are ideal static-depth internal residuals, not real-sensor accuracy.
+- **Limit:** bottle-body point height over that plane is 18.237→128.046 mm versus
+  18.237→18.237 mm. This is not bottle-bottom clearance, exclusion of other support,
+  or a retention classifier. Exact annotation-model provenance remains unavailable.
+- **Next physical control:** one fresh initial POINT followed by that fixed observed
+  world point and live proprioception, under the same bounded coarse selector and
+  executor. It tests whether repeated semantic reacquisition is necessary in this
+  static slice and exposes the next physical boundary. Target age remains stale;
+  captured later RGB-D is logged but not consumed for target updates. This does
+  not establish moving-target competence or repair generic uncertainty gates.
+
+See [joint sufficiency](docs/evidence/autonomous_research/joint_interface_sufficiency_findings.md)
+and [independent retention audit](docs/evidence/autonomous_research/retention_independent_audit.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

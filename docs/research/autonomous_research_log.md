@@ -438,6 +438,54 @@ log `runs/autonomous-research/regression-a4b4d45.log`. All newly integrated code
 is under experiments/tests with protocols/evidence; no production controller,
 executor, candidate gate or task adapter changed in this integration.
 
+### Parallel iteration 013 — independent contact audit and depth support reference
+
+- **Question:** do source/provenance/contact ambiguities weaken the paired sensor
+  result, and does failed low-texture LK eliminate an available support reference?
+- **Audit:** 30 independent checks pass; 188 sensor hashes, frozen source identities,
+  common prefixes and saved replay results verify. Independent LK and 134 admitted
+  backprojections reproduce exactly. This audits existing replay rather than
+  inventing a second physical replay. Exact annotator-model identity is unrecorded.
+- **Intervention:** post-outcome exploratory fixed31×31 table patch on66 sealed
+  RGB-D frames; no new physics, reseeding, robust trimming, thresholds or oracle
+  inputs. Freeze `f98b10f`, findings `64e3449`, main `b2f91f4`/`8573780`.
+- **Result:** patch/calibration bit-identical across frames, TLS RMS0.001284mm;
+  table LK min-eigenvalue0.0000492905 is below native0.0001. A depth plane is
+  measurable even though the table correspondence failed. Body height18.237→128.046
+  versus18.237→18.237mm, not object-bottom clearance or general support separation.
+- **Correction:** bilateral physical finger contact persists through the pad-relation
+  flicker; there is no mechanically earned slipping negative control in this trace.
+- **Next:** reassign agent to the missing fresh-reset initial-point-only physical
+  control of coarse approach. Do not invent a slipping condition from pad flicker.
+- **Artifacts:** [audit](../evidence/autonomous_research/retention_independent_audit.md),
+  portable summary, `retention-audit-01` and `retention-audit-support-plane-01`.
+
+### Parallel iteration 014 — exact joint W+A sufficiency
+
+- **Question:** can correct supplied situation and canonical action meanings help
+  only when combined, despite their individual failures?
+- **Intervention:** exact W then exact A then original state, fixed0/1/10, six calls
+  with reverse repeat. Unchanged options/order/effects/model/settings; verified
+  archived B/W/A controls. Freeze `a3d7db4`, evidence `5bd5e59`.
+- **Prospective exclusion:** step9 raw1,085 tokens exceeds limit1,024; no call or
+  compression. Included raw totals538/572/814. All six calls complete, exact repeats.
+- **Result:** choices equal W: rotate_x+10 at0/1 and close at10. Gap gains4.128/7.282mm
+  versus baseline29.114/15.698; advance closure0.056837mm versus admitted31.888340mm.
+  No complementarity rescue on this one advance state; no claim of general failure.
+- **Independent root audit:** manual tokenizer composition without experiment report
+  imports exactly matches all six native hook inputs/markers; raw W/A composition,
+  original source/questions/order, argmax, repeated responses and effects verify.
+  `joint-interface-independent-audit-01/audit.py` SHA
+  `dad8aedc006f6fc83a630b43b5b2a496d3de0dc26277162a37afbb913f734675`.
+- **Next:** one native-option progress-field duplication test with unchanged full
+  baseline state. Code inspection shows full-row relocation clips16/25-candidate
+  option fields under the256-token head cap, although total input may appear short.
+  The planned test isolates a presentation package, not pure binding; no more
+  situation/action-prefix variants or full physical task execution are earned.
+- **Artifacts:** [findings](../evidence/autonomous_research/joint_interface_sufficiency_findings.md),
+  full exact payload/response summary and `joint-interface-{preflight,run}-01`.
+  Main integration `19c11f6`/`f0976f7`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
