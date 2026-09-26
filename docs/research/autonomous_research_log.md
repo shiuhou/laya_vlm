@@ -1107,6 +1107,11 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   model and BOX/depth extraction, no retries or offsets. This researcher-specified
   region tests semantic target selection, not autonomous planning. Seal outputs
   before evaluation; choose a new physical intervention only after these results.
+- **Closeout:** producer findings/figure/table integrated as `1e29772`; independent
+  audit as `5ca7bc7`; jaw interpretation as `a81024d`–`583b583`. Root inspected the
+  canonical figure, retained all original frames, then removed reconstructible
+  caches and the redundant temporary root panel (3.05MiB); receipt in workspace
+  lifecycle. Four active worktrees continue to be reused.
 
 ## Iteration and stopping rules
 

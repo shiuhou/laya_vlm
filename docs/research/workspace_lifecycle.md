@@ -2,8 +2,8 @@
 
 Completed 2026-09-27: removed **27 inactive worktree checkouts**, reclaiming
 355,151,969 apparent bytes (338.7 MiB), including disposable Python/pytest caches.
-Four worktrees remain: the main integration checkout plus the three active review,
-Task2 support and render/footprint environments. The local-grasp producer was
+Four worktrees remain: the main integration checkout plus three reused review,
+Task2 surface-geometry and semantic-grounding environments. The local-grasp producer was
 retired immediately after report integration and verification. No raw evidence,
 failed-run log, branch, historical tag, model checkpoint or environment was deleted.
 
@@ -14,6 +14,12 @@ HEAD was pinned under `refs/archive/research-cleanup-20260927/`; original branch
 remain. Those refs preserve exact source even for formerly detached checkouts.
 The full inventory, planned mutations and completed receipts are retained at
 `runs/maintenance/research-cleanup-20260927/{inventory,plan,result}.json`.
+
+After the886-test approach/frame integration and canonical report closeout, an
+additional3,196,180 bytes of main-checkout Python/pytest caches and one redundant
+root inspection panel were removed. Every original RGB-D frame and the canonical
+contact figure remain. Receipt:
+`runs/maintenance/research-cleanup-20260927/closeout-cache-01.json`.
 
 ## Routine closeout
 
