@@ -1,0 +1,242 @@
+{
+  "source_code": {
+    "commit": "9b85ad5bb48de68e097b233afef8ecfd84cdb993",
+    "dirty_status": "",
+    "source_sha256": {
+      "embodied_runtime/__init__.py": "76438b042b8aca6b6ec4e074ea4dc17511222772781dacb5ebb3b06537564826",
+      "embodied_runtime/adapters/base.py": "5a867e9395a577b2fc8426f8980f6a619aacd694e96435340361958019d64a7b",
+      "embodied_runtime/adapters/callback_backend.py": "9f9f1b3ad5ad6fc236779a5eefbc39d3739cb32e2495c75ee1052193a0dce8f4",
+      "embodied_runtime/adapters/laya_input.py": "11d412905ac087ef5b3af34facec3d9eafcbbc180cc25301c67cf615f4ff464d",
+      "embodied_runtime/adapters/libero.py": "f6988f2d72d63b8832e7323a583397eb41b5a3bc8cb6cc380ac420cf0833454f",
+      "embodied_runtime/adapters/libero_rgbd.py": "b9b2e58081f336517d97397037cb7a2e7a31198e18167670b96b6386d2844ab4",
+      "embodied_runtime/adapters/locateanything.py": "5dbc90c5004571cec07486635775040e0bf952df7555b0205d7d367ee67c2704",
+      "embodied_runtime/adapters/physics_preview.py": "f8bee042c9ed8066acf7742e177ae3716d5d7b9fa83513061fb15c4cd41dcc79",
+      "embodied_runtime/association.py": "cfe2f358c12e41d14d85402877a84ce5827286a152943995152fcb6135669aeb",
+      "embodied_runtime/decision_interface.py": "92c87afe4b28e90bc50ec25293bb09ca6a93c8d52b598ae465e36d4d54f4c917",
+      "embodied_runtime/experiments/action_semantics_binding.py": "ea59261a23214f32421551e5b31a777d0cdd2a0bb2d08c7493c32cf79e86f3a6",
+      "embodied_runtime/experiments/approach_family_control.py": "4bd1c900b3688f068ff088731c09786de7bf4032b8195edb6a2c16849b4fe147",
+      "embodied_runtime/experiments/approach_selector_probe.py": "a8bed024a503c24cd07e3d38b60c99cd1cfee481fc2cfe9e75174594ad5a3df9",
+      "embodied_runtime/experiments/audit_initial_states.py": "ee3e53eaa087f74f712f3d64641abdb5d914889c19865a7555d20e676be851b7",
+      "embodied_runtime/experiments/calibrate_atomic_actions.py": "fa168398d084c09a565a8d8d614b4d60430f53e593e890c4e98fb311c45b9338",
+      "embodied_runtime/experiments/clause_order.py": "d2a23908f99ee314ddedf92ce94006f4fcb1eb439983b487d46094a64ad4ab91",
+      "embodied_runtime/experiments/coarse_initial_point_audit.py": "d4520276211af9ee2c31f038b8820712ac7e6e6a0019c5e20fac197dc09abbbe",
+      "embodied_runtime/experiments/coarse_initial_point_control.py": "b6678c7d5af910cef5638ab8f2f580315b6fb740fa8e645d50392c1ecb8be1e3",
+      "embodied_runtime/experiments/coarse_native_counterfactual.py": "0354d52520801fa7bfe1eaea2fe6a6ca08355988116161c8d9e0e17f7939bab0",
+      "embodied_runtime/experiments/coarse_point_boundary_probe.py": "832dd3bce68444d9fed92fc71d50497c8d40e3d75f2043ae7363cf39a469db4b",
+      "embodied_runtime/experiments/coarse_point_grounding_audit.py": "08fa8824ffa01945db87762a0747bb0c06f7e43f0eb542b1805790c9b6d45475",
+      "embodied_runtime/experiments/coarse_point_probe.py": "1448c7a4f4b3c4de02d0938e9951e352ae28437dab3c43885076eb9683914c70",
+      "embodied_runtime/experiments/collect_pairs.py": "6cc5b23d6b5c5b64c0ccd3187f0e79185d7672a7805b41f4d49093ff71d3b1b9",
+      "embodied_runtime/experiments/current_motor_provider_control.py": "a50c4401ae4a12a910806534b8efaae8e57cc0ff9dd351bf0a0bb91a116de7db",
+      "embodied_runtime/experiments/current_motor_replication.py": "462cd8e3076e07b56232d0e34c8fc6542af045442f43d5deb0f8a1645562f3d8",
+      "embodied_runtime/experiments/dead_end_boundary_audit.py": "a791dd5017a993be9992c32c26e8819b62d10b198f3d15cf53475ff140163556",
+      "embodied_runtime/experiments/demo_feedback.py": "162aa448d6157c989a2b4783fb4df6a8d89108a0f10c68002098027ed14b1bb1",
+      "embodied_runtime/experiments/demo_inspector.py": "10c54dfdfa6a0bf72e808194289ed0808ac45ea271146d305ec6d029cde77fa6",
+      "embodied_runtime/experiments/demo_report.py": "12f09edd6cfc2ab361f1182e864f203d41192b3d4fb281819cfd61f0f551159d",
+      "embodied_runtime/experiments/depth_support_probe.py": "e7057e95b4c122330c418cae7733e0f3c8e975978c9d0653cb477a14966a3b83",
+      "embodied_runtime/experiments/effect_binding.py": "435dd8a383f47e2d9c767c7b2b89c243462dcc98997dc474465c74a9e5861180",
+      "embodied_runtime/experiments/engineering_demo.py": "800c2c5c4205dd1415c062060f4e1f107344a7b6f3736a4e093af4a6d2215d56",
+      "embodied_runtime/experiments/equivalence.py": "8319e15aca64bbb0400edad2ccfb64190bde6c6ba405dd594b330e65e32b8486",
+      "embodied_runtime/experiments/explicit_consequence.py": "2fe9f68b8799c355f77b34954694b8e2d332b337cecd4b62075751c4ac59e89e",
+      "embodied_runtime/experiments/first_contact_observability.py": "3d429110d42f45c37294b043a2269ea4f8720758bf378b1b1d216ed2c2ace7a5",
+      "embodied_runtime/experiments/first_contact_observability_report.py": "7ce5b163c03513f464ccec0d32a747ba8207093b566f51adce5d42e220dd838e",
+      "embodied_runtime/experiments/goal_placement.py": "0052e41afa42b26151c16b5509a95855a9c520ddbe8a02037b68fa288e2d9008",
+      "embodied_runtime/experiments/gripper_visual_calibration_export.py": "b88ac96c1c53b10ee419c9a623df731bebd3d3eb7305b7e6400ee17c30bdcc47",
+      "embodied_runtime/experiments/gripper_visual_mask_control.py": "70c8e491113bc7a1a9c673abe6a27053416e57c7dc78e0f47a28dd24ade4e4bd",
+      "embodied_runtime/experiments/gripper_visual_mask_evidence_audit.py": "7e11b488ac1aeae46820c470054953e3713f518e8458b92d33b514de63f8a8b2",
+      "embodied_runtime/experiments/gripper_visual_mask_probe.py": "7f864d2bcd8d772bb8518384c854c7383d481132fe48889200d2119e795c964c",
+      "embodied_runtime/experiments/gripper_visual_mask_report.py": "0bebd9639b57ad78d5cf927ad3267f5e6ac4baed10afcb349b0eb149597bc18b",
+      "embodied_runtime/experiments/information_boundary_audit.py": "1a274377222fa0a8cb58d27f4b9dd73970e5307c09cc2a2147292606d8ed622f",
+      "embodied_runtime/experiments/inspect_decision_pair.py": "1edcdaff9f98d65f3c903f95789321784988d2f1bbe7d02e13c83da20253459f",
+      "embodied_runtime/experiments/interaction_boundary_audit.py": "cd4cc86372f2518174530ad1c386c0152816f929a0e5bc80e100771d8ff4ac84",
+      "embodied_runtime/experiments/interaction_observability.py": "4cc91424faa8e0b5f0a70ee526e5e1e1d8d7d79c1198a7e551572aa417081370",
+      "embodied_runtime/experiments/interaction_observability_replay.py": "890464088a3a3506723e526df6389523e61f49bef41035b5a9272af12b3191ce",
+      "embodied_runtime/experiments/interaction_observability_report.py": "2fa2e27c4279d238c9ba65e6a02e59a05fd24af82c75e2cbde7dd82af6a1f26b",
+      "embodied_runtime/experiments/interface_search.py": "e05420c21f316e2449cf52c5f18842769e4a3ab01633126def692cdf3aeb1e9b",
+      "embodied_runtime/experiments/jev_hierarchy_comparison.py": "26e018a38f1630e742a0e91fc8ece536d53c6f923acbcaaf9c407e27da3c1585",
+      "embodied_runtime/experiments/joint_interface_sufficiency.py": "7accc1f0ba61147280c37993ed03a247d39c2de274d85f28030f48a790128c5d",
+      "embodied_runtime/experiments/local_grasp_interface.py": "17b5ec197ae55cdba6b4e0bd0725a4093c19760ed1446bd7f7c50037724291c7",
+      "embodied_runtime/experiments/matched_fixture.py": "1a7be3b7cd8e3276795d523761691781e22d08f6dd52c07f6aa32ead61321536",
+      "embodied_runtime/experiments/native_option_progress_sufficiency.py": "96952c461b8b192b6cf3533a316094e76c3b8f393787f8acba0c28515a4ccaec",
+      "embodied_runtime/experiments/native_substep_evidence_audit.py": "dac9e225ebfa486d04de6665d5a9ef704205b3c50a3e681797a3a989be4ea5bb",
+      "embodied_runtime/experiments/native_substep_observability.py": "08b8a1b92033516d94e538dd791ebb832a8fe2e84e212483986afd5990215cf1",
+      "embodied_runtime/experiments/objective_reference_check.py": "92cdbbd32a203852bb84131591f7c89b8c85a18c0fd87d782878d33f8853e0f3",
+      "embodied_runtime/experiments/operating_regime_probe.py": "19deb1dcf9dd2dc8c72b6831a8e8e7d76aa96d1d9026e884c50cd8d072b9e882",
+      "embodied_runtime/experiments/operating_regime_report.py": "c99475683e3f73eadbfa843d53ac0ed4785930d047628fde9e1084c8b0afac32",
+      "embodied_runtime/experiments/perception_support_audit.py": "7c4710d25d350c49d3e07901470df5cbb759b957fe0ccf86afb7cca9a11e8e12",
+      "embodied_runtime/experiments/point_grounding_probe.py": "bdd39fc30195e28d2a1a151bd78383a568f81f77fca81baa26765b3f81f4a09a",
+      "embodied_runtime/experiments/point_replay_order_probe.py": "f448f0023632743c7651e6b79c2478cd79af8d7df8af1e261a3dfa47b9da8031",
+      "embodied_runtime/experiments/point_temporal_probe.py": "86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36",
+      "embodied_runtime/experiments/predicate_decomposition.py": "23e51efc9976768f203e1a5b2ce64bc636e7f4e984f366732ef34e6c48003cbb",
+      "embodied_runtime/experiments/predicate_verification.py": "04eea96309fe24b05460f223a851650ee223d7f94554397eb41c9dd2792eeb84",
+      "embodied_runtime/experiments/predicate_verification_audit.py": "26a2729bce909b7aab266dcc63521d2ea1d9e724a67a7385125aa580ffc2dbbb",
+      "embodied_runtime/experiments/privileged_multistage_task.py": "2c716660fd56d0995b73597d195b0334fecd5c220ef78cfe3da1443e00979a77",
+      "embodied_runtime/experiments/privileged_reference.py": "6c92b868d5e4105bc687e72c656fe6d4bf5b6e4defef0d544df7fe9ccc7eae85",
+      "embodied_runtime/experiments/privileged_task.py": "ba6c2700dc7e54733eab1f19b1b6e5d697a404147740ae38388352c2ef6da2bf",
+      "embodied_runtime/experiments/provider_comparison.py": "f4f3f4697af5a04ccbc4ddc3241f6450c0e387a7c0416fb606251aabdbc6494c",
+      "embodied_runtime/experiments/records.py": "50220d3104642b4b48a90b64d0bdff5e756b60197aefa64aa38ad87d7999807b",
+      "embodied_runtime/experiments/reference_gate.py": "384418838038b798c2b686f56ad7c29da83cde2b6f6b56f6e63e632199d9aa01",
+      "embodied_runtime/experiments/reference_model_diagnostic.py": "d79017e8eaae76134ef47cd4785b0a3ff5f5188d51c30aa66ddf2192f6400509",
+      "embodied_runtime/experiments/reference_quality.py": "98b32f24c0a8e1b8565e91a8a51f36080b88201968b479d33a015671a644b228",
+      "embodied_runtime/experiments/replay_equivalence.py": "91f803fe77b37b58598464341421dee689d78184ca2b177726f13abc23d3bf7b",
+      "embodied_runtime/experiments/retention_evidence_audit.py": "d55b239a2d0021afbe5f53b5ea443478fdd01764153afcec285378e3f2bc6b3c",
+      "embodied_runtime/experiments/retention_support_plane_probe.py": "f50c769a24048335334b5fffb1c02012decbd29af5a21c07fadb61c9c7aa7fb2",
+      "embodied_runtime/experiments/robot_geometry_probe.py": "eb2a8e56e41a535ed9afb79bae9e623de9e3cdae7e5f68ef7128fe1e4b57496f",
+      "embodied_runtime/experiments/robot_geometry_report.py": "79f62e427f22b9a5bdc189ff34eb27889a85bcc8691138cab510fee44c3155a2",
+      "embodied_runtime/experiments/robot_only_geometry.py": "c8563e80070a7081a43c9d92d1f6f86446732c77964c2c55665ab76bd32d147c",
+      "embodied_runtime/experiments/run_libero.py": "b53a49a5418c5abe6d91aa223efdda8d43c9374456ed29698762503d95ac1efb",
+      "embodied_runtime/experiments/selective_grip.py": "48985cad77455a3ba1c5c2002d3a54a669e984d2feba91750a23ef7138cb5189",
+      "embodied_runtime/experiments/sensor_gripper_proximity.py": "4f52b9e168cdb802daca4eea1bd26115750957430e1e5e1fe89ec47fba233db6",
+      "embodied_runtime/experiments/sensor_gripper_proximity_evidence_audit.py": "221440a44a7a670d1a542d0c888bbc9e284e9b14e1d000a123805762f9334edb",
+      "embodied_runtime/experiments/sensor_gripper_proximity_probe.py": "abb990277a87573b50d286335c1fd5934595633303da0bb6c3017ba743588f9e",
+      "embodied_runtime/experiments/sensor_gripper_proximity_report.py": "bc49569eb9406bad247777524b819489927c4850a6569d6b898038379a0e78f9",
+      "embodied_runtime/experiments/summarize.py": "cfa2edf27fa71ff11b8e0fdb68b0a22e372e751d9af9213f835fb7338961bc27",
+      "embodied_runtime/experiments/summarize_equivalence.py": "04aac535bc1f6a5f8963dd031535b51f863d9281b45461999afacbab2bda3322",
+      "embodied_runtime/experiments/target_referent.py": "93be27ca947be16f1d846d104843b08327a3105829e8ab8eda02d015945192dc",
+      "embodied_runtime/experiments/task1_native_contact_attribution.py": "92be0dac6f657f69d5a4b9d498e671c4c378f4d6380c3d6701720b6bc016ca52",
+      "embodied_runtime/experiments/task1_substep_evidence_audit.py": "e2d972386ab28359ebad9c019df206436ae1b48e934e9d118c4bd99d1fe71ce3",
+      "embodied_runtime/experiments/two_step_lookahead_audit.py": "1f1e659f0d50cb38d7e8adc149dab2a1d7332846f84655f67f5faa39b41eb1cb",
+      "embodied_runtime/experiments/visual_marker_control.py": "48ab7493234f515d8ca5b9d34a6ddd2ec0a6f40d1f41c4b52ab9158e3aaf3cda",
+      "embodied_runtime/experiments/visual_subgoal_probe.py": "40d60c05649fbb534158ca429587cb45912f66e9b4866a2e43005b97f7a630e0",
+      "embodied_runtime/experiments/visual_target_verification.py": "027d17fbb2eb899cca431775ae718b1e6f3bc6f2da1988d319c60e3d8cb3edd4",
+      "embodied_runtime/experiments/visual_target_verification_run.py": "4f217bf2e3ceb93935a9feb56c544d0e66ade907f9adff15f24629a67fdf9992",
+      "embodied_runtime/experiments/vlm_capability_control.py": "4bbebb4d650eded054b132e504cb783dcd88e42ac8f69eb84a88429f399d4e88",
+      "embodied_runtime/experiments/vlm_world_relations.py": "4bf2ed7babcf5b1e10a0f17b13d152b241579bbbb2b5a39e68c3d0719008a4a3",
+      "embodied_runtime/experiments/vlm_world_single_relation.py": "d55d4eb33fe8025ba545ec013a92aa76eb1103c8a417d25d2df73408ec4504b3",
+      "embodied_runtime/experiments/worldview_sufficiency.py": "f75536a539b61a70a2c06e20d54ed097e0c88965d8de73e7371f64fde2299901",
+      "embodied_runtime/fusion.py": "e829fb20cc050ec43db6fbde0107506e3c9720ebfcbbb15de1b2845b9edd4f68",
+      "embodied_runtime/replay.py": "e72483453d5623a6f4a1709444494afcc680d1bec3ac56ddca92d77934ce1812",
+      "embodied_runtime/runtime.py": "f233fc0516f8056b311b10fa71e8285ed658f9ccc887898259a726716144187d",
+      "embodied_runtime/runtime_core.py": "04be07b6be4d287d9b93e6376fb837cfa1a914eb0f81d9d2cf90b7c7f16763c7",
+      "embodied_runtime/vision.py": "bf428addd6bf1ebc9e6a896ab97dc630c1c16855b61ef1429ef73fcbf93f2b3b"
+    }
+  },
+  "raw_sha256": "9347eab2f1b48fe3799ccfbc3164f60406b6451bd194819ef66632df7d6464bb",
+  "replay_sha256": "24a6ddf3785556acdc65fdfd767ca0c58a099b7ed20cd207f1841a04099ad5e4",
+  "replay_controls": 240,
+  "arms": {
+    "close": {
+      "bottle_rise_mm": 9.279538663423068,
+      "bottle_bottom_before_mm": 899.8793665135751,
+      "bottle_bottom_after_mm": 909.2259592674674,
+      "lift_endpoint_bilateral_count": 8,
+      "lift_endpoint_count": 8,
+      "official_success": false,
+      "actions": [
+        {
+          "step": 13,
+          "token": "GRASP",
+          "tcp_delta_mm": [
+            -0.09972070939115452,
+            0.19591845684875653,
+            0.010356923392240702
+          ],
+          "translation_residual_mm": 0.2200807294554112,
+          "rotation_deg": 0.02873680317303438,
+          "execution_contract_violation": false,
+          "execution_contract_reason": [],
+          "gripper_command": 1.0,
+          "controls": 8
+        },
+        {
+          "step": 14,
+          "token": "MV_UP",
+          "tcp_delta_mm": [
+            -0.0933409082716774,
+            0.1435914962875165,
+            9.423956966233437
+          ],
+          "translation_residual_mm": 0.6009630768308937,
+          "rotation_deg": 0.028998160264538327,
+          "execution_contract_violation": false,
+          "execution_contract_reason": [],
+          "gripper_command": 1.0,
+          "controls": 8
+        }
+      ],
+      "native_lift": {
+        "native_before": {
+          "samples": 200,
+          "bilateral": 200,
+          "unexpected_rows": 0,
+          "gripper_bottle_rows_above_0_05N": 1131,
+          "peak_gripper_bottle_normal_N": 8.122119012877057
+        },
+        "native_after": {
+          "samples": 200,
+          "bilateral": 200,
+          "unexpected_rows": 0,
+          "gripper_bottle_rows_above_0_05N": 1131,
+          "peak_gripper_bottle_normal_N": 8.122118838574165
+        }
+      }
+    },
+    "open_hold": {
+      "bottle_rise_mm": 0.0010808864653881756,
+      "bottle_bottom_before_mm": 899.9690500244192,
+      "bottle_bottom_after_mm": 899.9710167334568,
+      "lift_endpoint_bilateral_count": 0,
+      "lift_endpoint_count": 8,
+      "official_success": false,
+      "actions": [
+        {
+          "step": 13,
+          "token": "STOP",
+          "tcp_delta_mm": [
+            -0.026929395321673155,
+            0.3087972795282057,
+            -0.006986082595972221
+          ],
+          "translation_residual_mm": 0.31004799229546626,
+          "rotation_deg": 0.022353621325486753,
+          "execution_contract_violation": false,
+          "execution_contract_reason": [],
+          "gripper_command": -1.0,
+          "controls": 8
+        },
+        {
+          "step": 14,
+          "token": "MV_UP",
+          "tcp_delta_mm": [
+            -0.04340620173098886,
+            0.16306910798666308,
+            9.484800834573814
+          ],
+          "translation_residual_mm": 0.5421308074479033,
+          "rotation_deg": 0.024102204413250543,
+          "execution_contract_violation": false,
+          "execution_contract_reason": [],
+          "gripper_command": -1.0,
+          "controls": 8
+        }
+      ],
+      "native_lift": {
+        "native_before": {
+          "samples": 200,
+          "bilateral": 0,
+          "unexpected_rows": 0,
+          "gripper_bottle_rows_above_0_05N": 0,
+          "peak_gripper_bottle_normal_N": 0
+        },
+        "native_after": {
+          "samples": 200,
+          "bilateral": 0,
+          "unexpected_rows": 0,
+          "gripper_bottle_rows_above_0_05N": 0,
+          "peak_gripper_bottle_normal_N": 0
+        }
+      }
+    }
+  },
+  "setup_attempt_01": {
+    "worlds": 0,
+    "controls": 0,
+    "failure": "LIBERO import before native package initialization",
+    "log_sha256": "23eee84ce047f3412b93fa65616813615f1d83738a7b4e1c68804e4d3852d3c9"
+  },
+  "native_counts": {
+    "native_before": 800,
+    "native_after": 800
+  },
+  "scope": "scripted pregrasp prefix; fixed two-action mechanical comparison; no sensory policy or model",
+  "sampled_endpoint_local_witness": true
+}
