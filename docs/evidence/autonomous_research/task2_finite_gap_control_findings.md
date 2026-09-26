@@ -46,11 +46,25 @@ unchanged strict comparison admits it.
 
 For LEFT, stored P in site axes becomes
 `(−9.366315,43.309567,14.660162)` mm. Its dominant change is along the jaw axis,
-where P was already inside the permitted interval. The small changes in the
-other axes account for the tiny gap-distance improvement. No aligned-pose
-counterfactual, additional pose or physical movement was computed. No uncertainty
-bound was measured here that would establish this gain as robust physical
-progress.
+where P was already inside the permitted interval. The nominal world LEFT translation changes the stored local point by
+`(−9.999999719, −0.002254080, +0.000737270)` mm. The X term contributes
+zero to distance because both X coordinates are inside the gap. Y and Z exceed
+their upper faces, so their stored positive excesses determine the norm:
+
+| Component from stored rows only | Current excess (mm) | LEFT excess (mm) | Contribution to distance change |
+|---|---:|---:|---:|
+| Y | 35.311820778 | 35.309566698 | −2.164561 µm |
+| Z | 10.259425083 | 10.260162352 | +0.205712 µm |
+| Sum | | | −1.958849 µm |
+
+Each contribution is exactly
+`(new_excess² − old_excess²) / (new_distance + old_distance)`; their sum is
+the full Euclidean distance change. This algebra exposes sensitivity to the
+small components of the saved own rotation along the axes where P is outside
+the gap. It neither substitutes a perfectly aligned pose nor rounds axes or
+reranks candidates. No additional pose or physical movement was computed.
+No uncertainty bound was measured here that would establish this gain as
+robust physical progress.
 
 ## What this changes, and what remains unknown
 
