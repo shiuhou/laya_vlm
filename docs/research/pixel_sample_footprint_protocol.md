@@ -1,6 +1,6 @@
 # Calibrated sample footprint: representation and fixed offline comparison
 
-Status: prospective specification; the pre24/pre25 comparison has not run.
+Status: prospective measurement specification. Attempt01 stopped before any coverage output because the older vertex-only FK calibration did not include triangle connectivity; its original manifest/process/log are retained. The static topology admission below is a schema correction before a separately numbered attempt, not a change to geometry/sample rules or outcome selection.
 
 ## Measurement and boundary
 
@@ -21,6 +21,14 @@ For each sample, use `K^-1 [u,v,1]` as an unnormalized optical ray with z=1. Pro
 Save the native depth array without changing its dtype or bytes, sample rays, per-sample potential coverage/depth, nearest own-geometry index, exact-edge flags, and the number of covered samples per pixel. Exact depth ties across own meshes keep the first input index, explicitly flag geometry ambiguity, and OR edge flags; tied geometry labels must not be read as uniquely assigned. NaN in predicted depth means no intersection with these modeled triangles, not observed free space. Zero/partial/all sample coverage means zero/partial/all *potential gripper contribution*, not scene/mixture/robot ownership. Native resolved depth can reflect scene occlusion or unspecified resolve semantics, so even all-sample support cannot certify actual ownership.
 
 ## Fixed inputs and outputs
+
+### Static topology admission amendment
+
+The historical visual calibration contains only vertices, transforms and body chain; it does not contain triangle faces. Admit connectivity only after a separate static own-mesh compiler export. This export parses the three named visual geoms and two referenced visual STL assets from the installed `panda_gripper.xml`, constructs a tiny model containing only those static meshes/geoms, and compiles `MjModel`. It creates no `MjData`, task scene, camera, joint state or renderer and invokes no stepping or forward API. It reads no archived depth or joint packet.
+
+Require exact equality of every compiled vertex, geom-local position and geom-local quaternion with the unchanged sealed visual calibration before exporting compiled face indices. The connectivity arrays must index those exact vertex arrays. No source-vertex remapping, tolerance relaxation, hull reconstruction, alignment fit or inferred triangulation is allowed. Stop this line if the minimal static compile cannot satisfy this gate. Keep topology in a separate object carrying its parent calibration hash. After reviewing and sealing that export, freeze its SHA256 in the offline coordinator and preflight the actual calibration/topology schema before launching the worker. The coordinator and measurement worker remain simulator-free; the narrowly scoped compiler import occurs only in this separate static calibration step.
+
+The frozen source asset hashes are `d9d68123909d6910488310d0fae4e358ed4ac831c6d0957f3e30893a5412baac` (`panda_gripper.xml`), `fdeb1a924b8d0f1f997f47d6d8af102c7290a1d5144145efdc39501dc13f0fa1` (`hand_vis.stl`) and `e49613148a74f1ba9b5793813078e5becf15833e0296073dc1c523508be35ae4` (`finger_vis.stl`).
 
 Before the comparison, freeze the code/protocol commit, analytic tests, input hashes and independent review. Stop on any input hash/schema mismatch; do not modify calibration, sample offsets, pixel selection or numerical rules in response to results.
 

@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from ..pixel_footprint import own_gripper_footprint
-from .pixel_footprint_measurement import FRAME_KEYS
+from .pixel_footprint_measurement import FRAME_KEYS, validate_topology
 from .records import code_identity, file_hash
 
 SOURCE_MANIFESTS = {
@@ -23,6 +23,7 @@ SOURCE_MANIFESTS = {
 }
 VISUAL_SHA256 = "c86706370d8442f85365d1e1d7e962ffb0f2346c235d968146694ed6e3fb4c98"
 SAMPLES = [[.375, .125], [.875, .375], [.125, .625], [.625, .875]]
+TOPOLOGY_SHA256 = None  # Must be frozen after the separately reviewed static export.
 
 
 def read(path):
@@ -59,7 +60,7 @@ def statistics(values):
             "maximum_absolute": float(np.abs(values).max())}
 
 
-def evaluator(render, sensor_output, output, calibration, source_measurements):
+def evaluator(render, sensor_output, output, calibration, topology, source_measurements):
     """Called only after sensor-output-seal exists; cached poses stay here."""
     output.mkdir(exist_ok=False)
     results = {}
@@ -74,7 +75,7 @@ def evaluator(render, sensor_output, output, calibration, source_measurements):
         for geom in calibration["geometries"]:
             pose = cached_poses[geom["name"]]
             vertices = np.asarray(geom["vertices_local_m"]) @ np.asarray(pose["cached_rotation_world"]).T + pose["cached_position_world_m"]
-            meshes.append((vertices, geom["faces"]))
+            meshes.append((vertices, topology["triangle_faces"][geom["name"]]))
         cached = {}
         cache_comparison = {}
         for condition, samples in (("native", SAMPLES), ("center", [[.5, .5]])):
@@ -129,6 +130,11 @@ def run(sources, output):
     if file_hash(visual_path) != VISUAL_SHA256:
         raise RuntimeError("Frozen visual calibration mismatch")
     calibration = read(visual_path)
+    topology_path = sources / "gripper-visual-triangle-topology-01/triangle-topology.json"
+    if TOPOLOGY_SHA256 is None or file_hash(topology_path) != TOPOLOGY_SHA256:
+        raise RuntimeError("Freeze and verify exact-gated own triangle topology before comparison")
+    topology = read(topology_path)
+    validate_topology(calibration, topology)
     prior = sources / "gripper-visual-mask-control-01/estimator-input"
     request = read(prior / "request.json")
     if request["visual_calibration"] != calibration:
@@ -147,7 +153,7 @@ def run(sources, output):
     shutil.copyfile(protocol, output / "protocol.md")
     sensor_input, sensor_output = output / "sensor-input", output / "sensor-output"
     sensor_input.mkdir()
-    write(sensor_input / "request.json", {"visual_calibration": calibration,
+    write(sensor_input / "request.json", {"visual_calibration": calibration, "triangle_topology": topology,
         "own_joint_packets": request["own_joint_packets"], "samples_bottom_left": SAMPLES})
     for index, boundary in enumerate((24, 25)):
         frame = load_arrays(prior / f"sample{index}.npz")
@@ -157,6 +163,7 @@ def run(sources, output):
         np.savez_compressed(sensor_input / f"sample{index}.npz", **frame)
     write(output / "manifest.json", {"code": identity, "sources": str(sources),
         "source_manifest_hashes": SOURCE_MANIFESTS, "visual_calibration_sha256": VISUAL_SHA256,
+        "triangle_topology_sha256": TOPOLOGY_SHA256, "real_calibration_topology_preflight": "passed",
         "protocol_sha256": file_hash(protocol), "sensor_input_sha256": hashes(sensor_input)})
     command = [sys.executable, "-m", "embodied_runtime.experiments.pixel_footprint_measurement",
                "--input", str(sensor_input), "--output", str(sensor_output)]
@@ -167,7 +174,7 @@ def run(sources, output):
         raise RuntimeError("Sensor worker failed; retained incomplete output")
     write(output / "sensor-output-seal.json", {"sha256": hashes(sensor_output),
           "evaluator_started": False, "cached_poses_admitted_to_sensor_worker": False})
-    evaluator(render, sensor_output, output / "evaluator", calibration, recorded)
+    evaluator(render, sensor_output, output / "evaluator", calibration, topology, recorded)
     for name, digest in read(output / "sensor-output-seal.json")["sha256"].items():
         if file_hash(sensor_output / name) != digest:
             raise RuntimeError("Sensor output changed during evaluator")

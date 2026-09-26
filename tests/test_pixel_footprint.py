@@ -5,7 +5,7 @@ from embodied_runtime.pixel_footprint import (
     camera_vertices, flipped_sample_locations, optical_rays,
     own_gripper_footprint, triangle_sample_depths,
 )
-from embodied_runtime.experiments.pixel_footprint_measurement import measure, worker
+from embodied_runtime.experiments.pixel_footprint_measurement import VISUAL_SHA256, measure, validate_topology, worker
 
 SAMPLES = [[.375, .125], [.875, .375], [.125, .625], [.625, .875]]
 
@@ -130,4 +130,18 @@ def test_sensor_worker_rejects_extra_scene_fields_before_geometry(tmp_path):
     assert not (tmp_path / 'output').exists()
     with pytest.raises(ValueError, match='Only resolved depth'):
         measure({}, {}, {'depth_m': np.ones((1, 1)), 'intrinsics': np.eye(3),
-                         'camera_to_world': np.eye(4), 'scene_segmentation': np.zeros((1, 1))}, SAMPLES)
+                         'camera_to_world': np.eye(4), 'scene_segmentation': np.zeros((1, 1))}, SAMPLES, {})
+
+
+def test_fk_calibration_without_faces_requires_separate_index_checked_topology():
+    calibration = {'geometries': [{'name': 'own_visual', 'vertices_local_m':
+                                   [[0, 0, 2], [2, 0, 2], [0, 2, 2]]}]}
+    topology = {'parent_visual_calibration_sha256': VISUAL_SHA256,
+                'triangle_faces': {'own_visual': [[0, 1, 2]]}}
+    validate_topology(calibration, topology)
+    assert 'faces' not in calibration['geometries'][0]
+    with pytest.raises(ValueError, match='reference'):
+        validate_topology(calibration, {})
+    topology['triangle_faces']['own_visual'] = [[0, 1, 3]]
+    with pytest.raises(ValueError, match='index'):
+        validate_topology(calibration, topology)
