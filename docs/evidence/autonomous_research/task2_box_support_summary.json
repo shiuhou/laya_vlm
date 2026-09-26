@@ -1,0 +1,228 @@
+{
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-box-support-run-02",
+  "successful_freeze": "ba7ab2e6d58932cef893f4d3549cd550279b2d65",
+  "failed_setup_freeze": "277842b",
+  "failed_setup_model_calls": 0,
+  "total_model_calls": 1,
+  "physics_calls": 0,
+  "render_calls": 0,
+  "initial_image_previously_inspected": true,
+  "query": "the wine bottle",
+  "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+  "generation": {
+    "raw_output": "<ref>the wine bottle</ref><box><542><408><596><582></box><|im_end|>",
+    "generation_audit": {
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152219,
+        152085,
+        152273,
+        152259,
+        151669,
+        151645
+      ],
+      "actual_generated_token_count": 12,
+      "input_token_count": 237,
+      "model_max_length": 16384,
+      "eos_token_id": 151645,
+      "effective_limit": 256,
+      "terminal_eos_observed": true,
+      "length_limit_reached": false,
+      "complete_generation": true,
+      "truncation_status": "eos_terminated"
+    },
+    "parsed": {
+      "status": "single_box",
+      "points": [],
+      "boxes": [
+        {
+          "normalized": [
+            542,
+            408,
+            596,
+            582
+          ],
+          "continuous_xyxy": [
+            208.12800000000001,
+            156.672,
+            228.86399999999998,
+            223.488
+          ]
+        }
+      ],
+      "empty_count": 0,
+      "invalid": [],
+      "confidence": null
+    },
+    "latency_s": 0.5006893849931657,
+    "admitted_box": [
+      208.12800000000001,
+      156.672,
+      228.86399999999998,
+      223.488
+    ]
+  },
+  "sensor": {
+    "status": "candidate_support_recorded",
+    "box_xyxy": [
+      208,
+      156,
+      228,
+      223
+    ],
+    "crop_xyxy": [
+      212,
+      169,
+      224,
+      210
+    ],
+    "shape": [
+      384,
+      384
+    ],
+    "point_P": {
+      "position_camera_m": [
+        0.056159041675727064,
+        -0.005399907853435295,
+        1.001205563545227
+      ],
+      "position_world_m": [
+        -0.12371558041536501,
+        0.05615888976955092,
+        0.9855272687809821
+      ],
+      "box_xyxy": [
+        208,
+        156,
+        228,
+        223
+      ]
+    },
+    "depth_statistics": {
+      "median_m": 1.001205563545227,
+      "mad_m": 0.010881423950195312,
+      "std_m": 0.0668506994843483,
+      "valid_ratio": 1.0
+    },
+    "resolved_depth_ownership": null,
+    "support_is_segmentation": false,
+    "support_pixel_center_offset": 0.5,
+    "min_depth_m": 0.9657990336418152,
+    "max_depth_m": 1.2016721963882446,
+    "center_sample": {
+      "continuous_xy": [
+        218.0,
+        189.5
+      ],
+      "sample_pixel_xy": [
+        218,
+        189
+      ],
+      "depth_m": 0.9938464760780334,
+      "depth_valid": true,
+      "depth_minus_median_m": -0.0073590874671936035
+    }
+  },
+  "selected_count": 492,
+  "median_contributors": {
+    "lower": [
+      {
+        "pixel_xy": [
+          222,
+          198
+        ],
+        "rgb": [
+          1,
+          8,
+          0
+        ],
+        "depth_m": 1.0011500120162964,
+        "position_world_m": [
+          -0.11145956016089809,
+          0.06587506723570961,
+          0.9704387467434438
+        ]
+      }
+    ],
+    "upper": [
+      {
+        "pixel_xy": [
+          214,
+          193
+        ],
+        "rgb": [
+          1,
+          7,
+          0
+        ],
+        "depth_m": 1.0012611150741577,
+        "position_world_m": [
+          -0.11833055641296852,
+          0.04860171464574292,
+          0.9787704387878396
+        ]
+      }
+    ]
+  },
+  "proxy_analysis": {
+    "evaluator": "archived_ID_rendered_membership_proxy",
+    "resolved_depth_ownership": null,
+    "semantic_confidence": null,
+    "selected_count": 492,
+    "proxy_visible_count": 777,
+    "selected_proxy_overlap_count": 414,
+    "selected_proxy_overlap_fraction": 0.8414634146341463,
+    "proxy_visible_coverage_fraction": 0.5328185328185329,
+    "selected_strata_counts": {
+      "proxy_interior": 373,
+      "proxy_boundary_band": 65,
+      "proxy_exterior": 54
+    },
+    "median_contributors": {
+      "lower": {
+        "count": 1,
+        "rendered_proxy_agreement_count": 1,
+        "rendered_proxy_agreement_fraction": 1.0
+      },
+      "upper": {
+        "count": 1,
+        "rendered_proxy_agreement_count": 1,
+        "rendered_proxy_agreement_fraction": 1.0
+      }
+    },
+    "center_pixel_proxy_membership": true,
+    "limitations": [
+      "MSAA_depth_label_ownership_ambiguity",
+      "shared_synthetic_calibration",
+      "cached_sample_times_unknown",
+      "no_label_based_sensor_cleanup"
+    ],
+    "sensor_sha256": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+    "mask_sha256": "2a474be6d469dc2df45edfb03c97b23a1adf021f9a48551994a619f501a0b747",
+    "source_journal_sha256": "51dd621269c6da151c39e9b1bd9b0cdf15a890eb2e4af28a59caaea065201a3b"
+  },
+  "visual_review": "Fixed crop visibly includes light tabletop to the left of the narrow dark bottle neck; boundary pixels remain ambiguous. The dark body/neck occupies most of the crop. No sensor pixel was changed.",
+  "first_support_failure": "Candidate ROI support is not bottle-only; do not infer rigid bottle geometry from the entire crop.",
+  "point_limit": "Center and both median contributors agree with rendered bottle proxy; exact resolved-depth ownership remains unknown.",
+  "raw_artifact_sha256": {
+    "rgb-input.npy": "7b7aad991a356c8e87256b4f804ed81317b847890b7372e9f91d32b56d505336",
+    "manifest.json": "5b95a3e9e3389e64fcb87d9965cb283507e955dd6254fac769532d9b81b1a87b",
+    "sensor-representation.json": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+    "resolved_config.yaml": "6dc6afda0ae46ce4ae15bf9b3aeb638fa50deaa45fd0da1b9e3a6c2bba80fd66",
+    "generation-return.json": "e07af5170746b3d8bb2ba4353c8dda1a13e6309e9e9f48395257de63441cc9ae",
+    "model-output.json": "c0545950996092c7ea05d7e10cf115ff0ed3ec318d1b08ff729300d1ee8bb944",
+    "protocol.md": "8476959edc85bd60750b233e76404fdb1b723b679075aa1393559d06ca0a5efd",
+    "episodes.jsonl": "51dd621269c6da151c39e9b1bd9b0cdf15a890eb2e4af28a59caaea065201a3b",
+    "evaluation/proxy-analysis.json": "c1d84224030e94dda9e5ec58525dce598128b8278cdfeab82b881676c4c9f599",
+    "evaluation/evaluation-start.json": "22c578ec8355243f15371e22feabe9c0734d13270061360145dd41151b721d49",
+    "evaluation/artifacts.json": "7bc5b9cbc27746c3616fc7b01f466992ad66409311bbb560751903a7c4e695a9",
+    "evaluation/diagnostic.png": "6fc3b27f1ac71917ecc46569e5257ce1b3ae6bc90c307d6aff9d67d33eff0bd3",
+    "visual-inspection/provenance.json": "ac3b5589eb4f62f564314e9d0f65413ee8620b9953025289b137dfb2d6774999",
+    "visual-inspection/fixed-crop-nearest.png": "b5deb2427b4d81095c928427c08184ca94a89b846b43915053cb8a1b8205f05f"
+  }
+}
