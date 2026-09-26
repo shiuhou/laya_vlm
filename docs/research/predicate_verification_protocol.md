@@ -48,8 +48,11 @@ Actual physical support and intentionally reassigned presented support are disti
 - Binary: 16 parents × 11 candidates × 2 answer orders × 2 repeats = **704 calls**.
 - Original explicit controls: 32 fixtures × 2 repeats = **64 calls**.
 - Total: **384 fixtures, 768 calls**, one fixed presentation, no prompt sweep.
-- Deterministic registered traversal, with complete reverse traversal on repeat two;
-  preserve exact traversal in the preflight configuration.
+- Traverse parents in archive order, emitting each untouched explicit control.
+  For each non-reversed parent then traverse eleven canonical tokens: emit normal
+  then reversed answer order for even token indices, reversed then normal for odd.
+  Repeat two reverses this complete 384-fixture traversal. Preserve exact traversal
+  in the preflight configuration.
 - Same Laya typed-decisions content ID
   `9fba4af58ef08fd2703a011f5678c9a999223c939380048b9f2b7383b6b9e704`, installed
   model configuration, bfloat16 CUDA, and seed 1. Record GPU identity/environment;
