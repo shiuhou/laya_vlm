@@ -189,7 +189,64 @@ release/settled placement. Strict Task-2 closeability remains unproven.
 - **Evaluation:** coarse visible-identity labels frozen before inference and
   reviewed independently; exact rendered-mask membership remains separate.
   Rejection alone is not success: report correct-target retention and coverage.
-- **Status:** input preparation and model acquisition; no result claimed yet.
+- **Result:** 28 complete calls; all `target_handle`, 12/12 intended proposals
+  retained but 0/2 wrong handles rejected per repeat. Independent full-image,
+  actual forward token/image, logits/EOS and checkpoint audits pass. Repeats exact.
+- **Environment failure:** preflight 01 in the text-model environment lacked
+  Torchvision; preserved before any inference. Existing vision environment passed
+  preflight 02 without model/prompt changes or dependency installation.
+- **Next:** one image-only marker-location control before any verifier integration.
+
+### Iteration 004 — marker sensitivity and motor family admission
+
+- **Visual hypothesis:** constant target labels could reflect fine handle-identity
+  difficulty or a broader marker-binding failure in this interface.
+- **Intervention:** four fixed frames, original marker versus marker on clear
+  tabletop at algebraic pixel (192,288); no wording/model/settings changes.
+  Eight inputs, two repeats, 16 calls, code `14a05fc`.
+- **Visual result:** all 16 `target_handle`; tabletop 0/8 correct. Actual changed
+  images reach the model and change logits in all matched pairs; original logits
+  reproduce the primary run. This fails categorical marker binding, not proof of
+  ignoring images. Independent audit passes. Stop marker/prompt tuning here.
+- **Motor hypothesis:** Laya might need explicit objective-family admission beyond
+  a correct local instruction and supplied geometric effects.
+- **Natural-pool result:** six sensory states, ten natural options, twelve calls
+  all GRASP despite preserving-gripper/translation instruction. Token/input/gate/
+  checkpoint/temperature/raw audits pass, exact repeats. Code `ac4385a`.
+- **Family intervention:** remove only GRASP and rotations, retain all six
+  translations plus STOP, unchanged remaining text/effects/history. Code `c70b882`,
+  twelve calls. Choices BACK,FWD,FWD,FWD,FWD,BACK, exactly repeated.
+- **Motor interpretation:** four nominal improvements and two regressions; two
+  sensor-optimal choices. Objective-family admission improves compliance but is
+  insufficient for reliable direction selection. At two biased sensory states,
+  FWD improves oracle nominal distance more than sensor-optimal DOWN. Do not treat
+  arithmetic agreement as physical truth or unknown GRASP effects as zero motion.
+- **Artifacts:** [audited findings](../evidence/autonomous_research/visual_and_approach_findings.md),
+  `visual-marker-control-run-01`, `approach-selector-run-01`, `approach-family-run-01`,
+  each under `runs/autonomous-research/` with independent audit scripts/reports.
+- **Next decision:** no more model/prompt/menu variants on these fixtures. Test
+  whether deterministic fresh-point approach physically outperforms active hold.
+
+### Iteration 005 — declared coarse physical diagnostic
+
+- **Question:** Can an honest fresh visual point plus existing geometric arithmetic
+  produce real approach progress, separating perception from model motor ranking?
+- **Abstraction audit:** unknown POINT covariance is rejected by current fusion/
+  candidate gates. A small projection covariance cannot represent wrong-entity
+  uncertainty, and must not be invented to produce motion. Current missing semantic
+  evidence is also displayed as confidence zero rather than unknown correctness.
+- **Decision:** explicitly opt in to a direct fresh-measurement admission contract,
+  bypassing probabilistic fusion while retaining covariance/velocity/semantic
+  confidence/contact/holding unknown. This is a bounded experiment, not silent
+  relaxation of the old gate or proof of a generic temporal runtime.
+- **Protocol:** strict completed POINT, finite containing-pixel depth, full RGB-D,
+  seven native actions, existing nominal rule and AtomicExecutor; fresh rule and
+  active-hold processes, task/init0/seed1, at most 20 primitives and 900 seconds.
+  All-robot oracle contact supervision may abort after an atomic primitive, never
+  correct perception or select actions. Compare actual cumulative controls/time,
+  reported-point progress and independent handle progress; replay actual controls.
+- **Status:** implementation/review before physical inference. No physical result
+  claimed yet. See [protocol](coarse_point_probe_protocol.md).
 
 ## Iteration and stopping rules
 

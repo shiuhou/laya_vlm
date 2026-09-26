@@ -79,6 +79,36 @@ See [iteration 002 findings](docs/evidence/autonomous_research/iteration_002.md)
   proposals; scene description alone is not useful evidence. This earns neither
   a planner nor a live verifier before results exist.
 
+## Update after visual verification and approach controls
+
+- **Observed:** Qwen2.5-VL-3B returns `target_handle` in all 28 primary calls:
+  12/12 correct-target retention but 0/2 wrong-handle rejection per repeat. A
+  marker-only intervention on four frames also yields the same label for all
+  16 calls, including eight markers on clear tabletop. Actual images, tokens,
+  logits and EOS are audited; image interventions change logits. This fails the
+  fixed categorical marker-binding interface, not proof that images are ignored.
+- **Observed:** Laya selects GRASP in all 12 full-pool nominal-approach calls,
+  despite the explicit instruction to translate and preserve the gripper. All
+  ten naturally admitted candidates, state and effects fit without truncation.
+- **Observed, independently audited:** removing only gripper/rotation families
+  yields BACK,FWD,FWD,FWD,FWD,BACK, exactly repeated. Four choices reduce supplied
+  point distance; two increase it. Two of six equal the deterministic sensor
+  optimum. Family admission improves menu compliance but does not ensure useful
+  direction selection. No further prompt/menu search is planned on these fixtures.
+- **Observed abstraction issue:** absent POINT covariance forces STOP in current
+  fusion/gates. Supplying a small conditional projection covariance would permit
+  translation despite unknown semantic identity. Neither inventing covariance nor
+  semantic confidence is an honest fix. Missing semantic evidence also appears as
+  confidence 0 in the existing projection, which differs from unknown correctness.
+- **Next empirical boundary:** an explicitly different fresh-point coarse-approach
+  admission policy, with unknown covariance/velocity/semantic confidence preserved,
+  directly supplies the existing geometric selector and native executor. It bypasses
+  probabilistic temporal fusion. A rule-versus-active-hold physical diagnostic with
+  external oracle contact abort will test this limited boundary; it is not a
+  validation of the generic fused runtime or manipulation competence.
+
+See [visual and approach findings](docs/evidence/autonomous_research/visual_and_approach_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 
