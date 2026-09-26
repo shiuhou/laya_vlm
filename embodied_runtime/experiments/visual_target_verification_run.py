@@ -22,20 +22,37 @@ REVISION = '66285546d2b821cf421d4f5eb2576359d3770cd3'
 MODEL_PATH = '/home/junhongli/projects/research-models/Qwen2.5-VL-3B-Instruct'
 
 
+def protocol_for_manifest(manifest):
+    """Two registered offline probes share the identical model execution path."""
+    version = manifest.get('version')
+    if version=='visual-target-verification-input-v1':
+        if len(manifest['examples'])!=14 or len(manifest['excluded'])!=4:
+            raise ValueError('registered14/4 selection mismatch')
+        return PROTOCOL
+    if version=='visual-marker-control-input-v1':
+        from .visual_marker_control import PROTOCOL as control_protocol, SOURCE_INDICES
+        expected = [(i, variant) for i in SOURCE_INDICES for variant in ('original','table')]
+        actual = [(e['parent_source_index'],e['variant']) for e in manifest['examples']]
+        if actual!=expected or manifest['excluded']:
+            raise ValueError('registered marker-control selection mismatch')
+        return control_protocol
+    raise ValueError('unregistered visual input manifest version')
+
+
 def frozen_sources(source, model_path):
     source, model_path = Path(source), Path(model_path)
     manifest = json.loads((source/'manifest.json').read_text())
     if (manifest['model_repo']!=MODEL_REPO or manifest['model_revision']!=REVISION
             or manifest['instruction']!=INSTRUCTION or manifest['labels']!=list(LABELS)
             or manifest['generation_settings']!=GENERATION or manifest['repeats']!=2
-            or manifest['protocol_sha256']!=file_hash(PROTOCOL)):
+            or manifest['protocol_sha256']!=file_hash(protocol_for_manifest(manifest))):
         raise ValueError('frozen protocol/model/input settings mismatch')
     examples = manifest['examples']
     indices = [e['source_index'] for e in examples]
-    if len(examples)!=14 or len(set(indices))!=14 or len(manifest['excluded'])!=4:
-        raise ValueError('registered14/4 selection mismatch')
+    if len(set(indices))!=len(indices):
+        raise ValueError('duplicate input index')
     if manifest['planned_calls'] != [{'source_index': i, 'repeat': repeat} for repeat in (1, 2) for i in indices]:
-        raise ValueError('frozen28-call order mismatch')
+        raise ValueError('frozen repeated call order mismatch')
     index = json.loads((model_path/'model.safetensors.index.json').read_text())
     for shard in set(index['weight_map'].values()):
         if Path(shard).name != shard or not (model_path/shard).is_file():
@@ -165,8 +182,9 @@ def _run(args, recorder):
     own_sources = {p: h for p, h in code['source_sha256'].items() if p in {
         'embodied_runtime/experiments/visual_target_verification.py',
         'embodied_runtime/experiments/visual_target_verification_run.py',
-        'embodied_runtime/experiments/point_grounding_probe.py', 'embodied_runtime/experiments/records.py'}}
-    frozen = {'manifest_sha256': file_hash(source/'manifest.json'), 'protocol_sha256': file_hash(PROTOCOL),
+        'embodied_runtime/experiments/point_grounding_probe.py', 'embodied_runtime/experiments/records.py',
+        'embodied_runtime/experiments/visual_marker_control.py'}}
+    frozen = {'manifest_sha256': file_hash(source/'manifest.json'), 'protocol_sha256': file_hash(protocol_for_manifest(manifest)),
               'model': identity, 'revision': REVISION, 'model_config': serialize_model_config(config.to_dict()),
               'expected_loaded_config': serialize_model_config(expected_loaded_config.to_dict()),
               'generation_config': serialize_model_config(generation.to_dict()),
@@ -188,7 +206,7 @@ def _run(args, recorder):
         prepared[example['source_index']] = inputs, presentation
     if args.mode=='generate':
         prior, diagnostics = load_records(Path(args.preflight_source)/'episodes.jsonl')
-        if diagnostics or unique(prior, 'termination')!={'reason':'preflight_complete','planned_calls':28}:
+        if diagnostics or unique(prior, 'termination')!={'reason':'preflight_complete','planned_calls':len(manifest['planned_calls'])}:
             raise ValueError('complete preflight required')
         if unique(prior, 'frozen_inputs')!=frozen or unique(prior, 'label_tokens')!=options:
             raise ValueError('frozen model/code/settings changed after preflight')
@@ -199,7 +217,7 @@ def _run(args, recorder):
     for _, presentation in prepared.values():
         recorder.record('presentation', presentation)
     if args.mode=='preflight':
-        recorder.record('termination', {'reason':'preflight_complete','planned_calls':28})
+        recorder.record('termination', {'reason':'preflight_complete','planned_calls':len(manifest['planned_calls'])})
         return
     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_path, local_files_only=True,
         trust_remote_code=False, torch_dtype=torch.bfloat16, attn_implementation='sdpa').to(args.device).eval()
@@ -263,7 +281,7 @@ def _run(args, recorder):
         validated = validate_generation(presentation,raw,logits,processor.tokenizer,
                                          generation.eos_token_id,config.vocab_size)
         recorder.record('call_completed',{'call_id':call_id, **planned, **validated})
-    recorder.record('termination',{'reason':'generation_complete','planned_calls':28})
+    recorder.record('termination',{'reason':'generation_complete','planned_calls':len(manifest['planned_calls'])})
 
 
 def run(args):
