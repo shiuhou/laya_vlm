@@ -13,6 +13,11 @@ shape descriptors to those depths would not establish bottle geometry.
 
 Budget: **one fixture, one LocateAnything call on GPU0, at most 256 newly generated
 tokens, no retries**. Existing checkpoint and hybrid greedy settings are retained.
+Pin checkpoint content identity
+`4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f`, as previously
+archived in `coarse-initial-point-02/manifest.json`, and fail before model loading
+if current bytes differ. Preserve/seal the returned raw generation and all
+observed decoded token sequences before requiring a valid token audit or parser.
 An inference timeout after 300 s is a recorded failure. No additional models,
 prompts, captures, renders, raycasts, scene construction, physics, replay,
 segmentation fallback, jaw-span calculation, or effect fit is included.

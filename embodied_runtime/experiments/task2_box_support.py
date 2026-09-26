@@ -24,6 +24,7 @@ PROTOCOL = ROOT / 'docs/research/task2_initial_grasp_geometry_proposal.md'
 QUERY = 'the wine bottle'
 QUESTION = f'Locate a single instance that matches the following description: {QUERY}.'
 MODEL = '/home/junhongli/models/huggingface/LocateAnything-3B'
+MODEL_CONTENT_ID = '4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f'
 SENSOR_KEYS = {'rgb', 'depth_m', 'intrinsics', 'camera_to_world'}
 
 
@@ -173,14 +174,18 @@ def generate(output):
     frame = sensor_frame()
     recorder = RunRecorder(output, {'question': QUESTION, 'settings': SETTINGS,
         'protocol_sha256': file_hash(PROTOCOL), 'source_frame_sha256': FRAME_SHA,
-        'model_call_budget': 1, 'timeout_s': 300, 'initial_image_previously_inspected': True},
+        'model_call_budget': 1, 'timeout_s': 300, 'initial_image_previously_inspected': True,
+        'expected_model_content_id': MODEL_CONTENT_ID},
         {'run_id': Path(output).name, 'code': identity, 'versions': versions(),
          'environment': {k: os.environ.get(k) for k in ('CUDA_VISIBLE_DEVICES', 'HF_HUB_OFFLINE', 'TRANSFORMERS_OFFLINE')}})
     output = Path(output)
     (output/'protocol.md').write_bytes(PROTOCOL.read_bytes())
     calls = 0
     try:
-        recorder.manifest_update({'model': model_identity(MODEL)})
+        model = model_identity(MODEL)
+        recorder.manifest_update({'model': model})
+        if model['content_id'] != MODEL_CONTENT_ID:
+            raise ValueError('existing checkpoint identity changed; no model call')
         np.save(output/'rgb-input.npy', frame['rgb'], allow_pickle=False)
         recorder.record('rgb_input_sealed', {'artifact': 'rgb-input.npy', 'sha256': file_hash(output/'rgb-input.npy'),
                                            'rgb_bytes_sha256': hashlib.sha256(frame['rgb'].tobytes()).hexdigest()})
@@ -216,11 +221,20 @@ def generate(output):
                 raw = worker.model.generate(pixel_values=pixels, input_ids=inputs['input_ids'],
                     attention_mask=inputs['attention_mask'], image_grid_hws=inputs.get('image_grid_hws'),
                     tokenizer=worker.tokenizer, **SETTINGS)
+            # Preserve the actual response even if token auditing or parsing fails.
+            normalized = raw[0] if isinstance(raw, tuple) else raw
+            write_json(output/'generation-return.json', {
+                'raw_response': normalized if isinstance(normalized, str) else repr(normalized),
+                'raw_response_type': type(normalized).__name__, 'returned_value_repr': repr(raw),
+                'observed_decoded_token_sequences': observed,
+                'latency_to_return_s': time.perf_counter()-started})
+            recorder.record('generation_return_sealed', {'artifact': 'generation-return.json',
+                'sha256': file_hash(output/'generation-return.json')})
             torch.cuda.synchronize()
         finally:
             signal.alarm(0)
             signal.signal(signal.SIGALRM, old_handler)
-        raw = raw[0] if isinstance(raw, tuple) else raw
+        raw = normalized
         if len(observed) != 1 or len(observed[0]) != 1:
             raise ValueError('actual generated token audit missing')
         audit = generation_audit(observed[0][0], len(ids), worker.tokenizer.model_max_length,
