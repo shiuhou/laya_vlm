@@ -21,3 +21,11 @@ I independently ran `tests/test_local_grasp_interface.py`: **6 passed**, coverin
 | `embodied_runtime/experiments/local_grasp_interface.py` | `e3feb7e6f2c167e14816a3fb8f79b9b4d0b422c54b8b9b233f1f3cd4b48a7783` |
 | `docs/research/local_grasp_interface_protocol.md` | `2a90ef10c6b4f625876bbff7cf42fd0da638d1775f4de726069e667585c08eee` |
 | `tests/test_local_grasp_interface.py` | `458b7e3bf6974ba7944234d437de72e2502fde5ed7570b3b9d2d48dd0bd68bef` |
+
+## Pre-physics infrastructure amendment
+
+Approval also covers **`9b85ad5bb48de68e097b233afef8ecfd84cdb993`**. Attempt 01 at the prior freeze failed during source introspection because LIBERO's path had not yet been installed; no world/reset/control/capture occurred. Its terminal log remains a failed setup attempt. The protocol now records this explicitly and requires a separately named attempt 02 after an import/source preflight without a world.
+
+The reviewed change calls the existing `jev_libero.environment.load_libero` with the original root/config before installed-source introspection in collection and replay. That function runs the native path/config preparation and imports modules without constructing a world. Scientific actions, execution thresholds, measurement logic, abort scope and acceptance criteria are unchanged. The six focused tests are unchanged; no additional physical validation is claimed by this amendment.
+
+The amended source SHA-256 is `17b5ec197ae55cdba6b4e0bd0725a4093c19760ed1446bd7f7c50037724291c7`; amended protocol SHA-256 is `fa620b16f7a61ef3882352ed7386c013f3eb9ad1d690f3d7d785a334776bb6a2`. The prior test-file hash remains valid.
