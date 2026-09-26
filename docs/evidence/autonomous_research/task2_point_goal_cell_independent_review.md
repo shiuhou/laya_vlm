@@ -31,3 +31,23 @@ certificate is not physical collision ground truth or global unreachability.
 Numerical boundaries of a real-arithmetic stopping cell are not a guarantee
 about every floating-point tie in the runtime. Inspect witness halfspace slack
 before describing the certificate as numerically robust.
+
+## Stored-result review
+
+**PASS** after the single calculation. The independent checker rebuilt one
+fixed facet system per proxy at exact P, translated the query points for all
+nine poses, and reproduced every one of the 60,300 containment booleans and
+per-proxy index lists. Proxy translations agree within 2.23e-16 m. It checks
+the request hash, result seal and complete common-witness identities.
+
+All 123 same-point/hand-proxy witnesses are strictly inside at every corner
+without relying on the 1e-12 tolerance. Their minimum signed facet margins
+over the eight corners range from **0.292925 to 17.087352 mm**. Thus at least
+one fixed exclusion set contains the entire stopping cell with substantial
+numerical slack under the frozen geometric model. This rules out a route-only
+explanation within that model and fixed orientation/jaw state; it does not
+prove physical collision, object identity, or impossibility at another pose.
+
+[Complete checker receipt](task2_point_goal_cell_independent_audit.json) and
+[stored-only checker](../../../experiments/task2_point_goal_cell_evidence_audit.py)
+retain all 123 witness margins. No simulator, model or new target is used.
