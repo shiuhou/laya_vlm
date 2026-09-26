@@ -99,3 +99,29 @@ def test_corrupt_derived_grounding_or_audit_rejected(corruption):
         records.pop(1)
     with pytest.raises(ValueError):
         verified_calls(records)
+
+
+def test_model_config_nested_torch_dtype_conversion_is_explicit_and_reversible():
+    import json
+    import torch
+    from embodied_runtime.experiments.point_grounding_probe import serialize_model_config
+    original={'vision':{'dtype':torch.bfloat16,'layers':[{'dtype':torch.float32}]},
+              'label':'torch.bfloat16','shape':(2,3),'unused':None,'id2label':{0:'a',1:'b'}}
+    result=serialize_model_config(original)
+    restored=json.loads(json.dumps(result))['value']
+    for conversion in reversed(result['type_conversions']):
+        node=restored
+        for part in conversion['path'][:-1]:
+            node=node[part]
+        key=conversion['path'][-1]
+        if conversion['python_type']=='torch.dtype':
+            node[key]=getattr(torch,node[key].removeprefix('torch.'))
+        elif conversion['python_type']=='int_dict_key':
+            node[int(key)]=node.pop(key)
+        elif conversion['python_type']=='tuple':
+            node[key]=tuple(node[key])
+    assert restored==original
+    assert original['vision']['dtype'] is torch.bfloat16
+    assert result['value']['label']=='torch.bfloat16'
+    with pytest.raises(TypeError,match='unsupported config value'):
+        serialize_model_config({'unexpected':object()})

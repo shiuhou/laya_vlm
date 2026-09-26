@@ -109,6 +109,44 @@ def prepare(output, audit_path):
     return manifest
 
 
+def serialize_model_config(config):
+    """JSON-safe config with explicit, reversible dtype/key/tuple conversion evidence."""
+    import torch
+    conversions = []
+
+    def encode(value, path):
+        if isinstance(value, torch.dtype):
+            name = str(value)
+            if getattr(torch, name.removeprefix('torch.'), None) is not value:
+                raise TypeError(f'unrecognized torch dtype at {path}')
+            conversions.append({'path': path, 'python_type': 'torch.dtype', 'encoded': name})
+            return name
+        if value is None or isinstance(value, (str, bool, int, float)):
+            return value
+        if isinstance(value, dict):
+            encoded = {}
+            for key, item in value.items():
+                if type(key) not in (str, int):
+                    raise TypeError(f'unsupported config key at {path}')
+                name = str(key)
+                if name in encoded:
+                    raise TypeError(f'config key collision at {path}')
+                if type(key) is int:
+                    conversions.append({'path': [*path, name], 'python_type': 'int_dict_key', 'encoded': name})
+                encoded[name] = encode(item, [*path, name])
+            return encoded
+        if isinstance(value, (list, tuple)):
+            if isinstance(value, tuple):
+                conversions.append({'path': path, 'python_type': 'tuple', 'encoded': 'list'})
+            return [encode(item, [*path, i]) for i, item in enumerate(value)]
+        raise TypeError(f'unsupported config value {type(value).__name__} at {path}')
+
+    payload = encode(config, [])
+    json.dumps(payload, allow_nan=False)
+    return {'value': payload, 'type_conversions': conversions,
+            'conversion_schema': 'explicit-config-types-v1'}
+
+
 def generate(source, output, model_path, device):
     from PIL import Image
     from ..adapters.locateanything import LocateAnythingWorker
@@ -117,6 +155,12 @@ def generate(source, output, model_path, device):
     if (manifest['query']!=QUERY or manifest['settings']!=SETTINGS
             or manifest['protocol_sha256']!=file_hash(PROTOCOL)):
         raise ValueError('frozen input changed')
+    allowed_manifest = {'version', 'query', 'settings', 'source_audit_sha256', 'protocol_sha256',
+                        'generator_allowed_fields', 'frames'}
+    allowed_frame = {'index', 'rgb_artifact', 'rgb_sha256', 'source_npz_sha256', 'source_run',
+                     'capture_seq', 'environment_step', 'width', 'height', 'order'}
+    if set(manifest)!=allowed_manifest or any(set(f)!=allowed_frame for f in manifest['frames']):
+        raise ValueError('unexpected generator manifest fields')
     recorder = RunRecorder(output, {'source_manifest_sha256': file_hash(source/'manifest.json'),
                            'query': QUERY, 'settings': SETTINGS, 'protocol_sha256': manifest['protocol_sha256'],
                            'oracle': False, 'safe_input_manifest': manifest}, {'run_id': Path(output).name,
@@ -126,7 +170,7 @@ def generate(source, output, model_path, device):
     try:
         worker = LocateAnythingWorker(model_path, device=device)
         torch = worker.torch
-        recorder.manifest_update({'model_config': worker.model.config.to_dict(),
+        recorder.manifest_update({'model_config': serialize_model_config(worker.model.config.to_dict()),
             'gpu': {'name': torch.cuda.get_device_name(device),
                     'total_memory_bytes': torch.cuda.get_device_properties(device).total_memory},
             'tokenizer_model_max_length': worker.tokenizer.model_max_length,
@@ -143,7 +187,10 @@ def generate(source, output, model_path, device):
             artifact = source/frame['rgb_artifact']
             if file_hash(artifact)!=frame['rgb_sha256']:
                 raise ValueError('RGB input changed')
-            image = Image.fromarray(np.load(artifact, allow_pickle=False)).convert('RGB')
+            rgb = np.load(artifact, allow_pickle=False)
+            if rgb.dtype != np.uint8 or rgb.shape != (frame['height'], frame['width'], 3):
+                raise ValueError('RGB dtype/shape mismatch')
+            image = Image.fromarray(rgb).convert('RGB')
             for mode in frame['order']:
                 question = f'Point to: {QUERY}.' if mode=='point' else f'Locate a single instance that matches the following description: {QUERY}.'
                 messages = [{'role': 'user', 'content': [{'type': 'image', 'image': image}, {'type': 'text', 'text': question}]}]
