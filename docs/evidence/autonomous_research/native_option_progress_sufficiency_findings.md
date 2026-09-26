@@ -88,6 +88,16 @@ concatenation matched the installed sequence builder. Every actual hook input
 and option marker matched the complete preflight. The original state is not
 shortened to make room for the native criteria.
 
+A separate root-agent audit without experiment-report imports independently
+checked exact original state/source/order/instruction preservation, every copied
+criterion against the original printed column string, all six full native token
+and marker sequences against actual forward hooks, argmax/repeat equality, and
+selected source effects. All checks passed with zero model calls. Raw script and
+result are at `native-option-progress-independent-audit-01/` under the raw root;
+script SHA-256 is
+`4d39b13aa0487d5c0a691a1b2bb79464ebb0d19520955737f773688e4828a726`.
+The tracked evidence JSON includes this independent result and artifact identities.
+
 ## Prospective exclusion despite an apparently fitting effective length
 
 | Step | Options | Raw heading + option tokens / 256 | Complete total tokens | Effective tokens | Native input complete? |
