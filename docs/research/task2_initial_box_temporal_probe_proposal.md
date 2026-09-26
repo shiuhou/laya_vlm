@@ -1,6 +1,6 @@
 # Initial BOX temporal cue: source check and small proposed condition
 
-**Proposal only; no tracking or outcome features computed.** Can the sealed
+**Approved single offline condition; freeze and review before tracking.** Can the sealed
 initial model BOX supply an uncorrected track population through the existing
 approach, close/hold and lift sequence, without the former assistant-selected
 landmarks? This tests descriptive correspondence/surface co-motion on one known
@@ -99,8 +99,53 @@ trajectory, not 984 independent trials; no statistical confidence or calibrated
 success rate follows. Sparse approach cadence, later occlusion, unknown depth
 ownership and survivor bias remain explicit.
 
-Implementation must remain in this worktree, freeze a small offline adapter and
-tests, validate actual capture/seed schemas without running LK, and obtain
-review before tracking. This proposal authorizes no implementation or outcome
-computation by itself. No model, physics, renderer, replay or runtime change is
-needed. No alternate condition follows automatically from failure.
+The root approved implementation of this one condition after the source check.
+The adapter remains in the existing worktree; freeze it and tests, validate
+actual capture/seed schemas without running LK, and obtain independent review
+before tracking. After PASS, the existing root authorization permits this one
+batch. No model, physics, renderer, replay or runtime change is needed. No
+alternate condition follows automatically from failure.
+
+## Concrete adapter, failure semantics and seals
+
+`task2_box_temporal_probe` pins the unchanged LK helper SHA-256
+`86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36`
+and exact source receipts above. The sensor loader returns only seed pixel
+indices, RGB-D/calibration, saved TCP and capture metadata. It does not load
+the old landmark file or any object/contact/state evaluator. Surface rows retain
+explicit valid/nonfinite/out-of-range/outside-image/RGB-not-admitted reasons;
+nonfinite depths serialize as null. RGB track status is untouched by depth.
+
+Initial-reference summaries cover 0–45; preclose-reference summaries cover
+13–45 only. The preclose valid cohort count is null before capture 13, then fixed
+at its capture-13 size with later missing observations retained. Quartiles use
+NumPy percentile's fixed linear method. Denominator 492 remains in every frame.
+
+The mask evaluator distinguishes initially outside pixels from departures. A
+seed's first observed departure is its first admitted sampled pixel with proxy
+False after any earlier observed proxy True; intervening unknowns do not prove
+an exact crossing time. Initially False alone is never a departure. Every raw
+membership row and unknown is retained, with no sensor recomputation or cleanup.
+Archived mask bytes are hashed when opened after the sensor seal; this creates
+a receipt of the evaluated files, not an invented historical ownership seal.
+
+Preflight constructs no model and calls no LK, projection, renderer or physics.
+The run requires a clean exact source identity matching its preflight and a
+review receipt naming that full commit. It writes all 45,264 track rows before
+sensor summary/seal and termination. Exceptions preserve partial rows and the
+completed-track count with no retry. The separately invoked evaluator verifies
+the complete sensor seal and records its start before loading mask arrays.
+
+Use the existing `/home/junhongli/miniforge3/envs/locateanything/bin/python`:
+
+```sh
+python -m embodied_runtime.experiments.task2_box_temporal_probe preflight --output PREFLIGHT.json
+python -m embodied_runtime.experiments.task2_box_temporal_probe run --output RUN --preflight PREFLIGHT.json --review REVIEW.md
+python -m embodied_runtime.experiments.task2_box_temporal_probe evaluate --output RUN
+```
+
+After sealing, inspect actual RGB overlays at fixed captures 0, 13, 21, 29, 37,
+45 and first native/proxy failures (earliest capture, then lowest seed ID for
+the displayed witness). Retain the unmodified RGB separately from mask overlays;
+the witness selection never removes other failed tracks. Figures are reporting
+artifacts, not new tracking conditions or sensor corrections.
