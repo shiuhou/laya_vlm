@@ -1233,6 +1233,48 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   Smaller10mm actual-executor transfer is next only after measurement semantics
   settle and archive coverage is checked. Physical seven-way probe runs in parallel.
 
+### Parallel iteration 035 — physical alternatives preserve point progress without raw contact
+
+- **Question:** does the frozen observed-surface flag distinguish real candidate
+  outcomes, and does this boundary contain a contact-free positive alternative?
+- **Intervention:** producer `69d6491`, prospective `d809214`. Seven independent
+  fresh init0/seed1 resets, openly replaying the original22-action/176-control
+  prefix before one complete candidate primitive, canonical order. No source
+  state restore, selection, continuation, new model or policy. STOP/hold is an
+  explicit executed diagnostic; original policy STOP would execute nothing.
+- **Qualification:** all7 prefixes match every command/state/own observation,
+  8,800 native stage snapshots and23 captures. First FWD then matches original
+  action22's eight controls,400 native samples, full result and actual endpoint
+  RGB-D. Current models match within batch; no claim of historical asset bytes.
+- **Observed:** only FWD has raw robot contact:13 rows per stage, hand/bottle,
+  peak≈0.017556N. No branch exceeds0.05N; every validator passes. Actual P-distance
+  reduction in canonical order, mm: FWD+5.381981514, BACK−6.148948752,
+  LEFT+4.916035785, RIGHT−5.841106641, UP−5.588838873, DOWN+4.612389597.
+  Executed hold drifts+0.043304533mm toward P; do not call that policy progress.
+- **Interpretation:** LEFT and DOWN are measured positive contact-free witnesses
+  over this0.4s horizon. Full-BOX endpoint and sweep both flag only FWD; inner
+  support misses it. This agrees with raw-contact observations, not prediction
+  of a force-threshold crossing (all negative), safety elsewhere or grasp
+  readiness. No incremental sweep benefit, dense-shape validation or generality.
+- **Inspection/report correction:** first draft reporter selected capture23
+  (pre-probe) instead of actual endpoint24. Independent review caught this before
+  report integration. Stored-only reporter now matches exact execution times,
+  with a regression test and preserved reporting-error receipt/old artifacts;
+  no physics rerun. Root inspected the corrected eight-panel actual RGB sheet.
+- **Artifacts/tests:** `task2-pre22-counterfactual-run-01`,67,188 chained records,
+  1,232 prefix+56 probe controls,32,200 integrations/64,400 stage snapshots,
+  168 captures. Journal `35f1dee4edfcf4c3d5e059e6db3533d8df9876d0aff7b6adbbdfad7fda2f76d8`.
+  17 focused producer/reviewer tests; full stored audit `b6a6659`; final corrected
+  report review `eb8cac5`, producer report `ba97d53`, main report `5718c2e`.
+- **Next decision:** one fresh40-action/900s approach-only condition adds a
+  full-BOX/own-shape nominal endpoint containment veto for the six translations.
+  Original point objective, ranking/ties, executor, threshold abort and terminal
+  STOP remain; all7 candidates and exclusions retained. No physical margin,
+  sweep, new target, recovery or planner. Hypothesis: first divergence at pre22
+  replaces FWD with a positive eligible move; actually measure divergence and
+  first new boundary, then stop without an automatic patch. Exact replay planned.
+  This is a partial-observation guard experiment, not a safety-certified policy.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

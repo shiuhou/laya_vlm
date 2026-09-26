@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration034. This is the authoritative current
+Reviewed 2026-09-27 after research iteration035. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -81,13 +81,14 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 
 ## Active next questions
 
-1. Completed observed-surface diagnosis: at pre22, FWD contains one additional
-   full-BOX point in the hand endpoint/sweep while inner clearance is16.081mm.
-   One pixel dominates all14 full-support sweep minima; no added sweep benefit
-   or safe alternative is established. Seven actual candidate counterfactuals
-   are being prepared, each from a fresh exactly reproduced prefix, with unchanged
-   executor/validators. No live gate or policy change. See
-   [surface results](evidence/autonomous_research/task2_observed_surface_sweep_findings.md).
+1. Seven physical counterfactuals complete at pre22: FWD alone has raw palm
+   contact; LEFT/DOWN have no raw contacts and approach P by4.916/4.612mm.
+   Every prefix and original FWD qualify exactly, all validators pass; all
+   threshold outcomes remain negative. Full-BOX endpoint/sweep flags identify
+   FWD at this one boundary; no general clearance or sweep advantage is proved.
+   Next fresh approach adds only the endpoint-containment movement veto, keeping
+   the original point rule/terminal STOP and all candidates in evidence. See
+   [physical results](evidence/autonomous_research/task2_pre22_counterfactual_findings.md).
 2. The single semantic-region alternative `the neck of the wine bottle` failed
    strict admission:42 boxes,260 actual tokens under the unchanged native256 cap,
    no EOS. No P/G, retry or physics. See [nonadmission](evidence/autonomous_research/task2_neck_box_support_findings.md).

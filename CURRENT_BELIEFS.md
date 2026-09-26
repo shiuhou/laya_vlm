@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration034. This is a short living assessment;
+Updated 2026-09-27 after iteration035. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -29,14 +29,15 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 
 ## Current discriminating experiments
 
-1. **Observed surfaces expose one missed boundary:** pre-action22 FWD contains
-   one full-BOX sample in the hand proxy; inner-crop clearance remains16.081mm.
-   Pre-action21 executed DOWN has no containment. All14 full-support sweep minima
-   depend on the same pixel(221,158), and the decisive point is already inside
-   the endpoint. This supports a specific missing-surface explanation, not dense
-   shape validation or a benefit from sweeping. Unexecuted outcomes remain
-   unknown. Next: reproduce the pre22 prefix from fresh reset and execute each
-   of the seven original candidates once, independently, without policy changes.
+1. **Observed surfaces discriminate one measured candidate set:** seven fresh
+   pre22-prefix reproductions all qualify; FWD continuation matches exactly.
+   Only FWD has raw palm/bottle contact, while LEFT/DOWN are contact-free over
+   their0.4s primitives and advance fixed P by4.916/4.612mm. All validators pass;
+   none exceed0.05N. Frozen full-BOX endpoint/sweep flags single out FWD; inner
+   crop misses it. One pixel explains the flag; no added sweep benefit or
+   general safety follows. Next: one fresh approach with endpoint containment
+   veto for translations, original point rule and terminal STOP, no new target,
+   margin or planner. All seven candidates/exclusions remain in evidence.
 2. **Semantic target region test closes at nonadmission:** one fixed description,
    `the neck of the wine bottle`, yields42 BOX records/260 actual tokens/no EOS
    under the unchanged native256-token cap. No point/support was extracted; no
@@ -101,6 +102,7 @@ measured interaction and available action behavior must not be conflated.
 - [Single neck-query nonadmission](docs/evidence/autonomous_research/task2_neck_box_support_findings.md)
 - [Observed-depth support and nominal gripper sweeps](docs/evidence/autonomous_research/task2_observed_surface_sweep_findings.md)
 - [All initial-BOX temporal tracks](docs/evidence/autonomous_research/task2_box_temporal_findings.md)
+- [Seven qualified Task2 physical counterfactuals](docs/evidence/autonomous_research/task2_pre22_counterfactual_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)
