@@ -163,18 +163,20 @@ def oracle_evaluation(backend, gap, measurements):
         'contacts':contact_rows(measurements)}
 
 
-def run(args):
+def run(args, *, protocol=PROTOCOL, experiment_profile=None):
     from ..adapters.libero_rgbd import LiberoRgbdSource
     from ..adapters.locateanything import LocateAnythingWorker
     from .engineering_demo import RecordingBackend, save_trajectory
     from .collect_pairs import initial_state_inventory
     import torch
     out = Path(args.output)
+    protocol = Path(protocol)
+    profile_metadata = {} if experiment_profile is None else {'experiment_profile':experiment_profile}
     recorder = RunRecorder(out, {**vars(args), 'version':VERSION, 'settings':SETTINGS,
-        'protocol_sha256':file_hash(PROTOCOL), 'query':QUERY, 'oracle_in_decision':False,
-        'external_oracle_contact_abort':True, 'no_manipulation_claim':True},
+        'protocol_sha256':file_hash(protocol), 'query':QUERY, 'oracle_in_decision':False,
+        'external_oracle_contact_abort':True, 'no_manipulation_claim':True, **profile_metadata},
         {'run_id':out.name, 'code':code_identity(), 'versions':versions()})
-    (out/'protocol.md').write_bytes(PROTOCOL.read_bytes())
+    (out/'protocol.md').write_bytes(protocol.read_bytes())
     backend, executed, step, reason, history = None, 0, None, 'runtime_failure', ()
     previous_handlers = {}
     def interrupted(sig, _frame):
