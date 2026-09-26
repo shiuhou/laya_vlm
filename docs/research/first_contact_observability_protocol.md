@@ -40,6 +40,11 @@ or present a re-render as an original observation.
    action preview. Default environment creation/reset/settling, if required to
    instantiate the model, is evaluator bootstrap and must be disclosed. Require
    restored flattened state equality and matching task/environment identities.
+   Before interpreting fresh-forward-kinematic ray labels as recorded visibility,
+   re-render evaluator RGB/depth at each stored pre-action state and compare with
+   its original capture, globally and in the registered query neighborhoods.
+   Preserve those comparisons and any mismatches. Fresh FK must not silently
+   substitute for potentially cached geometry in the original rendered frame.
 3. Verify camera conventions from the capture code and installed calibration
    code. Stored RGB/depth are vertically corrected; the calibration maps camera
    +Z optical depth and pixel coordinates into world space. Project with the
