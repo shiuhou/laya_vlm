@@ -1,0 +1,397 @@
+{
+  "status": "pass",
+  "freeze": "9de837c8a1348d8eac16bbe4616b40bcf0b0613f",
+  "journal_sha256": "f834673a379523f8c90619d2fd00dd69174f4dd7499cb91a8340742de225e771",
+  "journal_records": 10530,
+  "replay_sha256": "5c3a02fb731d3d8c120ec6f89327762b942d36ab62716a48552ebfc348faa5f9",
+  "actions": 25,
+  "controls": 200,
+  "native_integrations": 5000,
+  "native_stage_samples": 10000,
+  "captures": 26,
+  "exact_initial_array_gate": true,
+  "initial_tcp_to_proxy_mm": 208.36722753491154,
+  "final_tcp_to_proxy_mm": 50.951274876276315,
+  "max_translation_residual_mm": 1.2786586575428454,
+  "max_rotation_change_deg": 0.22723570426404707,
+  "first_contact": {
+    "previous_observed_sample": {
+      "step": 24,
+      "control": 0,
+      "index": 2,
+      "time_s": 10.106000000000044,
+      "stage": "native_after",
+      "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c"
+    },
+    "first_observed_sample": {
+      "step": 24,
+      "control": 0,
+      "index": 3,
+      "time_s": 10.106000000000044,
+      "stage": "native_before",
+      "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7"
+    },
+    "new_pairs": [
+      {
+        "geom_ids": [
+          75,
+          134
+        ],
+        "class": "other_gripper/bottle"
+      }
+    ],
+    "stop_granularity": "after already-started atomic primitive",
+    "cache_semantics": "native derived buffers; timestamps need not identify contact solve time"
+  },
+  "strong_robot_pairs": [
+    {
+      "geom_ids": [
+        75,
+        134
+      ],
+      "geom_names": [
+        "gripper0_hand_collision",
+        "wine_bottle_1_g6"
+      ],
+      "class": "other_gripper/bottle",
+      "rows_by_stage": {
+        "native_before": 40,
+        "native_after": 40
+      },
+      "maximum_normal_force_N": 0.1859761659620806,
+      "samples_by_stage": {
+        "native_before": 40,
+        "native_after": 40
+      },
+      "samples_by_control": {
+        "0": {
+          "native_before": 7,
+          "native_after": 7
+        },
+        "1": {
+          "native_before": 5,
+          "native_after": 5
+        },
+        "2": {
+          "native_before": 4,
+          "native_after": 4
+        },
+        "3": {
+          "native_before": 6,
+          "native_after": 6
+        },
+        "4": {
+          "native_before": 8,
+          "native_after": 8
+        },
+        "5": {
+          "native_before": 7,
+          "native_after": 7
+        },
+        "6": {
+          "native_before": 3,
+          "native_after": 3
+        },
+        "7": {
+          "native_before": 0,
+          "native_after": 0
+        }
+      }
+    }
+  ],
+  "trajectory": [
+    {
+      "step": 0,
+      "token": "MV_DOWN",
+      "before_distance_mm": 208.36722753491154,
+      "after_distance_mm": 200.27426114546108,
+      "translation_residual_mm": 0.45593504357095377,
+      "rotation_change_deg": 0.15526699323152798
+    },
+    {
+      "step": 1,
+      "token": "MV_DOWN",
+      "before_distance_mm": 200.27426114546108,
+      "after_distance_mm": 192.4054416490163,
+      "translation_residual_mm": 0.7350149159214427,
+      "rotation_change_deg": 0.11702672203638888
+    },
+    {
+      "step": 2,
+      "token": "MV_DOWN",
+      "before_distance_mm": 192.4054416490163,
+      "after_distance_mm": 184.66048426765897,
+      "translation_residual_mm": 0.6397252052776972,
+      "rotation_change_deg": 0.010776596536948681
+    },
+    {
+      "step": 3,
+      "token": "MV_DOWN",
+      "before_distance_mm": 184.66048426765897,
+      "after_distance_mm": 177.06907460673006,
+      "translation_residual_mm": 0.6171218816048091,
+      "rotation_change_deg": 0.005002163254526314
+    },
+    {
+      "step": 4,
+      "token": "MV_DOWN",
+      "before_distance_mm": 177.06907460673006,
+      "after_distance_mm": 169.65462970627817,
+      "translation_residual_mm": 0.6345191384723411,
+      "rotation_change_deg": 0.003947140261191573
+    },
+    {
+      "step": 5,
+      "token": "MV_DOWN",
+      "before_distance_mm": 169.65462970627817,
+      "after_distance_mm": 162.44014880720005,
+      "translation_residual_mm": 0.6360223910233944,
+      "rotation_change_deg": 0.0012198307217388118
+    },
+    {
+      "step": 6,
+      "token": "MV_DOWN",
+      "before_distance_mm": 162.44014880720005,
+      "after_distance_mm": 155.4535114813744,
+      "translation_residual_mm": 0.6375333244814084,
+      "rotation_change_deg": 0.0011985145388210931
+    },
+    {
+      "step": 7,
+      "token": "MV_DOWN",
+      "before_distance_mm": 155.4535114813744,
+      "after_distance_mm": 148.7268177675093,
+      "translation_residual_mm": 0.6396332741607003,
+      "rotation_change_deg": 0.0015181848014559013
+    },
+    {
+      "step": 8,
+      "token": "MV_DOWN",
+      "before_distance_mm": 148.7268177675093,
+      "after_distance_mm": 142.29720695709267,
+      "translation_residual_mm": 0.6408927498118666,
+      "rotation_change_deg": 0.0011152721973027694
+    },
+    {
+      "step": 9,
+      "token": "MV_DOWN",
+      "before_distance_mm": 142.29720695709267,
+      "after_distance_mm": 136.20721490198216,
+      "translation_residual_mm": 0.6416313855777589,
+      "rotation_change_deg": 0.000643046304738842
+    },
+    {
+      "step": 10,
+      "token": "MV_FWD",
+      "before_distance_mm": 136.20721490198216,
+      "after_distance_mm": 130.1635111840166,
+      "translation_residual_mm": 0.975461449370014,
+      "rotation_change_deg": 0.09982337594472651
+    },
+    {
+      "step": 11,
+      "token": "MV_DOWN",
+      "before_distance_mm": 130.1635111840166,
+      "after_distance_mm": 124.05688013433763,
+      "translation_residual_mm": 1.2786586575428454,
+      "rotation_change_deg": 0.20555866903981374
+    },
+    {
+      "step": 12,
+      "token": "MV_FWD",
+      "before_distance_mm": 124.05688013433763,
+      "after_distance_mm": 118.21527105367953,
+      "translation_residual_mm": 1.1679289149416092,
+      "rotation_change_deg": 0.22723570426404707
+    },
+    {
+      "step": 13,
+      "token": "MV_DOWN",
+      "before_distance_mm": 118.21527105367953,
+      "after_distance_mm": 112.28231984493584,
+      "translation_residual_mm": 1.265246831450796,
+      "rotation_change_deg": 0.22400424711963968
+    },
+    {
+      "step": 14,
+      "token": "MV_FWD",
+      "before_distance_mm": 112.28231984493584,
+      "after_distance_mm": 106.64575761099607,
+      "translation_residual_mm": 1.1608999297777132,
+      "rotation_change_deg": 0.22311408638482352
+    },
+    {
+      "step": 15,
+      "token": "MV_DOWN",
+      "before_distance_mm": 106.64575761099607,
+      "after_distance_mm": 100.95072673892236,
+      "translation_residual_mm": 1.257638049960564,
+      "rotation_change_deg": 0.2223824272287984
+    },
+    {
+      "step": 16,
+      "token": "MV_FWD",
+      "before_distance_mm": 100.95072673892236,
+      "after_distance_mm": 95.59701104188613,
+      "translation_residual_mm": 1.1654515551221858,
+      "rotation_change_deg": 0.22307147039537778
+    },
+    {
+      "step": 17,
+      "token": "MV_LEFT",
+      "before_distance_mm": 95.59701104188613,
+      "after_distance_mm": 89.93012006537099,
+      "translation_residual_mm": 0.8322551347062934,
+      "rotation_change_deg": 0.18319798284958982
+    },
+    {
+      "step": 18,
+      "token": "MV_DOWN",
+      "before_distance_mm": 89.93012006537099,
+      "after_distance_mm": 84.29100681142,
+      "translation_residual_mm": 0.5886997485772015,
+      "rotation_change_deg": 0.07239974768438133
+    },
+    {
+      "step": 19,
+      "token": "MV_FWD",
+      "before_distance_mm": 84.29100681142,
+      "after_distance_mm": 78.87223628260462,
+      "translation_residual_mm": 1.0197260627150113,
+      "rotation_change_deg": 0.09744861565853585
+    },
+    {
+      "step": 20,
+      "token": "MV_LEFT",
+      "before_distance_mm": 78.87223628260462,
+      "after_distance_mm": 73.23361293084197,
+      "translation_residual_mm": 0.8181825259615124,
+      "rotation_change_deg": 0.16889433175291524
+    },
+    {
+      "step": 21,
+      "token": "MV_DOWN",
+      "before_distance_mm": 73.23361293084197,
+      "after_distance_mm": 67.58223433473374,
+      "translation_residual_mm": 0.5637602709785523,
+      "rotation_change_deg": 0.07515932709068068
+    },
+    {
+      "step": 22,
+      "token": "MV_FWD",
+      "before_distance_mm": 67.58223433473374,
+      "after_distance_mm": 62.20025282042373,
+      "translation_residual_mm": 1.022187945342184,
+      "rotation_change_deg": 0.09481709703310537
+    },
+    {
+      "step": 23,
+      "token": "MV_LEFT",
+      "before_distance_mm": 62.20025282042373,
+      "after_distance_mm": 56.628018256672085,
+      "translation_residual_mm": 0.8028041513560462,
+      "rotation_change_deg": 0.16447956750541423
+    },
+    {
+      "step": 24,
+      "token": "MV_DOWN",
+      "before_distance_mm": 56.628018256672085,
+      "after_distance_mm": 50.951274876276315,
+      "translation_residual_mm": 0.5513180504575049,
+      "rotation_change_deg": 0.07279579245985635
+    }
+  ],
+  "first_raw_robot_contact": {
+    "step": 22,
+    "control": 7,
+    "index": 186,
+    "time_s": 9.6719999999999,
+    "stage": "native_before",
+    "raw_record_id": "8f7eca440cfab6444448a8cc96b2e09343d3673d77651ae649fc34926186322e",
+    "contact": {
+      "force_contact_frame": [
+        0.0175559689573816,
+        -0.0005832315716143075,
+        0.017546278436364183,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geom_ids": [
+        134,
+        75
+      ],
+      "geom_names": [
+        "wine_bottle_1_g6",
+        "gripper0_hand_collision"
+      ],
+      "normal_force_N": 0.0175559689573816,
+      "unexpected_robot_contact": false
+    }
+  },
+  "raw_robot_contact_rows_by_action": {
+    "22": {
+      "native_before": 13,
+      "native_after": 13
+    },
+    "23": {
+      "native_before": 164,
+      "native_after": 164
+    },
+    "24": {
+      "native_before": 72,
+      "native_after": 72
+    }
+  },
+  "final_native_after_raw_robot_contacts": [
+    {
+      "force_contact_frame": [
+        0.035534750516262446,
+        -0.0007502039251652043,
+        -0.03552683054148907,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geom_ids": [
+        134,
+        75
+      ],
+      "geom_names": [
+        "wine_bottle_1_g6",
+        "gripper0_hand_collision"
+      ],
+      "normal_force_N": 0.035534750516262446,
+      "unexpected_robot_contact": false
+    }
+  ],
+  "raw_robot_contact_rows_by_class_and_stage": {
+    "pad/bottle": {
+      "native_before": 0,
+      "native_after": 0
+    },
+    "other_gripper/bottle": {
+      "native_before": 249,
+      "native_after": 249
+    },
+    "gripper/other_scene": {
+      "native_before": 0,
+      "native_after": 0
+    },
+    "arm/scene": {
+      "native_before": 0,
+      "native_after": 0
+    },
+    "self": {
+      "native_before": 0,
+      "native_after": 0
+    }
+  },
+  "limits": [
+    "stored arrays, journal and arithmetic only; reviewer performed no dynamics, rendering, FK, projection or inference",
+    "replay exports states/fingerprints and full-snapshot/image equality assertions; full replay contacts/images were compared by reviewed producer, not separately reexported",
+    "counts cover instrumented approach only; fresh reset and ten standard settling controls also occurred",
+    "first observed native contact is not continuous-time onset; native cached force/pose times remain unknown",
+    "point distance does not establish bottle center, clearance, jaw fit, grasp readiness or holding"
+  ]
+}
