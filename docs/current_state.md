@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration031. This is the authoritative current
+Reviewed 2026-09-27 after research iteration032. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -85,10 +85,13 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    same inner crop versus full BOX depths, all five own gripper proxies, seven
    nominal candidate sweeps. No new policy, dynamics, fitted margin or mask.
    Only the originally executed actions have observed physical outcomes.
-2. One semantic-region grounding alternative: `the neck of the wine bottle`,
-   same RGB/model/template/depth rule. Researcher-specified region; no autonomous
-   planner claim, retries, offsets or successful-prepose information.
-3. Use these competing explanations to decide the next physical test. The checked
+2. The single semantic-region alternative `the neck of the wine bottle` failed
+   strict admission:42 boxes,260 actual tokens under the unchanged native256 cap,
+   no EOS. No P/G, retry or physics. See [nonadmission](evidence/autonomous_research/task2_neck_box_support_findings.md).
+3. Propose initial model-crop seeding of unchanged LK across the paired archive,
+   replacing assistant-selected landmarks without a holding classifier. No new
+   tracking output or dynamics yet; sparse approach-frame cadence is explicit.
+4. Use these results to decide the next physical test. The checked
    own-frame transform supports bounded jaw interpretation, not a new estimator:
    final P remains outside the pad Y/Z span. The earlier successful scripted
    pregrasp used translations only, so missing pitch/roll is not established.

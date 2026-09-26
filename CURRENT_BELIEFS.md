@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration031. This is a short living assessment;
+Updated 2026-09-27 after iteration032. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -35,12 +35,17 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    Only executed actions have contact outcomes; other outcomes remain unknown.
    Full BOX points are generic observed surfaces, not bottle segmentation. No
    threshold fitting, oracle cleanup or renewed rendering/masking investigation.
-2. **Semantic target region:** one new fixed description, `the neck of the wine
-   bottle`, same initial RGB/checkpoint/BOX template/depth extraction. Preserve the
-   object-level baseline; no retries, offsets or prompt alternatives. This is a
-   researcher-specified semantic condition, not autonomous VLM planning or proof
-   of grasp readiness. Compare only after the single output is sealed.
-3. **Frame accounting is qualified locally:**240 saved observations support the
+2. **Semantic target region test closes at nonadmission:** one fixed description,
+   `the neck of the wine bottle`, yields42 BOX records/260 actual tokens/no EOS
+   under the unchanged native256-token cap. No point/support was extracted; no
+   prefix salvage or retry. This one researcher-specified condition does not
+   rescue region grounding, nor prove general part-localization incapacity.
+3. **Initial-BOX temporal initialization:** inspect whether the sealed initial
+   crop can seed the existing unchanged LK method without assistant landmarks.
+   Paired archive has92 frames with a sparse0.4s approach prefix then0.05s close/
+   lift sampling. A fixed dense-seed diagnostic is being proposed; no tracker
+   output, new model call, holding classifier or physical execution yet.
+4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
    nearest-pad distance34.300mm. It does not explain full palm/object geometry or
@@ -87,6 +92,7 @@ measured interaction and available action behavior must not be conflated.
 - [Stored proprioceptive frame audit](docs/evidence/autonomous_research/proprio_frame_consistency_findings.md)
 - [Fresh Task2 approach audit](docs/evidence/autonomous_research/task2_box_point_boundary_independent_review.md)
 - [Point and jaw interpretation](docs/evidence/autonomous_research/task2_point_jaw_interpretation.md)
+- [Single neck-query nonadmission](docs/evidence/autonomous_research/task2_neck_box_support_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)

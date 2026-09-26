@@ -1113,6 +1113,40 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   caches and the redundant temporary root panel (3.05MiB); receipt in workspace
   lifecycle. Four active worktrees continue to be reused.
 
+### Parallel iteration 032 — one explicit neck description does not yield a point
+
+- **Question:** can explicitly requesting a manipulation-relevant part repair
+  object-level grounding, without richer geometry or a new model?
+- **Frozen intervention:** one exact `the neck of the wine bottle` description,
+  existing BOX template, same original full RGB, checkpoint/BF16/native settings,
+  configured256-token cap and unchanged extraction if admitted. This is a
+  researcher-specified semantic condition, not an autonomous planner proposal.
+  Freeze `f1cae7c`; preserve previous object-level result. Zero-call processor01
+  fails on wrong existing interpreter; separately numbered02 uses the pinned
+  LocateAnything environment. GPU0 becomes occupied by an unrelated workload;
+  explicit resource-only amendment uses identical-type GPU1, default core GPU0
+  unchanged. CPU preflight03 repeats240 IDs/schema exactly under final identity.
+- **Observed:** one call returns260 actual tokens,42 BOX records and no terminal
+  EOS; strict admission rejects it. No neck P/G, proxy evaluator, visual region
+  classification or physical action exists. No prefix is salvaged, no box chosen,
+  no alternate wording/mode/model/retry. Native unchanged generator checks its
+  length before appending a multi-token chunk, explaining possible cap overshoot;
+  raw260 tokens remain intact. GPU equivalence was not separately tested.
+- **Verification:**11 focused tests; independent audit reconstructs all260 tokens
+  from pinned vocabulary bytes, checks8 chained records, original RGB/processed
+  pixel identity, actual240 input IDs,42 raw BOX records and no downstream output.
+  Reviewer `a1f0964`, main `d1246a4`; final report `474cd39`. Journal SHA
+  `e099159c3f9e017c2e6afc7022edad9ec1988f91cbcf6aad11d688024161bbcf` at
+  `task2-neck-box-support-run-01`; root reads complete raw response/audit schema.
+- **Belief update:** this exact single semantic-part condition is insufficient
+  for admissible grounding. One development fixture cannot prove general neck
+  incapacity or geometric sufficiency. Close this line without prompt variants.
+- **Next:** continue the independent frozen observed-surface sweep. Reassign the
+  freed agent to proposal/source feasibility for initial model-BOX dense seeding
+  of unchanged LK on the existing close/open traces, avoiding assistant landmarks.
+  All92 source frames exist, with0.4s approach then0.05s close/lift cadence. No
+  tracker features yet; semantics remain unverified and sample dependence explicit.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
