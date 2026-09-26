@@ -84,3 +84,18 @@ success or general point-interface sufficiency. Fixed target/camera geometry is
 a causal limitation. No temporal-perception benefit can be claimed from an arm
 that deliberately performs no temporal target sensing. Report target/camera
 motion observed post hoc without feeding it into control.
+
+## Append-only setup correction before any physical trial
+
+The first invocation, `coarse-initial-point-01`, failed during robosuite import
+because `CUDA_VISIBLE_DEVICES=1` excluded `MUJOCO_EGL_DEVICE_ID=4`. Its preserved
+record chain contains run start, invocation, model-file identity, failure and
+termination only: no world creation, reset, capture, model call or control occurred.
+This is an infrastructure preflight failure, not an observed physical condition.
+
+GPU1 subsequently had another user's process. The sole physical trial uses a
+new output `coarse-initial-point-02` with both model and rendering on the assigned
+free GPU4 (`CUDA_VISIBLE_DEVICES=4`, `MUJOCO_EGL_DEVICE_ID=4`, model device `cuda`).
+The original failure remains untouched. No target, sensor outcome, selector,
+threshold, native controller or checkpoint change motivates this setup correction.
+The physical/model/admission no-retry rule still applies to the first actual run.
