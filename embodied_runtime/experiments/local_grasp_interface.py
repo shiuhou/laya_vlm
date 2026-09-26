@@ -12,7 +12,7 @@ import numpy as np
 
 from ..runtime_core import AtomicExecutor
 from . import interaction_observability as prior
-from .native_substep_observability import integration_fingerprint
+from .native_substep_observability import array_hash, integration_fingerprint
 from .records import RunRecorder, code_identity, file_hash, jsonable, load_records, versions
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -71,6 +71,24 @@ def unexpected_contact(a, b, normal_force, groups):
     allowed = ((a in groups['gripper'] and b in groups['bottle']) or
                (b in groups['gripper'] and a in groups['bottle']))
     return bool(robot and not allowed and normal_force > .05)
+
+
+@contextmanager
+def read_only_measurement(w):
+    fields = ('geom_xpos','geom_xmat','site_xpos','site_xmat','cam_xpos','cam_xmat',
+              'sensordata','qacc')
+    before = integration_fingerprint(w)
+    caches = {key:array_hash(getattr(w.data,key)) for key in fields}
+    try:
+        yield
+    finally:
+        equal(integration_fingerprint(w),before,'measurement integration state')
+        equal({key:array_hash(getattr(w.data,key)) for key in fields},caches,'measurement cached geometry/sensors')
+
+
+def read_sensors_and_label(w, sensors, observations, command):
+    with read_only_measurement(w):
+        return sensors.read(observations,command), prior.evaluation(w)
 
 
 def contact_snapshot(w, groups):
@@ -168,7 +186,8 @@ def collect(args):
             capture_id = 0
             def capture(step, control):
                 nonlocal capture_id
-                frame, meta = prior.capture(w, camera, directory, capture_id,
+                with read_only_measurement(w):
+                    frame, meta = prior.capture(w, camera, directory, capture_id,
                                     {'arm':arm,'after_step':step,'control':control}, masks)
                 captures.append(meta)
                 if step <= 12:
@@ -179,7 +198,8 @@ def collect(args):
                                 raise ValueError(f'exact image/calibration mismatch:{arm}/{step}/{key}')
                 capture_id += 1
             try:
-                initial = prior.evaluation(w)
+                with read_only_measurement(w):
+                    initial = prior.evaluation(w)
                 oracle.append({'arm':arm,'after_step':-1,'control':None, **initial})
                 recorder.record('initial_observed', {'arm':arm, **initial})
                 equal(initial, {k:v for k,v in required(source['labels'],arm=arm,after_step=-1).items()
@@ -206,8 +226,7 @@ def collect(args):
                             equal(command, old['sensor']['command'], 'reference command')
                         returned = original_step(command)
                         tracking['control'] = None
-                        sensed = sensors.read(returned[0], command)
-                        label = prior.evaluation(w)
+                        sensed, label = read_sensors_and_label(w,sensors,returned[0],command)
                         row = {**current,'control':control,'sensor':sensed}
                         sensor_rows.append(row)
                         oracle.append({'arm':arm,'after_step':step,'control':control, **label})
@@ -279,6 +298,16 @@ def replay(args):
         raise ValueError('completed source required')
     equal(required([r['data'] for r in records if r['kind']=='termination'])['reason'],
           'both_local_arms_complete','completed experiment')
+    frozen = required([r['data'] for r in records if r['kind']=='frozen_inputs'])
+    equal(code_identity(),frozen['code'],'replay exact clean scientific source')
+    equal(file_hash(PROTOCOL),frozen['protocol_sha256'],'replay protocol')
+    from .native_substep_observability import stepping_identity
+    from .records import repository_identity, package_directory
+    import jev_libero.world
+    equal(repository_identity(package_directory(jev_libero.world)),frozen['jev'],'replay jev')
+    equal(stepping_identity(),frozen['stepping_sources'],'replay stepping sources')
+    equal(versions(),frozen['versions'],'replay package versions')
+    equal({k:os.environ.get(k) for k in frozen['environment']},frozen['environment'],'replay environment')
     out = Path(args.output)
     out.mkdir(parents=True,exist_ok=False)
     rows = []

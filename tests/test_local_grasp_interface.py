@@ -55,3 +55,20 @@ def test_unexpected_contact_respects_force_and_both_sides():
     for a,b in ((1,3),(2,4),(1,2),(2,1)):
         assert unexpected_contact(a,b,.050001,g)
         assert not unexpected_contact(a,b,.05,g)
+
+
+def test_measurement_guard_detects_cache_and_integration_mutation(monkeypatch):
+    from types import SimpleNamespace
+    import numpy as np
+    from embodied_runtime.experiments import local_grasp_interface as experiment
+    fields=('geom_xpos','geom_xmat','site_xpos','site_xmat','cam_xpos','cam_xmat','sensordata','qacc')
+    w=SimpleNamespace(data=SimpleNamespace(**{k:np.zeros(3) for k in fields}),fingerprint='original')
+    monkeypatch.setattr(experiment,'integration_fingerprint',lambda world:world.fingerprint)
+    with experiment.read_only_measurement(w):
+        pass
+    with pytest.raises(ValueError,match='cached geometry'):
+        with experiment.read_only_measurement(w):
+            w.data.geom_xpos[0]=1
+    with pytest.raises(ValueError,match='integration state'):
+        with experiment.read_only_measurement(w):
+            w.fingerprint='changed'

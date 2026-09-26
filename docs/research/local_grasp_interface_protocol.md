@@ -38,7 +38,8 @@ raw RGB-D and direct/returned proprioceptive histories; wrist sample times and
 holding remain unknown. At13/14 passively wrap native mj_step to record BEFORE/
 AFTER raw contacts, six force components, direct state and wrist buffers. No
 added forward or integration on live data. Verify integration fingerprints around
-reads and count25 native integrations per control, Euler2ms. Labels use Task2's
+all reads/renders and unchanged geom/site/camera pose caches, sensordata and qacc
+around sensor/evaluator/render operations. Count25 integrations per control, Euler2ms. Labels use Task2's
 existing strict>0.05N rule, not Task1's1N. Both stages stay separate; no exact
 causal or continuous-contact claim is made.
 
@@ -54,10 +55,14 @@ contacts also abort. Existing paired baseline contact evidence is retained.
 Report actual TCP/bottle displacement, raw contacts and bilateral relation at all
 sample stages, grip commands, validator flags, and visual before/after frames.
 Report bottle movement and relation continuity descriptively without inventing a
-new learned holding threshold. A positive local witness requires both unchanged
-atomic validations pass, close-arm bottle rises with bilateral pad contact during
-the lift, and open-arm counterpart does not establish that relation. No criterion
-is fitted to the results. Final official combined-task success is recorded but is
+new learned holding threshold. A positive SAMPLED-ENDPOINT local witness requires all four unchanged atomic
+validations pass; close-arm net bottle-center rise is positive and greater than
+the open-arm rise; close-arm bilateral pad relation is true at all eight lift
+endpoints, and open-arm relation at none. Native BEFORE/AFTER relation counts are
+reported separately using the same strict0.05N rule. Native-stage maintenance may
+only be claimed if both stages of all200 lift integrations are bilateral. Neither
+label certifies continuous-time grasp or support-free retention. No displacement
+threshold, noise claim or criterion is fitted to the results. Final official combined-task success is recorded but is
 not an objective of this slice.
 
 ## Reproducibility and review
@@ -66,6 +71,8 @@ Freeze code/protocol/tests and exact source artifact hashes before dynamics;
 independent review must pass. Run on GPU4 with EGL and offline model flags (no
 model is used). Preserve environment/package/source identity and full new control
 trace. If both arms finish, replay those recorded new controls once from fresh
-resets and require every flattened state exact. Replay is verification, not a new
+resets and require every flattened state exact. Before world construction, replay
+requires the same clean scientific source identity, protocol, Jev repository,
+stepping-source hashes, packages and GPU environment as collection. Replay is verification, not a new
 policy attempt. After a failure, stop this condition and interpret it; any next
 experiment needs a separate stated question. No production runtime file changes.
