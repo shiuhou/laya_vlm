@@ -1,0 +1,13 @@
+# Independent observed-surface sweep review
+
+**Proposal-only PASS at `ce27ee6`. No numerical features had been computed at this review.** The parent authorized narrow implementation, analytic checks, independent code review, then one offline computation. This receipt accepts the registered scope; it does not yet approve an unseen implementation or validate a physical predictor.
+
+The proposal uses only the initial full-BOX depth support and its exact retained inner crop, the pre-21/pre-22 returned own-observation packets, and five separately calibrated convex gripper proxies. Placement keeps returned site position, eef-body XYZW orientation corrected by the fixed body-to-site mount, and signed finger joints together. Static own-subtree compatibility is required; current source/package agreement cannot establish unrecorded historical asset-byte identity. A mismatch blocks computation, while the explicitly conditional calibration claim does not warrant constructing a new scene.
+
+All seven fixed nominal translations, including zero-displacement STOP, are represented. For each separate proxy the complete fixed-orientation translation sweep is the convex hull of its start and translated vertices. The gripper union is the minimum of the five distances and OR of the five containment flags; constructing a single convex hull around the entire gripper would incorrectly fill jaw gaps. The proposal now states this distinction explicitly.
+
+Two mathematical degeneracies must remain visible in the output and report. Full BOX contains the inner crop, so its minimum cannot increase regardless of predictive usefulness. Every sweep contains the current solid, so current overlap can force all seven swept union minima to zero. Current, endpoint, per-proxy and complete per-pixel arrays are retained to disclose these effects rather than treating lower distances as directional evidence.
+
+Actual outcomes exist only for DOWN at step 21 and FWD at step 22; all other candidate outcomes remain UNKNOWN. Their contact labels and witness RGB inspection occur after the sanitized numerical result is sealed. The known retrospective selection, cached surface age, unverified stationarity, generic depth-point ownership, nominal-versus-executed path difference, finite sampling and hidden space prevent claims of validated contact prediction, clearance, grasp readiness or an improved policy.
+
+The implementation review will check the exact input and output schema, source/asset compatibility, analytic frame and sweep tests, support identity, excluded-field boundary, complete tie/witness retention and seal-before-evaluator ordering before the one authorized feature invocation.
