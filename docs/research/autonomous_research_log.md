@@ -845,6 +845,47 @@ witnesses and stored selection arithmetic, without rerunning geometry or physics
   should identify a defensible next local physical skill experiment. No additional
   hierarchy, wording tournament, threshold change or live safety claim follows.
 
+### Parallel iteration 025 — depth sampling versus cached robot geometry
+
+- **Question:** why do apparent own-gripper pixels remain outside a calibrated
+  center-ray silhouette? Competing causes include cache/FK disagreement and actual
+  raster sampling rather than ideal pixel-center measurement.
+- **Frozen intervention:** producer `5b17822`, after source/protocol `cdd03ae` and
+  independent review. Fresh exact original prefix through pre25 only, both native
+  RGB/depth/K/T arrays byte-identical and402 recorded state gates pass. At each
+  saved boundary, block further physics and compare native4-sample rendering to
+  zero-MSAA rendering of the same complete cached data. Invariant render settings,
+  poses and integration fingerprints are guarded. Separate own-qpos FK comparison
+  cannot alter the rendered scene. No mask, margin or controller changes.
+- **Observed:** actual4-sample positions are(.375,.125),(.875,.375),(.125,.625),
+  (.625,.875). Sampling alone changes registered witness depth by up to734.777mm;
+  pre25 newly admitted pad-zero witness changes by418.181mm. Own-FK versus cached
+  projected vertex discrepancies are at most0.00457/0.00488px at24/25, with world
+  discrepancies10.93/34.75µm. Root inspected the actual fixed witness panel.
+- **Interpretation:** pixel-center ownership is not a justified assumption for
+  these resolved edge depths. Small cache differences remain measured, but the
+  controlled sampling intervention demonstrates a large separate effect. Exact
+  GL depth resolve ownership, real-sensor calibration and scene clearance are not
+  established. No mask union/dilation or calibrated safety claim is earned.
+- **Verification:**14 tests,239 post-seal reporting checks and independent saved-
+  array audit PASS. The auditor verifies recorded402 gates; it does not rerun
+  dynamics. Post-seal ignored EGL cleanup exceptions are retained/disclosed, with
+  process exit0 and completed seals. Raw `render-measurement-diagnosis-01` and log;
+  report `render_measurement_diagnosis_findings.md`, reviewer
+  `render_diagnosis_independent_review.md`. Main integrations `59fe990`,`4fe2f33`,
+  `6a142e5`,`53710d6`.
+- **Next:** minimal calibrated pixel-sample/own-triangle measurement with explicit
+  ambiguous ownership, analytic tests first; no resolved-point invention or live
+  gate. In parallel, the mechanical inventory earns a local grasp→10mm lift
+  transfer test using the unchanged actual visual executor. Setup attempt01
+  stopped before world construction on missing LIBERO bootstrap; its log is kept,
+  native setup is fixed separately, and no physical outcome was observed.
+
+Maintenance closeout:26 inactive checkouts removed,320.1MiB reclaimed; all exact
+HEADs pinned, raw evidence/failures/branches retained. See `workspace_lifecycle.md`.
+Integrated regression before renderer additions at `fb7af48`:830 tests passed
+in31.84s; log `regression-canonical-attribution-integration.log`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

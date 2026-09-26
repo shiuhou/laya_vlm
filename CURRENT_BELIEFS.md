@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration024. This is a short living assessment;
+Updated 2026-09-27 after iterations024–025. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -34,9 +34,11 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    housing-edge minima0.127/0.109mm. Replacing only the mask with calibrated
    visual silhouettes removes those witnesses but leaves new hand-edge minima
    below0.3mm and reintroduces a zero pad distance through nonnested masks.
-   This is not environment clearance. Next: inspect rendering/measurement
-   semantics before another mask intervention. No margin tuning, new dynamics
-   or action gate. Missing geometry remains unknown.
+   This is not environment clearance. Exact native rendering now reproduces both frames. Changing only multisampling
+   at fixed cached geometry moves registered edge depths by up to735mm, while
+   own-FK/cache projection differences are below0.005px. Next: represent calibrated
+   sample footprints and ambiguous ownership without tuned margins or a live gate.
+   Missing geometry and depth-resolve semantics remain unknown.
 3. Independent review checks both experiments; producers and reviewer use isolated
    worktrees. Reassign completed agents to the next evidence-driven question.
 
@@ -71,6 +73,9 @@ measured interaction and available action behavior must not be conflated.
 - [Canonical Task1 native attribution](docs/evidence/autonomous_research/task1_native_contact_attribution_findings.md)
 - [Observed-point proximity](docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md)
 - [Calibrated visual-mask control](docs/evidence/autonomous_research/gripper_visual_mask_findings.md)
+- [Fixed-cache rendering diagnosis](docs/evidence/autonomous_research/render_measurement_diagnosis_findings.md)
+- [Qualified mechanical witness inventory](docs/evidence/autonomous_research/mechanical_witness_inventory.md)
+- [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)
 
