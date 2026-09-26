@@ -143,7 +143,11 @@ def _run(args, recorder):
     if len(args.evaluation_sha256)!=64 or any(c not in '0123456789abcdef' for c in args.evaluation_sha256):
         raise ValueError('preregistered evaluator-label hash required before preflight/generation')
     identity = model_identity(model_path)
-    if identity['content_id'] != MODEL_CONTENT_ID:
+    control = None
+    if getattr(args, 'capability_registration', None):
+        from .vlm_capability_control import registered_model
+        control = registered_model(args, identity)
+    if identity['content_id'] != (control['content_id'] if control else MODEL_CONTENT_ID):
         raise ValueError('checkpoint differs from pinned visual-verification model')
     torch.set_num_threads(4)
     random.seed(1)
@@ -158,11 +162,12 @@ def _run(args, recorder):
         getattr(expected,name).dtype = torch.bfloat16
     expected._attn_implementation = 'sdpa'
     names = {'vlm_world_single_relation.py','vlm_world_relations.py','visual_subgoal_probe.py','visual_target_verification.py','visual_target_verification_run.py',
-             'point_grounding_probe.py','records.py'}
+             'point_grounding_probe.py','records.py','vlm_capability_control.py'}
     code = code_identity()
     frozen = {'manifest_sha256':file_hash(source/'manifest.json'), 'protocol_sha256':file_hash(PROTOCOL),
         'evaluation_sha256':args.evaluation_sha256, 'safe_input_manifest':manifest,
-        'model':identity, 'revision':REVISION, 'model_config':serialize_model_config(config.to_dict()),
+        'model':identity, 'revision':control['revision'] if control else REVISION,
+        **({'capability_control':control} if control else {}), 'model_config':serialize_model_config(config.to_dict()),
         'expected_loaded_config':serialize_model_config(expected.to_dict()),
         'generation_config':serialize_model_config(generation.to_dict()),
         'processor_config':serialize_model_config(processor.image_processor.to_dict()),
@@ -176,6 +181,9 @@ def _run(args, recorder):
             raise ValueError('label not representable within fixed output budget')
         options[label] = ids
     prepared = [prepare_call(processor,source,call,manifest['examples']) for call in PLANNED_CALLS]
+    if control:
+        from .vlm_capability_control import compare_to_baseline
+        recorder.record('baseline_presentation_comparison', compare_to_baseline(args, [p for _,p in prepared]))
     if any(p['input_token_count']+GENERATION['max_new_tokens']>config.max_position_embeddings for _,p in prepared):
         raise ValueError('model context would truncate input')
     if args.mode=='generate':
@@ -255,6 +263,7 @@ def _run(args, recorder):
 def run(args):
     recorder = RunRecorder(args.output,{'mode':args.mode,'source':str(Path(args.source).resolve()),
         'preflight_source':args.preflight_source,'evaluation_sha256':args.evaluation_sha256,
+        **({'capability_registration':args.capability_registration} if getattr(args,'capability_registration',None) else {}),
         'inference_settings':GENERATION,'oracle':False,'privileged':False,'no_execution':True},
         {'run_id':Path(args.output).name,'code':code_identity(),'versions':versions()})
     try:
