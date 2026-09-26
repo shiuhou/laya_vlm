@@ -47,7 +47,7 @@ def family_fixture(original):
     result["option_to_canonical"] = {token: token for token in FAMILY_ORDER}
     result["questions"]["action"]["criteria"] = {
         token: original["questions"]["action"]["criteria"][token] for token in FAMILY_ORDER}
-    result["state"]["effects"]["rows"] = {token: effect_rows[token] for token in FAMILY_ORDER}
+    result["state"]["effects"]["rows"] = {token: deepcopy(effect_rows[token]) for token in FAMILY_ORDER}
     result["intervention"] = {
         "version": VERSION, "kind": "objective_family_admission",
         "parent_fixture_id": original["fixture_id"], "parent_payload_id": original["payload_id"],
@@ -162,6 +162,8 @@ def report(output):
     prior, diagnostics = load_records(prior_path)
     if (diagnostics or one_record(prior, "termination") != {"reason": "approach_family_preflight_complete"}
             or one_record(prior, "run_start")["resolved_config"]["protocol_sha256"] != config["protocol_sha256"]
+            or one_record(prior, "run_start")["manifest"]["code"]["source_sha256"]
+               != one_record(rows, "run_start")["manifest"]["code"]["source_sha256"]
             or [r["data"] for r in prior if r["kind"] == "search_fixture"] != fixtures):
         raise ValueError("complete matching preflight required")
     model = one_record(rows, "manifest_update")["model"]

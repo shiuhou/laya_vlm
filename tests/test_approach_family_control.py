@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import pytest
 
 from embodied_runtime.experiments import approach_family_control as family
-from embodied_runtime.experiments.records import load_records
+from embodied_runtime.experiments.records import RunRecorder, file_hash, load_records
 from embodied_runtime.experiments.reference_model_diagnostic import active_temperature, payload_id
 from embodied_runtime.runtime_core import MOVE, _sha256_json
 
@@ -146,3 +146,77 @@ def test_registered_real_source_has_only_the_six_family_interventions_when_avail
             assert fixture["questions"]["action"]["criteria"][token] == parent["questions"]["action"]["criteria"][token]
         assert fixture["state"]["state"] == parent["state"]["state"]
         assert fixture["state"]["previous"] == parent["state"]["previous"]
+
+
+@pytest.mark.parametrize("wrong_temperature", [False, True])
+def test_report_pairs_native_raw_calls_and_rejects_configuration_drift(tmp_path, monkeypatch, wrong_temperature):
+    # Synthetic evidence exercises reporting/validation only; no model is invoked.
+    source = RunRecorder(tmp_path / "sensor", {}, {"run_id": "synthetic-sensor"})
+    source.record("paired_state", {"pair_id": "pair", "oracle_state": {
+        "fields": {"relations.tcp_target_delta_m": {"value": [.2, .05, .03]}}}})
+    source.close()
+    fixtures = []
+    for i in range(6):
+        original = original_fixture()
+        original["source"].update(environment_step=i, pair_id="pair", source_path=str(source.output / "episodes.jsonl"))
+        reidentify(original)
+        fixtures.append(family.family_fixture(original))
+    config = {"temperature": [1., 1., 1.]}
+    loaded = {"config": config, "device": "cpu", "dtype": "torch.bfloat16"}
+    model = {"path": str(tmp_path), "files_sha256": {}}
+    source_rows = [{"kind": "model_loaded", "data": loaded}, {"kind": "inference_environment", "data": {}},
+                   {"kind": "manifest_update", "data": {"model": model}}]
+    baseline = {"calls": [{"fixture_id": f["parent_fixture"]["fixture_id"], "repeat": r,
+                           "choice": "GRASP", "call_id": f"parent-{i}-{r}"}
+                          for i, f in enumerate(fixtures) for r in range(2)],
+                "comparisons": [{"init_state_id": 0, "environment_step": i, "repeat": r, "choice": "GRASP"}
+                                for i in range(6) for r in range(2)]}
+    monkeypatch.setattr(family, "frozen_source", lambda *a: (fixtures, baseline, source_rows))
+    monkeypatch.setattr(family.parent, "tokenizer_agent", lambda: SimpleNamespace(cfg=config))
+    audit = {"available": True, "truncated": False, "questions": {"action": {
+        "effective_input_ids": [1, 2, 3], "option_markers": list(range(7))}}}
+    prepared = [{"fixture_id": f["fixture_id"], **audit} for f in fixtures]
+    monkeypatch.setattr(family.parent, "presentations", lambda *a: prepared)
+    common = {"source": "frozen-source", "source_sha256": family.SOURCE_SHA256,
+              "fixture_ids": [f["fixture_id"] for f in fixtures], "protocol_sha256": "protocol"}
+    manifest = {"run_id": "synthetic-evidence", "code": {"source_sha256": {"probe": "frozen-code"}}}
+    prior = RunRecorder(tmp_path / "preflight", common, manifest)
+    for f in fixtures:
+        prior.record("search_fixture", f)
+    prior.record("manifest_update", {"model": model})
+    prior.record("tokenizer_loaded", {"config": config})
+    for p in prepared:
+        prior.record("provider_presentation", p)
+    prior.record("termination", {"reason": "approach_family_preflight_complete"})
+    prior.close()
+    run = RunRecorder(tmp_path / "run", {**common, "preflight_source": str(prior.output),
+                      "preflight_sha256": file_hash(prior.output / "episodes.jsonl")}, manifest)
+    for f in fixtures:
+        run.record("search_fixture", f)
+    for row in source_rows:
+        run.record(row["kind"], row["data"])
+    for p in prepared:
+        run.record("provider_presentation", p)
+    for repeat in range(2):
+        for ordinal, f in enumerate(fixtures if repeat == 0 else reversed(fixtures)):
+            ident = {"fixture_id": f["fixture_id"], "repeat": repeat, "ordinal": ordinal}
+            call_id = _sha256_json(ident)
+            temperature = active_temperature(SimpleNamespace(cfg=config), 7)
+            if wrong_temperature:
+                temperature = {**temperature, "configured": 2., "effective": 2.}
+            run.record("model_call_intent", {**ident, "call_id": call_id, "payload_id": f["payload_id"],
+                "input_encoding": audit, "temperature": temperature, "device_before": "cpu", "dtype_before": "torch.bfloat16"})
+            run.record("model_raw_response", {"call_id": call_id, "actual_device": "cpu", "actual_dtype": "torch.bfloat16",
+                "raw_response": {"answers": {"action": {"choice": "MV_FWD", "probabilities": {t: 1/7 for t in family.FAMILY_ORDER}}}},
+                "forward_traces": [{"input_ids": [[1, 2, 3]], "option_markers": [list(range(7))], "raw_option_logits": [[0.]*7]}]})
+    run.record("termination", {"reason": "approach_family_complete", "calls": 12})
+    run.close()
+    if wrong_temperature:
+        with pytest.raises(ValueError, match="temperature differs"):
+            family.report(run.output)
+    else:
+        report = family.report(run.output)
+        assert report["complete"] and report["all_repeats_exact"]
+        assert len(report["comparisons"]) == report["valid_calls"] == 12
+        assert all(p["natural_choice"] == "GRASP" and p["family_choice"] == "MV_FWD" for p in report["comparisons"])
+        assert all(p["family_metrics"]["agrees_with_rule"] for p in report["comparisons"])
