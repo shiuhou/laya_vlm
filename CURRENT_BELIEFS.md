@@ -31,6 +31,36 @@ the [first protocol](docs/research/predicate_verification_protocol.md).
   numeric-interface reproduction; semantic POINT versus BOX using the existing
   LocateAnything checkpoint. No new architecture is earned yet.
 
+## Update after iteration 002
+
+- **Observed:** all ten exact current motor calls reproduce the frozen successful
+  run, including probabilities and logits. At advance boundaries 9/10, Laya
+  chooses `open` with predicted closure 1.756/0.056 mm while admitted alternatives
+  predict 34.177/31.888 mm. Correct local objectives and complete effects therefore
+  do not ensure strong immediate progress. This is not a counterfactual full-task
+  or interaction-validity result.
+- **Observed:** the 1,184-call predicate decomposition does not rescue recognition.
+  With the spaced negative label, all closed-goal cases receive the negative
+  answer and all open-goal cases the positive answer, including both single-clause
+  conditions. Per-goal balanced accuracy is 0.5. Pooled scores obscure this failure.
+  Incomplete Boolean coverage prevents a general conjunction-capacity diagnosis.
+- **Observed:** POINT grounding completes with EOS on 18/18 frames and produces
+  9 target hits, 5 misses and 4 mixed-output unknowns. All six hard late cases
+  remain unsuccessful. Clear lower-handle errors show unresolved target identity.
+- **Observed:** fresh BOX prefixes reproduce all archived boxes, but 9/18 outputs
+  reach the generation cap and another is malformed without EOS. Historical
+  prefix acceptance hid incomplete generation. Parsed output is not proof that
+  generation completed; completeness must remain an explicit admission variable.
+- **Inference, moderate confidence:** adding a semantic high-level planner alone
+  is unlikely to resolve both identified downstream bottlenecks. Neither a VLM
+  planner nor a live POINT adapter is justified by these results yet.
+- **Next discriminator:** unchanged current motor payloads through the existing
+  local Qwen provider. This tests whether another provider-plus-adapter can use
+  the evidence; it does not isolate model size/training or establish a hierarchy.
+  Stop prompt micro-tuning on the predicate corpus.
+
+See [iteration 002 findings](docs/evidence/autonomous_research/iteration_002.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

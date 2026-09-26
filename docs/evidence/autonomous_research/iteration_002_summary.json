@@ -1,0 +1,3749 @@
+{
+  "current-motor-replication-01/report.json": {
+    "artifact_sha256": "651b26a15759f50f3f034e3f229f3a2110d884cc317290032e1a4dee59ed89ad",
+    "raw_sha256": "afe0c64acf7b82d7a0a3c99ed50bd09b02db67cbccbd6fa3466ae71e53fb0804",
+    "planned_calls": 10,
+    "valid_calls": 10,
+    "archive_choices_and_probabilities_reproduced": true,
+    "all_repeats_exact": true,
+    "complete": true,
+    "immediate_effect_comparisons": [
+      {
+        "repeat": 0,
+        "step": 0,
+        "objective": "approach_target",
+        "pool_source": "one_step",
+        "choice": "x+40mm",
+        "candidate_order": [
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "z-40mm",
+          "z-10mm",
+          "rotate_x+10deg",
+          "rotate_z+10deg"
+        ],
+        "effects": {
+          "x+3mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 2.4229370920655953,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.892182946122716,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 29.1141863675916,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 13.111842184788387,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 4.825391171543657,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 4.128455643972416,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 6.7522316735995815,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 29.1141863675916,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 29.1141863675916,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "x+40mm",
+          "actual_joint_qpos_m": -0.15165901295563317,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 64.37021910241758,
+            "eef_mm": [
+              -170.55549428696554,
+              -14.321244704994715,
+              1177.386605964777
+            ],
+            "eef_rotation_matrix": [
+              [
+                1.3188756986894199e-05,
+                0.9984179292937642,
+                -0.05622844734479272
+              ],
+              [
+                0.9999998816705024,
+                -4.051163036618971e-05,
+                -0.00048478633082544437
+              ],
+              [
+                -0.00048629727064756004,
+                -0.05622843429757976,
+                -0.9984178116857715
+              ]
+            ],
+            "finger_gap_mm": 77.33057366962352,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 93.48440547000918,
+            "eef_mm": [
+              -207.91201254523662,
+              -14.458808099785918,
+              1178.2619210543612
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.0018741219546486864,
+                0.9983339323981076,
+                -0.057670157702454476
+              ],
+              [
+                0.9999981477854917,
+                -0.0018962786178102343,
+                -0.0003294738010962729
+              ],
+              [
+                -0.00043828356240750016,
+                -0.05766943341086768,
+                -0.9983356371269058
+              ]
+            ],
+            "finger_gap_mm": 76.44551484166205,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 7,
+          "closure_mm": 0.0,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 29.1141863675916,
+          "genuine_laya_decision": true,
+          "local_objective": "approach_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "06f395928947e373bd9f6f4c62dae8a08013f8ce4ff9c61c40f548939d97c334",
+          "step": 0
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 1,
+        "step": 0,
+        "objective": "approach_target",
+        "pool_source": "one_step",
+        "choice": "x+40mm",
+        "candidate_order": [
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "z-40mm",
+          "z-10mm",
+          "rotate_x+10deg",
+          "rotate_z+10deg"
+        ],
+        "effects": {
+          "x+3mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 2.4229370920655953,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.892182946122716,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 29.1141863675916,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 13.111842184788387,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 4.825391171543657,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 4.128455643972416,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 6.7522316735995815,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 29.1141863675916,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 29.1141863675916,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "x+40mm",
+          "actual_joint_qpos_m": -0.15165901295563317,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 64.37021910241758,
+            "eef_mm": [
+              -170.55549428696554,
+              -14.321244704994715,
+              1177.386605964777
+            ],
+            "eef_rotation_matrix": [
+              [
+                1.3188756986894199e-05,
+                0.9984179292937642,
+                -0.05622844734479272
+              ],
+              [
+                0.9999998816705024,
+                -4.051163036618971e-05,
+                -0.00048478633082544437
+              ],
+              [
+                -0.00048629727064756004,
+                -0.05622843429757976,
+                -0.9984178116857715
+              ]
+            ],
+            "finger_gap_mm": 77.33057366962352,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 93.48440547000918,
+            "eef_mm": [
+              -207.91201254523662,
+              -14.458808099785918,
+              1178.2619210543612
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.0018741219546486864,
+                0.9983339323981076,
+                -0.057670157702454476
+              ],
+              [
+                0.9999981477854917,
+                -0.0018962786178102343,
+                -0.0003294738010962729
+              ],
+              [
+                -0.00043828356240750016,
+                -0.05766943341086768,
+                -0.9983356371269058
+              ]
+            ],
+            "finger_gap_mm": 76.44551484166205,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 7,
+          "closure_mm": 0.0,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 29.1141863675916,
+          "genuine_laya_decision": true,
+          "local_objective": "approach_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "06f395928947e373bd9f6f4c62dae8a08013f8ce4ff9c61c40f548939d97c334",
+          "step": 0
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 0,
+        "step": 1,
+        "objective": "approach_target",
+        "pool_source": "one_step",
+        "choice": "x+40mm",
+        "candidate_order": [
+          "x+10mm",
+          "x+40mm",
+          "z-40mm",
+          "z-10mm",
+          "z-3mm",
+          "rotate_x+10deg",
+          "rotate_z+10deg"
+        ],
+        "effects": {
+          "x+10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 5.9054080796777555,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 15.697691967106032,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 23.0074646397699,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.441634977476134,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 2.4409016799691585,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.28201634829275,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 5.112285469000106,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 15.697691967106032,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 23.0074646397699,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "x+40mm",
+          "actual_joint_qpos_m": -0.15165901295563317,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 48.67252713531155,
+            "eef_mm": [
+              -129.8778755548804,
+              -14.319791207852578,
+              1179.0270301308078
+            ],
+            "eef_rotation_matrix": [
+              [
+                6.431972927611928e-05,
+                0.997688364388932,
+                -0.06795530461934149
+              ],
+              [
+                0.999999987531442,
+                -7.397171864403874e-05,
+                -0.00013951809301623874
+              ],
+              [
+                -0.000144222348697709,
+                -0.06795529479827093,
+                -0.9976883567070389
+              ]
+            ],
+            "finger_gap_mm": 77.82439920373514,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 64.37021910241758,
+            "eef_mm": [
+              -170.55549428696554,
+              -14.321244704994715,
+              1177.386605964777
+            ],
+            "eef_rotation_matrix": [
+              [
+                1.3188756986894199e-05,
+                0.9984179292937642,
+                -0.05622844734479272
+              ],
+              [
+                0.9999998816705024,
+                -4.051163036618971e-05,
+                -0.00048478633082544437
+              ],
+              [
+                -0.00048629727064756004,
+                -0.05622843429757976,
+                -0.9984178116857715
+              ]
+            ],
+            "finger_gap_mm": 77.33057366962352,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 7,
+          "closure_mm": 0.0,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 15.697691967106032,
+          "genuine_laya_decision": true,
+          "local_objective": "approach_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "d89a597e1b43a68db2eddd5563af4e533cbdf644ca73030427022ce3f9191435",
+          "step": 1
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 1,
+        "step": 1,
+        "objective": "approach_target",
+        "pool_source": "one_step",
+        "choice": "x+40mm",
+        "candidate_order": [
+          "x+10mm",
+          "x+40mm",
+          "z-40mm",
+          "z-10mm",
+          "z-3mm",
+          "rotate_x+10deg",
+          "rotate_z+10deg"
+        ],
+        "effects": {
+          "x+10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 5.9054080796777555,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 15.697691967106032,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-40mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 23.0074646397699,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.441634977476134,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 2.4409016799691585,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 7.28201634829275,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.0,
+            "gap_reduction_mm": 5.112285469000106,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 15.697691967106032,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 23.0074646397699,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "x+40mm",
+          "actual_joint_qpos_m": -0.15165901295563317,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 48.67252713531155,
+            "eef_mm": [
+              -129.8778755548804,
+              -14.319791207852578,
+              1179.0270301308078
+            ],
+            "eef_rotation_matrix": [
+              [
+                6.431972927611928e-05,
+                0.997688364388932,
+                -0.06795530461934149
+              ],
+              [
+                0.999999987531442,
+                -7.397171864403874e-05,
+                -0.00013951809301623874
+              ],
+              [
+                -0.000144222348697709,
+                -0.06795529479827093,
+                -0.9976883567070389
+              ]
+            ],
+            "finger_gap_mm": 77.82439920373514,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 64.37021910241758,
+            "eef_mm": [
+              -170.55549428696554,
+              -14.321244704994715,
+              1177.386605964777
+            ],
+            "eef_rotation_matrix": [
+              [
+                1.3188756986894199e-05,
+                0.9984179292937642,
+                -0.05622844734479272
+              ],
+              [
+                0.9999998816705024,
+                -4.051163036618971e-05,
+                -0.00048478633082544437
+              ],
+              [
+                -0.00048629727064756004,
+                -0.05622843429757976,
+                -0.9984178116857715
+              ]
+            ],
+            "finger_gap_mm": 77.33057366962352,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.15165901295563317,
+            "remaining_open_mm": 151.65901295563316,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 7,
+          "closure_mm": 0.0,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 15.697691967106032,
+          "genuine_laya_decision": true,
+          "local_objective": "approach_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "d89a597e1b43a68db2eddd5563af4e533cbdf644ca73030427022ce3f9191435",
+          "step": 1
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 0,
+        "step": 9,
+        "objective": "advance_target",
+        "pool_source": "one_step",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "y+3mm",
+          "y+10mm",
+          "y+40mm",
+          "z-10mm",
+          "z-3mm",
+          "z+3mm",
+          "z+10mm",
+          "z+40mm",
+          "rotate_x-10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "rotate_z+10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 2.842400370395126,
+            "gap_reduction_mm": -21.596953334088145,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-10mm": {
+            "closure_mm": 2.4059105039554995,
+            "gap_reduction_mm": -0.02959897295969407,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-3mm": {
+            "closure_mm": 0.2125102108798682,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+3mm": {
+            "closure_mm": 2.1209005147927176,
+            "gap_reduction_mm": 0.00533896779969927,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 2.335987985853577,
+            "gap_reduction_mm": 0.005919764511683757,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 1.8146432693904035,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-40mm": {
+            "closure_mm": 34.17734203404131,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-10mm": {
+            "closure_mm": 8.582961615286433,
+            "gap_reduction_mm": 0.0073605032793766815,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-3mm": {
+            "closure_mm": 3.2817693332294895,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+3mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.13083522185023763,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+10mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -3.877346833672288,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+40mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -22.243572823233006,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 1.2412544258219582,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 1.9802933304216286,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+3mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.7823012135394963,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+10mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -6.291877059560556,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+40mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -32.221935437920216,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 7.619277627246151,
+            "gap_reduction_mm": -12.021954946989961,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 1.616589974058641,
+            "gap_reduction_mm": -0.21216378447474593,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 1.987665660668353,
+            "gap_reduction_mm": -0.19035589910067974,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 8.2486812686767,
+            "gap_reduction_mm": -3.1924477072637556,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.6029003171567912,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "open": {
+            "closure_mm": 1.7557431826105974,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "close": {
+            "closure_mm": 1.748295637367142,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "hold": {
+            "closure_mm": 1.7557431826105974,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 1.7557431826105974,
+          "gap_reduction_mm": 0.008362171194032285,
+          "target_contact": true,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 0.008362171194032285,
+        "greater_closure_with_no_worse_reported_fields": [
+          "x+40mm",
+          "y-40mm",
+          "y-3mm",
+          "z-3mm"
+        ],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.14780851436721446,
+          "after": {
+            "contact_modes": [
+              "palm"
+            ],
+            "contacts": [
+              {
+                "hand": "gripper0_hand_collision",
+                "moving_target": true,
+                "normal_force_N": 1.2797367748173076,
+                "obstacle": false,
+                "other": "wooden_cabinet_1_g11",
+                "part": "palm",
+                "position_mm": [
+                  -120.9791157445986,
+                  -83.46251916755682,
+                  1122.3597798676042
+                ]
+              }
+            ],
+            "distance_to_moving_geometry_mm": 0.0,
+            "eef_mm": [
+              -131.30379971784552,
+              13.287906451084893,
+              1179.8708020645172
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.011645449936248886,
+                0.9971961530695207,
+                -0.07392033413838894
+              ],
+              [
+                0.5271381115782924,
+                0.06894099295715145,
+                0.8469784830866446
+              ],
+              [
+                0.8496998263018852,
+                -0.029102779823081182,
+                -0.5264629458842429
+              ]
+            ],
+            "finger_gap_mm": 78.27170014181628,
+            "moving_contact": true,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14780851436721446,
+            "remaining_open_mm": 147.80851436721446,
+            "success": false,
+            "target_force_N": 1.2797367748173076
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 0.008362171194032285,
+            "eef_mm": [
+              -132.75019054963005,
+              14.701063856757193,
+              1178.8292134116198
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.012761592190540183,
+                0.9984893351450945,
+                -0.05344332854778805
+              ],
+              [
+                0.5482439448781755,
+                0.05168475230325886,
+                0.8347198711446637
+              ],
+              [
+                0.8362210943698896,
+                -0.018647626681571328,
+                -0.5480753117500974
+              ]
+            ],
+            "finger_gap_mm": 78.33305511694266,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14956425754982505,
+            "remaining_open_mm": 149.56425754982504,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 25,
+          "closure_mm": 1.7557431826105974,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 0.008362171194032285,
+          "genuine_laya_decision": true,
+          "local_objective": "advance_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope",
+            "rotation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "7fd334c5766fbac3dc70caf58941b1c1b27ab84af4212f84212b6bbd33acfc17",
+          "step": 9
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 1,
+        "step": 9,
+        "objective": "advance_target",
+        "pool_source": "one_step",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "y+3mm",
+          "y+10mm",
+          "y+40mm",
+          "z-10mm",
+          "z-3mm",
+          "z+3mm",
+          "z+10mm",
+          "z+40mm",
+          "rotate_x-10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "rotate_z+10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 2.842400370395126,
+            "gap_reduction_mm": -21.596953334088145,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-10mm": {
+            "closure_mm": 2.4059105039554995,
+            "gap_reduction_mm": -0.02959897295969407,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-3mm": {
+            "closure_mm": 0.2125102108798682,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+3mm": {
+            "closure_mm": 2.1209005147927176,
+            "gap_reduction_mm": 0.00533896779969927,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 2.335987985853577,
+            "gap_reduction_mm": 0.005919764511683757,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 1.8146432693904035,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-40mm": {
+            "closure_mm": 34.17734203404131,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-10mm": {
+            "closure_mm": 8.582961615286433,
+            "gap_reduction_mm": 0.0073605032793766815,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-3mm": {
+            "closure_mm": 3.2817693332294895,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+3mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.13083522185023763,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+10mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -3.877346833672288,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y+40mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -22.243572823233006,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-10mm": {
+            "closure_mm": 1.2412544258219582,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 1.9802933304216286,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+3mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.7823012135394963,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+10mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -6.291877059560556,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z+40mm": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -32.221935437920216,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 7.619277627246151,
+            "gap_reduction_mm": -12.021954946989961,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 1.616589974058641,
+            "gap_reduction_mm": -0.21216378447474593,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 1.987665660668353,
+            "gap_reduction_mm": -0.19035589910067974,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 8.2486812686767,
+            "gap_reduction_mm": -3.1924477072637556,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.9206826102461096,
+            "gap_reduction_mm": -0.6029003171567912,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "open": {
+            "closure_mm": 1.7557431826105974,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "close": {
+            "closure_mm": 1.748295637367142,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "hold": {
+            "closure_mm": 1.7557431826105974,
+            "gap_reduction_mm": 0.008362171194032285,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 1.7557431826105974,
+          "gap_reduction_mm": 0.008362171194032285,
+          "target_contact": true,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 0.008362171194032285,
+        "greater_closure_with_no_worse_reported_fields": [
+          "x+40mm",
+          "y-40mm",
+          "y-3mm",
+          "z-3mm"
+        ],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.14780851436721446,
+          "after": {
+            "contact_modes": [
+              "palm"
+            ],
+            "contacts": [
+              {
+                "hand": "gripper0_hand_collision",
+                "moving_target": true,
+                "normal_force_N": 1.2797367748173076,
+                "obstacle": false,
+                "other": "wooden_cabinet_1_g11",
+                "part": "palm",
+                "position_mm": [
+                  -120.9791157445986,
+                  -83.46251916755682,
+                  1122.3597798676042
+                ]
+              }
+            ],
+            "distance_to_moving_geometry_mm": 0.0,
+            "eef_mm": [
+              -131.30379971784552,
+              13.287906451084893,
+              1179.8708020645172
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.011645449936248886,
+                0.9971961530695207,
+                -0.07392033413838894
+              ],
+              [
+                0.5271381115782924,
+                0.06894099295715145,
+                0.8469784830866446
+              ],
+              [
+                0.8496998263018852,
+                -0.029102779823081182,
+                -0.5264629458842429
+              ]
+            ],
+            "finger_gap_mm": 78.27170014181628,
+            "moving_contact": true,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14780851436721446,
+            "remaining_open_mm": 147.80851436721446,
+            "success": false,
+            "target_force_N": 1.2797367748173076
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 0.008362171194032285,
+            "eef_mm": [
+              -132.75019054963005,
+              14.701063856757193,
+              1178.8292134116198
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.012761592190540183,
+                0.9984893351450945,
+                -0.05344332854778805
+              ],
+              [
+                0.5482439448781755,
+                0.05168475230325886,
+                0.8347198711446637
+              ],
+              [
+                0.8362210943698896,
+                -0.018647626681571328,
+                -0.5480753117500974
+              ]
+            ],
+            "finger_gap_mm": 78.33305511694266,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14956425754982505,
+            "remaining_open_mm": 149.56425754982504,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 25,
+          "closure_mm": 1.7557431826105974,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": 0.008362171194032285,
+          "genuine_laya_decision": true,
+          "local_objective": "advance_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope",
+            "rotation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "7fd334c5766fbac3dc70caf58941b1c1b27ab84af4212f84212b6bbd33acfc17",
+          "step": 9
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 0,
+        "step": 10,
+        "objective": "advance_target",
+        "pool_source": "one_step",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "z-3mm",
+          "rotate_x-10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 2.5576452818450446,
+            "gap_reduction_mm": -22.367095367079948,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-10mm": {
+            "closure_mm": 0.6116275309942798,
+            "gap_reduction_mm": -0.25806331602149435,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-3mm": {
+            "closure_mm": 0.2385916825772827,
+            "gap_reduction_mm": -0.15250477182964814,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 0.06585311135526295,
+            "gap_reduction_mm": -0.2056462670474543,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.3031752904258944,
+            "gap_reduction_mm": -1.1017229660727865,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-40mm": {
+            "closure_mm": 31.888340463347376,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-10mm": {
+            "closure_mm": 7.836703426330388,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-3mm": {
+            "closure_mm": 2.3710624155207363,
+            "gap_reduction_mm": -6.931272946923425e-05,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 0.20144673051655793,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 5.815799589318827,
+            "gap_reduction_mm": -11.757813212474623,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 0.03993685411990411,
+            "gap_reduction_mm": -0.12907307086418235,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 1.2242361798034673,
+            "gap_reduction_mm": -0.6989958529734381,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 6.1804894680078934,
+            "gap_reduction_mm": -2.7465405149032924,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "open": {
+            "closure_mm": 0.05638521719539269,
+            "gap_reduction_mm": -0.059129881094599164,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "close": {
+            "closure_mm": 0.05683654317062414,
+            "gap_reduction_mm": -0.05939427125792653,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "hold": {
+            "closure_mm": 0.05638521719539269,
+            "gap_reduction_mm": -0.059129881094599164,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.05638521719539269,
+          "gap_reduction_mm": -0.059129881094599164,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 0.0,
+        "greater_closure_with_no_worse_reported_fields": [
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "z-3mm"
+        ],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.14775212915001906,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 0.059129881094599164,
+            "eef_mm": [
+              -130.9741738222748,
+              12.977134887724798,
+              1180.0732647783188
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.012685610071286726,
+                0.9973484495422259,
+                -0.07165992947831046
+              ],
+              [
+                0.5279746060653253,
+                0.06754192318153333,
+                0.8465700821332534
+              ],
+              [
+                0.8491654082964536,
+                -0.027095365077020372,
+                -0.5274314652578657
+              ]
+            ],
+            "finger_gap_mm": 78.22647404493365,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14775212915001906,
+            "remaining_open_mm": 147.75212915001907,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [
+              "palm"
+            ],
+            "contacts": [
+              {
+                "hand": "gripper0_hand_collision",
+                "moving_target": true,
+                "normal_force_N": 1.2797367748173076,
+                "obstacle": false,
+                "other": "wooden_cabinet_1_g11",
+                "part": "palm",
+                "position_mm": [
+                  -120.9791157445986,
+                  -83.46251916755682,
+                  1122.3597798676042
+                ]
+              }
+            ],
+            "distance_to_moving_geometry_mm": 0.0,
+            "eef_mm": [
+              -131.30379971784552,
+              13.287906451084893,
+              1179.8708020645172
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.011645449936248886,
+                0.9971961530695207,
+                -0.07392033413838894
+              ],
+              [
+                0.5271381115782924,
+                0.06894099295715145,
+                0.8469784830866446
+              ],
+              [
+                0.8496998263018852,
+                -0.029102779823081182,
+                -0.5264629458842429
+              ]
+            ],
+            "finger_gap_mm": 78.27170014181628,
+            "moving_contact": true,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14780851436721446,
+            "remaining_open_mm": 147.80851436721446,
+            "success": false,
+            "target_force_N": 1.2797367748173076
+          },
+          "candidate_count": 16,
+          "closure_mm": 0.05638521719539269,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": -0.059129881094599164,
+          "genuine_laya_decision": true,
+          "local_objective": "advance_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "bb3d3adab9b526e89c6f475d8ca926d50891a7d2dfc7f90b90d725b9220a0b99",
+          "step": 10
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 1,
+        "step": 10,
+        "objective": "advance_target",
+        "pool_source": "one_step",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "z-3mm",
+          "rotate_x-10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 2.5576452818450446,
+            "gap_reduction_mm": -22.367095367079948,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-10mm": {
+            "closure_mm": 0.6116275309942798,
+            "gap_reduction_mm": -0.25806331602149435,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x-3mm": {
+            "closure_mm": 0.2385916825772827,
+            "gap_reduction_mm": -0.15250477182964814,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+10mm": {
+            "closure_mm": 0.06585311135526295,
+            "gap_reduction_mm": -0.2056462670474543,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "x+40mm": {
+            "closure_mm": 0.3031752904258944,
+            "gap_reduction_mm": -1.1017229660727865,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-40mm": {
+            "closure_mm": 31.888340463347376,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-10mm": {
+            "closure_mm": 7.836703426330388,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "y-3mm": {
+            "closure_mm": 2.3710624155207363,
+            "gap_reduction_mm": -6.931272946923425e-05,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "z-3mm": {
+            "closure_mm": 0.20144673051655793,
+            "gap_reduction_mm": 0.0,
+            "target_contact": true,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 5.815799589318827,
+            "gap_reduction_mm": -11.757813212474623,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 0.03993685411990411,
+            "gap_reduction_mm": -0.12907307086418235,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 1.2242361798034673,
+            "gap_reduction_mm": -0.6989958529734381,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 6.1804894680078934,
+            "gap_reduction_mm": -2.7465405149032924,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "open": {
+            "closure_mm": 0.05638521719539269,
+            "gap_reduction_mm": -0.059129881094599164,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "close": {
+            "closure_mm": 0.05683654317062414,
+            "gap_reduction_mm": -0.05939427125792653,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          },
+          "hold": {
+            "closure_mm": 0.05638521719539269,
+            "gap_reduction_mm": -0.059129881094599164,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.05638521719539269,
+          "gap_reduction_mm": -0.059129881094599164,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "maximum_gap_reduction_mm": 0.0,
+        "greater_closure_with_no_worse_reported_fields": [
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "z-3mm"
+        ],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": false,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.14775212915001906,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 0.059129881094599164,
+            "eef_mm": [
+              -130.9741738222748,
+              12.977134887724798,
+              1180.0732647783188
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.012685610071286726,
+                0.9973484495422259,
+                -0.07165992947831046
+              ],
+              [
+                0.5279746060653253,
+                0.06754192318153333,
+                0.8465700821332534
+              ],
+              [
+                0.8491654082964536,
+                -0.027095365077020372,
+                -0.5274314652578657
+              ]
+            ],
+            "finger_gap_mm": 78.22647404493365,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14775212915001906,
+            "remaining_open_mm": 147.75212915001907,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [
+              "palm"
+            ],
+            "contacts": [
+              {
+                "hand": "gripper0_hand_collision",
+                "moving_target": true,
+                "normal_force_N": 1.2797367748173076,
+                "obstacle": false,
+                "other": "wooden_cabinet_1_g11",
+                "part": "palm",
+                "position_mm": [
+                  -120.9791157445986,
+                  -83.46251916755682,
+                  1122.3597798676042
+                ]
+              }
+            ],
+            "distance_to_moving_geometry_mm": 0.0,
+            "eef_mm": [
+              -131.30379971784552,
+              13.287906451084893,
+              1179.8708020645172
+            ],
+            "eef_rotation_matrix": [
+              [
+                -0.011645449936248886,
+                0.9971961530695207,
+                -0.07392033413838894
+              ],
+              [
+                0.5271381115782924,
+                0.06894099295715145,
+                0.8469784830866446
+              ],
+              [
+                0.8496998263018852,
+                -0.029102779823081182,
+                -0.5264629458842429
+              ]
+            ],
+            "finger_gap_mm": 78.27170014181628,
+            "moving_contact": true,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.14780851436721446,
+            "remaining_open_mm": 147.80851436721446,
+            "success": false,
+            "target_force_N": 1.2797367748173076
+          },
+          "candidate_count": 16,
+          "closure_mm": 0.05638521719539269,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": -0.059129881094599164,
+          "genuine_laya_decision": true,
+          "local_objective": "advance_target",
+          "lookahead_recovery": false,
+          "nominal_tracking_flags": [],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "one_step",
+          "snapshot_id": "bb3d3adab9b526e89c6f475d8ca926d50891a7d2dfc7f90b90d725b9220a0b99",
+          "step": 10
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 0,
+        "step": 87,
+        "objective": "reposition",
+        "pool_source": "lookahead",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "y+3mm",
+          "y+10mm",
+          "z-40mm",
+          "z-10mm",
+          "z-3mm",
+          "z+3mm",
+          "z+10mm",
+          "rotate_x-10deg",
+          "rotate_x+10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "rotate_z+10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -25.948211888383646,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -18.324196100004283,
+              "net_progress": 2.9168350758625934,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x-10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -9.223191693659984,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.8965910262816,
+              "net_progress": 0.8963447031288818,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -6.625077944101278,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.679026255957716,
+              "net_progress": 0.5243252143088822,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.377655259578976,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.636668091871038,
+              "net_progress": 0.5303992207051772,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.827637619231353,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.5826505303503513,
+              "net_progress": 0.6702295792517312,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -6.786643021714729,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4404573801761167,
+              "net_progress": 19.118076253488685,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "y-40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.698527857321964,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4366899516510396,
+              "net_progress": 5.222757306576016,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "x+40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "y-10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -2.9927183245598528,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 0.7578540061490349,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "y-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -3.935568114799892,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -0.5807141084343415,
+              "net_progress": 0.5255843647228795,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "y+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -7.466942725280893,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.497869009392364,
+              "net_progress": 0.5253196163984217,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "y+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.522053493320467,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -11.601153868148172,
+              "net_progress": 0.6952470113095605,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z-40mm": {
+            "closure_mm": -4.029590896321205,
+            "gap_reduction_mm": 0.835231833135365,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 19.472814908242846,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "z-10mm": {
+            "closure_mm": -1.4589446881472858,
+            "gap_reduction_mm": -0.8731456673679983,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 1.1016832251424455,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-10mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "z-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -3.605825653845473,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.885735715410126,
+              "net_progress": 0.450590801633316,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-3mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -7.59546003840844,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.2339882922517145,
+              "net_progress": 0.836568281561513,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.995880289680851,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -12.490655404012161,
+              "net_progress": 1.1227953456830266,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "rotate_x+10deg",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -17.289167859506502,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 1.871408181878885,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-40mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "rotate_x+10deg": {
+            "closure_mm": -6.447055920654081,
+            "gap_reduction_mm": -5.424883228566895,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.436358803263969,
+              "net_progress": 1.686987181737848,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -1.1406666858977514,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4453095870255064,
+              "net_progress": 28.510482948285997,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.083101482545244,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.078106292776844,
+              "net_progress": 1.1126595537162416,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -13.10414869418747,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -20.55599728624909,
+              "net_progress": 2.0958843190472534,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "rotate_x+10deg",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.098731591252464,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4341013633700275,
+              "net_progress": 24.527862351862026,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "open": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.589761826748159,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.082681796971494,
+              "net_progress": 0.5154217075568068,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "close": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.5898076646495625,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.081463868774722,
+              "net_progress": 0.513968822583817,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "hold": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.5898076646495625,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.081463868774722,
+              "net_progress": 0.513968822583817,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.00982592746714972,
+          "gap_reduction_mm": -5.589761826748159,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8,
+          "hypothetical_witness_not_executed": {
+            "net_gap_reduction_mm": -3.082681796971494,
+            "net_progress": 0.5154217075568068,
+            "peak_obstacle_force_N": 0.0,
+            "second_input": "z-10mm",
+            "terminal_contact": false,
+            "terminal_success": false,
+            "witnessed_effects": [
+              "advance_target"
+            ]
+          }
+        },
+        "maximum_gap_reduction_mm": 0.835231833135365,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": true,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.05548134924174675,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 8.03658532122444,
+            "eef_mm": [
+              -99.50330728516762,
+              -50.96515962341028,
+              1181.3168465470053
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.7028305161954628,
+                0.6840536539568569,
+                -0.1951918646170728
+              ],
+              [
+                0.28019231950585555,
+                -0.01399655382230246,
+                0.9598418414358824
+              ],
+              [
+                0.6538513054161057,
+                -0.729297398178116,
+                -0.20150378511651423
+              ]
+            ],
+            "finger_gap_mm": 57.18202049760146,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.05548134924174675,
+            "remaining_open_mm": 55.48134924174675,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 2.4468234944762806,
+            "eef_mm": [
+              -95.9132711204574,
+              -54.61336991190736,
+              1180.2226849161384
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.7017684818071779,
+                0.6741778624872282,
+                -0.23022859873221863
+              ],
+              [
+                0.29277698251334494,
+                0.021688430853660817,
+                0.9559347522072239
+              ],
+              [
+                0.6494633449644633,
+                -0.7382505141882789,
+                -0.18216350306335397
+              ]
+            ],
+            "finger_gap_mm": 1.1959364886369173,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.0554911751692139,
+            "remaining_open_mm": 55.491175169213896,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 25,
+          "closure_mm": 0.00982592746714972,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": -5.589761826748159,
+          "genuine_laya_decision": true,
+          "local_objective": "reposition",
+          "lookahead_recovery": true,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope",
+            "rotation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "lookahead",
+          "snapshot_id": "c408ce4e144b7808a16cac2c8c6157c4a33803578a9e820f4615f8d4c4253261",
+          "step": 87
+        },
+        "new_execution": false
+      },
+      {
+        "repeat": 1,
+        "step": 87,
+        "objective": "reposition",
+        "pool_source": "lookahead",
+        "choice": "open",
+        "candidate_order": [
+          "x-40mm",
+          "x-10mm",
+          "x-3mm",
+          "x+3mm",
+          "x+10mm",
+          "x+40mm",
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "y+3mm",
+          "y+10mm",
+          "z-40mm",
+          "z-10mm",
+          "z-3mm",
+          "z+3mm",
+          "z+10mm",
+          "rotate_x-10deg",
+          "rotate_x+10deg",
+          "rotate_y-10deg",
+          "rotate_y+10deg",
+          "rotate_z-10deg",
+          "rotate_z+10deg",
+          "open",
+          "close",
+          "hold"
+        ],
+        "effects": {
+          "x-40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -25.948211888383646,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -18.324196100004283,
+              "net_progress": 2.9168350758625934,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x-10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -9.223191693659984,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.8965910262816,
+              "net_progress": 0.8963447031288818,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -6.625077944101278,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.679026255957716,
+              "net_progress": 0.5243252143088822,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.377655259578976,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.636668091871038,
+              "net_progress": 0.5303992207051772,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.827637619231353,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.5826505303503513,
+              "net_progress": 0.6702295792517312,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "x+40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -6.786643021714729,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4404573801761167,
+              "net_progress": 19.118076253488685,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "y-40mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.698527857321964,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4366899516510396,
+              "net_progress": 5.222757306576016,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "x+40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "y-10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -2.9927183245598528,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 0.7578540061490349,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "y-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -3.935568114799892,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -0.5807141084343415,
+              "net_progress": 0.5255843647228795,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "y+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -7.466942725280893,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.497869009392364,
+              "net_progress": 0.5253196163984217,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "y+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.522053493320467,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -11.601153868148172,
+              "net_progress": 0.6952470113095605,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z-40mm": {
+            "closure_mm": -4.029590896321205,
+            "gap_reduction_mm": 0.835231833135365,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 19.472814908242846,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "z-10mm": {
+            "closure_mm": -1.4589446881472858,
+            "gap_reduction_mm": -0.8731456673679983,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 1.1016832251424455,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-10mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "z-3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -3.605825653845473,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -2.885735715410126,
+              "net_progress": 0.450590801633316,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-3mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z+3mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -7.59546003840844,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.2339882922517145,
+              "net_progress": 0.836568281561513,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "z+10mm": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.995880289680851,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -12.490655404012161,
+              "net_progress": 1.1227953456830266,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "rotate_x+10deg",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_x-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -17.289167859506502,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4468234944762806,
+              "net_progress": 1.871408181878885,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-40mm",
+              "terminal_contact": true,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "establish_contact",
+                "approach_target"
+              ]
+            }
+          },
+          "rotate_x+10deg": {
+            "closure_mm": -6.447055920654081,
+            "gap_reduction_mm": -5.424883228566895,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.436358803263969,
+              "net_progress": 1.686987181737848,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_y-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -1.1406666858977514,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4453095870255064,
+              "net_progress": 28.510482948285997,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "rotate_y+10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -12.083101482545244,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -5.078106292776844,
+              "net_progress": 1.1126595537162416,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_z-10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -13.10414869418747,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -20.55599728624909,
+              "net_progress": 2.0958843190472534,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "rotate_x+10deg",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "rotate_z+10deg": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -4.098731591252464,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": 2.4341013633700275,
+              "net_progress": 24.527862351862026,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "y-40mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target",
+                "approach_target"
+              ]
+            }
+          },
+          "open": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.589761826748159,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.082681796971494,
+              "net_progress": 0.5154217075568068,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "close": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.5898076646495625,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.081463868774722,
+              "net_progress": 0.513968822583817,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          },
+          "hold": {
+            "closure_mm": 0.00982592746714972,
+            "gap_reduction_mm": -5.5898076646495625,
+            "target_contact": false,
+            "obstacle_peak_N": 0.0,
+            "success": false,
+            "controls": 8,
+            "hypothetical_witness_not_executed": {
+              "net_gap_reduction_mm": -3.081463868774722,
+              "net_progress": 0.513968822583817,
+              "peak_obstacle_force_N": 0.0,
+              "second_input": "z-10mm",
+              "terminal_contact": false,
+              "terminal_success": false,
+              "witnessed_effects": [
+                "advance_target"
+              ]
+            }
+          }
+        },
+        "chosen_effect": {
+          "closure_mm": 0.00982592746714972,
+          "gap_reduction_mm": -5.589761826748159,
+          "target_contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8,
+          "hypothetical_witness_not_executed": {
+            "net_gap_reduction_mm": -3.082681796971494,
+            "net_progress": 0.5154217075568068,
+            "peak_obstacle_force_N": 0.0,
+            "second_input": "z-10mm",
+            "terminal_contact": false,
+            "terminal_success": false,
+            "witnessed_effects": [
+              "advance_target"
+            ]
+          }
+        },
+        "maximum_gap_reduction_mm": 0.835231833135365,
+        "greater_closure_with_no_worse_reported_fields": [],
+        "strict_argmax_is_not_a_correctness_label": true,
+        "witness_is_not_executed_sequence": true,
+        "source_executed_outcome": {
+          "action": "open",
+          "actual_joint_qpos_m": -0.05548134924174675,
+          "after": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 8.03658532122444,
+            "eef_mm": [
+              -99.50330728516762,
+              -50.96515962341028,
+              1181.3168465470053
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.7028305161954628,
+                0.6840536539568569,
+                -0.1951918646170728
+              ],
+              [
+                0.28019231950585555,
+                -0.01399655382230246,
+                0.9598418414358824
+              ],
+              [
+                0.6538513054161057,
+                -0.729297398178116,
+                -0.20150378511651423
+              ]
+            ],
+            "finger_gap_mm": 57.18202049760146,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.05548134924174675,
+            "remaining_open_mm": 55.48134924174675,
+            "success": false,
+            "target_force_N": 0
+          },
+          "before": {
+            "contact_modes": [],
+            "contacts": [],
+            "distance_to_moving_geometry_mm": 2.4468234944762806,
+            "eef_mm": [
+              -95.9132711204574,
+              -54.61336991190736,
+              1180.2226849161384
+            ],
+            "eef_rotation_matrix": [
+              [
+                0.7017684818071779,
+                0.6741778624872282,
+                -0.23022859873221863
+              ],
+              [
+                0.29277698251334494,
+                0.021688430853660817,
+                0.9559347522072239
+              ],
+              [
+                0.6494633449644633,
+                -0.7382505141882789,
+                -0.18216350306335397
+              ]
+            ],
+            "finger_gap_mm": 1.1959364886369173,
+            "moving_contact": false,
+            "obstacle_contact": false,
+            "obstacle_force_N": 0,
+            "qpos_m": -0.0554911751692139,
+            "remaining_open_mm": 55.491175169213896,
+            "success": false,
+            "target_force_N": 0
+          },
+          "candidate_count": 25,
+          "closure_mm": 0.00982592746714972,
+          "comparison": {
+            "closure_error_mm": 0.0,
+            "controls_match": true,
+            "gap_reduction_error_mm": 0.0,
+            "obstacle_contact_match": true,
+            "obstacle_force_error_N": 0.0,
+            "obstacle_pairs_match": true,
+            "passed": true,
+            "state_max_error": 0.0,
+            "success_match": true,
+            "target_contact_match": true
+          },
+          "controls": 8,
+          "decision_source": "laya",
+          "fallback": null,
+          "forced_singleton": false,
+          "gap_reduction_mm": -5.589761826748159,
+          "genuine_laya_decision": true,
+          "local_objective": "reposition",
+          "lookahead_recovery": true,
+          "nominal_tracking_flags": [
+            "translation_outside_reset_reference_envelope",
+            "rotation_outside_reset_reference_envelope"
+          ],
+          "obstacle_peak_N": 0.0,
+          "official_success": false,
+          "pool_source": "lookahead",
+          "snapshot_id": "c408ce4e144b7808a16cac2c8c6157c4a33803578a9e820f4615f8d4c4253261",
+          "step": 87
+        },
+        "new_execution": false
+      }
+    ]
+  },
+  "predicate-decomposition-run-01/independent-audit.json": {
+    "artifact_sha256": "7a177ac18973889372b884b514adfde4320a7ee694ce86a473fde2efc18ffa97",
+    "run_sha256": "b797a99122f0180edd567540c5932615b17f67858e7a38b0775bb69dde6cc476",
+    "complete": true,
+    "calls": 1184,
+    "controls_exact": 704,
+    "repeats_exact": 592,
+    "binary_temperature": 1.9063563346862793,
+    "per_goal_condition_first_repeat": {
+      "closed/full_control": {
+        "tp": 18,
+        "tn": 17,
+        "fp": 39,
+        "fn": 0,
+        "n": 74,
+        "sensitivity": 1.0,
+        "specificity": 0.30357142857142855,
+        "balanced_accuracy": 0.6517857142857143
+      },
+      "closed/full_spaced": {
+        "tp": 0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 18,
+        "n": 74,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.5
+      },
+      "closed/opening_only": {
+        "tp": 0,
+        "tn": 30,
+        "fp": 0,
+        "fn": 44,
+        "n": 74,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.5
+      },
+      "closed/stop_only": {
+        "tp": 0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 18,
+        "n": 74,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "balanced_accuracy": 0.5
+      },
+      "open/full_control": {
+        "tp": 10,
+        "tn": 0,
+        "fp": 64,
+        "fn": 0,
+        "n": 74,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.5
+      },
+      "open/full_spaced": {
+        "tp": 10,
+        "tn": 0,
+        "fp": 64,
+        "fn": 0,
+        "n": 74,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.5
+      },
+      "open/opening_only": {
+        "tp": 10,
+        "tn": 0,
+        "fp": 64,
+        "fn": 0,
+        "n": 74,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.5
+      },
+      "open/stop_only": {
+        "tp": 32,
+        "tn": 0,
+        "fp": 42,
+        "fn": 0,
+        "n": 74,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "balanced_accuracy": 0.5
+      }
+    },
+    "limits": [
+      "Repeated answer orders are not independent physical samples.",
+      "Closed full truth equals STOP-only truth; open full truth equals opening-only truth in this corpus.",
+      "No simulator execution or visual/interaction competence inference."
+    ]
+  },
+  "point-grounding-probe-02/independent-audit.json": {
+    "artifact_sha256": "7d67fb11fbec904e484ff065efc646e49ce2ab57bb97dcee01e85930779a7ec7",
+    "source_log_sha256": "c09346aee4e277994e8f14f39ab34d29027c820936c5b10856a62a656db9c885",
+    "all36calls_record_complete": true,
+    "generated_id_decoding_matches_raw": true,
+    "source_model_identity_matches": true,
+    "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+    "summary": {
+      "point": {
+        "calls": 18,
+        "eos": 18,
+        "at_or_beyond_cap": 0,
+        "status_single_point": 14,
+        "status_mixed": 4
+      },
+      "box": {
+        "calls": 18,
+        "eos": 8,
+        "at_or_beyond_cap": 9,
+        "status_multiple_boxes": 9,
+        "status_single_box": 8,
+        "status_malformed": 1
+      },
+      "point_member": {
+        "true": 9,
+        "false": 5,
+        "unknown": 4
+      },
+      "box_member": {
+        "true": 1,
+        "false": 7,
+        "unknown": 10
+      },
+      "archived_box_center_member": {
+        "true": 1,
+        "false": 17,
+        "unknown": 0
+      }
+    },
+    "late6": [
+      {
+        "index": 7,
+        "run": "init0-raycast-v02",
+        "step": 120,
+        "point_status": "mixed",
+        "point_eos": true,
+        "point_member": null,
+        "box_status": "multiple_boxes",
+        "box_eos": false,
+        "box_member": null,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": null,
+        "raw_points": [
+          [
+            90.24,
+            195.072
+          ]
+        ],
+        "raw_first_box": [
+          72.96,
+          159.36,
+          102.528,
+          259.968
+        ],
+        "archived_box": [
+          72,
+          159,
+          102,
+          259
+        ]
+      },
+      {
+        "index": 8,
+        "run": "init0-raycast-v02",
+        "step": 140,
+        "point_status": "single_point",
+        "point_eos": true,
+        "point_member": false,
+        "box_status": "single_box",
+        "box_eos": true,
+        "box_member": false,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": [
+          86.784,
+          226.56
+        ],
+        "raw_points": [
+          [
+            86.784,
+            226.56
+          ]
+        ],
+        "raw_first_box": [
+          72.192,
+          159.36,
+          97.92,
+          259.968
+        ],
+        "archived_box": [
+          72,
+          159,
+          97,
+          259
+        ]
+      },
+      {
+        "index": 9,
+        "run": "init0-raycast-v02",
+        "step": 144,
+        "point_status": "mixed",
+        "point_eos": true,
+        "point_member": null,
+        "box_status": "single_box",
+        "box_eos": true,
+        "box_member": false,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": null,
+        "raw_points": [
+          [
+            85.632,
+            171.264
+          ]
+        ],
+        "raw_first_box": [
+          66.048,
+          156.672,
+          96.0,
+          259.968
+        ],
+        "archived_box": [
+          66,
+          156,
+          96,
+          259
+        ]
+      },
+      {
+        "index": 10,
+        "run": "init0-raycast-v02",
+        "step": 152,
+        "point_status": "mixed",
+        "point_eos": true,
+        "point_member": null,
+        "box_status": "multiple_boxes",
+        "box_eos": false,
+        "box_member": null,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": null,
+        "raw_points": [
+          [
+            83.712,
+            178.176
+          ]
+        ],
+        "raw_first_box": [
+          64.896,
+          167.04,
+          97.152,
+          259.968
+        ],
+        "archived_box": [
+          64,
+          167,
+          97,
+          259
+        ]
+      },
+      {
+        "index": 11,
+        "run": "init0-raycast-v02",
+        "step": 155,
+        "point_status": "single_point",
+        "point_eos": true,
+        "point_member": false,
+        "box_status": "single_box",
+        "box_eos": true,
+        "box_member": false,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": [
+          81.408,
+          234.24
+        ],
+        "raw_points": [
+          [
+            81.408,
+            234.24
+          ]
+        ],
+        "raw_first_box": [
+          59.136,
+          162.048,
+          97.152,
+          259.968
+        ],
+        "archived_box": [
+          59,
+          162,
+          97,
+          259
+        ]
+      },
+      {
+        "index": 17,
+        "run": "init2-raycast-v02",
+        "step": 144,
+        "point_status": "single_point",
+        "point_eos": true,
+        "point_member": false,
+        "box_status": "single_box",
+        "box_eos": true,
+        "box_member": false,
+        "archived_box_center_member": false,
+        "raw_first_box_matches_archive_diagnostic_only": true,
+        "point_xy": [
+          90.24,
+          171.264
+        ],
+        "raw_points": [
+          [
+            90.24,
+            171.264
+          ]
+        ],
+        "raw_first_box": [
+          72.192,
+          165.12,
+          104.064,
+          259.968
+        ],
+        "archived_box": [
+          72,
+          165,
+          104,
+          259
+        ]
+      }
+    ],
+    "oracle_usage": "raw masks read only after model records; evaluator-only"
+  }
+}

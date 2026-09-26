@@ -107,10 +107,42 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   contract-positive, so old positive/negative labels would be uninformative here.
 - **Grounding:** Matched 36 BOX/POINT calls on the same 18 full-RGB development
   frames, existing checkpoint/query/settings, no new model or live execution.
-- **Status:** Protocol/instrumentation preparation; no results claimed yet.
+- **Status:** All three experiments completed. Exact current-interface controls
+  reproduce; clause/spacing changes do not recover discrimination; POINT improves
+  early grounding but fails all six late cases. See results below.
 - **Why these:** These discriminate known model-interface and semantic-support
   failures before adding a high-level planner around them. They do not protect
   Laya or exclude a different model/responsibility split if the evidence warrants it.
+
+### Iteration 002 — results and belief update
+
+- **Current interface:** 10/10 choices, probabilities and logits reproduce the
+  archive. At advance boundaries 9/10, passive `open` has much smaller immediate
+  closure than other admitted actions. Thus the issue remains relevant to the
+  currently successful architecture, despite eventual goal completion.
+- **Predicate decomposition:** all 1,184 calls pass integrity; all spaced-label
+  conditions classify constantly within goal (closed negative, open positive).
+  Per-goal balanced accuracy 0.5; pooled scores are misleading. Clause coverage
+  is insufficient for a general conjunction diagnosis. Stop prompt micro-tuning.
+- **Grounding:** 36 matched calls. POINT: 9 hits, 5 misses, 4 mixed-output unknowns;
+  all six late frames unsuccessful. Fresh BOX: 1 hit, 7 misses, 10 unknowns under
+  strict completeness. All first-box prefixes reproduce historical boxes, exposing
+  old acceptance of incomplete generation. No live adapter promoted.
+- **Implementation failure:** grounding attempt 01 failed during model metadata
+  JSON serialization before any generation. Preserved failure; localized dtype
+  serialization fix; clean separate attempt 02. No inference retry hidden.
+- **Inspection:** independent raw/token evaluators plus RGB overlays, including
+  two clear wrong-handle late points. Distinguish small boundary misses, wrong
+  entity, mixed output and truncation.
+- **Artifacts:** [iteration 002 findings](../evidence/autonomous_research/iteration_002.md)
+  and linked hashed summaries; raw records under `runs/autonomous-research/`.
+- **Interpretation:** correct subgoal text alone is not sufficient evidence for
+  strong motor ranking; better geometric accuracy alone does not solve semantic
+  target identity. A high-level planner is still an untested contribution.
+- **Next experiment:** frozen current-motor evidence through the already available
+  Qwen provider, ten calls. Separate provider evidence use from absence of task
+  decomposition, with provider/wrapper confounds explicit. Parallel read-only
+  audit of cached vision capabilities and a decisive target-identity test.
 
 ## Iteration and stopping rules
 
