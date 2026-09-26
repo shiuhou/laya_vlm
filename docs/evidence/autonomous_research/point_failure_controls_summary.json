@@ -1,0 +1,317 @@
+{
+  "scope": "offline image-specific POINT failure and RGB correspondence controls; no execution or recovery",
+  "point_orders": [
+    {
+      "path": "runs/autonomous-research/point-replay-target-first-01",
+      "commit": "ff4a57df8c43e396430767da7c3c8c5c30926bb3",
+      "source_log_sha256": "5c9dda12efa9b5b7a4163bbc38f45bcd447f66cd8d685163e9ef7ed047dde769",
+      "complete": true,
+      "calls": [
+        {
+          "boundary": 21,
+          "cold": true,
+          "tokens": 25,
+          "eos": true,
+          "parsed_status": "single_point",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        },
+        {
+          "boundary": 20,
+          "cold": false,
+          "tokens": 25,
+          "eos": true,
+          "parsed_status": "single_point",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        },
+        {
+          "boundary": 25,
+          "cold": false,
+          "tokens": 258,
+          "eos": false,
+          "parsed_status": "malformed",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        }
+      ]
+    },
+    {
+      "path": "runs/autonomous-research/point-replay-terminal-first-01",
+      "commit": "ff4a57df8c43e396430767da7c3c8c5c30926bb3",
+      "source_log_sha256": "04134b517cdfaf8983a63e0ccb0383e4a95480c95a3b40c35af5151d300ad1ed",
+      "complete": true,
+      "calls": [
+        {
+          "boundary": 25,
+          "cold": true,
+          "tokens": 258,
+          "eos": false,
+          "parsed_status": "malformed",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        },
+        {
+          "boundary": 20,
+          "cold": false,
+          "tokens": 25,
+          "eos": true,
+          "parsed_status": "single_point",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        },
+        {
+          "boundary": 21,
+          "cold": false,
+          "tokens": 25,
+          "eos": true,
+          "parsed_status": "single_point",
+          "archive_tokens_equal": true,
+          "archive_raw_equal": true
+        }
+      ]
+    }
+  ],
+  "temporal": {
+    "path": "runs/autonomous-research/point-temporal-probe-01",
+    "commit": "34114041c7e72f77659dd4cc553f53ad0c340f06",
+    "source_log_sha256": "93486d957c6783ac51b187c0222099ea362df67b5786fb4a109bd53d31a48b08",
+    "conditions": [
+      {
+        "condition": "static",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 25,
+          "unknown_or_native_failure_after_seed": 0,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 25,
+            "median": 0.0003388000993526385,
+            "max": 0.0011605710980106456
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.0003388000993526385,
+            "max": 0.0011605710980106456
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.0,
+            "max": 0.0
+          },
+          "forward_backward_residual_px": {
+            "n": 25,
+            "median": 0.0001510543079348281,
+            "max": 0.0007186225266195834
+          }
+        }
+      },
+      {
+        "condition": "shift_x8",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 25,
+          "unknown_or_native_failure_after_seed": 0,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 8.0,
+            "max": 8.0
+          },
+          "forward_backward_residual_px": {
+            "n": 25,
+            "median": 0.00012302029062993824,
+            "max": 0.0006589606637135148
+          }
+        }
+      },
+      {
+        "condition": "shift_y8",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 25,
+          "unknown_or_native_failure_after_seed": 0,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 8.0,
+            "max": 8.0
+          },
+          "forward_backward_residual_px": {
+            "n": 25,
+            "median": 0.00014475757780019194,
+            "max": 0.0006589606637135148
+          }
+        }
+      },
+      {
+        "condition": "shift_xy_minus8",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 25,
+          "unknown_or_native_failure_after_seed": 0,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.00032332794342677446,
+            "max": 0.0011670729477522548
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 11.313708498984761,
+            "max": 11.313708498984761
+          },
+          "forward_backward_residual_px": {
+            "n": 25,
+            "median": 0.00012947511277161539,
+            "max": 0.0006589606637135148
+          }
+        }
+      },
+      {
+        "condition": "target_occluded",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 0,
+          "unknown_or_native_failure_after_seed": 25,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 1,
+            "median": 7.933505193805032,
+            "max": 7.933505193805032
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.0,
+            "max": 0.0
+          },
+          "forward_backward_residual_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          }
+        }
+      },
+      {
+        "condition": "offtarget_occluded",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 25,
+          "unknown_or_native_failure_after_seed": 0,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 25,
+            "median": 0.00042751848529424744,
+            "max": 0.0013441598843716577
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.00042751848529424744,
+            "max": 0.0013441598843716577
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.0,
+            "max": 0.0
+          },
+          "forward_backward_residual_px": {
+            "n": 25,
+            "median": 0.00014475757780019194,
+            "max": 0.0006291359895840287
+          }
+        }
+      },
+      {
+        "condition": "target_occluded_distractor",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 0,
+          "unknown_or_native_failure_after_seed": 25,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 1,
+            "median": 7.93050322286179,
+            "max": 7.93050322286179
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 0.0,
+            "max": 0.0
+          },
+          "forward_backward_residual_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          }
+        }
+      },
+      {
+        "condition": "wrong_seed",
+        "summary": {
+          "frames": 26,
+          "native_status_ok_after_seed": 0,
+          "unknown_or_native_failure_after_seed": 25,
+          "native_ok_while_target_occluded": 0,
+          "visible_primary_correspondence_error_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          },
+          "tracked_distance_to_primary_reference_px": {
+            "n": 1,
+            "median": 62.39390995922599,
+            "max": 62.39390995922599
+          },
+          "frozen_pixel_distance_to_primary_reference_px": {
+            "n": 25,
+            "median": 62.39390995922599,
+            "max": 62.39390995922599
+          },
+          "forward_backward_residual_px": {
+            "n": 0,
+            "median": null,
+            "max": null
+          }
+        }
+      }
+    ],
+    "recording_qualification": "Original logs omit attempted backward coordinates; independent CPU replay records them separately. Subsequent a20c660 adds the field without changing propagation.",
+    "occlusion_qualification": "Forward LK status1; reverse status0 stops propagation. Pyramids may use surrounding context.",
+    "independent_replay_report_sha256": "eec380ede6ae16dd288340402e9510ae83368277758f960ed54f8e6317aff32d"
+  }
+}

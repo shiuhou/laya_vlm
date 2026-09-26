@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-26. Living research memory, not a record of established competence.
+Updated 2026-09-27. Living research memory, not a record of established competence.
 The autonomous mission starts at `b73b5b43dbef29749677fae06b25e94ca27bad87`.
 See [research log](docs/research/autonomous_research_log.md) for experiments and
 the [first protocol](docs/research/predicate_verification_protocol.md).
@@ -141,6 +141,28 @@ See [visual and approach findings](docs/evidence/autonomous_research/visual_and_
   Neither changes live policy, substitutes old truth, or invents covariance.
 
 See [physical approach findings](docs/evidence/autonomous_research/coarse_physical_findings.md).
+
+## Update after first-failure controls
+
+- **Observed:** all six frozen-RGB POINT calls reproduce archived tokens and text
+  in two fresh process orders. Wrong-referent boundary 21 and malformed boundary
+  25 each reproduce cold. Prior episode inference history is not necessary for
+  either failure; this is not a claim of universal model statelessness.
+- **Observed:** fixed default RGB correspondence follows three synthetic image
+  shifts with maximum error 0.001167 px versus frozen-pixel errors 8/8/11.314 px.
+  Both target-patch occlusions stop on reverse native-status failure; forward
+  status alone remains successful. Static control/off-target occlusion continue.
+  No residual-to-probability mapping, real camera-motion or identity validation.
+- **Decision:** do not expand a tracker/recovery architecture around the one known
+  failure. Test the originally proposed visual high-level role directly using
+  the same frozen VLM: full-camera RGB versus task-text-only local-objective
+  proposals on visually distinguishable archived Task-2 states. Marker-binding
+  failure is insufficient evidence that high-level planning is also ineffective.
+- **Guardrail:** provisional subgoals do not certify grasp, placement fit, or safe
+  closing. The new test must preserve ambiguity and measure useful coverage so
+  always returning unknown cannot count as competent planning.
+
+See [failure controls](docs/evidence/autonomous_research/point_failure_controls.md).
 
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.

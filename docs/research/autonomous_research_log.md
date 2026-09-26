@@ -281,6 +281,37 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   fixed RGB temporal correspondence against frozen-pixel translation/occlusion
   controls. These diagnose before any new live policy or recovery is introduced.
 
+### Iteration 007 — frozen-image process control and correspondence falsifiers
+
+- **Hypotheses:** failure may depend on accumulated inference state versus current
+  image; apparent tracking success may be stale coordinates versus fresh visual
+  correspondence. These are separate questions, with separate interventions.
+- **Process intervention:** exact RGB20/21/25, two fresh processes in orders
+  [21,20,25] and [25,20,21], six calls total, frozen `ff4a57d`. All native inputs
+  match archive, all six outputs and tokens reproduce, including both failures
+  cold. Preceding history is unnecessary for either observed failure.
+- **Correspondence intervention:** frozen `3411404`, RGB-only default LK versus
+  frozen pixels; static, three integer shifts, target/off-target occlusion,
+  occlusion+distractor, wrong seed. All 208 rows retained and independently
+  reproduced. Maximum shifted visible error 0.001167 px versus 8/8/11.314 px.
+  Both target occlusions stop immediately on reverse native-status failure while
+  forward status remains successful. No probability/identity or live-policy claim.
+- **Instrumentation qualification:** original trace omits attempted reverse
+  coordinates. Independent CPU replay stores them separately; `a20c660` adds
+  future raw recording plus test without changing propagation. No old overwrite.
+- **Interpretation/confidence:** high within these exact fixtures. Image-specific
+  regrounding failure and useful RGB correspondence are supported; automatic
+  identity recovery, moving-camera transfer and manipulation remain unestablished.
+- **Alternative explanations:** LK can track wrong initial referents; surrounding
+  context may persist during local occlusion. One-shift sequences are not many
+  independent motion tests. No more threshold/prompt/tracker tuning on this scene.
+- **Next decision:** cheap direct test of VLM high-level visual proposals versus
+  the identical task-text prior, using six visually reviewed archived Task-2
+  camera images and one text-only call. Labels frozen before inference; ambiguous
+  holding/placement/closing readiness stays uncertain. No execution authority.
+- **Artifacts:** [findings](../evidence/autonomous_research/point_failure_controls.md)
+  and summary JSON; raw `point-replay-*` and `point-temporal-probe-01` directories.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
