@@ -1,0 +1,22 @@
+# Independent fixed neck-BOX review
+
+**Prospective PASS for clean `aee8f298b6e24f8385227497b0bd969020e4fd48` before the single inference.** The scientific wrapper/test freeze is `4d88bdee65cd0e0d68c79f64e4639f1cf0b1e924`; the later commit only pins the existing correct interpreter, records the zero-inference setup failure, and provides reproduction commands. No scientific code, query, setting or extraction rule changed in that amendment.
+
+The minimal wrapper checks the exact successful `task2_box_support.py` hash and temporarily binds only QUERY, QUESTION and PROTOCOL, restoring all three in `finally`. The exact new question is `Locate a single instance that matches the following description: the neck of the wine bottle.` It is a researcher-specified semantic-part condition, not an autonomous choice of affordance or a generated manipulation plan. One unchanged full RGB, the pinned LocateAnything checkpoint, GPU0/BF16, existing hybrid greedy settings, 256-token cap, 300 s inference timeout, and no inference retry remain fixed. No depth, label, previous response, successful grasp pose or robot geometry enters the model.
+
+The raw-generation-before-parser seal, EOS/token audit, single-BOX admission, integer conversion, fixed one-fifth interior depth support, median-center-ray P, complete RGB/depth G with explicit pixel-center convention, median contributor ties, and separate post-seal archived-mask analysis reuse the unchanged implementation. Empty/rejected results remain failures or unknowns; no wording sweep, alternate point, support cleaning, offset, model fallback, new scene, rendering, FK, physics or subsequent action is authorized.
+
+The fixed visual rubric distinguishes a box focused on the visible narrow upper region, the whole bottle, a clearly different region, and ambiguous evidence. It is qualitative inspection after sealing, not a neck segmentation or calibrated correctness measure. The archived bottle mask can measure bottle-proxy membership only; it cannot establish neck correctness, resolved-depth ownership, jaw fit or grasp readiness. All original raster/cached-time/shared-calibration limitations remain. A changed P is a descriptive result and cannot be selected as better from this comparison alone.
+
+The reviewer independently ran the existing nine support tests and the new failure-restoration/geometry-invariance test: **10 passed**. The producer's actual exact-question processor preflight 02 is sealed at SHA-256 `96560dcbd2da06c2918206edd614e754642cc23deb1628196228719d153c7d36`. Its clean `4d88bde` code identity and unchanged core hash match the reviewed source. It records 240 input IDs, input/attention tensors of shape 1×240, float32 pixels 784×3×14×14, and native NumPy int64 grid 1×2 `[[28,28]]`, with zero model constructions and zero calls. The subsequent protocol-only amendment does not affect those processor inputs; no duplicate processor or model call was performed by the reviewer.
+
+Preflight 01 used the `laya-embodied` interpreter and failed AutoProcessor dependency imports before model construction/inference or result JSON creation. Its explicitly transcribed command-failure receipt, SHA-256 `801acd729f6063def94c01f4ebde3c27fe1117ce8a930eddea5b9d64324aa5cd`, remains preserved. Switching to the already installed `/home/junhongli/miniforge3/envs/locateanything/bin/python` without dependency installation or code change was independently reviewed as an infrastructure-only correction under the parent's standing setup authorization. This did not spend or increase the one-call scientific budget.
+
+| Reviewed file | SHA-256 |
+| --- | --- |
+| Reused `embodied_runtime/experiments/task2_box_support.py` | `9986c4f79578dd4e2691726f21df7ba0706ac8b9876a255ca078eed2f9bb43a6` |
+| `embodied_runtime/experiments/task2_neck_box_support.py` | `ecf975b9e824232f5f90fe2193651e35c0f500be43e4f0bd746912b413af2276` |
+| `docs/research/task2_neck_box_support_protocol.md` | `77ad9fabbcce512ddac045b3ab4fa1a9896f88908ff53f043c597226c956f43c` |
+| `tests/test_task2_neck_box_support.py` | `bc72389747369967ea132b8fcd4ecc1024ed2d54762ddfbbe0dfcbda2df0b181` |
+
+The original object-level call remains a separate completed condition. This approval covers exactly the one additional fixed neck-region inference and its registered stored-result analysis. Generalization, model planning, physical utility, and whether metric geometry can be omitted remain untested.
