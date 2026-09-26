@@ -76,7 +76,6 @@ def load_source():
 def frozen_inputs(rows):
     from .collect_pairs import initial_state_inventory
     import jev_libero.world
-    import libero
     code = code_identity()
     if code['dirty_status']:
         raise ValueError('clean committed source required before preflight/execution')
@@ -85,6 +84,7 @@ def frozen_inputs(rows):
         raise ValueError('source software environment changed')
     config = start['resolved_config']
     inventory = initial_state_inventory('top_drawer', config['libero_root'], config['config_dir'])
+    import libero  # configured loader above establishes the explicit LIBERO repository path
     identity = {'task': 'top_drawer', 'init_state_id': 0, 'seed': 1,
         'binding': inventory['binding'], 'benchmark_state_id': inventory['state_ids'][0]}
     if identity != one(rows, 'initial_identity'):

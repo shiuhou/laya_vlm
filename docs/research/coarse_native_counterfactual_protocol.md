@@ -96,3 +96,14 @@ and evaluator outcome. Newly recorded intermediate returned TCP/gripper vectors
 cannot be declared equal to absent archival fields. Equality of the generated
 closed-loop commands also constrains the original TCP-feedback timing; no full
 hidden controller/observable-cache identity is claimed.
+
+## Append-only pre-execution setup correction
+
+The first preflight at commit `812d99e` failed on `import libero` before the
+configured repository loader ran. `coarse-native-counterfactual-preflight-01`
+retains run start, failure and termination with all seven arms missing. No world,
+reset, control, capture or model call occurred. Move only that import after
+`initial_state_inventory`, which uses the original configured LIBERO loader;
+freeze this dependency-order correction before preflight02. No physical outcome,
+source condition, candidate, measurement or threshold motivates this correction.
+The first physical attempt remains `coarse-native-counterfactual-run-01`.
