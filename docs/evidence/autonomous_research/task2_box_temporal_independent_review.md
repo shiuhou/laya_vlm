@@ -1,0 +1,18 @@
+# Independent initial-BOX temporal review
+
+**Prospective PASS at clean `9a34f297abf8bc47ba1cf589dfe9cc9e31c303f0` for the one registered offline batch.** The parent's standing authorization permits the producer to execute after this receipt. The reviewer examined the complete adapter/protocol/tests and unchanged LK helper and independently ran the five new analytic tests plus seven existing helper tests: **12 passed**. No archived tracking or projection was executed by the reviewer.
+
+The actual source-only preflight 01 has SHA-256 `804b0a18c3159ca60b2a556fc3980845eb314a07d3eaad4b72d77c1713b8c791`, records the clean freeze, LocateAnything interpreter, OpenCV 4.11.0 and existing 256-thread default, and declares zero LK/model/physics/render/evaluator calls. The reviewer verified that receipt, all four source-receipt hashes, all 92 capture hashes, the fixed row-major 492-seed population and the untouched LK helper hash. The preflight checks all actual frame/calibration/TCP schemas, 46-capture schedules, identical initial sensor fields and common-prefix RGB. Capture 0 uses the saved initial endpoint TCP; every later capture selects its exact saved step/control TCP. No FK, old landmark file, neck output, target pose, force/contact field or evaluator enters the numerical input packet.
+
+Each integer pixel-index seed independently uses the original single-seed `track_lk` over all 46 frames per arm. Native failure is permanent, with raw attempted coordinates/status/error/residual retained and every later unknown row present. The depth adapter admits only seeded/native-successful tracks, floors the coordinates, checks bounds and inclusive 0.01–5 m validity, and projects the containing pixel at its half-pixel center. Depth invalidity never terminates or restores RGB tracking; explicit reasons and nulls preserve strict JSON. The half-pixel offset is not applied to LK seeds.
+
+All 984 tracks and 45,264 rows are retained. Every frame keeps denominator 492, native survival/failure/unknown and valid-surface counts. Initial-reference summaries cover 0–45. Preclose capture 13 defines a fixed valid cohort for 13–45 only; its count is null before 13 and later missing rows remain explicit. Fixed linear quartiles summarize existing per-seed displacement/residual values; missing values are never zero or evidence of holding. Overlapping windows, common prefix, one paired trace, depth ownership, sparse approach cadence and survivor bias prevent independent-trial or classifier claims.
+
+The complete track/summary seal and journal termination precede the separately invoked mask evaluator. Proxy membership cannot change any track or summary. Initially outside pixels are distinct from departure: departure requires a prior observed True followed by observed False, with unknown gaps not establishing an exact crossing time. The evaluator reports all memberships and unknowns and creates a current hash receipt for archived masks; it does not invent historical ownership provenance. No label-selected survivors, reseeding, threshold fitting, alternative setting or automatic retry is admitted. Preserve partial files and failure counts if execution fails.
+
+| Reviewed file | SHA-256 |
+| --- | --- |
+| `embodied_runtime/experiments/task2_box_temporal_probe.py` | `655a6a84d1688be880d4348d7589251ad37392277102813fc91f5ee421f59b50` |
+| `tests/test_task2_box_temporal_probe.py` | `11e3a6bc6f2a9d14ba3242f4fde67fbd4329baef1593a064b1a1a23abc54fabd` |
+| `docs/research/task2_initial_box_temporal_probe_proposal.md` | `00cf740936af6f1caaa79696a4df0d44bd744894f7d71215841cf078b6b5e6f0` |
+| Unchanged `point_temporal_probe.py` | `86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36` |
