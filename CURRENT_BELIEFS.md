@@ -274,6 +274,27 @@ and [sensor observability](docs/evidence/autonomous_research/interaction_observa
 See [joint sufficiency](docs/evidence/autonomous_research/joint_interface_sufficiency_findings.md)
 and [independent retention audit](docs/evidence/autonomous_research/retention_independent_audit.md).
 
+## Update after native option progress-value test
+
+- **Observed:** copying each original printed progress value into its native
+  option description, while preserving the entire original state, does not repair
+  the tested choices. Steps0/1 choose rotations with6.752/7.282-mm gap gain; step10
+  still chooses open with0.056385-mm closure despite the31.888340-mm alternative.
+  Six valid calls repeat exactly; independent raw input, marker, argmax and effect
+  reconstruction passes. This treatment changes proximity/duplication/emphasis
+  jointly and does not establish whether semantic binding occurred internally.
+- **Input-boundary fact:** step9's prospective treatment is excluded for clipped
+  native options even though its final consumed count would be1,022 tokens. The
+ 256-token heading/options limit must be audited separately from total length.
+- **Research decision:** stop local prefix/criterion variants on these development
+  states. The tested Laya motor interface has not earned numeric action-ranking
+  responsibility through supplied context or these placement interventions. This
+  is not evidence of universal Laya incapacity or a completed architecture choice.
+  Reassign the experiment slot to the physical first-contact visibility question;
+  maintain the pinned stronger-VLM control as a separate capability discriminator.
+
+See [native progress-value findings](docs/evidence/autonomous_research/native_option_progress_sufficiency_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

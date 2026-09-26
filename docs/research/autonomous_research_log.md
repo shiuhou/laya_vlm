@@ -486,6 +486,35 @@ executor, candidate gate or task adapter changed in this integration.
   full exact payload/response summary and `joint-interface-{preflight,run}-01`.
   Main integration `19c11f6`/`f0976f7`.
 
+### Parallel iteration 015 — native option progress-value sufficiency
+
+- **Question:** does directly associating an option with its already supplied
+  progress value help when contextual prefixes fail?
+- **Fixed intervention:** criterion becomes `gap_reduction_mm=<printed value>`
+  for approach or `closure_mm=<printed value>` for advance; original full state,
+  questions otherwise, action identities/order, predictions and settings stay fixed.
+  Six calls on0/1/10 plus reversed traversal. Proposal `4976a61`, freeze `37f9425`.
+- **Prospective capacity check:** totals442/476/781 fit. Step9 excluded: full1,134
+  tokens, native option clipping despite1,022 effective total. No call, top-k,
+  merged candidate, moved number, changed configuration or truncated treatment.
+- **Result:** rotate_z+10, rotate_x+10, open. Gap gains6.752232/7.282016 versus
+  baseline29.114186/15.697692; advance remains0.056385 versus31.888340mm available.
+  All six valid calls repeat probabilities/logits exactly, no runtime failure.
+- **Independent audit:** manually reconstructed full tokens/markers match six
+  native forwards; original state/source preserved, every criterion exactly copies
+  the original displayed column string. Script SHA
+  `4d39b13aa0487d5c0a691a1b2bb79464ebb0d19520955737f773688e4828a726`, raw run SHA
+  `4593d0567b6ad450505a8c0f969f7f9500850ccccc71dbc851c954f6361ef650`.
+- **Interpretation/limits:** this duplication/placement package is insufficient.
+  It does not uniquely test binding or prove ranking failure after understanding;
+  only one advance state fits. No model-selected action was physically executed.
+- **Next decision:** close this local wording/criterion line. Reassign agent to
+  sensor visibility at the initial-point physical run's first nonhandle contact.
+  Do not build the proposed hierarchy around an unvalidated motor selector.
+- **Artifacts:** [findings](../evidence/autonomous_research/native_option_progress_sufficiency_findings.md),
+  complete summary, `native-option-progress-{preflight,run,independent-audit}-01`.
+  Main integration `40714a5`/`5298e25`/`48bd62c`; seven focused tests pass.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
