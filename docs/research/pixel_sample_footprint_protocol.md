@@ -30,6 +30,8 @@ Require exact equality of every compiled vertex, geom-local position and geom-lo
 
 The frozen source asset hashes are `d9d68123909d6910488310d0fae4e358ed4ac831c6d0957f3e30893a5412baac` (`panda_gripper.xml`), `fdeb1a924b8d0f1f997f47d6d8af102c7290a1d5144145efdc39501dc13f0fa1` (`hand_vis.stl`) and `e49613148a74f1ba9b5793813078e5becf15833e0296073dc1c523508be35ae4` (`finger_vis.stl`).
 
+The reviewed static export at `gripper-visual-triangle-topology-01` passed all nine exact vertex/local-position/local-quaternion gates and the actual calibration/topology schema preflight. Its `triangle-topology.json` SHA256 is `12bedb9ef0604ba826f8e79a9a6e8d9bfabfe123211181a056ba608130c9fcc1`, now pinned before comparison02. It contains 7,078 hand faces and 624 faces for each finger. No image or joint packet was evaluated during this calibration export/preflight.
+
 Before the comparison, freeze the code/protocol commit, analytic tests, input hashes and independent review. Stop on any input hash/schema mismatch; do not modify calibration, sample offsets, pixel selection or numerical rules in response to results.
 
 The pinned source artifact-manifest SHA256 values are `4e0109bdf477cb579086b2a0fbe0f1cfea69fa7ccca89f1bfa47b93c478bdff5` for `gripper-visual-mask-control-01` and `e8852ee0a9162cd46acc3ea78ecfff6d7b6eccc10d3510ca62447cfaf570050c` for `render-measurement-diagnosis-01`. Verify every listed artifact plus the rendering output seal before input admission. The coordinator records input hashes and launches the restricted worker in a separate process, seals its outputs, then performs the cached-pose/zero-image evaluator comparison. It rejects an uncommitted working tree and never retries a failure under changed settings.

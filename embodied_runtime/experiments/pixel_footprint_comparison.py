@@ -23,7 +23,7 @@ SOURCE_MANIFESTS = {
 }
 VISUAL_SHA256 = "c86706370d8442f85365d1e1d7e962ffb0f2346c235d968146694ed6e3fb4c98"
 SAMPLES = [[.375, .125], [.875, .375], [.125, .625], [.625, .875]]
-TOPOLOGY_SHA256 = None  # Must be frozen after the separately reviewed static export.
+TOPOLOGY_SHA256 = "12bedb9ef0604ba826f8e79a9a6e8d9bfabfe123211181a056ba608130c9fcc1"
 
 
 def read(path):
