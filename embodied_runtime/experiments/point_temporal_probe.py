@@ -72,12 +72,14 @@ def track_lk(frames, seed, cv2):
     """Only RGB, a supplied seed and frozen settings. No labels/geometry/world."""
     point=np.asarray(seed,np.float32).reshape(1,1,2)
     rows=[{'frame':0,'status':'seeded','point_pixel_index_xy':point.reshape(2).tolist(),
+           'attempted_backward_point_pixel_index_xy':None,
            'forward_status':None,'backward_status':None,'forward_backward_residual_px':None,
            'forward_patch_error':None,'backward_patch_error':None}]
     alive=True
     for i in range(1,len(frames)):
         if not alive:
             rows.append({'frame':i,'status':'unknown_after_native_failure','point_pixel_index_xy':None,
+                'attempted_backward_point_pixel_index_xy':None,
                 'forward_status':None,'backward_status':None,'forward_backward_residual_px':None,
                 'forward_patch_error':None,'backward_patch_error':None})
             continue
@@ -96,6 +98,9 @@ def track_lk(frames, seed, cv2):
         alive=bool(point_finite and back_finite and fs==1 and bs==1)
         rows.append({'frame':i,'status':'native_status_ok' if alive else 'native_failure',
             'point_pixel_index_xy':nxt.reshape(2).tolist() if point_finite else None,
+            # Preserve attempted reverse coordinates even when native status fails;
+            # they are raw attempts, never admitted correspondence estimates.
+            'attempted_backward_point_pixel_index_xy':back.reshape(2).tolist() if back_finite else None,
             'forward_status':fs,'backward_status':bs,
             'forward_backward_residual_px':float(np.linalg.norm(back-point)) if back_finite and bs==1 else None,
             'forward_patch_error':float(error[0,0]) if fs==1 and error is not None and np.isfinite(error[0,0]) else None,

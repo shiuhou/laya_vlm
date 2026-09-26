@@ -66,6 +66,24 @@ def test_successful_native_status_during_occlusion_is_not_scored_as_success():
     assert result[1]['native_ok_while_target_occluded']
 
 
+def test_failed_reverse_attempt_is_preserved_without_propagation():
+    calls=[]
+    def flow(previous,current,point,unused,**settings):
+        calls.append(point.copy())
+        return point+2,np.array([[1 if len(calls)==1 else 0]],np.uint8),np.array([[123.]],np.float32)
+    cv2=SimpleNamespace(COLOR_RGB2GRAY=7,cvtColor=lambda frame,_:frame[:,:,0],calcOpticalFlowPyrLK=flow)
+    rows=track_lk(np.zeros((4,10,10,3),np.uint8),[4,4],cv2)
+    assert len(calls)==2
+    assert rows[1]['point_pixel_index_xy']==[6.,6.]
+    assert rows[1]['attempted_backward_point_pixel_index_xy']==[8.,8.]
+    assert rows[1]['forward_status']==1 and rows[1]['backward_status']==0
+    assert rows[1]['status']=='native_failure'
+    assert rows[1]['forward_backward_residual_px'] is None
+    assert rows[1]['backward_patch_error'] is None
+    assert rows[2]['status']=='unknown_after_native_failure'
+    assert rows[2]['attempted_backward_point_pixel_index_xy'] is None
+
+
 def test_tracker_has_no_geometry_or_evaluator_inputs():
     assert list(inspect.signature(track_lk).parameters)==['frames','seed','cv2']
     names={node.id for node in ast.walk(ast.parse(inspect.getsource(track_lk))) if isinstance(node,ast.Name)}
