@@ -103,8 +103,42 @@ def test_controls_check_full_reference_after_return_before_second_control(monkey
     assert calls==[[1.]] and world.obs is old and world.env.step is step
 
 
-def test_registered_reference_and_all_original_python_files_are_preserved():
-    rows=probe.load_reference()
+def test_reference_guard_accepts_frozen_source_and_rejects_modified_source(tmp_path,monkeypatch):
+    root=tmp_path/'producer'
+    source=root/'embodied_runtime'/'original.py'
+    source.parent.mkdir(parents=True)
+    source.write_text('original scientific source\n')
+    archive=tmp_path/'archive'
+    archive.mkdir()
+    episodes=archive/'episodes.jsonl'
+    episodes.write_text('registered evidence bytes\n')
+    rows=[{'kind':'frozen_inputs','data':{'code':{'source_sha256':{
+        'embodied_runtime/original.py':probe.file_hash(source)}}}},
+        {'kind':'termination','data':{'reason':'seven_arms_complete'}}]
+    monkeypatch.setattr(probe,'__file__',str(root/'embodied_runtime'/'experiments'/'probe.py'))
+    monkeypatch.setattr(probe,'REFERENCE',archive)
+    monkeypatch.setattr(probe,'REFERENCE_SHA256',probe.file_hash(episodes))
+    monkeypatch.setattr(probe,'load_records',lambda path:(rows,[]))
+    assert probe.load_reference()==rows
+    source.write_text('changed scientific source\n')
+    with pytest.raises(ValueError,match='reference scientific source changed'):
+        probe.load_reference()
+    source.write_text('original scientific source\n')
+    episodes.write_text('changed reference bytes\n')
+    with pytest.raises(ValueError,match='completed seven-arm reference changed'):
+        probe.load_reference()
+
+
+def test_registered_archive_has_expected_native_contract_results():
+    # Optional historical-evidence check, independent of the current checkout.
+    # Executing the experiment still requires load_reference's strict source guard;
+    # unrelated integrated experiments must not invalidate ordinary regression tests.
+    path=probe.REFERENCE/'episodes.jsonl'
+    if not path.is_file():
+        pytest.skip('local frozen seven-arm evidence is not installed')
+    assert probe.file_hash(path)==probe.REFERENCE_SHA256
+    rows,errors=probe.load_records(path)
+    assert not errors
     assert probe.ARMS==('MV_RIGHT','MV_DOWN')
     arms={r['arm']:r for r in probe.data(rows,'arm_completed')}
     assert not arms['MV_RIGHT']['result']['execution_contract_violation']
