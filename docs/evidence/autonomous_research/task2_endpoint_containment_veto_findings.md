@@ -50,6 +50,14 @@ The single fresh recorded-control replay passed under the identical clean produc
 
 Producer freeze: `ecb24a8a63be92548cf6e20f18d99e77206efbb3`. Prospective independent PASS: `f4c8baf`, including 22 focused tests and exact full-support/calibration/preflight checks. The producer's 14 selector/baseline tests and the report capture-boundary regression test pass. Current static source compatibility is conditional on the sealed own calibration; historical asset-byte identity and current compiled mesh equivalence are not asserted.
 
+Independent stored-result and report closure: `ab839a1` (integrated `c3e53f0`).
+The reviewer recomputed all 29 × 7 × 5 saved-vertex containment cases, eligible
+rule choices, complete journal/control/native-contact counts, historical prefix,
+exact replay and portable capture references. Root separately inspected the
+actual six-panel RGB figure and terminal candidate table. See the
+[independent review](task2_endpoint_containment_veto_independent_review.md) and
+[machine-readable audit](task2_endpoint_containment_veto_independent_audit.json).
+
 - [Full-precision summary, complete decision table and capture references](task2_endpoint_containment_veto_summary.json).
 - [Frozen protocol](../../research/task2_endpoint_containment_veto_protocol.md).
 - [Stored-only reporter](../../../embodied_runtime/experiments/task2_endpoint_containment_veto_report.py).

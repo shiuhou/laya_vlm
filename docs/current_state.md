@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration036. This is the authoritative current
+Reviewed 2026-09-27 after research iterations037–039 (short-lift final audit pending). This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -81,30 +81,31 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 
 ## Active next questions
 
-1. Seven physical counterfactuals complete at pre22: FWD alone has raw palm
-   contact; LEFT/DOWN have no raw contacts and approach P by4.916/4.612mm.
-   Every prefix and original FWD qualify exactly, all validators pass; all
-   threshold outcomes remain negative. Full-BOX endpoint/sweep flags identify
-   FWD at this one boundary; no general clearance or sweep advantage is proved.
-   Next fresh approach adds only the endpoint-containment movement veto, keeping
-   the original point rule/terminal STOP and all candidates in evidence. See
-   [physical results](evidence/autonomous_research/task2_pre22_counterfactual_findings.md).
-2. The single semantic-region alternative `the neck of the wine bottle` failed
-   strict admission:42 boxes,260 actual tokens under the unchanged native256 cap,
-   no EOS. No P/G, retry or physics. See [nonadmission](evidence/autonomous_research/task2_neck_box_support_findings.md).
-3. Initial-crop temporal condition completed: all492 points survive both46-frame
-   arms. Median vertical motion110.376mm close versus0.003887mm open; no assistant
-   landmarks or mask filtering. First proxy departure is a near-zero-motion
-   floor-sampling switch at a depth edge. Same-track center-index association
-   removes that switch; later departures persist and co-motion stays strong.
-   Next tests the fixed method on30-frame paired10mm actual-executor captures,
-   with preclose13-relative motion and missing initial ownTCP kept unknown. No
-   holding classifier or new physical execution. See
-   [temporal evidence](evidence/autonomous_research/task2_box_temporal_findings.md).
-4. Use these results to decide the next physical test. The checked
-   own-frame transform supports bounded jaw interpretation, not a new estimator:
-   final P remains outside the pad Y/Z span. The earlier successful scripted
-   pregrasp used translations only, so missing pitch/roll is not established.
+1. The fresh endpoint-containment guard completes28 movements without raw
+   robot-contact rows, then stops45.730mm from P. Exact224-control/11,200-native-
+   snapshot/29-capture replay passes; first22 actions match the old trajectory.
+   At the new boundary, only FWD/DOWN are vetoed and all eligible translations
+   worsen the original point objective. Full independent result/report audit
+   passes. See [guarded approach](evidence/autonomous_research/task2_endpoint_containment_veto_findings.md).
+2. The unchanged point goal is incompatible with that guard at frozen terminal
+   orientation/jaws:123 identical observed point/hand-proxy pairs occur at every
+   corner of the analytically derived ±5mm point-rule stopping cell. Independent
+   fixed-facet recomputation verifies all60,300 entries and strict0.293–17.087mm
+   witness margins. This is a conditional proxy exclusion, not physical/global
+   unreachability. Next offline test asks whether a positive finite-pad-gap
+   relation changes the stalled decision without changing P, actions or guard.
+3. The privileged grasp contract targeted whole-object geometry center relative
+   to pad midpoint. The sensory rule targets TCP distance to an unverified
+   median-ray P. Neither better object naming nor adding planning silently fixes
+   that relation mismatch. See [source audit](evidence/autonomous_research/task2_grasp_contract_source_audit.md).
+4. All492 initial BOX seeds transfer to30-frame actual-executor10mm close/open
+   archives. Median rise8.585/0.003835mm and point–TCP residual2.064/9.502mm show
+   descriptive co-motion. Native success persists at support departures; no
+   holding classifier. Source initialTCP remains unknown. Root inspected actual
+   lift frames and failure panels; independent full-row closure is pending.
+   See [transfer](evidence/autonomous_research/task2_short_lift_transfer_findings.md).
+5. The single semantic-region neck query remains nonadmitted:42boxes/260tokens,
+   noEOS under unchanged native256 cap. No salvage, retry or physical result.
 
 ## Protected execution and evidence boundaries
 
@@ -121,9 +122,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `5d0905d`: **911 tests pass** in33.40s, including
-the temporal population and physical counterfactual additions.
-Log: `runs/autonomous-research/regression-temporal-counterfactual-integration.log`.
+Latest integrated regression at `e91a3a4`: **926 tests pass** in31.85s, including
+the fresh endpoint and short-lift additions. Four goal-cell tests pass separately.
+Receipt: `runs/autonomous-research/regression-endpoint-short-lift-integration.json`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 

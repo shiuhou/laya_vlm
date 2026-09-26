@@ -1318,6 +1318,94 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   lift scale together, so it tests descriptive transfer, not amplitude-only
   causality. Endpoint-veto fresh physical probe proceeds independently.
 
+### Parallel iteration 037 — a guarded fresh approach exposes a new stopping boundary
+
+- **Question/competing hypotheses:** does the observed-support endpoint veto
+  remove the earlier measured palm-contact choice while retaining useful approach,
+  or does it merely block all movements / fail in actual execution?
+- **Intervention:** freeze `ecb24a8`, prospective `f4c8baf`; same P, all1,340
+  original full-BOX points, own geometry, candidates, greedy distance rule and
+  executor. Only nominal endpoints containing support in a separate own proxy
+  are excluded. STOP remains terminal without execution. Fresh original reset,
+  no archived prefix warm start, no model call, no new planner/margin.
+- **Observed:**28 movements/224 controls, all validators pass, zero raw robot
+  contacts in11,200 native snapshots. P-distance208.367→45.730mm. First divergence
+ 22:FWD→LEFT. First22 actions/176 controls/8,800 snapshots/23 captures match
+  historical baseline exactly; canonical inputs match through decision22.
+- **First boundary:** decision28 STOP; only FWD/DOWN vetoed. Other translations
+  worsen nominal P-distance. This is neither a zero pool nor grasp/task success.
+- **Inspection/verification:** root inspected actual initial/common/divergent/
+  final RGB and every terminal candidate. Exact replay covers224 controls,
+ 11,200 snapshots and29 captures. Reviewer `ab839a1` independently checks all
+ 29×7×5 containment cases, full journal, report and replay. Main report `e91a3a4`,
+  audit `c3e53f0`; raw `task2-endpoint-containment-veto-run-01` and replay sibling.
+- **Interpretation/confidence:** high for the measured contact-free recorded
+  approach and stall; low for safety/generalization. Static partial support,
+  nominal endpoint guard and oracle abort remain limitations.
+- **Next decision:** distinguish incompatible point goal from route-only failure
+  before adding planning. Fixed-orientation exact-P/eight-corner goal-cell test.
+
+### Parallel iteration 038 — co-motion survives actual-executor short-lift transfer
+
+- **Question:** does the frozen BOX population's descriptive co-motion contrast
+  survive the existing10mm visual-executor archive, or require the large lift?
+- **Intervention/controls:** producer `4e661c7`, prospective `12575f3`. All492 seeds,
+  unchanged LK and justified nearest-center depth association on30 captures/arm.
+  Source `local-grasp-interface-run-02`; setup failure01 preserved. Same14-frame
+  RGB-D/K/T prefix. No new physics/inference/tracking tuning. Missing initial
+  ownTCP stays null; motion references preclose13 only. Sensors seal before masks.
+- **Observed:** all29,520 rows retained;13,776 shared-prefix native rows exact.
+  Final median rise8.584708/0.003835mm close/open; ownTCP rise9.451139/9.494822mm.
+  Median3D point–TCP residual2.064050/9.502293mm. All tracks/depths valid; final
+  proxyTrue409/402,23 departure seeds each, no label-conditioned filtering.
+- **Inspection:** root viewed all16 original lift frames, full curves and first
+  lift-departure RGB/proxy panels. Close seed205 and open181 cross a depth-sample
+  boundary at22 despite small native residuals; earliest overall departure
+  remains shared prefix seed124/capture6. Identity/holding remain unknown.
+- **Interpretation/alternative:** evidence supports descriptive transfer, not
+  a calibrated holding classifier. Executor/horizon/scale change together;
+  no isolated amplitude effect or independent-trial uncertainty follows.
+- **Artifacts/review:** raw `task2-short-lift-transfer-run-01`, sensor seal
+  `3388cc54c79f29feb9a1ca313a88ac5e6d4f50c0d7a1b324574f8a4a002dcf4e`.
+  Main source `970307d`, report `7e73cae`; final independent all-row/report audit
+  pending. Integrated926 tests pass in31.85s at `e91a3a4`.
+- **Next decision:** close the fixed measurement rather than fit a holding cutoff.
+  Repurpose lane to source audit of observation-to-effector goal semantics, then
+  a prospective minimal relation intervention at the newly stalled boundary.
+
+### Parallel iteration 039 — the old point goal conflicts with observed own geometry
+
+- **Question/competing hypotheses:** is the guarded stall only greedy routing,
+  or is the point rule's entire stopping cell excluded at the frozen own pose?
+- **Intervention:** producer `60ad6d7`, root prospective `cb2d2ee`, four synthetic
+  tests and independent no-outcome real-source preflight. Same cached P/cloud,
+  calibration, terminal own quaternion/jaws; nine predetermined translations:
+  exactP and eight corners of P±5mm. The half-width follows analytically from
+  original10mm strict-improvement axis moves. No pose search, new point, physics,
+  oracle contact/object state, model call or policy change.
+- **Observed:** exactP contains137 observed points; corner counts are
+  [152,125,152,125,150,123,150,123], all hand-proxy only.123 identical point/hand
+  pairs are inside at every corner. A fixed point's exclusion translations for
+  one convex proxy are convex, so these common witnesses cover the whole cell.
+- **Independent verification:** root `b60bf3e` uses a single fixed facet system
+  and shifted query points to recompute all60,300 booleans. Proxy translations
+  agree within2.23e-16m. All123 witnesses are strictly interior at all corners;
+  minimum corner-facet margins range0.292925–17.087352mm. No numerical-tie-only
+  certificate. Raw `task2-point-goal-cell-run-01`; full tensors/vertices retained.
+- **Interpretation/confidence:** high for conditional sensor/proxy incompatibility
+  at frozen orientation/jaws. A route-only change cannot reach the unchanged
+  stopping cell under those assumptions. Not a physical collision certificate,
+  object-identity guarantee or impossibility with other orientations/relations.
+- **Source audit:** `71673f4` (main `ce1103c`) finds privileged alignment used
+  whole-object contact-geometry AABB center versus pad midpoint; sensory control
+  uses grip-site distance to median-ray P, which is not a certified grasp goal.
+  Existing own-pad geometry is reusable without copying a successful pose.
+- **Next decision:** freeze offline replacement of scalar P-distance with
+  P-to-finite-open-gap distance on the same terminal seven candidates/guard.
+  Require a genuinely improving eligible movement before considering dynamics.
+  Keep extent, opposing-surface identity and qualified grasp unknown. A null
+  result rejects that minimal local intervention; no automatic richer variant.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
