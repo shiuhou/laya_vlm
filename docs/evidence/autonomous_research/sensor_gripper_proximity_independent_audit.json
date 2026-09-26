@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": "file/input identity, stored-map arithmetic, witness backprojection and point-pair distance only",
+  "excluded": "no FK, hull-distance or silhouette rerun; no semantic labels or scene-clearance validation",
+  "producer_commit": "f20476d5e3402584c4ca5d722cdbd568107c1ed1",
+  "artifacts_manifest_sha256": "56dcb32aca328d3a2e09af393d310f5abd44af3b62b206034e9f0830af86da49",
+  "output_seal_sha256": "e3df898cff17974de37727c145e311571f84a3364a29b8b1114fd8e81e0ddb90",
+  "artifact_count": 11,
+  "witness_checks": 24,
+  "samples": [
+    {
+      "sample": "sample0",
+      "boundary": 24,
+      "valid_pixels": 147456,
+      "partial_mask_pixels": 6169,
+      "residual_points": 141287,
+      "residual_union_minimum_mm": 0.1267221951080329,
+      "residual_per_proxy_minimum_mm": {
+        "gripper0_hand_collision": 0.1267221951080329,
+        "gripper0_finger1_collision": 1.7380414852009913,
+        "gripper0_finger1_pad_collision": 9.37992604194338,
+        "gripper0_finger2_collision": 70.73201112239911,
+        "gripper0_finger2_pad_collision": 72.27075330180452
+      }
+    },
+    {
+      "sample": "sample1",
+      "boundary": 25,
+      "valid_pixels": 147456,
+      "partial_mask_pixels": 6265,
+      "residual_points": 141191,
+      "residual_union_minimum_mm": 0.10919501640989294,
+      "residual_per_proxy_minimum_mm": {
+        "gripper0_hand_collision": 0.10919501640989294,
+        "gripper0_finger1_collision": 0.16201112948511404,
+        "gripper0_finger1_pad_collision": 3.023203213634656,
+        "gripper0_finger2_collision": 34.18325122180501,
+        "gripper0_finger2_pad_collision": 62.18488834540823
+      }
+    }
+  ]
+}
