@@ -1,0 +1,1818 @@
+{
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/sensor-gripper-proximity-01",
+  "producer_commit": "f20476d5e3402584c4ca5d722cdbd568107c1ed1",
+  "protocol_sha256": "6caf184f34b1183990bca8f712fbda105c069283d9d77c6b66da4254fea0d253",
+  "raw_artifact_hashes": {
+    "estimator-input/request.json": "02e9d19a3cdbee61eb4cf34601040a3110ff83a2946f141f674c7ec96e47663e",
+    "estimator-input/sample0.npz": "67b0024f17052f3b8e6f95398d06873605872b295180c697ef504119091dcd8b",
+    "estimator-input/sample1.npz": "98b7631887dafbcdf2e0d11481d03ef23cee1709f9de4c086281ecb957a2bd38",
+    "estimator-output/measurements.json": "3d18aae424413f5996b64a00cc08ea4b8677c674bf7ec2bb7ea65554434569f5",
+    "estimator-output/sample0-arrays.npz": "23c2244e761473cc6e5de55d1c37f0d787635d14a87f6590b2ee231cbdeed0ac",
+    "estimator-output/sample1-arrays.npz": "0b9e7e62802a9af9dfb86b2717efa7d9bb22e85e7b078e138b67582dcdf20f77",
+    "estimator-output-seal.json": "e3df898cff17974de37727c145e311571f84a3364a29b8b1114fd8e81e0ddb90",
+    "estimator-process.json": "6379c17d798191f995d43b0950ea7787779fe29c9af7354b25de37a514ff207d",
+    "manifest.json": "bf89e2b7e4920c3526b5ce95fc28fb4a05f78634281c54b128c38b58ad24fe26",
+    "preparation.json": "92fc9be80fc69d604b97f067ed8469a051461b1f64d31ce9284cdba46c615871",
+    "protocol.md": "6caf184f34b1183990bca8f712fbda105c069283d9d77c6b66da4254fea0d253"
+  },
+  "artifacts_manifest_sha256": "56dcb32aca328d3a2e09af393d310f5abd44af3b62b206034e9f0830af86da49",
+  "post_seal_check_count": 333,
+  "development_data_only": true,
+  "samples": {
+    "sample0": {
+      "development_boundary": 24,
+      "capture_sim_time_s": 10.100000000000042,
+      "raw_sensor_sha256": "3999edda9befca7a7dad6080c66bd03f609e408ce5a7563994b9704422029dab",
+      "geometry_names": [
+        "gripper0_hand_collision",
+        "gripper0_finger1_collision",
+        "gripper0_finger1_pad_collision",
+        "gripper0_finger2_collision",
+        "gripper0_finger2_pad_collision"
+      ],
+      "valid_depth_pixels": 147456,
+      "invalid_depth_pixels": 0,
+      "partial_mask_pixels": 6169,
+      "partial_mask_valid_depth_pixels": 6169,
+      "projection": {
+        "gripper0_hand_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              230.9338898620736,
+              148.50205235219195
+            ],
+            [
+              126.2160743766512,
+              148.689378571466
+            ],
+            [
+              124.70591361406012,
+              148.283409461216
+            ],
+            [
+              119.90456745241282,
+              143.73239053619804
+            ],
+            [
+              119.27102761264368,
+              139.794277252691
+            ],
+            [
+              119.4060067143906,
+              128.85282739564715
+            ],
+            [
+              120.15744641641187,
+              123.34499869909287
+            ],
+            [
+              121.37300920262,
+              115.41098308989565
+            ],
+            [
+              122.78761356556852,
+              109.86388621934562
+            ],
+            [
+              124.52042616924238,
+              105.33741857430077
+            ],
+            [
+              127.54649880166875,
+              102.29543480026184
+            ],
+            [
+              130.49633434872325,
+              100.8536005845259
+            ],
+            [
+              132.66772625247333,
+              100.2550593736847
+            ],
+            [
+              205.3150098767776,
+              97.51991963638434
+            ],
+            [
+              228.27188207011912,
+              97.53445805746422
+            ],
+            [
+              230.81240916612632,
+              98.05341278224665
+            ],
+            [
+              237.81118336269424,
+              102.66402368398032
+            ],
+            [
+              238.49594478108264,
+              103.88565590337116
+            ],
+            [
+              240.08077637328142,
+              106.82794722897198
+            ],
+            [
+              239.60891241961454,
+              114.48485726937625
+            ],
+            [
+              235.93182674801088,
+              143.662799995506
+            ],
+            [
+              232.15848222591777,
+              147.5029558701252
+            ]
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              139.6664737831201,
+              140.94230153316119
+            ],
+            [
+              140.69593015496818,
+              133.9866458636237
+            ],
+            [
+              154.1856613257205,
+              133.96789930402605
+            ],
+            [
+              156.6359073194463,
+              150.89090448335668
+            ],
+            [
+              157.06552491555124,
+              157.37825249824567
+            ],
+            [
+              157.06673291878948,
+              159.63216407053147
+            ],
+            [
+              156.67111576699753,
+              163.54571108856862
+            ],
+            [
+              148.80701602349112,
+              163.5443137732667
+            ],
+            [
+              141.13659851900047,
+              149.70839567126467
+            ]
+          ]
+        },
+        "gripper0_finger1_pad_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              152.3138786314878,
+              162.2121458111417
+            ],
+            [
+              151.79556274419838,
+              155.17295325790835
+            ],
+            [
+              152.35762861725863,
+              149.73709343868597
+            ],
+            [
+              156.78710276386948,
+              149.73469177422413
+            ],
+            [
+              157.23484560589503,
+              156.7445437144092
+            ],
+            [
+              156.74909416185653,
+              162.20968365288263
+            ]
+          ]
+        },
+        "gripper0_finger2_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              200.60490560886512,
+              156.99144838627
+            ],
+            [
+              202.4825524269937,
+              133.92935902874962
+            ],
+            [
+              215.99901452766954,
+              133.95507695030304
+            ],
+            [
+              216.41352222992515,
+              140.9210969134109
+            ],
+            [
+              215.41107996096324,
+              149.7330324660303
+            ],
+            [
+              208.65407334969296,
+              163.56185163657287
+            ],
+            [
+              200.71669941684448,
+              163.3576974299916
+            ]
+          ]
+        },
+        "gripper0_finger2_pad_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              200.54334803928924,
+              162.18537178277245
+            ],
+            [
+              200.4174794521537,
+              156.72081611616255
+            ],
+            [
+              200.52466783859765,
+              149.71097723109554
+            ],
+            [
+              204.95369946743384,
+              149.7085758065672
+            ],
+            [
+              205.14629198136976,
+              155.1437257071465
+            ],
+            [
+              204.97811990403878,
+              162.18290987080914
+            ]
+          ]
+        }
+      },
+      "groups": {
+        "all_valid_depth": {
+          "union": {
+            "point_count": 147456,
+            "nearest": {
+              "distance_m": 0.0,
+              "pixel_xy": [
+                217,
+                98
+              ],
+              "pixel_center_xy": [
+                217.5,
+                98.5
+              ],
+              "depth_m": 0.7564905285835266,
+              "point_world_m": [
+                -0.025804983823678684,
+                0.04161651183491345,
+                1.2537904632745707
+              ],
+              "proxy": "gripper0_hand_collision",
+              "closest_solid_proxy_point_world_m": [
+                -0.025804983823678684,
+                0.04161651183491345,
+                1.2537904632745707
+              ],
+              "inside_proxy": true
+            },
+            "quantiles_m": {
+              "minimum": 0.0,
+              "p01": 0.0,
+              "p10": 0.11613810069097967,
+              "median": 0.33957218259967686
+            },
+            "counts_at_or_below_m": {
+              "0.001": 4520,
+              "0.002": 4525,
+              "0.005": 4549,
+              "0.01": 4646,
+              "0.02": 5173,
+              "0.05": 7479
+            },
+            "nearest_proxy_contributions_at_or_below_m": {
+              "0.001": {
+                "gripper0_hand_collision": 4221,
+                "gripper0_finger1_collision": 147,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.002": {
+                "gripper0_hand_collision": 4224,
+                "gripper0_finger1_collision": 149,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.005": {
+                "gripper0_hand_collision": 4232,
+                "gripper0_finger1_collision": 165,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.01": {
+                "gripper0_hand_collision": 4294,
+                "gripper0_finger1_collision": 200,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.02": {
+                "gripper0_hand_collision": 4749,
+                "gripper0_finger1_collision": 272,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.05": {
+                "gripper0_hand_collision": 6653,
+                "gripper0_finger1_collision": 674,
+                "gripper0_finger1_pad_collision": 8,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              }
+            }
+          },
+          "per_proxy": {
+            "gripper0_hand_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  217,
+                  98
+                ],
+                "pixel_center_xy": [
+                  217.5,
+                  98.5
+                ],
+                "depth_m": 0.7564905285835266,
+                "point_world_m": [
+                  -0.025804983823678684,
+                  0.04161651183491345,
+                  1.2537904632745707
+                ],
+                "proxy": "gripper0_hand_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.025804983823678684,
+                  0.04161651183491345,
+                  1.2537904632745707
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.0,
+                "p10": 0.11740327592483524,
+                "median": 0.3497607972702601
+              },
+              "counts_at_or_below_m": {
+                "0.001": 4221,
+                "0.002": 4224,
+                "0.005": 4248,
+                "0.01": 4335,
+                "0.02": 4870,
+                "0.05": 7129
+              }
+            },
+            "gripper0_finger1_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  141,
+                  148
+                ],
+                "pixel_center_xy": [
+                  141.5,
+                  148.5
+                ],
+                "depth_m": 0.8129680156707764,
+                "point_world_m": [
+                  -0.021806962105128114,
+                  -0.08857037896477762,
+                  1.1589454797163787
+                ],
+                "proxy": "gripper0_finger1_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.021806962105128114,
+                  -0.08857037896477762,
+                  1.1589454797163787
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.03395393993164903,
+                "p10": 0.1543110064236449,
+                "median": 0.36482676287476146
+              },
+              "counts_at_or_below_m": {
+                "0.001": 155,
+                "0.002": 157,
+                "0.005": 173,
+                "0.01": 376,
+                "0.02": 726,
+                "0.05": 2207
+              }
+            },
+            "gripper0_finger1_pad_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  152,
+                  151
+                ],
+                "pixel_center_xy": [
+                  152.5,
+                  151.5
+                ],
+                "depth_m": 0.8376067280769348,
+                "point_world_m": [
+                  -0.039022660244666496,
+                  -0.0713774587333064,
+                  1.1410471308605568
+                ],
+                "proxy": "gripper0_finger1_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.039022660244666496,
+                  -0.0713774587333064,
+                  1.1410471308605568
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.05687960975057912,
+                "p10": 0.16881629755751243,
+                "median": 0.3674551427361571
+              },
+              "counts_at_or_below_m": {
+                "0.001": 65,
+                "0.002": 77,
+                "0.005": 100,
+                "0.01": 128,
+                "0.02": 234,
+                "0.05": 1152
+              }
+            },
+            "gripper0_finger2_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  206,
+                  148
+                ],
+                "pixel_center_xy": [
+                  206.5,
+                  148.5
+                ],
+                "depth_m": 0.8374229669570923,
+                "point_world_m": [
+                  -0.042274739333000966,
+                  0.026195937077985586,
+                  1.1453667282144293
+                ],
+                "proxy": "gripper0_finger2_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.042274739333000966,
+                  0.026195937077985586,
+                  1.1453667282144293
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.043040123922911636,
+                "p10": 0.18802446113873716,
+                "median": 0.3561354895080658
+              },
+              "counts_at_or_below_m": {
+                "0.001": 144,
+                "0.002": 144,
+                "0.005": 144,
+                "0.01": 310,
+                "0.02": 591,
+                "0.05": 1754
+              }
+            },
+            "gripper0_finger2_pad_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  201,
+                  151
+                ],
+                "pixel_center_xy": [
+                  201.5,
+                  151.5
+                ],
+                "depth_m": 0.8377941250801086,
+                "point_world_m": [
+                  -0.03917874812224764,
+                  0.01717041978692359,
+                  1.140942120672626
+                ],
+                "proxy": "gripper0_finger2_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.03917874812224764,
+                  0.01717041978692359,
+                  1.140942120672626
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.06991617287171566,
+                "p10": 0.2040261683974639,
+                "median": 0.359408002401977
+              },
+              "counts_at_or_below_m": {
+                "0.001": 59,
+                "0.002": 64,
+                "0.005": 88,
+                "0.01": 113,
+                "0.02": 137,
+                "0.05": 644
+              }
+            }
+          }
+        },
+        "outside_partial_gripper_silhouette": {
+          "union": {
+            "point_count": 141287,
+            "nearest": {
+              "distance_m": 0.0001267221951080329,
+              "pixel_xy": [
+                216,
+                97
+              ],
+              "pixel_center_xy": [
+                216.5,
+                97.5
+              ],
+              "depth_m": 0.758036196231842,
+              "point_world_m": [
+                -0.028230833510796582,
+                0.04006618443701261,
+                1.254334244314422
+              ],
+              "proxy": "gripper0_hand_collision",
+              "closest_solid_proxy_point_world_m": [
+                -0.02818534454160548,
+                0.040065163172666486,
+                1.2542159724858488
+              ],
+              "inside_proxy": false
+            },
+            "quantiles_m": {
+              "minimum": 0.0001267221951080329,
+              "p01": 0.04858606377609303,
+              "p10": 0.13935386724204502,
+              "median": 0.34728830444907677
+            },
+            "counts_at_or_below_m": {
+              "0.001": 22,
+              "0.002": 24,
+              "0.005": 34,
+              "0.01": 64,
+              "0.02": 138,
+              "0.05": 1493
+            },
+            "nearest_proxy_contributions_at_or_below_m": {
+              "0.001": {
+                "gripper0_hand_collision": 22,
+                "gripper0_finger1_collision": 0,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.002": {
+                "gripper0_hand_collision": 23,
+                "gripper0_finger1_collision": 1,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.005": {
+                "gripper0_hand_collision": 23,
+                "gripper0_finger1_collision": 11,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.01": {
+                "gripper0_hand_collision": 23,
+                "gripper0_finger1_collision": 41,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.02": {
+                "gripper0_hand_collision": 31,
+                "gripper0_finger1_collision": 107,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.05": {
+                "gripper0_hand_collision": 988,
+                "gripper0_finger1_collision": 505,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              }
+            }
+          },
+          "per_proxy": {
+            "gripper0_hand_collision": {
+              "point_count": 141287,
+              "nearest": {
+                "distance_m": 0.0001267221951080329,
+                "pixel_xy": [
+                  216,
+                  97
+                ],
+                "pixel_center_xy": [
+                  216.5,
+                  97.5
+                ],
+                "depth_m": 0.758036196231842,
+                "point_world_m": [
+                  -0.028230833510796582,
+                  0.04006618443701261,
+                  1.254334244314422
+                ],
+                "proxy": "gripper0_hand_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.02818534454160548,
+                  0.040065163172666486,
+                  1.2542159724858488
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.0001267221951080329,
+                "p01": 0.055129570894399085,
+                "p10": 0.14030872353095705,
+                "median": 0.3567006149522386
+              },
+              "counts_at_or_below_m": {
+                "0.001": 22,
+                "0.002": 23,
+                "0.005": 23,
+                "0.01": 23,
+                "0.02": 31,
+                "0.05": 1145
+              }
+            },
+            "gripper0_finger1_collision": {
+              "point_count": 141287,
+              "nearest": {
+                "distance_m": 0.0017380414852009914,
+                "pixel_xy": [
+                  147,
+                  162
+                ],
+                "pixel_center_xy": [
+                  147.5,
+                  162.5
+                ],
+                "depth_m": 0.8406006097793579,
+                "point_world_m": [
+                  -0.028983403779103134,
+                  -0.08069998701832241,
+                  1.123849962085922
+                ],
+                "proxy": "gripper0_finger1_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.02895912042292313,
+                  -0.07904287768700669,
+                  1.1243735909496781
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.0017380414852009914,
+                "p01": 0.08350466632376617,
+                "p10": 0.18736772407098623,
+                "median": 0.37316997529857887
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 1,
+                "0.005": 11,
+                "0.01": 41,
+                "0.02": 107,
+                "0.05": 505
+              }
+            },
+            "gripper0_finger1_pad_collision": {
+              "point_count": 141287,
+              "nearest": {
+                "distance_m": 0.00937992604194338,
+                "pixel_xy": [
+                  147,
+                  163
+                ],
+                "pixel_center_xy": [
+                  147.5,
+                  163.5
+                ],
+                "depth_m": 0.8381868004798889,
+                "point_world_m": [
+                  -0.02587287302978658,
+                  -0.08046825477070482,
+                  1.123840128366652
+                ],
+                "proxy": "gripper0_finger1_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.02570420546639409,
+                  -0.07158642773240527,
+                  1.126851392597356
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.00937992604194338,
+                "p01": 0.08946406961696883,
+                "p10": 0.2066463121830821,
+                "median": 0.3757690596113813
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 0,
+                "0.01": 4,
+                "0.02": 70,
+                "0.05": 481
+              }
+            },
+            "gripper0_finger2_collision": {
+              "point_count": 141287,
+              "nearest": {
+                "distance_m": 0.07073201112239912,
+                "pixel_xy": [
+                  165,
+                  176
+                ],
+                "pixel_center_xy": [
+                  165.5,
+                  176.5
+                ],
+                "depth_m": 0.8572311401367188,
+                "point_world_m": [
+                  -0.026320433297449042,
+                  -0.04900811922508253,
+                  1.0940818254555897
+                ],
+                "proxy": "gripper0_finger2_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.028497328380691724,
+                  0.015818743509384663,
+                  1.1222909798779097
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.07073201112239912,
+                "p01": 0.12686747293186953,
+                "p10": 0.21545657592588793,
+                "median": 0.3631491632921019
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 0,
+                "0.01": 0,
+                "0.02": 0,
+                "0.05": 0
+              }
+            },
+            "gripper0_finger2_pad_collision": {
+              "point_count": 141287,
+              "nearest": {
+                "distance_m": 0.07227075330180452,
+                "pixel_xy": [
+                  165,
+                  177
+                ],
+                "pixel_center_xy": [
+                  165.5,
+                  177.5
+                ],
+                "depth_m": 0.855085551738739,
+                "point_world_m": [
+                  -0.023447111780654062,
+                  -0.04888545553246019,
+                  1.0939388117478948
+                ],
+                "proxy": "gripper0_finger2_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.025708055442116677,
+                  0.015411231984778125,
+                  1.1268612340597568
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.07227075330180452,
+                "p01": 0.14608508780673043,
+                "p10": 0.22833806220767658,
+                "median": 0.3664738717282648
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 0,
+                "0.01": 0,
+                "0.02": 0,
+                "0.05": 0
+              }
+            }
+          }
+        }
+      },
+      "residual_point_identity": "unknown; arm/wrist and visual-proxy differences may remain",
+      "distance_semantics": "distance to known solid convex robot proxy from recorded finite positive depth points; interior zero",
+      "missing_or_occluded_geometry": "unknown; no free-space inference",
+      "nearest_pixel_rgb": {
+        "all_valid_depth": {
+          "gripper0_hand_collision": [
+            240,
+            240,
+            240
+          ],
+          "gripper0_finger1_collision": [
+            61,
+            61,
+            61
+          ],
+          "gripper0_finger1_pad_collision": [
+            191,
+            191,
+            191
+          ],
+          "gripper0_finger2_collision": [
+            79,
+            79,
+            79
+          ],
+          "gripper0_finger2_pad_collision": [
+            193,
+            193,
+            193
+          ]
+        },
+        "outside_partial_gripper_silhouette": {
+          "gripper0_hand_collision": [
+            168,
+            168,
+            168
+          ],
+          "gripper0_finger1_collision": [
+            52,
+            45,
+            39
+          ],
+          "gripper0_finger1_pad_collision": [
+            52,
+            45,
+            39
+          ],
+          "gripper0_finger2_collision": [
+            103,
+            103,
+            103
+          ],
+          "gripper0_finger2_pad_collision": [
+            93,
+            93,
+            93
+          ]
+        }
+      }
+    },
+    "sample1": {
+      "development_boundary": 25,
+      "capture_sim_time_s": 10.500000000000176,
+      "raw_sensor_sha256": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "geometry_names": [
+        "gripper0_hand_collision",
+        "gripper0_finger1_collision",
+        "gripper0_finger1_pad_collision",
+        "gripper0_finger2_collision",
+        "gripper0_finger2_pad_collision"
+      ],
+      "valid_depth_pixels": 147456,
+      "invalid_depth_pixels": 0,
+      "partial_mask_pixels": 6265,
+      "partial_mask_valid_depth_pixels": 6265,
+      "projection": {
+        "gripper0_hand_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              231.19940006705193,
+              151.56600110043942
+            ],
+            [
+              125.69122916265567,
+              151.73678617447126
+            ],
+            [
+              124.17009388473728,
+              151.32646125780437
+            ],
+            [
+              119.33317779451453,
+              146.74915469204925
+            ],
+            [
+              118.69571224413895,
+              142.78944846703578
+            ],
+            [
+              118.83359689680366,
+              131.78940629062035
+            ],
+            [
+              119.59200194027407,
+              126.25125483237412
+            ],
+            [
+              120.82965335917585,
+              118.24932503744725
+            ],
+            [
+              122.26545532314326,
+              112.65326504903203
+            ],
+            [
+              124.01305870320164,
+              108.10159958579199
+            ],
+            [
+              127.0632205135508,
+              105.04239572871046
+            ],
+            [
+              130.03545386182438,
+              103.59327133158286
+            ],
+            [
+              132.22368267722953,
+              102.99057733024904
+            ],
+            [
+              153.0498668700759,
+              102.21682534783186
+            ],
+            [
+              205.4142632620914,
+              100.27556780736403
+            ],
+            [
+              228.53944123303643,
+              100.2944845333018
+            ],
+            [
+              231.098647995672,
+              100.81733348115442
+            ],
+            [
+              238.14850563899955,
+              105.45824246473708
+            ],
+            [
+              238.83355361012445,
+              106.68394080508314
+            ],
+            [
+              240.43138770636327,
+              109.64607831827942
+            ],
+            [
+              239.94990550840586,
+              117.34551719712958
+            ],
+            [
+              236.2350121115036,
+              146.69707524529386
+            ],
+            [
+              232.4314375880915,
+              150.5582427987828
+            ]
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              139.24955008193132,
+              143.9405223779246
+            ],
+            [
+              140.29378291564143,
+              136.92224582911425
+            ],
+            [
+              153.88304338897558,
+              136.90614616119112
+            ],
+            [
+              156.34313421648008,
+              153.9223357464361
+            ],
+            [
+              156.7727486782171,
+              160.44417203545188
+            ],
+            [
+              156.77288539105447,
+              162.71418588752277
+            ],
+            [
+              156.3724766084199,
+              166.664778708857
+            ],
+            [
+              148.44987034073375,
+              166.66169206486194
+            ],
+            [
+              140.7271878579375,
+              152.7556317199784
+            ]
+          ]
+        },
+        "gripper0_finger1_pad_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              151.98335457501884,
+              165.3260606636598
+            ],
+            [
+              151.46442887282936,
+              158.24872205988467
+            ],
+            [
+              152.03406410722954,
+              152.76255290244964
+            ],
+            [
+              156.49599413035924,
+              152.76093291491483
+            ],
+            [
+              156.9436137264486,
+              159.8079840846294
+            ],
+            [
+              156.45168068163758,
+              165.3242989837923
+            ]
+          ]
+        },
+        "gripper0_finger2_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              200.6270963056205,
+              160.06258304401223
+            ],
+            [
+              202.53224259328414,
+              136.87711642040452
+            ],
+            [
+              216.1459951710783,
+              136.9058084345243
+            ],
+            [
+              216.57340427927952,
+              143.93400967132217
+            ],
+            [
+              215.5571729846184,
+              152.79370660357253
+            ],
+            [
+              208.7391365551514,
+              166.6916487718812
+            ],
+            [
+              200.74270152735266,
+              166.4818239445697
+            ]
+          ]
+        },
+        "gripper0_finger2_pad_collision": {
+          "status": "overlaps_pixel_centers",
+          "polygon_pixel_xy": [
+            [
+              200.57015002194444,
+              165.30690485960173
+            ],
+            [
+              200.4388453920887,
+              159.7914313334839
+            ],
+            [
+              200.5513187001984,
+              152.7449378015276
+            ],
+            [
+              205.0121739052042,
+              152.74331820422574
+            ],
+            [
+              205.21157243595405,
+              158.22847613081132
+            ],
+            [
+              205.0373982271783,
+              165.30514360470704
+            ]
+          ]
+        }
+      },
+      "groups": {
+        "all_valid_depth": {
+          "union": {
+            "point_count": 147456,
+            "nearest": {
+              "distance_m": 0.0,
+              "pixel_xy": [
+                217,
+                100
+              ],
+              "pixel_center_xy": [
+                217.5,
+                100.5
+              ],
+              "depth_m": 0.7521049380302429,
+              "point_world_m": [
+                -0.019798413684714244,
+                0.041375248854486305,
+                1.2533328382829079
+              ],
+              "proxy": "gripper0_hand_collision",
+              "closest_solid_proxy_point_world_m": [
+                -0.019798413684714244,
+                0.041375248854486305,
+                1.2533328382829079
+              ],
+              "inside_proxy": true
+            },
+            "quantiles_m": {
+              "minimum": 0.0,
+              "p01": 0.0,
+              "p10": 0.11512735194988274,
+              "median": 0.33505188117094076
+            },
+            "counts_at_or_below_m": {
+              "0.001": 4572,
+              "0.002": 4580,
+              "0.005": 4605,
+              "0.01": 4699,
+              "0.02": 5241,
+              "0.05": 7603
+            },
+            "nearest_proxy_contributions_at_or_below_m": {
+              "0.001": {
+                "gripper0_hand_collision": 4270,
+                "gripper0_finger1_collision": 152,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.002": {
+                "gripper0_hand_collision": 4274,
+                "gripper0_finger1_collision": 156,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.005": {
+                "gripper0_hand_collision": 4282,
+                "gripper0_finger1_collision": 173,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.01": {
+                "gripper0_hand_collision": 4343,
+                "gripper0_finger1_collision": 206,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.02": {
+                "gripper0_hand_collision": 4814,
+                "gripper0_finger1_collision": 277,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.05": {
+                "gripper0_hand_collision": 6740,
+                "gripper0_finger1_collision": 713,
+                "gripper0_finger1_pad_collision": 6,
+                "gripper0_finger2_collision": 144,
+                "gripper0_finger2_pad_collision": 0
+              }
+            }
+          },
+          "per_proxy": {
+            "gripper0_hand_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  217,
+                  100
+                ],
+                "pixel_center_xy": [
+                  217.5,
+                  100.5
+                ],
+                "depth_m": 0.7521049380302429,
+                "point_world_m": [
+                  -0.019798413684714244,
+                  0.041375248854486305,
+                  1.2533328382829079
+                ],
+                "proxy": "gripper0_hand_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.019798413684714244,
+                  0.041375248854486305,
+                  1.2533328382829079
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.0,
+                "p10": 0.1165872634362653,
+                "median": 0.34583635115655686
+              },
+              "counts_at_or_below_m": {
+                "0.001": 4270,
+                "0.002": 4274,
+                "0.005": 4298,
+                "0.01": 4382,
+                "0.02": 4936,
+                "0.05": 7228
+              }
+            },
+            "gripper0_finger1_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  141,
+                  151
+                ],
+                "pixel_center_xy": [
+                  141.5,
+                  151.5
+                ],
+                "depth_m": 0.8068773150444031,
+                "point_world_m": [
+                  -0.013428380536898987,
+                  -0.08790681613859987,
+                  1.1582645246541783
+                ],
+                "proxy": "gripper0_finger1_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.013428380536898987,
+                  -0.08790681613859987,
+                  1.1582645246541783
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.033066948930148526,
+                "p10": 0.15331494117856842,
+                "median": 0.3599650355124291
+              },
+              "counts_at_or_below_m": {
+                "0.001": 158,
+                "0.002": 162,
+                "0.005": 179,
+                "0.01": 383,
+                "0.02": 737,
+                "0.05": 2253
+              }
+            },
+            "gripper0_finger1_pad_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  152,
+                  154
+                ],
+                "pixel_center_xy": [
+                  152.5,
+                  154.5
+                ],
+                "depth_m": 0.8316825032234192,
+                "point_world_m": [
+                  -0.0307066382268244,
+                  -0.07087262063549665,
+                  1.1401786685260755
+                ],
+                "proxy": "gripper0_finger1_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.0307066382268244,
+                  -0.07087262063549665,
+                  1.1401786685260755
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.055996226164741765,
+                "p10": 0.16811992367422524,
+                "median": 0.3625147180200348
+              },
+              "counts_at_or_below_m": {
+                "0.001": 70,
+                "0.002": 76,
+                "0.005": 100,
+                "0.01": 133,
+                "0.02": 242,
+                "0.05": 1201
+              }
+            },
+            "gripper0_finger2_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  207,
+                  151
+                ],
+                "pixel_center_xy": [
+                  207.5,
+                  151.5
+                ],
+                "depth_m": 0.8271664977073669,
+                "point_world_m": [
+                  -0.030327084371794877,
+                  0.027659595658488453,
+                  1.1468966753405643
+                ],
+                "proxy": "gripper0_finger2_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.030327084371794877,
+                  0.027659595658488453,
+                  1.1468966753405643
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.04264765838832051,
+                "p10": 0.18737057148858777,
+                "median": 0.3521082523331027
+              },
+              "counts_at_or_below_m": {
+                "0.001": 144,
+                "0.002": 144,
+                "0.005": 144,
+                "0.01": 314,
+                "0.02": 596,
+                "0.05": 1776
+              }
+            },
+            "gripper0_finger2_pad_collision": {
+              "point_count": 147456,
+              "nearest": {
+                "distance_m": 0.0,
+                "pixel_xy": [
+                  201,
+                  154
+                ],
+                "pixel_center_xy": [
+                  201.5,
+                  154.5
+                ],
+                "depth_m": 0.8319370150566101,
+                "point_world_m": [
+                  -0.030917590560988417,
+                  0.017050379119773643,
+                  1.140034773110259
+                ],
+                "proxy": "gripper0_finger2_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.030917590560988417,
+                  0.017050379119773643,
+                  1.140034773110259
+                ],
+                "inside_proxy": true
+              },
+              "quantiles_m": {
+                "minimum": 0.0,
+                "p01": 0.06944994238469268,
+                "p10": 0.20334147678775996,
+                "median": 0.35534161794229047
+              },
+              "counts_at_or_below_m": {
+                "0.001": 61,
+                "0.002": 63,
+                "0.005": 86,
+                "0.01": 111,
+                "0.02": 137,
+                "0.05": 644
+              }
+            }
+          }
+        },
+        "outside_partial_gripper_silhouette": {
+          "union": {
+            "point_count": 141191,
+            "nearest": {
+              "distance_m": 0.00010919501640989295,
+              "pixel_xy": [
+                119,
+                126
+              ],
+              "pixel_center_xy": [
+                119.5,
+                126.5
+              ],
+              "depth_m": 0.7605748176574707,
+              "point_world_m": [
+                -0.0006354507672238219,
+                -0.11896067735651907,
+                1.2161215456579688
+              ],
+              "proxy": "gripper0_hand_collision",
+              "closest_solid_proxy_point_world_m": [
+                -0.000639699155093369,
+                -0.11885408786133987,
+                1.2160982179421203
+              ],
+              "inside_proxy": false
+            },
+            "quantiles_m": {
+              "minimum": 0.00010919501640989295,
+              "p01": 0.04775568475345506,
+              "p10": 0.13809605717768902,
+              "median": 0.34282801242188243
+            },
+            "counts_at_or_below_m": {
+              "0.001": 10,
+              "0.002": 11,
+              "0.005": 23,
+              "0.01": 51,
+              "0.02": 128,
+              "0.05": 1526
+            },
+            "nearest_proxy_contributions_at_or_below_m": {
+              "0.001": {
+                "gripper0_hand_collision": 8,
+                "gripper0_finger1_collision": 2,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.002": {
+                "gripper0_hand_collision": 8,
+                "gripper0_finger1_collision": 3,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.005": {
+                "gripper0_hand_collision": 8,
+                "gripper0_finger1_collision": 15,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.01": {
+                "gripper0_hand_collision": 8,
+                "gripper0_finger1_collision": 43,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.02": {
+                "gripper0_hand_collision": 19,
+                "gripper0_finger1_collision": 109,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              },
+              "0.05": {
+                "gripper0_hand_collision": 987,
+                "gripper0_finger1_collision": 539,
+                "gripper0_finger1_pad_collision": 0,
+                "gripper0_finger2_collision": 0,
+                "gripper0_finger2_pad_collision": 0
+              }
+            }
+          },
+          "per_proxy": {
+            "gripper0_hand_collision": {
+              "point_count": 141191,
+              "nearest": {
+                "distance_m": 0.00010919501640989295,
+                "pixel_xy": [
+                  119,
+                  126
+                ],
+                "pixel_center_xy": [
+                  119.5,
+                  126.5
+                ],
+                "depth_m": 0.7605748176574707,
+                "point_world_m": [
+                  -0.0006354507672238219,
+                  -0.11896067735651907,
+                  1.2161215456579688
+                ],
+                "proxy": "gripper0_hand_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.000639699155093369,
+                  -0.11885408786133987,
+                  1.2160982179421203
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.00010919501640989295,
+                "p01": 0.05496290056958883,
+                "p10": 0.1389969524069332,
+                "median": 0.35269562901348234
+              },
+              "counts_at_or_below_m": {
+                "0.001": 8,
+                "0.002": 8,
+                "0.005": 8,
+                "0.01": 8,
+                "0.02": 19,
+                "0.05": 1153
+              }
+            },
+            "gripper0_finger1_collision": {
+              "point_count": 141191,
+              "nearest": {
+                "distance_m": 0.00016201112948511403,
+                "pixel_xy": [
+                  156,
+                  165
+                ],
+                "pixel_center_xy": [
+                  156.5,
+                  165.5
+                ],
+                "depth_m": 0.8344271183013916,
+                "point_world_m": [
+                  -0.02054065360039714,
+                  -0.06390586063393934,
+                  1.1232213181595636
+                ],
+                "proxy": "gripper0_finger1_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.0205411935367979,
+                  -0.06406775150631328,
+                  1.1232275358751997
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.00016201112948511403,
+                "p01": 0.08285758713264861,
+                "p10": 0.1870211454852611,
+                "median": 0.3686631828817633
+              },
+              "counts_at_or_below_m": {
+                "0.001": 2,
+                "0.002": 3,
+                "0.005": 15,
+                "0.01": 43,
+                "0.02": 109,
+                "0.05": 539
+              }
+            },
+            "gripper0_finger1_pad_collision": {
+              "point_count": 141191,
+              "nearest": {
+                "distance_m": 0.003023203213634656,
+                "pixel_xy": [
+                  156,
+                  165
+                ],
+                "pixel_center_xy": [
+                  156.5,
+                  165.5
+                ],
+                "depth_m": 0.8344271183013916,
+                "point_world_m": [
+                  -0.02054065360039714,
+                  -0.06390586063393934,
+                  1.1232213181595636
+                ],
+                "proxy": "gripper0_finger1_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.02037906509072405,
+                  -0.06390456750472517,
+                  1.1262401996001454
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.003023203213634656,
+                "p01": 0.08927176834775435,
+                "p10": 0.206280397708892,
+                "median": 0.37131745899548235
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 1,
+                "0.01": 5,
+                "0.02": 75,
+                "0.05": 521
+              }
+            },
+            "gripper0_finger2_collision": {
+              "point_count": 141191,
+              "nearest": {
+                "distance_m": 0.03418325122180501,
+                "pixel_xy": [
+                  236,
+                  145
+                ],
+                "pixel_center_xy": [
+                  236.5,
+                  145.5
+                ],
+                "depth_m": 0.7932089567184448,
+                "point_world_m": [
+                  -0.008494812536463447,
+                  0.07615002518289835,
+                  1.173910794042253
+                ],
+                "proxy": "gripper0_finger2_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.012231818697307342,
+                  0.0421799643105678,
+                  1.1746620685440206
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.03418325122180501,
+                "p01": 0.1269675553753033,
+                "p10": 0.215627410399427,
+                "median": 0.3590928953620031
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 0,
+                "0.01": 0,
+                "0.02": 0,
+                "0.05": 1
+              }
+            },
+            "gripper0_finger2_pad_collision": {
+              "point_count": 141191,
+              "nearest": {
+                "distance_m": 0.06218488834540823,
+                "pixel_xy": [
+                  236,
+                  145
+                ],
+                "pixel_center_xy": [
+                  236.5,
+                  145.5
+                ],
+                "depth_m": 0.7932089567184448,
+                "point_world_m": [
+                  -0.008494812536463447,
+                  0.07615002518289835,
+                  1.173910794042253
+                ],
+                "proxy": "gripper0_finger2_pad_collision",
+                "closest_solid_proxy_point_world_m": [
+                  -0.016362296657732273,
+                  0.02335373047351781,
+                  1.1420107266897739
+                ],
+                "inside_proxy": false
+              },
+              "quantiles_m": {
+                "minimum": 0.06218488834540823,
+                "p01": 0.1461947439558884,
+                "p10": 0.22803714157315258,
+                "median": 0.36236934444576246
+              },
+              "counts_at_or_below_m": {
+                "0.001": 0,
+                "0.002": 0,
+                "0.005": 0,
+                "0.01": 0,
+                "0.02": 0,
+                "0.05": 0
+              }
+            }
+          }
+        }
+      },
+      "residual_point_identity": "unknown; arm/wrist and visual-proxy differences may remain",
+      "distance_semantics": "distance to known solid convex robot proxy from recorded finite positive depth points; interior zero",
+      "missing_or_occluded_geometry": "unknown; no free-space inference",
+      "nearest_pixel_rgb": {
+        "all_valid_depth": {
+          "gripper0_hand_collision": [
+            223,
+            223,
+            223
+          ],
+          "gripper0_finger1_collision": [
+            66,
+            66,
+            66
+          ],
+          "gripper0_finger1_pad_collision": [
+            191,
+            191,
+            191
+          ],
+          "gripper0_finger2_collision": [
+            69,
+            69,
+            69
+          ],
+          "gripper0_finger2_pad_collision": [
+            193,
+            193,
+            193
+          ]
+        },
+        "outside_partial_gripper_silhouette": {
+          "gripper0_hand_collision": [
+            92,
+            92,
+            89
+          ],
+          "gripper0_finger1_collision": [
+            118,
+            109,
+            98
+          ],
+          "gripper0_finger1_pad_collision": [
+            118,
+            109,
+            98
+          ],
+          "gripper0_finger2_collision": [
+            146,
+            137,
+            128
+          ],
+          "gripper0_finger2_pad_collision": [
+            146,
+            137,
+            128
+          ]
+        }
+      }
+    }
+  },
+  "interpretation_limits": [
+    "distance to observed points, not scene clearance",
+    "partial gripper projection mask; residual point identity unknown",
+    "occluded, missing and out-of-view geometry unknown",
+    "simulator camera/base calibration and own-joint encoder analogues assumed",
+    "no contact classification, action gate, policy or new dynamics"
+  ]
+}
