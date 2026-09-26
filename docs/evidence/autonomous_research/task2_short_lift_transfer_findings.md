@@ -139,3 +139,12 @@ RGB and post-seal proxy artifacts; the scientific freeze remains unchanged.
 | Sensor summary | `dccb7c666604aad96d2f77b06779dbd5d4d8e1fc39eaaa60e74ab89b8a1e567e` |
 | Native-prefix agreement | `74dab4435519f56c947f5918115a4aad8635c055ac6a9d32393cd7e8f29ded52` |
 | Post-seal proxy membership | `3d189667cf4b067de8776d5af8430d9d280bfdf252b2aeea8dce4aca6b003afc` |
+
+Independent closure: reviewer commit `0144331` passed every one of the 29,520
+rows, all 13,776 native-prefix rows, null initial TCP, preclose-only metrics,
+cohorts/missing counts and every mask row. Report `e668980` and the portable copy
+passed; all 16 original lift frames, complete curves, all locations and both
+lift-departure panels were independently inspected. No correction or retracking
+was needed. Review:
+`docs/evidence/autonomous_research/task2_short_lift_transfer_independent_review.md`
+in the `laya-information-boundary-review` worktree.
