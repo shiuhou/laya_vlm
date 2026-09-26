@@ -81,3 +81,10 @@ composition/interface deficit; single-clause failure prevents that inference.
 Binary probabilities remain uncalibrated scores despite matched cardinality. No
 probability threshold, prompt search, live selector or architectural change follows
 automatically. Stop after this registered experiment and inspect the evidence.
+
+Pre-inference independent label audit found an identifiability limit: within these
+37 unique cases per goal, closed full-rule truth equals STOP-only truth (9 positives),
+and open full-rule truth equals opening-only truth (5 positives). The dataset lacks
+all Boolean combinations. A full/single-clause difference therefore demonstrates
+bounded instruction/interface sensitivity; it cannot uniquely identify general
+conjunction-composition capability. This finding was recorded before new inference.
