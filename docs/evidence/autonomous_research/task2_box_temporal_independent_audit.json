@@ -1,0 +1,1856 @@
+{
+  "status": "pass",
+  "freeze": "9a34f297abf8bc47ba1cf589dfe9cc9e31c303f0",
+  "journal_records": 6,
+  "journal_sha256": "0e7bd76d3f6b11244729bc767ec1b1f9a2625aa6069e494adf9743ea5900cf05",
+  "sensor_seal_sha256": "bae9793115ededab12b6b5bca242af9cdb0c2ed8c1e8d62219af3bbce65cc30b",
+  "sensor_summary_sha256": "4b46a6bddaa87b545de1f6d5f31e1aa6f77836e9b904fe5e71877cd47d6ce933",
+  "proxy_sha256": "be859c241cfae6e2da5446a0a9429c89b50e70b1d57eeea1de1f26298eba4ea2",
+  "tracks": 984,
+  "track_rows": 45264,
+  "native_flow_calls_implied_by_saved_statuses": {
+    "close": 44280,
+    "open_hold": 44280
+  },
+  "arms": {
+    "close": {
+      "native_surviving_counts": [
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492
+      ],
+      "surface_valid_counts": [
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492
+      ],
+      "first_native_failure_count": 0,
+      "fixed_boundaries": {
+        "0": {
+          "capture_id": 0,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "capture_id": 1,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 2.023489171443238e-06,
+                  "q25": 0.0,
+                  "q75": 0.0021893758798476326
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0025490170843372618,
+                  "q25": 0.002100755427784617,
+                  "q75": 0.003325960950455422
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.038773489160061625,
+                  "q25": 0.03877146567089018,
+                  "q75": 0.040960841550737814
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.03900234547394783,
+                  "q25": 0.03877896733262423,
+                  "q75": 0.04112171335844228
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                }
+              }
+            }
+          }
+        },
+        "13": {
+          "capture_id": 13,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005190888863821463,
+                  "q25": -0.0010217204873152474,
+                  "q75": 0.00988190508472278
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.020747059847093394,
+                  "q25": 0.01781022624443642,
+                  "q75": 0.028825058843601842
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.1866078410496469,
+                  "q25": 0.18039523169851018,
+                  "q75": 0.1912988572705482
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20707346865736315,
+                  "q25": 0.199495628121647,
+                  "q75": 0.2128883684914385
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "capture_id": 21,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005996237566086027,
+                  "q25": -0.000155531878497428,
+                  "q75": 0.010992462148567361
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.02175356832610988,
+                  "q25": 0.01872335274907065,
+                  "q75": 0.029036729102951686
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.18740099203782845,
+                  "q25": 0.181249222593245,
+                  "q75": 0.19239721662030979
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.2089814351067133,
+                  "q25": 0.20107957008767577,
+                  "q75": 0.21523330201881266
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0003986223987888504,
+                  "q25": 0.0,
+                  "q75": 0.002769199517225679
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002484483917070132,
+                  "q25": 0.0007613652073269473,
+                  "q75": 0.003534377092565198
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0003864246847058439,
+                  "q25": -1.2197714083006517e-05,
+                  "q75": 0.0027570018031426724
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.002631263954552467,
+                  "q25": 0.000854627465713828,
+                  "q75": 0.0036243301034672914
+                }
+              }
+            }
+          }
+        },
+        "29": {
+          "capture_id": 29,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.03969192644912395,
+                  "q25": 0.02854216888229541,
+                  "q75": 0.045336843556083
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.045098080586778444,
+                  "q25": 0.03807788188864204,
+                  "q75": 0.04995821715891241
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.18302579854305318,
+                  "q25": 0.17187604097622464,
+                  "q75": 0.18867071565001223
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20506236944601494,
+                  "q25": 0.1981125942817355,
+                  "q75": 0.210056292607886
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.03597029751406883,
+                  "q25": 0.026610825477416555,
+                  "q75": 0.03845495945034044
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.03750547561847827,
+                  "q25": 0.03543128524146677,
+                  "q75": 0.040747804716234806
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.0021127825778273768,
+                  "q25": -0.011472254614479649,
+                  "q75": 0.00037187935844423814
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.003115936759432045,
+                  "q25": 0.0020425335046667594,
+                  "q75": 0.014563581438466686
+                }
+              }
+            }
+          }
+        },
+        "37": {
+          "capture_id": 37,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.07570877183554459,
+                  "q25": 0.0638105665735218,
+                  "q75": 0.08282235393465845
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.08253365028025504,
+                  "q25": 0.07306788302091996,
+                  "q75": 0.08687792177057113
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.1809555070979375,
+                  "q25": 0.16905730183591472,
+                  "q75": 0.18806908919705137
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20638151883354589,
+                  "q25": 0.19926766663968096,
+                  "q75": 0.21146713025111435
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.07331938976504149,
+                  "q25": 0.062168284999256335,
+                  "q75": 0.07634175469190832
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.07464973729393323,
+                  "q25": 0.0716546114868161,
+                  "q75": 0.07800479969326804
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.0028508271583910227,
+                  "q25": -0.014001931924176175,
+                  "q75": 0.00017153776847581015
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.004463786161238364,
+                  "q25": 0.0024168441917888847,
+                  "q75": 0.019017651270653732
+                }
+              }
+            }
+          }
+        },
+        "45": {
+          "capture_id": 45,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.11249914206622452,
+                  "q25": 0.10048045541286765,
+                  "q75": 0.11995103255874875
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.11886574456721968,
+                  "q25": 0.108454457525863,
+                  "q75": 0.12384620843769467
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.17978349214224926,
+                  "q25": 0.1677648054888924,
+                  "q75": 0.1872353826347735
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20537316583673726,
+                  "q25": 0.1981050185549629,
+                  "q75": 0.2098553657239133
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.11037611419893995,
+                  "q25": 0.09451774239826041,
+                  "q75": 0.11364802110117289
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.11217442848936579,
+                  "q25": 0.10831835194862452,
+                  "q75": 0.11599229231839807
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.0037564879108607507,
+                  "q25": -0.019614859711540283,
+                  "q75": -0.0004845810086278046
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0050364174617578954,
+                  "q25": 0.002746514586605773,
+                  "q75": 0.02083774229925736
+                }
+              }
+            }
+          }
+        }
+      },
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 396,
+          "proxy_false": 96,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 394,
+          "proxy_false": 98,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 394,
+          "proxy_false": 98,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 392,
+          "proxy_false": 100,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 390,
+          "proxy_false": 102,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "proxy_true": 394,
+          "proxy_false": 98,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        }
+      ],
+      "observed_departure_seed_count": 34
+    },
+    "open_hold": {
+      "native_surviving_counts": [
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492
+      ],
+      "surface_valid_counts": [
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492,
+        492
+      ],
+      "first_native_failure_count": 0,
+      "fixed_boundaries": {
+        "0": {
+          "capture_id": 0,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                }
+              }
+            }
+          }
+        },
+        "1": {
+          "capture_id": 1,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 2.023489171443238e-06,
+                  "q25": 0.0,
+                  "q75": 0.0021893758798476326
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0025490170843372618,
+                  "q25": 0.002100755427784617,
+                  "q75": 0.003325960950455422
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.038773489160061625,
+                  "q25": 0.03877146567089018,
+                  "q75": 0.040960841550737814
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.03900234547394783,
+                  "q25": 0.03877896733262423,
+                  "q75": 0.04112171335844228
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": null,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 0,
+                  "median": null,
+                  "q25": null,
+                  "q75": null
+                }
+              }
+            }
+          }
+        },
+        "13": {
+          "capture_id": 13,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005190888863821463,
+                  "q25": -0.0010217204873152474,
+                  "q75": 0.00988190508472278
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.020747059847093394,
+                  "q25": 0.01781022624443642,
+                  "q75": 0.028825058843601842
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.1866078410496469,
+                  "q25": 0.18039523169851018,
+                  "q75": 0.1912988572705482
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20707346865736315,
+                  "q25": 0.199495628121647,
+                  "q75": 0.2128883684914385
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": 0.0,
+                  "q75": 0.0
+                }
+              }
+            }
+          }
+        },
+        "21": {
+          "capture_id": 21,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005142633882356085,
+                  "q25": -0.0010826084024928295,
+                  "q75": 0.009887192637873465
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.020742728107924047,
+                  "q25": 0.017825013531911203,
+                  "q75": 0.028825058843601842
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.18656700099141027,
+                  "q25": 0.18034175870656136,
+                  "q75": 0.19131155974692765
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.20710012620858337,
+                  "q25": 0.19966540468251162,
+                  "q75": 0.21295785262903716
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.0,
+                  "q25": -1.024375193803273e-05,
+                  "q75": 9.484305248053104e-06
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 1.5400187700762636e-05,
+                  "q25": 5.015585015784354e-06,
+                  "q75": 3.596031805716447e-05
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 7.4149232287545885e-06,
+                  "q25": -2.8288287092781417e-06,
+                  "q75": 1.6899228476807693e-05
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.00027869883657543644,
+                  "q25": 0.0002770811561967365,
+                  "q75": 0.0002825699661715576
+                }
+              }
+            }
+          }
+        },
+        "29": {
+          "capture_id": 29,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005448732775451048,
+                  "q25": -0.000124956933585052,
+                  "q75": 0.009825886743988488
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.020181439051924734,
+                  "q25": 0.016966545016783664,
+                  "q75": 0.029117939469166448
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.14873396943831846,
+                  "q25": 0.14316027972928236,
+                  "q75": 0.1531111234068559
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.17422391755381086,
+                  "q25": 0.1663005237875504,
+                  "q75": 0.17922664170155583
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.26324756561025e-06,
+                  "q25": -1.1964582950080294e-05,
+                  "q75": 2.6510590535017142e-05
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 4.5708368612956026e-05,
+                  "q25": 1.7440561409323776e-05,
+                  "q75": 0.003630538474288946
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.03812845227539241,
+                  "q25": -0.0381436801059081,
+                  "q75": -0.038105204932423004
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.03813527861331877,
+                  "q25": 0.03810944668993731,
+                  "q75": 0.03816544416738728
+                }
+              }
+            }
+          }
+        },
+        "37": {
+          "capture_id": 37,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005447094849033884,
+                  "q25": -0.000125775896793634,
+                  "q75": 0.009825886743988488
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.02018373005660485,
+                  "q25": 0.017046481397874434,
+                  "q75": 0.029115306571517924
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.11057834450958864,
+                  "q25": 0.10500547376376113,
+                  "q75": 0.11495713640454325
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.14263489455577627,
+                  "q25": 0.13644726456173623,
+                  "q75": 0.14780154964422282
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.843920819535107e-06,
+                  "q25": -1.2546391171625038e-05,
+                  "q75": 2.7814411200810518e-05
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 4.544991161866844e-05,
+                  "q25": 1.9326664088349955e-05,
+                  "q75": 0.0036617841752701894
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.07628185860445114,
+                  "q25": -0.0762982489164423,
+                  "q75": -0.07625788811406986
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.07629068204177264,
+                  "q25": 0.07626455375751726,
+                  "q75": 0.0763215664805797
+                }
+              }
+            }
+          }
+        },
+        "45": {
+          "capture_id": 45,
+          "denominator": 492,
+          "native_surviving_count": 492,
+          "valid_surface_count": 492,
+          "native_failure_count": 0,
+          "unknown_after_failure_count": 0,
+          "references": {
+            "initial": {
+              "reference_capture_id": 0,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 0.005447094849033884,
+                  "q25": -0.0002887084375949589,
+                  "q75": 0.009825886743988488
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.0203392183036365,
+                  "q25": 0.017141347263979825,
+                  "q75": 0.029239399925429566
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": 0.07254385460135943,
+                  "q25": 0.06680805131473058,
+                  "q75": 0.07692264649631403
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.11618953493263415,
+                  "q25": 0.10962326944685594,
+                  "q75": 0.12025836625282005
+                }
+              }
+            },
+            "preclose": {
+              "reference_capture_id": 13,
+              "reference_surface_valid_count": 492,
+              "metrics": {
+                "point_delta_z_m": {
+                  "count": 492,
+                  "median": 3.88695142894413e-06,
+                  "q25": -1.3943979385033778e-05,
+                  "q75": 2.8541465428522095e-05
+                },
+                "point_delta_norm_m": {
+                  "count": 492,
+                  "median": 5.0405205231284505e-05,
+                  "q25": 2.017754626665398e-05,
+                  "q75": 0.0037318323578323935
+                },
+                "point_minus_tcp_delta_z_m": {
+                  "count": 492,
+                  "median": -0.11431630548207095,
+                  "q25": -0.11433413641288492,
+                  "q75": -0.11429165096807137
+                },
+                "point_minus_tcp_delta_norm_m": {
+                  "count": 492,
+                  "median": 0.11432899679956228,
+                  "q25": 0.11430135028876783,
+                  "q75": 0.11435614738806357
+                }
+              }
+            }
+          }
+        }
+      },
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 396,
+          "proxy_false": 96,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 403,
+          "proxy_false": 89,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 394,
+          "proxy_false": 98,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 398,
+          "proxy_false": 94,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 396,
+          "proxy_false": 96,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "proxy_true": 401,
+          "proxy_false": 91,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "proxy_true": 400,
+          "proxy_false": 92,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "proxy_true": 399,
+          "proxy_false": 93,
+          "proxy_unknown": 0
+        }
+      ],
+      "observed_departure_seed_count": 32
+    }
+  },
+  "limits": [
+    "all saved rows, source hashes, sample pixels/depths, displacements, summaries and proxy memberships independently checked",
+    "no LK, projection, FK, inference, physics or rendering rerun; world-coordinate generation source-reviewed",
+    "mask hashes record evaluated bytes after sensor seal, not historical ownership truth",
+    "sensor-before-evaluator ordering source-reviewed and complete seal/journal referenced; evaluator start lacks independent wall timestamp",
+    "one dependent paired trajectory; no identity/holding classifier, selected-survivor success or independent-trial claim"
+  ]
+}
