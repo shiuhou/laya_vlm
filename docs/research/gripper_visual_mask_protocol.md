@@ -69,3 +69,34 @@ safe action admission.
 
 Append the compiled visual mesh counts, calibration hash and unchanged input
 hashes after static export and before any recorded visual-mask calculation.
+
+Static export `gripper-visual-calibration-01` from frozen exporter `ea89ca8`
+completed before any visual-mask measurement. It selected exactly:
+
+| Visual geometry | Compiled vertices | Compiled faces |
+| --- | ---: | ---: |
+| `gripper0_hand_visual` | 3,613 | 7,078 |
+| `gripper0_finger1_visual` | 318 | 624 |
+| `gripper0_finger2_visual` | 318 | 624 |
+
+All three are opaque group-1 noncolliding meshes on the gripper subtree.
+Calibration SHA-256:
+`c86706370d8442f85365d1e1d7e962ffb0f2346c235d968146694ed6e3fb4c98`.
+The complete prior body/site/collision calibration matched exactly. One
+constructor `mj_step1` preserved time/qpos/qvel exactly; time remained zero;
+no integration or rendering occurred.
+
+Unchanged input files pinned in the mask-control adapter:
+
+| Prior sealed file | SHA-256 |
+| --- | --- |
+| Own-joint/original calibration request | `02e9d19a3cdbee61eb4cf34601040a3110ff83a2946f141f674c7ec96e47663e` |
+| Sample 0 depth/K/T NPZ | `67b0024f17052f3b8e6f95398d06873605872b295180c697ef504119091dcd8b` |
+| Sample 1 depth/K/T NPZ | `98b7631887dafbcdf2e0d11481d03ef23cee1709f9de4c086281ecb957a2bd38` |
+| Sample 0 collision-distance/mask NPZ | `23c2244e761473cc6e5de55d1c37f0d787635d14a87f6590b2ee231cbdeed0ac` |
+| Sample 1 collision-distance/mask NPZ | `0b9e7e62802a9af9dfb86b2717efa7d9bb22e85e7b078e138b67582dcdf20f77` |
+
+The worker selects witnesses from these existing maps and backprojects their
+recorded depths. It does not recalculate point-to-proxy distances. Synthetic
+checks require that mask selection preserve the provided distance array and
+that complete exclusion produce unknown rather than infinite clearance.
