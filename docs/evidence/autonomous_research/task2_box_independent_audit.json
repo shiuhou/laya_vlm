@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "freeze": "ba7ab2e6d58932cef893f4d3549cd550279b2d65",
+  "journal_records": 9,
+  "journal_sha256": "51dd621269c6da151c39e9b1bd9b0cdf15a890eb2e4af28a59caaea065201a3b",
+  "sensor_sha256": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+  "proxy_sha256": "c1d84224030e94dda9e5ec58525dce598128b8278cdfeab82b881676c4c9f599",
+  "model_calls": 1,
+  "generated_tokens": 12,
+  "box_xyxy": [
+    208,
+    156,
+    228,
+    223
+  ],
+  "crop_xyxy": [
+    212,
+    169,
+    224,
+    210
+  ],
+  "selected_count": 492,
+  "proxy_overlap_count": 414,
+  "proxy_visible_count": 777,
+  "proxy_strata": {
+    "proxy_interior": 373,
+    "proxy_boundary_band": 65,
+    "proxy_exterior": 54
+  },
+  "depth_median_m": 1.001205563545227,
+  "depth_min_m": 0.9657990336418152,
+  "depth_max_m": 1.2016721963882446,
+  "center_minus_median_mm": -7.3590874671936035,
+  "median_contributor_indices": {
+    "lower": [
+      358
+    ],
+    "upper": [
+      290
+    ]
+  },
+  "limits": [
+    "stored hashes, arrays and scalar arithmetic only",
+    "world coordinates source-reviewed; no projection rerun",
+    "recorded model identity map checked; weights not reread",
+    "no inference, physics or rendering",
+    "archived rendered mask is a membership proxy, not depth ownership or semantic confidence"
+  ]
+}

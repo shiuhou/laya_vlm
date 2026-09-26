@@ -31,3 +31,19 @@ The earlier frame-only preflight missed this processor-output schema. The review
 **Final PASS for `ba7ab2e6d58932cef893f4d3549cd550279b2d65`.** The diff from the preceding reviewed amendment factors metadata serialization into the pure `grid_metadata()` helper, adds an actual processor-only preflight mode and a native NumPy schema test, and appends the failed-setup account to the protocol. The processor-only preflight stops before model construction or inference. No prompt, checkpoint, decoding setting, feature, mask, or scientific condition changes. The producer reports nine focused tests passing; the reviewer previously ran the original eight and independently exercised the actual NumPy processor schema above.
 
 The final source, protocol, and test SHA-256 values are respectively `9986c4f79578dd4e2691726f21df7ba0706ac8b9876a255ca078eed2f9bb43a6`, `8476959edc85bd60750b233e76404fdb1b723b679075aa1393559d06ca0a5efd`, and `5ed93df4723ebded1c8efed99d8fd3d0239f96fbac123c404d5536799ac3f5ee`. Attempt 02 may proceed under the parent's existing authorization. The one inference remains unspent at this review; attempt 01 and the reviewer preflight miss remain part of the evidence.
+
+## Independent attempt 02 result audit
+
+**PASS for the sealed one-call result at the final freeze.** The standalone checker `experiments/task2_box_evidence_audit.py` verifies the nine-record chain, recorded model identity map, clean source identity, settings, original RGB bytes, actual processor-preflight token agreement, raw response, complete 12-token EOS-terminated generation, response/model/sensor seals, and separate evaluator start after termination. It performs no inference, physics, rendering, FK, or geometric projection. The weights were not reread; their recorded file-hash map reproduces the pinned content identity. Final P median and BOX are checked from artifacts; full provider-coordinate parity remains supported by the reviewed unchanged implementation and earlier focused test. All stored G positions pass finite-vector schema checks; their projection was not rerun.
+
+The BOX normalizes `[542,408,596,582]` to integer pixels `[208,156,228,223]`, with unchanged crop `[212,169,224,210]`. All **492** crop pixels are valid and retained with exact source RGB/depth. Independent arithmetic reproduces the depth median **1.001205563545227 m**, range **0.9657990336418152–1.2016721963882446 m**, and complete lower/upper median contributor sets `[358]` and `[290]`. The center sample is **7.359087467 mm nearer** than the crop median, so P is not the observed center sample's surface point.
+
+The separate archived-mask proxy agrees with **414/492 (84.1463%)** selected pixels, covering **414/777 (53.2819%)** visible proxy pixels. Independent 3×3 neighborhood classification reproduces **373 interior, 65 boundary-band, and 54 exterior** entries. Both median contributors and the center have proxy membership. These facts do not turn the unfiltered crop into segmentation, establish resolved-depth ownership, or certify any G point as a safe grasp target. A surface point, object extent, grasp center, and collision-free approach remain distinct requirements.
+
+| Sealed artifact | SHA-256 |
+| --- | --- |
+| `task2-box-support-run-02/episodes.jsonl` | `51dd621269c6da151c39e9b1bd9b0cdf15a890eb2e4af28a59caaea065201a3b` |
+| `task2-box-support-run-02/sensor-representation.json` | `be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead` |
+| `task2-box-support-run-02/evaluation/proxy-analysis.json` | `c1d84224030e94dda9e5ec58525dce598128b8278cdfeab82b881676c4c9f599` |
+
+Machine-readable audit results are in `task2_box_independent_audit.json`. The one allowed inference is now spent; setup attempt 01 remains preserved.
