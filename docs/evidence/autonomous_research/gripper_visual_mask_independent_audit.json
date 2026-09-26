@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "producer_commit": "9c5e40f02910fbe7e503245fa30e787c3d606677",
+  "scope": "stored-map/mask arithmetic and input ownership; no FK, projection, distance or simulator rerun",
+  "artifacts_manifest_sha256": "4e0109bdf477cb579086b2a0fbe0f1cfea69fa7ccca89f1bfa47b93c478bdff5",
+  "output_seal_sha256": "e33696d9cafbcd70e1975c15e371b1edef6bfae6c4e5815ef43c7b60247fdd1c",
+  "visual_calibration_sha256": "c86706370d8442f85365d1e1d7e962ffb0f2346c235d968146694ed6e3fb4c98",
+  "witness_checks": 24,
+  "samples": [
+    {
+      "sample": "sample0",
+      "mask_counts": {
+        "old_collision": 6169,
+        "new_visual": 6191,
+        "newly_excluded": 35,
+        "newly_admitted": 13,
+        "intersection": 6156
+      },
+      "new_union_minimum_mm": 0.27825170586454406,
+      "new_union_witness": {
+        "distance_m": 0.0002782517058645441,
+        "pixel_xy": [
+          237,
+          102
+        ],
+        "pixel_center_xy": [
+          237.5,
+          102.5
+        ],
+        "point_world_m": [
+          -0.02637664399690831,
+          0.07476705974826864,
+          1.2462275450960276
+        ],
+        "depth_m": 0.7616868019104004,
+        "proxy": "gripper0_hand_collision"
+      },
+      "new_per_proxy_minimum_mm": {
+        "gripper0_hand_collision": 0.27825170586454406,
+        "gripper0_finger1_collision": 1.7380414852009913,
+        "gripper0_finger1_pad_collision": 9.37992604194338,
+        "gripper0_finger2_collision": 70.73201112239911,
+        "gripper0_finger2_pad_collision": 72.27075330180452
+      },
+      "old_nearest_witness_exclusion": {
+        "union": {
+          "old_nearest_pixel_xy": [
+            216,
+            97
+          ],
+          "old_distance_m": 0.0001267221951080329,
+          "excluded_by_visual_mask": true
+        },
+        "gripper0_hand_collision": {
+          "old_nearest_pixel_xy": [
+            216,
+            97
+          ],
+          "old_distance_m": 0.0001267221951080329,
+          "excluded_by_visual_mask": true
+        },
+        "gripper0_finger1_collision": {
+          "old_nearest_pixel_xy": [
+            147,
+            162
+          ],
+          "old_distance_m": 0.0017380414852009914,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger1_pad_collision": {
+          "old_nearest_pixel_xy": [
+            147,
+            163
+          ],
+          "old_distance_m": 0.00937992604194338,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger2_collision": {
+          "old_nearest_pixel_xy": [
+            165,
+            176
+          ],
+          "old_distance_m": 0.07073201112239912,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger2_pad_collision": {
+          "old_nearest_pixel_xy": [
+            165,
+            177
+          ],
+          "old_distance_m": 0.07227075330180452,
+          "excluded_by_visual_mask": false
+        }
+      }
+    },
+    {
+      "sample": "sample1",
+      "mask_counts": {
+        "old_collision": 6265,
+        "new_visual": 6268,
+        "newly_excluded": 13,
+        "newly_admitted": 10,
+        "intersection": 6255
+      },
+      "new_union_minimum_mm": 0.0,
+      "new_union_witness": {
+        "distance_m": 0.0,
+        "pixel_xy": [
+          156,
+          155
+        ],
+        "pixel_center_xy": [
+          156.5,
+          155.5
+        ],
+        "point_world_m": [
+          -0.032021757135262896,
+          -0.06392171326358735,
+          1.1371091701241482
+        ],
+        "depth_m": 0.8346341252326965,
+        "proxy": "gripper0_finger1_pad_collision"
+      },
+      "new_per_proxy_minimum_mm": {
+        "gripper0_hand_collision": 0.23380233195171124,
+        "gripper0_finger1_collision": 0.16201112948511404,
+        "gripper0_finger1_pad_collision": 0.0,
+        "gripper0_finger2_collision": 34.18325122180501,
+        "gripper0_finger2_pad_collision": 62.18488834540823
+      },
+      "old_nearest_witness_exclusion": {
+        "union": {
+          "old_nearest_pixel_xy": [
+            119,
+            126
+          ],
+          "old_distance_m": 0.00010919501640989295,
+          "excluded_by_visual_mask": true
+        },
+        "gripper0_hand_collision": {
+          "old_nearest_pixel_xy": [
+            119,
+            126
+          ],
+          "old_distance_m": 0.00010919501640989295,
+          "excluded_by_visual_mask": true
+        },
+        "gripper0_finger1_collision": {
+          "old_nearest_pixel_xy": [
+            156,
+            165
+          ],
+          "old_distance_m": 0.00016201112948511403,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger1_pad_collision": {
+          "old_nearest_pixel_xy": [
+            156,
+            165
+          ],
+          "old_distance_m": 0.003023203213634656,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger2_collision": {
+          "old_nearest_pixel_xy": [
+            236,
+            145
+          ],
+          "old_distance_m": 0.03418325122180501,
+          "excluded_by_visual_mask": false
+        },
+        "gripper0_finger2_pad_collision": {
+          "old_nearest_pixel_xy": [
+            236,
+            145
+          ],
+          "old_distance_m": 0.06218488834540823,
+          "excluded_by_visual_mask": false
+        }
+      }
+    }
+  ]
+}
