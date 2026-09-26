@@ -20,3 +20,18 @@ Preflight 01 used the `laya-embodied` interpreter and failed AutoProcessor depen
 | `tests/test_task2_neck_box_support.py` | `bc72389747369967ea132b8fcd4ecc1024ed2d54762ddfbbe0dfcbda2df0b181` |
 
 The original object-level call remains a separate completed condition. This approval covers exactly the one additional fixed neck-region inference and its registered stored-result analysis. Generalization, model planning, physical utility, and whether metric geometry can be omitted remain untested.
+
+## Pre-inference GPU1 resource amendment
+
+**Prospective PASS for clean `f1cae7c9160e31d2439683a7818c339b6f854dca`.** This supersedes the GPU0 allocation above. The parent authorized physical GPU1, another RTX 4090, because GPU0 has an unrelated Isaac-GR00T process; that process remains untouched. The sole reused-core change adds `generate(output, *, expected_gpu='0')` and checks the actual `CUDA_VISIBLE_DEVICES` against the explicit parameter. The neck wrapper explicitly requests `'1'`; the historical default remains `'0'`. The actual environment is recorded without spoofing. The wrapper's explicit four-mode CLI dispatch preserves the existing generate, evaluate, audit and processor-preflight behavior, including restoration of the fixed query context in `finally`.
+
+The reviewer independently inspected the complete `aee8f29..f1cae7c` diff and reran the focused tests: **11 passed**. Raw generation, settings, parsing, depth support, P/G arithmetic, seals and evaluation did not change. The actual no-model processor preflight 03 has SHA-256 `548c206d665f131c5bc9df121850b55f7ab03dde12633d82aa3da688e809cbcc` and clean `f1cae7c` identity. Its source hash, exact question, all 240 input token IDs, field types/shapes/dtypes and serialized grid match preflight 02 exactly; both model construction and call counts are zero. The reviewer compared the stored receipts and hashes without another processor or inference invocation.
+
+| Current reviewed file | SHA-256 |
+| --- | --- |
+| Reused `embodied_runtime/experiments/task2_box_support.py` | `8a8d7d828b4b2f65593975cb0378e5b4e7828c1e27ae432d6ca3bfdae3f179f1` |
+| `embodied_runtime/experiments/task2_neck_box_support.py` | `c194386706b69519f1b68b275fde1e011c60f7248c99b1d9a080968ce18e38c4` |
+| `docs/research/task2_neck_box_support_protocol.md` | `1f96645a8e951ff509850cbe9cd1550b7b61857835206d4219e843695319497e` |
+| `tests/test_task2_neck_box_support.py` | `0dc2b687c970e4a0c5bc56927559a10e343abc90dfcc8fb486767e33b66e2b62` |
+
+This review permits the same one fixed neck-query inference and registered stored-result analysis under the parent's existing allocation. The inference remains unspent at this prospective review; no retry or expanded scientific budget is implied.
