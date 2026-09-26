@@ -1,0 +1,333 @@
+{
+  "status": "pass",
+  "freeze": "0733ea7280e6585848f58e8e29990fd3415028ab",
+  "artifact_count": 17,
+  "artifacts_sha256": "f1f4e56f422fa01722653c24c66ab5637c3ec43c6f8309a798df37245ea906a8",
+  "sensor_output_seal_sha256": "7c7e5778ceceb7d8999f9e3ede92e7b0df3e3e4aa3f1805c8df95b2be6ca55e2",
+  "comparison_sha256": "5c6fedaa13bb4dcd137c3c95b0b67d763138daa25386368c75e8b6dd8c619a0e",
+  "registered_centers": 11,
+  "registered_neighborhood_entries": 99,
+  "states": {
+    "24": {
+      "coverage_count_and_center": {
+        "0": {
+          "false": 141479,
+          "true": 0
+        },
+        "1": {
+          "false": 86,
+          "true": 0
+        },
+        "2": {
+          "false": 36,
+          "true": 118
+        },
+        "3": {
+          "false": 0,
+          "true": 80
+        },
+        "4": {
+          "false": 0,
+          "true": 5657
+        }
+      },
+      "array_counts": {
+        "own_native": {
+          "hit_samples": 23262,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "cached_native": {
+          "hit_samples": 23267,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "own_center": {
+          "hit_samples": 5855,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "cached_center": {
+          "hit_samples": 5855,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        }
+      },
+      "cached_comparison": {
+        "native": {
+          "coverage_disagreement_samples": 7,
+          "coverage_disagreement_pixels": 7,
+          "cached_minus_own_depth_on_common_hits_m": {
+            "count": 23261,
+            "minimum": -0.00013945984293584068,
+            "median": -3.1499499149045818e-06,
+            "maximum": 0.007099586562264171,
+            "mean_absolute": 9.102058009776534e-06,
+            "maximum_absolute": 0.007099586562264171
+          }
+        },
+        "center": {
+          "coverage_disagreement_samples": 0,
+          "coverage_disagreement_pixels": 0,
+          "cached_minus_own_depth_on_common_hits_m": {
+            "count": 5855,
+            "minimum": -0.0001251457272811729,
+            "median": -3.1484907203616075e-06,
+            "maximum": 0.000156043141699036,
+            "mean_absolute": 8.068811796207187e-06,
+            "maximum_absolute": 0.000156043141699036
+          }
+        }
+      },
+      "registered_centers": [
+        {
+          "pixel_xy": [
+            216,
+            97
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            false,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 713.4993672370911,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            147,
+            162
+          ],
+          "own_sample_coverage": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 0.9087324142456055,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            147,
+            163
+          ],
+          "own_sample_coverage": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 0.9035468101501465,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            165,
+            176
+          ],
+          "own_sample_coverage": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 1.3088583946228027,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            165,
+            177
+          ],
+          "own_sample_coverage": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 1.3872981071472168,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            237,
+            102
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 734.7774505615234,
+          "cached_coverage_agrees": true
+        }
+      ],
+      "all_registered_neighborhood_coverage_agrees": true
+    },
+    "25": {
+      "coverage_count_and_center": {
+        "0": {
+          "false": 141406,
+          "true": 0
+        },
+        "1": {
+          "false": 77,
+          "true": 0
+        },
+        "2": {
+          "false": 36,
+          "true": 55
+        },
+        "3": {
+          "false": 0,
+          "true": 160
+        },
+        "4": {
+          "false": 0,
+          "true": 5722
+        }
+      },
+      "array_counts": {
+        "own_native": {
+          "hit_samples": 23627,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "cached_native": {
+          "hit_samples": 23629,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "own_center": {
+          "hit_samples": 5937,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        },
+        "cached_center": {
+          "hit_samples": 5939,
+          "edge_hit_samples": 0,
+          "geometry_tie_samples": 0
+        }
+      },
+      "cached_comparison": {
+        "native": {
+          "coverage_disagreement_samples": 2,
+          "coverage_disagreement_pixels": 2,
+          "cached_minus_own_depth_on_common_hits_m": {
+            "count": 23627,
+            "minimum": -0.012239492169746846,
+            "median": 3.3983730449493876e-05,
+            "maximum": 0.016515079794238274,
+            "mean_absolute": 3.401006684009179e-05,
+            "maximum_absolute": 0.016515079794238274
+          }
+        },
+        "center": {
+          "coverage_disagreement_samples": 2,
+          "coverage_disagreement_pixels": 2,
+          "cached_minus_own_depth_on_common_hits_m": {
+            "count": 5937,
+            "minimum": -7.287873968631065e-05,
+            "median": 3.401618930232164e-05,
+            "maximum": 0.00018982066256645336,
+            "mean_absolute": 3.29031307633581e-05,
+            "maximum_absolute": 0.00018982066256645336
+          }
+        }
+      },
+      "registered_centers": [
+        {
+          "pixel_xy": [
+            119,
+            126
+          ],
+          "own_sample_coverage": [
+            true,
+            true,
+            false,
+            true
+          ],
+          "own_center_coverage": true,
+          "zero_minus_native_depth_mm": -1.1232495307922363,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            156,
+            165
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 382.36117362976074,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            236,
+            145
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 497.8231191635132,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            240,
+            110
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 658.0023765563965,
+          "cached_coverage_agrees": true
+        },
+        {
+          "pixel_xy": [
+            156,
+            155
+          ],
+          "own_sample_coverage": [
+            true,
+            false,
+            true,
+            false
+          ],
+          "own_center_coverage": false,
+          "zero_minus_native_depth_mm": 418.18100214004517,
+          "cached_coverage_agrees": true
+        }
+      ],
+      "all_registered_neighborhood_coverage_agrees": true
+    }
+  },
+  "limits": [
+    "stored arrays, hashes and arithmetic only; no FK or projection rerun",
+    "seal-before-evaluator order is source-reviewed and declared in sealed artifacts; no timestamped journal",
+    "geometric potential coverage is not observed depth ownership, GPU raster equivalence, or clearance",
+    "missing arm geometry and occlusion remain unknown"
+  ]
+}

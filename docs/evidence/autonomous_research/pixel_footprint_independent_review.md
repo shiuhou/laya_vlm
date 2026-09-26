@@ -31,3 +31,26 @@ The reviewer performed an actual source-XML/calibration schema preflight without
 Reviewed exporter SHA-256: `619118cb78fb42c608a8ff27a1be61e034632614c079e146c7713b22acee5613`; amended worker: `453dfac702a0ae2867a4bfc8ebf8d3bf849962875d16141fecef09bb6946f62d`; coordinator: `e5f072d494d60bd88c2de8c8cc8ea8309010052ebcec388a6284f970541a659b`; protocol: `0a74ae8b9a9adea82a4af233ddec54485536a617f628c491a596dd4e2361c176`. Measurement rules and fixed pixels remain unchanged.
 
 The stored static export passes independent artifact/hash/schema inspection: topology SHA-256 `12bedb9ef0604ba826f8e79a9a6e8d9bfabfe123211181a056ba608130c9fcc1`, audit SHA-256 `1cbbfb1f1ee66fb0388f941d79bc80b9d2b83d52a3f9b2d9a4693bec13f7bd79`, face counts 7,078 / 624 / 624, integer indices within the exact parent vertex counts, and all nine reviewed exact gates recorded as passed. The reviewer did not recompile a model; equality of the compiled vertices/local transforms is supported by the reviewed exporter and recorded gates. Freeze `0733ea7` pins that topology digest for the separately numbered comparison. This closes the missing-topology blocker without modifying sample geometry or observed depth.
+
+## Independent comparison 02 result audit
+
+**PASS for `0733ea7280e6585848f58e8e29990fd3415028ab`.** The worker completed with exit 0. The standalone `experiments/pixel_footprint_evidence_audit.py` verifies all 17 artifact hashes, input/source/output seals, exact inherited calibration/joints/topology, strict sensor schemas, unchanged native frame arrays, and bit-for-bit retention of observed depth. It checks all eight stored own/cached condition arrays, coverage/count/depth/index/edge/tie consistency, every full-frame coverage-stratified statistic, and every one of the 11 fixed centers and 99 registered neighborhood entries. It performs no FK, projection, rendering, physics, or additional pixel selection. Geometric intersections remain supported by the reviewed code and focused tests; this is an independent artifact/arithmetic audit, not an independent geometric reconstruction.
+
+All six already-registered large resolved-depth jumps have partial own-triangle sample coverage and no own-triangle hit at the pixel center:
+
+| Boundary | Pixel | Covered native samples / 4 | Zero-MSAA minus native depth (mm) |
+| --- | --- | --- | --- |
+| 24 | (216,97) | 1 | +713.499367 |
+| 24 | (237,102) | 2 | +734.777451 |
+| 25 | (156,165) | 2 | +382.361174 |
+| 25 | (236,145) | 2 | +497.823119 |
+| 25 | (240,110) | 2 | +658.002377 |
+| 25 | (156,155) | 2 | +418.181002 |
+
+Own-qpos and cached-pose coverage agree across **all 99 registered neighborhood entries**, including all 11 centers. Across the full images, native sample coverage differs at **7 samples in 7 pixels** before 24 and **2 samples in 2 pixels** before 25; center coverage differs at **0** and **2** pixels respectively. Common-hit cached-minus-own predicted depth differences reach **7.099586562 mm** and **16.515079794 mm** in the native-sample conditions despite small median differences (−0.003150 mm and +0.033984 mm). This retains the sensitivity at geometric depth discontinuities; small pose discrepancies do not imply identical sample support or nearest surfaces everywhere.
+
+There are 122 and 113 pixels with at least one native potential hit and no center hit. No stored own/cached condition reports an exact floating edge or cross-mesh nearest-depth tie. Neither fact certifies GPU raster coverage. The four pre-24 registered centers with no modeled gripper coverage still differ by about 0.904–1.387 mm between resolved images; missing arm geometry and other scene/render contributions remain unknown. Pre-25 (119,126) has three native hits plus a center hit and a −1.123250 mm resolved-depth difference.
+
+The result is consistent with sampling contributing to the six large differences and shows why a resolved scalar must not simply be assigned to the center ray. It establishes neither actual per-sample ownership nor a resolve law, semantic mask, contact state, or clearance. Seal-before-evaluator ordering is supported by reviewed control flow and sealed declarations; this experiment does not export a timestamped event journal or enforce a filesystem sandbox.
+
+The machine-readable findings are `pixel_footprint_independent_audit.json`. The artifact manifest SHA-256 is `f1f4e56f422fa01722653c24c66ab5637c3ec43c6f8309a798df37245ea906a8`; sensor-output seal is `7c7e5778ceceb7d8999f9e3ede92e7b0df3e3e4aa3f1805c8df95b2be6ca55e2`; evaluator comparison is `5c6fedaa13bb4dcd137c3c95b0b67d763138daa25386368c75e8b6dd8c619a0e`. Failed attempt 01 and the actual-input schema miss remain preserved above.
