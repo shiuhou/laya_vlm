@@ -1,0 +1,189 @@
+{
+  "report_sha256": "5026bfbb11fa3616e5880a6ba892ae6f9d1b75483b3a4c2d87834ed28e29c4f0",
+  "audit_sha256": "7ebc629fe12b63820caaacca5e0b6b758a7c2665ee60d00e97121c75b5e53198",
+  "audit": {
+    "source_log_sha256": "e02f99a40ca4b7ce09069c4228c4b0d040e6028f590539e792d65240be9edefd",
+    "complete": false,
+    "planned_calls": 10,
+    "observed_calls": 5,
+    "valid_native_choices": 4,
+    "invalid_calls": 1,
+    "missing_calls": [
+      {
+        "step": 0,
+        "repeat": 1
+      },
+      {
+        "step": 1,
+        "repeat": 1
+      },
+      {
+        "step": 9,
+        "repeat": 1
+      },
+      {
+        "step": 10,
+        "repeat": 1
+      },
+      {
+        "step": 87,
+        "repeat": 1
+      }
+    ],
+    "observed_calls_raw_audited": [
+      {
+        "step": 0,
+        "repeat": 0,
+        "raw_answer": "x+10mm",
+        "native_id_valid": true,
+        "eos": true,
+        "input_tokens": 419,
+        "generated_tokens": 6,
+        "raw_argmax_verified": true,
+        "logical_payload_and_actual_prompt_verified": true,
+        "qwen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 7.892182946122716,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "laya_choice": "x+40mm",
+        "laya_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 29.1141863675916,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "strictly_greater_closure_no_worse_fields": [],
+        "maximum_gap_mm": 29.1141863675916
+      },
+      {
+        "step": 1,
+        "repeat": 0,
+        "raw_answer": "z-10mm",
+        "native_id_valid": true,
+        "eos": true,
+        "input_tokens": 455,
+        "generated_tokens": 6,
+        "raw_argmax_verified": true,
+        "logical_payload_and_actual_prompt_verified": true,
+        "qwen_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 7.441634977476134,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "laya_choice": "x+40mm",
+        "laya_effect": {
+          "closure_mm": 0.0,
+          "gap_reduction_mm": 15.697691967106032,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "strictly_greater_closure_no_worse_fields": [],
+        "maximum_gap_mm": 23.0074646397699
+      },
+      {
+        "step": 9,
+        "repeat": 0,
+        "raw_answer": "close",
+        "native_id_valid": true,
+        "eos": true,
+        "input_tokens": 1048,
+        "generated_tokens": 2,
+        "raw_argmax_verified": true,
+        "logical_payload_and_actual_prompt_verified": true,
+        "qwen_effect": {
+          "closure_mm": 1.748295637367142,
+          "gap_reduction_mm": 0.008362171194032285,
+          "contact": true,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "laya_choice": "open",
+        "laya_effect": {
+          "closure_mm": 1.7557431826105974,
+          "gap_reduction_mm": 0.008362171194032285,
+          "contact": true,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "strictly_greater_closure_no_worse_fields": [
+          "x+40mm",
+          "y-40mm",
+          "y-3mm",
+          "z-3mm",
+          "open",
+          "hold"
+        ],
+        "maximum_gap_mm": 0.008362171194032285
+      },
+      {
+        "step": 10,
+        "repeat": 0,
+        "raw_answer": "close",
+        "native_id_valid": true,
+        "eos": true,
+        "input_tokens": 739,
+        "generated_tokens": 2,
+        "raw_argmax_verified": true,
+        "logical_payload_and_actual_prompt_verified": true,
+        "qwen_effect": {
+          "closure_mm": 0.05683654317062414,
+          "gap_reduction_mm": -0.05939427125792653,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "laya_choice": "open",
+        "laya_effect": {
+          "closure_mm": 0.05638521719539269,
+          "gap_reduction_mm": -0.059129881094599164,
+          "contact": false,
+          "obstacle_peak_N": 0.0,
+          "success": false,
+          "controls": 8
+        },
+        "strictly_greater_closure_no_worse_fields": [
+          "y-40mm",
+          "y-10mm",
+          "y-3mm",
+          "z-3mm"
+        ],
+        "maximum_gap_mm": 0.0
+      },
+      {
+        "step": 87,
+        "repeat": 0,
+        "raw_answer": "17",
+        "native_id_valid": false,
+        "eos": true,
+        "input_tokens": 1310,
+        "generated_tokens": 3,
+        "raw_argmax_verified": true,
+        "logical_payload_and_actual_prompt_verified": true,
+        "failure": "native-option format violation; literal answer is NOT remapped"
+      }
+    ],
+    "failures": [
+      {
+        "exception": "ValueError('malformed native option answer; no retry or extraction')"
+      }
+    ],
+    "repeatability_established": false,
+    "oracle_effects": true,
+    "execution": false,
+    "invalid_integer_17_salvaged": false
+  }
+}

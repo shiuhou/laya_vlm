@@ -144,6 +144,53 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   decomposition, with provider/wrapper confounds explicit. Parallel read-only
   audit of cached vision capabilities and a decisive target-identity test.
 
+### Iteration 003 — current-provider control
+
+- **Question:** Can the existing Qwen provider use unchanged current motor evidence
+  more effectively than Laya, before introducing high-level planning?
+- **Hypotheses:** provider-specific limitation; shared evidence/interface problem;
+  transport mismatch preventing interpretation.
+- **Controls:** same five registered fixtures and native order; frozen existing
+  Qwen checkpoint/settings/chat wrapper; complete separate preflight. Code
+  `2a42bcf`, clean detached worktree. No simulator execution.
+- **Result:** first four outputs valid: `x+10mm`, `z-10mm`, `close`, `close`.
+  Fifth output literal `17` at boundary 87 is invalid and stops the run. Ten
+  planned, five observed, four valid, one invalid, five unattempted. No retries.
+- **Evidence:** all five complete prompts, actual forward IDs, generated IDs,
+  full-vocabulary logits and EOS independently verified. No truncation/budget
+  problem. Repeatability remains untested because repeats were never reached.
+- **Interpretation:** poor immediate-effect choices at 9/10 precede the format
+  failure: `close` predicts 1.748/0.05684 mm versus 34.177/31.888 mm for `y-40mm`.
+  A simple provider swap did not repair this interface. Action-name priors versus
+  numerical comparison and long-table competition remain unresolved.
+- **Artifacts:** `runs/autonomous-research/current-motor-provider-control-01/`;
+  raw records, report, independent audit/script/interpretation. Preflight has its
+  own `current-motor-provider-preflight-01/` directory.
+- **Regression:** frozen code suite: 585 passed, 5 skipped. Shared runtime unchanged.
+- **Next decision:** prefer an architecture-level discriminator to a prompt sweep:
+  existing deterministic nominal-distance selection versus Laya on the same
+  sensor-derived coarse-approach inputs. Evaluate sensor ranking separately from
+  oracle geometric utility and actual execution.
+
+### Parallel iteration 003 — registered visual target verifier
+
+- **Question:** Does full-RGB reasoning contribute useful target identity before
+  attempting high-level planning?
+- **Evidence motivating it:** two clear lower-handle POINT errors, three separate
+  near-boundary misses, four structurally invalid mixed outputs.
+- **Prospective model choice:** one `Qwen/Qwen2.5-VL-3B-Instruct`, revision
+  `66285546d2b821cf421d4f5eb2576359d3770cd3`. No generic VLM was cached; download
+  only this checkpoint. No paid endpoint, model tournament or runtime integration.
+- **Protocol:** 14 structurally valid POINT proposals, full RGB with a fixed hollow
+  crosshair at the sensor-produced point, four fixed classification labels, two
+  repeats. Four mixed outputs excluded explicitly before inference. No oracle
+  masks/depth/contact/phase evidence in the generator. See
+  [protocol](visual_target_verification_protocol.md).
+- **Evaluation:** coarse visible-identity labels frozen before inference and
+  reviewed independently; exact rendered-mask membership remains separate.
+  Rejection alone is not success: report correct-target retention and coverage.
+- **Status:** input preparation and model acquisition; no result claimed yet.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

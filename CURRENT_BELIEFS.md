@@ -61,6 +61,24 @@ the [first protocol](docs/research/predicate_verification_protocol.md).
 
 See [iteration 002 findings](docs/evidence/autonomous_research/iteration_002.md).
 
+## Update after current-provider control
+
+- **Observed:** the existing Qwen text provider does not rescue the two advance
+  choices. It chooses `close` at boundaries 9/10 (1.748/0.05684 mm predicted
+  closure), despite admitted `y-40mm` effects of 34.177/31.888 mm with no worse
+  reported fields. This is a provider-plus-adapter result, not a general model claim.
+- **Observed:** it then returns literal `17` at boundary 87, violating the native
+  action-ID interface. The run stops: 10 planned, 5 observed, 4 valid, 1 invalid,
+  5 unattempted. Every observed answer has EOS and verified greedy logits; output
+  budget and truncation are not the cause. No repeatability or full-run success.
+- **Research decision:** do not patch IDs or continue a motor prompt search. Test
+  the simpler existing deterministic nominal-distance selector on a sensor-derived
+  coarse-approach slice, against Laya with the same state and natural gates.
+- **Parallel discriminator:** one pinned general VLM may contribute visual target
+  verification. It must reject lower-handle proposals while retaining correct
+  proposals; scene description alone is not useful evidence. This earns neither
+  a planner nor a live verifier before results exist.
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 
