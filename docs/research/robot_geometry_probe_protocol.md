@@ -99,3 +99,23 @@ own-body fields than a TCP point and scalar jaw width, but no runtime interface,
 controller, gate or policy is changed in this probe. Publish all raw source
 indices, calibration hashes, sanitized process inputs, sealed outputs, evaluator
 results, poisoning results and failures.
+
+## Append-only constructor correction before numerical comparison
+
+`robot-geometry-observability-01` stopped on the forbidden `mj_step1` call inside
+LIBERO's constructor `_reset_internal`. Its only artifacts are the manifest,
+protocol and failure record; no static export, encoder extraction, standalone FK
+or evaluator comparison occurred. Preserve it as a setup failure, not an FK result.
+An earlier metadata preflight blocked `mj_step` but did not catch `mj_step1`.
+
+The library uses `mj_step1` to prepare kinematic/contact quantities for object
+placement during construction. It does not run the integration half. The corrected
+first comparison attempt, `robot-geometry-observability-02`, allows this call only
+during construction, records its exact count and full time/qpos/qvel before and
+after in a separate evaluator-only setup artifact, and requires exact equality.
+Block `mj_step` and `mj_step2` throughout. Immediately after construction block
+`mj_step1` again, before static export or any archived-state input. Constructor
+initialization remains explicit; zero dynamic controls/integration are claimed,
+not zero calls whose names contain `step`. No scene-bearing setup artifact enters
+the standalone estimator. The original four states, FK algorithm, tolerance,
+poisoning procedure and positive controls remain unchanged.

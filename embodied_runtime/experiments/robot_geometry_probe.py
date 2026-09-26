@@ -156,6 +156,7 @@ def run(source,output):
         'encoder_provenance':'retrospective own-joint extraction from archived simulator state; not physical sensor measurements'})
     (output/'protocol.md').write_bytes(PROTOCOL.read_bytes())
     blocked_calls = []
+    setup_half_steps = []
     originals = {}
     def forbidden(*args,**kwargs):
         blocked_calls.append('physics stepping requested')
@@ -166,19 +167,31 @@ def run(source,output):
     env = None
     try:
         random.seed(1);np.random.seed(1)
+        def constructor_half_step(model,data):
+            before = {'time_s':float(data.time),'qpos':data.qpos.copy().tolist(),'qvel':data.qvel.copy().tolist()}
+            originals['mj_step1'](model,data)
+            after = {'time_s':float(data.time),'qpos':data.qpos.copy().tolist(),'qvel':data.qvel.copy().tolist()}
+            setup_half_steps.append({'before':before,'after':after,'unchanged':before == after})
+            if before != after:
+                raise RuntimeError('Constructor half-step changed time/qpos/qvel')
+        mujoco.mj_step1 = constructor_half_step
         env = static_environment(start['resolved_config'])
+        mujoco.mj_step1 = forbidden
         if env.sim.data.time != 0. or blocked_calls:
             raise RuntimeError('Static construction advanced physics')
         model = env.sim.model._model
         calibration,mapping = export_robot_static(env,mujoco)
+        write(output/'constructor-half-step-evaluator-only.json',{'evaluator_only':True,
+            'setup_calls':setup_half_steps,'passed_to_standalone_estimator':False})
         write(output/'robot-calibration.json',calibration)
         write(output/'archive-admission-map.json',mapping)
         import jev_libero.world
         import libero
         from robosuite.utils import binding_utils
         write(output/'static-setup.json',{'sim_time_s':float(env.sim.data.time),'physics_step_calls':blocked_calls,
+            'constructor_mj_step1_calls':len(setup_half_steps),'constructor_half_steps_preserve_time_qpos_qvel':all(r['unchanged'] for r in setup_half_steps),
             'rendering':False,'world_class_used':False,'reset_or_set_init_state_called':False,
-            'construction_note':'ControlEnv constructor may initialize/forward caches; no dynamics stepping is allowed.',
+            'construction_note':'ControlEnv constructor initializes state/caches and invokes counted mj_step1; mj_step/mj_step2 integration is forbidden. All stepping is forbidden after construction.',
             'environment_repositories':{'jev':repository_identity(Path(jev_libero.world.__file__).parent),
                 'libero':repository_identity(Path(libero.__file__).parent)},
             'flattened_state_decoder_source_sha256':file_hash(binding_utils.__file__),
@@ -274,6 +287,7 @@ def run(source,output):
             'recomputed_tcp_minus_archived_returned_tcp_m':cached,
             'returned_tcp_sample_times_unknown':True,'base_calibration':{k:v for k,v in mapping.items() if k.startswith('root_') or k.startswith('base_')},
             'physics_controls_executed':0,'physics_step_calls':blocked_calls,
+            'constructor_mj_step1_calls':len(setup_half_steps),
             'no_scene_geometry_in_estimator':True,'no_policy_contact_or_safety_claim':True}
         write(output/'summary.json',summary)
         write(output/'artifacts.json',{p.name:file_hash(p) for p in sorted(output.iterdir()) if p.is_file()})
@@ -284,7 +298,7 @@ def run(source,output):
             raise RuntimeError('Frozen correctness/dependency criteria failed')
     except BaseException as exc:
         write(output/'failure.json',{'type':type(exc).__name__,'message':str(exc),
-            'physics_step_calls':blocked_calls,'no_physical_retry':True})
+            'physics_step_calls':blocked_calls,'constructor_mj_step1_calls':len(setup_half_steps),'no_physical_retry':True})
         raise
     finally:
         if env is not None:
