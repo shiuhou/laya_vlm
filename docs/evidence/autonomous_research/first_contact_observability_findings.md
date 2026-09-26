@@ -9,8 +9,9 @@ surface should therefore remain qualified: nearby support is measurable, while
 precise contact interpretation is unresolved.
 
 This is an evaluator-only analysis of the completed `coarse-initial-point-02`
-trace. It ran no vision/language model, controller or task primitive. Instantiating
-the exact simulator model required its standard reset and ten settling controls;
+trace. It made no vision/language model calls and executed no task primitives
+from the recorded boundary. Instantiating the exact simulator model required its
+standard reset and ten settling controls;
 all physical action APIs were then disabled, and only archived state restoration,
 forward kinematics, rendering and geometric queries were used. No evaluator query
 or label entered a sensor estimator, candidate gate or policy.
