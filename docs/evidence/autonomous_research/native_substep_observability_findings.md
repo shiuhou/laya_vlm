@@ -105,7 +105,11 @@ reference results;400 native call chains and800 snapshot times/joint addresses;
 contact membership/force/threshold arithmetic; and four RGB-D plus two trajectory
 artifact hashes and trajectory arrays. Independent raw chronology matches the
 first-contact, direct-motion and generalized-force observations. The separate
-reviewer report provides its own audit result.
+reviewer audit also passes 2,451 record hashes, all control/native-call chains,
+force/joint/membership/forward chronology, six artifacts and both full results.
+It is retained in `laya-information-boundary-review`, commit `fca990d`, checker
+`embodied_runtime/experiments/native_substep_evidence_audit.py` and
+`docs/evidence/autonomous_research/native_substep_independent_{audit.json,review.md}`.
 
 The evidence demonstrates temporal undersampling by the existing control-end
 contact measurement at this boundary. It leaves the native translation contract
