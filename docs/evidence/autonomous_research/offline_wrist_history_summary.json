@@ -1,0 +1,5355 @@
+{
+  "source_sha256": "e8e253cefe4c694c6091e1bf944a8f269cfc47c7ed08c053419d97e1a73615d4",
+  "controls": 970,
+  "cohort_counts": {
+    "gripper_only": 163,
+    "arm_only": 164,
+    "gripper_and_arm": 2,
+    "no_robot_scene_above_1N": 641,
+    "self_contact_present": 0
+  },
+  "primary_force_secondary_torque": {
+    "force": {
+      "all_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 163,
+            "min": 0.001333439099348343,
+            "p05": 0.008807152009313758,
+            "median": 1.0726076662234816,
+            "p95": 51.83379158375144,
+            "max": 120.86312333093366
+          },
+          "negative": {
+            "count": 641,
+            "min": 3.603258457402419e-05,
+            "p05": 0.00019142943216893208,
+            "median": 0.05451665957350954,
+            "p95": 0.5525258520632214,
+            "max": 3.75221625966119
+          },
+          "auroc": 0.7872476862264675,
+          "positive_values_within_negative_observed_range": 107,
+          "negative_values_within_positive_observed_range": 539
+        },
+        "temporal": {
+          "positive": {
+            "count": 163,
+            "min": 0.3218316626510265,
+            "p05": 1.2142196160297087,
+            "median": 25.119742972770073,
+            "p95": 148.32475000082573,
+            "max": 434.0893769834152
+          },
+          "negative": {
+            "count": 641,
+            "min": 4.3442038006102485e-05,
+            "p05": 0.0006748865196689707,
+            "median": 0.06406402849825261,
+            "p95": 2.3868837341441993,
+            "max": 3.7552237306338743
+          },
+          "auroc": 0.987634351999847,
+          "positive_values_within_negative_observed_range": 32,
+          "negative_values_within_positive_observed_range": 105
+        },
+        "auroc_temporal_minus_endpoint": 0.2003866657733795
+      },
+      "endpoint_missed_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 99,
+            "min": 0.001333439099348343,
+            "p05": 0.006140461443689799,
+            "median": 0.08334239578069302,
+            "p95": 37.14761578574082,
+            "max": 61.01228891655146
+          },
+          "negative": {
+            "count": 641,
+            "min": 3.603258457402419e-05,
+            "p05": 0.00019142943216893208,
+            "median": 0.05451665957350954,
+            "p95": 0.5525258520632214,
+            "max": 3.75221625966119
+          },
+          "auroc": 0.653918277943239,
+          "positive_values_within_negative_observed_range": 82,
+          "negative_values_within_positive_observed_range": 539
+        },
+        "temporal": {
+          "positive": {
+            "count": 99,
+            "min": 1.1996792436780064,
+            "p05": 1.7695218674553814,
+            "median": 27.05639824775042,
+            "p95": 112.99642756620558,
+            "max": 305.22255358463786
+          },
+          "negative": {
+            "count": 641,
+            "min": 4.3442038006102485e-05,
+            "p05": 0.0006748865196689707,
+            "median": 0.06406402849825261,
+            "p95": 2.3868837341441993,
+            "max": 3.7552237306338743
+          },
+          "auroc": 0.9936021683291574,
+          "positive_values_within_negative_observed_range": 14,
+          "negative_values_within_positive_observed_range": 39
+        },
+        "auroc_temporal_minus_endpoint": 0.3396838903859184
+      }
+    },
+    "torque": {
+      "all_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 163,
+            "min": 0.0009440687249594224,
+            "p05": 0.003162228070542876,
+            "median": 0.19418519643774765,
+            "p95": 3.869243198100016,
+            "max": 8.510625763093541
+          },
+          "negative": {
+            "count": 641,
+            "min": 5.207246676550659e-06,
+            "p05": 4.0893768141116635e-05,
+            "median": 0.02804518963804931,
+            "p95": 0.43506847775838275,
+            "max": 0.9697287448741224
+          },
+          "auroc": 0.7654546672664453,
+          "positive_values_within_negative_observed_range": 128,
+          "negative_values_within_positive_observed_range": 531
+        },
+        "temporal": {
+          "positive": {
+            "count": 163,
+            "min": 0.03022222942372892,
+            "p05": 0.10363175835269636,
+            "median": 1.8349707591673972,
+            "p95": 8.729967376160964,
+            "max": 32.17198989221193
+          },
+          "negative": {
+            "count": 641,
+            "min": 7.658943822068843e-06,
+            "p05": 0.0003979309940988039,
+            "median": 0.03166650332745104,
+            "p95": 1.2017841110364642,
+            "max": 2.932952354073111
+          },
+          "auroc": 0.9328216073428212,
+          "positive_values_within_negative_observed_range": 117,
+          "negative_values_within_positive_observed_range": 334
+        },
+        "auroc_temporal_minus_endpoint": 0.16736694007637587
+      },
+      "endpoint_missed_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 99,
+            "min": 0.0009440687249594224,
+            "p05": 0.0024575326336799146,
+            "median": 0.04892427291355601,
+            "p95": 2.521141896914468,
+            "max": 5.1267542535218045
+          },
+          "negative": {
+            "count": 641,
+            "min": 5.207246676550659e-06,
+            "p05": 4.0893768141116635e-05,
+            "median": 0.02804518963804931,
+            "p95": 0.43506847775838275,
+            "max": 0.9697287448741224
+          },
+          "auroc": 0.6633416851825588,
+          "positive_values_within_negative_observed_range": 87,
+          "negative_values_within_positive_observed_range": 531
+        },
+        "temporal": {
+          "positive": {
+            "count": 99,
+            "min": 0.0918844484432951,
+            "p05": 0.13440487911235963,
+            "median": 2.0130321992748224,
+            "p95": 6.0031030534101655,
+            "max": 20.781239059838978
+          },
+          "negative": {
+            "count": 641,
+            "min": 7.658943822068843e-06,
+            "p05": 0.0003979309940988039,
+            "median": 0.03166650332745104,
+            "p95": 1.2017841110364642,
+            "max": 2.932952354073111
+          },
+          "auroc": 0.9494476748766919,
+          "positive_values_within_negative_observed_range": 72,
+          "negative_values_within_positive_observed_range": 123
+        },
+        "auroc_temporal_minus_endpoint": 0.28610598969413314
+      }
+    }
+  },
+  "all_cohort_distributions": {
+    "force": {
+      "gripper_only": {
+        "endpoint": {
+          "count": 163,
+          "min": 0.001333439099348343,
+          "p05": 0.008807152009313758,
+          "median": 1.0726076662234816,
+          "p95": 51.83379158375144,
+          "max": 120.86312333093366
+        },
+        "temporal": {
+          "count": 163,
+          "min": 0.3218316626510265,
+          "p05": 1.2142196160297087,
+          "median": 25.119742972770073,
+          "p95": 148.32475000082573,
+          "max": 434.0893769834152
+        }
+      },
+      "arm_only": {
+        "endpoint": {
+          "count": 164,
+          "min": 0.002332907873560061,
+          "p05": 0.007497712159582646,
+          "median": 0.08438303658827835,
+          "p95": 2.208805055604136,
+          "max": 5.848852646104526
+        },
+        "temporal": {
+          "count": 164,
+          "min": 0.002332907873560061,
+          "p05": 0.0099356178028123,
+          "median": 0.5521307096908855,
+          "p95": 5.5487134914826814,
+          "max": 15.980123671409217
+        }
+      },
+      "gripper_and_arm": {
+        "endpoint": {
+          "count": 2,
+          "min": 0.38149882623484793,
+          "p05": 0.4458463711927715,
+          "median": 1.0249742758140832,
+          "p95": 1.6041021804353948,
+          "max": 1.6684497253933184
+        },
+        "temporal": {
+          "count": 2,
+          "min": 50.549153946761166,
+          "p05": 51.40954351174529,
+          "median": 59.1530495966024,
+          "p95": 66.89655568145952,
+          "max": 67.75694524644364
+        }
+      },
+      "no_robot_scene_above_1N": {
+        "endpoint": {
+          "count": 641,
+          "min": 3.603258457402419e-05,
+          "p05": 0.00019142943216893208,
+          "median": 0.05451665957350954,
+          "p95": 0.5525258520632214,
+          "max": 3.75221625966119
+        },
+        "temporal": {
+          "count": 641,
+          "min": 4.3442038006102485e-05,
+          "p05": 0.0006748865196689707,
+          "median": 0.06406402849825261,
+          "p95": 2.3868837341441993,
+          "max": 3.7552237306338743
+        }
+      },
+      "self_contact_present": {
+        "endpoint": {
+          "count": 0,
+          "min": null,
+          "p05": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "temporal": {
+          "count": 0,
+          "min": null,
+          "p05": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    },
+    "torque": {
+      "gripper_only": {
+        "endpoint": {
+          "count": 163,
+          "min": 0.0009440687249594224,
+          "p05": 0.003162228070542876,
+          "median": 0.19418519643774765,
+          "p95": 3.869243198100016,
+          "max": 8.510625763093541
+        },
+        "temporal": {
+          "count": 163,
+          "min": 0.03022222942372892,
+          "p05": 0.10363175835269636,
+          "median": 1.8349707591673972,
+          "p95": 8.729967376160964,
+          "max": 32.17198989221193
+        }
+      },
+      "arm_only": {
+        "endpoint": {
+          "count": 164,
+          "min": 0.001244202338386332,
+          "p05": 0.004293166760422899,
+          "median": 0.06083750839639818,
+          "p95": 1.135569681651591,
+          "max": 2.221852031775762
+        },
+        "temporal": {
+          "count": 164,
+          "min": 0.001244202338386332,
+          "p05": 0.0059227558732543074,
+          "median": 0.24039569221348217,
+          "p95": 2.6842573163832917,
+          "max": 4.129354524598095
+        }
+      },
+      "gripper_and_arm": {
+        "endpoint": {
+          "count": 2,
+          "min": 0.5257136405624945,
+          "p05": 0.5408720053919167,
+          "median": 0.6772972888567171,
+          "p95": 0.8137225723215176,
+          "max": 0.8288809371509398
+        },
+        "temporal": {
+          "count": 2,
+          "min": 4.8994944145069415,
+          "p05": 4.902221581737526,
+          "median": 4.926766086812781,
+          "p95": 4.951310591888036,
+          "max": 4.95403775911862
+        }
+      },
+      "no_robot_scene_above_1N": {
+        "endpoint": {
+          "count": 641,
+          "min": 5.207246676550659e-06,
+          "p05": 4.0893768141116635e-05,
+          "median": 0.02804518963804931,
+          "p95": 0.43506847775838275,
+          "max": 0.9697287448741224
+        },
+        "temporal": {
+          "count": 641,
+          "min": 7.658943822068843e-06,
+          "p05": 0.0003979309940988039,
+          "median": 0.03166650332745104,
+          "p95": 1.2017841110364642,
+          "max": 2.932952354073111
+        }
+      },
+      "self_contact_present": {
+        "endpoint": {
+          "count": 0,
+          "min": null,
+          "p05": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "temporal": {
+          "count": 0,
+          "min": null,
+          "p05": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    }
+  },
+  "scope": "one dependent trajectory; native moving-local-frame sensor changes; no calibration, causal attribution, threshold fitting, holding or live gate",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/offline-wrist-history-run-01",
+  "frozen_commit": "adc7eb4e448615a271e58951f19a3dbe1c64e44a",
+  "producer_audit": {
+    "status": "pass",
+    "analysis_raw_sha256": "055ecd9561e4306598f95d178ed785e9c7e2fa561f3279d42358abc09dbf810d",
+    "source_sha256": "e8e253cefe4c694c6091e1bf944a8f269cfc47c7ed08c053419d97e1a73615d4",
+    "artifacts": {
+      "sensors.jsonl": "83b998611fbe72e9bbca4cd0128943244ffb485aacdf6d676ac422c2c1184cca",
+      "sensor_metadata.json": "3106e0268dafed81ed462dc7f2da689f14dd7e9365600a239ddd9c966c0e9fa8",
+      "features.jsonl": "4722f64b2102990b6472484389c66319a932560bbbc2f3d1cf0961358925dea5",
+      "labels.jsonl": "060023831d58c0949a4eee21c9f600cc8501993c8dbc743f0c2777ca29cb5ff7",
+      "summary.json": "c75b15a3ffbfb67a70210d2d471fc6501096d33364707dbdf6e8fd50641de8c4",
+      "protocol.md": "2fe1d7d7ff98bd5dc82d180635a51b0e13dda93703a6d0518d3cf34ab76ac82d"
+    },
+    "sensor_rows": 970,
+    "feature_rows": 970,
+    "gold_rows": 970,
+    "sealing_order": "sensors then pure features then oracle labels",
+    "physics_calls": 0,
+    "model_calls": 0
+  },
+  "endpoint_missed_controls": [
+    {
+      "global_control": 71,
+      "step": 8,
+      "control": 7,
+      "before_time_s": 4.049999999999776,
+      "after_time_s": 4.0999999999997705,
+      "endpoint_force_change_N": 51.942514341711025,
+      "temporal_force_change_N": 51.97245491424942,
+      "endpoint_torque_change_Nm": 2.6717582586290485,
+      "temporal_torque_change_Nm": 2.7126871197004996,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9906396255850234,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            4.049999999999776,
+            4.051999999999776
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            4.059999999999775,
+            4.061999999999775
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            4.067999999999774,
+            4.069999999999774
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            4.075999999999773,
+            4.077999999999773
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            4.085999999999772,
+            4.087999999999772
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            4.093999999999771,
+            4.095999999999771
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 72,
+      "step": 9,
+      "control": 0,
+      "before_time_s": 4.0999999999997705,
+      "after_time_s": 4.149999999999765,
+      "endpoint_force_change_N": 0.41564026742463783,
+      "temporal_force_change_N": 57.39170457650027,
+      "endpoint_torque_change_Nm": 0.12814084533194886,
+      "temporal_torque_change_Nm": 2.9511115557915226,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.8861154446177847,
+        "endpoint_force_change_N": 0.921996879875195,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 13,
+          "interval_s": [
+            4.125999999999768,
+            4.127999999999767
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 73,
+      "step": 9,
+      "control": 1,
+      "before_time_s": 4.149999999999765,
+      "after_time_s": 4.1999999999997595,
+      "endpoint_force_change_N": 0.04631615818818081,
+      "temporal_force_change_N": 53.33277357542808,
+      "endpoint_torque_change_Nm": 0.05136307009863243,
+      "temporal_torque_change_Nm": 2.613443970092856,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.982839313572543,
+        "endpoint_torque_change_Nm": 0.717628705148206,
+        "endpoint_force_change_N": 0.45865834633385333,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 10,
+          "interval_s": [
+            4.169999999999763,
+            4.171999999999763
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            4.19199999999976,
+            4.19399999999976
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 74,
+      "step": 9,
+      "control": 2,
+      "before_time_s": 4.1999999999997595,
+      "after_time_s": 4.249999999999754,
+      "endpoint_force_change_N": 0.03565070959770216,
+      "temporal_force_change_N": 43.36380845463548,
+      "endpoint_torque_change_Nm": 0.019675962037487733,
+      "temporal_torque_change_Nm": 2.2123223601871627,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 0.39469578783151327,
+        "endpoint_force_change_N": 0.41341653666146644,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 10,
+          "interval_s": [
+            4.219999999999757,
+            4.221999999999757
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            4.243999999999755,
+            4.245999999999754
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 75,
+      "step": 9,
+      "control": 3,
+      "before_time_s": 4.249999999999754,
+      "after_time_s": 4.2999999999997485,
+      "endpoint_force_change_N": 0.05470235775513229,
+      "temporal_force_change_N": 38.092904374580996,
+      "endpoint_torque_change_Nm": 0.028347048259486793,
+      "temporal_torque_change_Nm": 1.9613042059424544,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.5039001560062403,
+        "endpoint_force_change_N": 0.5023400936037441,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 11,
+          "interval_s": [
+            4.2719999999997516,
+            4.273999999999751
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            4.273999999999751,
+            4.275999999999751
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 76,
+      "step": 9,
+      "control": 4,
+      "before_time_s": 4.2999999999997485,
+      "after_time_s": 4.349999999999743,
+      "endpoint_force_change_N": 0.025183124689146703,
+      "temporal_force_change_N": 34.73540150341202,
+      "endpoint_torque_change_Nm": 0.012565764735185829,
+      "temporal_torque_change_Nm": 1.7828586561952073,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9641185647425897,
+        "endpoint_torque_change_Nm": 0.3619344773790952,
+        "endpoint_force_change_N": 0.36505460218408736,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 12,
+          "interval_s": [
+            4.323999999999746,
+            4.325999999999746
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            4.325999999999746,
+            4.327999999999745
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 77,
+      "step": 9,
+      "control": 5,
+      "before_time_s": 4.349999999999743,
+      "after_time_s": 4.3999999999997375,
+      "endpoint_force_change_N": 0.02472851334297812,
+      "temporal_force_change_N": 26.9401089165939,
+      "endpoint_torque_change_Nm": 0.015993621988990528,
+      "temporal_torque_change_Nm": 1.3765433993472131,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9578783151326054,
+        "endpoint_torque_change_Nm": 0.38065522620904835,
+        "endpoint_force_change_N": 0.3619344773790952,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            4.365999999999741,
+            4.367999999999741
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            4.37399999999974,
+            4.37599999999974
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 78,
+      "step": 9,
+      "control": 6,
+      "before_time_s": 4.3999999999997375,
+      "after_time_s": 4.449999999999732,
+      "endpoint_force_change_N": 19.897283072698844,
+      "temporal_force_change_N": 19.90102775697601,
+      "endpoint_torque_change_Nm": 1.0095558923059644,
+      "temporal_torque_change_Nm": 1.0157792224024083,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9453978159126365,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            4.3999999999997375,
+            4.401999999999737
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            4.401999999999737,
+            4.403999999999737
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            4.429999999999734,
+            4.431999999999734
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            4.431999999999734,
+            4.433999999999734
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 80,
+      "step": 10,
+      "control": 0,
+      "before_time_s": 4.499999999999726,
+      "after_time_s": 4.549999999999721,
+      "endpoint_force_change_N": 1.5642628187081469,
+      "temporal_force_change_N": 1.774891560237944,
+      "endpoint_torque_change_Nm": 0.03802490876268044,
+      "temporal_torque_change_Nm": 0.15495266990701137,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8471138845553822,
+        "endpoint_torque_change_Nm": 0.609984399375975,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            4.515999999999725,
+            4.5179999999997245
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            4.533999999999723,
+            4.5359999999997225
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 98,
+      "step": 12,
+      "control": 2,
+      "before_time_s": 5.399999999999627,
+      "after_time_s": 5.449999999999622,
+      "endpoint_force_change_N": 0.06295937363016048,
+      "temporal_force_change_N": 31.377138830413422,
+      "endpoint_torque_change_Nm": 0.04111691295433143,
+      "temporal_torque_change_Nm": 2.039525620099787,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.6396255850234009,
+        "endpoint_force_change_N": 0.5522620904836193,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 13,
+          "interval_s": [
+            5.4259999999996245,
+            5.427999999999624
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            5.427999999999624,
+            5.429999999999624
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            5.429999999999624,
+            5.431999999999624
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            5.431999999999624,
+            5.433999999999624
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 101,
+      "step": 12,
+      "control": 5,
+      "before_time_s": 5.549999999999611,
+      "after_time_s": 5.599999999999605,
+      "endpoint_force_change_N": 1.0726076662234816,
+      "temporal_force_change_N": 5.546140455374919,
+      "endpoint_torque_change_Nm": 0.06109394214955265,
+      "temporal_torque_change_Nm": 0.2870810472886373,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8689547581903276,
+        "endpoint_torque_change_Nm": 0.7628705148205929,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 14,
+          "interval_s": [
+            5.577999999999608,
+            5.5799999999996075
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            5.5799999999996075,
+            5.581999999999607
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            5.581999999999607,
+            5.583999999999607
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            5.583999999999607,
+            5.585999999999607
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            5.585999999999607,
+            5.587999999999607
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            5.587999999999607,
+            5.589999999999606
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 102,
+      "step": 12,
+      "control": 6,
+      "before_time_s": 5.599999999999605,
+      "after_time_s": 5.6499999999996,
+      "endpoint_force_change_N": 1.0741942003747917,
+      "temporal_force_change_N": 3.32071810312439,
+      "endpoint_torque_change_Nm": 0.022536183535418874,
+      "temporal_torque_change_Nm": 0.1245325017777304,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8315132605304212,
+        "endpoint_torque_change_Nm": 0.4165366614664587,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9937597503900156
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 11,
+          "interval_s": [
+            5.621999999999603,
+            5.623999999999603
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            5.6459999999996,
+            5.6479999999996
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 113,
+      "step": 14,
+      "control": 1,
+      "before_time_s": 6.149999999999545,
+      "after_time_s": 6.199999999999539,
+      "endpoint_force_change_N": 1.1471487155306994,
+      "temporal_force_change_N": 5.119987640901763,
+      "endpoint_torque_change_Nm": 0.10142594926777258,
+      "temporal_torque_change_Nm": 0.4436948056829117,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8954758190327613,
+        "endpoint_torque_change_Nm": 0.8642745709828393,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 4,
+          "interval_s": [
+            6.157999999999544,
+            6.159999999999544
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            6.159999999999544,
+            6.161999999999543
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            6.161999999999543,
+            6.163999999999543
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            6.163999999999543,
+            6.165999999999543
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            6.165999999999543,
+            6.167999999999543
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            6.19399999999954,
+            6.19599999999954
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            6.19599999999954,
+            6.197999999999539
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 129,
+      "step": 16,
+      "control": 1,
+      "before_time_s": 6.949999999999457,
+      "after_time_s": 6.999999999999451,
+      "endpoint_force_change_N": 2.424515665593968,
+      "temporal_force_change_N": 2.4247411564036385,
+      "endpoint_torque_change_Nm": 0.2015511672856573,
+      "temporal_torque_change_Nm": 0.20495852108271734,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8564742589703588,
+        "endpoint_torque_change_Nm": 0.9001560062402496,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9516380655226209
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            6.949999999999457,
+            6.951999999999456
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            6.951999999999456,
+            6.953999999999456
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            6.953999999999456,
+            6.955999999999456
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            6.985999999999453,
+            6.987999999999452
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            6.987999999999452,
+            6.989999999999452
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 130,
+      "step": 16,
+      "control": 2,
+      "before_time_s": 6.999999999999451,
+      "after_time_s": 7.049999999999446,
+      "endpoint_force_change_N": 0.018547288611984406,
+      "temporal_force_change_N": 1.8633459330588262,
+      "endpoint_torque_change_Nm": 0.002739248956168846,
+      "temporal_torque_change_Nm": 0.14609165075878744,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.84399375975039,
+        "endpoint_torque_change_Nm": 0.24648985959438377,
+        "endpoint_force_change_N": 0.3369734789391576,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 5,
+          "interval_s": [
+            7.00999999999945,
+            7.01199999999945
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            7.01199999999945,
+            7.01399999999945
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            7.027999999999448,
+            7.029999999999448
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            7.039999999999447,
+            7.0419999999994465
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 131,
+      "step": 16,
+      "control": 3,
+      "before_time_s": 7.049999999999446,
+      "after_time_s": 7.09999999999944,
+      "endpoint_force_change_N": 0.5087905983311937,
+      "temporal_force_change_N": 1.345082967195031,
+      "endpoint_torque_change_Nm": 0.03908688168499412,
+      "temporal_torque_change_Nm": 0.10286019477288734,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8174726989079563,
+        "endpoint_torque_change_Nm": 0.6162246489859594,
+        "endpoint_force_change_N": 0.9375975039001561,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 2,
+          "interval_s": [
+            7.053999999999445,
+            7.055999999999445
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 144,
+      "step": 18,
+      "control": 0,
+      "before_time_s": 7.699999999999374,
+      "after_time_s": 7.7499999999993685,
+      "endpoint_force_change_N": 0.5699402655352824,
+      "temporal_force_change_N": 96.33856695720928,
+      "endpoint_torque_change_Nm": 0.059474405842572645,
+      "temporal_torque_change_Nm": 4.862913673873958,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.7566302652106084,
+        "endpoint_force_change_N": 0.9563182527301092,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 12,
+          "interval_s": [
+            7.723999999999371,
+            7.725999999999371
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 165,
+      "step": 20,
+      "control": 5,
+      "before_time_s": 8.749999999999591,
+      "after_time_s": 8.799999999999608,
+      "endpoint_force_change_N": 0.03138184698766063,
+      "temporal_force_change_N": 17.109160894993174,
+      "endpoint_torque_change_Nm": 0.009222819440029234,
+      "temporal_torque_change_Nm": 1.092637780298425,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9453978159126365,
+        "endpoint_torque_change_Nm": 0.33541341653666146,
+        "endpoint_force_change_N": 0.38845553822152884,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 5,
+          "interval_s": [
+            8.759999999999595,
+            8.761999999999595
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            8.761999999999595,
+            8.763999999999596
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            8.763999999999596,
+            8.765999999999597
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            8.765999999999597,
+            8.767999999999597
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            8.767999999999597,
+            8.769999999999598
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            8.769999999999598,
+            8.771999999999599
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 190,
+      "step": 23,
+      "control": 6,
+      "before_time_s": 10.000000000000009,
+      "after_time_s": 10.050000000000026,
+      "endpoint_force_change_N": 0.21775695813147009,
+      "temporal_force_change_N": 187.72117840157318,
+      "endpoint_torque_change_Nm": 0.16512050977172701,
+      "temporal_torque_change_Nm": 11.628436940075456,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.8970358814352574,
+        "endpoint_force_change_N": 0.8361934477379095,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 16,
+          "interval_s": [
+            10.03200000000002,
+            10.03400000000002
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 191,
+      "step": 23,
+      "control": 7,
+      "before_time_s": 10.050000000000026,
+      "after_time_s": 10.100000000000042,
+      "endpoint_force_change_N": 0.11058193514148912,
+      "temporal_force_change_N": 140.23915016140597,
+      "endpoint_torque_change_Nm": 0.05321636944024745,
+      "temporal_torque_change_Nm": 8.729971176258346,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.7238689547581904,
+        "endpoint_force_change_N": 0.6614664586583463,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            10.066000000000031,
+            10.068000000000032
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 192,
+      "step": 24,
+      "control": 0,
+      "before_time_s": 10.100000000000042,
+      "after_time_s": 10.150000000000059,
+      "endpoint_force_change_N": 0.024073411225721184,
+      "temporal_force_change_N": 103.43789361613632,
+      "endpoint_torque_change_Nm": 0.04043613868269186,
+      "temporal_torque_change_Nm": 6.454758361154377,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.6302652106084243,
+        "endpoint_force_change_N": 0.358814352574103,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 11,
+          "interval_s": [
+            10.12200000000005,
+            10.12400000000005
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            10.12400000000005,
+            10.126000000000051
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 194,
+      "step": 24,
+      "control": 2,
+      "before_time_s": 10.200000000000076,
+      "after_time_s": 10.250000000000092,
+      "endpoint_force_change_N": 0.03315331921647761,
+      "temporal_force_change_N": 46.733915922997575,
+      "endpoint_torque_change_Nm": 0.015547424409189582,
+      "temporal_torque_change_Nm": 2.9093110312923587,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9984399375975039,
+        "endpoint_torque_change_Nm": 0.37753510140405616,
+        "endpoint_force_change_N": 0.39781591263650545,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 18,
+          "interval_s": [
+            10.236000000000088,
+            10.238000000000088
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            10.238000000000088,
+            10.240000000000089
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 197,
+      "step": 24,
+      "control": 5,
+      "before_time_s": 10.350000000000126,
+      "after_time_s": 10.400000000000142,
+      "endpoint_force_change_N": 3.276964206343246,
+      "temporal_force_change_N": 3.276964206343246,
+      "endpoint_torque_change_Nm": 0.1842849762090701,
+      "temporal_torque_change_Nm": 0.26134961184503547,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8642745709828393,
+        "endpoint_torque_change_Nm": 0.8970358814352574,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9906396255850234
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            10.350000000000126,
+            10.352000000000126
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            10.352000000000126,
+            10.354000000000127
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            10.354000000000127,
+            10.356000000000128
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            10.356000000000128,
+            10.358000000000128
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            10.358000000000128,
+            10.360000000000129
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            10.360000000000129,
+            10.36200000000013
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            10.36200000000013,
+            10.36400000000013
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            10.36400000000013,
+            10.366000000000131
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            10.366000000000131,
+            10.368000000000132
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            10.368000000000132,
+            10.370000000000132
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            10.370000000000132,
+            10.372000000000133
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            10.372000000000133,
+            10.374000000000134
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            10.374000000000134,
+            10.376000000000134
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            10.376000000000134,
+            10.378000000000135
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            10.378000000000135,
+            10.380000000000136
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            10.380000000000136,
+            10.382000000000136
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            10.382000000000136,
+            10.384000000000137
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            10.39000000000014,
+            10.39200000000014
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            10.39200000000014,
+            10.39400000000014
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 198,
+      "step": 24,
+      "control": 6,
+      "before_time_s": 10.400000000000142,
+      "after_time_s": 10.45000000000016,
+      "endpoint_force_change_N": 0.05043255710036474,
+      "temporal_force_change_N": 6.395212962612318,
+      "endpoint_torque_change_Nm": 0.011994708730755496,
+      "temporal_torque_change_Nm": 0.2721492957735469,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8673946957878315,
+        "endpoint_torque_change_Nm": 0.36037441497659906,
+        "endpoint_force_change_N": 0.47581903276131043,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            10.402000000000143,
+            10.404000000000144
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            10.404000000000144,
+            10.406000000000144
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            10.42400000000015,
+            10.426000000000151
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 199,
+      "step": 24,
+      "control": 7,
+      "before_time_s": 10.45000000000016,
+      "after_time_s": 10.500000000000176,
+      "endpoint_force_change_N": 8.58441266027871,
+      "temporal_force_change_N": 8.58441266027871,
+      "endpoint_torque_change_Nm": 0.37117132259888536,
+      "temporal_torque_change_Nm": 0.37117132259888536,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8814352574102964,
+        "endpoint_torque_change_Nm": 0.9407176287051482,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            10.45000000000016,
+            10.45200000000016
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 200,
+      "step": 25,
+      "control": 0,
+      "before_time_s": 10.500000000000176,
+      "after_time_s": 10.550000000000193,
+      "endpoint_force_change_N": 0.379835264799843,
+      "temporal_force_change_N": 106.86635836165807,
+      "endpoint_torque_change_Nm": 0.7735703977030178,
+      "temporal_torque_change_Nm": 5.952919130327478,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9968798751950078,
+        "endpoint_force_change_N": 0.9173166926677067,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            10.506000000000178,
+            10.508000000000179
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            10.508000000000179,
+            10.51000000000018
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            10.51000000000018,
+            10.51200000000018
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            10.530000000000186,
+            10.532000000000187
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            10.532000000000187,
+            10.534000000000187
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 209,
+      "step": 26,
+      "control": 1,
+      "before_time_s": 10.950000000000326,
+      "after_time_s": 11.000000000000343,
+      "endpoint_force_change_N": 0.11217195922082915,
+      "temporal_force_change_N": 32.8201759032498,
+      "endpoint_torque_change_Nm": 0.0949007839804395,
+      "temporal_torque_change_Nm": 2.368358898515282,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9734789391575663,
+        "endpoint_torque_change_Nm": 0.858034321372855,
+        "endpoint_force_change_N": 0.6614664586583463,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 15,
+          "interval_s": [
+            10.980000000000336,
+            10.982000000000337
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            10.982000000000337,
+            10.984000000000337
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            10.984000000000337,
+            10.986000000000338
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            10.986000000000338,
+            10.988000000000339
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            10.988000000000339,
+            10.99000000000034
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            10.99000000000034,
+            10.99200000000034
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 210,
+      "step": 26,
+      "control": 2,
+      "before_time_s": 11.000000000000343,
+      "after_time_s": 11.05000000000036,
+      "endpoint_force_change_N": 0.04907418402507294,
+      "temporal_force_change_N": 22.151453978893738,
+      "endpoint_torque_change_Nm": 0.02861906974037444,
+      "temporal_torque_change_Nm": 1.5969459949607763,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9625585023400937,
+        "endpoint_torque_change_Nm": 0.5070202808112324,
+        "endpoint_force_change_N": 0.46957878315132606,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 19,
+          "interval_s": [
+            11.038000000000356,
+            11.040000000000356
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            11.040000000000356,
+            11.042000000000357
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            11.042000000000357,
+            11.044000000000358
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 211,
+      "step": 26,
+      "control": 3,
+      "before_time_s": 11.05000000000036,
+      "after_time_s": 11.100000000000376,
+      "endpoint_force_change_N": 0.04456016144786676,
+      "temporal_force_change_N": 18.348700263418642,
+      "endpoint_torque_change_Nm": 0.031224254202732574,
+      "temporal_torque_change_Nm": 1.3246087862655558,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9578783151326054,
+        "endpoint_torque_change_Nm": 0.5335413416536662,
+        "endpoint_force_change_N": 0.45553822152886114,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 12,
+          "interval_s": [
+            11.074000000000368,
+            11.076000000000368
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            11.076000000000368,
+            11.078000000000369
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            11.092000000000374,
+            11.094000000000374
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 212,
+      "step": 26,
+      "control": 4,
+      "before_time_s": 11.100000000000376,
+      "after_time_s": 11.150000000000393,
+      "endpoint_force_change_N": 0.01682527296979591,
+      "temporal_force_change_N": 12.428310751335946,
+      "endpoint_torque_change_Nm": 0.013529914823069639,
+      "temporal_torque_change_Nm": 0.9003428151554828,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9407176287051482,
+        "endpoint_torque_change_Nm": 0.3666146645865835,
+        "endpoint_force_change_N": 0.32293291731669266,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            11.102000000000377,
+            11.104000000000378
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            11.11200000000038,
+            11.114000000000381
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            11.120000000000383,
+            11.122000000000384
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            11.130000000000386,
+            11.132000000000387
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            11.136000000000388,
+            11.138000000000389
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            11.144000000000391,
+            11.146000000000392
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 214,
+      "step": 26,
+      "control": 6,
+      "before_time_s": 11.20000000000041,
+      "after_time_s": 11.250000000000426,
+      "endpoint_force_change_N": 1.073984197283135,
+      "temporal_force_change_N": 1.1996792436780064,
+      "endpoint_torque_change_Nm": 0.12214015640215324,
+      "temporal_torque_change_Nm": 0.12249363416994141,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8315132605304212,
+        "endpoint_torque_change_Nm": 0.8829953198127926,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9391575663026521
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            11.20000000000041,
+            11.20200000000041
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            11.20200000000041,
+            11.204000000000411
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            11.204000000000411,
+            11.206000000000412
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            11.206000000000412,
+            11.208000000000412
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            11.208000000000412,
+            11.210000000000413
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            11.210000000000413,
+            11.212000000000414
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            11.212000000000414,
+            11.214000000000414
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            11.214000000000414,
+            11.216000000000415
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            11.216000000000415,
+            11.218000000000416
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            11.228000000000419,
+            11.23000000000042
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            11.23000000000042,
+            11.23200000000042
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 215,
+      "step": 26,
+      "control": 7,
+      "before_time_s": 11.250000000000426,
+      "after_time_s": 11.300000000000443,
+      "endpoint_force_change_N": 1.1033249443196442,
+      "temporal_force_change_N": 1.8584347063161009,
+      "endpoint_torque_change_Nm": 0.03565496843042853,
+      "temporal_torque_change_Nm": 0.0918844484432951,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8081123244929798,
+        "endpoint_torque_change_Nm": 0.5959438377535101,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 12,
+          "interval_s": [
+            11.274000000000434,
+            11.276000000000435
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            11.276000000000435,
+            11.278000000000436
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            11.282000000000437,
+            11.284000000000438
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            11.284000000000438,
+            11.286000000000438
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            11.294000000000441,
+            11.296000000000442
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            11.296000000000442,
+            11.298000000000442
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 216,
+      "step": 27,
+      "control": 0,
+      "before_time_s": 11.300000000000443,
+      "after_time_s": 11.35000000000046,
+      "endpoint_force_change_N": 0.09243419013399264,
+      "temporal_force_change_N": 89.65876218046252,
+      "endpoint_torque_change_Nm": 0.5409870102751149,
+      "temporal_torque_change_Nm": 4.559020708807534,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9812792511700468,
+        "endpoint_force_change_N": 0.6380655226209049,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            11.302000000000444,
+            11.304000000000444
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            11.304000000000444,
+            11.306000000000445
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            11.314000000000448,
+            11.316000000000448
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            11.324000000000451,
+            11.326000000000452
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 217,
+      "step": 27,
+      "control": 1,
+      "before_time_s": 11.35000000000046,
+      "after_time_s": 11.400000000000476,
+      "endpoint_force_change_N": 0.12175415142657905,
+      "temporal_force_change_N": 103.19968708803623,
+      "endpoint_torque_change_Nm": 0.6189655996953584,
+      "temporal_torque_change_Nm": 3.599261636979163,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9875195007800313,
+        "endpoint_force_change_N": 0.6911076443057722,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            11.356000000000462,
+            11.358000000000462
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 229,
+      "step": 28,
+      "control": 5,
+      "before_time_s": 11.95000000000066,
+      "after_time_s": 12.000000000000677,
+      "endpoint_force_change_N": 45.55286513460011,
+      "temporal_force_change_N": 45.55286513460011,
+      "endpoint_torque_change_Nm": 3.413374895454461,
+      "temporal_torque_change_Nm": 3.413404647852538,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            11.95000000000066,
+            11.95200000000066
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            11.95200000000066,
+            11.954000000000661
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            11.954000000000661,
+            11.956000000000662
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            11.956000000000662,
+            11.958000000000663
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            11.958000000000663,
+            11.960000000000663
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            11.960000000000663,
+            11.962000000000664
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            11.962000000000664,
+            11.964000000000665
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            11.964000000000665,
+            11.966000000000665
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            11.966000000000665,
+            11.968000000000666
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            11.968000000000666,
+            11.970000000000667
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            11.970000000000667,
+            11.972000000000667
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 230,
+      "step": 28,
+      "control": 6,
+      "before_time_s": 12.000000000000677,
+      "after_time_s": 12.050000000000693,
+      "endpoint_force_change_N": 0.06568770881285282,
+      "temporal_force_change_N": 10.184419780570652,
+      "endpoint_torque_change_Nm": 0.04892427291355601,
+      "temporal_torque_change_Nm": 0.4111925699857373,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8845553822152886,
+        "endpoint_torque_change_Nm": 0.7051482059282371,
+        "endpoint_force_change_N": 0.5585023400936038,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 9,
+          "interval_s": [
+            12.018000000000683,
+            12.020000000000683
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            12.020000000000683,
+            12.022000000000684
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            12.022000000000684,
+            12.024000000000685
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 232,
+      "step": 29,
+      "control": 0,
+      "before_time_s": 12.10000000000071,
+      "after_time_s": 12.150000000000727,
+      "endpoint_force_change_N": 0.3340140860599627,
+      "temporal_force_change_N": 129.70456697727548,
+      "endpoint_torque_change_Nm": 0.8648110754837307,
+      "temporal_torque_change_Nm": 5.720237247027285,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9984399375975039,
+        "endpoint_force_change_N": 0.906396255850234,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 6,
+          "interval_s": [
+            12.112000000000714,
+            12.114000000000715
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            12.116000000000716,
+            12.118000000000716
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            12.136000000000722,
+            12.138000000000723
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 258,
+      "step": 32,
+      "control": 2,
+      "before_time_s": 13.400000000001144,
+      "after_time_s": 13.450000000001161,
+      "endpoint_force_change_N": 0.3199381188784608,
+      "temporal_force_change_N": 56.07028415757243,
+      "endpoint_torque_change_Nm": 0.19629627702055838,
+      "temporal_torque_change_Nm": 0.6986252201372385,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9360374414976599,
+        "endpoint_torque_change_Nm": 0.9001560062402496,
+        "endpoint_force_change_N": 0.8985959438377535,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 15,
+          "interval_s": [
+            13.430000000001154,
+            13.432000000001155
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            13.432000000001155,
+            13.434000000001156
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            13.434000000001156,
+            13.436000000001156
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            13.436000000001156,
+            13.438000000001157
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            13.438000000001157,
+            13.440000000001158
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 269,
+      "step": 33,
+      "control": 5,
+      "before_time_s": 13.950000000001328,
+      "after_time_s": 14.000000000001345,
+      "endpoint_force_change_N": 30.732624845189005,
+      "temporal_force_change_N": 30.792993271089866,
+      "endpoint_torque_change_Nm": 2.1576231422716203,
+      "temporal_torque_change_Nm": 2.1951935528252666,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            13.950000000001328,
+            13.952000000001329
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            13.952000000001329,
+            13.95400000000133
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            13.95400000000133,
+            13.95600000000133
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            13.95600000000133,
+            13.95800000000133
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            13.95800000000133,
+            13.960000000001331
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            13.960000000001331,
+            13.962000000001332
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            13.962000000001332,
+            13.964000000001333
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            13.964000000001333,
+            13.966000000001333
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            13.966000000001333,
+            13.968000000001334
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            13.968000000001334,
+            13.970000000001335
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            13.970000000001335,
+            13.972000000001335
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            13.972000000001335,
+            13.974000000001336
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            13.974000000001336,
+            13.976000000001337
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            13.976000000001337,
+            13.978000000001337
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            13.978000000001337,
+            13.980000000001338
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            13.990000000001341,
+            13.992000000001342
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            13.992000000001342,
+            13.994000000001343
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            13.994000000001343,
+            13.996000000001343
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 270,
+      "step": 33,
+      "control": 6,
+      "before_time_s": 14.000000000001345,
+      "after_time_s": 14.050000000001361,
+      "endpoint_force_change_N": 0.3147993913711621,
+      "temporal_force_change_N": 61.93200242313903,
+      "endpoint_torque_change_Nm": 0.19418519643774765,
+      "temporal_torque_change_Nm": 4.865912078393533,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9001560062402496,
+        "endpoint_force_change_N": 0.8970358814352574,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            14.006000000001347,
+            14.008000000001347
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            14.008000000001347,
+            14.010000000001348
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            14.010000000001348,
+            14.012000000001349
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            14.032000000001355,
+            14.034000000001356
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 272,
+      "step": 34,
+      "control": 0,
+      "before_time_s": 14.100000000001378,
+      "after_time_s": 14.150000000001395,
+      "endpoint_force_change_N": 0.37244679794341223,
+      "temporal_force_change_N": 39.71227938298946,
+      "endpoint_torque_change_Nm": 0.464408461422274,
+      "temporal_torque_change_Nm": 4.456964590440007,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9547581903276131,
+        "endpoint_force_change_N": 0.9157566302652106,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 2,
+          "interval_s": [
+            14.10400000000138,
+            14.10600000000138
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            14.10600000000138,
+            14.10800000000138
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            14.10800000000138,
+            14.110000000001381
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            14.110000000001381,
+            14.112000000001382
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            14.120000000001385,
+            14.122000000001385
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            14.122000000001385,
+            14.124000000001386
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            14.124000000001386,
+            14.126000000001387
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 273,
+      "step": 34,
+      "control": 1,
+      "before_time_s": 14.150000000001395,
+      "after_time_s": 14.200000000001411,
+      "endpoint_force_change_N": 0.4984637933082639,
+      "temporal_force_change_N": 54.394157420451144,
+      "endpoint_torque_change_Nm": 0.8089716511932556,
+      "temporal_torque_change_Nm": 4.544426594437525,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9968798751950078,
+        "endpoint_force_change_N": 0.9375975039001561,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            14.1660000000014,
+            14.1680000000014
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 296,
+      "step": 37,
+      "control": 0,
+      "before_time_s": 15.300000000001779,
+      "after_time_s": 15.350000000001796,
+      "endpoint_force_change_N": 36.27235653628355,
+      "temporal_force_change_N": 36.601846806048684,
+      "endpoint_torque_change_Nm": 2.504406745612849,
+      "temporal_torque_change_Nm": 2.504406745612849,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9781591263650546,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            15.300000000001779,
+            15.30200000000178
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            15.30200000000178,
+            15.30400000000178
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 300,
+      "step": 37,
+      "control": 4,
+      "before_time_s": 15.500000000001846,
+      "after_time_s": 15.550000000001862,
+      "endpoint_force_change_N": 0.0679078766783974,
+      "temporal_force_change_N": 29.513715952633273,
+      "endpoint_torque_change_Nm": 0.024927214857193913,
+      "temporal_torque_change_Nm": 2.2276359366425926,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 0.44305772230889234,
+        "endpoint_force_change_N": 0.5741029641185648,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            15.516000000001851,
+            15.518000000001852
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            15.518000000001852,
+            15.520000000001852
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            15.520000000001852,
+            15.522000000001853
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            15.522000000001853,
+            15.524000000001854
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            15.524000000001854,
+            15.526000000001854
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            15.526000000001854,
+            15.528000000001855
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 302,
+      "step": 37,
+      "control": 6,
+      "before_time_s": 15.600000000001879,
+      "after_time_s": 15.650000000001896,
+      "endpoint_force_change_N": 0.01850881674025419,
+      "temporal_force_change_N": 13.1978117405123,
+      "endpoint_torque_change_Nm": 0.013043201563583283,
+      "temporal_torque_change_Nm": 1.023034212199894,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9453978159126365,
+        "endpoint_torque_change_Nm": 0.3619344773790952,
+        "endpoint_force_change_N": 0.3369734789391576,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 17,
+          "interval_s": [
+            15.63400000000189,
+            15.636000000001891
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            15.636000000001891,
+            15.638000000001892
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            15.638000000001892,
+            15.640000000001892
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 303,
+      "step": 37,
+      "control": 7,
+      "before_time_s": 15.650000000001896,
+      "after_time_s": 15.700000000001912,
+      "endpoint_force_change_N": 0.027771935656212245,
+      "temporal_force_change_N": 12.200588953881429,
+      "endpoint_torque_change_Nm": 0.017008373434298476,
+      "temporal_torque_change_Nm": 0.9528964997405783,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9422776911076443,
+        "endpoint_torque_change_Nm": 0.38533541341653665,
+        "endpoint_force_change_N": 0.3712948517940718,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 12,
+          "interval_s": [
+            15.674000000001904,
+            15.676000000001904
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            15.676000000001904,
+            15.678000000001905
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 304,
+      "step": 38,
+      "control": 0,
+      "before_time_s": 15.700000000001912,
+      "after_time_s": 15.75000000000193,
+      "endpoint_force_change_N": 10.759316672261608,
+      "temporal_force_change_N": 10.771092700655867,
+      "endpoint_torque_change_Nm": 0.838283619766887,
+      "temporal_torque_change_Nm": 0.838283619766887,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9391575663026521,
+        "endpoint_torque_change_Nm": 0.9968798751950078,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            15.700000000001912,
+            15.702000000001913
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            15.702000000001913,
+            15.704000000001914
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 312,
+      "step": 39,
+      "control": 0,
+      "before_time_s": 16.100000000001955,
+      "after_time_s": 16.150000000001928,
+      "endpoint_force_change_N": 0.1798186224721824,
+      "temporal_force_change_N": 23.388834058349765,
+      "endpoint_torque_change_Nm": 0.4428213547717943,
+      "temporal_torque_change_Nm": 3.7655747869114484,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.953198127925117,
+        "endpoint_force_change_N": 0.7800312012480499,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            16.106000000001952,
+            16.10800000000195
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            16.10800000000195,
+            16.11000000000195
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            16.11000000000195,
+            16.11200000000195
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            16.11200000000195,
+            16.114000000001948
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            16.114000000001948,
+            16.116000000001947
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            16.116000000001947,
+            16.118000000001945
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            16.118000000001945,
+            16.120000000001944
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            16.120000000001944,
+            16.122000000001943
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            16.122000000001943,
+            16.124000000001942
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 323,
+      "step": 40,
+      "control": 3,
+      "before_time_s": 16.65000000000165,
+      "after_time_s": 16.700000000001623,
+      "endpoint_force_change_N": 0.8501626377600059,
+      "temporal_force_change_N": 305.22255358463786,
+      "endpoint_torque_change_Nm": 0.31245508618460704,
+      "temporal_torque_change_Nm": 20.781239059838978,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9173166926677067,
+        "endpoint_force_change_N": 0.9968798751950078,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 10,
+          "interval_s": [
+            16.67000000000164,
+            16.67200000000164
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            16.67200000000164,
+            16.674000000001637
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            16.674000000001637,
+            16.676000000001636
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            16.676000000001636,
+            16.678000000001635
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 353,
+      "step": 44,
+      "control": 1,
+      "before_time_s": 18.15000000000082,
+      "after_time_s": 18.20000000000079,
+      "endpoint_force_change_N": 0.25635217551950024,
+      "temporal_force_change_N": 48.67207591309874,
+      "endpoint_torque_change_Nm": 0.4686493146964409,
+      "temporal_torque_change_Nm": 4.051382406325788,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9578783151326054,
+        "endpoint_force_change_N": 0.8611544461778471,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 11,
+          "interval_s": [
+            18.172000000000807,
+            18.174000000000806
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            18.174000000000806,
+            18.176000000000805
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            18.176000000000805,
+            18.178000000000804
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 405,
+      "step": 50,
+      "control": 5,
+      "before_time_s": 20.74999999999938,
+      "after_time_s": 20.79999999999935,
+      "endpoint_force_change_N": 7.183916557553439,
+      "temporal_force_change_N": 7.183916557553439,
+      "endpoint_torque_change_Nm": 0.5213671621759285,
+      "temporal_torque_change_Nm": 0.5213671621759285,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9173166926677067,
+        "endpoint_torque_change_Nm": 0.9765990639625585,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            20.74999999999938,
+            20.751999999999377
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            20.751999999999377,
+            20.753999999999376
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            20.753999999999376,
+            20.755999999999375
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            20.755999999999375,
+            20.757999999999374
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            20.757999999999374,
+            20.759999999999373
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            20.759999999999373,
+            20.76199999999937
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            20.76199999999937,
+            20.76399999999937
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            20.76399999999937,
+            20.76599999999937
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            20.76599999999937,
+            20.76799999999937
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            20.76799999999937,
+            20.769999999999367
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            20.769999999999367,
+            20.771999999999366
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            20.771999999999366,
+            20.773999999999365
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            20.773999999999365,
+            20.775999999999364
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            20.775999999999364,
+            20.777999999999363
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            20.777999999999363,
+            20.77999999999936
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            20.77999999999936,
+            20.78199999999936
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            20.78199999999936,
+            20.78399999999936
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            20.78399999999936,
+            20.78599999999936
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            20.78599999999936,
+            20.787999999999357
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            20.787999999999357,
+            20.789999999999356
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            20.789999999999356,
+            20.791999999999355
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            20.791999999999355,
+            20.793999999999354
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 406,
+      "step": 50,
+      "control": 6,
+      "before_time_s": 20.79999999999935,
+      "after_time_s": 20.849999999999323,
+      "endpoint_force_change_N": 13.311352582050981,
+      "temporal_force_change_N": 13.315262065123125,
+      "endpoint_torque_change_Nm": 1.182251695046981,
+      "temporal_torque_change_Nm": 1.192110381670278,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9485179407176287,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            20.79999999999935,
+            20.80199999999935
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            20.80199999999935,
+            20.80399999999935
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            20.80399999999935,
+            20.805999999999347
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            20.809999999999345,
+            20.811999999999344
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            20.811999999999344,
+            20.813999999999343
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            20.81999999999934,
+            20.82199999999934
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            20.82199999999934,
+            20.823999999999337
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            20.831999999999333,
+            20.83399999999933
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            20.83399999999933,
+            20.83599999999933
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            20.843999999999326,
+            20.845999999999325
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 407,
+      "step": 50,
+      "control": 7,
+      "before_time_s": 20.849999999999323,
+      "after_time_s": 20.899999999999295,
+      "endpoint_force_change_N": 0.028292487732917745,
+      "temporal_force_change_N": 26.51254585326574,
+      "endpoint_torque_change_Nm": 0.0059434105798872325,
+      "temporal_torque_change_Nm": 2.4155699303825906,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9765990639625585,
+        "endpoint_torque_change_Nm": 0.2948517940717629,
+        "endpoint_force_change_N": 0.37597503900156004,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            20.85199999999932,
+            20.85399999999932
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            20.859999999999317,
+            20.861999999999316
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            20.87199999999931,
+            20.87399999999931
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            20.881999999999305,
+            20.883999999999304
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            20.895999999999297,
+            20.897999999999296
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 412,
+      "step": 51,
+      "control": 4,
+      "before_time_s": 21.099999999999184,
+      "after_time_s": 21.149999999999157,
+      "endpoint_force_change_N": 0.011893277778667888,
+      "temporal_force_change_N": 9.084569854210818,
+      "endpoint_torque_change_Nm": 0.008007051725554347,
+      "temporal_torque_change_Nm": 0.8231489367040623,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9391575663026521,
+        "endpoint_torque_change_Nm": 0.31981279251170047,
+        "endpoint_force_change_N": 0.2917316692667707,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 23,
+          "interval_s": [
+            21.14599999999916,
+            21.147999999999158
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 430,
+      "step": 53,
+      "control": 6,
+      "before_time_s": 21.999999999998685,
+      "after_time_s": 22.049999999998658,
+      "endpoint_force_change_N": 27.53443577556084,
+      "temporal_force_change_N": 27.53443577556084,
+      "endpoint_torque_change_Nm": 2.3592673028105824,
+      "temporal_torque_change_Nm": 2.3855308124822177,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9750390015600624,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            21.999999999998685,
+            22.001999999998684
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            22.001999999998684,
+            22.003999999998683
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            22.003999999998683,
+            22.005999999998682
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            22.005999999998682,
+            22.00799999999868
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            22.00799999999868,
+            22.00999999999868
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            22.00999999999868,
+            22.01199999999868
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            22.01199999999868,
+            22.013999999998678
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            22.013999999998678,
+            22.015999999998677
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            22.015999999998677,
+            22.017999999998676
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            22.017999999998676,
+            22.019999999998674
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            22.021999999998673,
+            22.023999999998672
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            22.023999999998672,
+            22.02599999999867
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            22.02599999999867,
+            22.02799999999867
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            22.02799999999867,
+            22.02999999999867
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            22.031999999998668,
+            22.033999999998667
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            22.033999999998667,
+            22.035999999998666
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            22.037999999998664,
+            22.039999999998663
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            22.039999999998663,
+            22.041999999998662
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            22.041999999998662,
+            22.04399999999866
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            22.04599999999866,
+            22.04799999999866
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 431,
+      "step": 53,
+      "control": 7,
+      "before_time_s": 22.049999999998658,
+      "after_time_s": 22.09999999999863,
+      "endpoint_force_change_N": 45.02494903085668,
+      "temporal_force_change_N": 45.02494903085668,
+      "endpoint_torque_change_Nm": 3.916775650399964,
+      "temporal_torque_change_Nm": 3.9391280314771895,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            22.049999999998658,
+            22.051999999998657
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            22.051999999998657,
+            22.053999999998656
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            22.053999999998656,
+            22.055999999998654
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            22.059999999998652,
+            22.06199999999865
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            22.06199999999865,
+            22.06399999999865
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            22.06399999999865,
+            22.06599999999865
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            22.069999999998647,
+            22.071999999998646
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            22.071999999998646,
+            22.073999999998644
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            22.075999999998643,
+            22.077999999998642
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            22.07999999999864,
+            22.08199999999864
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            22.08399999999864,
+            22.085999999998638
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            22.087999999998637,
+            22.089999999998636
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            22.091999999998635,
+            22.093999999998633
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            22.095999999998632,
+            22.09799999999863
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 432,
+      "step": 54,
+      "control": 0,
+      "before_time_s": 22.09999999999863,
+      "after_time_s": 22.149999999998602,
+      "endpoint_force_change_N": 50.85528676211511,
+      "temporal_force_change_N": 51.012935138750585,
+      "endpoint_torque_change_Nm": 4.414323348815305,
+      "temporal_torque_change_Nm": 4.414323348815305,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            22.09999999999863,
+            22.10199999999863
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            22.145999999998605,
+            22.147999999998603
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 433,
+      "step": 54,
+      "control": 1,
+      "before_time_s": 22.149999999998602,
+      "after_time_s": 22.199999999998575,
+      "endpoint_force_change_N": 0.019992021730503785,
+      "temporal_force_change_N": 41.05710863370297,
+      "endpoint_torque_change_Nm": 0.04618042255595721,
+      "temporal_torque_change_Nm": 3.579630254282076,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.6770670826833073,
+        "endpoint_force_change_N": 0.34321372854914195,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 6,
+          "interval_s": [
+            22.161999999998596,
+            22.163999999998595
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            22.181999999998585,
+            22.183999999998584
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 435,
+      "step": 54,
+      "control": 3,
+      "before_time_s": 22.249999999998547,
+      "after_time_s": 22.29999999999852,
+      "endpoint_force_change_N": 0.02940833557485594,
+      "temporal_force_change_N": 32.30981783403331,
+      "endpoint_torque_change_Nm": 0.010784572179007553,
+      "temporal_torque_change_Nm": 2.8424472018166185,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9968798751950078,
+        "endpoint_torque_change_Nm": 0.3494539781591264,
+        "endpoint_force_change_N": 0.3790951638065523,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 6,
+          "interval_s": [
+            22.26199999999854,
+            22.26399999999854
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            22.27999999999853,
+            22.28199999999853
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            22.28199999999853,
+            22.283999999998528
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 436,
+      "step": 54,
+      "control": 4,
+      "before_time_s": 22.29999999999852,
+      "after_time_s": 22.34999999999849,
+      "endpoint_force_change_N": 0.017788350478126668,
+      "temporal_force_change_N": 32.72105281796547,
+      "endpoint_torque_change_Nm": 0.008118196398035982,
+      "temporal_torque_change_Nm": 2.876457625655557,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9968798751950078,
+        "endpoint_torque_change_Nm": 0.32293291731669266,
+        "endpoint_force_change_N": 0.3291731669266771,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 6,
+          "interval_s": [
+            22.311999999998513,
+            22.31399999999851
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            22.31399999999851,
+            22.31599999999851
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            22.337999999998498,
+            22.339999999998497
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            22.339999999998497,
+            22.341999999998496
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 437,
+      "step": 54,
+      "control": 5,
+      "before_time_s": 22.34999999999849,
+      "after_time_s": 22.399999999998464,
+      "endpoint_force_change_N": 0.020016610495352485,
+      "temporal_force_change_N": 26.369520693900487,
+      "endpoint_torque_change_Nm": 0.014772302906605174,
+      "temporal_torque_change_Nm": 2.320581807059584,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9719188767550702,
+        "endpoint_torque_change_Nm": 0.36973478939157567,
+        "endpoint_force_change_N": 0.34321372854914195,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            22.365999999998483,
+            22.36799999999848
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            22.36799999999848,
+            22.36999999999848
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            22.38999999999847,
+            22.39199999999847
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            22.39199999999847,
+            22.393999999998467
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 438,
+      "step": 54,
+      "control": 6,
+      "before_time_s": 22.399999999998464,
+      "after_time_s": 22.449999999998436,
+      "endpoint_force_change_N": 0.027388922168072802,
+      "temporal_force_change_N": 20.367878917438457,
+      "endpoint_torque_change_Nm": 0.01785584330316614,
+      "temporal_torque_change_Nm": 1.7941707484166787,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9641185647425897,
+        "endpoint_torque_change_Nm": 0.3868954758190328,
+        "endpoint_force_change_N": 0.36973478939157567,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 7,
+          "interval_s": [
+            22.413999999998456,
+            22.415999999998455
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            22.415999999998455,
+            22.417999999998454
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            22.435999999998444,
+            22.437999999998443
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            22.437999999998443,
+            22.43999999999844
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 442,
+      "step": 55,
+      "control": 2,
+      "before_time_s": 22.599999999998353,
+      "after_time_s": 22.649999999998325,
+      "endpoint_force_change_N": 0.004449292734128692,
+      "temporal_force_change_N": 3.916647496495496,
+      "endpoint_torque_change_Nm": 0.001598509568215203,
+      "temporal_torque_change_Nm": 0.3411094239658156,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8767550702028081,
+        "endpoint_torque_change_Nm": 0.2059282371294852,
+        "endpoint_force_change_N": 0.21996879875195008,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 2,
+          "interval_s": [
+            22.60399999999835,
+            22.60599999999835
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            22.62399999999834,
+            22.62599999999834
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 443,
+      "step": 55,
+      "control": 3,
+      "before_time_s": 22.649999999998325,
+      "after_time_s": 22.699999999998298,
+      "endpoint_force_change_N": 0.005049077369408987,
+      "temporal_force_change_N": 2.8784077086530244,
+      "endpoint_torque_change_Nm": 0.0025285572684597035,
+      "temporal_torque_change_Nm": 0.2507637099307386,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8627145085803433,
+        "endpoint_torque_change_Nm": 0.23712948517940718,
+        "endpoint_force_change_N": 0.22620904836193448,
+        "temporal_force_change_N": 0.9656786271450858
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 5,
+          "interval_s": [
+            22.65999999999832,
+            22.66199999999832
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            22.685999999998305,
+            22.687999999998304
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 445,
+      "step": 55,
+      "control": 5,
+      "before_time_s": 22.74999999999827,
+      "after_time_s": 22.799999999998242,
+      "endpoint_force_change_N": 0.0014439209221745039,
+      "temporal_force_change_N": 1.7211946324123182,
+      "endpoint_torque_change_Nm": 0.0013185887506477212,
+      "temporal_torque_change_Nm": 0.15082573644486433,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8471138845553822,
+        "endpoint_torque_change_Nm": 0.1934477379095164,
+        "endpoint_force_change_N": 0.1622464898595944,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 15,
+          "interval_s": [
+            22.779999999998253,
+            22.781999999998252
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 446,
+      "step": 55,
+      "control": 6,
+      "before_time_s": 22.799999999998242,
+      "after_time_s": 22.849999999998214,
+      "endpoint_force_change_N": 0.001333439099348343,
+      "temporal_force_change_N": 1.4658542749139643,
+      "endpoint_torque_change_Nm": 0.0009440687249594224,
+      "temporal_torque_change_Nm": 0.12814489397886966,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8346333853354134,
+        "endpoint_torque_change_Nm": 0.17160686427457097,
+        "endpoint_force_change_N": 0.15912636505460218,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 4,
+          "interval_s": [
+            22.807999999998238,
+            22.809999999998237
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 511,
+      "step": 63,
+      "control": 7,
+      "before_time_s": 26.04999999999644,
+      "after_time_s": 26.099999999996413,
+      "endpoint_force_change_N": 0.08193966912483358,
+      "temporal_force_change_N": 90.73039456977439,
+      "endpoint_torque_change_Nm": 0.0737585582803679,
+      "temporal_torque_change_Nm": 7.671276397258004,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.8112324492979719,
+        "endpoint_force_change_N": 0.6131045241809673,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 15,
+          "interval_s": [
+            26.079999999996424,
+            26.081999999996423
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 512,
+      "step": 64,
+      "control": 0,
+      "before_time_s": 26.099999999996413,
+      "after_time_s": 26.149999999996385,
+      "endpoint_force_change_N": 0.08334239578069302,
+      "temporal_force_change_N": 66.94226960446348,
+      "endpoint_torque_change_Nm": 0.028588997791203177,
+      "temporal_torque_change_Nm": 5.660185091093706,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.5070202808112324,
+        "endpoint_force_change_N": 0.6162246489859594,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 10,
+          "interval_s": [
+            26.119999999996402,
+            26.1219999999964
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 514,
+      "step": 64,
+      "control": 2,
+      "before_time_s": 26.199999999996358,
+      "after_time_s": 26.24999999999633,
+      "endpoint_force_change_N": 61.01228891655146,
+      "temporal_force_change_N": 61.01228891655146,
+      "endpoint_torque_change_Nm": 5.1267542535218045,
+      "temporal_torque_change_Nm": 5.129876553556986,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            26.199999999996358,
+            26.201999999996357
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            26.201999999996357,
+            26.203999999996356
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 516,
+      "step": 64,
+      "control": 4,
+      "before_time_s": 26.299999999996302,
+      "after_time_s": 26.349999999996275,
+      "endpoint_force_change_N": 0.037445681357475294,
+      "temporal_force_change_N": 44.809373009912015,
+      "endpoint_torque_change_Nm": 0.018738605727085612,
+      "temporal_torque_change_Nm": 3.767305640398188,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.39313572542901715,
+        "endpoint_force_change_N": 0.42277691107644305,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            26.3019999999963,
+            26.3039999999963
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            26.325999999996288,
+            26.327999999996287
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 517,
+      "step": 64,
+      "control": 5,
+      "before_time_s": 26.349999999996275,
+      "after_time_s": 26.399999999996247,
+      "endpoint_force_change_N": 0.009904386124243839,
+      "temporal_force_change_N": 27.05639824775042,
+      "endpoint_torque_change_Nm": 0.0035727547128638396,
+      "temporal_torque_change_Nm": 2.2689801959429157,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 0.26521060842433697,
+        "endpoint_force_change_N": 0.27769110764430577,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 16,
+          "interval_s": [
+            26.381999999996257,
+            26.383999999996256
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            26.383999999996256,
+            26.385999999996255
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 519,
+      "step": 64,
+      "control": 7,
+      "before_time_s": 26.44999999999622,
+      "after_time_s": 26.49999999999619,
+      "endpoint_force_change_N": 0.013551999142179576,
+      "temporal_force_change_N": 13.245827757059551,
+      "endpoint_torque_change_Nm": 0.02115530696030874,
+      "temporal_torque_change_Nm": 1.0976685739913115,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9453978159126365,
+        "endpoint_torque_change_Nm": 0.40561622464898595,
+        "endpoint_force_change_N": 0.29797191887675506,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 10,
+          "interval_s": [
+            26.469999999996208,
+            26.471999999996207
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            26.471999999996207,
+            26.473999999996206
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            26.473999999996206,
+            26.475999999996205
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 520,
+      "step": 65,
+      "control": 0,
+      "before_time_s": 26.49999999999619,
+      "after_time_s": 26.549999999996164,
+      "endpoint_force_change_N": 0.050104495509481595,
+      "temporal_force_change_N": 7.823057091868787,
+      "endpoint_torque_change_Nm": 0.008647644656793877,
+      "temporal_torque_change_Nm": 0.6825230203108292,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9344773790951638,
+        "endpoint_torque_change_Nm": 0.33073322932917315,
+        "endpoint_force_change_N": 0.47269890795631825,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 14,
+          "interval_s": [
+            26.527999999996176,
+            26.529999999996175
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 531,
+      "step": 66,
+      "control": 3,
+      "before_time_s": 27.049999999995887,
+      "after_time_s": 27.09999999999586,
+      "endpoint_force_change_N": 0.22724200225195645,
+      "temporal_force_change_N": 111.8870605642482,
+      "endpoint_torque_change_Nm": 0.08346849997191814,
+      "temporal_torque_change_Nm": 5.7156145528884075,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.8377535101404057,
+        "endpoint_force_change_N": 0.8455538221528861,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 7,
+          "interval_s": [
+            27.06399999999588,
+            27.065999999995878
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            27.071999999995874,
+            27.073999999995873
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 565,
+      "step": 70,
+      "control": 5,
+      "before_time_s": 28.749999999994944,
+      "after_time_s": 28.799999999994917,
+      "endpoint_force_change_N": 5.5205809335463,
+      "temporal_force_change_N": 11.508886140260561,
+      "endpoint_torque_change_Nm": 0.45698458710128237,
+      "temporal_torque_change_Nm": 1.0798761892253488,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9453978159126365,
+        "endpoint_torque_change_Nm": 0.9547581903276131,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            28.749999999994944,
+            28.751999999994943
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            28.751999999994943,
+            28.753999999994942
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            28.753999999994942,
+            28.75599999999494
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            28.75599999999494,
+            28.75799999999494
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            28.75799999999494,
+            28.75999999999494
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            28.75999999999494,
+            28.761999999994938
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            28.761999999994938,
+            28.763999999994937
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            28.763999999994937,
+            28.765999999994936
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            28.765999999994936,
+            28.767999999994935
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            28.77599999999493,
+            28.77799999999493
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            28.77799999999493,
+            28.779999999994928
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            28.779999999994928,
+            28.781999999994927
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            28.781999999994927,
+            28.783999999994926
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            28.79199999999492,
+            28.79399999999492
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            28.79399999999492,
+            28.79599999999492
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            28.79599999999492,
+            28.797999999994918
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 566,
+      "step": 70,
+      "control": 6,
+      "before_time_s": 28.799999999994917,
+      "after_time_s": 28.84999999999489,
+      "endpoint_force_change_N": 0.025059837894703046,
+      "temporal_force_change_N": 25.549076896545888,
+      "endpoint_torque_change_Nm": 0.028249709936239934,
+      "temporal_torque_change_Nm": 2.3121981313902333,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9719188767550702,
+        "endpoint_torque_change_Nm": 0.5039001560062403,
+        "endpoint_force_change_N": 0.36505460218408736,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            28.805999999994913,
+            28.807999999994912
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            28.80999999999491,
+            28.81199999999491
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            28.817999999994907,
+            28.819999999994906
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            28.825999999994902,
+            28.8279999999949
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            28.8319999999949,
+            28.833999999994898
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            28.843999999994892,
+            28.84599999999489
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            28.84599999999489,
+            28.84799999999489
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 567,
+      "step": 70,
+      "control": 7,
+      "before_time_s": 28.84999999999489,
+      "after_time_s": 28.89999999999486,
+      "endpoint_force_change_N": 0.05433885472415909,
+      "temporal_force_change_N": 34.260299416020814,
+      "endpoint_torque_change_Nm": 0.031665340160601275,
+      "temporal_torque_change_Nm": 3.055158563117727,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.5413416536661466,
+        "endpoint_force_change_N": 0.4960998439937597,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 7,
+          "interval_s": [
+            28.86399999999488,
+            28.86599999999488
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            28.86599999999488,
+            28.86799999999488
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            28.887999999994868,
+            28.889999999994867
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            28.889999999994867,
+            28.891999999994866
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 569,
+      "step": 71,
+      "control": 1,
+      "before_time_s": 28.949999999994834,
+      "after_time_s": 28.999999999994806,
+      "endpoint_force_change_N": 0.04754521771407284,
+      "temporal_force_change_N": 30.085552114663194,
+      "endpoint_torque_change_Nm": 0.03936304692894382,
+      "temporal_torque_change_Nm": 2.6825501668283644,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9875195007800313,
+        "endpoint_torque_change_Nm": 0.6193447737909517,
+        "endpoint_force_change_N": 0.46177847113884557,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 11,
+          "interval_s": [
+            28.97199999999482,
+            28.97399999999482
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 570,
+      "step": 71,
+      "control": 2,
+      "before_time_s": 28.999999999994806,
+      "after_time_s": 29.049999999994778,
+      "endpoint_force_change_N": 0.018144395085843028,
+      "temporal_force_change_N": 25.119742972770073,
+      "endpoint_torque_change_Nm": 0.0026627057415506915,
+      "temporal_torque_change_Nm": 2.2440709062515634,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 0.24336973478939158,
+        "endpoint_force_change_N": 0.3338533541341654,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 15,
+          "interval_s": [
+            29.02999999999479,
+            29.031999999994788
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 572,
+      "step": 71,
+      "control": 4,
+      "before_time_s": 29.09999999999475,
+      "after_time_s": 29.149999999994723,
+      "endpoint_force_change_N": 0.00831826505273347,
+      "temporal_force_change_N": 17.99898743111469,
+      "endpoint_torque_change_Nm": 0.00311661399917388,
+      "temporal_torque_change_Nm": 1.610462484298434,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9625585023400937,
+        "endpoint_torque_change_Nm": 0.25585023400936036,
+        "endpoint_force_change_N": 0.2574102964118565,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            29.11599999999474,
+            29.11799999999474
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 575,
+      "step": 71,
+      "control": 7,
+      "before_time_s": 29.249999999994667,
+      "after_time_s": 29.29999999999464,
+      "endpoint_force_change_N": 0.006789151768446886,
+      "temporal_force_change_N": 5.132015163401362,
+      "endpoint_torque_change_Nm": 0.010664905525557457,
+      "temporal_torque_change_Nm": 0.45509508697413054,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8970358814352574,
+        "endpoint_torque_change_Nm": 0.3494539781591264,
+        "endpoint_force_change_N": 0.24492979719188768,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            29.251999999994666,
+            29.253999999994665
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 576,
+      "step": 72,
+      "control": 0,
+      "before_time_s": 29.29999999999464,
+      "after_time_s": 29.349999999994612,
+      "endpoint_force_change_N": 0.03584837662255798,
+      "temporal_force_change_N": 4.9903195448180275,
+      "endpoint_torque_change_Nm": 0.015058937684079529,
+      "temporal_torque_change_Nm": 0.4523340781643775,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8970358814352574,
+        "endpoint_torque_change_Nm": 0.3712948517940718,
+        "endpoint_force_change_N": 0.41497659906396256,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 22,
+          "interval_s": [
+            29.343999999994615,
+            29.345999999994614
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            29.345999999994614,
+            29.347999999994613
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 584,
+      "step": 73,
+      "control": 0,
+      "before_time_s": 29.699999999994418,
+      "after_time_s": 29.74999999999439,
+      "endpoint_force_change_N": 0.5375507731023786,
+      "temporal_force_change_N": 109.24972960729471,
+      "endpoint_torque_change_Nm": 0.08432444353430762,
+      "temporal_torque_change_Nm": 2.0130321992748224,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.8408736349453978,
+        "endpoint_force_change_N": 0.9469578783151326,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 14,
+          "interval_s": [
+            29.727999999994402,
+            29.7299999999944
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 586,
+      "step": 73,
+      "control": 2,
+      "before_time_s": 29.799999999994363,
+      "after_time_s": 29.849999999994335,
+      "endpoint_force_change_N": 0.12799569592382756,
+      "temporal_force_change_N": 122.9807305838226,
+      "endpoint_torque_change_Nm": 0.08986584406010274,
+      "temporal_torque_change_Nm": 1.9464495665794368,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.8486739469578783,
+        "endpoint_force_change_N": 0.7051482059282371,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            29.80199999999436,
+            29.80399999999436
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 588,
+      "step": 73,
+      "control": 4,
+      "before_time_s": 29.899999999994307,
+      "after_time_s": 29.94999999999428,
+      "endpoint_force_change_N": 0.07635079122851197,
+      "temporal_force_change_N": 107.87108845812526,
+      "endpoint_torque_change_Nm": 0.09728737257488271,
+      "temporal_torque_change_Nm": 2.1169481908171,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9703588143525741,
+        "endpoint_torque_change_Nm": 0.859594383775351,
+        "endpoint_force_change_N": 0.6021840873634945,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            29.901999999994306,
+            29.903999999994305
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 608,
+      "step": 76,
+      "control": 0,
+      "before_time_s": 30.899999999993753,
+      "after_time_s": 30.949999999993725,
+      "endpoint_force_change_N": 0.5430482881579508,
+      "temporal_force_change_N": 32.50136624537346,
+      "endpoint_torque_change_Nm": 0.19117284728267908,
+      "temporal_torque_change_Nm": 2.723364749146314,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9921996879875195,
+        "endpoint_torque_change_Nm": 0.9001560062402496,
+        "endpoint_force_change_N": 0.9469578783151326,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 13,
+          "interval_s": [
+            30.92599999999374,
+            30.927999999993737
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            30.927999999993737,
+            30.929999999993736
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 609,
+      "step": 76,
+      "control": 1,
+      "before_time_s": 30.949999999993725,
+      "after_time_s": 30.999999999993697,
+      "endpoint_force_change_N": 0.02631925072435549,
+      "temporal_force_change_N": 36.77098208194594,
+      "endpoint_torque_change_Nm": 0.03611120835429064,
+      "temporal_torque_change_Nm": 3.0744343787867807,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.6006240249609984,
+        "endpoint_force_change_N": 0.36817472698907955,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 2,
+          "interval_s": [
+            30.953999999993723,
+            30.955999999993722
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            30.95999999999372,
+            30.96199999999372
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            30.97799999999371,
+            30.97999999999371
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            30.97999999999371,
+            30.981999999993707
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 610,
+      "step": 76,
+      "control": 2,
+      "before_time_s": 30.999999999993697,
+      "after_time_s": 31.04999999999367,
+      "endpoint_force_change_N": 0.05110698125557083,
+      "temporal_force_change_N": 34.455405313022084,
+      "endpoint_torque_change_Nm": 0.028686095744540344,
+      "temporal_torque_change_Nm": 2.8875763776572754,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9968798751950078,
+        "endpoint_torque_change_Nm": 0.5085803432137286,
+        "endpoint_force_change_N": 0.4789391575663027,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            31.001999999993696,
+            31.003999999993695
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            31.003999999993695,
+            31.005999999993694
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            31.023999999993684,
+            31.025999999993683
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            31.025999999993683,
+            31.027999999993682
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            31.041999999993674,
+            31.043999999993673
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            31.043999999993673,
+            31.045999999993672
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 613,
+      "step": 76,
+      "control": 5,
+      "before_time_s": 31.149999999993614,
+      "after_time_s": 31.199999999993587,
+      "endpoint_force_change_N": 13.764896833775722,
+      "temporal_force_change_N": 13.764896833775722,
+      "endpoint_torque_change_Nm": 1.149528376774335,
+      "temporal_torque_change_Nm": 1.1513223850282766,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9469578783151326,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            31.149999999993614,
+            31.151999999993613
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            31.15799999999361,
+            31.15999999999361
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            31.15999999999361,
+            31.161999999993608
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            31.169999999993603,
+            31.171999999993602
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            31.1739999999936,
+            31.1759999999936
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            31.179999999993598,
+            31.181999999993597
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            31.181999999993597,
+            31.183999999993596
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            31.189999999993592,
+            31.19199999999359
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            31.19199999999359,
+            31.19399999999359
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 617,
+      "step": 77,
+      "control": 1,
+      "before_time_s": 31.349999999993504,
+      "after_time_s": 31.399999999993476,
+      "endpoint_force_change_N": 0.008685237107654861,
+      "temporal_force_change_N": 4.327013969753524,
+      "endpoint_torque_change_Nm": 0.009970950165894022,
+      "temporal_torque_change_Nm": 0.35541379850453175,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8798751950078003,
+        "endpoint_torque_change_Nm": 0.34009360374414976,
+        "endpoint_force_change_N": 0.26053042121684866,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 19,
+          "interval_s": [
+            31.387999999993482,
+            31.38999999999348
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 618,
+      "step": 77,
+      "control": 2,
+      "before_time_s": 31.399999999993476,
+      "after_time_s": 31.449999999993448,
+      "endpoint_force_change_N": 3.225249364438468,
+      "temporal_force_change_N": 3.229470964244999,
+      "endpoint_torque_change_Nm": 0.2723026431042564,
+      "temporal_torque_change_Nm": 0.2728924394833873,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8673946957878315,
+        "endpoint_torque_change_Nm": 0.9095163806552262,
+        "endpoint_force_change_N": 0.9984399375975039,
+        "temporal_force_change_N": 0.9859594383775351
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            31.399999999993476,
+            31.401999999993475
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            31.42999999999346,
+            31.431999999993458
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            31.431999999993458,
+            31.433999999993457
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 619,
+      "step": 77,
+      "control": 3,
+      "before_time_s": 31.449999999993448,
+      "after_time_s": 31.49999999999342,
+      "endpoint_force_change_N": 0.006261726340832111,
+      "temporal_force_change_N": 2.515909432101175,
+      "endpoint_torque_change_Nm": 0.001818310920661813,
+      "temporal_torque_change_Nm": 0.20995170236704694,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.858034321372855,
+        "endpoint_torque_change_Nm": 0.21684867394695787,
+        "endpoint_force_change_N": 0.24024960998439937,
+        "temporal_force_change_N": 0.9547581903276131
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 7,
+          "interval_s": [
+            31.46399999999344,
+            31.46599999999344
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            31.46599999999344,
+            31.467999999993438
+          ]
+        },
+        {
+          "substep": 18,
+          "interval_s": [
+            31.485999999993428,
+            31.487999999993427
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 620,
+      "step": 77,
+      "control": 4,
+      "before_time_s": 31.49999999999342,
+      "after_time_s": 31.549999999993393,
+      "endpoint_force_change_N": 0.003733495715643633,
+      "temporal_force_change_N": 1.622366362180145,
+      "endpoint_torque_change_Nm": 0.0014931634770759328,
+      "temporal_torque_change_Nm": 0.13510043301608074,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.8408736349453978,
+        "endpoint_torque_change_Nm": 0.20124804992199688,
+        "endpoint_force_change_N": 0.21060842433697347,
+        "temporal_force_change_N": 0.9407176287051482
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            31.505999999993417,
+            31.507999999993416
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            31.523999999993407,
+            31.525999999993406
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 664,
+      "step": 83,
+      "control": 0,
+      "before_time_s": 33.69999999999522,
+      "after_time_s": 33.74999999999528,
+      "endpoint_force_change_N": 0.08275861932446876,
+      "temporal_force_change_N": 79.66066408135055,
+      "endpoint_torque_change_Nm": 0.39319287296866295,
+      "temporal_torque_change_Nm": 3.1498820917948156,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 1.0,
+        "endpoint_torque_change_Nm": 0.9422776911076443,
+        "endpoint_force_change_N": 0.6131045241809673,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 1,
+          "interval_s": [
+            33.70199999999522,
+            33.703999999995226
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            33.71399999999524,
+            33.71599999999524
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 680,
+      "step": 85,
+      "control": 0,
+      "before_time_s": 34.4999999999962,
+      "after_time_s": 34.54999999999626,
+      "endpoint_force_change_N": 24.61855876586187,
+      "temporal_force_change_N": 24.686278585254783,
+      "endpoint_torque_change_Nm": 1.9357219019749003,
+      "temporal_torque_change_Nm": 1.9357219019749003,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 1.0,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            34.4999999999962,
+            34.5019999999962
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            34.5019999999962,
+            34.5039999999962
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            34.5039999999962,
+            34.505999999996206
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            34.505999999996206,
+            34.50799999999621
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            34.50799999999621,
+            34.50999999999621
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            34.50999999999621,
+            34.51199999999621
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            34.54199999999625,
+            34.54399999999625
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            34.54399999999625,
+            34.545999999996255
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 682,
+      "step": 85,
+      "control": 2,
+      "before_time_s": 34.59999999999632,
+      "after_time_s": 34.64999999999638,
+      "endpoint_force_change_N": 0.03548552896048771,
+      "temporal_force_change_N": 22.65856779439202,
+      "endpoint_torque_change_Nm": 0.00952024489117435,
+      "temporal_torque_change_Nm": 1.881515060143222,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.3369734789391576,
+        "endpoint_force_change_N": 0.41341653666146644,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 7,
+          "interval_s": [
+            34.61399999999634,
+            34.61599999999634
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            34.61599999999634,
+            34.61799999999634
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            34.61799999999634,
+            34.619999999996345
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            34.627999999996355,
+            34.62999999999636
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            34.62999999999636,
+            34.63199999999636
+          ]
+        },
+        {
+          "substep": 20,
+          "interval_s": [
+            34.63999999999637,
+            34.64199999999637
+          ]
+        },
+        {
+          "substep": 21,
+          "interval_s": [
+            34.64199999999637,
+            34.643999999996375
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            34.643999999996375,
+            34.64599999999638
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            34.64599999999638,
+            34.64799999999638
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 688,
+      "step": 86,
+      "control": 0,
+      "before_time_s": 34.89999999999669,
+      "after_time_s": 34.94999999999675,
+      "endpoint_force_change_N": 3.9060911443975903,
+      "temporal_force_change_N": 25.328634904115276,
+      "endpoint_torque_change_Nm": 0.7168979718324457,
+      "temporal_torque_change_Nm": 2.4124414473038036,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9765990639625585,
+        "endpoint_torque_change_Nm": 0.9953198127925117,
+        "endpoint_force_change_N": 1.0,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 0,
+          "interval_s": [
+            34.89999999999669,
+            34.90199999999669
+          ]
+        },
+        {
+          "substep": 1,
+          "interval_s": [
+            34.90199999999669,
+            34.90399999999669
+          ]
+        },
+        {
+          "substep": 2,
+          "interval_s": [
+            34.90399999999669,
+            34.905999999996695
+          ]
+        },
+        {
+          "substep": 3,
+          "interval_s": [
+            34.905999999996695,
+            34.9079999999967
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            34.9079999999967,
+            34.9099999999967
+          ]
+        },
+        {
+          "substep": 5,
+          "interval_s": [
+            34.9099999999967,
+            34.9119999999967
+          ]
+        },
+        {
+          "substep": 6,
+          "interval_s": [
+            34.9119999999967,
+            34.913999999996705
+          ]
+        },
+        {
+          "substep": 7,
+          "interval_s": [
+            34.913999999996705,
+            34.91599999999671
+          ]
+        },
+        {
+          "substep": 8,
+          "interval_s": [
+            34.91599999999671,
+            34.91799999999671
+          ]
+        },
+        {
+          "substep": 9,
+          "interval_s": [
+            34.91799999999671,
+            34.91999999999671
+          ]
+        },
+        {
+          "substep": 10,
+          "interval_s": [
+            34.91999999999671,
+            34.921999999996714
+          ]
+        },
+        {
+          "substep": 11,
+          "interval_s": [
+            34.921999999996714,
+            34.92399999999672
+          ]
+        },
+        {
+          "substep": 12,
+          "interval_s": [
+            34.92399999999672,
+            34.92599999999672
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            34.92599999999672,
+            34.92799999999672
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            34.92799999999672,
+            34.929999999996724
+          ]
+        },
+        {
+          "substep": 15,
+          "interval_s": [
+            34.929999999996724,
+            34.93199999999673
+          ]
+        },
+        {
+          "substep": 16,
+          "interval_s": [
+            34.93199999999673,
+            34.93399999999673
+          ]
+        },
+        {
+          "substep": 17,
+          "interval_s": [
+            34.93399999999673,
+            34.93599999999673
+          ]
+        },
+        {
+          "substep": 19,
+          "interval_s": [
+            34.937999999996734,
+            34.939999999996736
+          ]
+        },
+        {
+          "substep": 22,
+          "interval_s": [
+            34.94399999999674,
+            34.945999999996744
+          ]
+        },
+        {
+          "substep": 23,
+          "interval_s": [
+            34.945999999996744,
+            34.947999999996746
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 689,
+      "step": 86,
+      "control": 1,
+      "before_time_s": 34.94999999999675,
+      "after_time_s": 34.99999999999681,
+      "endpoint_force_change_N": 0.2556041019481135,
+      "temporal_force_change_N": 51.25145685309878,
+      "endpoint_torque_change_Nm": 0.5219219946178648,
+      "temporal_torque_change_Nm": 1.1840848524383072,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9469578783151326,
+        "endpoint_torque_change_Nm": 0.9765990639625585,
+        "endpoint_force_change_N": 0.8611544461778471,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 3,
+          "interval_s": [
+            34.955999999996756,
+            34.95799999999676
+          ]
+        },
+        {
+          "substep": 4,
+          "interval_s": [
+            34.95799999999676,
+            34.95999999999676
+          ]
+        },
+        {
+          "substep": 13,
+          "interval_s": [
+            34.97599999999678,
+            34.97799999999678
+          ]
+        },
+        {
+          "substep": 14,
+          "interval_s": [
+            34.97799999999678,
+            34.979999999996785
+          ]
+        }
+      ]
+    },
+    {
+      "global_control": 690,
+      "step": 86,
+      "control": 2,
+      "before_time_s": 34.99999999999681,
+      "after_time_s": 35.04999999999687,
+      "endpoint_force_change_N": 0.11497792260943422,
+      "temporal_force_change_N": 71.89162772820765,
+      "endpoint_torque_change_Nm": 0.1503655842876106,
+      "temporal_torque_change_Nm": 1.9207038700210217,
+      "negative_cohort_ranks": {
+        "temporal_torque_change_Nm": 0.9656786271450858,
+        "endpoint_torque_change_Nm": 0.8970358814352574,
+        "endpoint_force_change_N": 0.6692667706708268,
+        "temporal_force_change_N": 1.0
+      },
+      "gripper_contact_native_intervals": [
+        {
+          "substep": 8,
+          "interval_s": [
+            35.01599999999683,
+            35.01799999999683
+          ]
+        }
+      ]
+    }
+  ],
+  "omitted_from_compact_summary": "Raw per-contact rows only; complete contacts remain in sealed raw summary.json and labels.jsonl."
+}
