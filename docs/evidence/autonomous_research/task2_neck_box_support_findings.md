@@ -65,6 +65,10 @@ and evaluator outputs. It constructs no model and performs no inference.
 
 Independent prospective review is recorded in
 `task2_neck_box_support_independent_review.md` in the reviewer worktree.
+The independent stored-result and report audit also passes, reviewer commit
+**`a1f0964`**. It independently reconstructs the complete 260-token response
+from pinned vocabulary/added-token bytes without running a tokenizer, processor
+or model, and verifies all 42 raw BOX records without selecting one.
 The sealed object-level baseline journal and sensor hashes remain unchanged.
 This semantic-region line closes at the nonadmission boundary.
 
