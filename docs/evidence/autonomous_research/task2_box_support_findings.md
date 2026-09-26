@@ -152,7 +152,7 @@ RGB/depth contributors, crop/depth summaries, median sets, proxy labels and
 independently computed 3 × 3 strata. It does not rerun projection or inference;
 provider-coordinate parity rests on the independently reviewed unchanged source
 and prior focused test. The durable result receipt is **`7bb92f4`**, containing
-`embodied_runtime/experiments/task2_box_evidence_audit.py`,
+`experiments/task2_box_evidence_audit.py`,
 `docs/evidence/autonomous_research/task2_box_independent_audit.json`, and the
 expanded `task2_box_support_independent_review.md` in the reviewer worktree.
 Supplemental visual inspection is separate from its arithmetic audit.

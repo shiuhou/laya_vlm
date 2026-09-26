@@ -953,6 +953,76 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   `b73b5b4`. Local producer checkout retired immediately after integration;27 total
   inactive checkouts removed,338.7MiB reclaimed, four active checkouts remain.
 
+### Parallel iteration 028 — calibrated sample footprints preserve ambiguity
+
+- **Question:** can an own-geometry representation explain the registered depth
+  returns without equating a resolved scalar with pixel-center ownership?
+- **Hypotheses:** partial native sample coverage can be missed by the center ray;
+  alternatively, cached versus own-qpos geometry explains the selected anomalies.
+- **Frozen experiment:** `0733ea7`, native four sample rays plus center, unchanged
+  scalar depth, calibrated own-gripper triangles and own joints. No physics or
+  rendering. Seal sensor output before separate cached-pose comparison. Attempt01
+  fails before output because the old calibration lacks triangle connectivity;
+  preserve it. Static own-STL export passes9 exact vertex/pose gates and supplies
+  topology; no scene, MjData, joint state or fitted hull. Attempt02 is separate.
+- **Observed:** all6 prior large-jump center rays miss modeled gripper while1–2/4
+  native samples hit. Four smaller-change witnesses have0/4 support and remain
+  unexplained. Own-qpos/cache coverage agrees at all11 centers/99 neighbors. Whole-
+  frame disagreement remains7/2 samples; common-hit depth differences reach
+  7.10/16.52mm at discontinuities despite subpixel pose agreement.
+- **Interpretation:** potential self contribution is measurable; resolved depth
+  ownership and environmental clearance remain unknown. Small projected vertex
+  differences are not uniform depth bounds. No mask, margin, pixel rejection or
+  candidate gate follows. This geometry diagnosis is closed.
+- **Verification/artifacts:**25 focused tests,232 report checks, independent17-
+  artifact stored-array audit PASS; root reruns checker and inspects witness panel.
+  Raw `pixel-sample-footprint-02`, previous failure and topology export retained.
+  Main source/report `2b1e8b2`,`602474c`,`fa75625`,`eac39df`; independent result
+  `dd5fb11`. See `pixel_sample_footprint_findings.md` and root receipt
+  `runs/autonomous-research/pixel-footprint-root-audit-01.json`.
+- **Next:** reuse producer worktree for the distinct fresh Task2 point approach;
+  no additional automatic renderer/masking variants.
+
+### Parallel iteration 029 — bottle point plausibility versus ROI geometry
+
+- **Question:** does existing semantic grounding supply target-specific bottle
+  geometry suitable for moving beyond the scripted local-grasp witness?
+- **Competing hypotheses:** a plausible BOX may support a useful coarse point;
+  treating its whole interior depth crop as bottle-only geometry may already fail.
+- **Frozen experiment:** `ba7ab2e`, one full-RGB LocateAnything query `the wine
+  bottle`, same3B checkpoint/settings,256-token cap. Fixed inspected initial Task2
+  image; unchanged integer BOX-center ray/crop-median point and every crop sample.
+  Seal before archived rendered-mask proxy evaluation. No dynamics, new query,
+  oracle cleanup or successful-pose offset. Attempt01 has zero inference: NumPy
+  processor metadata fails tensor-only serialization. Separate fixed attempt02
+  follows actual-input processor preflight. Both attempts remain recorded.
+- **Observed:** one12-token/EOS output gives normalized box[542,408,596,582].492
+  valid crop samples;414 agree with the limited bottle-label proxy,373 are proxy-
+  interior,65 boundary,54 exterior. Center and both median contributors agree with
+  the proxy; point P approximately[-.123715580,.056158890,.985527269]m. Center depth
+  differs from median by−7.359mm. Root inspects actual RGB/depth: tabletop is visible
+  beside the narrow neck inside the fixed crop.
+- **Interpretation:** plausible semantic point, mixed depth support. Exact depth
+  ownership, grasp center, jaw span, hidden surface and approach utility remain
+  unknown. The representation cannot promote all ROI points to bottle geometry.
+  No downstream correction is fitted from this result.
+- **Verification/artifacts:**9 tests and independent9-record/all492-pixel audit
+  PASS; root reruns checker. Raw `task2-box-support-run-02`, prior setup failure and
+  processor preflight preserved. Main final source `22901b1`, report `fd53609`,
+  independent audit `27bad9a`; root receipt `task2-box-root-audit-01.json`.
+- **Next experiment:** fresh Task2 init0/seed1 approach using exact sealed P, only
+  after byte/dtype/shape match of initial RGB/depth/K/T. Live TCP/jaw observations,
+  original seven10mm translations/STOP and geometric rule,40 actions/900s, no model
+  call or archived controls. Native contacts are passively recorded through each
+  complete atomic primitive, followed by stop before another action. Distinguish
+  designated pad/bottle boundary from forbidden contacts; no automatic GRASP.
+  Independent review and one exact replay planned. Concurrent offline frame audit
+  checks the observed site-position/body-quaternion distinction without dynamics.
+- **Integration regression:**872 tests pass in31.68s at `b924819`; log
+  `regression-box-footprint-integration.log`. Production runtime, adapter and
+  decision interface remain byte-identical to baseline. Completed source/reports
+  are integrated and the four existing worktrees are reused.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

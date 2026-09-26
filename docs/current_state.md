@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration027. This is the authoritative current
+Reviewed 2026-09-27 after research iteration029. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -69,6 +69,8 @@ No Task2 Laya run or success is claimed. See
 | Does wrist history contain extra evidence? | Fixed offline force AUROC0.787248→0.987634 for gripper-only versus no>1N robot contact; missed99 subset0.653918→0.993602. Residual overlap, single-trajectory dependence and dynamics/cache confounds remain. No calibrated contact/holding gate. |
 | Is center-ray depth reliable at gripper edges? | Exact rendering reproduction plus fixed-cache MSAA intervention changes registered depths by up to735mm. FK/cache projected differences remain below0.005px. Resolved depth ownership cannot be assumed to be pixel-center ownership. |
 | Does the actual visual executor support a local grasp/lift? | Fresh paired scripted-pregrasp test: GRASP+10mm lift moves bottle9.279539mm versus open0.001081mm, all4 unchanged hard validations pass, bilateral pads8/8 endpoints and200/200 each native stage.240 controls replay exactly. Approach and action choice were scripted, not sensor/model-selected. |
+| Does one bottle BOX provide useful geometry? | One full-RGB query produces a plausible point.414/492 fixed crop pixels agree with a limited rendered-mask proxy; visible tabletop contaminates the rest. The cloud is not bottle-only geometry, and the point is not a certified grasp center. |
+| Can calibrated sampling explain edge returns? | All6 registered large-depth-jump center rays miss own triangles but have partial native sample support. This explains potential self contribution, not resolved depth ownership, target extent or action clearance. The geometry investigation is closed. |
 
 Detailed entry points: [mechanical local witness](evidence/autonomous_research/local_grasp_interface_findings.md),
 [wrist history](evidence/autonomous_research/offline_wrist_history_findings.md),
@@ -78,16 +80,15 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 
 ## Active next questions
 
-1. Does one existing BOX/depth observation supply target-specific bottle support?
-   One frozen initial RGB query and unchanged crop/median-depth representation,
-   sealed before limited rendered-mask proxy evaluation; no foreground correction
-   from oracle labels, fitted grasp offset, prompt sweep or dynamics.
-2. Can a calibrated pixel-sample/own-triangle measurement represent possible
-   self contribution without inventing resolved-depth ownership? Analytic and
-   offline geometry only, with ambiguous/unknown values retained. No clearance or
-   safety gate follows automatically.
-3. If target geometry is usable, qualify a sensor-selected approach to the local
-   grasp relation before adding model hierarchy or full-task complexity.
+1. Fresh Task2 reset: exact initial RGB/depth/K/T match permits explicitly cached
+   BOX-point reuse with live proprioception and the existing seven-option10mm rule.
+   No fitted target offset or archived-control initialization. Native contacts are
+   passively observed; complete the atomic action, then stop before the next one.
+   This is an approach-only diagnostic with oracle-assisted stop monitoring.
+2. Audit site-position/body-quaternion frame consistency from archived evidence
+   and own calibration before interpreting jaw-relative target geometry.
+3. Inspect the resulting first physical boundary before adding grasp routing,
+   model hierarchy or full-task complexity. Point convergence alone is not grasp.
 
 ## Protected execution and evidence boundaries
 
@@ -104,9 +105,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `8fc5efb`: **847 tests pass** in31.97s, including
-contact/render/wrist/local-grasp additions. Log:
-`runs/autonomous-research/regression-contact-render-wrist-grasp-integration.log`.
+Latest integrated regression at `b924819`: **872 tests pass** in31.68s, including
+contact/render/wrist/local-grasp/BOX/footprint additions. Log:
+`runs/autonomous-research/regression-box-footprint-integration.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
