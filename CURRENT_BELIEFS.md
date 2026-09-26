@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations024–025. This is a short living assessment;
+Updated 2026-09-27 after iterations024–027. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -22,25 +22,25 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 | **Observed:** the original local action regime has no qualified one-step witness at boundary25. | All7 original options executed. DOWN fails2mm motion tolerance with2.114787mm error. Exact finer replay reveals7 nonhandle-contact integration intervals missed by all8 control-end samples. | Detours, other poses/actions/horizons and general reachability are untested. The tracking error's sole cause remains unresolved. | High for measured local result. Falsifier: raw contract/arithmetic audit or exact new evidence contradicts it. Do not relax the contract. |
 | **Observed:** sensor co-motion contains retention information, without establishing a holding estimator. | Paired close/lift versus open/lift: body vertical motion109.810 versus0mm while TCP moves114mm;272 controls replay exactly. | Assistant landmark initialization; cap track leaves bottle despite excellent LK residual; table LK fails. Interior-point height is not bottom clearance. | High for paired motion; low for general retention inference. Falsifier: independently initialized temporal estimator fails matched controls. Runtime holding remains unknown. |
 
+| **Observed:** native wrist history carries contact-group information beyond endpoints on one trace. | Fixed force AUROC0.787248→0.987634; missed99 subset0.653918→0.993602, independent raw audit. | Residual overlap32/163 and14/99; dependent single trajectory, moving axes/inertia confounds, no designated contact examples. | High for descriptive ranking; no calibrated detector. Falsifier: frozen features fail on a prospectively different trace/contact regime. |
+| **Observed:** existing visual atomic execution supports a local bilateral bottle lift. | Fresh close/open paired slice: +9.279539/+0.001081mm; all4 hard validations pass; closed lift bilateral8/8 endpoints and200/200 each native stage;240-control replay exact. | Scripted privileged pregrasp prefix, no model/sensor-selected approach, one init. Setup01 failed before physics and is retained. | High for this local mechanism. Falsifier: independent audit or prospective sensor-selected approach cannot reproduce the qualified relation. |
+
 ## Current discriminating experiments
 
-1. **Within-control observability:** paired RIGHT/DOWN replay now demonstrates
-   missed contacts. DOWN has nonhandle contacts in7 native integration calls,
-   maximum14.913734N, despite0/8 control-end samples. Commands, states and full
-   executor results remain exact. Before/after cache rows are not independent
-   events; contact-associated motion is not sole-cause attribution of tracking
-   error. Canonical replay now also passes:0 raw designated contacts, including subthreshold rows; all archived states exact. Next: fixed offline wrist-history versus endpoint features, with gripper/arm contact labels separated from sensor inputs.
-2. **Sensor-point / gripper proximity:** partial collision masks leave apparent
-   housing-edge minima0.127/0.109mm. Replacing only the mask with calibrated
-   visual silhouettes removes those witnesses but leaves new hand-edge minima
-   below0.3mm and reintroduces a zero pad distance through nonnested masks.
-   This is not environment clearance. Exact native rendering now reproduces both frames. Changing only multisampling
-   at fixed cached geometry moves registered edge depths by up to735mm, while
-   own-FK/cache projection differences are below0.005px. Next: represent calibrated
-   sample footprints and ambiguous ownership without tuned margins or a live gate.
-   Missing geometry and depth-resolve semantics remain unknown.
-3. Independent review checks both experiments; producers and reviewer use isolated
-   worktrees. Reassign completed agents to the next evidence-driven question.
+1. **Task2 target-specific depth support:** one fixed LocateAnything BOX query on
+   the inspected initial bottle RGB. Keep the production center/median-depth point
+   and the same crop's complete candidate support. Seal before rendered-mask proxy
+   evaluation. No oracle cleanup, fitted grasp offset, extra query or dynamics.
+   This asks whether semantic localization yields usable object support at all.
+2. **Pixel footprint:** native4-sample versus zero-MSAA rendering at identical
+   cached geometry changes edge depths by up to735mm; own-FK/cache projection
+   difference is below0.005px. A frozen offline own-triangle/sample-ray measurement
+   now tests potential self contribution. Resolved depth stays separate; omitted
+   geometry, scene occlusion and depth-resolve ownership remain unknown. No gate.
+3. **Physical qualification:** the actual visual executor's local GRASP +10mm lift
+   now passes from a scripted pregrasp boundary, with exact240-control paired replay.
+   The next useful physical comparison requires a sensor-derived approach target;
+   this success does not supply an oracle target or an action recipe to that policy.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -58,7 +58,7 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated geometry/VLM/contact/proximity regression:821 tests pass. Production
+- Integrated contact/render/wrist/local-grasp regression:847 tests pass. Production
   `runtime_core.py` and `adapters/libero.py` remain unchanged from the baseline.
 
 ## Evidence entry points
@@ -75,6 +75,8 @@ measured interaction and available action behavior must not be conflated.
 - [Calibrated visual-mask control](docs/evidence/autonomous_research/gripper_visual_mask_findings.md)
 - [Fixed-cache rendering diagnosis](docs/evidence/autonomous_research/render_measurement_diagnosis_findings.md)
 - [Qualified mechanical witness inventory](docs/evidence/autonomous_research/mechanical_witness_inventory.md)
+- [Wrist history](docs/evidence/autonomous_research/offline_wrist_history_findings.md)
+- [Local actual-executor grasp/lift](docs/evidence/autonomous_research/local_grasp_interface_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)

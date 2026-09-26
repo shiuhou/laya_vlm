@@ -886,6 +886,73 @@ HEADs pinned, raw evidence/failures/branches retained. See `workspace_lifecycle.
 Integrated regression before renderer additions at `fb7af48`:830 tests passed
 in31.84s; log `regression-canonical-attribution-integration.log`.
 
+### Parallel iteration 026 — fixed wrist temporal features add information
+
+- **Question:** can recorded within-control wrist history recover interaction
+  information missed by endpoint-only sampling, without oracle inputs to features?
+- **Freeze:** `adc7eb4`, independent review before analysis, single existing Task1
+  native archive. Seal sensor-only projection then970 fixed feature rows before
+  evaluator labels. Force primary, torque secondary. Same first-BEFORE baseline;
+  compare norm(final-AFTER minus baseline) with max of25 AFTER differences. No
+  calibration, feature fitting, threshold, model, physics or live estimator.
+- **Observed:**163 gripper-only positives,641 no-robot-scene>1N negatives;164 arm
+  and2 mixed controls separate. Primary force AUROC0.787248→0.987634. In the fixed99
+  endpoint-missed gripper controls,0.653918→0.993602. Temporal overlap remains32/163
+  positives and14/99 missed positives within the negative observed range. Torque
+  improves less cleanly:0.765455→0.932822, with117/163 temporal overlap.
+- **Interpretation:** retaining within-control sensor history is informative on
+  this trajectory. Temporal score≥endpoint is algebraic; AUROC/overlap, not that
+  inequality, support the comparison. Dependent controls, gravity/acceleration,
+  rotating axes and cache timing confound causal interpretation. No designated
+  pad/handle examples exist in this archive, so no designated-interaction or
+  holding detector is validated. There is no deployed threshold.
+- **Verification:** frozen6 tests and independent reconstruction of all970 inputs,
+  features/cohorts and24,250 gold samples pass. Root inspects empirical distributions.
+  Raw `offline-wrist-history-run-01`, journal SHA
+  `055ecd9561e4306598f95d178ed785e9c7e2fa561f3279d42358abc09dbf810d`.
+  Findings `offline_wrist_history_findings.md`; main `6ffa74a`,`88906f5`,`9facbe6`,
+  `d87003f`. No post-result feature variant follows.
+- **Next decision:** retain temporal measurement as a candidate evidence channel;
+  reassign lane to the distinct target-support gap needed for sensory approach.
+
+### Parallel iteration 027 — local skill passes the actual visual executor
+
+- **Question:** does the existing native40mm bottle-lift witness transfer to the
+  actual visual10mm action interface and its unchanged hard validator?
+- **Registered comparison:** two fresh Task2 init0/seed1 worlds, original scripted
+  native prefix0–12, then GRASP versus open STOP, then one MV_UP each. No model,
+  preview, new action, state restore, candidate policy or threshold change. Frozen
+  `20d2b1a`/`ef58bf9`, independent review; attempt01 fails before any world on LIBERO
+  package bootstrap. Preserve log; native initialization fix `9b85ad5`, reviewed,
+  zero-world preflight02, then separately named run02. No physical retry.
+- **Observed:** all4 hard contracts pass. Close bottle rise9.279538663mm versus
+  open0.001080886mm; TCP rise9.423957/9.484801mm. Closed lift bilateral at8/8 control
+  endpoints and200/200 BEFORE plus200/200 AFTER native stages; open0. No unexpected
+  robot contact. Actual lift translation errors0.600963/0.542131mm, both under the
+  unchanged2mm limit; original hold/rotation tolerances preserved. Official full
+  task success false in both arms, as expected for the registered local slice.
+- **Verification:**22 focused tests;224 archived comparable controls and28 prefix
+  RGB/depth/K/T frames exact. All240 new controls replay exactly at every stored
+  state under the same clean source/settings. Independent raw-only audit passes
+  2149records, all command/state/contact/validator reductions and replay states.
+  Root inspects actual six-frame before/after images. Raw
+  `local-grasp-interface-run-02` SHA
+  `9347eab2f1b48fe3799ccfbc3164f60406b6451bd194819ef66632df7d6464bb`.
+- **Belief update:** the actual visual atomic interface has a qualified local
+  contact-maintained lift. The pregrasp approach remains scripted/privileged;
+  grasp generality, support-free retention, model decisions and complete Task2
+  success remain unproved. Snapshot continuity is not continuous-time proof.
+- **Next:** one fixed initial RGB BOX/depth support-contamination experiment,
+  with the same center/median-depth point and crop; output sealed before limited
+  rendered-mask proxy evaluation. No successful-pose offset fitting or oracle
+  foreground cleanup. This targets the missing sensor-derived approach evidence.
+- **Integration:** source/report `512d032`,`195c974`,`298300e`,`d7e6844`; prospective
+  reviews `636bab3`,`f9687d3`; independent audit `8fc5efb`. Regression at `8fc5efb`:
+  **847 passed** in31.97s, log `regression-contact-render-wrist-grasp-integration.log`.
+  Generic runtime, Libero adapter and decision interface remain byte-identical to
+  `b73b5b4`. Local producer checkout retired immediately after integration;27 total
+  inactive checkouts removed,338.7MiB reclaimed, four active checkouts remain.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

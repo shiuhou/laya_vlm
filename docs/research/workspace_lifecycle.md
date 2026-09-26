@@ -1,9 +1,10 @@
 # Research workspace lifecycle
 
-Completed 2026-09-27: removed **26 inactive worktree checkouts**, reclaiming
-335,689,735 apparent bytes (320.1 MiB), including disposable Python/pytest caches.
-Five worktrees remain: the main integration checkout plus the four active review,
-local-grasp, wrist-history and render/footprint environments. No raw evidence,
+Completed 2026-09-27: removed **27 inactive worktree checkouts**, reclaiming
+355,151,969 apparent bytes (338.7 MiB), including disposable Python/pytest caches.
+Four worktrees remain: the main integration checkout plus the three active review,
+Task2 support and render/footprint environments. The local-grasp producer was
+retired immediately after report integration and verification. No raw evidence,
 failed-run log, branch, historical tag, model checkpoint or environment was deleted.
 
 Before each removal, the cleanup checked clean tracked/untracked status, absence
@@ -65,3 +66,4 @@ remain provenance, not requirements to keep every checkout alive permanently.
 | `laya-vlm-capability-control` | `495f709019558d9442297bcabaa3869ede535bb2` |
 | `laya-vlm-world-understanding` | `0022e1a198c3c29f6b3f97da4d932449c3f761df` |
 | `laya-worldview-sufficiency` | `03387f1b52741f2914cbec5b2485125361c0c041` |
+| `laya-local-grasp-interface` | `a9dece388ff19139679262f92bee6c1f379a97c0` |

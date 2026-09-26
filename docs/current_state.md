@@ -1,271 +1,124 @@
 # Current project state
 
-Reviewed 2026-09-27. This document supersedes historical plans, not raw evidence.
+Reviewed 2026-09-27 after research iteration027. This is the authoritative current
+summary. Historical phase restrictions in older evidence describe those completed
+experiments; they do not override the current autonomous research mission.
 
-## Active autonomous research mission
+## Mission and working state
 
-The user has authorized autonomous research into the smallest decision interface
-for manipulation under perceptual uncertainty, starting at `b73b5b4`. VLM planning,
-Laya, perception, candidate effects and their responsibility split are hypotheses.
-The former phase restrictions below remain historical scope, not current prohibitions.
-Execution semantics, strict information provenance and historical evidence remain
-protected. No new competent visual or interaction-valid policy is established.
+Discover the smallest defensible information interface and division of
+responsibility for manipulation under perceptual uncertainty. A VLM planner,
+Laya motor decisions, semantic grounding, geometry, temporal belief and candidate
+effects are hypotheses whose value must be demonstrated.
 
-Work proceeds on `research/embodied-interface-discovery`. Registered matched
-probes now cover predicate recognition, supplied context/action meanings, native
-option progress presentation, visual grounding/relations/subgoals, correspondence,
-and sensor co-motion. The tested Laya presentations have not repaired the known
-weak motor choices; further prefix variants on those states are stopped. The
-tested 3B and pinned 7B VLMs have not improved visual subgoal agreement over their
-task-only controls. The exact-input 7B control improves individual relation
-agreement to9/18 but yields0/6 coherent scenes and0/3 scored subgoals. These
-development fixtures do not establish a general architecture or capability limit.
+Experimental baseline: `share_main` at
+`b73b5b43dbef29749677fae06b25e94ca27bad87`. Integration proceeds on
+`research/embodied-interface-discovery`; research changes have not been pushed or
+merged into `share_main`. No competent hierarchical sensor-driven manipulation
+architecture has yet been established.
 
-A fresh initial-POINT plus live-proprioception control crosses the repeated
-grounder's semantic error, but stops after26 actions on finger-body contact with
-the drawer front panel, not the handle. Its208 controls replay exactly. This
-shows a physical limitation of point-distance control even with the initial
-handle target correctly grounded. Nearby precontact depth support is visible;
-standalone calibrated own-joint FK recovers the gripper geometry without object
-state. A seven-option diagnostic finds no contract-valid positive-handle-gap
-continuation with zero recorded robot-contact rows at the examined boundary.
-The only improving arm with no control-end contact rows violates the unchanged
-2-mm translation contract. Exact finer replay reveals nonhandle contacts in7
-native integrations, peaking14.914N, while all8 control-end samples miss them.
-Sensor-only proximity with partial collision silhouettes is also contaminated by
-apparent gripper-housing pixels. Known visual self-geometry alone does not repair that contamination; a bounded
-render-semantics diagnosis is next. The canonical Task1 replay is now complete:
-122 primitives/970 controls/24,250 native integrations exactly reproduce the
-archived states and official success, with zero raw designated pad/handle contact
-rows in48,500 before/after snapshots. Finer sampling finds non-designated contacts
-in288 controls rather than134 endpoints. This is measured association, not causal
-allocation of all closure. Offline wrist-history observability and a read-only
-inventory of qualified grasp capabilities guide the next controlled experiment.
-These results do not constitute an interaction-valid manipulation policy or a
-new runtime architecture.
+Read [current beliefs](../CURRENT_BELIEFS.md) for falsifiers/confidence and the
+[research log](research/autonomous_research_log.md) for every intervention,
+interpretation and next decision. These take precedence over historical plans.
 
-See [current beliefs](../CURRENT_BELIEFS.md) and the
-[research log](research/autonomous_research_log.md) for current hypotheses/results.
-The following sections describe the preserved baseline.
+## Preserved privileged baseline
 
-## Interaction-structured research checkpoint
+The frozen drawer goal-completion reference achieved official success3/3 using
+122 primitives,111 genuine Laya multi-candidate decisions,11 forced singletons
+and one lookahead recovery. Opening changed151.659013→−0.392884mm. Predictions
+matched execution, and complete970-control trajectories replayed exactly. The
+TaskSpec/TaskAdapter extraction preserved inputs, pools, traces and replay, with
+three further fresh-process successes. See
+[local-objective reference](evidence/decision_interface/local_objective_reference.md).
 
-The current research direction is **Interaction-Structured Decision Interfaces for
-Foundation-Model Robotic Manipulation**. The implemented privileged decision
-boundary is now understood as four jointly relevant parts: current state, predicted
-effects, a local objective and task-declared interaction semantics. The objective is
-interaction-valid manipulation without task-specific policy training or a hard-coded
-action sequence. It is not human-motion imitation.
+The architecture includes privileged simulator effects, task-specific admission
+contracts and deterministic objective routing before Laya chooses an atomic
+candidate. The router is task policy, not a directly reused Jev model-selected
+intent. Compact witness presentation preserves every candidate. The canonical
+successful run is a privileged **goal-completion** reference, not proof of a
+learned intended manipulation skill.
 
-Generic Jev measurements now expose exact contact geom/body attribution, boolean
-relation traces and object geometry in an articulated frame. Task-specific selectors
-and contracts use those measurements to identify designated effectors/affordances,
-grasp relations and placement fit. No scheduler, Laya, primitive, executor, CDS,
-planner or hierarchy change was introduced.
+The later canonical native-stage audit reproduces all122 primitives/970 controls
+exactly and finds **zero raw designated fingerpad/handle contact rows** in48,500
+snapshots around24,250 integrations, including subthreshold rows. Non-designated
+contacts occur within288 controls but at only134 endpoints. The net closure is
+unchanged; class-conditioned displacement is descriptive, not exact causal
+allocation. See [canonical contact audit](evidence/autonomous_research/task1_native_contact_attribution_findings.md).
+Historical tags, success labels and original evidence remain unchanged.
 
-The frozen top-drawer runs remain reproducible privileged goal-completion references.
-Replaying all three 970-control trajectories under the new observer produced the same
-152.051897 mm net closure and official success, but found **zero** control endpoints
-with designated fingerpad/handle contact and therefore 0 mm of measured
-interaction-valid closure. Direct non-designated robot/drawer contact accounted for
-46.086120 mm net closure; the remaining 105.965776 mm occurred at endpoints with no
-current contact and includes inertia/settling that cannot be causally assigned to a
-designated interaction. See
-[the valid-interaction record](evidence/privileged_reference/valid_interaction_semantics.md).
+Task2 is the derived combined wine-bottle/bottom-drawer task using original
+LIBERO init0/seed1: place/release the bottle and close the drawer. The earlier
+containment-only diagnostic reached grasp, transport, In, release and substantial
+closure but not full closure. Strict placement semantics require oriented object
+extent to fit the articulated region before release. The strict fresh gate stops
+before22: all27 one-step options and729 two-step pairs have no qualifying witness
+at that snapshot. An audited alternative trajectory avoids that snapshot but
+later also becomes contract-empty; complete strict feasibility is unresolved.
+No Task2 Laya run or success is claimed. See
+[interaction-boundary audit](evidence/privileged_reference/interaction_boundary_audit.md).
 
-The wine-bottle/bottom-drawer TaskSpec now requires full object extent/orientation to
-fit the articulated drawer close envelope before release, and preserves that fit while
-closing. A fresh deterministic privileged gate established a bilateral grasp and exact
-preview/execution agreement, but stopped before decision 22: grasp remained valid,
-the object was not inside, placement violation was 177.149474 mm, all one-step pools
-were empty and all 729 existing two-step pairs had no witness. No Task-2 Laya call was
-made. This is the current first failure boundary; the older continuation that reached
-`In`, explicit release and 53.62 mm opening remains diagnostic rather than a canonical
-fresh feasibility success.
+## Current autonomous research evidence
 
-## Local-objective privileged reference: reproducible success
+| Question | Bounded evidence and limitation |
+|---|---|
+| Can correct supplied context repair tested Laya motor ranking? | Tested situation/action-definition/native-progress presentations did not repair weak choices on development fixtures. Exact model inputs/logits were audited. Further local prefix variants stopped. This is not universal model incapacity. |
+| Does a VLM earn the planner role? | Exact matched3B/7B inputs: coherent relations0/6 for both; scored7B subgoals0/3, equal its task-only control. Useful individual relations improve2/18→9/18, often constant-label gains. No larger hierarchy is earned. |
+| Can simple sensed geometry drive approach? | Initial grounded POINT plus proprioception drives useful coarse approach, then nonhandle finger contact at action25;26 actions/208 controls replay exactly. Oracle contact monitoring aborts; this is not a deployable safety result. |
+| Does own geometry help explain the boundary? | Robot-only calibrated FK reproduces archived own poses without object-state inputs. Seven native options at the examined boundary contain no qualified contact-free positive one-step witness; this does not prove global unreachability. |
+| Are endpoint contact observations sufficient? | No: native sampling reveals contacts missed by all eight endpoints in one arm and154 additional contact-bearing controls in the canonical drawer trace. |
+| Does wrist history contain extra evidence? | Fixed offline force AUROC0.787248→0.987634 for gripper-only versus no>1N robot contact; missed99 subset0.653918→0.993602. Residual overlap, single-trajectory dependence and dynamics/cache confounds remain. No calibrated contact/holding gate. |
+| Is center-ray depth reliable at gripper edges? | Exact rendering reproduction plus fixed-cache MSAA intervention changes registered depths by up to735mm. FK/cache projected differences remain below0.005px. Resolved depth ownership cannot be assumed to be pixel-center ownership. |
+| Does the actual visual executor support a local grasp/lift? | Fresh paired scripted-pregrasp test: GRASP+10mm lift moves bottle9.279539mm versus open0.001081mm, all4 unchanged hard validations pass, bilateral pads8/8 endpoints and200/200 each native stage.240 controls replay exactly. Approach and action choice were scripted, not sensor/model-selected. |
 
-The same-condition [Jev hierarchy comparison](evidence/decision_interface/jev_hierarchy_same_condition.md)
-completed top-drawer closure in 20 decisions and 155 fresh controls. This proves
-the fixed physical machinery admits a successful trajectory; it does not isolate
-hierarchy from archived Jev motor answers.
+Detailed entry points: [mechanical local witness](evidence/autonomous_research/local_grasp_interface_findings.md),
+[wrist history](evidence/autonomous_research/offline_wrist_history_findings.md),
+[render sampling](evidence/autonomous_research/render_measurement_diagnosis_findings.md),
+[7B control](evidence/autonomous_research/vlm_capability_control_findings.md),
+[coarse physical trajectory](evidence/autonomous_research/coarse_initial_point_findings.md).
 
-The authorized [minimal local-objective reference](evidence/decision_interface/local_objective_reference.md)
-adds one deterministic routing boundary before Laya motor selection. It selects
-the first nonempty existing contract pool in the fixed order advance, establish,
-approach, release, reposition. This router is new task policy; it is not original
-Jev's model-selected intent. It retains the complete selected pool in primitive
-order and adds no strategy or motion-family filtering.
+## Active next questions
 
-The boundary-87 capacity failure was repaired without changing the decision
-architecture. A lossless compact witness presentation retains all 25 candidates,
-their canonical order and the same rounded effects while factoring repeated
-metadata. Offline replay used 943 of 1,024 total tokens without clipping. Full raw
-predictions and witnesses remain in evidence.
+1. Does one existing BOX/depth observation supply target-specific bottle support?
+   One frozen initial RGB query and unchanged crop/median-depth representation,
+   sealed before limited rendered-mask proxy evaluation; no foreground correction
+   from oracle labels, fitted grasp offset, prompt sweep or dynamics.
+2. Can a calibrated pixel-sample/own-triangle measurement represent possible
+   self contribution without inventing resolved-depth ownership? Analytic and
+   offline geometry only, with ambiguous/unknown values retained. No clearance or
+   safety gate follows automatically.
+3. If target geometry is usable, qualify a sensor-selected approach to the local
+   grasp relation before adding model hierarchy or full-task complexity.
 
-The only subsequent behavioral change was the authorized executed-primitive budget
-from 100 to 200. On clean revision `4e26719`, three separate fresh processes with
-the same task/init/seed/model/configuration each reached official LIBERO success at
-step 121 after 122 primitives. Each run contained 111 genuine Laya multi-option
-decisions, 11 forced singletons and one lookahead recovery. Opening changed from
-151.659 to -0.393 mm, for 152.052 mm net closure. The complete physical decision
-traces were identical. All selected previews matched real execution exactly; all
-three control replays passed 1,093 boundaries with zero error.
+## Protected execution and evidence boundaries
 
-This establishes the first reproducible successful **privileged Laya goal-completion**
-reference. Oracle effects, task-specific contracts and deterministic objective
-routing remain part of the policy boundary. The result does not establish a
-deployable visual policy, flat atomic-choice success or which components are
-necessary. No ablation, strategy layer, non-oracle work or E0 has begun.
+Production `runtime_core.py`, `adapters/libero.py` and `decision_interface.py`
+remain byte-identical to `b73b5b4`. New experiments and measurements are isolated
+from the live runtime. The existing27-action native and10mm visual action families
+have different validation semantics; success in one must not silently certify the
+other. Oracle previews, geometry, contacts and success predicates retain explicit
+provenance, including when used only for evaluation or diagnostic aborts.
 
-The successful implementation is frozen by annotated tag
-`privileged-drawer-reference-v1` at merge commit `5ba99de`; the three original runs
-record execution revision `4e26719`. Drawer-specific task identity, contracts,
-objective routing, outcome measurement and presentation were subsequently moved
-behind `TaskSpec` / `TaskAdapter` at `3ee18b2`, without changing the decision
-architecture. Before new execution, all 111 Laya inputs in each frozen run were
-reconstructed byte-for-byte, all 122 routing/pool boundaries per run matched, and
-the three frozen control traces replayed at 1,093 zero-error boundaries each.
-Three further clean-revision fresh processes then reproduced the same 122-action
-trace and official success exactly; their three replays also passed 1,093 boundaries
-with zero error. The post-refactor canonical local evidence is
-`runs/privileged-reference/local-objective-task-adapter-success/canonical-success-evidence.json`
-(SHA-256 `b119aa422d81fc4bfb5fbb28230071eb59dd825cdc3d370735d56b74203160ae`).
+Sensor observations, proprioception, calibrated geometry, learned estimates and
+oracle state stay separate. Unknown holding, actual sensor sample timestamps,
+hidden surfaces and semantic confidence remain unknown. A parsed box's score1
+is not calibrated identity confidence. Real sensor calibration, complete visual
+manipulation and real-robot transfer are unvalidated.
 
-## Privileged drawer reference v1: existing lookahead evaluated
+Latest integrated regression at `8fc5efb`: **847 tests pass** in31.97s, including
+contact/render/wrist/local-grasp additions. Log:
+`runs/autonomous-research/regression-contact-render-wrist-grasp-integration.log`.
+Experiments additionally have frozen pre-execution reviews and independent raw
+checks; repeatability is not generalization.
 
-The bounded reference uses Jev's full 27-action vocabulary, `World.predict_all()`
-and existing collision-aware task contracts before a genuine Laya choice. When
-the one-step union is empty, it now invokes original Jev's unchanged two-step
-witness fallback. Contracts explicitly perform candidate-policy filtering beyond
-hard validity. State/effects remain privileged; the visual path and CDS are unchanged.
+## Workspace and evidence lifecycle
 
-The [reference record](evidence/decision_interface/privileged_reference.md) retains
-the fixed acceptance gate and all attempts. The original one-step episode made 18
-genuine decisions, reduced gap from 93.484 to 2.732 mm, produced zero closure and
-stopped at an empty contract union. Its 144 controls replayed exactly.
-The bounded [dead-end boundary audit](evidence/decision_interface/dead_end_boundary_audit.md)
-reconstructed the exact state and all 27 previews. Original Jev's unchanged
-one-step `contracts()` and the current reference produced identical predictions,
-rejections and empty pools, ruling out a one-step port/integration bug. This is a
-**CONTRACT DEAD-END** classification at the frozen one-step boundary. The archived
-successful Jev run approached a similar gap in a materially different pose with
-closure-positive actions.
+Raw evidence lives under canonical `runs/` and is generally gitignored; tracked
+reports include hashes and source identities. A fresh clone does not contain all
+raw evidence. Preserve unique observations, failures and historical tags.
 
-The subsequent [two-step audit and run](evidence/decision_interface/two_step_lookahead.md)
-show that original Jev already contains the excluded transition capability. On
-the exact frozen state it evaluated 729 branches, found 32 qualifying pairs, and
-returned 23 first-action witnesses representing 22 physical operations. Multiple
-contact-producing first actions temporarily regress closure and recover positive
-two-step net closure. Simulator/controller restoration was exact.
-
-The minimal extension triggers this fallback only after an empty one-step pool,
-offers all witness-backed first actions, executes only Laya's chosen first action,
-then replans from reality. A clean fresh run reproduced the first 18 actions. At
-boundary 18, Laya selected `open` from 23 options; real execution matched its
-preview but produced zero closure. The next one-step pool contained only `z-3mm`.
-The genuine-choice guard stopped before Laya or execution.
-
-The authorized [forced-singleton continuation](evidence/decision_interface/forced_singleton_reference.md)
-then inspected original Jev: it calls its model even for singleton intent/strategy/
-motor pools and has no forced-continuation attribution. The reference therefore
-uses the specified explicit rule: zero invokes existing lookahead, one executes
-once without Laya, and a genuine multi-option pool calls Laya. A fresh run made
-86 genuine Laya decisions, six forced continuations and two executed lookahead
-recoveries. It achieved 15.173 mm net closure over 92 actions, but official success
-remained false. At boundary 92, both the one-step union and unchanged two-step
-witness set were empty; no Laya call or action followed. Replay passed 829 boundaries
-with zero error. Current verification is **436 pytest tests**, ruff and compileall.
-Three-run success is not established for that earlier flat condition; it is now
-established for the local-objective privileged condition described above.
-No hierarchy, planner, new contract, threshold change, hard-invalid-only ablation,
-non-oracle replacement or E0 is authorized.
-
-## Integrated baseline
-
-The earlier research/demo integration is `33c7039`, and the cleanup baseline is
-`7c27705`. The privileged reference was integrated at `5ba99de` and frozen by the
-tag above. The behavior-preserving task-adapter extraction is also integrated into
-`share_main`; use `git rev-parse HEAD` for the current baseline.
-
-The integrated baseline is `laya-embodied-runtime` on `share_main`. The Task-2 adapter
-and valid-interaction measurement phase were developed as focused commits and
-integrated only after preserving the failed fresh gate. No successful Task-2 tag or
-new architecture claim was created.
-The [cleanup audit](archive/maintenance/cleanup_20260923.md) records old track
-retirement and verification. No focused development track remains active; no
-deployable architecture or ablation has been selected.
-[Development tracks](development_tracks.md) defines collaboration responsibilities.
-
-README plus the five documents directly under docs are authoritative.
-Experimental records live in evidence; historical handoffs live in archive.
-Their proposed next steps are not current work orders.
-Use the [research](research.md) and [demo](engineering_demo.md) evidence indexes.
-
-Current verification: 441 Laya-runtime tests, 43 non-simulation Jev tests and three
-LIBERO measurement simulation tests passed; ruff, compileall, `git diff --check`,
-byte-identical input reconstruction, and six replayed runs (three frozen and three
-post-refactor). The cleanup baseline separately passed 13 CLI/import checks,
-archival evidence audits and 249 local Markdown links/anchors.
-Both old worktrees and their fully integrated local track branches were removed;
-remote branches and the local master branch remain unchanged.
-
-## Implemented and evidenced
-
-Temporal observation admission, fusion, TTL/validity, provenance, canonical
-decision projection, candidate identity, separate effect contracts, token audits,
-atomic validation/execution, hash-chained records and replay have regression tests.
-The live visual loop includes execution-to-next-input feedback audits.
-Query tracking exists but is inactive in the live runner.
-Offline paired diagnostic decisions cannot drive the paired collector.
-These are infrastructure achievements, not manipulation competence.
-
-Goal-last improved some anonymous choices without useful goal/effect binding.
-Selective GRASP/RELEASE anonymization helped opening cases but not closing.
-Explicit desired-consequence predicates did not reliably repair selection.
-Candidate ordering substantially influences ranking. Evidence increasingly
-implicates candidate consumption/the decision interface, without isolating a single
-cause or proving physical state irrelevant.
-
-The latest completed demo has eight Laya choices, nine captures, seven verified
-feedback deliveries, and 64 controls replayed at 73 checked boundaries.
-Drawer closure is zero, target contact false and task success false.
-Action semantics and distance annotations did not make frozen atomic choices
-reliably useful. Local-objective text also added a contact premise and did not
-rescue the choice; decomposition remains a hypothesis.
-
-## Evidence preservation
-
-516 ignored evidence files (398,493,726 bytes) from both old tracks were copied
-byte-for-byte into this worktree's runs directory. The transfer manifest is
-`runs/maintenance/architecture-reset-20260923/evidence-transfer.json`,
-SHA-256 `3e6a6f4510b95def5d9e2ba32a459f477b0674f431dac4a8f5bd1dea020433df`.
-Original run identities/source hashes remain unchanged. This is local preservation,
-not a remote backup; ignored artifacts are absent from fresh clones.
-
-## Current stop point
-
-**A reproducible privileged goal-completion reference is established. Its interaction
-mechanism is invalid under the new designated-handle definition. Task-2 strict
-mechanical feasibility is not established. Formal E0 has not begun.**
-
-State Gap and Effect Gap remain separate. Effects from oracle_sim, deterministic
-geometry, learned prediction and unknown/none must not be conflated. Geometry
-derived from oracle inputs remains privileged.
-
-The open question is what processing should occur between belief/world state and
-Laya so code owns geometry/physics/candidate processing and the model judges
-meaningful alternatives. Isolating privileged preview did not prove candidate
-effects or preprocessing unnecessary. The legacy oracle path still contains
-PhysicsPreviewCandidateBuilder / World.predict_all(); it is not restored to the
-normal visual path.
-
-The existing witness mechanism repairs the original empty-pool boundary, the
-explicit singleton rule continues without counting model competence, and compact
-serialization admits the complete 25-option witness pool. With only the authorized
-budget extension, this unchanged policy completed the goal reproducibly, but through
-non-designated contact. The next bounded work is an observational interaction audit
-and an exact reconstruction of the Task-2 transport zero-pool. It must not alter
-contracts, scoring, planning or model behavior. Non-oracle replacement, prompt
-searches, binary predicate tests, new planners, CDS redesign and E0 remain outside
-the current phase.
+Completed checkout cleanup removes reconstructible caches and idle worktrees
+after integration, exact-source preservation and dependency checks.27 inactive
+checkouts have been removed; four active environments remain. See
+[workspace lifecycle](research/workspace_lifecycle.md) for the inventory,
+restoration commands and closeout policy. Earlier detailed state descriptions
+remain available in Git history and their linked evidence records.
