@@ -1190,6 +1190,49 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   holding classifier. Three existing agent slots cover producers and review;
   root integrates evidence. Neither next result is presumed successful.
 
+### Parallel iteration 034 — BOX population retains co-motion; depth association switches
+
+- **Question:** does the old retention contrast require assistant-chosen seeds,
+  or can the sealed initial model crop initialize useful temporal observations?
+- **Competing hypotheses:** sparse approach captures may kill correspondence
+  before grasp; surviving tracks may no longer support the target; or the full
+  population may retain descriptive close/open co-motion despite contamination.
+- **Intervention/control:** freeze `9a34f29`, prospective `ee05831`; all492
+  row-major initial inner-crop seeds, unchanged single-seed LK across46 captures
+  per arm. Fixed native failure/depth/summary rules; no feature selection or
+  labels in sensor computation. Original paired script/observations unchanged.
+  One batch; all45,264 rows sealed before archived mask evaluation. No new
+  inference, physics, renderer, FK or live holding label.
+- **Observed:** all492 survive with admitted depth at every capture in both
+  arms. From preclose, median vertical displacement110.376mm versus0.003887mm;
+  median3D point-minus-TCP displacement5.036mm versus114.329mm. Initial proxy
+  membership414/492; final402 close/399 open.34/32 seeds have an observed
+  True→False membership change. No native failure event exists in this batch.
+- **First boundary correction:** seed5 at first approach capture, both arms:
+  X217→216.999969482px, residual0.000122070px. Historical floor picks pixel216
+  rather than217, depth1.201672m rather than0.975022m. Next capture returns to
+ 217. This establishes unstable sampled-depth/membership association, not large
+  LK drift or full-patch identity loss. Faithful historical floor implementation
+  does not settle correctness of mapping OpenCV center coordinates to depth.
+- **Inspection:** root reads sealed all-population summaries and views six
+  checkpoints for both arms, full curves and first-departure raw/proxy panels.
+  Bottle rises with closed jaws and remains on table in open arm. The images
+  make the one-pixel neck-edge switch visible. Masks never remove samples from
+  motion statistics; mixed support and dependent windows remain limitations.
+- **Evidence/tests:** raw `task2-box-temporal-run-01`; journal
+  `0e7bd76d3f6b11244729bc767ec1b1f9a2625aa6069e494adf9743ea5900cf05`,
+  sensor seal `bae9793115ededab12b6b5bca242af9cdb0c2ed8c1e8d62219af3bbce65cc30b`.
+  Full-row independent audit `b06377f`, final report audit `38b3602`.
+  Producer reports `1f1aa44`,`6b4938d`; integrated report `452725e`.
+  Integrated temporal/physical-probe suite at `5d0905d`:911 pass in33.40s.
+- **Belief update/next:** assistant landmarks are unnecessary for this one
+  population-level contrast. This does not establish target identity, grasp
+  load, support, slip or a holding estimator. Freeze same-track historical floor
+  versus center-index nearest association after an independent convention check;
+  preserve every row and all old outputs, with no retracking or fitted threshold.
+  Smaller10mm actual-executor transfer is next only after measurement semantics
+  settle and archive coverage is checked. Physical seven-way probe runs in parallel.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

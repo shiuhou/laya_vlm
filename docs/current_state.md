@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration033. This is the authoritative current
+Reviewed 2026-09-27 after research iteration034. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -91,10 +91,12 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 2. The single semantic-region alternative `the neck of the wine bottle` failed
    strict admission:42 boxes,260 actual tokens under the unchanged native256 cap,
    no EOS. No P/G, retry or physics. See [nonadmission](evidence/autonomous_research/task2_neck_box_support_findings.md).
-3. Implement the registered initial model-crop seeding of unchanged LK across
-   the paired archive, replacing assistant-selected landmarks without a holding
-   classifier. No tracking output yet; sparse approach cadence and complete
-   failure denominators are explicit. Independent review precedes the one run.
+3. Initial-crop temporal condition completed: all492 points survive both46-frame
+   arms. Median vertical motion110.376mm close versus0.003887mm open; no assistant
+   landmarks or mask filtering. First proxy departure is a near-zero-motion
+   floor-sampling switch at a depth edge. Next is same-track coordinate-association
+   verification, without changing tracking or claiming a holding classifier. See
+   [temporal evidence](evidence/autonomous_research/task2_box_temporal_findings.md).
 4. Use these results to decide the next physical test. The checked
    own-frame transform supports bounded jaw interpretation, not a new estimator:
    final P remains outside the pad Y/Z span. The earlier successful scripted
@@ -115,9 +117,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `7dc4aae`: **899 tests pass** in32.91s, including
-the surface-sweep, jaw-math and single-neck-query additions.
-Log: `runs/autonomous-research/regression-surface-sweep-integration.log`.
+Latest integrated regression at `5d0905d`: **911 tests pass** in33.40s, including
+the temporal population and physical counterfactual additions.
+Log: `runs/autonomous-research/regression-temporal-counterfactual-integration.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
