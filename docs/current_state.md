@@ -127,9 +127,10 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `e91a3a4`: **926 tests pass** in31.85s, including
-the fresh endpoint and short-lift additions. Four goal-cell tests pass separately.
-Receipt: `runs/autonomous-research/regression-endpoint-short-lift-integration.json`.
+Latest integrated regression at `fe5de7f`: **935 tests pass** in32.32s, including
+the fresh endpoint, short-lift, goal-cell and finite-gap additions. The subsequent
+region test has a separate focused prospective review.
+Log: `runs/autonomous-research/regression-goal-cell-finite-gap-integration.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
