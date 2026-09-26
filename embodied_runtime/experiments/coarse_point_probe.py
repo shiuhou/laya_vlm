@@ -163,7 +163,7 @@ def oracle_evaluation(backend, gap, measurements):
         'contacts':contact_rows(measurements)}
 
 
-def run(args, *, protocol=PROTOCOL, experiment_profile=None):
+def run(args, *, protocol=PROTOCOL, experiment_profile=None, grounding=None):
     from ..adapters.libero_rgbd import LiberoRgbdSource
     from ..adapters.locateanything import LocateAnythingWorker
     from .engineering_demo import RecordingBackend, save_trajectory
@@ -224,7 +224,8 @@ def run(args, *, protocol=PROTOCOL, experiment_profile=None):
             recorder.record('oracle_boundary', {'step':step, **before_eval})
             frame = source.capture()
             recorder.capture(frame)
-            parsed, audit = point_call(locator, frame, recorder)
+            parsed, audit = (point_call(locator, frame, recorder) if grounding is None else
+                             grounding.point_call(locator, frame, recorder))
             unchanged = np.array_equal(state_before_sensing, w.env.sim.get_state().flatten())
             recorder.record('paused_state_check', {'step':step, 'unchanged':bool(unchanged),
                 'scope':'flattened simulator time/qpos/qvel only; excludes controller and solver caches',
@@ -232,8 +233,10 @@ def run(args, *, protocol=PROTOCOL, experiment_profile=None):
                 'before':state_before_sensing, 'after':w.env.sim.get_state().flatten()})
             if not unchanged:
                 raise RuntimeError('state_changed_during_capture_or_inference')
-            admitted = admit_point(parsed, audit, frame)
-            view = decision_input(admitted, backend.proprioception(), frame, history)
+            admitted = (admit_point(parsed, audit, frame) if grounding is None else
+                        grounding.admit_point(parsed, audit, frame, recorder))
+            view = (decision_input(admitted, backend.proprioception(), frame, history) if grounding is None else
+                    grounding.decision_input(admitted, backend.proprioception(), frame, history))
             recommended = view.rule_token()
             token = recommended if args.condition == 'rule' else 'STOP'
             recorder.record('decision_boundary', {'step':step, 'capture_seq':frame['capture_seq'],
