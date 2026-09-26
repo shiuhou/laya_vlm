@@ -803,6 +803,12 @@ experimental starting commit `b73b5b4`.
   and `gripper-visual-mask-control-01`. Main integration `96c91b9`, `c61c038`,
   `936526a`. Original collision-mask evidence remains unchanged.
 
+Integrated regression at `936526a`: **821 passed** in30.45s; log
+`runs/autonomous-research/regression-proximity-native-integration.log`.
+Later independent visual-mask checker/report `68bed76` adds no producer change;
+root reruns it into `gripper-visual-mask-root-audit-01.json`. It verifies24
+witnesses and stored selection arithmetic, without rerunning geometry or physics.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

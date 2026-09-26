@@ -56,7 +56,7 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated geometry/VLM/counterfactual regression:805 tests pass. Production
+- Integrated geometry/VLM/contact/proximity regression:821 tests pass. Production
   `runtime_core.py` and `adapters/libero.py` remain unchanged from the baseline.
 
 ## Evidence entry points
