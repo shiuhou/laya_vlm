@@ -361,6 +361,83 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   exact-input/output summary, `worldview-sufficiency-{preflight,run}-01`.
   Integrated focused tests: 22 passed. Generic runtime unchanged.
 
+### Parallel iteration 010 — explicit action definitions
+
+- **Question:** do canonical actuator meanings repair choices when bare action IDs
+  remain a concrete confound in the situation-prefix experiment?
+- **Intervention/controls:** exact supplied definitions before original states
+  0/1/9/10; same model, questions, options/order, effects and original state suffix.
+  Frozen `3bde95c`, 16 calls with reversed repeats; results `03387f1`.
+- **Result:** both approach choices change x+40 to rotate_x+10, reducing predicted
+  gap gains. Both advance choices remain open with 1.755743/0.056385-mm closure;
+  same pools still contain 34.177342/31.888340-mm alternatives. All calls valid,
+  all repeats/baseline logits exact; no truncation up to 1,012 tokens.
+- **Interpretation/limits:** this one correct definition packet is insufficient.
+  Semantic recognition versus ranking after recognition remains unresolved; text
+  length/positions change. This is an offline sufficiency intervention, not new
+  physical task evidence or general incapacity.
+- **Next:** complete the missing W+A interaction with unchanged existing prefixes
+  on the three fitting states; record the fourth's input-budget exclusion before
+  inference. No more wording variants or source-state tuning.
+- **Artifacts:** [findings](../evidence/autonomous_research/action_semantics_binding_findings.md),
+  full payload/output summary, `action-binding-{preflight,run}-01`. Main integration
+  `618482a`/`8a6420c` preserves original experimental revisions.
+
+### Parallel iteration 011 — does the VLM read the visible relations?
+
+- **Question:** are failed subgoals caused by reading visible scene relations,
+  mapping those relations to goals, or task-prior interference?
+- **Interventions:** 12 frozen composite-relation calls on original/mirrored frames
+  and no-image/gray/task controls (`35ff3f6`); after composition failure, one fixed
+  24-call single-field decomposition (`7ff4963`). No hidden grasp/fit labels.
+- **Result:** composite 9/12 invalid, remaining outputs do not give coherent scene
+  agreement. Single-field 24/24 valid but all horizontal answers aligned, all gap
+  and orientation answers uncertain, with no scene/control differentiation. Useful
+  scene agreement 2/18 fields, coherent scenes 0/6. Native generation audits pass.
+- **Interpretation:** output syntax is not the sole remaining failure. This 3B
+  checkpoint/presentation fails simple relations needed by the proposed worldview.
+  General architecture conclusions remain unsupported; small model capacity is a
+  live competing cause, and the earlier composite task effect is confounded by syntax.
+- **Next:** one pinned native 7B same-family checkpoint, exact 24+7 prior calls,
+  unchanged prompts/images/labels/settings and explicit processor identity audit.
+  Freeze acquisition/configuration before inference, no model tournament.
+- **Artifacts:** [findings](../evidence/autonomous_research/vlm_world_understanding_findings.md),
+  `vlm-world-*`/`vlm-world-single-*` runs. Main `ee40c65`/`c71d9c5`/`3da53ac`.
+
+### Parallel iteration 012 — observe retention evidence without oracle identity
+
+- **Question:** can realistic robot channels and seeded RGB-D correspondences
+  separate lifted-bottle motion from an open-jaw lift control?
+- **Protocol:** `2dd31e0`, same fresh init0/seed1, strict-gate primitive prefix0–16,
+  close versus native hold at13, identical lifts14–16. Assistant RGB landmarks
+  frozen before close; sensor files sealed before evaluator analysis. The source
+  actions are privileged and scripted. No sensor-driven policy is claimed.
+- **Result:** each arm 136 controls. Body vertical motion 109.810/0 mm, TCP
+  114.133/114.320 mm; body on-bottle support 33/33 in both. Cap support fails at
+  open-arm14:5 with native flow success and 0.0011765-pixel residual. Table LK fails
+  immediately. Wrench norms overlap; no calibrated load/holding classifier.
+- **Audit/regression:** both new traces replay all272 controls exactly. Root directly
+  inspected trajectory-contact-sheet, first-cap-failure and sensor curves. Images
+  agree with close-arm lifted bottle/open-arm stationary bottle; the cap's earliest
+  mask exit precedes its later large depth jump. This does not certify whole-patch
+  identity loss or infer support solely from apparent co-motion.
+- **Corrections:** annotation schema incorrectly says human; append-only erratum
+  identifies Codex assistant. Exact annotator model/session remains unverified.
+  Independent raw contact audit finds bilateral physical finger contacts during
+  the transient loss of bilateral pad relation, not measured dropping.
+- **Interpretation/next:** useful descriptive co-motion, unresolved semantic/depth
+  support and support separation. Independently audit seals and relations, then
+  an explicitly exploratory fixed table-plane probe on these sealed frames. A
+  same-closed-command slipping/support comparator still needs mechanical grounds.
+- **Artifacts:** [findings](../evidence/autonomous_research/interaction_observability_findings.md),
+  paired sensor/evaluator files and new-control replay. Original `c4e4ebe`/`d23ed4d`,
+  main integration `33594dd`/`1c01160`/`a4b4d45`. Production runtime unchanged.
+
+Integrated regression at `a4b4d45`: **771 passed** in the existing text environment;
+log `runs/autonomous-research/regression-a4b4d45.log`. All newly integrated code
+is under experiments/tests with protocols/evidence; no production controller,
+executor, candidate gate or task adapter changed in this integration.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

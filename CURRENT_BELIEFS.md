@@ -12,7 +12,7 @@ the [first protocol](docs/research/predicate_verification_protocol.md).
 | Observed: binary predicate verification also fails in the tested interface. | 768-call audit: balanced accuracy 56.45%, strong affirmative bias; exact controls and repeats. | Framing, negative-label spelling and clause interpretation remain confounded; current interface differs. | High within fixtures, generality open. | Spacing/single-clause or current-interface controls demonstrate a narrower cause. |
 | Observed: current visual grounding is not full object geometry. | First LocateAnything box plus depth produces a point; no mask or contact estimator; archived support purity 11.7–52.5%. | Offline sensor centroid already backprojects points; richer deterministic geometry may help. | High for implementation; efficacy unknown. | Code/evidence demonstrates validated richer sensor-only geometry or relations. |
 | Hypothesis: support contamination matters more than depth projection on archived drawer views. | Centroid errors of centimetres versus millimetre ray/depth residuals. | Point referents, temporal fusion, and calibration can confound comparisons. | Medium. | Same-frame raw recomputation attributes error mainly to another component. |
-| Open: VLM planning is necessary or useful. | Semantic decomposition is plausible; no controlled VLM comparison exists. | Jev comparison reused archived answers; deterministic routing and model quality were not isolated. | Unestablished. | Matched VLM subgoals fail to help or a simpler architecture matches performance. |
+| Open: VLM planning is necessary or useful. | Semantic decomposition is plausible; controlled visual subgoal and visible-relation probes now exist. | The tested 3B VLM does not improve scored subgoals over task text; simple visible-relation responses are largely invariant. Model capacity and interface remain competing explanations. | Unestablished beyond these negative fixtures. | A pinned stronger-model control recovers image-sensitive relations/subgoals, followed by a matched downstream benefit. |
 | Open: strict bottle-in-drawer placement is mechanically reachable. | Valid grasp/partial transport exist; transform recomputation is exact. | Both known routes dead-end; containment site equivalence to actual close envelope unverified. | Unestablished. | Valid full mechanical witness, or demonstrated specification/mechanical contradiction. |
 
 ## Update after first experiments
@@ -197,6 +197,49 @@ See [visual subgoal findings](docs/evidence/autonomous_research/visual_subgoal_f
   not another situation-wording search or instruction to select an effect winner.
 
 See [situation findings](docs/evidence/autonomous_research/worldview_sufficiency_findings.md).
+
+## Update after parallel action, visual-relation and retention probes
+
+- **Observed:** canonical action definitions alone leave both weak advance choices
+  at `open` and change both approach choices to less productive rotations. All
+  16 calls repeat exactly and every baseline reproduces archived logits; longest
+  treatment consumes 1,012/1,024 tokens. Definitions change model behavior without
+  establishing that the model applies their meanings. The joint situation plus
+  action-definition intervention remains a separate, bounded sufficiency test.
+- **Observed:** the 3B VLM's composite relation probe has 9/12 invalid outputs.
+  The separately frozen single-field follow-up has 24/24 valid outputs, but returns
+  `aligned` for all horizontal questions and `uncertain` for every gap/orientation
+  question, across real, mirrored, gray and absent images. Useful scene agreement
+  is 2/18 fields and 0/6 coherent scenes. Native pixels, forward inputs, greedy
+  logits and EOS were audited. This distinguishes format compliance from useful
+  scene understanding; it does not establish inability of all VLMs.
+- **Decision:** acquire one pinned same-family 7B VLM and repeat the exact 24
+  single-relation plus seven subgoal calls. Preserve inputs, labels and inference
+  settings and audit processor equivalence. This isolates a bounded checkpoint
+  intervention before drawing an architecture-level conclusion; no model tournament.
+- **Observed:** in a paired fresh close/lift versus open-jaw/lift diagnostic,
+  assistant-initialized body-point RGB-D motion is +109.810 versus 0 mm while TCP
+  moves +114.133/+114.320 mm. Both complete 17 primitives/136 controls and all 272
+  newly recorded controls replay with zero state error. This is a scripted sensor
+  diagnostic with privileged source primitives, not an autonomous grasp policy.
+- **Observed limitation:** the cap track samples off-bottle depth starting at
+  step 14/control 5 despite successful flow and 0.0011765-pixel round-trip error.
+  The tabletop track immediately fails. Co-motion is useful here, but neither
+  semantic correspondence nor automated support separation/retention is validated.
+  Bilateral pad relation flickers while the bottle continues moving; the independent
+  audit identifies continued contacts on both physical fingers during that interval.
+- **Provenance correction:** historical collector metadata says human annotation;
+  an append-only erratum records Codex assistant RGB annotation. Exact annotator
+  model/session provenance is unavailable. Do not claim autonomous LocateAnything
+  initialization, human labels, calibrated holding, or real-sensor validation.
+- **Next falsifiers:** independent seal/contact/replay audit and a fixed exploratory
+  RGB-D table-plane probe; a mechanically justified same-closed-command retention
+  control if one can be established. No runtime `holding=True`, policy integration,
+  full Task-2 continuation or new task success is earned by these results.
+
+See [action definitions](docs/evidence/autonomous_research/action_semantics_binding_findings.md),
+[visual relations](docs/evidence/autonomous_research/vlm_world_understanding_findings.md),
+and [sensor observability](docs/evidence/autonomous_research/interaction_observability_findings.md).
 
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
