@@ -1,0 +1,19 @@
+# Independent archived short-lift temporal transfer review
+
+**Prospective PASS at clean `4e661c7b1649b887d585a6bb3b016afc414effc1` for the one registered 30-frame-per-arm offline batch.** The parent's standing authorization permits immediate producer execution after this receipt, then separate post-seal evaluation. The reviewer inspected the complete adapter/protocol/tests and reused unchanged tracker, association and evaluator paths. All **14 focused tests** independently pass. Source-only preflight 01 SHA-256 `ae08cc80cbc3938a3cca39ce9781a78fadf57be78f923ab1f36543b7972b23d7` records the clean freeze, LocateAnything interpreter, OpenCV 4.11.0, frozen LK settings and zero transfer LK/model/physics/render calls. No archived tracking, projection or transfer displacement was executed by the reviewer.
+
+Independent admission checks verify all four source-receipt hashes, all 60 source capture hashes/seals, all 492 original row-major seeds, original native-track hashes and pinned helpers. Each arm's first 14 RGB/depth/K/T arrays equal the original paired archive in dtype, shape and bytes; those two arm prefixes also match each other. The exact fixed schedule is reset 0, approach 1–13, close/hold 14–21 and actual visual-executor MV_UP 22–29. Source run 01's earlier setup failure is preserved and not substituted. The journal is hashed without decoding evaluator state.
+
+Every later own TCP and read timestamp maps uniquely to the saved `(arm, step, control)` sensor row, and independently agrees with the source capture read boundary. Capture 0 has no archived own TCP: its point and timestamp remain null. No earlier endpoint, evaluator state or FK supplies it. Only preclose capture 13 is a motion reference; all motion references are absent before 13, and no initial-relative metric is created. Missing current/reference surfaces remain explicit, with fixed 492 denominator, counts, missing counts and reference-valid cohort size.
+
+The unchanged single-seed tracker runs once for every seed/arm over all 30 RGB frames. Native failure is permanent and every unknown row remains. The frozen center-index association uses `floor(x+0.5)` and preserves the separate `(selected_index+0.5)` backprojection and original valid-depth gate. No threshold, smoothing, reseeding, selected survivors or depth interpolation is added. The batch retains all **984 tracks / 29,520 rows** and compares all nine original native fields for each first-14-frame prefix. Any prefix disagreement is retained in a complete sealed sensor batch, followed by failure before evaluator admission; it does not trigger repair, substitution or retry.
+
+Sensor rows, summaries and prefix-agreement records are sealed before successful termination and the separately invoked mask evaluator. Full row order/count checks precede mask reads. The unchanged proxy function preserves initial False, unknown and observed False after prior True distinctions. Membership does not certify identity, confidence, depth ownership or holding. Report checkpoints 0/13/21/29, all lift RGB at 22–29, first overall departure and earliest adjacent True-to-False lift transition (lowest-seed tie) are prespecified, including explicit nulls if absent.
+
+This is transfer to an existing visual-executor 10 mm lift with a shorter horizon. The prior larger-lift trace differs in executor, controls, total displacement and observation horizon, so amplitude-only causality and generalized success claims are unsupported. Weak or adverse outcomes receive no retuning under this receipt.
+
+| Reviewed file | SHA-256 |
+| --- | --- |
+| `embodied_runtime/experiments/task2_short_lift_transfer.py` | `71973b2f6f6e1f6d1500881250b2ac7740ee796cbd38ac38f191f449c45c9e63` |
+| `docs/research/task2_short_lift_transfer_protocol.md` | `df80676a3628ffd1b22b9276740cce17c3f8adfaa3978054d6a458ed8bd5c8a3` |
+| `tests/test_task2_short_lift_transfer.py` | `4abd230c5c2bed51d984f8f10fed97ac50acc804d6155f0c0935e5dc7cac2e92` |
