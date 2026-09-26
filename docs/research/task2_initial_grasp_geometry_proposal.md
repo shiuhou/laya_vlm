@@ -102,3 +102,18 @@ ties, projection convention, parser completeness and evaluator strata. Retain
 the one attempt's generation, seals, all selected pixels, proxy comparisons,
 inspected figure and explicit unknowns. Post-result extraction changes, new
 segmentation, alternate prompts or pregrasp/effect fitting are excluded.
+
+## Pre-inference setup correction
+
+Attempt `task2-box-support-run-01` at freeze `277842b` stopped before inference:
+the processor returned NumPy `image_grid_hws`, while an audit serializer expected
+a Torch tensor. Its five-record journal ends in `failure(model_calls_started=0)`;
+there is no `call_started`, response, feature extraction, or evaluator read.
+Journal SHA-256 is
+`beca3ce339b2764f6c05f6f38ae6db5d6bab42362f2e2ffa3d7d1be5b799db3d`.
+The parent explicitly authorized a separately numbered setup continuation with
+the unchanged one-call condition. The correction uses the existing prior
+probe's tensor-or-array serialization and adds an actual fixed-frame processor
+schema preflight that constructs no model and performs no inference. No query,
+decoder, feature, or evaluator change was made; model-inference retries remain
+excluded.

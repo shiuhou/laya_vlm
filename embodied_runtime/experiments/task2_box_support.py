@@ -50,6 +50,35 @@ def admitted_box(raw, audit, width, height):
     return parsed['boxes'][0]['continuous_xyxy'], parsed
 
 
+def grid_metadata(grid):
+    return (None if grid is None else grid.detach().cpu().tolist()
+            if hasattr(grid, 'detach') else np.asarray(grid).tolist())
+
+
+def processor_preflight(output):
+    """Actual fixed-frame processor only: no model construction or inference."""
+    from PIL import Image
+    from transformers import AutoProcessor
+    frame = sensor_frame()
+    processor = AutoProcessor.from_pretrained(MODEL, trust_remote_code=True, local_files_only=True)
+    messages = [{'role': 'user', 'content': [{'type': 'image', 'image': Image.fromarray(frame['rgb']).convert('RGB')},
+                                            {'type': 'text', 'text': QUESTION}]}]
+    text = processor.py_apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+    images, videos = processor.process_vision_info(messages)
+    inputs = processor(text=[text], images=images, videos=videos, return_tensors='pt')
+    required = {'input_ids', 'attention_mask', 'pixel_values', 'image_grid_hws'}
+    if not required <= set(inputs) or inputs['input_ids'].shape[0] != 1:
+        raise ValueError('unexpected actual processor input schema')
+    grid = inputs['image_grid_hws']
+    result = {'status': 'pass', 'source_frame_sha256': FRAME_SHA, 'question': QUESTION,
+              'code': code_identity(), 'model_constructions': 0, 'model_calls': 0,
+              'input_token_ids': inputs['input_ids'].tolist()[0],
+              'fields': {k: {'type': type(v).__name__, 'shape': list(v.shape), 'dtype': str(v.dtype)}
+                         for k, v in inputs.items()}, 'serialized_image_grid_hws': grid_metadata(grid)}
+    write_json(output, result)
+    print(json.dumps({k: v for k, v in result.items() if k not in ('code', 'input_token_ids')}, indent=2))
+
+
 def interior_bounds(shape, box):
     """Same clipping/integer conversion and interior slice as depth_statistics."""
     h, w = shape
@@ -201,8 +230,7 @@ def generate(output):
         ids = inputs['input_ids'].detach().cpu().tolist()[0]
         pixels = inputs['pixel_values'].to(worker.dtype)
         grid = inputs.get('image_grid_hws')
-        grid_list = (None if grid is None else grid.detach().cpu().tolist()
-                     if hasattr(grid, 'detach') else np.asarray(grid).tolist())
+        grid_list = grid_metadata(grid)
         original_decode, observed = worker.tokenizer.batch_decode, []
         def audit_decode(sequences, *args, **kwargs):
             observed.append(sequences.detach().cpu().tolist())
@@ -346,17 +374,19 @@ def plot(frame, sensor, proxy, target):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=['generate', 'evaluate', 'audit'])
+    parser.add_argument('mode', choices=['generate', 'evaluate', 'audit', 'processor-preflight'])
     parser.add_argument('--output', required=True)
     args = parser.parse_args()
     if args.mode == 'generate':
         generate(args.output)
     elif args.mode == 'evaluate':
         evaluate(args.output)
-    else:
+    elif args.mode == 'audit':
         sensor = sealed_sensor(args.output)
         print(json.dumps({'status': 'pass', 'selected_count': len(sensor['support_G']), 'model_calls': 1,
                           'physics_calls': 0, 'render_calls': 0}))
+    else:
+        processor_preflight(args.output)
 
 
 if __name__ == '__main__':

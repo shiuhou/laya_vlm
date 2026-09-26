@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from embodied_runtime.experiments.task2_box_support import (
-    admitted_box, evaluate_proxy, interior_bounds, proxy_strata, sensor_representation,
+    admitted_box, evaluate_proxy, grid_metadata, interior_bounds, proxy_strata, sensor_representation,
 )
 from embodied_runtime.vision import LocateAnythingProvider
 
@@ -87,3 +87,8 @@ def test_sensor_schema_rejects_gold_and_empty_depth_stays_unknown():
     with pytest.raises(ValueError, match='unexpected sensor'):
         sensor_representation({**f, 'bottle_mask': np.ones((5, 5), bool)}, [0, 0, 5, 5])
     assert sensor_representation(f, [0, 0, 5, 5])['status'] == 'unknown_empty_valid_crop'
+
+
+def test_grid_metadata_preserves_native_numpy_schema():
+    assert grid_metadata(np.array([[28, 28]], dtype=np.int64)) == [[28, 28]]
+    assert grid_metadata(None) is None
