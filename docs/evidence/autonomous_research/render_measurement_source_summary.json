@@ -1,0 +1,238 @@
+{
+  "scope": "read-only source audit and empty-model static defaults; no historical scene evaluation/rendering/dynamics",
+  "mujoco_version": "3.5.0",
+  "generic_defaults_only": {
+    "offsamples": 4,
+    "geomgroup": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "integrator": 0,
+    "timestep_s": 0.002
+  },
+  "historical_render_context_flags_and_actual_samples_recorded": false,
+  "local_sources": {
+    "capture_adapter": {
+      "path": "/home/junhongli/projects/laya-render-measurement-semantics/embodied_runtime/adapters/libero_rgbd.py",
+      "sha256": "b9b2e58081f336517d97397037cb7a2e7a31198e18167670b96b6386d2844ab4",
+      "excerpts": [
+        {
+          "first_line": 16,
+          "last_line": 34,
+          "text": "16:         if not getattr(self.world, \"render_enabled\", False):\n17:             raise RuntimeError(\"LIBERO World must be created with render=True for RGB-D capture\")\n18:         sim = self.world.env.sim\n19:         rgb = np.asarray(sim.render(width=self.width, height=self.height, camera_name=self.camera_name), dtype=np.uint8)[::-1].copy()\n20:         rendered_depth = sim.render(width=self.width, height=self.height, camera_name=self.camera_name, depth=True)\n21:         if isinstance(rendered_depth, tuple):\n22:             rendered_depth = rendered_depth[-1]\n23:         raw_depth = np.asarray(rendered_depth, dtype=np.float32)[::-1].copy()\n24:         from robosuite.utils.camera_utils import (\n25:             get_camera_extrinsic_matrix,\n26:             get_camera_intrinsic_matrix,\n27:             get_real_depth_map,\n28:         )\n29:         K = np.asarray(get_camera_intrinsic_matrix(sim, self.camera_name, self.width, self.height), dtype=float)\n30:         T = np.asarray(get_camera_extrinsic_matrix(sim, self.camera_name), dtype=float)\n31:         depth_m = np.asarray(get_real_depth_map(sim, raw_depth), dtype=np.float32)\n32:         self.capture_seq += 1\n33:         return {\n34:             \"rgb\": rgb, \"depth_m\": depth_m, \"intrinsics\": K, \"camera_to_world\": T,"
+        }
+      ],
+      "original_run_recorded_sha256": "b9b2e58081f336517d97397037cb7a2e7a31198e18167670b96b6386d2844ab4",
+      "exact_original_source_match": true
+    },
+    "original_probe": {
+      "path": "/home/junhongli/projects/laya-render-measurement-semantics/embodied_runtime/experiments/coarse_point_probe.py",
+      "sha256": "1448c7a4f4b3c4de02d0938e9951e352ae28437dab3c43885076eb9683914c70",
+      "excerpts": [
+        {
+          "first_line": 134,
+          "last_line": 149,
+          "text": "134: @contextmanager\n135: def observe_controls(world, measurements, recorder, step):\n136:     original, controls = world.env.step, []\n137:     def observed(command):\n138:         before = world.env.sim.get_state().flatten().copy()\n139:         recorder.record('control_started', {'step':step, 'control':len(controls),\n140:             'command':np.asarray(command).tolist(), 'state_before':before})\n141:         result = original(command)\n142:         row = {'step':step, 'control':len(controls), 'command':np.asarray(command).tolist(),\n143:                'state_before':before.tolist(), 'state_after':world.env.sim.get_state().flatten().tolist(),\n144:                'sim_time_s':float(world.data.time), 'contacts':contact_rows(measurements)}\n145:         controls.append(row)\n146:         recorder.record('control_observation', row)\n147:         return result\n148:     world.env.step = observed\n149:     try:"
+        },
+        {
+          "first_line": 220,
+          "last_line": 235,
+          "text": "220:         source, executor = LiberoRgbdSource(w), AtomicExecutor(backend)\n221:         for step in range(args.steps+1):\n222:             state_before_sensing = w.env.sim.get_state().flatten().copy()\n223:             before_eval = oracle_evaluation(backend, gap, measurements)\n224:             recorder.record('oracle_boundary', {'step':step, **before_eval})\n225:             frame = source.capture()\n226:             recorder.capture(frame)\n227:             parsed, audit = (point_call(locator, frame, recorder) if grounding is None else\n228:                              grounding.point_call(locator, frame, recorder))\n229:             unchanged = np.array_equal(state_before_sensing, w.env.sim.get_state().flatten())\n230:             recorder.record('paused_state_check', {'step':step, 'unchanged':bool(unchanged),\n231:                 'scope':'flattened simulator time/qpos/qvel only; excludes controller and solver caches',\n232:                 'read_render_noninterference_test':'independent actual-control replay',\n233:                 'before':state_before_sensing, 'after':w.env.sim.get_state().flatten()})\n234:             if not unchanged:\n235:                 raise RuntimeError('state_changed_during_capture_or_inference')"
+        }
+      ],
+      "original_run_recorded_sha256": "1448c7a4f4b3c4de02d0938e9951e352ae28437dab3c43885076eb9683914c70",
+      "exact_original_source_match": true
+    },
+    "world": {
+      "path": "/home/junhongli/projects/jev-libero/src/jev_libero/world.py",
+      "sha256": "02d210626b06aac738556b8d8b9b8d9178ed82029c884ce171437602c2aae0c1",
+      "excerpts": [
+        {
+          "first_line": 30,
+          "last_line": 58,
+          "text": "30: \n31: class Snapshot:\n32:     def __init__(self, world):\n33:         self.world = world\n34:         e = world.env.env\n35:         r = e.robots[0]\n36:         self.data = world.mujoco.MjData(world.model)\n37:         world.mujoco.mj_copyData(self.data, world.model, world.data)\n38:         self.controller = copy.deepcopy(\n39:             {k: v for k, v in r.controller.__dict__.items() if k != \"sim\"}\n40:         )\n41:         self.robot = copy.deepcopy(\n42:             {k: v for k, v in r.__dict__.items() if k.startswith(\"recent_\") or k == \"torques\"}\n43:         )\n44:         self.gripper = copy.deepcopy(r.gripper.current_action)\n45:         self.clock = {\n46:             k: copy.deepcopy(getattr(e, k)) for k in (\"cur_time\", \"timestep\", \"done\", \"_obs_cache\")\n47:         }\n48:         self.observables = {k: copy.deepcopy(v.__dict__) for k, v in e._observables.items()}\n49:         self.obs = copy.deepcopy(world.obs)\n50:         self.rng = np.random.get_state()\n51:         self.py_rng = random.getstate()\n52: \n53:     def restore(self):\n54:         w = self.world\n55:         e = w.env.env\n56:         r = e.robots[0]\n57:         w.mujoco.mj_copyData(w.data, w.model, self.data)\n58:         sim = r.controller.sim"
+        },
+        {
+          "first_line": 113,
+          "last_line": 126,
+          "text": "113:             bddl_path = assets / \"bddl_files\" / task.problem_folder / task.bddl_file\n114:         self.env = ControlEnv(\n115:             bddl_file_name=str(bddl_path),\n116:             use_camera_obs=False,\n117:             has_renderer=False,\n118:             has_offscreen_renderer=render,\n119:             camera_heights=384,\n120:             camera_widths=384,\n121:         )\n122:         self.env.seed(seed)\n123:         self.env.reset()\n124:         self.obs = self.env.set_init_state(suite.get_task_init_states(idx)[init_index])\n125:         for _ in range(10):\n126:             self.obs, _, _, _ = self.env.step([0, 0, 0, 0, 0, 0, -1])"
+        },
+        {
+          "first_line": 256,
+          "last_line": 284,
+          "text": "256:         peak_obstacle = 0.0\n257:         obstacle_pairs = set()\n258:         for k in range(8):\n259:             a = np.r_[\n260:                 np.clip((target - self.obs[\"robot0_eef_pos\"]) / 0.05, -1, 1),\n261:                 rotation / 0.5 if k == 0 else np.zeros(3),\n262:                 grip,\n263:             ]\n264:             if record:\n265:                 states.append(self.env.sim.get_state().flatten().copy())\n266:             commands.append(a.copy())\n267:             self.obs, _, _, _ = self.env.step(a)\n268:             features = self.features()\n269:             for name in relation_trace:\n270:                 relation_trace[name].append(bool(features[name]))\n271:             if record and self.config.get(\"record_features\"):\n272:                 feature_trace.append(\n273:                     {\n274:                         \"sim_time_s\": float(self.data.time),\n275:                         **{key: features[key] for key in self.config[\"record_features\"]},\n276:                     }\n277:                 )\n278:             peak_obstacle = max(peak_obstacle, features[\"obstacle_force_N\"])\n279:             obstacle_pairs.update(\n280:                 (c[\"hand\"], c[\"other\"]) for c in features[\"contacts\"] if c[\"obstacle\"]\n281:             )\n282:             if record and self.render_enabled:\n283:                 frames.append(\n284:                     self.env.sim.render(width=384, height=384, camera_name=\"agentview\")[::-1].copy()"
+        }
+      ]
+    },
+    "libero_wrapper": {
+      "path": "/home/junhongli/projects/LIBERO/libero/libero/envs/env_wrapper.py",
+      "sha256": "a782fb76c9792268d28979474fe72849e1e98ada49c8e997a65359a8d6b6acd0",
+      "excerpts": [
+        {
+          "first_line": 17,
+          "last_line": 27,
+          "text": "17:         controller=\"OSC_POSE\",\n18:         gripper_types=\"default\",\n19:         initialization_noise=None,\n20:         use_camera_obs=True,\n21:         has_renderer=False,\n22:         has_offscreen_renderer=True,\n23:         render_camera=\"frontview\",\n24:         render_collision_mesh=False,\n25:         render_visual_mesh=True,\n26:         render_gpu_device_id=-1,\n27:         control_freq=20,"
+        },
+        {
+          "first_line": 58,
+          "last_line": 69,
+          "text": "58:             robots=robots,\n59:             controller_configs=controller_configs,\n60:             gripper_types=gripper_types,\n61:             initialization_noise=initialization_noise,\n62:             use_camera_obs=use_camera_obs,\n63:             has_renderer=has_renderer,\n64:             has_offscreen_renderer=has_offscreen_renderer,\n65:             render_camera=render_camera,\n66:             render_collision_mesh=render_collision_mesh,\n67:             render_visual_mesh=render_visual_mesh,\n68:             render_gpu_device_id=render_gpu_device_id,\n69:             control_freq=control_freq,"
+        },
+        {
+          "first_line": 87,
+          "last_line": 88,
+          "text": "87:     def step(self, action):\n88:         return self.env.step(action)"
+        },
+        {
+          "first_line": 136,
+          "last_line": 146,
+          "text": "136:     def set_init_state(self, init_state):\n137:         return self.regenerate_obs_from_state(init_state)\n138: \n139:     def regenerate_obs_from_state(self, mujoco_state):\n140:         self.set_state(mujoco_state)\n141:         self.env.sim.forward()\n142:         self.check_success()\n143:         self._post_process()\n144:         self._update_observables(force=True)\n145:         return self.env._get_observations()\n146: "
+        }
+      ]
+    },
+    "libero_domain": {
+      "path": "/home/junhongli/projects/LIBERO/libero/libero/envs/bddl_base_domain.py",
+      "sha256": "055836670ac5fcac7e033fc86404718fd53854996e5776b1ff68b646f7bbcc9d",
+      "excerpts": [
+        {
+          "first_line": 55,
+          "last_line": 63,
+          "text": "55:         placement_initializer=None,\n56:         object_property_initializers=None,\n57:         has_renderer=False,\n58:         has_offscreen_renderer=True,\n59:         render_camera=\"frontview\",\n60:         render_collision_mesh=False,\n61:         render_visual_mesh=True,\n62:         render_gpu_device_id=-1,\n63:         control_freq=20,"
+        },
+        {
+          "first_line": 801,
+          "last_line": 826,
+          "text": "801:         if self.action_dim == 4 and len(action) > 4:\n802:             # Convert OSC_POSITION action\n803:             action = np.array(action)\n804:             action = np.concatenate((action[:3], action[-1:]), axis=-1)\n805: \n806:         obs, reward, done, info = super().step(action)\n807:         done = self._check_success()\n808: \n809:         return obs, reward, done, info\n810: \n811:     def _pre_action(self, action, policy_step=False):\n812:         super()._pre_action(action, policy_step=policy_step)\n813: \n814:     def _post_action(self, action):\n815:         reward, done, info = super()._post_action(action)\n816: \n817:         self._post_process()\n818: \n819:         return reward, done, info\n820: \n821:     def _post_process(self):\n822:         # Update some object states, such as light switching etc.\n823:         for object_state in self.tracking_object_states_change:\n824:             object_state.update_state()\n825: \n826:     def get_robot_state_vector(self, obs):"
+        }
+      ]
+    },
+    "robosuite_base": {
+      "path": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/environments/base.py",
+      "sha256": "60eab4afd3dc95b4ac4cf0659fb9afe6360161912a4ac6931efe86ce1e1de519",
+      "excerpts": [
+        {
+          "first_line": 294,
+          "last_line": 302,
+          "text": "294:                 camera_id = self.sim.model.camera_name2id(self.render_camera)\n295:                 self.viewer.set_camera(camera_id)\n296: \n297:         if self.has_offscreen_renderer:\n298:             if self.sim._render_context_offscreen is None:\n299:                 render_context = MjRenderContextOffscreen(self.sim, device_id=self.render_gpu_device_id)\n300:             self.sim._render_context_offscreen.vopt.geomgroup[0] = 1 if self.render_collision_mesh else 0\n301:             self.sim._render_context_offscreen.vopt.geomgroup[1] = 1 if self.render_visual_mesh else 0\n302: "
+        },
+        {
+          "first_line": 390,
+          "last_line": 411,
+          "text": "390:         # (as defined by the control frequency specified at the environment level)\n391:         for i in range(int(self.control_timestep / self.model_timestep)):\n392:             self.sim.forward()\n393:             self._pre_action(action, policy_step)\n394:             self.sim.step()\n395:             self._update_observables()\n396:             policy_step = False\n397: \n398:         # Note: this is done all at once to avoid floating point inaccuracies\n399:         self.cur_time += self.control_timestep\n400: \n401:         reward, done, info = self._post_action(action)\n402: \n403:         if self.viewer is not None and self.renderer != \"mujoco\":\n404:             self.viewer.update()\n405: \n406:         observations = self.viewer._get_observations() if self.viewer_get_obs else self._get_observations()\n407:         return observations, reward, done, info\n408: \n409:     def _pre_action(self, action, policy_step=False):\n410:         \"\"\"\n411:         Do any preprocessing before taking an action."
+        }
+      ]
+    },
+    "binding_utils": {
+      "path": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/utils/binding_utils.py",
+      "sha256": "5ac3c9da0cb9f85d694c6147103268df65151f751612a6c575ae0da4eb4988e4",
+      "excerpts": [
+        {
+          "first_line": 80,
+          "last_line": 102,
+          "text": "80: \n81:         # Ensure the model data has been updated so that there\n82:         # is something to render\n83:         sim.forward()\n84:         # make sure sim has this context\n85:         sim.add_render_context(self)\n86: \n87:         self.model = sim.model\n88:         self.data = sim.data\n89: \n90:         # create default scene\n91:         self.scn = mujoco.MjvScene(sim.model._model, maxgeom=1000)\n92: \n93:         # camera\n94:         self.cam = mujoco.MjvCamera()\n95:         self.cam.fixedcamid = 0\n96:         self.cam.type = mujoco.mjtCamera.mjCAMERA_FIXED\n97: \n98:         # options for visual / collision mesh can be set externally, e.g. vopt.geomgroup[0], vopt.geomgroup[1]\n99:         self.vopt = mujoco.MjvOption()\n100: \n101:         self.pert = mujoco.MjvPerturb()\n102:         self.pert.active = 0"
+        },
+        {
+          "first_line": 129,
+          "last_line": 173,
+          "text": "129:         viewport = mujoco.MjrRect(0, 0, width, height)\n130: \n131:         # if self.sim.render_callback is not None:\n132:         #     self.sim.render_callback(self.sim, self)\n133: \n134:         # update width and height of rendering context if necessary\n135:         if width > self.con.offWidth or height > self.con.offHeight:\n136:             new_width = max(width, self.model.vis.global_.offwidth)\n137:             new_height = max(height, self.model.vis.global_.offheight)\n138:             self.update_offscreen_size(new_width, new_height)\n139: \n140:         if camera_id is not None:\n141:             if camera_id == -1:\n142:                 self.cam.type = mujoco.mjtCamera.mjCAMERA_FREE\n143:             else:\n144:                 self.cam.type = mujoco.mjtCamera.mjCAMERA_FIXED\n145:             self.cam.fixedcamid = camera_id\n146: \n147:         mujoco.mjv_updateScene(\n148:             self.model._model, self.data._data, self.vopt, self.pert, self.cam, mujoco.mjtCatBit.mjCAT_ALL, self.scn\n149:         )\n150: \n151:         if segmentation:\n152:             self.scn.flags[mujoco.mjtRndFlag.mjRND_SEGMENT] = 1\n153:             self.scn.flags[mujoco.mjtRndFlag.mjRND_IDCOLOR] = 1\n154: \n155:         # for marker_params in self._markers:\n156:         #     self._add_marker_to_scene(marker_params)\n157: \n158:         mujoco.mjr_render(viewport=viewport, scn=self.scn, con=self.con)\n159:         # for gridpos, (text1, text2) in self._overlay.items():\n160:         #     mjr_overlay(const.FONTSCALE_150, gridpos, rect, text1.encode(), text2.encode(), &self._con)\n161: \n162:         if segmentation:\n163:             self.scn.flags[mujoco.mjtRndFlag.mjRND_SEGMENT] = 0\n164:             self.scn.flags[mujoco.mjtRndFlag.mjRND_IDCOLOR] = 0\n165: \n166:     def read_pixels(self, width, height, depth=False, segmentation=False):\n167:         viewport = mujoco.MjrRect(0, 0, width, height)\n168:         rgb_img = np.empty((height, width, 3), dtype=np.uint8)\n169:         depth_img = np.empty((height, width), dtype=np.float32) if depth else None\n170: \n171:         mujoco.mjr_readPixels(rgb=rgb_img, depth=depth_img, viewport=viewport, con=self.con)\n172: \n173:         ret_img = rgb_img"
+        },
+        {
+          "first_line": 1086,
+          "last_line": 1092,
+          "text": "1086:     def forward(self):\n1087:         \"\"\"Forward call to synchronize derived quantities.\"\"\"\n1088:         mujoco.mj_forward(self.model._model, self.data._data)\n1089: \n1090:     def step(self, with_udd=True):\n1091:         \"\"\"Step simulation.\"\"\"\n1092:         mujoco.mj_step(self.model._model, self.data._data)"
+        },
+        {
+          "first_line": 1129,
+          "last_line": 1140,
+          "text": "1129:                 width=width, height=height, camera_id=camera_id, segmentation=segmentation\n1130:             )\n1131:             return self._render_context_offscreen.read_pixels(width, height, depth=depth, segmentation=segmentation)\n1132: \n1133:     def add_render_context(self, render_context):\n1134:         assert render_context.offscreen\n1135:         if self._render_context_offscreen is not None:\n1136:             # free context\n1137:             del self._render_context_offscreen\n1138:         self._render_context_offscreen = render_context\n1139: \n1140:     def get_state(self):"
+        }
+      ]
+    },
+    "camera_utils": {
+      "path": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/utils/camera_utils.py",
+      "sha256": "7cb6ce02936b181c296a38c0c79d6dd436618656a08fb67a5553a733a8652247",
+      "excerpts": [
+        {
+          "first_line": 15,
+          "last_line": 64,
+          "text": "15: import robosuite\n16: import robosuite.utils.transform_utils as T\n17: from robosuite.wrappers import DomainRandomizationWrapper, VisualizationWrapper\n18: \n19: \n20: def get_camera_intrinsic_matrix(sim, camera_name, camera_height, camera_width):\n21:     \"\"\"\n22:     Obtains camera intrinsic matrix.\n23: \n24:     Args:\n25:         sim (MjSim): simulator instance\n26:         camera_name (str): name of camera\n27:         camera_height (int): height of camera images in pixels\n28:         camera_width (int): width of camera images in pixels\n29:     Return:\n30:         K (np.array): 3x3 camera matrix\n31:     \"\"\"\n32:     cam_id = sim.model.camera_name2id(camera_name)\n33:     fovy = sim.model.cam_fovy[cam_id]\n34:     f = 0.5 * camera_height / np.tan(fovy * np.pi / 360)\n35:     K = np.array([[f, 0, camera_width / 2], [0, f, camera_height / 2], [0, 0, 1]])\n36:     return K\n37: \n38: \n39: def get_camera_extrinsic_matrix(sim, camera_name):\n40:     \"\"\"\n41:     Returns a 4x4 homogenous matrix corresponding to the camera pose in the\n42:     world frame. MuJoCo has a weird convention for how it sets up the\n43:     camera body axis, so we also apply a correction so that the x and y\n44:     axis are along the camera view and the z axis points along the\n45:     viewpoint.\n46:     Normal camera convention: https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html\n47: \n48:     Args:\n49:         sim (MjSim): simulator instance\n50:         camera_name (str): name of camera\n51:     Return:\n52:         R (np.array): 4x4 camera extrinsic matrix\n53:     \"\"\"\n54:     cam_id = sim.model.camera_name2id(camera_name)\n55:     camera_pos = sim.data.cam_xpos[cam_id]\n56:     camera_rot = sim.data.cam_xmat[cam_id].reshape(3, 3)\n57:     R = T.make_pose(camera_pos, camera_rot)\n58: \n59:     # IMPORTANT! This is a correction so that the camera axis is set up along the viewpoint correctly.\n60:     camera_axis_correction = np.array(\n61:         [[1.0, 0.0, 0.0, 0.0], [0.0, -1.0, 0.0, 0.0], [0.0, 0.0, -1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]\n62:     )\n63:     R = R @ camera_axis_correction\n64:     return R"
+        },
+        {
+          "first_line": 117,
+          "last_line": 135,
+          "text": "117:     Return:\n118:         depth_map (np.array): depth map that corresponds to actual distances\n119:     \"\"\"\n120:     # Make sure that depth values are normalized\n121:     assert np.all(depth_map >= 0.0) and np.all(depth_map <= 1.0)\n122:     extent = sim.model.stat.extent\n123:     far = sim.model.vis.map.zfar * extent\n124:     near = sim.model.vis.map.znear * extent\n125:     return near / (1.0 - depth_map * (1.0 - near / far))\n126: \n127: \n128: def project_points_from_world_to_camera(points, world_to_camera_transform, camera_height, camera_width):\n129:     \"\"\"\n130:     Helper function to project a batch of points in the world frame\n131:     into camera pixels using the world to camera transformation.\n132: \n133:     Args:\n134:         points (np.array): 3D points in world frame to project onto camera pixel locations. Should\n135:             be shape [..., 3]."
+        }
+      ]
+    },
+    "gripper_xml": {
+      "path": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/grippers/panda_gripper.xml",
+      "sha256": "d9d68123909d6910488310d0fae4e358ed4ac831c6d0957f3e30893a5412baac",
+      "excerpts": [
+        {
+          "first_line": 14,
+          "last_line": 46,
+          "text": "14:         <body name=\"right_gripper\" pos=\"0 0 0\" quat=\"0.707107 0 0 -0.707107\">\n15:             <site name=\"ft_frame\" pos=\"0 0 0\" size=\"0.01 0.01 0.01\" rgba=\"1 0 0 1\" type=\"sphere\" group=\"1\"/>\n16:             <inertial pos=\"0 0 0.17\" quat=\"0.707107 0.707107 0 0\" mass=\"0.3\" diaginertia=\"0.09 0.07 0.05\" />\n17:             <geom pos=\"0 0 0.\" quat=\"0.707107 0 0 0.707107\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"hand_vis\" name=\"hand_visual\" rgba=\"1 1 1 1\" />\n18:             <geom pos=\"0 0 0.\" quat=\"0.707107 0 0 0.707107\" type=\"mesh\" mesh=\"hand\"  group=\"0\" name=\"hand_collision\"/>\n19:             <!-- This site was added for visualization. -->\n20:             <body name=\"eef\" pos=\"0 0 0.097\" quat=\"1 0 0 0\">\n21:                 <site name=\"grip_site\" pos=\"0 0 0\" size=\"0.01 0.01 0.01\" rgba=\"1 0 0 0.5\" type=\"sphere\" group=\"1\"/>\n22:                 <site name=\"ee_x\" pos=\"0.1 0 0\" size=\"0.005 .1\"  quat=\"0.707105  0 0.707108 0 \" rgba=\"1 0 0 0\" type=\"cylinder\" group=\"1\"/>\n23:                 <site name=\"ee_y\" pos=\"0 0.1 0\" size=\"0.005 .1\" quat=\"0.707105 0.707108 0 0\" rgba=\"0 1 0 0\" type=\"cylinder\" group=\"1\"/>\n24:                 <site name=\"ee_z\" pos=\"0 0 0.1\" size=\"0.005 .1\" quat=\"1 0 0 0\" rgba=\"0 0 1 0\" type=\"cylinder\" group=\"1\"/>\n25:                 <!-- This site was added for visualization. -->\n26:                 <site name=\"grip_site_cylinder\" pos=\"0 0 0\" size=\"0.005 10\" rgba=\"0 1 0 0.3\" type=\"cylinder\" group=\"1\"/>\n27:             </body>\n28:             <body name=\"leftfinger\" pos=\"0 0 0.0524\" quat=\"0.707107 0 0 0.707107\">\n29:                 <inertial pos=\"0 0 0.05\" mass=\"0.1\" diaginertia=\"0.01 0.01 0.005\" />\n30:                 <joint name=\"finger_joint1\" pos=\"0 0 0\" axis=\"0 1 0\" type=\"slide\" limited=\"true\" range=\"0.0 0.04\" damping=\"100\" armature=\"1.0\" frictionloss=\"1.0\"/>\n31:                 <geom type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"finger_vis\" name=\"finger1_visual\" rgba=\"0.499 0.499 0.499 1\" />\n32:                 <geom type=\"mesh\" group=\"0\" conaffinity=\"1\" contype=\"0\" solref=\"0.02 1\" friction=\"1 0.005 0.0001\" condim=\"4\" mesh=\"finger\" name=\"finger1_collision\"/>\n33:                 <body name=\"finger_joint1_tip\" pos=\"0 0.0085 0.056\">\n34:                     <inertial pos=\"0 0 0\" quat=\"0 0 0 1\" mass=\"0.01\" diaginertia=\"0.01 0.01 0.01\" />\n35:                     <geom size=\"0.008 0.004 0.008\" pos=\"0 -0.005 -0.015\" quat=\"0 0 0 1\" type=\"box\" group=\"0\" solref=\"0.01 0.5\" friction = \"2 0.05 0.0001\" conaffinity=\"1\" contype=\"1\" name=\"finger1_pad_collision\"/>\n36:                 </body>\n37:             </body>\n38:             <body name=\"rightfinger\" pos=\"0 0 0.0524\" quat=\"0.707107 0 0 0.707107\">\n39:                 <inertial pos=\"0 0 0.05\" mass=\"0.1\" diaginertia=\"0.01 0.01 0.005\" />\n40:                 <joint name=\"finger_joint2\" pos=\"0 0 0\" axis=\"0 1 0\" type=\"slide\" limited=\"true\" range=\"-0.04 0.0\" damping=\"100\" armature=\"1.0\" frictionloss=\"1.0\"/>\n41:                 <geom quat=\"0 0 0 1\" type=\"mesh\" contype=\"0\" conaffinity=\"0\" group=\"1\" mesh=\"finger_vis\" name=\"finger2_visual\" rgba=\"0.499 0.499 0.499 1\" />\n42:                 <geom quat=\"0 0 0 1\" type=\"mesh\" group=\"0\" conaffinity=\"1\" contype=\"0\" solref=\"0.02 1\" friction=\"1 0.005 0.0001\" condim=\"4\" mesh=\"finger\" name=\"finger2_collision\"/>\n43:                 <body name=\"finger_joint2_tip\" pos=\"0 -0.0085 0.056\">\n44:                     <inertial pos=\"0 0 0\" quat=\"0 0 0 1\" mass=\"0.01\" diaginertia=\"0.01 0.01 0.01\" />\n45:                     <geom size=\"0.008 0.004 0.008\" pos=\"0 0.005 -0.015\" quat=\"0 0 0 1\" type=\"box\" group=\"0\" solref=\"0.01 0.5\" friction = \"2 0.05 0.0001\" conaffinity=\"1\" contype=\"1\" name=\"finger2_pad_collision\"/>\n46:                 </body>"
+        }
+      ]
+    },
+    "robosuite_base_xml": {
+      "path": "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/base.xml",
+      "sha256": "892688f973bca9f89ba34120d8b18e6006c66d12a301e87ac1d1b098f9c8de06",
+      "excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 22,
+          "text": "1: <!-- This is the base xml for all physics simulations. Set global configs here. -->\n2: <mujoco model=\"base\">\n3:   <compiler angle=\"radian\" meshdir=\"meshes/\" inertiagrouprange=\"0 0\" autolimits=\"true\"/>\n4:   <option impratio=\"20\" cone=\"elliptic\" density=\"1.2\" viscosity=\"0.00002\"/>\n5:   <size nconmax=\"5000\" njmax=\"5000\"/>\n6: \n7:   <asset>\n8:   </asset>\n9: \n10:   <visual>\n11:     <map znear=\"0.001\" />\n12:   </visual>\n13: \n14:   <actuator>\n15:   </actuator>\n16: \n17:   <worldbody>\n18:   </worldbody>\n19: \n20:   <equality>\n21:   </equality>\n22: </mujoco>"
+        }
+      ]
+    }
+  },
+  "upstream_source_files": {
+    "render_context.c": "950fa1071b55a4b2332025523b9d6dcfec5008aee50ea926ca0c35eb852acde6",
+    "render_gl2.c": "ec7079003dbdf7846b9c7118a0525dbc7bb86465717f9e09f78d052842726982",
+    "engine_forward.c": "f949e7458816bcb6e81b2c062beb985553eed03782152d4f2267fc101f2655cd",
+    "engine_vis_visualize.c": "a142ac70190aa13534cc937b827f2a6a14361d959add93680bd17f54f67dbb49",
+    "engine_vis_init.c": "3379b720b54141fca798ab1f9987f3561595fb0eb28cceed7b33df80a2572f58",
+    "render_gl3.c": "6cda6749d1dcbbf5589dc30a6d43bea8aa61da4711ee3faf394a0e3ab65027a2",
+    "engine_io.c": "e533d6cbdc04001091b3f2e01c7cbe5773fc7cc9125196386d36ca103a2a1edb"
+  },
+  "upstream_source_tag": "https://github.com/google-deepmind/mujoco/tree/3.5.0",
+  "environment_repository_identity": {
+    "jev": {
+      "root": "/home/junhongli/projects/jev-libero",
+      "commit": "11d450455d0307bd806c94a27fc7166efb1c483d",
+      "dirty_status": "",
+      "current_commit": "11d450455d0307bd806c94a27fc7166efb1c483d",
+      "current_dirty_status": ""
+    },
+    "libero": {
+      "root": "/home/junhongli/projects/LIBERO",
+      "commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+      "dirty_status": "",
+      "current_commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+      "current_dirty_status": ""
+    }
+  },
+  "historical_source_commit": "30f49f42d37c49f7965c1e674ec46fa9bbff804d",
+  "installed_mujoco_binaries": {
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/mujoco/libmujoco.so.3.5.0": "3c393b5c8305a0cbc9c2a9e356fdcf54cb47e5c7f571b0fb6678d33520d673cf"
+  },
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/render-measurement-source-audit-01",
+  "raw_artifact_hashes": {
+    "additional-source-downloads.json": "43acf957935e9979e81d639da63066df380ec95d69a05db62f39edb80c64064a",
+    "engine_forward.c": "f949e7458816bcb6e81b2c062beb985553eed03782152d4f2267fc101f2655cd",
+    "engine_io.c": "e533d6cbdc04001091b3f2e01c7cbe5773fc7cc9125196386d36ca103a2a1edb",
+    "engine_vis_init.c": "3379b720b54141fca798ab1f9987f3561595fb0eb28cceed7b33df80a2572f58",
+    "engine_vis_visualize.c": "a142ac70190aa13534cc937b827f2a6a14361d959add93680bd17f54f67dbb49",
+    "local-source-evidence.json": "34b54677bea53d525b647725f4b3638e89f2139024c744a9914eb3446e201dfb",
+    "render_context.c": "950fa1071b55a4b2332025523b9d6dcfec5008aee50ea926ca0c35eb852acde6",
+    "render_gl2.c": "ec7079003dbdf7846b9c7118a0525dbc7bb86465717f9e09f78d052842726982",
+    "render_gl3.c": "6cda6749d1dcbbf5589dc30a6d43bea8aa61da4711ee3faf394a0e3ab65027a2",
+    "source-download-retries.json": "c98c1892da9b32ad38526c440dc0a952e1f818dc383edeb4dee892363300507c",
+    "source-downloads.json": "7c822519edf65b2f3c6ecb235b172688622b133e4a745359906bf5bb1363d100"
+  }
+}
