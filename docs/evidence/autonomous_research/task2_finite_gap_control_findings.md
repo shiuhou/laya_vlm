@@ -99,3 +99,11 @@ The sibling `.log` preserves the single execution.
 | Manifest | `12ca28ba50e45eef80519aff709dc73d8577d6c68c009626df7c9c114841fd33` |
 | Result / portable copy | `dc569f9a564c59faa3686254f6fa726ad304fdcdce37b753a10108e05e821a13` |
 | Sensor seal | `af9d221f996c1ad5cefab7cb5a92fcba5b71d258bcf58370d4273d05ebe64d6e` |
+
+Independent closure: reviewer commit `1a0e7f3` verified all 11,793 source
+records, exact sensor inputs/exclusions/P effects, all seven gap rows and the
+report/portable copy. Independent quaternion, calibrated-pad and nearest-prism
+arithmetic differed by at most `2.776e−17 m`; the Y/Z contributions also
+reproduced. The formal PASS and tiny-gain interpretation passed without changes.
+Review: `docs/evidence/autonomous_research/task2_finite_gap_control_independent_review.md`
+in the `laya-render-measurement-semantics` worktree.
