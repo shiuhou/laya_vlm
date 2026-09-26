@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "raw_identity": {
+    "sha256": "9347eab2f1b48fe3799ccfbc3164f60406b6451bd194819ef66632df7d6464bb",
+    "records": 2149
+  },
+  "replay_sha256": "24a6ddf3785556acdc65fdfd767ca0c58a099b7ed20cd207f1841a04099ad5e4",
+  "sensor_seal_sha256": "2ac164126dcd9ca32e851c97da90db29657c0a7f0c6bf4a464cdd68862fd1326",
+  "prefix_frames_exact": 28,
+  "archived_controls_exact": 224,
+  "total_controls": 240,
+  "native_integrations": 800,
+  "stage_samples": 1600,
+  "replay_states_exact": 240,
+  "sampled_endpoint_positive_witness": true,
+  "arms": {
+    "close": {
+      "atomic_checks": [
+        {
+          "step": 13,
+          "token": "GRASP",
+          "tcp_delta_mm": [
+            -0.09972070939115452,
+            0.19591845684875653,
+            0.010356923392240702
+          ],
+          "translation_residual_mm": 0.2200807294554112,
+          "rotation_change_deg": 0.02873680317303438
+        },
+        {
+          "step": 14,
+          "token": "MV_UP",
+          "tcp_delta_mm": [
+            -0.0933409082716774,
+            0.1435914962875165,
+            9.423956966233437
+          ],
+          "translation_residual_mm": 0.6009630768308937,
+          "rotation_change_deg": 0.028998160264538327
+        }
+      ],
+      "bottle_center_rise_mm": 9.279538663423068,
+      "endpoint_lift_bilateral_samples": 8,
+      "native_bilateral_samples": {
+        "13": {
+          "before": 21,
+          "after": 21
+        },
+        "14": {
+          "before": 200,
+          "after": 200
+        }
+      },
+      "unexpected_strong_robot_rows": 0,
+      "official_success": false
+    },
+    "open_hold": {
+      "atomic_checks": [
+        {
+          "step": 13,
+          "token": "STOP",
+          "tcp_delta_mm": [
+            -0.026929395321673155,
+            0.3087972795282057,
+            -0.006986082595972221
+          ],
+          "translation_residual_mm": 0.31004799229546626,
+          "rotation_change_deg": 0.022353621325486753
+        },
+        {
+          "step": 14,
+          "token": "MV_UP",
+          "tcp_delta_mm": [
+            -0.04340620173098886,
+            0.16306910798666308,
+            9.484800834573814
+          ],
+          "translation_residual_mm": 0.5421308074479033,
+          "rotation_change_deg": 0.024102204413250543
+        }
+      ],
+      "bottle_center_rise_mm": 0.0010808864653881756,
+      "endpoint_lift_bilateral_samples": 0,
+      "native_bilateral_samples": {
+        "13": {
+          "before": 0,
+          "after": 0
+        },
+        "14": {
+          "before": 0,
+          "after": 0
+        }
+      },
+      "unexpected_strong_robot_rows": 0,
+      "official_success": false
+    }
+  },
+  "scope": "independent stored-source/array/contact/validator/replay-record audit; no new physics or FK"
+}
