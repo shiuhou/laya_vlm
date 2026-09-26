@@ -1,0 +1,343 @@
+{
+  "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-box-point-boundary-run-01",
+  "source_sha256": "f834673a379523f8c90619d2fd00dd69174f4dd7499cb91a8340742de225e771",
+  "source_manifest_sha256": "8d011fcf2e0ce69e0cd5c48437b1183950b8c02ce7777756d62c249becda8d51",
+  "calibration_sha256": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa",
+  "point_source_sha256": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+  "fixed_point_world_m": [
+    -0.12371558041536501,
+    0.05615888976955092,
+    0.9855272687809821
+  ],
+  "first_contact_evaluator_only": {
+    "cache_semantics": "native derived buffers; timestamps need not identify contact solve time",
+    "first_observed_sample": {
+      "control": 0,
+      "index": 3,
+      "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7",
+      "stage": "native_before",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "new_pairs": [
+      {
+        "class": "other_gripper/bottle",
+        "geom_ids": [
+          75,
+          134
+        ]
+      }
+    ],
+    "previous_observed_sample": {
+      "control": 0,
+      "index": 2,
+      "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c",
+      "stage": "native_after",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "stop_granularity": "after already-started atomic primitive"
+  },
+  "first_contact_descriptions_evaluator_only": [
+    {
+      "geom_ids": [
+        134,
+        75
+      ],
+      "geom_names": [
+        "wine_bottle_1_g6",
+        "gripper0_hand_collision"
+      ],
+      "normal_force_N": 0.08174774260265072
+    }
+  ],
+  "first_contact_exact_pose_available": false,
+  "snapshots": [
+    {
+      "label": "start",
+      "source_record_seq": 2,
+      "source_record_id": "b4e8a794d9c937bd621cc77caf129d3f307aecf75582f4cf8f3c0646bd740094",
+      "source_field": "initial_own_observations",
+      "read_or_control_boundary_time_s": 0.5000000000000003,
+      "exact_observable_sample_time_s": null,
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "geometry": {
+        "fixed_point_in_site_m": [
+          0.05889958531459053,
+          0.10176333435861888,
+          0.1720231500135107
+        ],
+        "fixed_point_relative_to_facing_gap_midpoint_m": [
+          0.05889777006237625,
+          0.10176333435861888,
+          0.1756231500135107
+        ],
+        "world_TCP_to_fixed_point_m": 0.20836722753491155,
+        "signed_finger_joints_m": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "encoder_aperture_m": 0.07744557208548751,
+        "static_facing_pad_gap_m": 0.07644557208548751,
+        "facing_gap_x_interval_m": [
+          -0.038220970790529475,
+          0.038224601294958034
+        ],
+        "pad_y_interval_m": [
+          -0.008,
+          0.008
+        ],
+        "pad_z_interval_m": [
+          -0.0116,
+          0.0044
+        ],
+        "point_minus_low_facing_plane_m": 0.09712055610512,
+        "high_facing_plane_minus_point_m": -0.020674984019632497,
+        "inside_nonnegative_gap_prism": false,
+        "left_pad_box_point_distance_m": 0.2152242684008145,
+        "right_pad_box_point_distance_m": 0.19248308629694197,
+        "target_center_extent_identity_or_grasp_fit_established": false
+      }
+    },
+    {
+      "label": "first_contact_control_before",
+      "source_record_seq": 10109,
+      "source_record_id": "e676dbc5382dfe8a78dee9670e1d16a75138a92c59201a77d6c876fb4f90793a",
+      "source_field": "previous_returned_own_observations",
+      "read_or_control_boundary_time_s": 10.100000000000042,
+      "exact_observable_sample_time_s": null,
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.15562800651510034,
+          0.02682494292890478,
+          1.0219669322653924
+        ],
+        "robot0_eef_quat": [
+          0.9995717064520832,
+          0.00016888002575615735,
+          -0.029263781114966893,
+          7.90876839133637e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999842506415803,
+          -0.03999854571657357
+        ],
+        "robot0_gripper_qvel": [
+          -5.653531060345923e-06,
+          -8.311753968248046e-06
+        ]
+      },
+      "geometry": {
+        "fixed_point_in_site_m": [
+          0.029328424171652354,
+          0.033999346685990646,
+          0.03450536787532402
+        ],
+        "fixed_point_relative_to_facing_gap_midpoint_m": [
+          0.029328363845444586,
+          0.033999346685990646,
+          0.038105367875324016
+        ],
+        "world_TCP_to_fixed_point_m": 0.05662801825667209,
+        "signed_finger_joints_m": [
+          0.03999842506415803,
+          -0.03999854571657357
+        ],
+        "encoder_aperture_m": 0.07999697078073159,
+        "static_facing_pad_gap_m": 0.07899697078073159,
+        "facing_gap_x_interval_m": [
+          -0.03949842506415803,
+          0.03949854571657357
+        ],
+        "pad_y_interval_m": [
+          -0.008,
+          0.008
+        ],
+        "pad_z_interval_m": [
+          -0.0116,
+          0.0044
+        ],
+        "point_minus_low_facing_plane_m": 0.06882684923581038,
+        "high_facing_plane_minus_point_m": 0.010170121544921213,
+        "inside_nonnegative_gap_prism": false,
+        "left_pad_box_point_distance_m": 0.07949487014100907,
+        "right_pad_box_point_distance_m": 0.04105764941208148,
+        "target_center_extent_identity_or_grasp_fit_established": false
+      }
+    },
+    {
+      "label": "first_contact_control_after",
+      "source_record_seq": 10161,
+      "source_record_id": "f33c2d34feeb199f752cb23cd8c46b8928d532ea95188100eb94b8c49e85de45",
+      "source_field": "returned_own_observations",
+      "read_or_control_boundary_time_s": 10.150000000000059,
+      "exact_observable_sample_time_s": null,
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.15561637441533113,
+          0.027027801706423084,
+          1.0208293969178581
+        ],
+        "robot0_eef_quat": [
+          0.999570550477589,
+          0.00011144022296377676,
+          -0.02930346451922165,
+          9.574014667508221e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999806764192462,
+          -0.039999033063553714
+        ],
+        "robot0_gripper_qvel": [
+          -4.716406796207937e-06,
+          -7.260580516696741e-06
+        ]
+      },
+      "geometry": {
+        "fixed_point_in_site_m": [
+          0.029130326993995693,
+          0.0339203952971517,
+          0.03336693022545309
+        ],
+        "fixed_point_relative_to_facing_gap_midpoint_m": [
+          0.029129844283181147,
+          0.0339203952971517,
+          0.03696693022545309
+        ],
+        "world_TCP_to_fixed_point_m": 0.055789974014713424,
+        "signed_finger_joints_m": [
+          0.03999806764192462,
+          -0.039999033063553714
+        ],
+        "encoder_aperture_m": 0.07999710070547833,
+        "static_facing_pad_gap_m": 0.07899710070547833,
+        "facing_gap_x_interval_m": [
+          -0.03949806764192462,
+          0.039499033063553714
+        ],
+        "pad_y_interval_m": [
+          -0.008,
+          0.008
+        ],
+        "pad_z_interval_m": [
+          -0.0116,
+          0.0044
+        ],
+        "point_minus_low_facing_plane_m": 0.06862839463592031,
+        "high_facing_plane_minus_point_m": 0.010368706069558021,
+        "inside_nonnegative_gap_prism": false,
+        "left_pad_box_point_distance_m": 0.07887208941920132,
+        "right_pad_box_point_distance_m": 0.04023008829972612,
+        "target_center_extent_identity_or_grasp_fit_established": false
+      }
+    },
+    {
+      "label": "termination",
+      "source_record_seq": 10528,
+      "source_record_id": "a58caea639bf2c36d387027b68e9e417831b29fba13e033c7ff3584cf466686e",
+      "source_field": "own_observations",
+      "read_or_control_boundary_time_s": 10.500000000000176,
+      "exact_observable_sample_time_s": null,
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.1555519584357491,
+          0.026923137922781084,
+          1.0125040784517931
+        ],
+        "robot0_eef_quat": [
+          0.9995893529417907,
+          0.00010251436444275175,
+          -0.028654980346332605,
+          -8.412827746073943e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.039998379410169115,
+          -0.039999487432609296
+        ],
+        "robot0_gripper_qvel": [
+          1.7382470438251738e-06,
+          -1.3364869654227422e-07
+        ]
+      },
+      "geometry": {
+        "fixed_point_in_site_m": [
+          0.02922468396989478,
+          0.03333563237257817,
+          0.02511345999057
+        ],
+        "fixed_point_relative_to_facing_gap_midpoint_m": [
+          0.02922412995867469,
+          0.03333563237257817,
+          0.028713459990569998
+        ],
+        "world_TCP_to_fixed_point_m": 0.05095127487627631,
+        "signed_finger_joints_m": [
+          0.039998379410169115,
+          -0.039999487432609296
+        ],
+        "encoder_aperture_m": 0.0799978668427784,
+        "static_facing_pad_gap_m": 0.0789978668427784,
+        "facing_gap_x_interval_m": [
+          -0.039498379410169114,
+          0.039499487432609295
+        ],
+        "pad_y_interval_m": [
+          -0.008,
+          0.008
+        ],
+        "pad_z_interval_m": [
+          -0.0116,
+          0.0044
+        ],
+        "point_minus_low_facing_plane_m": 0.0687230633800639,
+        "high_facing_plane_minus_point_m": 0.010274803462714515,
+        "inside_nonnegative_gap_prism": false,
+        "left_pad_box_point_distance_m": 0.07611702262201048,
+        "right_pad_box_point_distance_m": 0.0343003393379247,
+        "target_center_extent_identity_or_grasp_fit_established": false
+      }
+    }
+  ],
+  "terminal_gripper_command": "OPEN",
+  "source_terminal_TCP_to_P_m": 0.05095127487627631,
+  "new_physics_FK_model_calls": 0,
+  "limitations": [
+    "P is an unqualified fixed proxy, not bottle center/extent",
+    "returned position/quaternion/finger exact sample times unknown",
+    "native contact time is bracketed by control packets, not an exact pose sample",
+    "static pad geometry does not include finger-body or hand collision proxies",
+    "no prepose comparison, target fitting or new policy"
+  ],
+  "frozen_code_commit": "5fb06cc62a34e5bbb966d0bd4b5ccbbe800e1a84",
+  "raw_interpretation_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-jaw-interpretation-01/interpretation.json",
+  "raw_interpretation_sha256": "5df975320d33d4d8887fdb38fbd64546d41dd8e3e25bc7a6c36e3d08c98f09a5",
+  "source_only_preclose_inspection": {
+    "source": "docs/evidence/privileged_reference/task2_valid_interaction_gate_failure.jsonl",
+    "sha256": "6d2b9d347c4fe0576ab7400e4dd0f1995da09ed29f0900fca564ca483d281ce3",
+    "prefix_steps": 13,
+    "translation_40mm_count": 7,
+    "translation_10mm_count": 6,
+    "rotation_tokens": 0,
+    "successful_prepose_coordinates_read_or_fit": false
+  }
+}
