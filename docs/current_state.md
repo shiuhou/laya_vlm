@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration029. This is the authoritative current
+Reviewed 2026-09-27 after research iteration030. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -85,8 +85,10 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    No fitted target offset or archived-control initialization. Native contacts are
    passively observed; complete the atomic action, then stop before the next one.
    This is an approach-only diagnostic with oracle-assisted stop monitoring.
-2. Audit site-position/body-quaternion frame consistency from archived evidence
-   and own calibration before interpreting jaw-relative target geometry.
+2. Interpret the new endpoint in jaw coordinates using the checked body-to-site
+   rotation. Stored audit:240 rows, corrected max0.045301° versus about90° when
+   omitted; current model input does not consume quaternion. No runtime pose bug
+   was found. See [frame audit](evidence/autonomous_research/proprio_frame_consistency_findings.md).
 3. Inspect the resulting first physical boundary before adding grasp routing,
    model hierarchy or full-task complexity. Point convergence alone is not grasp.
 

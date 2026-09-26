@@ -1023,6 +1023,35 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   decision interface remain byte-identical to baseline. Completed source/reports
   are integrated and the four existing worktrees are reused.
 
+### Parallel iteration 030 — frame accounting without a runtime correction
+
+- **Question:** does the observed site-position/body-quaternion distinction
+  actually corrupt current decisions, or only matter for future jaw geometry?
+- **Frozen experiment:** `a083645`, static calibration composition and saved240
+  local-grasp sensor rows,30 cached endpoints,4 actual executor interventions.
+  No dynamics, rendering, new FK, model call, target fitting or action selection.
+  Current proprioception/model/effect packets are separately exercised with a
+  guarded robot-only observation map and poisoned quaternion.
+- **Observed:** unadjusted body versus site rotation≈90°; fixed Rz(−90°) leaves
+  median0.003643°/max0.045301° against saved scratch matrices. Saved wrist/TCP
+  rotations are identical240/240. Cached endpoint corrected max0.010974°; recorded
+  sample times differ or are unknown. All4 original validator rotations reproduce.
+  Absolute mount error cancels in same-frame world-relative rotation. A hypothetical
+  unadjusted pad projection would shift centers26.03–61.51mm, but actual current
+  model/proprio packets omit quaternion and are poison-invariant240/240.
+- **Interpretation:** known own-frame structure matters when exposing pad geometry;
+  no current mixed-pose failure was found in the inspected path. Omission does not
+  prove orientation unnecessary for grasp. Shared synthetic calibration and unknown
+  sample timing preclude a real-robot or exact same-time pose validation claim.
+- **Verification/artifacts:**4 focused tests pass; root checks9 source hashes and
+  all240 corrected angles with an alternate quaternion/angle formula and confirms
+  wrist matrix equality. Raw `proprio-frame-consistency-01`; root receipt
+  `proprio-frame-root-audit-01.json`. Main source/report `bf98178`,`216863c`; report
+  `proprio_frame_consistency_findings.md`. No production change.
+- **Next:** use own observations/fixed P only to interpret the first fresh approach
+  boundary in jaw coordinates. This cannot supply unseen bottle extent, fit a
+  target offset or authorize grasp. Independent trace audit proceeds separately.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

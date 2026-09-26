@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations028–029. This is a short living assessment;
+Updated 2026-09-27 after iteration030. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -34,10 +34,12 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    Finish each atomic primitive, record native contacts, then stop before another
    action at contact or validator failure. Oracle-assisted diagnostic monitoring
    remains explicit. Approach-only: nominal STOP does not authorize GRASP.
-2. **Frame accounting:** independently check whether archived proprioceptive
-   orientation and static calibration support consistent TCP/pad geometry. The
-   observed TCP position is a site position, while the observed quaternion is an
-   end-effector body quaternion; their fixed transform must not be omitted.
+2. **Frame accounting:**240 saved observations support the fixed body-to-site
+   rotation: unadjusted disagreement is about90°, corrected maximum0.045301°.
+   Current model/proprio packets omit orientation and remain unchanged under
+   quaternion poisoning in240/240 cases. No live mixed pose was found. Use the
+   checked transform only for offline interpretation of the new point approach;
+   timing residuals and target shape remain unknown.
 3. **Physical qualification:** scripted local grasp/lift proves an available
    mechanism, not a sensory approach or a model policy. Interpret the next physical
    boundary before constructing any richer manipulation decision interface.
@@ -80,6 +82,7 @@ measured interaction and available action behavior must not be conflated.
 - [Task2 BOX and depth support](docs/evidence/autonomous_research/task2_box_support_findings.md)
 - [Calibrated sample footprint](docs/evidence/autonomous_research/pixel_sample_footprint_findings.md)
 - [Point versus TCP/pad relationship](docs/evidence/autonomous_research/task2_point_tcp_pad_evidence_review.md)
+- [Stored proprioceptive frame audit](docs/evidence/autonomous_research/proprio_frame_consistency_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)
