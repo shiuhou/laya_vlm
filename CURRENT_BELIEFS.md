@@ -285,7 +285,7 @@ and [independent retention audit](docs/evidence/autonomous_research/retention_in
   jointly and does not establish whether semantic binding occurred internally.
 - **Input-boundary fact:** step9's prospective treatment is excluded for clipped
   native options even though its final consumed count would be1,022 tokens. The
- 256-token heading/options limit must be audited separately from total length.
+  256-token heading/options limit must be audited separately from total length.
 - **Research decision:** stop local prefix/criterion variants on these development
   states. The tested Laya motor interface has not earned numeric action-ranking
   responsibility through supplied context or these placement interventions. This
@@ -294,6 +294,35 @@ and [independent retention audit](docs/evidence/autonomous_research/retention_in
   maintain the pinned stronger-VLM control as a separate capability discriminator.
 
 See [native progress-value findings](docs/evidence/autonomous_research/native_option_progress_sufficiency_findings.md).
+
+## Update after the initial-point physical control
+
+- **Observed:** one completed initial POINT plus live proprioception reproduces
+  the first21 actions/168 controls and22 RGB-D captures of the fresh-query run
+  exactly. At the same boundary21 state it chooses FWD; fresh regrounding's wrong
+  referent chooses RIGHT. Independent literal recomputation attributes the first
+  difference to the target input, not a controller or hidden-state discrepancy.
+- **Observed first new boundary:** action25/control0 contacts the drawer front
+  panel with a finger body at4.839181N. The designated handle remains untouched;
+  the existing oracle monitor aborts after that primitive, for26 actions/208
+  controls. All208 controls replay exactly (417 state checks). This is a simpler
+  coarse-approach diagnostic, not a successful manipulation or sensor safety policy.
+- **Observed:** the drawer is fixed until that action, then closes6.844671mm.
+  Nearest gripper/handle gap still25.242mm. The initial target was correctly on
+  the handle before contact, yet point-distance control reaches nonhandle contact.
+  Incidental closure is therefore not specific to a Laya-selected trajectory;
+  correct target identity alone is insufficient for this controller's interaction.
+- **Scope:** target age reaches10s and current validity/visibility remains unknown.
+  The copied `admitted` record still names its initial fresh admission; the distinct
+  policy and field bases state the stale stationary-target assumption explicitly.
+  No moving-target or generic temporal-fusion success is established.
+- **Next independent probes:** determine whether the precontact RGB-D exposes the
+  collision surface, and whether own joint encoders plus static robot geometry
+  recover relevant effector/link poses without object-state access. Keep these
+  observational until their information boundaries are validated; do not add a
+  recovery policy or mask collision uncertainty to produce motion.
+
+See [initial-point physical findings](docs/evidence/autonomous_research/coarse_initial_point_findings.md).
 
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.

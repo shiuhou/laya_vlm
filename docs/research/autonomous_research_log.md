@@ -515,6 +515,54 @@ executor, candidate gate or task adapter changed in this integration.
   complete summary, `native-option-progress-{preflight,run,independent-audit}-01`.
   Main integration `40714a5`/`5298e25`/`48bd62c`; seven focused tests pass.
 
+### Parallel iteration 016 — one initial visual point reaches the next physical boundary
+
+- **Question:** does a simpler fixed initial sensor target with live proprioception
+  pass the first semantic failure of repeated grounding, and what then fails first?
+- **Intervention:** one completed POINT, then fixed observed world position; all
+  later RGB-D recorded but unconsumed for target updates. Same nominal7-option
+  rule, controller/executor, init0/seed1,40-action/900s ceiling and1N external
+  contact abort. Explicit stale-target admission, unknown current visibility and
+  confidence; default probabilistic/freshness gates are not asserted to work.
+- **Freeze/setup:** `f8b1bf1`; zero-world EGL device setup failure preserved as01.
+  Correction `30f49f4` precedes the first physical attempt02, GPU4 model+render.
+  No physical/model outcome-based retry or archived-control warm start.
+- **Causal comparison:**21 actions/168 controls and22 RGB-D captures identical.
+  At shared boundary21, initial target selectsFWD versus fresh wrong-pointRIGHT;
+  independent selector arithmetic recovers both. Earlier point metrics can differ
+  while actions/states remain identical, and are not falsely forced equal.
+- **First boundary:** action25/control0 finger body contacts nonhandle front-panel
+  g11 at4.839181N. No earlier contact; no pad/handle contact or executor violation.
+  Abort after native8controls,26primitives/208controls total. Drawer closes6.844671mm,
+  with25.242mm gripper/handle gap remaining. Official successfalse.
+- **Integrity:**761 offline checks; full208-control replay417 states exact0.
+  Initial native model input/output matches archive. Target age reaches10s; camera
+  and drawer are static before contact. Agent and root inspect actual trajectory
+  frames. Root sheet: `coarse-initial-point-02/root-visual-review/first-contact.png`.
+- **Interpretation:** correct initial semantic target and a nominal distance rule
+  suffice to cross regrounding failure, but not to establish intended interaction.
+  Incidental nonhandle closure also occurs without Laya. No temporal-perception
+  benefit, moving-target competence or oracle-free safety claim.
+- **Next:** separate evaluator-side precontact visibility analysis from a robot-only
+  FK observability/leakage probe. Do not add a controller/filter/recovery before
+  establishing which geometric facts the available sensors can supply.
+- **Artifacts:** [findings](../evidence/autonomous_research/coarse_initial_point_findings.md),
+  portable summary and `coarse-initial-point-02` full evidence. Original `3abb312`,
+  main integration `e2e8016`/`5b6db93`/`6c787f3`.
+
+Integrated regression at `6c787f3`: **784 passed**, log
+`runs/autonomous-research/regression-initial-point-integration.log`. The initial
+target schedule is an explicitly experimental grounding hook; default fresh
+behavior and production controller/executor remain unchanged.
+
+Independent red-team review adds a competing explanation: visible geometry and
+known robot shape do not guarantee that the fixed-orientation seven-action pool
+contains a useful continuation. A separate evaluator-only seven-candidate witness
+at the exact precontact state is therefore assigned in parallel. It must preserve
+the original primitives/executor, use explicit diagnostic prefix replay, record
+every arm and raw contact/effect outcome, and infer neither global impossibility
+from a one-step failure nor deployable safety from one successful alternative.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

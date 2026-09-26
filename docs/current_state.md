@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-26. This document supersedes historical plans, not raw evidence.
+Reviewed 2026-09-27. This document supersedes historical plans, not raw evidence.
 
 ## Active autonomous research mission
 
@@ -11,9 +11,23 @@ The former phase restrictions below remain historical scope, not current prohibi
 Execution semantics, strict information provenance and historical evidence remain
 protected. No new competent visual or interaction-valid policy is established.
 
-Work proceeds on `research/embodied-interface-discovery`. The first registered
-experiment separates per-candidate predicate recognition from eleven-option motor
-selection using frozen inputs; a parallel audit recomputes archived RGB-D support.
+Work proceeds on `research/embodied-interface-discovery`. Registered matched
+probes now cover predicate recognition, supplied context/action meanings, native
+option progress presentation, visual grounding/relations/subgoals, correspondence,
+and sensor co-motion. The tested Laya presentations have not repaired the known
+weak motor choices; further prefix variants on those states are stopped. The
+tested 3B VLM has not shown useful visual phase/relationship differentiation;
+one pinned 7B control is underway with the exact prior inputs and labels.
+
+A fresh initial-POINT plus live-proprioception control crosses the repeated
+grounder's semantic error, but stops after26 actions on finger-body contact with
+the drawer front panel, not the handle. Its208 controls replay exactly. This
+shows a physical limitation of point-distance control even with the initial
+handle target correctly grounded. The current parallel probes separate
+precontact scene visibility, robot-only geometry observability, and whether the
+existing action pool contains a useful noncontact continuation. They do not yet
+constitute an interaction-valid manipulation policy or a new runtime architecture.
+
 See [current beliefs](../CURRENT_BELIEFS.md) and the
 [research log](research/autonomous_research_log.md) for current hypotheses/results.
 The following sections describe the preserved baseline.
