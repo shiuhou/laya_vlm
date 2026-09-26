@@ -1,12 +1,14 @@
-# Proposed Task2 initial observed-surface geometry test
+# Proposed Task2 initial target-support and jaw-geometry test
 
 Status: design proposal only. No model call, dynamics, segmentation, descriptor
 computation, or approach command has been run for this proposal.
 
 ## One question and one fixture
 
-Does one RGB-grounded initial bottle observation provide useful **observed
-surface extent relative to the jaws**, beyond the existing single 3-D point?
+Does one RGB-grounded initial bottle observation provide **target-specific depth
+support**, sufficient for observed-surface geometry relative to the jaws beyond
+the existing single 3-D point? Target-support attribution is the primary test;
+known jaw-axis arithmetic cannot substitute for it.
 Test this before attempting a sensor-selected approach. The prior scripted
 close/lift witness supplies a successful local context, but it does not validate
 getting from the initial view to that context.
@@ -64,22 +66,55 @@ Task1 world/base transform to Task2. Admission must verify this before running
 the test, without estimating the transform from the successful grasp. Joint
 encoder aperture and inner-pad geometric gap remain separate quantities.
 
-## Discriminator and evaluator separation
+## Primary target-support discriminator
 
-The single static discriminator is whether the observed support's span is
+Seal P and G, all contributing depth pixels, and all descriptors before opening
+the existing initial bottle mask. The primary comparison asks whether the
+depth contributors supporting P and the extremal pixels supporting G actually
+belong to the intended bottle. A shared box is not shared **verified** object
+support. In particular, a median-depth point can be approximately correct while
+added min/max extents are dominated by a few drawer/table pixels.
+
+For P, report the box-center pixel's bottle membership, the actual measured
+depth there, and the discrepancy from the median depth used by the point proxy.
+Also report membership of the lower/upper median-ranked depth contributors;
+retain every tied contributor rather than selecting a favorable median pixel.
+The point is a box-center ray with median depth, which need not coincide with
+any observed bottle surface even if one contributing pixel belongs to it.
+
+For G, report crop purity and full-visible-target recall, plus the ownership of
+the minimum and maximum support pixels along each of the three fixed robot axes.
+Again retain all tied extrema. Preserve the original selected pixels; evaluator
+membership never cleans the sensor support. Separately report the axis bounds
+of (a) the full sensor crop, (b) target pixels within that crop, and (c) all
+visible target pixels in the initial image. The latter two are evaluator-only:
+(a) versus (b) localizes contamination, while (b) versus (c) exposes missing
+visible target support. This avoids disguising either problem as depth noise.
+
+The result can show a supported point with contaminated extra geometry, both
+representations lacking target support, or useful additional target-supported
+measurements. Keep the measured fractions, ownership flags, and metric errors;
+do not invent an acceptable-purity threshold or call the box a segmentation
+mask. A failed identity/support result stops this run with the corresponding
+failure. No new extraction variant follows it.
+
+## Secondary jaw-relative comparison and evaluator separation
+
+The secondary static discriminator is whether the observed support's span is
 smaller or larger than the current open-pad gap along each of two fixed robot
 axes: the current jaw-closing axis and current approach axis. These two axes are
 chosen from robot calibration, before any target output. They pose an orientation
 ambiguity that a single point cannot resolve. They are geometric queries, not
 new executable orientation actions or proposed approach poses.
 
-P leaves both extent comparisons unknown. G provides two measured spans and
+P leaves both extent comparisons unknown. G provides two candidate-support spans and
 their signed difference from the open-pad gap. The evaluator independently
 computes the same quantities from the archived initial bottle mask and depth,
 then reports the span errors and whether each measured comparison agrees with
-the visible target support. It also reports crop purity, visible target recall,
-whether the box-center sample belongs to the bottle, and P's error against the
-same visible-target surface reference. No oracle pixels correct G, and the
+the visible target support. Attribute agreement or disagreement to the primary
+support audit; coincidental agreement from contaminated pixels is not validated
+target geometry. Report P's error against the same visible-target surface
+reference. No oracle pixels correct G, and the
 evaluator never feeds a reference point or offset into P.
 
 This is deliberately a test of **observed-support containment in a jaw-sized
@@ -116,8 +151,9 @@ specific failure; do not try a segmentation variant in this run. If both identit
 and the two-axis measurements agree with the evaluator, the result earns a local
 sensor geometry representation with measured limits. It still does not qualify
 an approach, a manipulation policy, or generalization. That is the useful next
-decision: whether the cheapest current box/depth interface contains enough
-geometry to justify a separately frozen local approach experiment.
+decision: whether the cheapest current box/depth interface contains target-specific
+support for a separately frozen local-geometry or approach experiment, or whether
+target-support extraction is the immediate missing capability.
 
 Before any future execution: freeze code/protocol/input hashes, test numerical
 projection and robot-frame conventions synthetically, review the input schemas,
