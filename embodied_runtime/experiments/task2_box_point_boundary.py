@@ -200,9 +200,11 @@ def preflight(args):
     return frozen, point, frame
 
 
-def collect(args):
+def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory=None,
+            condition='cached_BOX_P_live_proprio_approach_only'):
     wall_start = time.monotonic()
-    frozen, point, original_frame = preflight(args)
+    frozen, point, original_frame = preflight_fn(args)
+    selector = selector_factory(frozen) if selector_factory is not None else None
     if not args.review or not Path(args.review).is_file():
         raise ValueError('Independent prospective review receipt required')
     from .privileged_multistage_task import WineBottleBottomDrawerAdapter
@@ -211,10 +213,10 @@ def collect(args):
     frozen.update(review_path=str(Path(args.review).resolve()), review_sha256=file_hash(args.review),
                   seed=1, init_state_id=0, max_actions=40, wall_limit_s=900, argv=sys.argv,
                   source_state_restored=False, archived_controls_used=False)
-    recorder = RunRecorder(args.output, {'condition': 'cached_BOX_P_live_proprio_approach_only',
+    recorder = RunRecorder(args.output, {'condition': condition,
         'seed': 1, 'init_state_id': 0, 'max_actions': 40, 'wall_limit_s': 900},
         {'run_id': Path(args.output).name, **frozen})
-    (recorder.output / 'protocol.md').write_bytes(PROTOCOL.read_bytes())
+    (recorder.output / 'protocol.md').write_bytes(protocol.read_bytes())
     (recorder.output / 'review.txt').write_bytes(Path(args.review).read_bytes())
     backend, passive, completed, attempted, step = None, None, 0, 0, -1
     previous_handlers = {}
@@ -255,12 +257,20 @@ def collect(args):
         for step in range(40):
             with read_only_measurement(world):
                 proprio = backend.proprioception()
+                own_observations = ({key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS}
+                                    if selector is not None else None)
             view = decision(point, proprio, source_time, world.data.time, step, history)
             token = view.rule_token()
+            selection, stop_reason = {}, 'rule_no_strict_nominal_improvement'
+            if selector is not None:
+                token, selection, stop_reason = selector(view, own_observations)
+                if token not in {*MOVE, 'STOP'}:
+                    raise ValueError('Experiment selector returned unsupported token')
             recorder.record('decision', {'step': step, 'canonical': asdict(view), 'selected': token,
+                **({'experiment_selection': selection} if selector is not None else {}),
                 'live_tcp_to_fixed_proxy_m': float(np.linalg.norm(np.asarray(proprio['tcp_pos_world_m']) - point['position_world_m']))})
             if token == 'STOP':
-                reason = 'rule_no_strict_nominal_improvement'
+                reason = stop_reason
                 break
             attempted += 1
             recorder.record('action_started', {'step': step, 'token': token})
@@ -332,7 +342,7 @@ class NativeReplayVerifier:
             'entire_snapshot_exact': True})
 
 
-def replay(args):
+def replay(args, *, preflight_fn=preflight, provenance_keys=()):
     from .privileged_multistage_task import WineBottleBottomDrawerAdapter
     from ..adapters.libero_rgbd import LiberoRgbdSource
 
@@ -345,9 +355,9 @@ def replay(args):
     if len(rows('termination')) != 1 or len(rows('initial_frame_gate')) != 1:
         raise ValueError('One complete source condition required')
     frozen = rows('run_start')[0]['manifest']
-    actual, _, _ = preflight(args)
+    actual, _, _ = preflight_fn(args)
     for name in ('code', 'source_sha256', 'unchanged_source_sha256', 'point', 'protocol_sha256',
-                 'versions', 'stepping_sources', 'jev', 'environment'):
+                 'versions', 'stepping_sources', 'jev', 'environment', *provenance_keys):
         if actual[name] != frozen[name]:
             raise ValueError('Exact replay provenance mismatch: ' + name)
     if file_hash(source / 'review.txt') != frozen['review_sha256']:
