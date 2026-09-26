@@ -1,0 +1,716 @@
+{
+  "producer_commit": "9de837c8a1348d8eac16bbe4616b40bcf0b0613f",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-box-point-boundary-run-01",
+  "journal_sha256": "f834673a379523f8c90619d2fd00dd69174f4dd7499cb91a8340742de225e771",
+  "journal_records": 10530,
+  "record_counts": {
+    "run_start": 1,
+    "vision_capture": 26,
+    "initial_frame_gate": 1,
+    "decision": 25,
+    "action_started": 25,
+    "control_started": 200,
+    "native_before": 5000,
+    "native_after": 5000,
+    "control_completed": 200,
+    "action_completed": 25,
+    "endpoint": 25,
+    "first_new_robot_contact": 1,
+    "termination": 1
+  },
+  "replay_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-box-point-boundary-replay-01",
+  "replay_result_sha256": "5c3a02fb731d3d8c120ec6f89327762b942d36ab62716a48552ebfc348faa5f9",
+  "replay_exact": {
+    "exact_controls": 200,
+    "exact_native_snapshots": 10000,
+    "exact_captures": 26
+  },
+  "protocol_sha256": "c04c9b2cea516153ee03444d3d63f11fcd6cc633b647b6e256b2e3b86ae6bc47",
+  "source_sha256": {
+    "interaction-observability-paired-01/close/0000.npz": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+    "task2-box-support-run-02/episodes.jsonl": "51dd621269c6da151c39e9b1bd9b0cdf15a890eb2e4af28a59caaea065201a3b",
+    "task2-box-support-run-02/model-output.json": "c0545950996092c7ea05d7e10cf115ff0ed3ec318d1b08ff729300d1ee8bb944",
+    "task2-box-support-run-02/sensor-representation.json": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead"
+  },
+  "review_sha256": "7ae82c9bd78070afaddf05058ffd4348f533053714870a0ef140d92350a8f64b",
+  "initial_array_gate": {
+    "camera_to_world": true,
+    "depth_m": true,
+    "intrinsics": true,
+    "rgb": true
+  },
+  "initial_point": {
+    "box_xyxy": [
+      208,
+      156,
+      228,
+      223
+    ],
+    "definition": "cached_BOX_center_ray_at_fixed_crop_median_depth",
+    "holding": null,
+    "identity_verified": null,
+    "ownership": null,
+    "position_world_m": [
+      -0.12371558041536501,
+      0.05615888976955092,
+      0.9855272687809821
+    ]
+  },
+  "initial_proprioception": {
+    "gripper_command": "OPEN",
+    "gripper_joint_positions": [
+      0.038720970790529476,
+      -0.038724601294958035
+    ],
+    "gripper_width_m": 0.07744557208548751,
+    "holding": null,
+    "proprioception_source": "robot_observation_and_retained_command",
+    "tcp_pos_world_m": [
+      -0.21526851233528546,
+      -0.00259323844760531,
+      1.1632437553471047
+    ]
+  },
+  "initial_above_threshold_robot_pairs": [],
+  "contact_threshold": "strict normal_force_N > 0.05; original first_new_robot_contact event is thresholded",
+  "initial_raw_robot_contact_rows": [],
+  "first_raw_robot_contact": {
+    "first_observed_sample": {
+      "stage": "native_before",
+      "raw_record_id": "8f7eca440cfab6444448a8cc96b2e09343d3673d77651ae649fc34926186322e",
+      "step": 22,
+      "control": 7,
+      "index": 186,
+      "time_s": 9.6719999999999
+    },
+    "previous_observed_sample": {
+      "stage": "native_after",
+      "raw_record_id": "bc97ff947d2608f72991bb3b5cc528d7521daa3c7cfe846493f78af5c1bdc193",
+      "step": 22,
+      "control": 7,
+      "index": 185,
+      "time_s": 9.6719999999999
+    },
+    "contact_rows": [
+      {
+        "force_contact_frame": [
+          0.0175559689573816,
+          -0.0005832315716143075,
+          0.017546278436364183,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "geom_ids": [
+          134,
+          75
+        ],
+        "geom_names": [
+          "wine_bottle_1_g6",
+          "gripper0_hand_collision"
+        ],
+        "normal_force_N": 0.0175559689573816,
+        "unexpected_robot_contact": false
+      }
+    ]
+  },
+  "all_raw_robot_contacts_by_stage": {
+    "native_before": {
+      "raw_contact_rows": 249,
+      "rows_per_step": {
+        "22": 13,
+        "23": 164,
+        "24": 72
+      },
+      "pair_name_row_counts": {
+        "gripper0_hand_collision / wine_bottle_1_g6": 249
+      },
+      "final_sample": {
+        "stage": "native_before",
+        "raw_record_id": "1536faf0f43399ee4ce1ffe094eb31ae11ecbe48b2fff855a88e4306f08bbca8",
+        "step": 24,
+        "control": 7,
+        "index": 199,
+        "time_s": 10.498000000000175
+      },
+      "final_sample_robot_contact_rows": [
+        {
+          "force_contact_frame": [
+            0.03552501663593877,
+            -0.0007497529378751753,
+            -0.03551710401364213,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "geom_ids": [
+            134,
+            75
+          ],
+          "geom_names": [
+            "wine_bottle_1_g6",
+            "gripper0_hand_collision"
+          ],
+          "normal_force_N": 0.03552501663593877,
+          "unexpected_robot_contact": false
+        }
+      ]
+    },
+    "native_after": {
+      "raw_contact_rows": 249,
+      "rows_per_step": {
+        "22": 13,
+        "23": 164,
+        "24": 72
+      },
+      "pair_name_row_counts": {
+        "gripper0_hand_collision / wine_bottle_1_g6": 249
+      },
+      "final_sample": {
+        "stage": "native_after",
+        "raw_record_id": "1fc2fe170835cd721e64bb9752b5318d7021c43174a995097ccb338067b0341c",
+        "step": 24,
+        "control": 7,
+        "index": 199,
+        "time_s": 10.500000000000176
+      },
+      "final_sample_robot_contact_rows": [
+        {
+          "force_contact_frame": [
+            0.035534750516262446,
+            -0.0007502039251652043,
+            -0.03552683054148907,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "geom_ids": [
+            134,
+            75
+          ],
+          "geom_names": [
+            "wine_bottle_1_g6",
+            "gripper0_hand_collision"
+          ],
+          "normal_force_N": 0.035534750516262446,
+          "unexpected_robot_contact": false
+        }
+      ]
+    }
+  },
+  "first_above_threshold_robot_contact": {
+    "cache_semantics": "native derived buffers; timestamps need not identify contact solve time",
+    "first_observed_sample": {
+      "control": 0,
+      "index": 3,
+      "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7",
+      "stage": "native_before",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "new_pairs": [
+      {
+        "class": "other_gripper/bottle",
+        "geom_ids": [
+          75,
+          134
+        ]
+      }
+    ],
+    "previous_observed_sample": {
+      "control": 0,
+      "index": 2,
+      "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c",
+      "stage": "native_after",
+      "step": 24,
+      "time_s": 10.106000000000044
+    },
+    "stop_granularity": "after already-started atomic primitive"
+  },
+  "first_qualifying_raw_contact_rows": [
+    {
+      "force_contact_frame": [
+        0.08174774260265072,
+        -0.02400301647055416,
+        -0.0781444087631581,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "geom_ids": [
+        134,
+        75
+      ],
+      "geom_names": [
+        "wine_bottle_1_g6",
+        "gripper0_hand_collision"
+      ],
+      "normal_force_N": 0.08174774260265072,
+      "unexpected_robot_contact": false
+    }
+  ],
+  "terminal_action_all_new_pairs": [
+    {
+      "class": "other_gripper/bottle",
+      "geom_ids": [
+        75,
+        134
+      ]
+    }
+  ],
+  "terminal_action_native_stage_summary": {
+    "native_before": {
+      "sample_count": 200,
+      "pair_contact_rows": 72,
+      "pair_rows_above_strict_005N": 40,
+      "samples_with_pair_above_strict_005N": 40,
+      "peak_pair_normal_force_N": 0.1859761659620806
+    },
+    "native_after": {
+      "sample_count": 200,
+      "pair_contact_rows": 72,
+      "pair_rows_above_strict_005N": 40,
+      "samples_with_pair_above_strict_005N": 40,
+      "peak_pair_normal_force_N": 0.18583640075688965
+    }
+  },
+  "termination": {
+    "attempted_actions": 25,
+    "completed_actions": 25,
+    "first_contact_evaluator_only": {
+      "cache_semantics": "native derived buffers; timestamps need not identify contact solve time",
+      "first_observed_sample": {
+        "control": 0,
+        "index": 3,
+        "raw_record_id": "4946e3bdab28d1674a04e56702c0dab781bfe5a2f4fd0c10133d5517784a57c7",
+        "stage": "native_before",
+        "step": 24,
+        "time_s": 10.106000000000044
+      },
+      "new_pairs": [
+        {
+          "class": "other_gripper/bottle",
+          "geom_ids": [
+            75,
+            134
+          ]
+        }
+      ],
+      "previous_observed_sample": {
+        "control": 0,
+        "index": 2,
+        "raw_record_id": "85e87e4589044b8cfc6551b94f5f4797924c7c01a3ed2dab5cb4042dd3caba6c",
+        "stage": "native_after",
+        "step": 24,
+        "time_s": 10.106000000000044
+      },
+      "stop_granularity": "after already-started atomic primitive"
+    },
+    "grasp_attempted": false,
+    "last_step": 24,
+    "new_model_calls": 0,
+    "reason": "new_robot_contact",
+    "task_success_claim": false
+  },
+  "trajectory": [
+    {
+      "step": 0,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.20836722753491155,
+      "distance_after_m": 0.2002742611454611,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        -0.00037903111776976806,
+        4.921736550048909e-05,
+        -0.009751424404553788
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 1,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.2002742611454611,
+      "distance_after_m": 0.1924054416490163,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00025575728865478986,
+        1.5237375443875184e-05,
+        -0.009311085666924734
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 2,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.1924054416490163,
+      "distance_after_m": 0.18466048426765896,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00016364013059755322,
+        1.2891488865891029e-05,
+        -0.009381692588237511
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 3,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.18466048426765896,
+      "distance_after_m": 0.17706907460673005,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00014560259397300435,
+        1.1387934184866038e-05,
+        -0.0094004087923103
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 4,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.17706907460673005,
+      "distance_after_m": 0.16965462970627818,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00017105570124339997,
+        9.895177728153157e-06,
+        -0.009389052727629021
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 5,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.16965462970627818,
+      "distance_after_m": 0.16244014880720004,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0001791137156522682,
+        8.63249242777928e-06,
+        -0.00938978017172265
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 6,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.16244014880720004,
+      "distance_after_m": 0.1554535114813744,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00018722785295213762,
+        7.388268486962796e-06,
+        -0.0093906233640908
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 7,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.1554535114813744,
+      "distance_after_m": 0.1487268177675093,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00019599541495446404,
+        6.1736496299513374e-06,
+        -0.009391166353770908
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 8,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.1487268177675093,
+      "distance_after_m": 0.14229720695709266,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00020385412301363037,
+        4.9392423302086624e-06,
+        -0.0093924124613054
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 9,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.14229720695709266,
+      "distance_after_m": 0.13620721490198215,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00021114163895738502,
+        3.5506401854343457e-06,
+        -0.009394114337344828
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 10,
+      "token": "MV_FWD",
+      "distance_before_m": 0.13620721490198215,
+      "distance_after_m": 0.13016351118401662,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.009079672132309147,
+        8.013754606173845e-07,
+        -0.0003232970970423743
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 11,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.13016351118401662,
+      "distance_after_m": 0.12405688013433763,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0008188475148130647,
+        7.920030155403584e-06,
+        -0.009017964367695308
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 12,
+      "token": "MV_FWD",
+      "distance_before_m": 0.12405688013433763,
+      "distance_after_m": 0.11821527105367953,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.008909892212835446,
+        1.1640624909437392e-05,
+        -0.0004190315722849558
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 13,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.11821527105367953,
+      "distance_after_m": 0.11228231984493584,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0008111298451041193,
+        1.5503810578745662e-05,
+        -0.009029084169077883
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 14,
+      "token": "MV_FWD",
+      "distance_before_m": 0.11228231984493584,
+      "distance_after_m": 0.10664575761099607,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0089137538506191,
+        1.739814424752545e-05,
+        -0.00040921296960116926
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 15,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.10664575761099607,
+      "distance_after_m": 0.10095072673892236,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0008080503450956789,
+        1.983270950504804e-05,
+        -0.009036509072106513
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 16,
+      "token": "MV_FWD",
+      "distance_before_m": 0.10095072673892236,
+      "distance_after_m": 0.09559701104188613,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.008907713921476157,
+        1.9898808728971342e-05,
+        -0.000405946409530733
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 17,
+      "token": "MV_LEFT",
+      "distance_before_m": 0.09559701104188613,
+      "distance_after_m": 0.08993012006537099,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0006094379501332681,
+        0.00955907707379898,
+        0.00035611931614654146
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 18,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.08993012006537099,
+      "distance_after_m": 0.08429100681142,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.00011998806759574987,
+        0.00016084463691445807,
+        -0.009446556904112668
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 19,
+      "token": "MV_FWD",
+      "distance_before_m": 0.08429100681142,
+      "distance_after_m": 0.07887223628260462,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.009038082913250839,
+        0.00010503046894580915,
+        -0.0003217535730855037
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 20,
+      "token": "MV_LEFT",
+      "distance_before_m": 0.07887223628260462,
+      "distance_after_m": 0.07323361293084198,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0005966196603515717,
+        0.009577573597189467,
+        0.00036745552231431944
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 21,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.07323361293084198,
+      "distance_after_m": 0.06758223433473375,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        9.58386642094522e-05,
+        0.00012905791295678495,
+        -0.009459643961188924
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 22,
+      "token": "MV_FWD",
+      "distance_before_m": 0.06758223433473375,
+      "distance_after_m": 0.062200252820423726,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.009032727453389289,
+        9.240561285348697e-05,
+        -0.00031735346049677204
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 23,
+      "token": "MV_LEFT",
+      "distance_before_m": 0.062200252820423726,
+      "distance_after_m": 0.05662801825667209,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        0.0005643939467733783,
+        0.009571882935481744,
+        0.00037771650393958467
+      ],
+      "native_integrations": 200
+    },
+    {
+      "step": 24,
+      "token": "MV_DOWN",
+      "distance_before_m": 0.05662801825667209,
+      "distance_after_m": 0.05095127487627631,
+      "execution_contract_violation": false,
+      "execution_contract_reason": [],
+      "actual_delta_m": [
+        7.604807935124303e-05,
+        9.819499387630354e-05,
+        -0.009462853813599237
+      ],
+      "native_integrations": 200
+    }
+  ],
+  "terminal_endpoint": {
+    "capture_seq": 26,
+    "live_tcp_to_fixed_proxy_m": 0.05095127487627631,
+    "own_observations": {
+      "robot0_eef_pos": [
+        -0.1555519584357491,
+        0.026923137922781084,
+        1.0125040784517931
+      ],
+      "robot0_eef_quat": [
+        0.9995893529417907,
+        0.00010251436444275175,
+        -0.028654980346332605,
+        -8.412827746073943e-05
+      ],
+      "robot0_gripper_qpos": [
+        0.039998379410169115,
+        -0.039999487432609296
+      ],
+      "robot0_gripper_qvel": [
+        1.7382470438251738e-06,
+        -1.3364869654227422e-07
+      ]
+    },
+    "proprioception": {
+      "gripper_command": "OPEN",
+      "gripper_joint_positions": [
+        0.039998379410169115,
+        -0.039999487432609296
+      ],
+      "gripper_width_m": 0.0799978668427784,
+      "holding": null,
+      "proprioception_source": "robot_observation_and_retained_command",
+      "tcp_pos_world_m": [
+        -0.1555519584357491,
+        0.026923137922781084,
+        1.0125040784517931
+      ]
+    },
+    "step": 24
+  },
+  "limits": [
+    "cached perception with exact initial image equivalence only",
+    "median-ray proxy, not grasp center",
+    "oracle abort after complete atomic primitive",
+    "threshold crossing is later than first raw hand/bottle contact",
+    "native buffer stages are not continuous contact-onset times",
+    "no alternative candidate, grasp, lift or task success established"
+  ]
+}
