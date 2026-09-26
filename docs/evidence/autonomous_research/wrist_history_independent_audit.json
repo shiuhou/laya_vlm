@@ -1,0 +1,216 @@
+{
+  "passed": true,
+  "analysis_identity": {
+    "sha256": "055ecd9561e4306598f95d178ed785e9c7e2fa561f3279d42358abc09dbf810d",
+    "records": 6
+  },
+  "source_identity": {
+    "sha256": "e8e253cefe4c694c6091e1bf944a8f269cfc47c7ed08c053419d97e1a73615d4",
+    "records": 100158
+  },
+  "sealed_artifacts": {
+    "sensors.jsonl": "83b998611fbe72e9bbca4cd0128943244ffb485aacdf6d676ac422c2c1184cca",
+    "sensor_metadata.json": "3106e0268dafed81ed462dc7f2da689f14dd7e9365600a239ddd9c966c0e9fa8",
+    "features.jsonl": "4722f64b2102990b6472484389c66319a932560bbbc2f3d1cf0961358925dea5",
+    "labels.jsonl": "060023831d58c0949a4eee21c9f600cc8501993c8dbc743f0c2777ca29cb5ff7",
+    "summary.json": "c75b15a3ffbfb67a70210d2d471fc6501096d33364707dbdf6e8fd50641de8c4",
+    "protocol.md": "2fe1d7d7ff98bd5dc82d180635a51b0e13dda93703a6d0518d3cf34ab76ac82d"
+  },
+  "controls": 970,
+  "native_samples": 24250,
+  "cohort_counts": {
+    "gripper_only": 163,
+    "arm_only": 164,
+    "gripper_and_arm": 2,
+    "no_robot_scene_above_1N": 641,
+    "self_contact_present": 0
+  },
+  "endpoint_missed_controls": 99,
+  "comparisons": {
+    "force": {
+      "all_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 163,
+            "min": 0.001333439099348343,
+            "p05": 0.008807152009313758,
+            "median": 1.0726076662234816,
+            "p95": 51.83379158375144,
+            "max": 120.86312333093366
+          },
+          "negative": {
+            "count": 641,
+            "min": 3.603258457402419e-05,
+            "p05": 0.00019142943216893208,
+            "median": 0.05451665957350954,
+            "p95": 0.5525258520632214,
+            "max": 3.75221625966119
+          },
+          "auroc": 0.7872476862264675,
+          "positive_values_within_negative_observed_range": 107,
+          "negative_values_within_positive_observed_range": 539
+        },
+        "temporal": {
+          "positive": {
+            "count": 163,
+            "min": 0.3218316626510265,
+            "p05": 1.2142196160297087,
+            "median": 25.119742972770073,
+            "p95": 148.32475000082573,
+            "max": 434.0893769834152
+          },
+          "negative": {
+            "count": 641,
+            "min": 4.3442038006102485e-05,
+            "p05": 0.0006748865196689707,
+            "median": 0.06406402849825261,
+            "p95": 2.3868837341441993,
+            "max": 3.7552237306338743
+          },
+          "auroc": 0.987634351999847,
+          "positive_values_within_negative_observed_range": 32,
+          "negative_values_within_positive_observed_range": 105
+        },
+        "auroc_temporal_minus_endpoint": 0.2003866657733795
+      },
+      "endpoint_missed_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 99,
+            "min": 0.001333439099348343,
+            "p05": 0.006140461443689799,
+            "median": 0.08334239578069302,
+            "p95": 37.14761578574082,
+            "max": 61.01228891655146
+          },
+          "negative": {
+            "count": 641,
+            "min": 3.603258457402419e-05,
+            "p05": 0.00019142943216893208,
+            "median": 0.05451665957350954,
+            "p95": 0.5525258520632214,
+            "max": 3.75221625966119
+          },
+          "auroc": 0.653918277943239,
+          "positive_values_within_negative_observed_range": 82,
+          "negative_values_within_positive_observed_range": 539
+        },
+        "temporal": {
+          "positive": {
+            "count": 99,
+            "min": 1.1996792436780064,
+            "p05": 1.7695218674553814,
+            "median": 27.05639824775042,
+            "p95": 112.99642756620558,
+            "max": 305.22255358463786
+          },
+          "negative": {
+            "count": 641,
+            "min": 4.3442038006102485e-05,
+            "p05": 0.0006748865196689707,
+            "median": 0.06406402849825261,
+            "p95": 2.3868837341441993,
+            "max": 3.7552237306338743
+          },
+          "auroc": 0.9936021683291574,
+          "positive_values_within_negative_observed_range": 14,
+          "negative_values_within_positive_observed_range": 39
+        },
+        "auroc_temporal_minus_endpoint": 0.3396838903859184
+      }
+    },
+    "torque": {
+      "all_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 163,
+            "min": 0.0009440687249594224,
+            "p05": 0.003162228070542876,
+            "median": 0.19418519643774765,
+            "p95": 3.869243198100016,
+            "max": 8.510625763093541
+          },
+          "negative": {
+            "count": 641,
+            "min": 5.207246676550659e-06,
+            "p05": 4.0893768141116635e-05,
+            "median": 0.02804518963804931,
+            "p95": 0.43506847775838275,
+            "max": 0.9697287448741224
+          },
+          "auroc": 0.7654546672664453,
+          "positive_values_within_negative_observed_range": 128,
+          "negative_values_within_positive_observed_range": 531
+        },
+        "temporal": {
+          "positive": {
+            "count": 163,
+            "min": 0.03022222942372892,
+            "p05": 0.10363175835269636,
+            "median": 1.8349707591673972,
+            "p95": 8.729967376160964,
+            "max": 32.17198989221193
+          },
+          "negative": {
+            "count": 641,
+            "min": 7.658943822068843e-06,
+            "p05": 0.0003979309940988039,
+            "median": 0.03166650332745104,
+            "p95": 1.2017841110364642,
+            "max": 2.932952354073111
+          },
+          "auroc": 0.9328216073428212,
+          "positive_values_within_negative_observed_range": 117,
+          "negative_values_within_positive_observed_range": 334
+        },
+        "auroc_temporal_minus_endpoint": 0.16736694007637587
+      },
+      "endpoint_missed_gripper_only": {
+        "endpoint": {
+          "positive": {
+            "count": 99,
+            "min": 0.0009440687249594224,
+            "p05": 0.0024575326336799146,
+            "median": 0.04892427291355601,
+            "p95": 2.521141896914468,
+            "max": 5.1267542535218045
+          },
+          "negative": {
+            "count": 641,
+            "min": 5.207246676550659e-06,
+            "p05": 4.0893768141116635e-05,
+            "median": 0.02804518963804931,
+            "p95": 0.43506847775838275,
+            "max": 0.9697287448741224
+          },
+          "auroc": 0.6633416851825588,
+          "positive_values_within_negative_observed_range": 87,
+          "negative_values_within_positive_observed_range": 531
+        },
+        "temporal": {
+          "positive": {
+            "count": 99,
+            "min": 0.0918844484432951,
+            "p05": 0.13440487911235963,
+            "median": 2.0130321992748224,
+            "p95": 6.0031030534101655,
+            "max": 20.781239059838978
+          },
+          "negative": {
+            "count": 641,
+            "min": 7.658943822068843e-06,
+            "p05": 0.0003979309940988039,
+            "median": 0.03166650332745104,
+            "p95": 1.2017841110364642,
+            "max": 2.932952354073111
+          },
+          "auroc": 0.9494476748766919,
+          "positive_values_within_negative_observed_range": 72,
+          "negative_values_within_positive_observed_range": 123
+        },
+        "auroc_temporal_minus_endpoint": 0.28610598969413314
+      }
+    }
+  },
+  "scope": "independent stored source projection/gold/arithmetic audit; no model, physics, FK, projection or new features"
+}
