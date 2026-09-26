@@ -563,6 +563,37 @@ the original primitives/executor, use explicit diagnostic prefix replay, record
 every arm and raw contact/effect outcome, and infer neither global impossibility
 from a one-step failure nor deployable safety from one successful alternative.
 
+### Parallel iteration 017 — first-contact region visibility
+
+- **Question:** was the impending nonhandle contact wholly hidden from available
+  preaction RGB-D, or does a scalar target point discard relevant visible support?
+- **Registered audit:** preaction25 primary,24 temporal reference; carried oracle
+  contact/box-surface query, exact and pixel-center rays, fixed1×1/5×5/11×11
+  windows. Freeze `ff061ca` after protocol `2de5c5c`/`dea4f97`. No model or
+  recorded-boundary task action; standard evaluator bootstrap settling is explicit.
+- **Result:** query pixel147,166 gives scene visual mesh g10, not a robot first hit;
+  best fixed5×5 raw depth sample lies1.655333mm from the retrospective query.
+  Scene/robot ray counts change25/0→19/6 in5×5 and107/14→91/30 in11×11. Nearby
+  cabinet support is available while local robot occlusion grows.
+- **Uncertainty:** first contact moves drawer0.047615mm; cached versus fresh-FK
+  midpoint differs0.023992mm. Face-distance difference0.001647mm at the box edge
+  is smaller than that timing discrepancy, so exact contacted face/normal is not
+  identified. Visual mesh and collision box differ; ray/raster edge residuals can
+  reach98.95mm. No per-pixel semantic truth or full free-space certificate.
+- **Render check:** global replayed renders differ; query and nearest-support
+  pixels match original RGB/depth exactly, with local5×5 depth difference at most
+ 0.034571mm. Preserve the global discrepancies instead of substituting fresh FK.
+- **Independent verification:** raw-only backprojection reproduces294 registered
+  samples to4.44e-16m; three geometry tests pass. Root inspected both original
+  annotated RGB and depth/occlusion figures. This verifies arithmetic, not a new
+  sensor estimator or independently repeated ray labeling.
+- **Next:** a separate own-joint-only FK probe and seven-candidate physical witness
+  address robot shape availability and actionable continuation. Reassign completed
+  visibility agent to independent provenance/confound review of those producers.
+- **Artifacts:** [findings](../evidence/autonomous_research/first_contact_observability_findings.md),
+  complete summary, `first-contact-observability-01` and its read-only report.
+  Main integration `34f5bcb` through `3670f83`. Production runtime unchanged.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

@@ -324,6 +324,26 @@ See [native progress-value findings](docs/evidence/autonomous_research/native_op
 
 See [initial-point physical findings](docs/evidence/autonomous_research/coarse_initial_point_findings.md).
 
+## Update after precontact visibility audit
+
+- **Observed:** nearby cabinet surface support exists in the recorded preaction
+  depth at the retrospectively queried collision-edge region. The best point in
+  the fixed 5×5 window is 1.655 mm from an oracle-derived surface representative.
+  The initial target point is 39.526 mm away from that region. A single target
+  position omitted surrounding panel extent and occupied gripper geometry.
+- **Limits:** the query itself uses oracle contact/geometry only for evaluation.
+  Increasing finger occlusion, visual/collision mesh differences, raster/ray
+  discrepancies and cached/fresh-FK differences remain. The nearest box face is
+  unstable at this edge; no exact first-touch point/normal, complete free space,
+  sensor collision detector or useful next action has been established.
+- **Decision:** visibility is one prerequisite, not a continuation guarantee.
+  Continue the independent robot-only geometry dependency test and the original
+  seven-candidate counterfactual witness. Their combined evidence should determine
+  whether a sensor-relative geometry test is earned or action/objective support
+  must be reconsidered first.
+
+See [visibility findings](docs/evidence/autonomous_research/first_contact_observability_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 
