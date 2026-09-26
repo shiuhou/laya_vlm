@@ -85,7 +85,12 @@ After-control sampling leaves within-control contact onset and disappearance
 unresolved. DOWN's direct drawer motion makes that limitation material, rather
 than merely hypothetical. Its zero sampled rows do not establish continuous-time
 contact freedom, and drawer movement alone does not identify its cause. An
-independent raw-evidence review is retained separately in the raw directory.
+independent raw-evidence review is retained in the separate
+`laya-information-boundary-review` worktree, commit
+`a9750371a2823b78f6f53dd1b3d119e4de52bfeb`: checker
+`embodied_runtime/experiments/information_boundary_audit.py`, report
+`docs/evidence/autonomous_research/information_boundary_review.md`, and results
+`docs/evidence/autonomous_research/information_boundary_audit_summary.json`.
 That review used its own standard-library/NumPy implementation without producer
 helpers or physics reruns, and passed all 2,971 record hashes, prefix/arm chains,
 artifact lineage and metric/contract arithmetic.
