@@ -17,3 +17,11 @@ I independently ran the focused tests under the LocateAnything environment: **8 
 | `tests/test_task2_box_support.py` | `9cd3ffe85d350937376b78228da2476d16afead6f9fd174a3cd5415c5cb8b137` |
 
 Any positive result can support a later bounded geometry test only. Object shape/extent, orientation, jaw fit, holding, approach qualification and generalization remain outside this experiment.
+
+## Pre-inference metadata serialization amendment
+
+**Technical PASS for `af94e309893ec11cc53ee18ab0d39eb0e011e947`.** Setup attempt 01 failed while serializing the processor's NumPy image-grid metadata, before `call_started`. The independent journal check found five valid chained records, SHA-256 `beca3ce339b2764f6c05f6f38ae6db5d6bab42362f2e2ffa3d7d1be5b799db3d`, ending with `model_calls_started=0` and `AttributeError: numpy.ndarray has no attribute detach`. It remains a failed setup attempt; the fixed one-call scientific budget was not spent.
+
+The reviewed one-line correction serializes either native tensor or NumPy metadata. It does not change the image-grid object passed to the model, model inputs/settings, feature rules, masks or inference count. The source SHA-256 is now `79483613405e15bb463e19e3bc190b4bb0855715cfb3c07e681bca8d00179bd4`; protocol and test hashes above are unchanged.
+
+The earlier frame-only preflight missed this processor-output schema. The reviewer now ran the actual local AutoProcessor on the fixed RGB/prompt without loading model weights or calling inference: native grid is NumPy `[[28,28]]`, the prompt has 237 input tokens, and the corrected serialization succeeds. The producer must retain attempt 01 and use the separately authorized numbered continuation; this amendment does not authorize a second inference or any retry after an inference outcome.
