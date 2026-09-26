@@ -181,6 +181,23 @@ See [failure controls](docs/evidence/autonomous_research/point_failure_controls.
 
 See [visual subgoal findings](docs/evidence/autonomous_research/visual_subgoal_findings.md).
 
+## Update after supplied situation sufficiency
+
+- **Observed:** one coherent, truthful paraphrase of the current privileged
+  target/phase/intent/relation changes all four Laya motor choices, but retains
+  weak advance effects and reduces both approach gains. All 16 calls are valid,
+  both repeats exact, and all eight baseline logits reproduce archive. No
+  truncation, candidate/effect/order change, or new oracle observation.
+- **Limit:** this rejects sufficiency of one packet, not every possible coherent
+  worldview. Input length/positions change; no visual acquisition is tested.
+  Bare `open`/`close` action IDs only implicitly identify gripper commands in the
+  original heading, leaving action-to-effector binding as a concrete confound.
+- **Next discriminator:** one fixed canonical action-definition condition against
+  the original baseline, separately registered. This is an actuator-meaning test,
+  not another situation-wording search or instruction to select an effect winner.
+
+See [situation findings](docs/evidence/autonomous_research/worldview_sufficiency_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

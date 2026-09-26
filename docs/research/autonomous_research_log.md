@@ -337,6 +337,30 @@ release/settled placement. Strict Task-2 closeability remains unproven.
 - **Artifacts:** [findings](../evidence/autonomous_research/visual_subgoal_findings.md),
   summary JSON and raw `visual-subgoal-*` directories. Original traces unchanged.
 
+### Parallel iteration 009 — can Laya use a supplied coherent situation?
+
+- **Question:** does target/phase/intent/relation context connect existing numeric
+  outcomes into useful motor choices when the situation is supplied correctly?
+- **Fixed intervention:** one phase-specific 73–77-token prefix to existing
+  privileged motor states 0/1/9/10. All original bytes remain the suffix; candidates,
+  order, questions, effects, model and settings unchanged. Two reversed repeats,
+  16 calls. Registered `d12c4e6`, results `e228389`, integrated `105f7b3`/`89f06a1`.
+- **Result:** all choices change. Approach x+40 becomes rotate_x+10 (gap gains
+  29.114→4.128 and 15.698→7.282 mm). Advance open becomes close, retaining roughly
+  1.75/0.056-mm closure despite admitted 34.177/31.888-mm alternatives. All calls
+  valid and exactly repeated; all eight baseline logits match archive. Actual
+  consumed sequences fit, including the longest 996/1,024 tokens.
+- **Interpretation:** the particular correct supplied packet is insufficient.
+  Sensitivity to context is not competent use; immediate-effect comparisons do
+  not establish counterfactual full-task or intended-contact outcomes.
+- **Confound/next:** original bare open/close IDs imply but do not explicitly name
+  the commanded gripper. One separately registered actuator-binding intervention
+  can distinguish this concrete semantic ambiguity without further worldview
+  wording search. Numeric/rotation semantics and every candidate remain intact.
+- **Artifacts:** [findings](../evidence/autonomous_research/worldview_sufficiency_findings.md),
+  exact-input/output summary, `worldview-sufficiency-{preflight,run}-01`.
+  Integrated focused tests: 22 passed. Generic runtime unchanged.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
