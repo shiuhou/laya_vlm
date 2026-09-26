@@ -109,6 +109,39 @@ See [iteration 002 findings](docs/evidence/autonomous_research/iteration_002.md)
 
 See [visual and approach findings](docs/evidence/autonomous_research/visual_and_approach_findings.md).
 
+## Update after coarse physical approach and first boundary failure
+
+- **Observed:** fresh POINT plus the existing deterministic geometric selector
+  reduces TCP-to-handle-center distance from 227.258 to 88.945 mm in 20 native
+  actions. Matched active hold ends at 227.272 mm. Both execute 160 controls;
+  both replay with zero state error. No contact, drawer motion or task success.
+  This is a sensor-driven coarse approach, with external oracle contact abort,
+  not Laya motor competence or validation of the default probabilistic fusion.
+- **Observed:** evaluator-only rays hit the designated handle for all 21 points
+  in each 20-action arm. Every recorded rule recommendation is also unchanged
+  when recomputed with the initial point: repeated semantic grounding has not
+  shown a decision contribution on this static target/camera slice.
+- **Observed:** a separately declared fresh 40-action boundary probe reproduces
+  the first 20 actions exactly, then stops after 25 actions on an incomplete
+  258-token POINT output. All 200 controls replay exactly; no contacts or executor
+  violations. The first semantic error precedes that stop: at boundary 21, a
+  structurally valid point jumps 74 pixels / 154.331 mm from the visible handle
+  to the drawer interior. Four RIGHT actions follow. Handle-center distance keeps
+  improving while gripper/handle surface gap worsens 34.673 to 38.098 mm.
+- **Observed:** the old target's 21-by-21 RGB patch is byte-identical through the
+  failed boundaries; this is not full target occlusion. Default retrospective
+  optical flow retains the point, but a frozen pixel is equally sufficient in
+  this stationary scene. Flow status does not establish semantic correctness.
+- **Inference, moderate confidence:** semantic identity continuity is a distinct
+  bottleneck from projection accuracy and arithmetic action ranking. Freshness,
+  valid syntax and positive distance progress do not establish correct identity.
+- **Next discriminators:** exact frozen RGB calls in two fresh process orders to
+  distinguish image-specific failure from inference history; fixed synthetic
+  translation/occlusion controls to test correspondence against frozen pixels.
+  Neither changes live policy, substitutes old truth, or invents covariance.
+
+See [physical approach findings](docs/evidence/autonomous_research/coarse_physical_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

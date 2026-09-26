@@ -245,8 +245,41 @@ release/settled placement. Strict Task-2 closeability remains unproven.
   All-robot oracle contact supervision may abort after an atomic primitive, never
   correct perception or select actions. Compare actual cumulative controls/time,
   reported-point progress and independent handle progress; replay actual controls.
-- **Status:** implementation/review before physical inference. No physical result
-  claimed yet. See [protocol](coarse_point_probe_protocol.md).
+- **Result:** both fresh arms finish 20 actions / 160 controls. The rule reduces
+  TCP/handle-center distance 227.258→88.945 mm; hold ends at 227.272 mm. Advantage
+  138.327 mm at equal controls/time. No contact or drawer motion. Both full replays
+  have zero state error. Post-run ray audits find 21/21 handle points per arm.
+- **Alternative explanation:** all rule choices remain unchanged when recomputed
+  using only the initial point. This static target/camera slice does not show a
+  contribution from repeated visual updates. No learned motor skill claim.
+- **Next decision:** separately register one fresh 40-action boundary experiment
+  with identical policy/execution and aborts; do not resume archived controls.
+  See [protocol](coarse_point_probe_protocol.md).
+
+### Iteration 006 — first semantic failure in fresh extended boundary probe
+
+- **Question:** does the same fresh-point admission remain useful as the robot
+  approaches the interaction regime, before any contact or new control policy?
+- **Controlled variables:** same task/init0/seed1, model/query, strict parser,
+  native executor, unknown fields and oracle external contact supervision. Only
+  separately declared action ceiling is 40. Fresh reset; frozen code `b72fcdc`.
+- **Result:** exact first-20-action/160-control prefix. After 25 actions, boundary
+  25 stops on malformed/no-EOS output (258 tokens). All 200 controls replay at
+  zero error, zero contacts. No drawer movement or task success.
+- **First divergence:** boundary 21 has a completed valid-format POINT 74 pixels /
+  154.331 mm away from the previous handle point. Independent visual and ray
+  evaluation locate it on drawer interior. Four RIGHT actions follow; true
+  handle-center distance improves but nearest gripper/handle gap worsens.
+- **Interpretation:** valid syntax, recent measurement and positive scalar
+  progress do not imply correct semantic referent. Complete occlusion is ruled
+  out: the target patch remains byte-identical. No evidence that this caused the
+  later malformed generation. Physical executor is not the observed failure.
+- **Artifacts:** [findings](../evidence/autonomous_research/coarse_physical_findings.md),
+  `coarse-point-boundary-01/`, `coarse-point-boundary-grounding-audit-01.json`,
+  `coarse-point-temporal-inspection-01/` under `runs/autonomous-research/`.
+- **Next experiments:** same RGB in fresh model processes with changed call order;
+  fixed RGB temporal correspondence against frozen-pixel translation/occlusion
+  controls. These diagnose before any new live policy or recovery is introduced.
 
 ## Iteration and stopping rules
 
