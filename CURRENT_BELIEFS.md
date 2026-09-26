@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations037–039 (short-lift final audit pending). This is a short living assessment;
+Updated 2026-09-27 after iteration040. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -20,10 +20,10 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 | **Observed:** one initial semantic point supports coarse approach but not intended contact. | First21 actions/168 controls identical to repeated grounding. Fixed initial POINT passes fresh-grounding error, then finger body hits nonhandle panel at25;26 primitives/208 controls replay exactly. | Target stationary; age reaches10s, current identity/visibility unknown; external oracle abort. Not generic temporal-fusion or manipulation success. | High within this physical control. Falsifier: changed source/prefix or contact evidence. Generality requires held-out conditions. |
 | **Observed:** some relevant scene surface and own robot shape are available. | Precontact raw depth has support1.655mm from retrospective collision-region query. Robot-only FK:21 bodies,2 sites,5 gripper proxies, spatial error≤1.11e-15m;8 poison variants identical. | Query uses evaluator truth; calibrated base/camera and model geometry assumed. Extents cover gripper only. This is not a sensor-only hazard detector or real calibration validation. | High for visibility/FK dependency; usefulness unresolved. Falsifier: calibrated sensor-only relative geometry remains uninformative under tested conditions. |
 | **Observed:** the original local action regime has no qualified one-step witness at boundary25. | All7 original options executed. DOWN fails2mm motion tolerance with2.114787mm error. Exact finer replay reveals7 nonhandle-contact integration intervals missed by all8 control-end samples. | Detours, other poses/actions/horizons and general reachability are untested. The tracking error's sole cause remains unresolved. | High for measured local result. Falsifier: raw contract/arithmetic audit or exact new evidence contradicts it. Do not relax the contract. |
-| **Observed:** sensor co-motion contains retention information, without establishing a holding estimator. | All492 initial BOX seeds retain a descriptive close/open co-motion contrast in long and actual-executor10mm archives. Short lift: median rise8.585/0.003835mm,3D point–TCP residual2.064/9.502mm; all29,520 rows retained. | Related paired development archives; overlapping windows and mixed initial support. Small-lift transfer changes executor/horizon/scale together, not an amplitude-only ablation. Native LK still succeeds for support departures. Final short-lift independent audit pending. | High for this descriptive contrast; low for general retention inference. Falsifier: fixed measurements fail a separate physical/capture condition. Runtime holding remains unknown. |
+| **Observed:** sensor co-motion contains retention information, without establishing a holding estimator. | All492 initial BOX seeds retain a descriptive close/open co-motion contrast in long and actual-executor10mm archives. Short lift: median rise8.585/0.003835mm,3D point–TCP residual2.064/9.502mm; all29,520 rows retained. | Related paired development archives; overlapping windows and mixed initial support. Small-lift transfer changes executor/horizon/scale together, not an amplitude-only ablation. Native LK still succeeds for support departures. Full independent29,520-row/report audit passes. | High for this descriptive contrast; low for general retention inference. Falsifier: fixed measurements fail a separate physical/capture condition. Runtime holding remains unknown. |
 | **Observed:** native wrist history carries contact-group information beyond endpoints on one trace. | Fixed force AUROC0.787248→0.987634; missed99 subset0.653918→0.993602, independent raw audit. | Residual overlap32/163 and14/99; dependent single trajectory, moving axes/inertia confounds, no designated contact examples. | High for descriptive ranking; no calibrated detector. Falsifier: frozen features fail on a prospectively different trace/contact regime. |
 | **Observed:** existing visual atomic execution supports a local bilateral bottle lift. | Fresh close/open paired slice: +9.279539/+0.001081mm; all4 hard validations pass; closed lift bilateral8/8 endpoints and200/200 each native stage;240-control replay exact. | Scripted privileged pregrasp prefix, no model/sensor-selected approach, one init. Setup01 failed before physics and is retained. | High for this local mechanism. Falsifier: independent audit or prospective sensor-selected approach cannot reproduce the qualified relation. |
-| **Observed:** one bottle BOX supplies a plausible point but mixed ROI support. | One12-token/EOS query; center and median contributors match the limited bottle-label proxy;414/492 crop pixels agree. Actual RGB shows tabletop beside the neck. | Depth ownership, grasp center, object width and opposing surfaces remain unknown. One inspected initial fixture; no generalization. | High for recorded support mixture. Falsifier: independent contributor/source audit contradicts the representation. Physical approach utility remains to be tested. |
+| **Observed:** one bottle BOX supplies a plausible point but mixed ROI support. | One12-token/EOS query; center and median contributors match the limited bottle-label proxy;414/492 crop pixels agree. Actual RGB shows tabletop beside the neck. | Depth ownership, grasp center, object width and opposing surfaces remain unknown. One inspected initial fixture; no generalization. | High for recorded support mixture. Falsifier: independent contributor/source audit contradicts the representation. Coarse approach utility is observed; qualified grasp remains unproved. |
 | **Observed:** calibrated sample footprints explain potential self contribution omitted by center rays. | All6 registered large-depth-jump centers miss own triangles at center but have1–2/4 sample hits; all99 registered neighborhoods agree between own-qpos and cached-pose coverage. | This is potential coverage, not resolved depth ownership or clearance. Whole-frame pose comparisons still differ at7/2 samples, with discontinuity depth differences up to7.10/16.52mm. | High for frozen geometry. Falsifier: independent geometry or array audit contradicts it. Renderer investigation closes without a live gate. |
 | **Observed:** the bottle point-distance rule reaches palm contact before a qualified grasp relation. | Fresh25-action/200-control approach reduces TCP-to-P208.367→50.951mm. First raw palm/bottle row occurs at action22/FWD; first>0.05N at24/DOWN. All25 validators pass; exact replay of controls/native snapshots/26 images. | One inspected init; fixed cached point and oracle-assisted monitoring. No Laya decisions or GRASP. The original scripted pregrasp used translations too, so missing rotations are not established as the cause. | High for first observed boundary. Falsifier: independent trace/contact audit contradicts it. Target-region semantics versus missing surface constraints remain competing explanations. |
 
@@ -39,10 +39,12 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    fixed-facet audit reproduces60,300 entries; all witnesses have strict minimum
    facet slack0.293–17.087mm. Conditional on cached partial support/proxies, a
    route-only repair cannot reach that unchanged target cell at this pose.
-   No all-orientation or physical impossibility claim. Next: offline intervention
-   replacing only P-distance with P-to-finite-gap distance at the same terminal
-   seven candidates, keeping the original guard. Require a positive eligible
-   move before considering physical testing; do not relabel STOP as grasp.
+   No all-orientation or physical impossibility claim. The matched P-to-finite-gap intervention changes STOP→LEFT by only1.959µm
+   nominal reduction, driven by small local rotation components. Its registered
+   literal gate passes; physical usefulness remains unproved, so no dynamics.
+   Next: test exclusion of the complete rotated finite-gap target region, and
+   independently compare two fixed native POINT semantic queries. No new
+   physical policy, fitted threshold or target is selected.
 2. **Semantic target region test closes at nonadmission:** one fixed description,
    `the neck of the wine bottle`, yields42 BOX records/260 actual tokens/no EOS
    under the unchanged native256-token cap. No point/support was extracted; no
@@ -56,7 +58,7 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    survive, but low LK residual still coexists with boundary sample departures.
    Root inspected all16 lift RGB frames, curves and both departure panels.
    This is descriptive transfer, not a calibrated holding/identity estimator;
-   final independent full-row/report audit remains pending.
+   full independent29,520-row/report audit passes (`0144331`).
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -113,7 +115,8 @@ measured interaction and available action behavior must not be conflated.
 - [Same-track coordinate association](docs/evidence/autonomous_research/task2_track_association_findings.md)
 - [Fresh guarded approach and replay](docs/evidence/autonomous_research/task2_endpoint_containment_veto_findings.md)
 - [Short-lift transfer](docs/evidence/autonomous_research/task2_short_lift_transfer_findings.md)
-- [Point-goal cell independent verification](docs/evidence/autonomous_research/task2_point_goal_cell_independent_review.md)
+- [Point-goal cell and numerical certificate](docs/evidence/autonomous_research/task2_point_goal_cell_findings.md)
+- [Finite-gap local objective intervention](docs/evidence/autonomous_research/task2_finite_gap_control_findings.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)

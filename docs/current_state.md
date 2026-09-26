@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iterations037–039 (short-lift final audit pending). This is the authoritative current
+Reviewed 2026-09-27 after research iteration040. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -92,8 +92,10 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    corner of the analytically derived ±5mm point-rule stopping cell. Independent
    fixed-facet recomputation verifies all60,300 entries and strict0.293–17.087mm
    witness margins. This is a conditional proxy exclusion, not physical/global
-   unreachability. Next offline test asks whether a positive finite-pad-gap
-   relation changes the stalled decision without changing P, actions or guard.
+   unreachability. A matched finite-pad-gap
+   objective changes STOP→LEFT by only1.959µm nominal reduction. This passes its
+   literal gate but earns no physical test. Next check covers the entire rotated
+   finite-gap target region, without adaptive search or a new policy.
 3. The privileged grasp contract targeted whole-object geometry center relative
    to pad midpoint. The sensory rule targets TCP distance to an unverified
    median-ray P. Neither better object naming nor adding planning silently fixes
@@ -102,10 +104,13 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    archives. Median rise8.585/0.003835mm and point–TCP residual2.064/9.502mm show
    descriptive co-motion. Native success persists at support departures; no
    holding classifier. Source initialTCP remains unknown. Root inspected actual
-   lift frames and failure panels; independent full-row closure is pending.
+   lift frames and failure panels; independent full-row/report closure passes (`0144331`).
    See [transfer](evidence/autonomous_research/task2_short_lift_transfer_findings.md).
-5. The single semantic-region neck query remains nonadmitted:42boxes/260tokens,
-   noEOS under unchanged native256 cap. No salvage, retry or physical result.
+5. The earlier neck BOX query remains nonadmitted:42boxes/260tokens, noEOS.
+   An independent next condition prepares two matched native POINT calls for
+   whole-bottle versus neck descriptions, same originalRGB/model/settings.
+   This tests region semantics under a supported format; no salvage of the old
+   call, prompt sweep, model tournament or physical run.
 
 ## Protected execution and evidence boundaries
 

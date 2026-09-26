@@ -1367,8 +1367,8 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   no isolated amplitude effect or independent-trial uncertainty follows.
 - **Artifacts/review:** raw `task2-short-lift-transfer-run-01`, sensor seal
   `3388cc54c79f29feb9a1ca313a88ac5e6d4f50c0d7a1b324574f8a4a002dcf4e`.
-  Main source `970307d`, report `7e73cae`; final independent all-row/report audit
-  pending. Integrated926 tests pass in31.85s at `e91a3a4`.
+  Main source `970307d`, report `7e73cae`; independent all-row/report audit
+  `0144331` (main `b457dee`) passes. Integrated926 tests pass in31.85s at `e91a3a4`.
 - **Next decision:** close the fixed measurement rather than fit a holding cutoff.
   Repurpose lane to source audit of observation-to-effector goal semantics, then
   a prospective minimal relation intervention at the newly stalled boundary.
@@ -1392,6 +1392,10 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   agree within2.23e-16m. All123 witnesses are strictly interior at all corners;
   minimum corner-facet margins range0.292925–17.087352mm. No numerical-tie-only
   certificate. Raw `task2-point-goal-cell-run-01`; full tensors/vertices retained.
+  Report `97c317d` (main `41e79de`) closes with raw tensor/RGB byte equality and
+  exactly123 marked source pixels. Root inspected original and marked RGB;
+  highlighted pixels lie visually at the cap/narrow upper bottle. This is
+  descriptive inspection, not a segmentation/depth-ownership label.
 - **Interpretation/confidence:** high for conditional sensor/proxy incompatibility
   at frozen orientation/jaws. A route-only change cannot reach the unchanged
   stopping cell under those assumptions. Not a physical collision certificate,
@@ -1405,6 +1409,42 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   Require a genuinely improving eligible movement before considering dynamics.
   Keep extent, opposing-surface identity and qualified grasp unknown. A null
   result rejects that minimal local intervention; no automatic richer variant.
+
+### Parallel iteration 040 — finite-gap score changes choice, with negligible nominal gain
+
+- **Question/hypotheses:** does replacing only TCP-to-P distance by distance
+  from P to the calibrated finite open-gap prism produce an eligible improving
+  move at the same guarded terminal packet? Weak prospective prior: STOP remains.
+- **Intervention:** freeze `1fd6324`, prospective `1e69894`; same terminal own
+  packet, P, all1,340 support points, seven original candidates/order and saved
+  exclusions. Calibrated pad bounds and mounted orientation, no task offset.
+  Strict min(distance,token)/improvement semantics unchanged. One offline worker,
+  no model, masks, physics, chosen pose, support filtering or new threshold.
+- **Observed:** formal registered gate PASS: STOP→LEFT. Gap distance
+ 36.772006876→36.770048027mm, a1.958849µm nominal improvement. Original TCP-to-P
+  distance worsens45.729795→46.672977mm. FWD/DOWN would improve gap by9.231/2.018mm
+  but retain7/1 contained points and remain vetoed. All seven P-in-gap false.
+- **Why the tiny gain:** nominal LEFT changes local P mostly along the jaw axis
+  (−9.999999719mm), already inside its gap limits. Small Y/Z components contribute
+  −2.164561/+0.205712µm to distance. Exact stored-axis algebra explains the change;
+  no alternate orientation or rounding is used to rerank it.
+- **Interpretation:** the literal weak prediction is falsified, not retrospectively
+  relabeled a failed gate. This is arithmetic ordering sensitivity without a
+  demonstrated useful physical advance. Existing2mm executor acceptance tolerance
+  is a scale comparison only, not actual noise/uncertainty or a newly fitted
+  criterion. Root chooses no dynamics. The guard excludes all five solids alike;
+  neither metric nor veto establishes valid pad contact, capture or holding.
+- **Evidence/audit:** `task2-finite-gap-control-run-01`, sensor seal
+  `af9d221f996c1ad5cefab7cb5a92fcba5b71d258bcf58370d4273d05ebe64d6e`.
+  Independent `1a0e7f3` (main `44e8bbb`) recomputes all7 distances via explicit
+  pad geometry/projection to2.78e−17m; exact source exclusions and stored-axis
+  report pass. Report `3945578`/`dfa6681`, main `d55541f`/`df3b1a3`.
+- **Next decision:** registered8-corner check of the full target translation
+  region T=P−R*G will distinguish a conditional region-exclusion certificate
+  from an inconclusive result. No adaptive refinement or planner. In parallel,
+  prepare two fixed native POINT calls (whole bottle/neck), same originalRGB
+  and model, to separate semantic-region information from BOX syntax failure.
+  No inference before freeze/review, no prompt variants, no new physical policy.
 
 ## Iteration and stopping rules
 
