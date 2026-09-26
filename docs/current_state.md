@@ -16,17 +16,24 @@ probes now cover predicate recognition, supplied context/action meanings, native
 option progress presentation, visual grounding/relations/subgoals, correspondence,
 and sensor co-motion. The tested Laya presentations have not repaired the known
 weak motor choices; further prefix variants on those states are stopped. The
-tested 3B VLM has not shown useful visual phase/relationship differentiation;
-one pinned 7B control is underway with the exact prior inputs and labels.
+tested 3B and pinned 7B VLMs have not improved visual subgoal agreement over their
+task-only controls. The exact-input 7B control improves individual relation
+agreement to9/18 but yields0/6 coherent scenes and0/3 scored subgoals. These
+development fixtures do not establish a general architecture or capability limit.
 
 A fresh initial-POINT plus live-proprioception control crosses the repeated
 grounder's semantic error, but stops after26 actions on finger-body contact with
 the drawer front panel, not the handle. Its208 controls replay exactly. This
 shows a physical limitation of point-distance control even with the initial
-handle target correctly grounded. The current parallel probes separate
-precontact scene visibility, robot-only geometry observability, and whether the
-existing action pool contains a useful noncontact continuation. They do not yet
-constitute an interaction-valid manipulation policy or a new runtime architecture.
+handle target correctly grounded. Nearby precontact depth support is visible;
+standalone calibrated own-joint FK recovers the gripper geometry without object
+state. A seven-option diagnostic finds no contract-valid positive-handle-gap
+continuation with zero recorded robot-contact rows at the examined boundary.
+The only contact-row-free improving arm violates the unchanged2-mm translation
+contract and still moves the drawer. Current parallel work tests sensor-only
+proximity and finer contact sampling, with exact original execution required.
+These results do not constitute an interaction-valid manipulation policy or a
+new runtime architecture.
 
 See [current beliefs](../CURRENT_BELIEFS.md) and the
 [research log](research/autonomous_research_log.md) for current hypotheses/results.

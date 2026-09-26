@@ -594,6 +594,63 @@ from a one-step failure nor deployable safety from one successful alternative.
   complete summary, `first-contact-observability-01` and its read-only report.
   Main integration `34f5bcb` through `3670f83`. Production runtime unchanged.
 
+### Parallel iteration 018 — calibrated own-body geometry
+
+- **Question:** can relevant robot geometry be supplied without current object or
+  contact state? This separates own-body observability from scene perception.
+- **Frozen intervention:** robot-only calibration plus nine own-joint values,
+  isolated NumPy FK process; four archived states, eight nonrobot poison variants,
+  two synthetic own-joint controls. Original freeze `ad9a826`; numerical producer
+  `554d2e7`. Static constructor uses one nonintegrating half-step with exact
+  time/qpos/qvel preservation; two precomparison setup failures are retained.
+- **Results:**21 body poses,2 sites,5 gripper proxy extents match same-qpos model
+  kinematics within1.11e-15m spatial and3.66e-15 rotation elements. All poison
+  estimates are float64-bit identical. Positive own-joint changes alter geometry.
+  Nine synthetic/dependency tests pass; root reruns366 report checks.
+- **Interpretation:** own geometry is available conditional on robot calibration.
+  This does not validate physical installation calibration, historical cache timing,
+  complete robot collision geometry, surrounding scene extent or action safety.
+- **Next:** frozen read-only depth/proxy proximity with explicitly partial gripper
+  masking. No policy filter, collision threshold, simulator scene geometry input,
+  or runtime branch is introduced.
+- **Artifacts:** [findings](../evidence/autonomous_research/robot_geometry_observability_findings.md),
+  portable summary/figure; `robot-geometry-observability-03`, preserved01/02 setup
+  failures, `robot-geometry-root-report-01`. Main integration `3f14603` through
+  `eef21f3`; standalone estimator and reporter remain experimental.
+
+### Parallel iteration 019 — exact-input stronger VLM control
+
+- **Question:** does one larger same-family checkpoint repair the observed visual
+  relation and semantic subgoal failures under the existing interface?
+- **Competing hypotheses:** limited3B capability versus a limitation also present
+  for7B under the fixed imagery/questions; no claim to isolate every confound.
+- **Frozen intervention:** `Qwen/Qwen2.5-VL-7B-Instruct`, provider revision
+  `cc594898137f460bfe9f0759e9844b3ce807cfb5`, source `ce698e6`; unchanged24 relation
+  and7 subgoal calls, labels/order/images/prompts, BF16/SDPA/greedy32/seed1.
+  Provider weight hashes verified before generation. Download-only transport
+  failures/resumptions preserved separately from model inference.
+- **Results:**31 valid completed answers, zero cap hits/truncation/retries;
+  source messages/tokens/masks/grids and FP32/BF16 image identities all equal3B.
+  Relation usefulness9/18 versus2/18, coherent scenes0/6 for both. Horizontal
+  always left on scenes including mirrors; gap always separated including absent
+  images. Primary subgoal agreement0/3, matching own text-only0/3;3B was1/3.
+  Three later subgoal images remain descriptive and unscored.
+- **Independent root audit:** no producer scorer imports; reconstructs all31
+  native sequence/forward/cache/argmax/EOS checks and same paired inputs from raw
+  records/logits. Inspected actual relation images0/4: no image-orientation or
+  absent-scene error explains those example failures.
+- **Interpretation:**7B gives some image-sensitive answers, but individual score
+  gain includes constant-label priors; no coherent worldview/subgoal repair.
+  This is not universal VLM incapacity, failure of all hierarchies, or evidence
+  that larger capacity generally hurts. No controller/model is deployed.
+- **Next decision:** close this checkpoint-control line without a model/prompt
+  tournament. Reassign its agent to the independently identified within-control
+  physical observability question after completing the seven-action report.
+- **Artifacts:** `vlm7b-capability-{relations,subgoals}-run-01`; root independent
+  script/summary `vlm7b-root-independent-audit-01`. Raw SHA-256 respectively
+  `50603ec41159cca96f3e55549a5203c00641718849e217a3abb4f538712fea89`
+  and `a4d29b33d9c4e36213e76bceaa31550b2e93a5e91f965f60d05f9c46371c6b5c`.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

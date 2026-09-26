@@ -12,7 +12,7 @@ the [first protocol](docs/research/predicate_verification_protocol.md).
 | Observed: binary predicate verification also fails in the tested interface. | 768-call audit: balanced accuracy 56.45%, strong affirmative bias; exact controls and repeats. | Framing, negative-label spelling and clause interpretation remain confounded; current interface differs. | High within fixtures, generality open. | Spacing/single-clause or current-interface controls demonstrate a narrower cause. |
 | Observed: current visual grounding is not full object geometry. | First LocateAnything box plus depth produces a point; no mask or contact estimator; archived support purity 11.7–52.5%. | Offline sensor centroid already backprojects points; richer deterministic geometry may help. | High for implementation; efficacy unknown. | Code/evidence demonstrates validated richer sensor-only geometry or relations. |
 | Hypothesis: support contamination matters more than depth projection on archived drawer views. | Centroid errors of centimetres versus millimetre ray/depth residuals. | Point referents, temporal fusion, and calibration can confound comparisons. | Medium. | Same-frame raw recomputation attributes error mainly to another component. |
-| Open: VLM planning is necessary or useful. | Semantic decomposition is plausible; controlled visual subgoal and visible-relation probes now exist. | The tested 3B VLM does not improve scored subgoals over task text; simple visible-relation responses are largely invariant. Model capacity and interface remain competing explanations. | Unestablished beyond these negative fixtures. | A pinned stronger-model control recovers image-sensitive relations/subgoals, followed by a matched downstream benefit. |
+| Open: VLM planning is necessary or useful. | Semantic decomposition is plausible; controlled visual subgoal and visible-relation probes now exist. | Neither pinned 3B nor 7B improves scored subgoals over its task-only control; 7B improves individual relation agreement without a coherent scene. Imagery/interface/capability remain competing explanations. | Unestablished beyond these negative fixtures. | Prospectively useful image-sensitive proposals and matched downstream benefit; no further wording search on these development images. |
 | Open: strict bottle-in-drawer placement is mechanically reachable. | Valid grasp/partial transport exist; transform recomputation is exact. | Both known routes dead-end; containment site equivalence to actual close envelope unverified. | Unestablished. | Valid full mechanical witness, or demonstrated specification/mechanical contradiction. |
 
 ## Update after first experiments
@@ -343,6 +343,41 @@ See [initial-point physical findings](docs/evidence/autonomous_research/coarse_i
   must be reconsidered first.
 
 See [visibility findings](docs/evidence/autonomous_research/first_contact_observability_findings.md).
+
+## Update after own-body geometry and stronger visual-model controls
+
+- **Observed:** a standalone NumPy estimator using known robot calibration and
+  nine own-joint positions reconstructs 21 body poses, two sites and five gripper
+  collision proxies across four archived states. Maximum spatial error versus
+  same-qpos model kinematics is 1.11e-15 m; eight excluded-state poison variants
+  produce bit-identical estimates. Root reran the 366-check read-only report.
+- **Scope:** these are archived encoder analogues and same-model calibration,
+  not real sensor/calibration accuracy. Geometry extents cover the gripper only;
+  arm bodies have poses. One constructor-only half-step preserves time/qpos/qvel;
+  no integrated controls. Both preceding setup failures remain preserved.
+- **Observed:** the pinned 7B checkpoint completes the same 24 relation and seven
+  subgoal queries with exact original messages, input IDs and consumed image
+  tensors. Scene relation agreement rises from 2/18 to 9/18, but all-three scene
+  agreement stays 0/6. Horizontal answers are left for every real/mirrored scene;
+  gap answers are separated even for gray/no-image controls. The gain does not
+  establish coherent scene understanding. Primary subgoals are 0/3, equal to its
+  task-only control and below the original 3B's 1/3.
+- **Independent check:** root reconstructed all 31 native greedy outputs/EOS,
+  sequence/cache/input identities, logits hashes and paired inputs without the
+  producer's scorer. No truncation, generation retries or physical execution.
+  Root inspected actual source images, not only aggregate summaries. These are
+  dependent development images, not a model-family ranking or generality result.
+- **Decision:** no VLM planner or Laya motor-ranking expansion is earned. Own-body
+  geometry is an available input under calibration assumptions, while observed
+  surface proximity and physically useful next actions need separate evidence.
+  Keep unknown interaction/identity explicit. The active work tests raw RGB-D
+  proximity with partial robot masking and within-control contact observability;
+  neither changes the policy, executor or validator.
+
+See [robot geometry findings](docs/evidence/autonomous_research/robot_geometry_observability_findings.md).
+Raw 7B inputs/results and independent audit are under
+`runs/autonomous-research/vlm7b-capability-*-run-01` and
+`runs/autonomous-research/vlm7b-root-independent-audit-01`.
 
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
