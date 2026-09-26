@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration032. This is a short living assessment;
+Updated 2026-09-27 after iteration033. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -29,12 +29,14 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 
 ## Current discriminating experiments
 
-1. **Observed surfaces versus a point:** retrospectively inspect pre-action21/22
-   using the original inner crop versus full BOX depth support and calibrated own
-   gripper geometry. Seven nominal candidate sweeps, no new dynamics or live gate.
-   Only executed actions have contact outcomes; other outcomes remain unknown.
-   Full BOX points are generic observed surfaces, not bottle segmentation. No
-   threshold fitting, oracle cleanup or renewed rendering/masking investigation.
+1. **Observed surfaces expose one missed boundary:** pre-action22 FWD contains
+   one full-BOX sample in the hand proxy; inner-crop clearance remains16.081mm.
+   Pre-action21 executed DOWN has no containment. All14 full-support sweep minima
+   depend on the same pixel(221,158), and the decisive point is already inside
+   the endpoint. This supports a specific missing-surface explanation, not dense
+   shape validation or a benefit from sweeping. Unexecuted outcomes remain
+   unknown. Next: reproduce the pre22 prefix from fresh reset and execute each
+   of the seven original candidates once, independently, without policy changes.
 2. **Semantic target region test closes at nonadmission:** one fixed description,
    `the neck of the wine bottle`, yields42 BOX records/260 actual tokens/no EOS
    under the unchanged native256-token cap. No point/support was extracted; no
@@ -43,8 +45,10 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
 3. **Initial-BOX temporal initialization:** inspect whether the sealed initial
    crop can seed the existing unchanged LK method without assistant landmarks.
    Paired archive has92 frames with a sparse0.4s approach prefix then0.05s close/
-   lift sampling. A fixed dense-seed diagnostic is being proposed; no tracker
-   output, new model call, holding classifier or physical execution yet.
+   lift sampling. The fixed492-seed diagnostic is approved for implementation
+   and prospective review; no tracker output, new model call, holding classifier
+   or physical execution yet. Preserve every failure and seal sensor features
+   before rendered membership evaluation; correlated survivors are not trials.
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -93,6 +97,7 @@ measured interaction and available action behavior must not be conflated.
 - [Fresh Task2 approach audit](docs/evidence/autonomous_research/task2_box_point_boundary_independent_review.md)
 - [Point and jaw interpretation](docs/evidence/autonomous_research/task2_point_jaw_interpretation.md)
 - [Single neck-query nonadmission](docs/evidence/autonomous_research/task2_neck_box_support_findings.md)
+- [Observed-depth support and nominal gripper sweeps](docs/evidence/autonomous_research/task2_observed_surface_sweep_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)

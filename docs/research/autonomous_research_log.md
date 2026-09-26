@@ -1147,6 +1147,47 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   All92 source frames exist, with0.4s approach then0.05s close/lift cadence. No
   tracker features yet; semantics remain unverified and sample dependence explicit.
 
+### Parallel iteration 033 — one omitted surface sample explains a contact boundary
+
+- **Question:** does object-center/cropped support omit observed geometry relevant
+  to the first raw palm contact, or is the existing geometry uninformative?
+- **Competing predictions:** whole BOX support may expose an intersecting hand
+  sample at pre22/FWD; alternatively it may remain positive or indiscriminately
+  intersect every candidate. Neither prediction establishes alternative safety.
+- **Frozen intervention:** producer `cb394fd`, same initial depth/calibration,
+  returned own packets before actions21/22,492 inner versus1340 full BOX samples,
+  all five separate convex gripper proxies and seven canonical nominal moves.
+  No dynamics, learned query, semantic cleanup, thresholds or action selection.
+- **Observed:** pre21 executed DOWN full/inner swept minima7.557/25.198mm,
+  no containment. Pre22 executed FWD full minimum0mm, one contained hand point;
+  inner minimum16.081mm. No current overlap; all other six pre22 full sweeps
+  remain positive. Historical evaluator has zero raw rows at21 and26 stage rows
+  at22, solely palm/bottle. Unexecuted candidate outcomes remain unknown.
+- **Inspection/interpretation:** root inspected source RGB, crop, every distinct
+  primary witness and canonical seven-way table. Pixel(221,158) lies in the
+  visible upper/cap region outside the inner crop, but exact depth ownership is
+  unverified. All14 full-support sweep minima use this one pixel/hand, and the
+  decisive point also lies inside the endpoint. Reduced minima for a superset
+  are tautological; the specific boundary agreement is useful bounded evidence.
+  No sweep advantage, dense shape recovery or calibrated clearance is established.
+- **Controls/limits:** initial support is8.4/8.8s old, stationarity unverified;
+  nominal translations omit control-path variation. Current static asset checks
+  pass; historical mesh byte identity remains unproven. Sensor arrays sealed
+  before separate evaluation by reviewed source, without independent event timing.
+- **Artifacts:** `task2-observed-surface-sweep-run-01`; feature seal
+  `2272dd32051a5965b1188360c993bf89e0b1a77d9f569b053351b5e65c8e9601`.
+  Producer report `e8e3a0f`, main `aba6e71`; prospective/result/factual reviews
+  `c062ed6`,`6cb5825`,`e1c799e`; independent interpretation `49c324b`.
+ 23 producer/reviewer analytic tests pass; no new full-suite result yet.
+- **Next decision:** execute all seven original candidates individually from
+  fresh exact pre22-prefix reproductions, first qualifying archived FWD states,
+  controls and native contacts. Record raw and>0.05N contacts and unchanged
+  validators; no continuation/filter/recovery or fitted policy. In parallel,
+  implement the reviewed-source initial BOX492-seed temporal proposal on the
+  existing paired archive, with native tracking failures retained and no
+  holding classifier. Three existing agent slots cover producers and review;
+  root integrates evidence. Neither next result is presumed successful.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

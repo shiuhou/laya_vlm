@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration032. This is the authoritative current
+Reviewed 2026-09-27 after research iteration033. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -81,16 +81,20 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 
 ## Active next questions
 
-1. Offline observed-surface diagnosis before the first raw palm/bottle contact:
-   same inner crop versus full BOX depths, all five own gripper proxies, seven
-   nominal candidate sweeps. No new policy, dynamics, fitted margin or mask.
-   Only the originally executed actions have observed physical outcomes.
+1. Completed observed-surface diagnosis: at pre22, FWD contains one additional
+   full-BOX point in the hand endpoint/sweep while inner clearance is16.081mm.
+   One pixel dominates all14 full-support sweep minima; no added sweep benefit
+   or safe alternative is established. Seven actual candidate counterfactuals
+   are being prepared, each from a fresh exactly reproduced prefix, with unchanged
+   executor/validators. No live gate or policy change. See
+   [surface results](evidence/autonomous_research/task2_observed_surface_sweep_findings.md).
 2. The single semantic-region alternative `the neck of the wine bottle` failed
    strict admission:42 boxes,260 actual tokens under the unchanged native256 cap,
    no EOS. No P/G, retry or physics. See [nonadmission](evidence/autonomous_research/task2_neck_box_support_findings.md).
-3. Propose initial model-crop seeding of unchanged LK across the paired archive,
-   replacing assistant-selected landmarks without a holding classifier. No new
-   tracking output or dynamics yet; sparse approach-frame cadence is explicit.
+3. Implement the registered initial model-crop seeding of unchanged LK across
+   the paired archive, replacing assistant-selected landmarks without a holding
+   classifier. No tracking output yet; sparse approach cadence and complete
+   failure denominators are explicit. Independent review precedes the one run.
 4. Use these results to decide the next physical test. The checked
    own-frame transform supports bounded jaw interpretation, not a new estimator:
    final P remains outside the pad Y/Z span. The earlier successful scripted
