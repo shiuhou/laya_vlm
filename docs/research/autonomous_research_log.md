@@ -1275,6 +1275,49 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   first new boundary, then stop without an automatic patch. Exact replay planned.
   This is a partial-observation guard experiment, not a safety-certified policy.
 
+### Parallel iteration 036 — fix the association convention without repairing tracks
+
+- **Question:** is the earliest depth jump caused by association bookkeeping,
+  and does correcting that convention invalidate the observed co-motion cue?
+- **Frozen intervention:** `dc1ec6c`, prospective `7d02e6f`; same45,264 sealed
+  native rows, statuses/errors/coordinates/times unchanged. Installed OpenCV
+  coordinate formula plus a synthetic integer-center test justify `floor(x+0.5)`;
+  analytic epsilon/half-crossing/tie/bounds tests precede archived outcomes.
+  Same selected-pixel-center backprojection, depth limits,492 denominators and
+  fixed summaries. Historical floor rows reproduced exactly and preserved.
+  No tracking, model, physics, renderer, interpolation or threshold fit.
+- **Observed:** first epsilon switch disappears: capture1 seed5 remains217,169
+  at0.975022m, and proxy membership stays414/492 in both arms. Native survival
+  and valid-depth counts stay492. Final proxy membership419/402 rather than
+  402/399; remaining departure seeds30/25 rather than34/32. At capture1,
+  371 pixels and338 depths change per arm; these counts are not accuracy scores.
+  Median preclose→final vertical motion110.935/0.003971mm and3D residual
+  4.404/114.329mm preserve the broad paired contrast.
+- **First remaining boundary/inspection:** both arms, seed124 at capture6:
+  nearest pixel216,178, depth1.171730m, residual1.140163px, outside proxy.
+  Previous capture sampled216,179 at0.992485m. Root viewed the original RGB
+  and proxy panels: gripper enters the neighborhood; marked samples lie near
+  the bottle edge. No residual filter was fitted; no whole-patch identity or
+  replacement-geometry inference follows. Old assistant-cap trace is separate.
+- **Interpretation:** a specific measurement-contract correction is supported
+  independently of label improvement. Native LK status still cannot certify
+  semantic/depth support. This retrospective matched association is not another
+  independent tracking trial or validated holding estimator.
+- **Evidence/tests:** `task2-track-association-run-01`, journal
+  `b68ddf216f1164273301d58f35caf2a9b53f79d32b6e0c3e152a61ac7d20cbb3`,
+  sensor seal `d0bbf1a0671a34c8af96e10fd50321697200d5c07d775eb44b7f83c09862ec22`.
+  9 focused tests pass, including root integrated check. All-row audit
+  `9d24e28`, report review `315adc6`, producer report `dc8f747` plus attachment
+  `4dedc9e`; integrated report `63a2b57`. No correction to raw results needed.
+- **Next decision:** transfer frozen LK/nearest sampling to the existing
+  successful local-grasp-interface-run-02 with30frames per arm. Source-only
+  inventory confirms60 sensor hashes and all14 shared-prefix RGB-D/K/T arrays.
+  Initial ownTCP is absent; keep it unknown and report only preclose13-relative
+  motion, retaining all29,520 rows. Sensor seal precedes mask evaluation.
+  No new physics/inference or classifier. This changes executor/horizon and
+  lift scale together, so it tests descriptive transfer, not amplitude-only
+  causality. Endpoint-veto fresh physical probe proceeds independently.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

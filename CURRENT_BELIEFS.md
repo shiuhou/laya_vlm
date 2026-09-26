@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration035. This is a short living assessment;
+Updated 2026-09-27 after iteration036. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -43,14 +43,14 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    under the unchanged native256-token cap. No point/support was extracted; no
    prefix salvage or retry. This one researcher-specified condition does not
    rescue region grounding, nor prove general part-localization incapacity.
-3. **RGB-to-depth association before a tracker change:** all492 initial-BOX
-   seeds survive both46-frame traces; median co-motion differs strongly by arm.
-   Earliest membership change follows X217→216.999969px and historical floor
-   sampling of216 instead of217, switching depth0.975→1.202m. Inspecting the
-   actual images supports a boundary association concern, not large LK drift.
-   Next: matched reassociation of the same sealed tracks under an independently
-   checked pixel-center convention. No retracking, tuning, renderer work or
-   holding classifier; original outputs remain intact. Small-lift transfer waits.
+3. **Coordinate consistency is earned; identity remains unresolved:** justified
+   center-index nearest sampling removes the epsilon-only switch without
+   retracking. All45,264 native rows remain exact. Later proxy departures remain
+   (30/25 seeds), first at capture6; median close/open motion remains110.935mm/
+   0.003971mm. Root inspected that remaining boundary near the bottle edge.
+   Next: same fixed method on existing10mm actual-executor paired captures,
+   all492 seeds/30frames per arm. Use preclose13 motion only; missing initial
+   own TCP stays unknown. This tests signal transfer, not a holding classifier.
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -103,6 +103,7 @@ measured interaction and available action behavior must not be conflated.
 - [Observed-depth support and nominal gripper sweeps](docs/evidence/autonomous_research/task2_observed_surface_sweep_findings.md)
 - [All initial-BOX temporal tracks](docs/evidence/autonomous_research/task2_box_temporal_findings.md)
 - [Seven qualified Task2 physical counterfactuals](docs/evidence/autonomous_research/task2_pre22_counterfactual_findings.md)
+- [Same-track coordinate association](docs/evidence/autonomous_research/task2_track_association_findings.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
 - [Retention independent audit](docs/evidence/autonomous_research/retention_independent_audit.md)

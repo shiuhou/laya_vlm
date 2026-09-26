@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration035. This is the authoritative current
+Reviewed 2026-09-27 after research iteration036. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -95,8 +95,11 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
 3. Initial-crop temporal condition completed: all492 points survive both46-frame
    arms. Median vertical motion110.376mm close versus0.003887mm open; no assistant
    landmarks or mask filtering. First proxy departure is a near-zero-motion
-   floor-sampling switch at a depth edge. Next is same-track coordinate-association
-   verification, without changing tracking or claiming a holding classifier. See
+   floor-sampling switch at a depth edge. Same-track center-index association
+   removes that switch; later departures persist and co-motion stays strong.
+   Next tests the fixed method on30-frame paired10mm actual-executor captures,
+   with preclose13-relative motion and missing initial ownTCP kept unknown. No
+   holding classifier or new physical execution. See
    [temporal evidence](evidence/autonomous_research/task2_box_temporal_findings.md).
 4. Use these results to decide the next physical test. The checked
    own-frame transform supports bounded jaw interpretation, not a new estimator:
