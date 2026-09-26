@@ -19,3 +19,13 @@ Tests cover coordinate flip and nonsquare calibration, optical-depth rays, persp
 | `tests/test_pixel_footprint.py` | `7b8be26a2148fc923881dce5bdddcbd0f91d679e6affa007e2abd84a1cf79799` |
 
 Any resulting comparison can describe potential sample support in these already-inspected development frames. It cannot establish actual per-sample scene ownership, physical camera calibration, object geometry, contact, clearance, hidden space or generalization to new poses.
+
+## Failed schema attempt and static-topology amendment
+
+Attempt 01 stopped before any coverage measurement because the older sealed visual calibration contains compiled vertices and local transforms but no triangle connectivity. The reviewer missed this concrete schema mismatch during the original prospective approval; synthetic geometry/API tests did not exercise the actual admitted calibration schema. The failed process/log/manifest remain evidence and are not relabeled as a completed comparison.
+
+**PASS for the narrowly scoped static export at `9ec85ba`**, before compilation. The reviewed exporter parses the three named visual geoms and two hash-pinned STL assets into a tiny static `MjModel`. It creates no `MjData`, task scene, camera, joint state or renderer and calls no step/forward API. It must match every compiled vertex in order, geom-local position and quaternion exactly against the existing calibration before exporting bounded compiled triangle indices. No remapping search, hull or tolerance is admitted.
+
+The reviewer performed an actual source-XML/calibration schema preflight without compilation: all three named geoms resolve uniquely, reference the two registered assets, and use standalone supported attributes without missing material/default references. Worker/coordinator changes admit a separate topology object while preserving the original FK calibration; real topology names and index bounds must pass before a worker starts. `TOPOLOGY_SHA256=None` deliberately blocks the next comparison until the export is sealed, independently inspected and pinned.
+
+Reviewed exporter SHA-256: `619118cb78fb42c608a8ff27a1be61e034632614c079e146c7713b22acee5613`; amended worker: `453dfac702a0ae2867a4bfc8ebf8d3bf849962875d16141fecef09bb6946f62d`; coordinator: `e5f072d494d60bd88c2de8c8cc8ea8309010052ebcec388a6284f970541a659b`; protocol: `0a74ae8b9a9adea82a4af233ddec54485536a617f628c491a596dd4e2361c176`. Measurement rules and fixed pixels remain unchanged.
