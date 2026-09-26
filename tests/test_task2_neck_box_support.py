@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from embodied_runtime.experiments import task2_box_support as baseline
-from embodied_runtime.experiments.task2_neck_box_support import fixed_condition
+from embodied_runtime.experiments.task2_neck_box_support import fixed_condition, main
 
 
 def test_condition_restores_baseline_on_failure_and_preserves_geometry():
@@ -18,4 +18,15 @@ def test_condition_restores_baseline_on_failure_and_preserves_geometry():
                                          'description: the neck of the wine bottle.')
             assert baseline.sensor_representation(frame, [1, 1, 9, 9]) == before
             raise RuntimeError('preserved failure')
+    assert (baseline.QUERY, baseline.QUESTION, baseline.PROTOCOL) == original
+
+
+def test_cli_binds_explicit_physical_gpu_without_model_construction(monkeypatch):
+    called = []
+    original = baseline.QUERY, baseline.QUESTION, baseline.PROTOCOL
+    def capture(output, *, expected_gpu):
+        called.append((output, expected_gpu, baseline.QUERY))
+    monkeypatch.setattr(baseline, 'generate', capture)
+    main(['generate', '--output', 'unused-synthetic-output'])
+    assert called == [('unused-synthetic-output', '1', 'the neck of the wine bottle')]
     assert (baseline.QUERY, baseline.QUESTION, baseline.PROTOCOL) == original

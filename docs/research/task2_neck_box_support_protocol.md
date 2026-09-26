@@ -25,7 +25,7 @@ Use the existing LocateAnything-3B checkpoint at
 `4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f`.
 Use `/home/junhongli/miniforge3/envs/locateanything/bin/python` for processor and
 model modes. The separate `laya-embodied` environment is for tests/text only.
-Keep GPU0, BF16, the existing native hybrid greedy SETTINGS and 256 generated
+Keep BF16, the existing native hybrid greedy SETTINGS and 256 generated
 token cap. Budget is exactly one new model query, with 300 s inference timeout,
 no inference retries, alternate wording, extra models, offsets, new capture,
 render, physics, replay, FK or scene construction. A setup failure before
@@ -37,19 +37,20 @@ generation ends the condition without another call.
 ## Reuse and preflight
 
 The minimal `task2_neck_box_support` wrapper temporarily binds only QUERY,
-QUESTION and PROTOCOL in the unchanged `task2_box_support` implementation.
+QUESTION and PROTOCOL in the reused `task2_box_support` implementation.
 Settings, raw schema, worker, token audit, parser, depth extraction, projection,
-seals and proxy analysis are reused without edits. The baseline source and
-sealed `task2-box-support-run-02` output remain unchanged.
+seals and proxy analysis are reused without scientific changes. The historical baseline GPU0 default and
+sealed `task2-box-support-run-02` output remain unchanged; the resource amendment
+below is the sole core source change.
 The wrapper checks the reused core source SHA-256 before each mode:
-`9986c4f79578dd4e2691726f21df7ba0706ac8b9876a255ca078eed2f9bb43a6`.
+`8a8d7d828b4b2f65593975cb0378e5b4e7828c1e27ae432d6ca3bfdae3f179f1`.
 
 Before inference, run the existing actual processor-only preflight on this exact
 fixed question and RGB with local files only. It constructs no model and performs
 no inference. Require input_ids, attention_mask, pixel_values and image_grid_hws;
 record native types/shapes/dtypes, exact input token IDs and serialized NumPy or
 tensor grid. Run the existing nine support tests and the wrapper's synthetic
-geometry-invariance/failure-restoration test. Freeze clean code, protocol and
+geometry-invariance/failure-restoration and explicit-device dispatch tests. Freeze clean code, protocol and
 tests, then obtain independent prospective review of this diff and actual schema
 receipt before the single call. No output-dependent edit is allowed.
 
@@ -109,7 +110,7 @@ Run from the clean frozen worktree using these exact command forms:
 
 ```sh
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m embodied_runtime.experiments.task2_neck_box_support processor-preflight --output /home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-neck-box-support-processor-preflight-02.json
-CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m embodied_runtime.experiments.task2_neck_box_support generate --output /home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-neck-box-support-run-01
+CUDA_VISIBLE_DEVICES=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m embodied_runtime.experiments.task2_neck_box_support generate --output /home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-neck-box-support-run-01
 ```
 
 Processor preflight 01 at `4d88bde` used the wrong `laya-embodied` interpreter
@@ -122,3 +123,22 @@ The separately numbered preflight 02 uses the existing LocateAnything environmen
 without installing packages or altering query, settings or source. The root's
 standing authorization covers this zero-inference environment correction;
 independent technical review also confirmed it before continuation.
+
+## Explicit resource allocation amendment before inference
+
+Physical GPU0 was occupied by an unrelated Isaac-GR00T process with about
+3.5 GiB free. No model was loaded and no call was spent. The root authorized
+idle physical GPU1 (also an RTX 4090) without waiting for or touching that
+process. The core API now accepts `generate(output, *, expected_gpu='0')` and
+checks the actual CUDA_VISIBLE_DEVICES against that explicit value; its error
+message names the requested GPU. The historical baseline default remains 0.
+The neck wrapper calls `generate(..., expected_gpu='1')`, and the actual run
+uses and records `CUDA_VISIBLE_DEVICES=1`. There is no environment spoof or
+hidden device switch. This is the complete core difference from SHA-256
+`9986c4f79578dd4e2691726f21df7ba0706ac8b9876a255ca078eed2f9bb43a6`.
+
+Checkpoint, dtype, decoder settings, processor, raw/token schemas, extraction,
+seals and evaluator are unchanged. The existing CPU-only processor02 receipt
+remains applicable; the GPU model identity is still checked before loading.
+Freeze this resource amendment and obtain independent review before the one
+call. The total one-query budget and all stopping rules remain unchanged.

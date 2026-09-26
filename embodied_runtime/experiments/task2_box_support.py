@@ -192,14 +192,14 @@ def evaluate_proxy(sensor, mask):
                             'cached_sample_times_unknown', 'no_label_based_sensor_cleanup']}
 
 
-def generate(output):
+def generate(output, *, expected_gpu='0'):
     from PIL import Image
     from ..adapters.locateanything import LocateAnythingWorker
     identity = code_identity()
     if identity['dirty_status']:
         raise ValueError('freeze clean code before model call')
-    if os.environ.get('CUDA_VISIBLE_DEVICES') != '0':
-        raise ValueError('fixed GPU0 assignment required')
+    if os.environ.get('CUDA_VISIBLE_DEVICES') != expected_gpu:
+        raise ValueError(f'fixed GPU{expected_gpu} assignment required')
     frame = sensor_frame()
     recorder = RunRecorder(output, {'question': QUESTION, 'settings': SETTINGS,
         'protocol_sha256': file_hash(PROTOCOL), 'source_frame_sha256': FRAME_SHA,
