@@ -35,3 +35,19 @@ The reviewer independently inspected the complete `aee8f29..f1cae7c` diff and re
 | `tests/test_task2_neck_box_support.py` | `0dc2b687c970e4a0c5bc56927559a10e343abc90dfcc8fb486767e33b66e2b62` |
 
 This review permits the same one fixed neck-query inference and registered stored-result analysis under the parent's existing allocation. The inference remains unspent at this prospective review; no retry or expanded scientific budget is implied.
+
+## Sealed one-call result: nonadmission independently verified
+
+**Stored-evidence audit PASS; scientific outcome `grounding_not_admitted`.** The one authorized GPU1 call at clean `f1cae7c` returned 42 BOX records and 260 actual generated tokens, with no EOS anywhere in the returned sequence. The unchanged configured `max_new_tokens` and effective limit were 256. The frozen rule rejects incomplete generation, more than 256 actual tokens, and multiple BOX records. No BOX was admitted; no sensor representation, P, G, bottle-proxy evaluator or qualitative region classification exists. No prefix was selected, truncated, repaired or extracted. The condition closes after this single call with zero retries, physics calls or renders.
+
+The independent checker [task2_neck_box_evidence_audit.py](../../../experiments/task2_neck_box_evidence_audit.py) and [machine-readable receipt](task2_neck_box_independent_audit.json) verify all eight chained records, exact source/code/protocol/model identities, actual GPU1/BF16 allocation, raw-before-parser seals, final manifest reconstruction, exact 240 input tokens and grid against processor03, original RGB bytes, and equality of the processed BF16 image fingerprint to the sealed object-level condition. The complete 260-token sequence independently reconstructs the exact raw response from the pinned vocabulary and added-token metadata, without executing a tokenizer, processor or model. All 42 normalized raw BOX records remain present in the parser output, with none selected. The recorded checkpoint hash map is internally checked; the reviewer did not reread model weights.
+
+Source-only inspection of pinned `modeling_locateanything.py` (SHA-256 `ffe736fb8ded5d597201704ccd85134d18a8e4dea43d309228644737234b7244`) finds the length target at line 331, the pre-append loop condition at line 464, the whole multi-token append at line 497, and untrimmed generated-ID slicing/decoding at lines 516–517. This accounts for how native output can exceed the configured limit. It does not change the configuration, raw record or admission result. The four-token overshoot is disclosed as observed native behavior rather than silently relabeled as 256 generated tokens.
+
+| Audited result artifact | SHA-256 |
+| --- | --- |
+| Journal | `e099159c3f9e017c2e6afc7022edad9ec1988f91cbcf6aad11d688024161bbcf` |
+| Raw generation return | `e19129163c257e9e5cde4e91094809c0e6a3b73d21ef45fe765ee82f946e56fc` |
+| Model output | `33ed071dc19ec0990e83689c23a247536f7c4207f0712541964297e9e9dacb05` |
+
+The producer's report and portable summary were also reviewed against these stored artifacts. Their bounded conclusion is supported: this single fixed researcher-specified neck query did not provide an admissible grounding. The object-level baseline remains a separately admitted result, but no neck-vs-object point, support or grasp-readiness comparison can be made. Different physical devices of the same GPU model were used; bitwise device equivalence was not tested. No conclusion about general semantic capability or the necessity or sufficiency of metric geometry follows. No automatic prompt, mode or model variant is authorized by this receipt.
