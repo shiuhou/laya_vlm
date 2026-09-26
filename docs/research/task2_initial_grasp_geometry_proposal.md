@@ -1,163 +1,99 @@
-# Proposed Task2 initial target-support and jaw-geometry test
+# Task2 BOX support-contamination protocol
 
-Status: design proposal only. No model call, dynamics, segmentation, descriptor
-computation, or approach command has been run for this proposal.
+Approved scope: one initial fixture, one fixed model call, then sealed support
+analysis. Freeze the implementation and obtain independent review before the
+call. The initial RGB was inspected during design; this is a development fixture.
 
-## One question and one fixture
+## Question and budget
 
-Does one RGB-grounded initial bottle observation provide **target-specific depth
-support**, sufficient for observed-surface geometry relative to the jaws beyond
-the existing single 3-D point? Target-support attribution is the primary test;
-known jaw-axis arithmetic cannot substitute for it.
-Test this before attempting a sensor-selected approach. The prior scripted
-close/lift witness supplies a successful local context, but it does not validate
-getting from the initial view to that context.
+Does one existing LocateAnything BOX ground the intended bottle well enough that
+the existing depth crop is a credible starting point for local object geometry?
+A plausible semantic box can include table, drawer, and boundary pixels; adding
+shape descriptors to those depths would not establish bottle geometry.
 
-Use exactly the close arm's reset capture from
-`runs/autonomous-research/interaction-observability-paired-01`:
+Budget: **one fixture, one LocateAnything call on GPU0, at most 256 newly generated
+tokens, no retries**. Existing checkpoint and hybrid greedy settings are retained.
+An inference timeout after 300 s is a recorded failure. No additional models,
+prompts, captures, renders, raycasts, scene construction, physics, replay,
+segmentation fallback, jaw-span calculation, or effect fit is included.
 
-- `close/0000.npz`, SHA-256
-  `3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969`;
-- `close/0000.png`, SHA-256
-  `9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3`;
-- `endpoints.json`, only `arm=close, after_step=-1`, for the own TCP pose and
-  direct finger encoders. The frame contains 384 × 384 RGB/depth, intrinsics,
-  camera transform, and capture read time 0.5 s. Actual cached geometry sample
-  time is unknown.
+## Input and semantic call
 
-No additional frames, image crops selected after a result, approaches, model
-variants, or retries enter the test. Both paired initial images are duplicates;
-count this as one fixture, not two independent cases.
+Use `runs/autonomous-research/interaction-observability-paired-01/close/0000.npz`,
+SHA-256 `3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969`.
+It contains 384 × 384 RGB/depth, intrinsics, camera transform and capture read
+time 0.5 s. Cached geometry sample time is unknown. The corresponding PNG has
+SHA-256 `9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3`.
+Do not count the duplicate open-arm reset image as another case.
 
-## Shared grounding and competing representations
+The model receives only full RGB and the existing BOX template:
+`Locate a single instance that matches the following description: the wine bottle.`
+No depth, crop, mask, robot/pregrasp context, target coordinates, or previous
+response enters the model. Preserve pixel/token fingerprints, model identity,
+settings, raw response, actual generated tokens, EOS status, latency and failure.
+Require exactly one complete valid BOX with terminal EOS. Missing, multiple,
+malformed or truncated output ends the experiment with no alternate prompt or
+assistant annotation. The worker's parsed-box score of 1 is not confidence.
 
-The cheapest use of the existing interface is **one LocateAnything BOX call** on
-the full initial RGB with the fixed task-language query `the wine bottle`. Use
-the existing checkpoint, hybrid greedy generation, and native token/EOS audit.
-Require one complete valid box; report missing/multiple/malformed/non-EOS output
-without falling back to an assistant annotation or another prompt. Do not treat
-the worker's hardcoded score of 1 for a parsed box as semantic confidence.
+## Point and support-carrying representations
 
-The production adapter returns a box-center ray at the median depth of its
-fixed interior crop. Keep that exact point unchanged as representation P. In
-representation G, retain P and append the backprojected valid pixels from the
-**same interior crop**, with the existing depth validity range 0.01–5 m and the
-declared raster-center convention. No foreground split, learned mask, clustering,
-PCA-driven point selection, background subtraction, or outcome-guided cleanup.
-The crop contains candidate support, not verified object segmentation.
+P is the unchanged `LocateAnythingProvider` proxy: integer-converted box, clipped
+depth ROI, fixed one-fifth interior crop, valid depth range 0.01–5 m, median
+depth, and the original box-center ray. Keep the original pixel convention and
+exact point. Empty/invalid crop returns unknown.
 
-This comparison holds model call, prompt, RGB, box, point, depth support, and
-camera calibration fixed. A separate POINT query would confound representation
-with changed grounding, so it is not part of this test. An all-pixel surface
-centroid may be reported as a descriptor but must not silently replace P.
+G retains the same P and explicitly records every valid interior-crop pixel,
+RGB/depth, and backprojected surface point using raster centers at (u+0.5,v+0.5).
+Preserve selected support and lower/upper median-ranked depth contributor sets,
+including every tie. Retain the existing median/MAD/std/valid fraction and
+descriptive min/max depth. This is candidate RGB-D support, not a bottle mask or
+object shape. No extra POINT call is made. No labels, color rule, clustering,
+depth splitting or outcome changes the crop or the point.
 
-G reports observed min/max projections onto the calibrated current jaw-closing
-axis, gripper approach axis, and remaining transverse axis, plus the point's
-offset from those intervals. It also retains the selected pixel indices and
-their 3-D points so the apparent span can be traced to individual pixels. These
-axis-aligned projected extents already encode orientation relative to the robot;
-PCA, shape completion, fitted bottle dimensions, and a grasp-pose generator are
-unnecessary for this first discriminator.
+The sensor producer receives only RGB-D/calibration and the model BOX. Seal the
+model output, P, G and all contributing pixels before loading evaluator labels.
+The successful preclose context supplies no target, offset, transform, support
+selection, or scoring target in this experiment. No PCA, grasp-pose generator,
+dimensions or action decision is added.
 
-Use only known robot-local TCP-to-pad calibration and the initial own sensors
-for jaw axes and open-pad gap. The prior robot-only calibration can supply
-static gripper geometry if its local chain identity matches; do not transplant a
-Task1 world/base transform to Task2. Admission must verify this before running
-the test, without estimating the transform from the successful grasp. Joint
-encoder aperture and inner-pad geometric gap remain separate quantities.
+## Limited evaluator and actual RGB inspection
 
-## Primary target-support discriminator
+After sealing, read only the existing initial bottle-label mask at
+`evaluator-only/close-0000-bottle-mask.npy`, SHA-256
+`2a474be6d469dc2df45edfb03c97b23a1adf021f9a48551994a619f501a0b747`.
+It is an **ID-rendered membership proxy**. MSAA, raster boundaries, mixed
+coverage, and render/depth staging can separate that label from the surface
+supplying the depth. No new rendering/scene pipeline repairs this uncertainty.
 
-Seal P and G, all contributing depth pixels, and all descriptors before opening
-the existing initial bottle mask. The primary comparison asks whether the
-depth contributors supporting P and the extremal pixels supporting G actually
-belong to the intended bottle. A shared box is not shared **verified** object
-support. In particular, a median-depth point can be approximately correct while
-added min/max extents are dominated by a few drawer/table pixels.
+Report crop overlap with the proxy, coverage of its visible pixels, center-pixel
+proxy membership, and proxy agreement of both median contributor sets, retaining
+all ties. These are rendered-mask agreement fractions, never exact depth
+ownership, semantic purity or calibrated confidence. Also retain actual depth at
+the box-center sample and its difference from P's median depth; do not fit a
+contamination threshold.
 
-For P, report the box-center pixel's bottle membership, the actual measured
-depth there, and the discrepancy from the median depth used by the point proxy.
-Also report membership of the lower/upper median-ranked depth contributors;
-retain every tied contributor rather than selecting a favorable median pixel.
-The point is a box-center ray with median depth, which need not coincide with
-any observed bottle surface even if one contributing pixel belongs to it.
+Stratify the existing mask with fixed one-pixel 8-neighbor erosion/dilation into
+proxy interior, boundary band and exterior, and report selected-pixel counts.
+This is evaluator-proxy stratification, not corrected segmentation or proof of
+interior depth ownership. It never changes the sensor support.
 
-For G, report crop purity and full-visible-target recall, plus the ownership of
-the minimum and maximum support pixels along each of the three fixed robot axes.
-Again retain all tied extrema. Preserve the original selected pixels; evaluator
-membership never cleans the sensor support. Separately report the axis bounds
-of (a) the full sensor crop, (b) target pixels within that crop, and (c) all
-visible target pixels in the initial image. The latter two are evaluator-only:
-(a) versus (b) localizes contamination, while (b) versus (c) exposes missing
-visible target support. This avoids disguising either problem as depth noise.
+Make one diagnostic figure showing original RGB with box/crop outlines, raw
+crop depth, and a clearly labeled evaluator-proxy overlay. Inspect unmodified
+RGB and overlay separately. Record visible table/drawer/background in the crop
+and ambiguous boundary/occlusion regions. Assistant visual inspection is
+descriptive evidence, not a hidden pixel annotation or correction.
 
-The result can show a supported point with contaminated extra geometry, both
-representations lacking target support, or useful additional target-supported
-measurements. Keep the measured fractions, ownership flags, and metric errors;
-do not invent an acceptable-purity threshold or call the box a segmentation
-mask. A failed identity/support result stops this run with the corresponding
-failure. No new extraction variant follows it.
+Possible outcomes: plausible bottle BOX with mixed candidate support; wrong or
+missing BOX; or candidate support compatible with available visual and limited
+proxy evidence. Preserve unknown resolved-depth ownership in every case. Even
+agreement earns only bounded support for a later geometry test, not rigid object
+extent, orientation, jaw fit, holding, approach qualification or generalization.
 
-## Secondary jaw-relative comparison and evaluator separation
+## Completion
 
-The secondary static discriminator is whether the observed support's span is
-smaller or larger than the current open-pad gap along each of two fixed robot
-axes: the current jaw-closing axis and current approach axis. These two axes are
-chosen from robot calibration, before any target output. They pose an orientation
-ambiguity that a single point cannot resolve. They are geometric queries, not
-new executable orientation actions or proposed approach poses.
-
-P leaves both extent comparisons unknown. G provides two candidate-support spans and
-their signed difference from the open-pad gap. The evaluator independently
-computes the same quantities from the archived initial bottle mask and depth,
-then reports the span errors and whether each measured comparison agrees with
-the visible target support. Attribute agreement or disagreement to the primary
-support audit; coincidental agreement from contaminated pixels is not validated
-target geometry. Report P's error against the same visible-target surface
-reference. No oracle pixels correct G, and the
-evaluator never feeds a reference point or offset into P.
-
-This is deliberately a test of **observed-support containment in a jaw-sized
-interval**, not a full grasp-fit predicate. A whole-bottle span can differ from
-the local section contacted by the pads. Support spanning more than the aperture
-refutes enclosure of that complete observed support in that interval, but does
-not prove that every local grasp is impossible. A smaller visible span does not
-certify opposite surfaces, pad clearance, hidden thickness, force closure,
-retention, or a collision-free approach. Numerical equality is retained; no
-data-fit tolerance or confidence threshold is introduced.
-
-The archived successful preclose capture `close/0013.npz`, SHA-256
-`61cf6082800128f8806a825b84f64b1f455da68924508b6e7100dc93fe91a9cf`, after step 12,
-is evaluator-only corroboration. It may show the actually used jaw/body relation
-and the discrepancy between initial P and one known successful preclose jaw
-midpoint. It cannot select the box, support, axis, target, offset, or scale, and
-must not become a fitted goal pose. Report any object motion between the initial
-and preclose states separately; do not align the initial prediction using oracle
-motion. Agreement with one successful context does not imply uniqueness, and
-disagreement alone does not prove an alternative pose infeasible.
-
-## Failure modes and decision value
-
-The initial RGB visibly contains a bottle next to an open drawer. Occlusion,
-box contamination by the drawer/table, cap-versus-body selection, black-surface
-depth, pixel-boundary conventions, and asynchronous render/proprio caches can
-corrupt a geometric descriptor. The archived mask comes from ID rendering and
-shares synthetic camera/depth calibration; it is a membership evaluator with
-raster-edge limitations, not independent metrology. View-weighted surface
-centroids and spans are not rigid-body centers or complete dimensions.
-
-If identity/support is poor or G gives the wrong span comparison, stop with that
-specific failure; do not try a segmentation variant in this run. If both identity
-and the two-axis measurements agree with the evaluator, the result earns a local
-sensor geometry representation with measured limits. It still does not qualify
-an approach, a manipulation policy, or generalization. That is the useful next
-decision: whether the cheapest current box/depth interface contains target-specific
-support for a separately frozen local-geometry or approach experiment, or whether
-target-support extraction is the immediate missing capability.
-
-Before any future execution: freeze code/protocol/input hashes, test numerical
-projection and robot-frame conventions synthetically, review the input schemas,
-seal the RGB-only model output and sensor geometry before opening masks or
-preclose context, and retain every outcome. Estimated cost is one existing-model
-query and offline array arithmetic; zero physics, new captures, new planners, or
-reference trajectory replay.
+Freeze code/protocol/tests and input hashes; independent review checks the input
+boundary before inference. Synthetic tests cover crop/provider parity, median
+ties, projection convention, parser completeness and evaluator strata. Retain
+the one attempt's generation, seals, all selected pixels, proxy comparisons,
+inspected figure and explicit unknowns. Post-result extraction changes, new
+segmentation, alternate prompts or pregrasp/effect fitting are excluded.
