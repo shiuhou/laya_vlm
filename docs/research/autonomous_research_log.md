@@ -312,6 +312,31 @@ release/settled placement. Strict Task-2 closeability remains unproven.
 - **Artifacts:** [findings](../evidence/autonomous_research/point_failure_controls.md)
   and summary JSON; raw `point-replay-*` and `point-temporal-probe-01` directories.
 
+### Iteration 008 — direct visual subgoal proposal test
+
+- **Question:** does the same VLM provide useful high-level visual information
+  beyond task text, independent of earlier marker-verification failure?
+- **Intervention:** one task-only and six full-camera image calls, same instruction,
+  native model/settings; no history, effects, candidates or simulator variables.
+  Frozen code `3d64d7c`, evaluator hash `0daf94ea…243237` before inference.
+- **Annotation decision before inference:** only images 0/1/2 (approach, near-grasp,
+  suspended bottle needing transport) receive set-valued labels. Later placement/
+  drawer images remain descriptive, because provisional subgoal choices do not
+  certify hidden fit/safety. No hindsight oracle-phase score.
+- **Result:** text-only and RGB0–4 all `establish_grasp`; RGB5 `uncertain`.
+  Primary useful agreement 1/3 equals the task-only baseline. Seven valid outputs,
+  no truncation; consumed pixels/tokens/forward/logits/EOS verified. 728 tests pass.
+- **Interpretation:** no useful phase differentiation demonstrated in this fixed
+  interface on the scored development images. Not a claim of image blindness,
+  general planning inability or impossibility of a semantic-worldview interface.
+- **Alternative causes/next experiments:** independently test visible relationship
+  reading versus task-prior interference; Laya use of a correct supplied coherent
+  situation versus sparse framing; and realistic retention observability versus
+  privileged contact identity. Isolated worktrees/GPU assignments permit direct
+  parallel execution without serializing all jobs through root.
+- **Artifacts:** [findings](../evidence/autonomous_research/visual_subgoal_findings.md),
+  summary JSON and raw `visual-subgoal-*` directories. Original traces unchanged.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

@@ -164,6 +164,23 @@ See [physical approach findings](docs/evidence/autonomous_research/coarse_physic
 
 See [failure controls](docs/evidence/autonomous_research/point_failure_controls.md).
 
+## Update after direct visual subgoal test
+
+- **Observed:** on three prelabelled visual phase cases, the fixed Qwen VLM answers
+  `establish_grasp` throughout, exactly matching its task-only prior: useful label
+  agreement 1/3 in both conditions. All seven scheduled calls are valid and
+  complete; the last unscored image changes the answer to `uncertain`. No claim
+  that RGB is ignored, or that all high-level reasoning architectures fail.
+- **Open competing causes:** scene/relationship reading, binding visible facts to
+  objective vocabulary, and task-prior interference. The three late images are
+  deliberately unscored: proposals cannot be judged as physical certificates.
+- **Parallel next tests:** VLM image-relation reading with task/mirror controls;
+  Laya use of an ideal coherent supplied situation with unchanged action effects;
+  sensor observability of retention in an existing grasp/lift prefix. Each owns
+  an isolated worktree and assigned compute, without runtime integration.
+
+See [visual subgoal findings](docs/evidence/autonomous_research/visual_subgoal_findings.md).
+
 See [initial findings](docs/evidence/autonomous_research/initial_findings.md) for
 independently audited counts, source identities, limitations and example failures.
 

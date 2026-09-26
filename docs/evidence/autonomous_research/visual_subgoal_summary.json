@@ -1,0 +1,174 @@
+{
+  "raw_sha256": "c6b24951478e99f2fff808ad7fa3539edeb644de28467bd92cd11aacfc395365",
+  "evaluation_sha256": "0daf94eabbfd4c6e09989800f942143b88cf8d837eb57b9ed285a85ebf243237",
+  "task_only": {
+    "call_id": "text-only",
+    "generated_token_count": 4,
+    "image_index": null,
+    "label": "establish_grasp",
+    "length_limit_reached": false,
+    "no_terminal_eos": false,
+    "parsed_label": {
+      "label": "establish_grasp",
+      "status": "valid"
+    },
+    "status": "valid",
+    "terminal_eos": true,
+    "unexpected_special_token": false
+  },
+  "rows": [
+    {
+      "call_id": "rgb-0",
+      "generated_token_count": 4,
+      "image_index": 0,
+      "label": "establish_grasp",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "establish_grasp",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": true,
+      "acceptable_labels": [
+        "approach_object"
+      ],
+      "annotation_agreement": false,
+      "useful_accepted_proposal": false,
+      "task_only_annotation_agreement": false,
+      "changed_from_task_only": false
+    },
+    {
+      "call_id": "rgb-1",
+      "generated_token_count": 4,
+      "image_index": 1,
+      "label": "establish_grasp",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "establish_grasp",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": true,
+      "acceptable_labels": [
+        "approach_object",
+        "establish_grasp"
+      ],
+      "annotation_agreement": true,
+      "useful_accepted_proposal": true,
+      "task_only_annotation_agreement": true,
+      "changed_from_task_only": false
+    },
+    {
+      "call_id": "rgb-2",
+      "generated_token_count": 4,
+      "image_index": 2,
+      "label": "establish_grasp",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "establish_grasp",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": true,
+      "acceptable_labels": [
+        "transport_object"
+      ],
+      "annotation_agreement": false,
+      "useful_accepted_proposal": false,
+      "task_only_annotation_agreement": false,
+      "changed_from_task_only": false
+    },
+    {
+      "call_id": "rgb-3",
+      "generated_token_count": 4,
+      "image_index": 3,
+      "label": "establish_grasp",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "establish_grasp",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": false,
+      "acceptable_labels": null,
+      "annotation_agreement": null,
+      "useful_accepted_proposal": null,
+      "task_only_annotation_agreement": null,
+      "changed_from_task_only": false
+    },
+    {
+      "call_id": "rgb-4",
+      "generated_token_count": 4,
+      "image_index": 4,
+      "label": "establish_grasp",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "establish_grasp",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": false,
+      "acceptable_labels": null,
+      "annotation_agreement": null,
+      "useful_accepted_proposal": null,
+      "task_only_annotation_agreement": null,
+      "changed_from_task_only": false
+    },
+    {
+      "call_id": "rgb-5",
+      "generated_token_count": 3,
+      "image_index": 5,
+      "label": "uncertain",
+      "length_limit_reached": false,
+      "no_terminal_eos": false,
+      "parsed_label": {
+        "label": "uncertain",
+        "status": "valid"
+      },
+      "status": "valid",
+      "terminal_eos": true,
+      "unexpected_special_token": false,
+      "primary_evaluation": false,
+      "acceptable_labels": null,
+      "annotation_agreement": null,
+      "useful_accepted_proposal": null,
+      "task_only_annotation_agreement": null,
+      "changed_from_task_only": true
+    }
+  ],
+  "primary_denominator": 3,
+  "primary_annotation_agreements": 1,
+  "primary_useful_accepted_proposals": 1,
+  "task_only_primary_annotation_agreements": 1,
+  "rgb_uncertain_count": 1,
+  "rgb_invalid_count": 0,
+  "scope": "three primary visual-label cases; three descriptive cases; no physical authorization",
+  "run_commit": "3d64d7ccb7e15fd79cac626c66738489e79d8380",
+  "source_type": "lossy full-camera RGB from primitive-trace video reconstruction",
+  "artifacts": {
+    "visual-subgoal-inputs-02/manifest.json": "e2769f39433273d5f6ea36f75fd4a6238159c787311734d35d41a0515155e3b9",
+    "visual-subgoal-labels-01/labels.json": "0daf94eabbfd4c6e09989800f942143b88cf8d837eb57b9ed285a85ebf243237",
+    "visual-subgoal-run-01/episodes.jsonl": "c6b24951478e99f2fff808ad7fa3539edeb644de28467bd92cd11aacfc395365",
+    "visual-subgoal-preflight-01/episodes.jsonl": "af2e571f69cbeed244183653700f35f672603c84ca62860132023418f60cde96"
+  },
+  "regression": {
+    "revision": "3d64d7c",
+    "passed": 728,
+    "log": "runs/autonomous-research/regression-3d64d7c.log"
+  }
+}
