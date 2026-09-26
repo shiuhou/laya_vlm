@@ -1,0 +1,623 @@
+{
+  "version": "interaction-observability-evaluation-v1",
+  "run": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/interaction-observability-paired-01",
+  "semantic_initialization_actual": "assistant_RGB_visual_annotation_before_close",
+  "provenance_erratum": "Raw schema says human_RGB_only_before_close; annotator was the Codex assistant, not a human.",
+  "holding": null,
+  "arms": {
+    "close": {
+      "native_primitives": 17,
+      "native_controls": 136,
+      "sensor_read_sim_time_s": [
+        0.5000000000000003,
+        7.299999999999418
+      ],
+      "per_control_duration_s": {
+        "n": 136,
+        "min": 0.04999999999999449,
+        "median": 0.04999999999999449,
+        "max": 0.050000000000000044
+      },
+      "oracle_bottle_center_delta_mm": [
+        -1.0870348646886754,
+        -0.7915071237556006,
+        113.3998380025406
+      ],
+      "oracle_bilateral_after_seed_controls": 21,
+      "oracle_bilateral_by_step": {
+        "13": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "14": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "15": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "16": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "raw_wrist_force_norm_N_after_seed": {
+        "n": 32,
+        "min": 4.19015335675424,
+        "median": 5.057513573419984,
+        "max": 6.0116524000265565
+      },
+      "endpoint_sensors": {
+        "12": {
+          "joint_aperture_m": 0.07997521147512547,
+          "direct_gripper_qvel_mps": [
+            1.8720221988115197e-06,
+            -1.9879497990810512e-05
+          ],
+          "wrist_force_local_N": [
+            -0.03726400066958106,
+            -0.28811128000801983,
+            -5.0927536220164535
+          ],
+          "wrist_torque_local_Nm": [
+            0.042430287963493886,
+            -0.0012931075006410548,
+            -0.005040590407846298
+          ],
+          "tcp_fk_world_m": [
+            -0.12869634360478602,
+            0.056381041285954885,
+            0.9818148410042636
+          ],
+          "evaluator_geometric_gap_mm": 78.97516797208488
+        },
+        "13": {
+          "joint_aperture_m": 0.03029318569077997,
+          "direct_gripper_qvel_mps": [
+            -0.0032463740190496714,
+            0.0007997533292798289
+          ],
+          "wrist_force_local_N": [
+            0.01567659664919179,
+            -0.15069079818023168,
+            -4.949002914239768
+          ],
+          "wrist_torque_local_Nm": [
+            0.01893340092331322,
+            0.006137987301641608,
+            -0.0016943605095991218
+          ],
+          "tcp_fk_world_m": [
+            -0.1287964156088154,
+            0.05654398377578855,
+            0.9818270387183466
+          ],
+          "evaluator_geometric_gap_mm": 29.301277945476453
+        },
+        "14": {
+          "joint_aperture_m": 0.030033413951878363,
+          "direct_gripper_qvel_mps": [
+            -3.630096628078296e-06,
+            -0.00017168249327698397
+          ],
+          "wrist_force_local_N": [
+            0.00800906666847219,
+            -0.28747887456303506,
+            -5.149964630802107
+          ],
+          "wrist_torque_local_Nm": [
+            0.037078400935792434,
+            -0.0013275163972424674,
+            0.001086818764752834
+          ],
+          "tcp_fk_world_m": [
+            -0.12926964301947644,
+            0.0565313432187216,
+            1.0198979210961598
+          ],
+          "evaluator_geometric_gap_mm": 29.033077847084872
+        },
+        "15": {
+          "joint_aperture_m": 0.029775660434554187,
+          "direct_gripper_qvel_mps": [
+            -0.0027770816060902616,
+            0.0017387693178632614
+          ],
+          "wrist_force_local_N": [
+            0.005045470906537437,
+            -0.28839735451757903,
+            -5.154337412628447
+          ],
+          "wrist_torque_local_Nm": [
+            0.037142673415344864,
+            -0.0009287958249684839,
+            0.0009022759169772923
+          ],
+          "tcp_fk_world_m": [
+            -0.12971987080676722,
+            0.056479341119077105,
+            1.0579850579276961
+          ],
+          "evaluator_geometric_gap_mm": 28.784692136401954
+        },
+        "16": {
+          "joint_aperture_m": 0.028813418482892275,
+          "direct_gripper_qvel_mps": [
+            -9.677426729999909e-06,
+            -9.533173269526599e-06
+          ],
+          "wrist_force_local_N": [
+            0.005415063649024491,
+            -0.2851949756007813,
+            -5.155838860160395
+          ],
+          "wrist_torque_local_Nm": [
+            0.037981088574713884,
+            -0.0007750051641420675,
+            0.000903705983735397
+          ],
+          "tcp_fk_world_m": [
+            -0.13033926953523575,
+            0.05641427664047679,
+            1.0959474431140643
+          ],
+          "evaluator_geometric_gap_mm": 27.813418771398897
+        }
+      },
+      "landmarks": {
+        "bottle_landmark_1": {
+          "frames": 33,
+          "native_ok_after_seed": 32,
+          "on_bottle_including_seed": 33,
+          "off_bottle_including_seed": 0,
+          "unknown_including_seed": 0,
+          "first_off_bottle": null,
+          "forward_backward_residual_px": {
+            "n": 32,
+            "min": 4.57763671875e-05,
+            "median": 0.002699737553484738,
+            "max": 0.04516643285751343
+          },
+          "endpoint_surface_point_delta_m": [
+            -9.378275379934298e-05,
+            -0.0011189794006449053,
+            0.11294237651875028
+          ],
+          "endpoint_tcp_delta_m": [
+            -0.0016429259304497346,
+            3.32353545219044e-05,
+            0.1141326021098007
+          ],
+          "endpoint_point_minus_tcp_delta_m": [
+            0.0015491431766503916,
+            -0.0011522147551668097,
+            -0.00119022559105042
+          ]
+        },
+        "bottle_landmark_2": {
+          "frames": 33,
+          "native_ok_after_seed": 32,
+          "on_bottle_including_seed": 33,
+          "off_bottle_including_seed": 0,
+          "unknown_including_seed": 0,
+          "first_off_bottle": null,
+          "forward_backward_residual_px": {
+            "n": 32,
+            "min": 2.15791860682657e-05,
+            "median": 0.0009327219449914992,
+            "max": 0.0306380707770586
+          },
+          "endpoint_surface_point_delta_m": [
+            -0.002192050687406577,
+            -0.0014786350336314716,
+            0.10980961626557473
+          ],
+          "endpoint_tcp_delta_m": [
+            -0.0016429259304497346,
+            3.32353545219044e-05,
+            0.1141326021098007
+          ],
+          "endpoint_point_minus_tcp_delta_m": [
+            -0.0005491247569568425,
+            -0.001511870388153376,
+            -0.004322985844225968
+          ]
+        },
+        "table_reference": {
+          "frames": 33,
+          "native_ok_after_seed": 0,
+          "on_bottle_including_seed": 0,
+          "off_bottle_including_seed": 1,
+          "unknown_including_seed": 32,
+          "first_off_bottle": {
+            "arm": "close",
+            "role": "table_reference",
+            "capture_id": 13,
+            "after_step": 12,
+            "control": 7,
+            "on_bottle_visual_geometry": false,
+            "tracker_status": "seeded",
+            "forward_backward_residual_px": null
+          },
+          "forward_backward_residual_px": {
+            "n": 0,
+            "min": null,
+            "median": null,
+            "max": null
+          },
+          "endpoint_surface_point_delta_m": null,
+          "endpoint_tcp_delta_m": [
+            -0.0016429259304497346,
+            3.32353545219044e-05,
+            0.1141326021098007
+          ],
+          "endpoint_point_minus_tcp_delta_m": null
+        }
+      }
+    },
+    "open_hold": {
+      "native_primitives": 17,
+      "native_controls": 136,
+      "sensor_read_sim_time_s": [
+        0.5000000000000003,
+        7.299999999999418
+      ],
+      "per_control_duration_s": {
+        "n": 136,
+        "min": 0.04999999999999449,
+        "median": 0.04999999999999449,
+        "max": 0.050000000000000044
+      },
+      "oracle_bottle_center_delta_mm": [
+        0.016185620581921967,
+        0.021411827204900646,
+        -0.0014387479996003094
+      ],
+      "oracle_bilateral_after_seed_controls": 0,
+      "oracle_bilateral_by_step": {
+        "13": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "14": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "15": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "16": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "raw_wrist_force_norm_N_after_seed": {
+        "n": 32,
+        "min": 4.691799201690364,
+        "median": 4.96178647110448,
+        "max": 5.84310298786378
+      },
+      "endpoint_sensors": {
+        "12": {
+          "joint_aperture_m": 0.07997521147512547,
+          "direct_gripper_qvel_mps": [
+            1.8720221988115197e-06,
+            -1.9879497990810512e-05
+          ],
+          "wrist_force_local_N": [
+            -0.03726400066958106,
+            -0.28811128000801983,
+            -5.0927536220164535
+          ],
+          "wrist_torque_local_Nm": [
+            0.042430287963493886,
+            -0.0012931075006410548,
+            -0.005040590407846298
+          ],
+          "tcp_fk_world_m": [
+            -0.12869634360478602,
+            0.056381041285954885,
+            0.9818148410042636
+          ],
+          "evaluator_geometric_gap_mm": 78.97516797208488
+        },
+        "13": {
+          "joint_aperture_m": 0.07998254402757864,
+          "direct_gripper_qvel_mps": [
+            6.642900741876898e-06,
+            -8.675100087248323e-06
+          ],
+          "wrist_force_local_N": [
+            -0.001538593685118587,
+            -0.2888124472919356,
+            -5.093019612654073
+          ],
+          "wrist_torque_local_Nm": [
+            0.040902626099549436,
+            -0.00022296969615814304,
+            -9.079788054852318e-05
+          ],
+          "tcp_fk_world_m": [
+            -0.12872326139431756,
+            0.056658338045814695,
+            0.9818074260810349
+          ],
+          "evaluator_geometric_gap_mm": 78.98251339157677
+        },
+        "14": {
+          "joint_aperture_m": 0.07998770763230628,
+          "direct_gripper_qvel_mps": [
+            6.628529487694411e-06,
+            -4.158234613164889e-06
+          ],
+          "wrist_force_local_N": [
+            0.007626235914519931,
+            -0.2794087883549735,
+            -5.001512355877827
+          ],
+          "wrist_torque_local_Nm": [
+            0.03781857982753816,
+            -0.0014109117906782255,
+            0.001065943914751005
+          ],
+          "tcp_fk_world_m": [
+            -0.1291377309537151,
+            0.05665839196624232,
+            1.0199465565272217
+          ],
+          "evaluator_geometric_gap_mm": 78.98768605877784
+        },
+        "15": {
+          "joint_aperture_m": 0.07999134380876285,
+          "direct_gripper_qvel_mps": [
+            4.816390219704872e-06,
+            -2.779592438993254e-06
+          ],
+          "wrist_force_local_N": [
+            0.005776825828623824,
+            -0.28016942297167474,
+            -5.005942586123424
+          ],
+          "wrist_torque_local_Nm": [
+            0.038005880298977876,
+            -0.0010309683400251178,
+            0.0009316784694133231
+          ],
+          "tcp_fk_world_m": [
+            -0.12953716718422748,
+            0.05661076358138444,
+            1.0581005435295343
+          ],
+          "evaluator_geometric_gap_mm": 78.99132861679733
+        },
+        "16": {
+          "joint_aperture_m": 0.07999390438938161,
+          "direct_gripper_qvel_mps": [
+            3.7041771690825367e-06,
+            -1.6448537628310305e-06
+          ],
+          "wrist_force_local_N": [
+            0.005259194841784014,
+            -0.2771166685189059,
+            -5.007419852856508
+          ],
+          "wrist_torque_local_Nm": [
+            0.03883115232751379,
+            -0.0010394193785995473,
+            0.0009146877699238142
+          ],
+          "tcp_fk_world_m": [
+            -0.1301050229515772,
+            0.056550551344062575,
+            1.0961350334377635
+          ],
+          "evaluator_geometric_gap_mm": 78.9938936913195
+        }
+      },
+      "landmarks": {
+        "bottle_landmark_1": {
+          "frames": 33,
+          "native_ok_after_seed": 32,
+          "on_bottle_including_seed": 14,
+          "off_bottle_including_seed": 19,
+          "unknown_including_seed": 0,
+          "first_off_bottle": {
+            "arm": "open_hold",
+            "role": "bottle_landmark_1",
+            "capture_id": 27,
+            "after_step": 14,
+            "control": 5,
+            "on_bottle_visual_geometry": false,
+            "tracker_status": "native_status_ok",
+            "forward_backward_residual_px": 0.0011765110539272428
+          },
+          "forward_backward_residual_px": {
+            "n": 32,
+            "min": 5.50163458683528e-05,
+            "median": 0.0009210256685037166,
+            "max": 0.21316562592983246
+          },
+          "endpoint_surface_point_delta_m": [
+            -0.24084934062990004,
+            0.01930137754769011,
+            -0.15382644839396187
+          ],
+          "endpoint_tcp_delta_m": [
+            -0.0014086793467911751,
+            0.00016951005810769,
+            0.11432019243349989
+          ],
+          "endpoint_point_minus_tcp_delta_m": [
+            -0.23944066128310887,
+            0.01913186748958242,
+            -0.26814664082746176
+          ]
+        },
+        "bottle_landmark_2": {
+          "frames": 33,
+          "native_ok_after_seed": 32,
+          "on_bottle_including_seed": 33,
+          "off_bottle_including_seed": 0,
+          "unknown_including_seed": 0,
+          "first_off_bottle": null,
+          "forward_backward_residual_px": {
+            "n": 32,
+            "min": 1.52587890625e-05,
+            "median": 7.998797809705138e-05,
+            "max": 0.000308589922497049
+          },
+          "endpoint_surface_point_delta_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "endpoint_tcp_delta_m": [
+            -0.0014086793467911751,
+            0.00016951005810769,
+            0.11432019243349989
+          ],
+          "endpoint_point_minus_tcp_delta_m": [
+            0.0014086793467911751,
+            -0.00016951005810769,
+            -0.11432019243349989
+          ]
+        },
+        "table_reference": {
+          "frames": 33,
+          "native_ok_after_seed": 0,
+          "on_bottle_including_seed": 0,
+          "off_bottle_including_seed": 1,
+          "unknown_including_seed": 32,
+          "first_off_bottle": {
+            "arm": "open_hold",
+            "role": "table_reference",
+            "capture_id": 13,
+            "after_step": 12,
+            "control": 7,
+            "on_bottle_visual_geometry": false,
+            "tracker_status": "seeded",
+            "forward_backward_residual_px": null
+          },
+          "forward_backward_residual_px": {
+            "n": 0,
+            "min": null,
+            "median": null,
+            "max": null
+          },
+          "endpoint_surface_point_delta_m": null,
+          "endpoint_tcp_delta_m": [
+            -0.0014086793467911751,
+            0.00016951005810769,
+            0.11432019243349989
+          ],
+          "endpoint_point_minus_tcp_delta_m": null
+        }
+      }
+    }
+  },
+  "sensor_analysis_sha256": "804ceb863ee06ad4573d10c2920c24d5898fb49633c1a7fb2a78a6f019966ffd",
+  "sensor_seal_sha256": "77752c151c979e234607942a46674f25f3e6664eb66844e4411cff1def076013",
+  "manifest_sha256": "b68dfcbf65048555069bb1c27639915ec2fda9c520822600f81549547031b02f",
+  "seed_sha256": "730b1f9b2fa7cad05c3e37b3acf5b67e236a60ec037de4d2ccfce60f246d683d",
+  "oracle_labels_sha256": "493c7b1ff32943217351d73b631c385199dfaab4d3ed8427a52de32c768945c5",
+  "shared_prefix_controls_bitwise_equal": true,
+  "shared_prefix_controls_compared": 104,
+  "shared_prefix_rgb_equal": true,
+  "replay": {
+    "controls": 272,
+    "all_272_states_exact": true,
+    "max_state_abs_error": 0.0,
+    "result_sha256": "26a017ef0ba3c23027e2df066aee515a45fd5c8a51355fdeb07b5ae9be55e6e5",
+    "raw_output": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/interaction-observability-replay-01"
+  },
+  "archived_width_counterexample": {
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/privileged-reference/task2-preflight-dev-01/episodes.jsonl",
+    "source_sha256": "0bf519b66ace3eede5169a7cc9e4c727bf5c14872157073de87e71ebf8de042a",
+    "records": [
+      {
+        "source_record_seq": 26,
+        "fixture": "reset",
+        "action": "close",
+        "controls": 8,
+        "geometric_gap_before_mm": 76.44557208548721,
+        "geometric_gap_after_mm": 20.81332861035215,
+        "bilateral_target_contact_after": false,
+        "contact_rows_after": []
+      },
+      {
+        "source_record_seq": 54,
+        "fixture": "closed_gripper",
+        "action": "close",
+        "controls": 8,
+        "geometric_gap_before_mm": 20.81332861035215,
+        "geometric_gap_after_mm": 1.1950326659106183,
+        "bilateral_target_contact_after": false,
+        "contact_rows_after": []
+      }
+    ],
+    "not_joint_encoder_aperture": true
+  },
+  "collection_code_commit": "2dd31e0",
+  "replay_code_commit": "c4e4ebe",
+  "protocol_sha256": "9248ac910df32b38a72944ddfa0d9ef634ecc4c5e8d9aad5ffa92d47b8f965f1",
+  "artifacts_sha256": {
+    "evaluation-audit/trajectory-contact-sheet.png": "2824686b06936672db78df0180b383519f21e0ccda7dae6b243c9080f91462db",
+    "evaluation-audit/artifacts.json": "592be9991039faf46f3a9ccb7279c550aec049bc12aa6e9a49371ae77682cabc",
+    "evaluation-audit/membership.json": "43afca90a762375c5cad866a79de40c059b6c3a474be407ae21c1137e78c5d96",
+    "evaluation-audit/first-cap-failure.png": "7f1063e37616ca1ff5bdbc6afc6ccf03de7219a05b93f3bf226b1ca6c08d6f82",
+    "evaluation-audit/trajectory-sensors.png": "afc9b5f23a54804a09ef66e427aa51ca53239a78e0ddf9d9f88d0840fdb1b7d2",
+    "evaluation-audit/summary.json": "b206ad4a193efcc12fccae76919a54e6542d84eafb733770733f2adaf2166283",
+    "annotation-provenance-erratum.json": "8129dab6aea9fddeb14922905807cb7bfb8856903cba65ad6d42de2a821fbcbd"
+  },
+  "report_recompute_equal": true
+}

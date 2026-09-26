@@ -18,7 +18,31 @@ def describe(values):
         'max':float(max(values)) if values else None}
 
 
-def report(source):
+def first_failure_sheet(source, output, analysis, membership):
+    """Inspect the first off-bottle sampled pixel, not just the later depth jump."""
+    miss = next(r for r in membership if r['arm']=='open_hold' and r['role']=='bottle_landmark_1'
+                and r['on_bottle_visual_geometry'] is False)
+    rows = [r for r in analysis['arms']['open_hold'] if r['role']=='bottle_landmark_1']
+    index = next(i for i,r in enumerate(rows) if r['capture_id']==miss['capture_id'])
+    selected = rows[max(0,index-2):index+4]
+    sheet = Image.new('RGB',(len(selected)*256,2*276),'white')
+    for col,r in enumerate(selected):
+        im = Image.open(source/f'open_hold/{r["capture_id"]:04d}.png').convert('RGB')
+        mask = np.load(source/f'evaluator-only/open_hold-{r["capture_id"]:04d}-bottle-mask.npy',allow_pickle=False)
+        for row in (0,1):
+            rgb = np.asarray(im).copy()
+            if row:
+                rgb[mask] = (rgb[mask]*.4+np.array([0,255,0])*.6).astype(np.uint8)
+            tile = Image.fromarray(rgb)
+            x,y = r['point_pixel_index_xy']
+            ImageDraw.Draw(tile).ellipse((x-2,y-2,x+2,y+2),outline='orange',width=1)
+            sheet.paste(tile.crop((192,145,256,209)).resize((256,256)),(col*256,row*276+20))
+            label = f'{r["after_step"]}:{r["control"]} '+('RGB' if row==0 else 'EVALUATOR mask')
+            ImageDraw.Draw(sheet).text((col*256+4,row*276+4),label,fill='black')
+    sheet.save(output/'first-cap-failure.png')
+
+
+def report(source, output_subdir='evaluation'):
     source = Path(source)
     seal = json.loads((source/'sensor-analysis-seal.json').read_text())
     if file_hash(source/'sensor-analysis.json') != seal['sha256'] or seal['oracle_labels_read'] is not False:
@@ -27,7 +51,7 @@ def report(source):
     captures = json.loads((source/'captures.json').read_text())
     controls = [json.loads(line) for line in (source/'sensors.jsonl').read_text().splitlines()]
     labels = json.loads((source/'evaluator-only/labels.json').read_text())
-    output = source/'evaluation'
+    output = source/output_subdir
     output.mkdir(exist_ok=False)
     summary = {'version':'interaction-observability-evaluation-v1', 'run':str(source),
         'semantic_initialization_actual':'assistant_RGB_visual_annotation_before_close',
@@ -143,6 +167,7 @@ def report(source):
     fig.tight_layout()
     fig.savefig(output/'trajectory-sensors.png',dpi=140)
     plt.close(fig)
+    first_failure_sheet(source,output,analysis,membership)
     write_json(output/'artifacts.json', {p.name:file_hash(p) for p in sorted(output.iterdir()) if p.is_file()})
     return summary
 
@@ -150,4 +175,6 @@ def report(source):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--source',required=True)
-    print(json.dumps(report(parser.parse_args().source),indent=2))
+    parser.add_argument('--output-subdir',default='evaluation')
+    args=parser.parse_args()
+    print(json.dumps(report(args.source,args.output_subdir),indent=2))

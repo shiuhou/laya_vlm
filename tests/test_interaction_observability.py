@@ -1,4 +1,5 @@
 import inspect
+import json
 
 import pytest
 
@@ -34,3 +35,11 @@ def test_sensor_reader_and_analyzer_have_no_oracle_dependencies():
     analysis = inspect.getsource(analyze)
     assert 'evaluator-only' not in analysis and 'labels.json' not in analysis
     assert 'retention_label\':None' in analysis
+
+
+def test_offline_evaluator_rejects_changed_analysis_before_loading_oracle(tmp_path):
+    from embodied_runtime.experiments.interaction_observability_report import report
+    (tmp_path/'sensor-analysis.json').write_text('{}')
+    (tmp_path/'sensor-analysis-seal.json').write_text(json.dumps({'sha256':'changed','oracle_labels_read':False}))
+    with pytest.raises(ValueError,match='not intact/sealed'):
+        report(tmp_path)
