@@ -86,6 +86,17 @@ still precede bare action IDs with empty criterion descriptions; numerical
 consequences remain in the state table. These observations describe the actual
 interface and do not establish which part of it caused the ranking failures.
 
+A separate root-agent audit, written without importing the experiment reports,
+reconstructed W/A/B composition from raw archives, checked original source,
+questions and order, manually rebuilt all full native inputs and markers,
+matched all six actual hooks, verified argmax/repeat identity, and read selected
+predicted effects directly from source records. All checks passed with zero new
+model calls. Script and result are preserved at
+`runs/autonomous-research/joint-interface-independent-audit-01/` in the raw root;
+script SHA-256 is
+`dad8aedc006f6fc83a630b43b5b2a496d3de0dc26277162a37afbb913f734675`.
+The tracked evidence JSON includes the independent result and artifact identities.
+
 ## Provenance, limits and next question
 
 The archive gate checked raw B/W/A log hashes, exact reconstructed fixture and

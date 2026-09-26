@@ -35811,5 +35811,81 @@
         "effective": 1.0000158548355103
       }
     }
-  ]
+  ],
+  "independent_root_raw_audit": {
+    "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/joint-interface-independent-audit-01",
+    "result_sha256": "38460bbe06e1ebda19cc23ef7e3ff1c2e377c2e7ffe0e63fb88c9bfd5c6b9cd3",
+    "raw_sha256": "df423600c8a478191a3dfc9fd002c76c502fa1b4fc3128c81cb58b4bb1a1e8b5",
+    "script_sha256": "dad8aedc006f6fc83a630b43b5b2a496d3de0dc26277162a37afbb913f734675",
+    "fixtures": [
+      {
+        "step": 0,
+        "all_original_fields_preserved": true,
+        "input_tokens": 538
+      },
+      {
+        "step": 1,
+        "all_original_fields_preserved": true,
+        "input_tokens": 572
+      },
+      {
+        "step": 10,
+        "all_original_fields_preserved": true,
+        "input_tokens": 814
+      }
+    ],
+    "calls": [
+      {
+        "step": 0,
+        "repeat": 0,
+        "choice": "rotate_x+10deg",
+        "gap_reduction_mm": 4.128455643972416,
+        "closure_mm": 0.0,
+        "actual_forward_matches_independent_full_input": true
+      },
+      {
+        "step": 1,
+        "repeat": 0,
+        "choice": "rotate_x+10deg",
+        "gap_reduction_mm": 7.28201634829275,
+        "closure_mm": 0.0,
+        "actual_forward_matches_independent_full_input": true
+      },
+      {
+        "step": 10,
+        "repeat": 0,
+        "choice": "close",
+        "gap_reduction_mm": -0.05939427125792653,
+        "closure_mm": 0.05683654317062414,
+        "actual_forward_matches_independent_full_input": true
+      },
+      {
+        "step": 10,
+        "repeat": 1,
+        "choice": "close",
+        "gap_reduction_mm": -0.05939427125792653,
+        "closure_mm": 0.05683654317062414,
+        "actual_forward_matches_independent_full_input": true
+      },
+      {
+        "step": 1,
+        "repeat": 1,
+        "choice": "rotate_x+10deg",
+        "gap_reduction_mm": 7.28201634829275,
+        "closure_mm": 0.0,
+        "actual_forward_matches_independent_full_input": true
+      },
+      {
+        "step": 0,
+        "repeat": 1,
+        "choice": "rotate_x+10deg",
+        "gap_reduction_mm": 4.128455643972416,
+        "closure_mm": 0.0,
+        "actual_forward_matches_independent_full_input": true
+      }
+    ],
+    "all_checks_passed": true,
+    "new_model_calls": 0,
+    "limitations": "Independent raw payload/token/argmax/repeat/effect audit; not new inference or physical execution."
+  }
 }
