@@ -1,0 +1,17 @@
+{
+  "inspector": "Codex /root",
+  "inspection_reported_to": "Codex /root/retention_audit",
+  "view_method_reported_by_root": "original resolution",
+  "figure_sha256": "b4fa37602657cbf19a21950bb0d3506045c18a69e68d2383beb85d5d104bd527",
+  "report_manifest_sha256": "52575c32bb40edf610312dbadb1649cd52c5f60045fff3d5b2466826139321f4",
+  "native_output_audit_sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+  "report_review_sha256": "e8d194f5883cfcb2f3a8a3da4454e0186b0708e4b6f730604080c08106e0c3eb",
+  "root_visual_observations": [
+    "Both admitted present points fall on the visible upper bottle body, below the fingers.",
+    "The away bottle is plainly visible lower in the image, with no admitted marker or goal."
+  ],
+  "native_admission_changed": false,
+  "malformed_away_candidates_salvaged": false,
+  "depth_ownership_or_holding_inferred": false,
+  "previous_report_and_receipts_preserved": true
+}
