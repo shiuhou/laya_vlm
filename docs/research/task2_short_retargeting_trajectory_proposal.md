@@ -1,10 +1,13 @@
 # Smallest fresh-reset retargeting trajectory probe
 
-Proposal only, contingent on independently qualified current-support findings.
-No new model call, geometry outcome or physics has been run for this proposal.
-The [four fixed decision records](../evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md)
-all chose `MV_FWD` under stale support; a physical second decision is the earliest
-opportunity to observe whether the resulting trajectories separate.
+Proposal only; physical collection remains held for separate authorization.
+The [current full-BOX support comparison](../evidence/autonomous_research/task2_postevent_box_support_findings.md)
+is complete: the away packet has 2,250 valid points and no nominal endpoint veto.
+The previously saved unguarded cached `MV_DOWN` and fresh `MV_FWD` preferences
+therefore predict a contrast at the first boundary under that common current
+support. A second actual decision can measure what follows the initial move;
+it is no longer described as the earliest possible divergence. No physics has
+run for this proposal.
 
 ## Fixed comparison and budget
 
@@ -29,10 +32,12 @@ After the event, switch only the goal packet:
 | refreshed | admitted post-event whole-bottle slow POINT |
 
 Use the **same current-support packet** in both arms, chosen and source-qualified
-before physical collection. The proposed primary packet is the current full-BOX
+before physical collection. The primary packet is now the sealed current full-BOX
 observed support from this exact away frame, using unchanged full-rectangle
-projection. If the concurrent support studies do not qualify a common packet,
-the physical trial is not released. Do not tune support or choose its definition
+projection: `task2-postevent-box-support-run-01/result.json`, SHA256
+`27de4407329ce72ebc520a81f2e56bf63b0cd9834aa5618c437866d781c19440`,
+`support_packets["away-postevent"].full_support`. This was the proposed definition
+before its result was known. Do not tune support or choose its definition
 according to which arm it lets move. The support remains a partial observation,
 not a scene safety certificate.
 
