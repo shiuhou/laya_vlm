@@ -10,6 +10,14 @@ established.** The current VLM/Laya division is unvalidated. Tested context and
 checkpoint interventions have not earned deploying either model in a larger
 hierarchy. This is bounded negative evidence, not universal model incapacity.
 
+**Current responsibility hypothesis:** semantic localization proposes a target;
+calibrated deterministic geometry handles the tested local approach choices.
+Neither high-level VLM planning nor Laya motor ranking is currently earned by
+the evidence. Target identity, current obstacle support and grasp/holding
+relations are separate unresolved inputs. Test their behavioral contribution
+before assembling a hierarchy. This allocation is provisional, not a claim of
+competent sensor-driven manipulation.
+
 ## What the evidence currently supports
 
 | Belief / kind | Supporting evidence | Against or unresolved | Confidence and falsifier |

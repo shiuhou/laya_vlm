@@ -215,10 +215,10 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `1e665a2`: **1131 tests pass** in43.44s, including
-the scene-event/replay hooks and new source-bound sensor adapters.
-Log: `runs/autonomous-research/regression-closed-empty-event-integration-01.log`,
-SHA256 `15b08cb0c1f28cfcd48578ec3ae9093454f69f5fe81b7720f3c13f0f9000acb5`.
+Latest integrated regression at `97ffa19`: **1173 tests pass** in51.68s, including
+the scene-event/replay hooks, slow POINT control and offline paired adapters.
+Log: `runs/autonomous-research/regression-slow-point-integration-01.log`,
+SHA256 `2d50f04df21ffe94991e01ec36c0d9ab057991b045c600bc4d09d84856d134e7`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
