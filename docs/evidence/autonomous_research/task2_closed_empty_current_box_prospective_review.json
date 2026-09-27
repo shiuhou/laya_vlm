@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "freeze_commit": "428d78e7a9bd473ffac95d480d165c0f7288a905",
+  "preflight_sha256": "7671ec4ce265d0d41898d91de15a3ca520bb5c6c1e6265d581c7eb22c4b20dac",
+  "protocol_sha256": "469457a38792aeaaa28bc835cb681c7b91c86da346297432fda8c2aa0d65dfcd",
+  "source_admission_sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42",
+  "conditions": [
+    "present-postevent",
+    "away-postevent"
+  ],
+  "model_calls_authorized": 2,
+  "physical_gpu": "2",
+  "generation_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "hybrid",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "point_preflight_sha256": "35ff93678d77b147bf1f5e0f4767de9ea2e62d915e2f2db3526eeeece2ce1903",
+  "point_audit_sha256": "e034ead7baad4f3dd24bb992aa556897563e08d5fb9cae034fd93485d575c251",
+  "runner_sha256": "737f22287578949094227a4f88e45c62de5022185f68ab490751516153012290",
+  "reviewer": "root",
+  "review_scope": "Source/protocol review, exact clean freeze/helper identity, stored CPU-preflight/visual-tensor correspondence; no redundant processor reproduction. Producer reports89focused tests and Ruff pass.",
+  "authorization": "Run exactly one ordered two-cold-call batch using original whole-object BOX query/hybrid mode and unchanged strict parser. No extra model calls, no physics; preserve all nonadmissions. Recheck GPU2 availability.",
+  "input_review": {
+    "full_RGB_unchanged": true,
+    "point_coordinates_or_depth_not_in_model_prompt": true,
+    "tokens_per_case": [
+      237,
+      237
+    ],
+    "same_visual_tensors_as_slow_POINT": true,
+    "model_and_versions_match": true
+  },
+  "limits": [
+    "Current BOX is a proposed partial observed support, not segmentation or certified collision geometry.",
+    "Old initial BOX used GPU0 and no recorded seed; no exact-history repetition claim.",
+    "The raw full-depth alternative remains separate; do not combine masks after outcomes.",
+    "Malformed/null BOX must not become empty permissive support."
+  ]
+}
