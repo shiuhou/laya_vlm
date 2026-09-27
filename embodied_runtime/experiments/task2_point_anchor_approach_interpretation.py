@@ -5,7 +5,6 @@ import argparse
 from collections import defaultdict
 import json
 from pathlib import Path
-import shutil
 
 import numpy as np
 from PIL import Image
@@ -163,10 +162,10 @@ def interpret(pair, hashes, output):
             Image.fromarray(frame['rgb']).save(output/(prefix+'_rgb.png'))
             if not np.array_equal(np.asarray(Image.open(output/(prefix+'_rgb.png'))), frame['rgb']):
                 raise ValueError('Unmarked source RGB changed')
-            shutil.copyfile(pair/name/selected['capture']['data']['artifact'], output/(prefix+'_rgbd.npz'))
             relation = returned_packet_relation(point, selected['own_packet'], mount)
             snapshots.append({'label': label, **selected, 'point_world_m': point, 'existing_point_jaw_relation': relation,
-                'unmarked_rgb_artifact': prefix+'_rgb.png', 'rgbd_artifact': prefix+'_rgbd.npz'})
+                'unmarked_rgb_artifact': prefix+'_rgb.png',
+                'rgbd_source_artifact': str(pair/name/selected['capture']['data']['artifact'])})
             panel_row.append((frame['rgb'], selected['capture']['data'], label))
         selected_decision = None if divergence is None else next(row for row in run['decision'] if row['data']['step'] == divergence)
         if selected_decision is not None:

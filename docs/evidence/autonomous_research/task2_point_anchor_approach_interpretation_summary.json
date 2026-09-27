@@ -1,0 +1,1384 @@
+{
+  "pair": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01",
+  "journal_sha256": {
+    "pair": "36a1a4a15cbbc9a9beb54e4ac63f5362220be075a8fc012a618dc98f9e88e4ad",
+    "whole": "690f81aef2fe5b3d2b5aee09d72f269dfbf7f37ee24c1f9a83c061f7ce4b4541",
+    "neck": "3e335ff3d4791f43b74750216fd928470145ea0d34d5a03fbeaba3f2ff492ae8"
+  },
+  "request_sha256": "97eeebaa77c1b050b4de60d42b5f284690daf37038bef2eb020cc5d495c472f3",
+  "batch_request": {
+    "version": "task2-fixed-point-anchors-original-endpoint-guard-v1",
+    "condition_order": [
+      "whole",
+      "neck"
+    ],
+    "fresh_policy_episodes": 2,
+    "separate_verification_replays_per_normally_terminated_condition": 1,
+    "admission_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-admission-01.json",
+    "physical_admission": {
+      "admission_sha256": "753fd32754c67265956c845db0d689f7ca41e2ad1aa1155cb75ee6aecdb14fef",
+      "artifacts": {
+        "point_audit": {
+          "path": "/home/junhongli/projects/laya-embodied-runtime/docs/evidence/autonomous_research/task2_point_region_control_independent_audit.json",
+          "sha256": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1"
+        },
+        "geometry_seal": {
+          "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-goal-cells-run-01/feature-seal.json",
+          "sha256": "2e849dd465a93c6f41a72a3bec31ba1ae5a63b2c3f39345db326daf19fe9c0e5"
+        },
+        "geometry_audit": {
+          "path": "/home/junhongli/projects/laya-embodied-runtime/docs/evidence/autonomous_research/task2_point_anchor_goal_cells_independent_audit.json",
+          "sha256": "bf1ce72a79fd50c796b68e3d41d6b73b474184a8c89501cc3b93d4af1861627c"
+        },
+        "geometry_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-goal-cells-run-01"
+      },
+      "status": "pass",
+      "neck_exact_P_observed_solid_containment": false,
+      "absence_is_physical_clearance": false,
+      "conditions_retained": [
+        "whole",
+        "neck"
+      ],
+      "support_guard_identity": {
+        "version": "task2-fixed-point-anchors-original-endpoint-guard-v1",
+        "condition_order": [
+          "whole",
+          "neck"
+        ],
+        "point_source_sha256": {
+          "episodes.jsonl": "57d9ddcd1348303254d32cf844b0a29e75b90c4eef585a8add4c72afd30b508d",
+          "request.json": "762de6e4a955882fb987988cf561eba36cc5edb9f7dbd6e873e3dcd965db7b9e",
+          "whole/episodes.jsonl": "100701d36b3bd5c79671d0ec1cb7c8b7b2237b9c0bdaa7ccba4d3305f070e19d",
+          "whole/generation-return.json": "84a3ac13640b90d7eca42997e0e1cc8749cdcea68ce27026d44d885bc4e2c5e6",
+          "whole/sensor-result.json": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+          "whole/native-input.json": "23b610a1662fd6b2c0050961be56770c857c7d95fca17c4dfd827f0411e06e2e",
+          "whole/manifest.json": "045556bd775ad38bd000785b92ea46ab0f11b65ab18a733b629478273e21cc82",
+          "neck/episodes.jsonl": "014458d3129cea55dded74c434eb1bd8adf854f68055a793f659c453311483a3",
+          "neck/generation-return.json": "769b1f87d82636a1b56fa82581e8d805df58e0d7baf79aa5e841521ebc723553",
+          "neck/sensor-result.json": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d",
+          "neck/native-input.json": "1a3f1470ed994660cbfb3aa6958724706df098681c1cd432be5bdeb785f704a8",
+          "neck/manifest.json": "042617b9071e6e272ec2c63feef46a98cc947d4cddda2da75557d1cd40f1c1c9"
+        },
+        "source_frame_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+        "full_BOX_bounds_xyxy": [
+          208,
+          156,
+          228,
+          223
+        ],
+        "full_BOX_point_count": 1340,
+        "full_support_sha256": "a98a96531f05036db290bef1bd98e35b5a6add30abc5a1e2fa5d2a5b4d7d3fba",
+        "calibration_sha256": "d4f4ff1bacde42ebe3fc5fab9255f1f1ecd9bbef51c6551b7fdf129d2c8fc9f8",
+        "endpoint_guard_sha256": "5782d1905481f14903ea66d10dc91da1fb10382c929fc3da6e4d878b5d57c378",
+        "source_roles": {
+          "goal": "fixed_admitted_native_POINT",
+          "guard": "original_full_BOX_observed_depth_support"
+        },
+        "baseline_protocol_sha256": "c04c9b2cea516153ee03444d3d63f11fcd6cc633b647b6e256b2e3b86ae6bc47",
+        "protocol_sha256": "a076dfc6e7ab06d096b039b166620b9643e28f407bb80815ddbcd577da482979",
+        "new_model_calls": 0,
+        "archived_controls_in_collection": false,
+        "original_BOX_point_is_goal": false,
+        "gap_objective_used": false
+      }
+    },
+    "review_sha256": "ffa762c0b5984b0389397b4b71859c98792731f4032fcd1e7ffc83379f1670e6",
+    "new_model_calls": 0,
+    "retries": 0
+  },
+  "source_sha256": {
+    "interaction-observability-paired-01/close/0000.npz": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+    "robot-geometry-observability-03/robot-calibration.json": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa",
+    "task2-point-region-control-run-01/whole/sensor-result.json": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+    "task2-point-region-control-run-01/neck/sensor-result.json": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d"
+  },
+  "existing_helper_sha256": {
+    "task2_point_jaw_geometry.py": "71a1d2c0bbf444f6f418ca2fec3a873e697da692def18cbb8cf4b9df0777bbd2",
+    "proprio_frame_consistency.py": "3661e810a9ffb90c00b0c83a8db79559b940bf421fcf3cb2720e8caa43021e20"
+  },
+  "first_comparable_selected_token_divergence_step": 5,
+  "comparable_physical_prefix_actions": 5,
+  "initial_own_packets_equal": true,
+  "physical_prefix_control_native_data_equal": true,
+  "physical_prefix_all_capture_arrays_equal": true,
+  "first_divergence_exclusions_equal": true,
+  "new_model_physics_render_calls": 0,
+  "visual_inspection": {
+    "receipt_sha256": "d81ded0ce630defbf78443348ee41815488fbbf35e67af29ed3c31d44daddea1",
+    "status": "inspected",
+    "observer": "Codex retention_audit; qualitative stored-RGB reading, not human or semantic-ground-truth adjudication",
+    "artifacts": {
+      "actual_rgb_boundaries.png": "f320b40ee5d7d9fbf7c220a487d4e0ff7351d31df1daff7c2f130578d0f87e6d",
+      "whole_terminal_rgb.png": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763",
+      "neck_terminal_rgb.png": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d"
+    },
+    "reading": "Both terminal images look very similar. The hand partly occludes the upper bottle neck/cap; visible fingers flank that area. This image evidence does not establish bilateral pad contact, enclosed target extent, ownership, holding, temporal stability or grasp superiority for either arm.",
+    "source_RGB_depth_inspected": true,
+    "source_point_depths_m": {
+      "whole": 0.9939957857131958,
+      "neck": 0.9737445712089539
+    },
+    "no_new_model_physics_render_calls": true,
+    "raw_interpretation_sha256": "bfb681e9913dfb154843542685b6ee140e90200b90601188e15b1e7160e90aea"
+  },
+  "limits": [
+    "STOP executes no hold and does not establish a stable pose",
+    "cached point-to-pad-prism algebra is not current visual identity, extent, fit or a grasp",
+    "endpoint guard is not swept clearance; contact evidence remains a separate full native audit",
+    "if the common physical-prefix checks fail, the token difference is not an isolated goal-only causal comparison"
+  ],
+  "raw_interpretation_sha256": "bfb681e9913dfb154843542685b6ee140e90200b90601188e15b1e7160e90aea",
+  "conditions": [
+    {
+      "condition": "whole",
+      "journal_sha256": "690f81aef2fe5b3d2b5aee09d72f269dfbf7f37ee24c1f9a83c061f7ce4b4541",
+      "replay_sha256": "d784b0bc206fcbe07fc376426610b47e9f10fc38ae23d9a67ae3838dc9aaedd0",
+      "fixed_point_source": {
+        "position_world_m": [
+          -0.11673469557117522,
+          0.058971097589474636,
+          0.9883583307522877
+        ],
+        "sample_pixel_xy": [
+          219,
+          190
+        ],
+        "sample_pixel_center_xy": [
+          219.5,
+          190.5
+        ],
+        "depth_m": 0.9939957857131958,
+        "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+      },
+      "termination": {
+        "config_hash": "cae7853778083b2b290af9003e8016a0d7e53fc41f54404bcc43f8a919eb5f04",
+        "data": {
+          "attempted_actions": 30,
+          "completed_actions": 30,
+          "first_contact_evaluator_only": null,
+          "grasp_attempted": false,
+          "last_step": 30,
+          "new_model_calls": 0,
+          "reason": "rule_no_strict_nominal_improvement",
+          "task_success_claim": false
+        },
+        "kind": "termination",
+        "previous_record_id": "e2bae2fec39eaf2d9c340d5eb6061abb18f9dab46996d099091d3685fbc2808f",
+        "record_id": "034cf5a5184b23c53b05cd54bbdc4fda2ae3a7a2a4debef226a58dac4c1696db",
+        "run_id": "whole",
+        "schema_version": "stage2-evidence-v1",
+        "seq": 12634,
+        "wall_time": 1790470957.2705784
+      },
+      "action_tokens": [
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_FWD"
+      ],
+      "snapshots": [
+        {
+          "label": "initial",
+          "own_record_id": "bdf20c54db695e852466679c0ee643e26a6a6358792f44fc0c3da3367feb93ec",
+          "own_record_field": "initial_own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.21526851233528546,
+              -0.00259323844760531,
+              1.1632437553471047
+            ],
+            "robot0_eef_quat": [
+              0.9995735265117577,
+              -5.235421737631585e-05,
+              -0.029199457161938492,
+              0.0003925013773302122
+            ],
+            "robot0_gripper_qpos": [
+              0.038720970790529476,
+              -0.038724601294958035
+            ],
+            "robot0_gripper_qvel": [
+              0.0032831932807376573,
+              -0.003243283316333804
+            ]
+          },
+          "capture": {
+            "config_hash": "cae7853778083b2b290af9003e8016a0d7e53fc41f54404bcc43f8a919eb5f04",
+            "data": {
+              "artifact": "frames/capture-000001.npz",
+              "artifact_sha256": "0898dec101c98c8dcb78d9488158955c3225c780820c2fd5b5d24b2d845b6ec3",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 1,
+              "capture_sim_time": 0.5000000000000003
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "1dc3ffe7d0db4a494ed53016224f694d25a3b4158140d2d9a193dade2cd32009",
+            "record_id": "16c63698f12bc35a85c69858093ef7ae1e5a71d28722f6c307c6c9de85c138fd",
+            "run_id": "whole",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 1,
+            "wall_time": 1790470898.562217
+          },
+          "boundary_time_s": 0.5000000000000003,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.11673469557117522,
+            0.058971097589474636,
+            0.9883583307522877
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.061710132785550216,
+              0.1085666961271956,
+              0.16878721591730253
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.06170831753333594,
+              0.1085666961271956,
+              0.17238721591730252
+            ],
+            "world_TCP_to_fixed_point_m": 0.20996188285853018,
+            "signed_finger_joints_m": [
+              0.038720970790529476,
+              -0.038724601294958035
+            ],
+            "encoder_aperture_m": 0.07744557208548751,
+            "static_facing_pad_gap_m": 0.07644557208548751,
+            "facing_gap_x_interval_m": [
+              -0.038220970790529475,
+              0.038224601294958034
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.09993110357607969,
+            "high_facing_plane_minus_point_m": -0.023485531490592182,
+            "inside_nonnegative_gap_prism": false,
+            "left_pad_box_point_distance_m": 0.21707842497336005,
+            "right_pad_box_point_distance_m": 0.19333033598617588,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "whole_initial_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/whole/frames/capture-000001.npz"
+        },
+        {
+          "label": "pre_first_divergence",
+          "own_record_id": "c1b78c2e3d715a758987da02895c33f56720ff0bea8be7286b2c84744cb86e4b",
+          "own_record_field": "own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.21491148773858648,
+              -0.0024946091058820354,
+              1.1160100911674493
+            ],
+            "robot0_eef_quat": [
+              0.9995867296096871,
+              1.705277142949324e-05,
+              -0.028746076725891113,
+              0.00018102563755107576
+            ],
+            "robot0_gripper_qpos": [
+              0.03979422446717906,
+              -0.03979525447583329
+            ],
+            "robot0_gripper_qvel": [
+              0.00018022799132375034,
+              -0.00018001347778045078
+            ]
+          },
+          "capture": {
+            "config_hash": "cae7853778083b2b290af9003e8016a0d7e53fc41f54404bcc43f8a919eb5f04",
+            "data": {
+              "artifact": "frames/capture-000006.npz",
+              "artifact_sha256": "ff2bfb3b4f9ebaea16be8dd15f2850a86b04266d0f5940710c64765534898501",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 6,
+              "capture_sim_time": 2.4999999999999463
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "6c98c079c2f5dd70c9dfee294094ae7769843f9487c73c2cbc676e09503c38b7",
+            "record_id": "4cb1e8d59f7143b53063052b8481712c6abd552f4de464a98300eb89694143a5",
+            "run_id": "whole",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 2106,
+            "wall_time": 1790470908.2230031
+          },
+          "boundary_time_s": 2.4999999999999463,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.11673469557117522,
+            0.058971097589474636,
+            0.9883583307522877
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.06150740609472924,
+              0.10535193604550433,
+              0.12177641858707508
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.061506891090402124,
+              0.10535193604550433,
+              0.12537641858707507
+            ],
+            "world_TCP_to_fixed_point_m": 0.1723707851027328,
+            "signed_finger_joints_m": [
+              0.03979422446717906,
+              -0.03979525447583329
+            ],
+            "encoder_aperture_m": 0.07958947894301235,
+            "static_facing_pad_gap_m": 0.07858947894301235,
+            "facing_gap_x_interval_m": [
+              -0.03929422446717906,
+              0.03929525447583329
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.1008016305619083,
+            "high_facing_plane_minus_point_m": -0.022212151618895948,
+            "inside_nonnegative_gap_prism": false,
+            "left_pad_box_point_distance_m": 0.18279932115868394,
+            "right_pad_box_point_distance_m": 0.15315550380503704,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "whole_pre_first_divergence_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/whole/frames/capture-000006.npz"
+        },
+        {
+          "label": "terminal",
+          "own_record_id": "28defa385a615d555cb39d58d3b2a569e0ab2a5466eaa579fc32dc1787919a48",
+          "own_record_field": "own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.11797678918575412,
+              0.056279970375673984,
+              1.0313076825422585
+            ],
+            "robot0_eef_quat": [
+              0.99961244467775,
+              -0.00016702603463064625,
+              -0.02783750533526106,
+              -7.644857189443612e-05
+            ],
+            "robot0_gripper_qpos": [
+              0.03999848348727919,
+              -0.03999943013435018
+            ],
+            "robot0_gripper_qvel": [
+              1.6791343262305907e-06,
+              -1.5174061789080745e-07
+            ]
+          },
+          "capture": {
+            "config_hash": "cae7853778083b2b290af9003e8016a0d7e53fc41f54404bcc43f8a919eb5f04",
+            "data": {
+              "artifact": "frames/capture-000031.npz",
+              "artifact_sha256": "3335eb94ccbc04ff40dddf9029e42747c234458e4c818c2da407d2ec57da99b5",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 31,
+              "capture_sim_time": 12.500000000000844
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "41a5a59500aac185d8fbcb4b9023ca9a30a2cf690fd0d2e4956e640ad6942309",
+            "record_id": "dee5889c345c6cb992e5103c654645c06f0dfc25bfd773bfad0dceb417112102",
+            "run_id": "whole",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 12631,
+            "wall_time": 1790470956.1821673
+          },
+          "boundary_time_s": 12.500000000000844,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.11673469557117522,
+            0.058971097589474636,
+            0.9883583307522877
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.0026853821874078983,
+              0.003629561299788772,
+              0.04281409567753973
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.002684908863872404,
+              0.003629561299788772,
+              0.04641409567753973
+            ],
+            "world_TCP_to_fixed_point_m": 0.04305150150002782,
+            "signed_finger_joints_m": [
+              0.03999848348727919,
+              -0.03999943013435018
+            ],
+            "encoder_aperture_m": 0.07999791362162936,
+            "static_facing_pad_gap_m": 0.07899791362162936,
+            "facing_gap_x_interval_m": [
+              -0.03949848348727919,
+              0.03949943013435018
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.042183865674687085,
+            "high_facing_plane_minus_point_m": 0.03681404794694228,
+            "inside_nonnegative_gap_prism": false,
+            "left_pad_box_point_distance_m": 0.057053670083380435,
+            "right_pad_box_point_distance_m": 0.05320636120768776,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "whole_terminal_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/whole/frames/capture-000031.npz"
+        }
+      ],
+      "first_cross_arm_divergence_decision": {
+        "record_id": "ba52284e275f6ab70b8ba55798c9ad025cea08de7764b54b9a50d7d90f071a8a",
+        "step": 5,
+        "selected": "MV_DOWN",
+        "unguarded_rule_token": "MV_DOWN"
+      },
+      "terminal_decision": {
+        "step": 30,
+        "selected": "STOP",
+        "live_tcp_to_fixed_proxy_m": 0.04305150150002782,
+        "unguarded_rule_token": "MV_DOWN",
+        "all_seven_candidates": {
+          "MV_BACK": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              -0.01,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.04447778831842334,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_DOWN": {
+            "contained_point_count": 32,
+            "excluded": true,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              -0.01
+            ],
+            "nominal_tcp_to_P_m": 0.033082393287177436,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 32,
+                "full_support_indices": [
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155
+                ]
+              }
+            },
+            "reason": "observed_point_inside_nominal_endpoint"
+          },
+          "MV_FWD": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.01,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.04391571369242813,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_LEFT": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.01,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.043584506847398015,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_RIGHT": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              -0.01,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.04480239196385513,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_UP": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              0.01
+            ],
+            "nominal_tcp_to_P_m": 0.05303224318474858,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "STOP": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.04305150150002782,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "terminal_option_no_primitive"
+          }
+        }
+      }
+    },
+    {
+      "condition": "neck",
+      "journal_sha256": "3e335ff3d4791f43b74750216fd928470145ea0d34d5a03fbeaba3f2ff492ae8",
+      "replay_sha256": "0134e2abf91aeabb8bc36880a77b3e237f7711e2e88ca38bbed0faadbae5326b",
+      "fixed_point_source": {
+        "position_world_m": [
+          -0.12337491393454869,
+          0.05776965007435101,
+          1.0288145621732854
+        ],
+        "sample_pixel_xy": [
+          219,
+          173
+        ],
+        "sample_pixel_center_xy": [
+          219.5,
+          173.5
+        ],
+        "depth_m": 0.9737445712089539,
+        "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+      },
+      "termination": {
+        "config_hash": "6bae375b776940058d8ca7b38f1d8e8ad80d01f85c21f0b5e6f5bce4ac61d2d2",
+        "data": {
+          "attempted_actions": 29,
+          "completed_actions": 29,
+          "first_contact_evaluator_only": null,
+          "grasp_attempted": false,
+          "last_step": 29,
+          "new_model_calls": 0,
+          "reason": "rule_no_strict_nominal_improvement",
+          "task_success_claim": false
+        },
+        "kind": "termination",
+        "previous_record_id": "e9eecd3ae07e4efbfca4449dc6cae405adba8c9891868214d6ab322834ff5c02",
+        "record_id": "a3b33dd7e2625c78c3f88aad116b5ce0c49cc11de2264a29ca0bcf206f850c78",
+        "run_id": "neck",
+        "schema_version": "stage2-evidence-v1",
+        "seq": 12213,
+        "wall_time": 1790471041.7286403
+      },
+      "action_tokens": [
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_LEFT",
+        "MV_DOWN",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_LEFT",
+        "MV_FWD",
+        "MV_DOWN",
+        "MV_LEFT"
+      ],
+      "snapshots": [
+        {
+          "label": "initial",
+          "own_record_id": "a633e61b3cc240e679eb3705b1c3d07a7b71727f4bab1f2b504b71c5ee92602d",
+          "own_record_field": "initial_own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.21526851233528546,
+              -0.00259323844760531,
+              1.1632437553471047
+            ],
+            "robot0_eef_quat": [
+              0.9995735265117577,
+              -5.235421737631585e-05,
+              -0.029199457161938492,
+              0.0003925013773302122
+            ],
+            "robot0_gripper_qpos": [
+              0.038720970790529476,
+              -0.038724601294958035
+            ],
+            "robot0_gripper_qvel": [
+              0.0032831932807376573,
+              -0.003243283316333804
+            ]
+          },
+          "capture": {
+            "config_hash": "6bae375b776940058d8ca7b38f1d8e8ad80d01f85c21f0b5e6f5bce4ac61d2d2",
+            "data": {
+              "artifact": "frames/capture-000001.npz",
+              "artifact_sha256": "0898dec101c98c8dcb78d9488158955c3225c780820c2fd5b5d24b2d845b6ec3",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 1,
+              "capture_sim_time": 0.5000000000000003
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "d04d25124691e2dc4d4cc366f35ec6858f21d871ef1451f6100860854de76c6e",
+            "record_id": "86a6ec65c2663f772042e34b531ec0e93413e0dcb910508bf990301e0eda1063",
+            "run_id": "neck",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 1,
+            "wall_time": 1790470985.883595
+          },
+          "boundary_time_s": 0.5000000000000003,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.12337491393454869,
+            0.05776965007435101,
+            1.0288145621732854
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.06047627446050719,
+              0.09957636335430409,
+              0.1287885391004303
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.06047445920829291,
+              0.09957636335430409,
+              0.1323885391004303
+            ],
+            "world_TCP_to_fixed_point_m": 0.17366438816036536,
+            "signed_finger_joints_m": [
+              0.038720970790529476,
+              -0.038724601294958035
+            ],
+            "encoder_aperture_m": 0.07744557208548751,
+            "static_facing_pad_gap_m": 0.07644557208548751,
+            "facing_gap_x_interval_m": [
+              -0.038220970790529475,
+              0.038224601294958034
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.09869724525103667,
+            "high_facing_plane_minus_point_m": -0.022251673165549157,
+            "inside_nonnegative_gap_prism": false,
+            "left_pad_box_point_distance_m": 0.18330271466861062,
+            "right_pad_box_point_distance_m": 0.15511882275454658,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "neck_initial_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/neck/frames/capture-000001.npz"
+        },
+        {
+          "label": "pre_first_divergence",
+          "own_record_id": "b944fc29d4164db4c40369e7943dd08b1ce59fd7e1717361a766211ba932b821",
+          "own_record_field": "own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.21491148773858648,
+              -0.0024946091058820354,
+              1.1160100911674493
+            ],
+            "robot0_eef_quat": [
+              0.9995867296096871,
+              1.705277142949324e-05,
+              -0.028746076725891113,
+              0.00018102563755107576
+            ],
+            "robot0_gripper_qpos": [
+              0.03979422446717906,
+              -0.03979525447583329
+            ],
+            "robot0_gripper_qvel": [
+              0.00018022799132375034,
+              -0.00018001347778045078
+            ]
+          },
+          "capture": {
+            "config_hash": "6bae375b776940058d8ca7b38f1d8e8ad80d01f85c21f0b5e6f5bce4ac61d2d2",
+            "data": {
+              "artifact": "frames/capture-000006.npz",
+              "artifact_sha256": "ff2bfb3b4f9ebaea16be8dd15f2850a86b04266d0f5940710c64765534898501",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 6,
+              "capture_sim_time": 2.4999999999999463
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "16edf2fed3eabc7ee2ecc6f0336b99d25d6ea96675706df9ffea374a46fae78e",
+            "record_id": "adadf01e49c8b16855d39e5d081bcee9f2684365f66421ca0e05cedd11c339a2",
+            "run_id": "neck",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 2106,
+            "wall_time": 1790470995.3256636
+          },
+          "boundary_time_s": 2.4999999999999463,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.12337491393454869,
+            0.05776965007435101,
+            1.0288145621732854
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.060291652628543024,
+              0.09639770846375718,
+              0.08176908939906341
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.06029113762421591,
+              0.09639770846375718,
+              0.08536908939906342
+            ],
+            "world_TCP_to_fixed_point_m": 0.14004922547053392,
+            "signed_finger_joints_m": [
+              0.03979422446717906,
+              -0.03979525447583329
+            ],
+            "encoder_aperture_m": 0.07958947894301235,
+            "static_facing_pad_gap_m": 0.07858947894301235,
+            "facing_gap_x_interval_m": [
+              -0.03929422446717906,
+              0.03929525447583329
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.09958587709572209,
+            "high_facing_plane_minus_point_m": -0.020996398152709733,
+            "inside_nonnegative_gap_prism": false,
+            "left_pad_box_point_distance_m": 0.15400479788957205,
+            "right_pad_box_point_distance_m": 0.11819068161673084,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "neck_pre_first_divergence_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/neck/frames/capture-000006.npz"
+        },
+        {
+          "label": "terminal",
+          "own_record_id": "d48b8a2f1ab7d11d07e4178e05d51bd7f825e0be8ef0a2f6da630acb205de52b",
+          "own_record_field": "own_observations",
+          "own_packet": {
+            "robot0_eef_pos": [
+              -0.12697818678399897,
+              0.055804330565249166,
+              1.0316871225433253
+            ],
+            "robot0_eef_quat": [
+              0.9995983833509899,
+              0.00020524549483663668,
+              -0.02833776682942868,
+              2.911174085722286e-05
+            ],
+            "robot0_gripper_qpos": [
+              0.039998514901787977,
+              -0.03999860677570724
+            ],
+            "robot0_gripper_qvel": [
+              -5.716656488891702e-06,
+              -8.242502914209834e-06
+            ]
+          },
+          "capture": {
+            "config_hash": "6bae375b776940058d8ca7b38f1d8e8ad80d01f85c21f0b5e6f5bce4ac61d2d2",
+            "data": {
+              "artifact": "frames/capture-000030.npz",
+              "artifact_sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+              "calibration_id": "95691ce06d6cb61abbcd4510fac4619e1c1b6c3084e8f82df2ded50c8ad38d51",
+              "camera_name": "agentview",
+              "capture_seq": 30,
+              "capture_sim_time": 12.10000000000071
+            },
+            "kind": "vision_capture",
+            "previous_record_id": "036f251cc05f9587496540e83e2ef624f7f26eb5e2a3339af01b67f2a87760d3",
+            "record_id": "e81e074105057cd72c921f817f1f98543726bc251ce8ff98c0789a6ded478fbb",
+            "run_id": "neck",
+            "schema_version": "stage2-evidence-v1",
+            "seq": 12210,
+            "wall_time": 1790471040.6485012
+          },
+          "boundary_time_s": 12.10000000000071,
+          "exact_own_sample_time_s": null,
+          "point_world_m": [
+            -0.12337491393454869,
+            0.05776965007435101,
+            1.0288145621732854
+          ],
+          "existing_point_jaw_relation": {
+            "fixed_point_in_site_m": [
+              0.001963968646593144,
+              0.003761027201309385,
+              0.0026636742717861877
+            ],
+            "fixed_point_relative_to_facing_gap_midpoint_m": [
+              0.001963922709633512,
+              0.003761027201309385,
+              0.006263674271786188
+            ],
+            "world_TCP_to_fixed_point_m": 0.005009756389283383,
+            "signed_finger_joints_m": [
+              0.039998514901787977,
+              -0.03999860677570724
+            ],
+            "encoder_aperture_m": 0.07999712167749522,
+            "static_facing_pad_gap_m": 0.07899712167749522,
+            "facing_gap_x_interval_m": [
+              -0.039498514901787976,
+              0.03949860677570724
+            ],
+            "pad_y_interval_m": [
+              -0.008,
+              0.008
+            ],
+            "pad_z_interval_m": [
+              -0.0116,
+              0.0044
+            ],
+            "point_minus_low_facing_plane_m": 0.04146248354838112,
+            "high_facing_plane_minus_point_m": 0.037534638129114097,
+            "inside_nonnegative_gap_prism": true,
+            "left_pad_box_point_distance_m": 0.04146248354838113,
+            "right_pad_box_point_distance_m": 0.0375346381291141,
+            "target_center_extent_identity_or_grasp_fit_established": false
+          },
+          "unmarked_rgb_artifact": "neck_terminal_rgb.png",
+          "rgbd_source_artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/neck/frames/capture-000030.npz"
+        }
+      ],
+      "first_cross_arm_divergence_decision": {
+        "record_id": "6be3e542bbee0003e42c62f2881c1a84d0a83f1c2c62e115cec55ad86cef411b",
+        "step": 5,
+        "selected": "MV_FWD",
+        "unguarded_rule_token": "MV_FWD"
+      },
+      "terminal_decision": {
+        "step": 29,
+        "selected": "STOP",
+        "live_tcp_to_fixed_proxy_m": 0.005009756389283383,
+        "unguarded_rule_token": "STOP",
+        "all_seven_candidates": {
+          "MV_BACK": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              -0.01,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.014041478414646062,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_DOWN": {
+            "contained_point_count": 36,
+            "excluded": true,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              -0.01
+            ],
+            "nominal_tcp_to_P_m": 0.008224746298772227,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 36,
+                "full_support_indices": [
+                  53,
+                  70,
+                  71,
+                  72,
+                  73,
+                  74,
+                  75,
+                  90,
+                  91,
+                  92,
+                  93,
+                  94,
+                  95,
+                  96,
+                  110,
+                  111,
+                  112,
+                  113,
+                  114,
+                  115,
+                  116,
+                  130,
+                  131,
+                  132,
+                  133,
+                  134,
+                  135,
+                  136,
+                  150,
+                  151,
+                  152,
+                  153,
+                  154,
+                  155,
+                  156,
+                  173
+                ]
+              }
+            },
+            "reason": "observed_point_inside_nominal_endpoint"
+          },
+          "MV_FWD": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.01,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.007282321202127801,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_LEFT": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.01,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.009262357631722541,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_RIGHT": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              -0.01,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.012822014243557936,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "MV_UP": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              0.01
+            ],
+            "nominal_tcp_to_P_m": 0.013511064594648488,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "no_observed_endpoint_containment"
+          },
+          "STOP": {
+            "contained_point_count": 0,
+            "excluded": false,
+            "nominal_delta_m": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "nominal_tcp_to_P_m": 0.005009756389283383,
+            "proxies": {
+              "gripper0_finger1_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger1_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_finger2_pad_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              },
+              "gripper0_hand_collision": {
+                "contained_point_count": 0,
+                "full_support_indices": []
+              }
+            },
+            "reason": "terminal_option_no_primitive"
+          }
+        }
+      }
+    }
+  ]
+}
