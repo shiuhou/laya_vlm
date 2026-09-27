@@ -1,0 +1,225 @@
+{
+  "status": "PASS",
+  "freeze": "e4ce123f391969f542dbb8985cf3282a181103eb",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01",
+  "preflight_sha256": "35ff93678d77b147bf1f5e0f4767de9ea2e62d915e2f2db3526eeeece2ce1903",
+  "prospective_review_sha256": "8ae31671ab20adf91cc29413e2a0fc078f1307ce4f4d86f3197e30cee1165757",
+  "journal_sha256": "f89ad281cc4e7ac168047c31d33a1c1b54db84700a1f7ad1091833b061422316",
+  "request_sha256": "a961137cf551135017eb3d7532d4b79ad444f05d4bdb9070e4b1ff6c1d51ec29",
+  "protocol_sha256": "368fc7f6080d73846a741c494d4235221ba804825e1ac1f7f329c6e7c3a2af3f",
+  "generation_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "slow",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "hybrid_preflight_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+  "hybrid_audit_sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+  "hybrid_reference": {
+    "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-fresh-point-run-01",
+    "preflight_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+    "audit_sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+    "exit_receipt_sha256": "a3d807fb4d90a479e35e8cc0e6d6f615af14b0a76e8a25afcfee43773bd846ad",
+    "journal_sha256": "5e3e146be17297a28b512a44e6b1e6710f1277db60c2b7be4c975f4856f78720"
+  },
+  "exit_receipt_sha256": "685db30481a548fe1c08a494c58172a1c7cd959915ec3eafcab2d96d599e8c89",
+  "model_calls": 2,
+  "fresh_processes": 2,
+  "physical_gpu": "2",
+  "retries": 0,
+  "conditions": [
+    {
+      "case_id": "present-postevent",
+      "pid": 2548694,
+      "pgid": 2548624,
+      "journal_sha256": "38207a1bd261295fbf2a323cd6f981fc3384e2d983d93a3ddfd3fe153fc770a1",
+      "sensor_sha256": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+      "raw_return_sha256": "c660cbf3f91d0dcdb76c5df085b6d03b7242c13cad4cc2dd245436e15f7a4ab3",
+      "native_input_sha256": "4bc74c452a804934292cd03216575dbd59238fe83656d2c3e251f05d5e6dbd40",
+      "manifest_sha256": "99702254cfefd4d489d590cf566a90a9dcbd4c9bf6a069cb752f37ceb558d077",
+      "resolved_config_sha256": "c25aa8d2ae4ff9ad36e6988f8526162c6364badac3b008410a5ad198a5a7f6f9",
+      "generation_settings_sha256": "e74ef22b53d2b7c005a73f5af0a644981ecf10a93e951dd1f5960b06fa40bedd",
+      "generation_settings": {
+        "max_new_tokens": 256,
+        "use_cache": true,
+        "generation_mode": "slow",
+        "temperature": 0.0,
+        "do_sample": false,
+        "verbose": false
+      },
+      "native_input_npz_sha256": "bd800327a724906429496754d89efb4c74416714cef1247d684af647ecefaca2",
+      "rgb_input_sha256": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152245,
+        152180,
+        151669,
+        151645
+      ],
+      "raw_output": "<ref>the wine bottle</ref><box><568><503></box><|im_end|>",
+      "token_count": 10,
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          568,
+          503
+        ],
+        "continuous_xy": [
+          218.11199999999997,
+          193.152
+        ],
+        "pixel_index_xy": [
+          218,
+          193
+        ]
+      },
+      "parsed_candidates_not_admitted_separately": {
+        "status": "single_point",
+        "points": [
+          {
+            "normalized": [
+              568,
+              503
+            ],
+            "continuous_xy": [
+              218.11199999999997,
+              193.152
+            ],
+            "sample_pixel_xy": [
+              218,
+              193
+            ]
+          }
+        ],
+        "boxes": [],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "hybrid_baseline": {
+        "sensor_sha256": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+        "raw_output": "<ref>the wine bottle</ref><box><568><503></box><|im_end|>",
+        "status": "admitted_rgb_point",
+        "reason": null,
+        "point": {
+          "normalized": [
+            568,
+            503
+          ],
+          "continuous_xy": [
+            218.11199999999997,
+            193.152
+          ],
+          "pixel_index_xy": [
+            218,
+            193
+          ]
+        }
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    },
+    {
+      "case_id": "away-postevent",
+      "pid": 2549314,
+      "pgid": 2548624,
+      "journal_sha256": "821a6768d7359afa48f206d39c0a78160d196f38e3f76d4d3e3bbcdd9cff3474",
+      "sensor_sha256": "7075c2b1683694deebf473fa0a2d7823a38f5836c14f6b3ff45264197615a733",
+      "raw_return_sha256": "f1100f2f0a999866f22839bd5235ecb4dbe185f411fd842ea55938068e82770e",
+      "native_input_sha256": "da6c7932d0fb9f539b95c7c6c6dfae5100ad5c139e1b4a7fc1371fb001c36e6a",
+      "manifest_sha256": "57d43486f905b86e0eb41628bd0604fc480577a9f04ffbcc8281992f85348164",
+      "resolved_config_sha256": "702797693a69326b1e5f1fb6bb3ad61d2ebfc3255824fb355971ec9666909cf7",
+      "generation_settings_sha256": "e74ef22b53d2b7c005a73f5af0a644981ecf10a93e951dd1f5960b06fa40bedd",
+      "generation_settings": {
+        "max_new_tokens": 256,
+        "use_cache": true,
+        "generation_mode": "slow",
+        "temperature": 0.0,
+        "do_sample": false,
+        "verbose": false
+      },
+      "native_input_npz_sha256": "419186b980fd53041fc307fbadd7e03acdcbf8e61abb5a67508b8d8807f5faa1",
+      "rgb_input_sha256": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152271,
+        152533,
+        151669,
+        151645
+      ],
+      "raw_output": "<ref>the wine bottle</ref><box><594><856></box><|im_end|>",
+      "token_count": 10,
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          594,
+          856
+        ],
+        "continuous_xy": [
+          228.096,
+          328.704
+        ],
+        "pixel_index_xy": [
+          228,
+          328
+        ]
+      },
+      "parsed_candidates_not_admitted_separately": {
+        "status": "single_point",
+        "points": [
+          {
+            "normalized": [
+              594,
+              856
+            ],
+            "continuous_xy": [
+              228.096,
+              328.704
+            ],
+            "sample_pixel_xy": [
+              228,
+              328
+            ]
+          }
+        ],
+        "boxes": [],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "hybrid_baseline": {
+        "sensor_sha256": "d546f1704ab756137c93c3ea603b64415345483c3d22e311b0e017dfea5d9586",
+        "raw_output": "<ref>the wine bottle</ref><box><594><856></box><box><607><855><1000><857></box><box><607><855><1000><855></box><|im_end|>",
+        "status": "not_admitted",
+        "reason": "malformed",
+        "point": null
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    }
+  ],
+  "new_model_processor_tokenizer_physics_render_LK_calls_during_audit": 0,
+  "limits": [
+    "Strict whole-return admission is checked without prefix salvage. Visible localization is separately owned by root.",
+    "This is a two-image development control selected after hybrid results, using archived hybrid outcomes without contemporaneous repeats.",
+    "It tests sensitivity to the whole native decoding procedure; it cannot establish general AR superiority, a proven MTP bug, a particular hybrid execution branch, or a syntax-only mechanism.",
+    "Comparison against the historical cached WHOLE hybrid goal changes observation and mode together and is not a pure freshness contrast.",
+    "Admitted points are RGB-coordinate syntax observations, not independently verified semantic identity, holding or execution targets.",
+    "Static vocabulary and recorded checkpoint identity were checked; no model or tokenizer was constructed and weight bytes were not reread.",
+    "Actual image/point semantic interpretation is separately owned by root; no depth/calibration/labels used in this audit."
+  ]
+}
