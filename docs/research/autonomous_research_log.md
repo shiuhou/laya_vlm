@@ -1603,6 +1603,70 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   claim. No dynamics before review. In parallel, inventory prior exactseven-
   option Laya tests to avoid repeating privileged-interface microvariants.
 
+### Parallel iteration 045 — closing-dependent lift does not imply pre-lift grasp
+
+- **Question/competing hypotheses:** does the neck approach uniquely support a
+  local grasp, or can both nearby guarded endpoints lift? Does executing GRASP
+  establish the required relation before the following movement?
+- **Intervention:** cleanfreeze `1702cb2739bfdb2817a329c8047e16bcb7836657`,
+  rootPASS `f15b394`, preflight02SHA
+ `3bc68d41b02d3a17f1f9354ff2369d5256edf842ef0371d8c186af602c55b787`.
+  Four fixed fresh cells: whole-close/open_hold, neck-close/open_hold. Each
+  regenerates its original policy approach, then scripts GRASP versus equal-
+  duration STOP hold followed by one10mmMV_UP; eight controls/primitive. Same
+  executor, validator, thresholds and after-primitive contact abort. No model
+  call, fitted pose, archived control warm start, adaptive winner or retry.
+- **Environment correction:** root wrongly inferred locateanything from a
+  general summary. Direct source manifests establish laya-embodied. Root and
+  producer reconstructed all20 receipt fields under that interpreter, matching
+  both closed approach dependency/support manifests.02 remains admitted;
+ 03 is unexecuted alternative preparation. Preserve root check6949a04f... and
+  correction8ec315e...; no world/physics attempt occurred during this resolution.
+- **Observed:** whole CLOSE center/bottom lift8.261958451/8.216198444mm, neck
+  CLOSE9.012689165/9.157942191mm; both OPEN0/0. Eight suffix validators pass.
+  Whole bilateral lift endpoints7/8 and native172/200 BEFORE+AFTER; neck8/8
+  and183/200. Registered sampled witness wholeFALSE, neckTRUE, unchanged. Both
+  fail native-stage maintenance. Both final GRASP endpoints have no raw robot/
+  bottle contact; neck has transient earlier one-pad contact, never bilateral
+  duringGRASP. Closing continues while lifting. Do not equate command end with
+  the physical relation required for a phase handoff.
+- **Contact/support:** closed lifts include9whole/8neck simultaneous bilateral+
+  raw zero-normal-force finger samples per native stage, no strong non-pad
+  robot/bottle contacts. Table raw contacts persist28/17 samples, strong23/15;
+  OPEN table contacts persist throughout. These are sampled evidence, not a
+  causal or continuous support/clearance proof. Rotation lacks an archived
+  object quaternion address map and remains unknown.
+- **Audit/replay:** independent `8c13d8e` (main `3cd3945`), auditSHA
+ `6051e9a498f73e8399b232a2d64b9a0174e8e0ab8d3187cffdb69a4c31a9a018`.
+  All118 approach actions/49,690 scientific prefix rows equal audited sources,
+  avoiding redundant membership recomputation. Total126actions/1,008controls/
+ 50,400native snapshots/130primary+64aux captures; allfour full+aux replaysPASS.
+  Complete sensor-only seals precede endpoint evaluator files; exact sample/
+  cache times remain unknown. No masks captured or inferred.
+- **Inspection:** root and independent agent opened all40 prescribed original
+  frames (preintervention, postclose/hold, eightlift frames percell). CLOSE
+  silhouettes rise slightly with the hand; OPEN bottle stays approximately
+  background-stationary. Upper interfaces remain occluded. Images alone do not
+  establish pad contact, object fit or holding.
+- **Artifacts:** `task2-point-anchor-grasp-transfer-run-01`, journalSHA
+ `39d2a972869d98944bdfb29cce721174cdb9d617ec3696b5139ac5ffd8b139f4`.
+  Matrix subprocess returns0 with all stages complete; outer tool session later
+  reported143. Both are retained in execution-closeout a2df13d3...; no retry or
+  relabeling of that launcher discrepancy. Integrated1034testsPASS35.22s.
+- **Interpretation/confidence:** high within this fixture for closing-dependent
+  local movement and delayed bilateral contact. Sensor-selected approaches have
+  useful mechanical endpoints, but neither a completed primitive nor a single
+  terminal/sample witness establishes continuous interaction-valid manipulation.
+  No Laya/hierarchy or full-task capability is tested here.
+- **Next highest-information experiments:** (1) BOTH fresh original approaches
+  plus exact originalfirstGRASP, then oneadditional existing stationaryGRASP and
+  original10mmlift. Predict pre-lift bilateral relation/native maintenance if
+  closure latency explains the handoff; alternatives include geometry/slip.
+  No dynamics before separate freeze/review. (2) Existing492seed LK/depth/co-motion
+  extraction on allfour original cells with variable preclose references,
+  91,512 expected rows, no masks/new threshold/classifier. Source-only admission
+  and frozen unchanged helper review precede feature extraction.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

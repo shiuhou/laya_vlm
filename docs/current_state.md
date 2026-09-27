@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration044. This is the authoritative current
+Reviewed 2026-09-27 after research iteration045. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -125,11 +125,26 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    First difference is decision5 at identical state/exclusions. Crucially, the
    terminal TCPs differ only9.022mm and both lie within6.130mm of the neck point.
    Root inspected the actualRGB and independently checked finite-gap arithmetic:
-   own-P membership false/true is not proof of grasp superiority. Next is a
-   fixed mechanical2×2 at BOTH freshly regenerated endpoints: close/open-hold
-   then one10mm lift. No new dynamics yet, no policy/model/pose-fitting change.
+   own-P membership false/true is not proof of grasp superiority.
    See [full paired trace](evidence/autonomous_research/task2_point_anchor_approach_findings.md)
    and [RGB/gap interpretation](evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md).
+7. The fixed fresh2×2 now completes with all four primary/native/auxiliary replays:
+   whole CLOSE lifts center8.262mm, neck CLOSE9.013mm; both OPEN controls0mm.
+   All1,008 controls/50,400 native snapshots pass. The registered sampled-endpoint
+   witness is whole false(7/8 bilateral), neck true(8/8), but native maintenance
+   is172/200 and183/200 respectively. Both final GRASP endpoints lack contact;
+   bilateral grasp arises during the lift. This is sensor-selected approach plus
+   scripted experimental actions, not autonomous manipulation or fullTask2 success.
+   Root inspected all40 fixedRGBs. Next preparations: one additional existing
+   stationary GRASP interval before lift at both endpoints; unchangedLK/depth
+   co-motion transfer on the four original cells, without masks or classifier.
+   See [raw mechanical audit](evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md).
+
+For these new POINT approach/grasp collections, the actual closed manifests use
+`/home/junhongli/miniforge3/envs/laya-embodied/bin/python`, GPU4/EGL4. General older
+environment notes suggesting locateanything must not override those recorded
+dependencies. The root's mistaken environment assumption and its correction are
+preserved; admitted grasp freeze `1702cb2` uses preflight02, not alternative03.
 
 ## Protected execution and evidence boundaries
 
@@ -146,9 +161,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `a2e87ec`: **990 tests pass** in33.51s, including
-the paired POINT approach, strengthened source checks and stored interpretation.
-Log: `runs/autonomous-research/regression-matched-approach-closed-01.log`.
+Latest integrated regression at `48820bd`: **1034 tests pass** in35.22s, including
+the grasp-transfer hooks, failure counters, sensor adapter and RGB inspector.
+Log: `runs/autonomous-research/regression-grasp-transfer-integration-01.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 
