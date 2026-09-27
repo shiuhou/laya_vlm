@@ -1,0 +1,2630 @@
+{
+  "matrix_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01",
+  "matrix_freeze": "1702cb2739bfdb2817a329c8047e16bcb7836657",
+  "matrix_journal_sha256": "39d2a972869d98944bdfb29cce721174cdb9d617ec3696b5139ac5ffd8b139f4",
+  "source_admission_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-rgb-inspection-01/source-admission.json",
+  "source_admission_sha256": "6d283ad5d098ea1e532e82aaf95464df796a01a1cce05e96dd9dae1a9e969681",
+  "source_admission": {
+    "status": "source_schema_pass_no_temporal_features",
+    "matrix_termination": {
+      "fresh_policy_episodes": 4,
+      "reason": "all_four_fixed_cells_and_replays_complete",
+      "task_success_claim": false,
+      "verification_replays": 4,
+      "winner_selected": false
+    },
+    "replay_receipts": {
+      "whole-close": {
+        "result_sha256": "4d8e297e6a8d6581eca2c4d3e22b9753e7ac464bdf26a31c61bf004b178ceabd",
+        "auxiliary_result_sha256": "f3513f0055b643fd7d3906388b13c121af59b9ab9f3bf7ee3ffda88e454eb243",
+        "status": "passed",
+        "source_journal_sha256": "f34076ebb7674977e8842449adb180746bbd5fb9a3df18ec870c31d652e66ce9",
+        "auxiliary_captures": 16
+      },
+      "whole-open_hold": {
+        "result_sha256": "303dab6a0b6c5806211131996981ea7c5b354988cbc72915c2ff95940f04f46a",
+        "auxiliary_result_sha256": "bfb2cb93d751d966722433eac788a2de84ea293c3f208ff335916b1610dc7416",
+        "status": "passed",
+        "source_journal_sha256": "c52709412b79559c24047e0da42749d5c4b1a0ab8983f67efd4b55bdbec4da5d",
+        "auxiliary_captures": 16
+      },
+      "neck-close": {
+        "result_sha256": "67dfe25d709faf9124aecf81ca6c03fe8b579394bf5f57a505b17a2a7967362e",
+        "auxiliary_result_sha256": "75eed48252d97faca8d0632d3507e0b3aa930f21f690bf2f83d28a95a7f485e4",
+        "status": "passed",
+        "source_journal_sha256": "1929e21d7b9e0e533cda4255d464611e17f57a6150e085bb702164324d715002",
+        "auxiliary_captures": 16
+      },
+      "neck-open_hold": {
+        "result_sha256": "adbbc1175b1ac5edf8949d0e457d3c0776bdb5865afb003885075035e57412a0",
+        "auxiliary_result_sha256": "8d7fe88d895ed4d5c03e73c1ee63512b1a0a0c3b4921112aa83ede47f1660471",
+        "status": "passed",
+        "source_journal_sha256": "e5f2dbdb1c6cf0b4302d30d49d200b48b1638f47178ff297826e77ed6d274865",
+        "auxiliary_captures": 16
+      }
+    },
+    "admission": {
+      "source_sha256": {
+        "whole-close": {
+          "sensor-captures.json": "ace96f704d26b98e2f18a7163e65c24ef85ca589501712185ae767188e5ce760",
+          "sensor-seal.json": "689d9f87ed22cf6c8c4fbe76a34348ea33a1b45e2861d8aa0992e0409daaaa64"
+        },
+        "whole-open_hold": {
+          "sensor-captures.json": "4c57a7edbd745a1d819ec9d7e19dfabb1d1478c6b139544adc05b84fce840240",
+          "sensor-seal.json": "41333d57710df6dc70d78052f64868d95ee9ce9fc2c7a8f4891f7b33fb17b57c"
+        },
+        "neck-close": {
+          "sensor-captures.json": "234f2e2281a0f99848f8d1c39396e840cf6fbc94b0365cdbffbc5c57ca3bb38e",
+          "sensor-seal.json": "6ed718de376db58bda62716900577fea96d4bd08dd0518ad3eb9121785b73594"
+        },
+        "neck-open_hold": {
+          "sensor-captures.json": "6be35261bae2088893e1f5b3565b122788ab517b8e298c75f26a262e56c6269c",
+          "sensor-seal.json": "36563d42470857f7134c36ad4bf99e75929501299a0c917511d8d98472e78a63"
+        }
+      },
+      "seed_sha256": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+      "source_journal_sha256": {
+        "whole-close": "f34076ebb7674977e8842449adb180746bbd5fb9a3df18ec870c31d652e66ce9",
+        "whole-open_hold": "c52709412b79559c24047e0da42749d5c4b1a0ab8983f67efd4b55bdbec4da5d",
+        "neck-close": "1929e21d7b9e0e533cda4255d464611e17f57a6150e085bb702164324d715002",
+        "neck-open_hold": "e5f2dbdb1c6cf0b4302d30d49d200b48b1638f47178ff297826e77ed6d274865"
+      },
+      "helper_sha256": {
+        "point_temporal_probe.py": "86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36",
+        "task2_box_temporal_probe.py": "655a6a84d1688be880d4348d7589251ad37392277102813fc91f5ee421f59b50",
+        "task2_track_coordinate_association.py": "b95245bab639fac6a54359dd51020b2b40d0fd5e23f71fb7d1b7020b2590c855",
+        "task2_short_lift_transfer.py": "71973b2f6f6e1f6d1500881250b2ac7740ee796cbd38ac38f191f449c45c9e63"
+      },
+      "initial_frame_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+      "sensor_prefixes": [
+        {
+          "left": "whole-close",
+          "right": "whole-open_hold",
+          "captures": 31,
+          "exact_sensor_prefix": true
+        },
+        {
+          "left": "neck-close",
+          "right": "neck-open_hold",
+          "captures": 30,
+          "exact_sensor_prefix": true
+        },
+        {
+          "left": "whole-close",
+          "right": "neck-close",
+          "captures": 6,
+          "exact_sensor_prefix": true
+        }
+      ],
+      "rows_per_cell": {
+        "whole-close": 23124,
+        "whole-open_hold": 23124,
+        "neck-close": 22632,
+        "neck-open_hold": 22632
+      },
+      "evaluator_read": false,
+      "proxy_membership_available": false,
+      "holding": null
+    },
+    "captures_per_cell": {
+      "whole-close": 47,
+      "whole-open_hold": 47,
+      "neck-close": 46,
+      "neck-open_hold": 46
+    },
+    "preclose_merged_capture_ids": {
+      "whole-close": 30,
+      "whole-open_hold": 30,
+      "neck-close": 29,
+      "neck-open_hold": 29
+    }
+  },
+  "fixed_RGB_count": 40,
+  "cells": [
+    {
+      "condition": "whole-close",
+      "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close",
+      "source_sha256": {
+        "sensor-captures.json": "ace96f704d26b98e2f18a7163e65c24ef85ca589501712185ae767188e5ce760",
+        "sensor-seal.json": "689d9f87ed22cf6c8c4fbe76a34348ea33a1b45e2861d8aa0992e0409daaaa64"
+      },
+      "source_journal_sha256": "f34076ebb7674977e8842449adb180746bbd5fb9a3df18ec870c31d652e66ce9",
+      "captures": [
+        {
+          "label": "preintervention",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "approach",
+            "after_step": 29,
+            "control": 7,
+            "source_capture_stream": "primary",
+            "source_capture_seq": 31,
+            "capture_sim_time": 12.500000000000844,
+            "capture_read_sim_time_s": 12.500000000000844,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.500000000000844,
+            "own_tcp_world_m": [
+              -0.11797678918575412,
+              0.056279970375673984,
+              1.0313076825422585
+            ],
+            "tcp_source_field": "endpoint.own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11797678918575412,
+                0.056279970375673984,
+                1.0313076825422585
+              ],
+              "robot0_eef_quat": [
+                0.99961244467775,
+                -0.00016702603463064625,
+                -0.02783750533526106,
+                -7.644857189443612e-05
+              ],
+              "robot0_gripper_qpos": [
+                0.03999848348727919,
+                -0.03999943013435018
+              ],
+              "robot0_gripper_qvel": [
+                1.6791343262305907e-06,
+                -1.5174061789080745e-07
+              ]
+            },
+            "artifact": "frames/capture-000031.npz",
+            "artifact_sha256": "3335eb94ccbc04ff40dddf9029e42747c234458e4c818c2da407d2ec57da99b5",
+            "render_preserves_state_and_caches": true,
+            "own_packet_status": "recorded",
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "endpoint",
+              "step": 29
+            },
+            "capture_record_id": "860f70f4fd67a0537fd7083ab09e750550cc51c1e6934a61b8f0fa5a92eb2025",
+            "capture_id": 30
+          },
+          "unmarked_rgb_artifact": "preintervention.png",
+          "unmarked_rgb_sha256": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763"
+        },
+        {
+          "label": "postclose_or_hold",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "close_or_hold",
+            "after_step": 30,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 8,
+            "capture_sim_time": 12.900000000000977,
+            "capture_read_sim_time_s": 12.900000000000977,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.900000000000977,
+            "own_tcp_world_m": [
+              -0.11728986458131475,
+              0.056390546820339504,
+              1.031718597376899
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11728986458131475,
+                0.056390546820339504,
+                1.031718597376899
+              ],
+              "robot0_eef_quat": [
+                0.999565808811702,
+                -7.579335847007762e-05,
+                -0.02946480908104617,
+                0.00011461147857872236
+              ],
+              "robot0_gripper_qpos": [
+                0.010923839119017547,
+                -0.010924532882604577
+              ],
+              "robot0_gripper_qvel": [
+                -0.09866104778826303,
+                0.09866062644068518
+              ]
+            },
+            "artifact": "auxiliary/capture-000008.npz",
+            "artifact_sha256": "358d4526c2bb9ff72691ad827420081baf55bccac9118efadd33d229cb41bb4a",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 7
+            },
+            "capture_id": 38
+          },
+          "unmarked_rgb_artifact": "postclose_or_hold.png",
+          "unmarked_rgb_sha256": "7e7afca73acb85654d09d59bf2a0354145b71feee50ca0c8eee62c38da1fb5cf"
+        },
+        {
+          "label": "lift_control_0",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 0,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 9,
+            "capture_sim_time": 12.950000000000994,
+            "capture_read_sim_time_s": 12.950000000000994,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.950000000000994,
+            "own_tcp_world_m": [
+              -0.11728413222388107,
+              0.056405181737159006,
+              1.0328684845880902
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11728413222388107,
+                0.056405181737159006,
+                1.0328684845880902
+              ],
+              "robot0_eef_quat": [
+                0.9995738044548703,
+                -5.471418382535509e-05,
+                -0.02919216284299191,
+                0.0001551854423788683
+              ],
+              "robot0_gripper_qpos": [
+                0.006705804398974082,
+                -0.006714953069738808
+              ],
+              "robot0_gripper_qvel": [
+                -0.0663800604430209,
+                0.06642298497250058
+              ]
+            },
+            "artifact": "auxiliary/capture-000009.npz",
+            "artifact_sha256": "6d3c6b888e06b9726daef8a86d42f5465a45fdcc92338b29c9186298f2dfa66d",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 0
+            },
+            "capture_id": 39
+          },
+          "unmarked_rgb_artifact": "lift_control_0.png",
+          "unmarked_rgb_sha256": "45ebb42b21936c1c10289bae63dba16e10362402d2a637672642ca67e04d2f29"
+        },
+        {
+          "label": "lift_control_1",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 1,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 10,
+            "capture_sim_time": 13.00000000000101,
+            "capture_read_sim_time_s": 13.00000000000101,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.00000000000101,
+            "own_tcp_world_m": [
+              -0.11730050367917108,
+              0.05644897579421098,
+              1.035050731433487
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11730050367917108,
+                0.05644897579421098,
+                1.035050731433487
+              ],
+              "robot0_eef_quat": [
+                0.9995840216818547,
+                -4.485035001111637e-05,
+                -0.028839897072555402,
+                0.00020475257967511595
+              ],
+              "robot0_gripper_qpos": [
+                0.00606719517095466,
+                -0.006077695925217756
+              ],
+              "robot0_gripper_qvel": [
+                -0.0017662792502492787,
+                0.0016430495500577129
+              ]
+            },
+            "artifact": "auxiliary/capture-000010.npz",
+            "artifact_sha256": "6619b189b329b82c83018e982e60cf6758d1f356d41b80554d4c5c629d097e0f",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 1
+            },
+            "capture_id": 40
+          },
+          "unmarked_rgb_artifact": "lift_control_1.png",
+          "unmarked_rgb_sha256": "f81e2add1fe3985d2ac52b707b8e44a9b89d1af30a8817f70d37a4b935276c69"
+        },
+        {
+          "label": "lift_control_2",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 2,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 11,
+            "capture_sim_time": 13.050000000001027,
+            "capture_read_sim_time_s": 13.050000000001027,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.050000000001027,
+            "own_tcp_world_m": [
+              -0.11734301056412896,
+              0.056487048913186844,
+              1.0370648988163467
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11734301056412896,
+                0.056487048913186844,
+                1.0370648988163467
+              ],
+              "robot0_eef_quat": [
+                0.9995915024057374,
+                -5.15298058243463e-05,
+                -0.02857930052614579,
+                0.0002219106918502807
+              ],
+              "robot0_gripper_qpos": [
+                0.006035282980026794,
+                -0.0060441022313359495
+              ],
+              "robot0_gripper_qvel": [
+                0.00022083090926875476,
+                -0.00021107480346975495
+              ]
+            },
+            "artifact": "auxiliary/capture-000011.npz",
+            "artifact_sha256": "0899a9a421aa0fcbdaf35e5ef8c00f461120792cbe512bb97c6da9112afa2093",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 2
+            },
+            "capture_id": 41
+          },
+          "unmarked_rgb_artifact": "lift_control_2.png",
+          "unmarked_rgb_sha256": "1b88440c8839210c36a8b2b5c9b42fbe7c5c98b69daad9c64391ca2197c4fc7d"
+        },
+        {
+          "label": "lift_control_3",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 3,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 12,
+            "capture_sim_time": 13.100000000001044,
+            "capture_read_sim_time_s": 13.100000000001044,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.100000000001044,
+            "own_tcp_world_m": [
+              -0.11737697747245603,
+              0.05650497023590634,
+              1.0386054748876103
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11737697747245603,
+                0.05650497023590634,
+                1.0386054748876103
+              ],
+              "robot0_eef_quat": [
+                0.9995965200887043,
+                -6.121587896107394e-05,
+                -0.028403289054897144,
+                0.00021552269393454275
+              ],
+              "robot0_gripper_qpos": [
+                0.006041136784883045,
+                -0.006049633368042318
+              ],
+              "robot0_gripper_qvel": [
+                4.920496314487191e-05,
+                -4.425066489160009e-05
+              ]
+            },
+            "artifact": "auxiliary/capture-000012.npz",
+            "artifact_sha256": "cb4199707b5b66b68a537178b1d0b8e1b72cdfe7934c2bae1d61ad197db4dcb1",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 3
+            },
+            "capture_id": 42
+          },
+          "unmarked_rgb_artifact": "lift_control_3.png",
+          "unmarked_rgb_sha256": "d2d08be3f79e97dc6f80a9395c66dae8f927326d1a53c661385dd5c565528c2a"
+        },
+        {
+          "label": "lift_control_4",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 4,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 13,
+            "capture_sim_time": 13.15000000000106,
+            "capture_read_sim_time_s": 13.15000000000106,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.15000000000106,
+            "own_tcp_world_m": [
+              -0.11739128941157229,
+              0.05650424536080604,
+              1.0396822840676625
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11739128941157229,
+                0.05650424536080604,
+                1.0396822840676625
+              ],
+              "robot0_eef_quat": [
+                0.9995996788895605,
+                -6.565925137397288e-05,
+                -0.028292004063132856,
+                0.00020039670919735388
+              ],
+              "robot0_gripper_qpos": [
+                0.00604273179602848,
+                -0.006050942778597348
+              ],
+              "robot0_gripper_qvel": [
+                2.53417092902845e-05,
+                -1.492018194335593e-05
+              ]
+            },
+            "artifact": "auxiliary/capture-000013.npz",
+            "artifact_sha256": "61231c15a38d9ca4dc7ddd93bcdbccd85097ece0d5673a07bb9febe06291ee84",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 4
+            },
+            "capture_id": 43
+          },
+          "unmarked_rgb_artifact": "lift_control_4.png",
+          "unmarked_rgb_sha256": "315c6dfbc29c2eddd4f6590e2b62bab3ff71bb0480a0682661eb1a3bac9122f7"
+        },
+        {
+          "label": "lift_control_5",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 5,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 14,
+            "capture_sim_time": 13.200000000001078,
+            "capture_read_sim_time_s": 13.200000000001078,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.200000000001078,
+            "own_tcp_world_m": [
+              -0.11738770325825551,
+              0.05649530096872232,
+              1.0403964349565353
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11738770325825551,
+                0.05649530096872232,
+                1.0403964349565353
+              ],
+              "robot0_eef_quat": [
+                0.9996014864403351,
+                -6.22841588631684e-05,
+                -0.028228179525466232,
+                0.000185223199108615
+              ],
+              "robot0_gripper_qpos": [
+                0.006043596539624148,
+                -0.006051496646103193
+              ],
+              "robot0_gripper_qvel": [
+                1.3208843994245958e-05,
+                -6.940605777556515e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000014.npz",
+            "artifact_sha256": "0842736692d37c38b274b0941b244738f45b3a3695e8a5ee2c73e146aa204947",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 5
+            },
+            "capture_id": 44
+          },
+          "unmarked_rgb_artifact": "lift_control_5.png",
+          "unmarked_rgb_sha256": "31e995432380195ae2671a32f6d020dae649053db2d38e797b9fec89b9b1ad3d"
+        },
+        {
+          "label": "lift_control_6",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 6,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 15,
+            "capture_sim_time": 13.250000000001094,
+            "capture_read_sim_time_s": 13.250000000001094,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.250000000001094,
+            "own_tcp_world_m": [
+              -0.11737937963584705,
+              0.05648947082142081,
+              1.0408508223076647
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11737937963584705,
+                0.05648947082142081,
+                1.0408508223076647
+              ],
+              "robot0_eef_quat": [
+                0.9996022919210983,
+                -5.242272075151044e-05,
+                -0.02819973032461459,
+                0.00017449230182310996
+              ],
+              "robot0_gripper_qpos": [
+                0.006044102622728946,
+                -0.006051689824990979
+              ],
+              "robot0_gripper_qvel": [
+                7.104483785479519e-06,
+                -2.2634728357576996e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000015.npz",
+            "artifact_sha256": "eb0570ee71e51ba3e8139e35e34b1a58c7ab08535e1e45216591d8b0b2251907",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 6
+            },
+            "capture_id": 45
+          },
+          "unmarked_rgb_artifact": "lift_control_6.png",
+          "unmarked_rgb_sha256": "9eff29a8475f1b790a22d7a74f40df82c6e4d3ce0b12395a2f93308e222ee656"
+        },
+        {
+          "label": "lift_control_7",
+          "capture": {
+            "condition": "whole-close",
+            "anchor": "whole",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 16,
+            "capture_sim_time": 13.300000000001111,
+            "capture_read_sim_time_s": 13.300000000001111,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.300000000001111,
+            "own_tcp_world_m": [
+              -0.11737584467427825,
+              0.05648566236230504,
+              1.0411284523540114
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11737584467427825,
+                0.05648566236230504,
+                1.0411284523540114
+              ],
+              "robot0_eef_quat": [
+                0.9996026586302815,
+                -4.273431811180339e-05,
+                -0.02818676963623351,
+                0.00017044214039433833
+              ],
+              "robot0_gripper_qpos": [
+                0.006044423061404174,
+                -0.006051704880840169
+              ],
+              "robot0_gripper_qvel": [
+                4.948287874395724e-06,
+                3.543112375185711e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000016.npz",
+            "artifact_sha256": "aac0a2a7141d6076615221b1891c7e1770b069d3c3dfa0d1a699f3dc78e8b5a3",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 7
+            },
+            "capture_id": 46
+          },
+          "unmarked_rgb_artifact": "lift_control_7.png",
+          "unmarked_rgb_sha256": "d0c59b4ff0636051ef58e8a9a153b7ecbad4d192f8c5f34c7b12d9418d8a59ef"
+        }
+      ],
+      "visual_inspection": {
+        "condition": "whole-close",
+        "visual_inspection_completed": true,
+        "rgb_export_sha256": "edd1dbc230f0c6d5479ab765f926535b9f57c5ec8925f3396d6b5d916369e31a",
+        "viewed_artifacts": {
+          "all_fixed_original_rgb.png": "90d126ad56d06297dda0baf6e1d2a855daaf2e8d952d670dbfd34fb1447c0621",
+          "preintervention.png": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763",
+          "postclose_or_hold.png": "7e7afca73acb85654d09d59bf2a0354145b71feee50ca0c8eee62c38da1fb5cf",
+          "lift_control_7.png": "d0c59b4ff0636051ef58e8a9a153b7ecbad4d192f8c5f34c7b12d9418d8a59ef"
+        },
+        "inspection_method": "All ten original384x384 arrays viewed on unscaled fixed sheet; preintervention, postclose and final lift additionally viewed as individual originals.",
+        "viewed_merged_capture_ids": [
+          30,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "observations": [
+          "The visible fingers move inward from the open preintervention spacing toward the upper bottle-neck region after GRASP.",
+          "The hand obscures cap/upper-neck detail; the contact interface is not visibly resolved.",
+          "Across the eight lift endpoints the hand and visible dark bottle outline appear slightly higher relative to the cabinet background.",
+          "The visible bottle body remains near upright, without an obvious large lateral tilt in these views."
+        ],
+        "limits": [
+          "RGB alone does not establish pad contact, holding, support clearance or support-free retention.",
+          "Small apparent image motion is descriptive; no image displacement, bottle pose or tilt angle was measured.",
+          "This closed-cell image review is not matrix-level sensor admission or temporal feature extraction."
+        ],
+        "new_tracking_model_physics_render_calls": 0,
+        "holding_truth": null,
+        "grasp_success": null,
+        "anchor_superiority": null
+      },
+      "visual_inspection_sha256": "cdf134955199eb78d20517566a5a107f9788c608b31986ac24266280cdf33c63",
+      "rgb_export_sha256": "edd1dbc230f0c6d5479ab765f926535b9f57c5ec8925f3396d6b5d916369e31a",
+      "final_sheet": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-rgb-inspection-01/final-labeled-sheets/whole-close.png",
+      "final_sheet_sha256": "d1f973737c3db45ab40611402ad7b3acbe25432ff1300f597b01275fe0dfbb52"
+    },
+    {
+      "condition": "whole-open_hold",
+      "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold",
+      "source_sha256": {
+        "sensor-captures.json": "4c57a7edbd745a1d819ec9d7e19dfabb1d1478c6b139544adc05b84fce840240",
+        "sensor-seal.json": "41333d57710df6dc70d78052f64868d95ee9ce9fc2c7a8f4891f7b33fb17b57c"
+      },
+      "source_journal_sha256": "c52709412b79559c24047e0da42749d5c4b1a0ab8983f67efd4b55bdbec4da5d",
+      "captures": [
+        {
+          "label": "preintervention",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "approach",
+            "after_step": 29,
+            "control": 7,
+            "source_capture_stream": "primary",
+            "source_capture_seq": 31,
+            "capture_sim_time": 12.500000000000844,
+            "capture_read_sim_time_s": 12.500000000000844,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.500000000000844,
+            "own_tcp_world_m": [
+              -0.11797678918575412,
+              0.056279970375673984,
+              1.0313076825422585
+            ],
+            "tcp_source_field": "endpoint.own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11797678918575412,
+                0.056279970375673984,
+                1.0313076825422585
+              ],
+              "robot0_eef_quat": [
+                0.99961244467775,
+                -0.00016702603463064625,
+                -0.02783750533526106,
+                -7.644857189443612e-05
+              ],
+              "robot0_gripper_qpos": [
+                0.03999848348727919,
+                -0.03999943013435018
+              ],
+              "robot0_gripper_qvel": [
+                1.6791343262305907e-06,
+                -1.5174061789080745e-07
+              ]
+            },
+            "artifact": "frames/capture-000031.npz",
+            "artifact_sha256": "3335eb94ccbc04ff40dddf9029e42747c234458e4c818c2da407d2ec57da99b5",
+            "render_preserves_state_and_caches": true,
+            "own_packet_status": "recorded",
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "endpoint",
+              "step": 29
+            },
+            "capture_record_id": "5b14e259888f336ac91c48db6ab9e732f5b4c621709cc848342501b82aee77a4",
+            "capture_id": 30
+          },
+          "unmarked_rgb_artifact": "preintervention.png",
+          "unmarked_rgb_sha256": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763"
+        },
+        {
+          "label": "postclose_or_hold",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "close_or_hold",
+            "after_step": 30,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 8,
+            "capture_sim_time": 12.900000000000977,
+            "capture_read_sim_time_s": 12.900000000000977,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.900000000000977,
+            "own_tcp_world_m": [
+              -0.11728986927181034,
+              0.05639068618291168,
+              1.0317186037035613
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11728986927181034,
+                0.05639068618291168,
+                1.0317186037035613
+              ],
+              "robot0_eef_quat": [
+                0.9995658089148143,
+                -7.567060651458846e-05,
+                -0.029464805889302545,
+                0.00011461385923284585
+              ],
+              "robot0_gripper_qpos": [
+                0.039998839540037225,
+                -0.03999969124968455
+              ],
+              "robot0_gripper_qvel": [
+                7.147281894536435e-07,
+                -5.745381737757066e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000008.npz",
+            "artifact_sha256": "1558f591c386d4c2969d0db0b408abe30897983858dcb7f426741b1f3bca322e",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 7
+            },
+            "capture_id": 38
+          },
+          "unmarked_rgb_artifact": "postclose_or_hold.png",
+          "unmarked_rgb_sha256": "0819e6499607e59d95bb2cad045db62675e9f021586f5e1755d186bdb9b9edd4"
+        },
+        {
+          "label": "lift_control_0",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 0,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 9,
+            "capture_sim_time": 12.950000000000994,
+            "capture_read_sim_time_s": 12.950000000000994,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.950000000000994,
+            "own_tcp_world_m": [
+              -0.11728577408281557,
+              0.0564026742704322,
+              1.0328658502821353
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11728577408281557,
+                0.0564026742704322,
+                1.0328658502821353
+              ],
+              "robot0_eef_quat": [
+                0.9995737460759615,
+                -5.576617899499814e-05,
+                -0.029194153592677272,
+                0.00015633876388707925
+              ],
+              "robot0_gripper_qpos": [
+                0.03999892592127741,
+                -0.039999667885041036
+              ],
+              "robot0_gripper_qvel": [
+                2.166616911883034e-06,
+                9.326032408139256e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000009.npz",
+            "artifact_sha256": "24055d2de3b23a4e485dd4b51df39777600439fa20d1918654ac917859082205",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 0
+            },
+            "capture_id": 39
+          },
+          "unmarked_rgb_artifact": "lift_control_0.png",
+          "unmarked_rgb_sha256": "be24b6929e429acf0dd0dc6f62a4a88d06c3b3b418ef801c1f05fd3e72e12526"
+        },
+        {
+          "label": "lift_control_1",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 1,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 10,
+            "capture_sim_time": 13.00000000000101,
+            "capture_read_sim_time_s": 13.00000000000101,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.00000000000101,
+            "own_tcp_world_m": [
+              -0.11729682995084598,
+              0.05644563047631085,
+              1.0350557540775265
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11729682995084598,
+                0.05644563047631085,
+                1.0350557540775265
+              ],
+              "robot0_eef_quat": [
+                0.9995841697137124,
+                -4.5908451323961597e-05,
+                -0.028834759291279564,
+                0.00020544287448624916
+              ],
+              "robot0_gripper_qpos": [
+                0.039998995427954195,
+                -0.03999965869259335
+              ],
+              "robot0_gripper_qvel": [
+                5.885543090191885e-07,
+                -5.9249927190918e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000010.npz",
+            "artifact_sha256": "af01473cef3db3fe4bc972a15d47259d7bdbf903164b055b8c91bf1e6371bb5d",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 1
+            },
+            "capture_id": 40
+          },
+          "unmarked_rgb_artifact": "lift_control_1.png",
+          "unmarked_rgb_sha256": "0180d22a8b5fc34465e7aca6656e42fc76b05d068135f9f64718e2532f3f7977"
+        },
+        {
+          "label": "lift_control_2",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 2,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 11,
+            "capture_sim_time": 13.050000000001027,
+            "capture_read_sim_time_s": 13.050000000001027,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.050000000001027,
+            "own_tcp_world_m": [
+              -0.11733115640864725,
+              0.05648581878132607,
+              1.0370837726297029
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11733115640864725,
+                0.05648581878132607,
+                1.0370837726297029
+              ],
+              "robot0_eef_quat": [
+                0.9995918613689689,
+                -5.199309570863564e-05,
+                -0.028566749426288462,
+                0.00022092725706419382
+              ],
+              "robot0_gripper_qpos": [
+                0.039998997083331295,
+                -0.03999971476301749
+              ],
+              "robot0_gripper_qvel": [
+                -2.9782023718060073e-07,
+                -1.428201483038237e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000011.npz",
+            "artifact_sha256": "68fb35222965e7a435d05eb80cfe15ad80f3765001901356f16c0361bdbbfbf2",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 2
+            },
+            "capture_id": 41
+          },
+          "unmarked_rgb_artifact": "lift_control_2.png",
+          "unmarked_rgb_sha256": "7fa794f9bfb783d0d11f8405e360956795a8df08e3aad2ece89c124909a45aba"
+        },
+        {
+          "label": "lift_control_3",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 3,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 12,
+            "capture_sim_time": 13.100000000001044,
+            "capture_read_sim_time_s": 13.100000000001044,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.100000000001044,
+            "own_tcp_world_m": [
+              -0.11735738731690928,
+              0.0565055067957602,
+              1.0386372949357803
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11735738731690928,
+                0.0565055067957602,
+                1.0386372949357803
+              ],
+              "robot0_eef_quat": [
+                0.9995969575845816,
+                -6.146374845922287e-05,
+                -0.028387901025295786,
+                0.00021374104137947443
+              ],
+              "robot0_gripper_qpos": [
+                0.03999897948427651,
+                -0.03999978761182057
+              ],
+              "robot0_gripper_qvel": [
+                -2.952672921881759e-07,
+                -1.3771695547685808e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000012.npz",
+            "artifact_sha256": "7abc9d6d59c9e5474dde0d0739459a3ecb088ad3d4e0bec1bd3dc727b140df2d",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 3
+            },
+            "capture_id": 42
+          },
+          "unmarked_rgb_artifact": "lift_control_3.png",
+          "unmarked_rgb_sha256": "370e2954f1819fafec5b1e06b0b67bfc1fcd5ac940528d25fcbc5a4e94af83a3"
+        },
+        {
+          "label": "lift_control_4",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 4,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 13,
+            "capture_sim_time": 13.15000000000106,
+            "capture_read_sim_time_s": 13.15000000000106,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.15000000000106,
+            "own_tcp_world_m": [
+              -0.11736447566016578,
+              0.056506058806042675,
+              1.0397248479524128
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11736447566016578,
+                0.056506058806042675,
+                1.0397248479524128
+              ],
+              "robot0_eef_quat": [
+                0.9996000922943716,
+                -6.585334620518024e-05,
+                -0.02827740708381562,
+                0.0001984868636707767
+              ],
+              "robot0_gripper_qpos": [
+                0.03999897269738892,
+                -0.0399998472789489
+              ],
+              "robot0_gripper_qvel": [
+                4.238870229998899e-08,
+                -9.931118928630404e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000013.npz",
+            "artifact_sha256": "28bd94eaf6b0f38fc4d9212e4382d88f2a4c2e825d07d47a9d86c488aa751559",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 4
+            },
+            "capture_id": 43
+          },
+          "unmarked_rgb_artifact": "lift_control_4.png",
+          "unmarked_rgb_sha256": "74768b9bf26575166d520c44ac00fa7f04e8b84243a9d2356952113d9339ec39"
+        },
+        {
+          "label": "lift_control_5",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 5,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 14,
+            "capture_sim_time": 13.200000000001078,
+            "capture_read_sim_time_s": 13.200000000001078,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.200000000001078,
+            "own_tcp_world_m": [
+              -0.11735468878792367,
+              0.056497710483759414,
+              1.0404472853727564
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11735468878792367,
+                0.056497710483759414,
+                1.0404472853727564
+              ],
+              "robot0_eef_quat": [
+                0.9996018012700455,
+                -6.260303333166517e-05,
+                -0.028217038140471808,
+                0.00018367666992414114
+              ],
+              "robot0_gripper_qpos": [
+                0.03999899217338788,
+                -0.039999878415101976
+              ],
+              "robot0_gripper_qvel": [
+                6.401273043439531e-07,
+                -3.5095926880123303e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000014.npz",
+            "artifact_sha256": "8259bdb067165d3918fd08c49cf0048a4d0b76fd8705eaff160f41c84f221130",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 5
+            },
+            "capture_id": 44
+          },
+          "unmarked_rgb_artifact": "lift_control_5.png",
+          "unmarked_rgb_sha256": "2accc62a70f94a4df63c51e7ae855ca88f992a86e2ec6d3312972c46db234984"
+        },
+        {
+          "label": "lift_control_6",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 6,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 15,
+            "capture_sim_time": 13.250000000001094,
+            "capture_read_sim_time_s": 13.250000000001094,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.250000000001094,
+            "own_tcp_world_m": [
+              -0.1173471825786372,
+              0.056491719771529794,
+              1.0409045867137072
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1173471825786372,
+                0.056491719771529794,
+                1.0409045867137072
+              ],
+              "robot0_eef_quat": [
+                0.9996024919250321,
+                -5.27282784535954e-05,
+                -0.02819264617870649,
+                0.0001733736892563266
+              ],
+              "robot0_gripper_qpos": [
+                0.03999902371565929,
+                -0.03999989531418677
+              ],
+              "robot0_gripper_qvel": [
+                6.122217611714827e-07,
+                -3.363561399741782e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000015.npz",
+            "artifact_sha256": "154c94f8498c25c70c8e34934b8f12ee1144a19fae4fe9d89cb38ee5d6ebe048",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 6
+            },
+            "capture_id": 45
+          },
+          "unmarked_rgb_artifact": "lift_control_6.png",
+          "unmarked_rgb_sha256": "75f7ac02f84831916b4ae1aa22bf4f1ac0e86700d7fe1c2551c55a9b6506af9d"
+        },
+        {
+          "label": "lift_control_7",
+          "capture": {
+            "condition": "whole-open_hold",
+            "anchor": "whole",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 31,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 16,
+            "capture_sim_time": 13.300000000001111,
+            "capture_read_sim_time_s": 13.300000000001111,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 13.300000000001111,
+            "own_tcp_world_m": [
+              -0.11734324513436932,
+              0.05648794306988075,
+              1.041184614612239
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.11734324513436932,
+                0.05648794306988075,
+                1.041184614612239
+              ],
+              "robot0_eef_quat": [
+                0.9996028829366407,
+                -4.299105940808179e-05,
+                -0.028178821165837784,
+                0.000169157406919751
+              ],
+              "robot0_gripper_qpos": [
+                0.03999905322670334,
+                -0.03999991216677952
+              ],
+              "robot0_gripper_qvel": [
+                5.666133175028191e-07,
+                -3.4127846900015167e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000016.npz",
+            "artifact_sha256": "f585748e387c8e6c4c9992dc221d0cf75c606c78d3aede9fd4f92ac0710d96ee",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 31,
+              "control": 7
+            },
+            "capture_id": 46
+          },
+          "unmarked_rgb_artifact": "lift_control_7.png",
+          "unmarked_rgb_sha256": "7f78da76d80b482954d393d1eaef01acc0d59e957d2e6bd560f9b3f785e75f37"
+        }
+      ],
+      "visual_inspection": {
+        "condition": "whole-open_hold",
+        "visual_inspection_completed": true,
+        "rgb_export_sha256": "b49c3a33599893e9f3ab8ba422d727a82a16cd87e50579949d17949adc77d3b7",
+        "viewed_artifacts": {
+          "all_fixed_original_rgb.png": "ead8a842ce819c7a0f874637a55b4829fdf9886b4702fb5779badb265efc8b74",
+          "preintervention.png": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763",
+          "postclose_or_hold.png": "0819e6499607e59d95bb2cad045db62675e9f021586f5e1755d186bdb9b9edd4",
+          "lift_control_7.png": "7f78da76d80b482954d393d1eaef01acc0d59e957d2e6bd560f9b3f785e75f37"
+        },
+        "inspection_method": "All ten original384x384 arrays viewed on unscaled fixed sheet; preintervention, posthold and final lift additionally viewed as individual originals.",
+        "viewed_merged_capture_ids": [
+          30,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "observations": [
+          "The visible fingers remain separated through the executed hold and lift sequence.",
+          "The hand continues to obscure the bottle cap and part of the upper neck.",
+          "The hand appears slightly higher during lift, while the visible bottle body remains at approximately the same image height relative to the cabinet.",
+          "The visible bottle outline remains near upright; no obvious large lateral tilt is visible."
+        ],
+        "limits": [
+          "The small RGB changes were inspected descriptively; no image displacement, object pose or tilt angle was measured.",
+          "RGB does not resolve exact support contact/clearance and is not a holding classifier.",
+          "This closed-cell image review is not matrix-level sensor admission or temporal feature extraction."
+        ],
+        "new_tracking_model_physics_render_calls": 0,
+        "holding_truth": null,
+        "grasp_success": null,
+        "anchor_superiority": null
+      },
+      "visual_inspection_sha256": "cb60c63f7458dde001d52b37d037248e9b44afa29a977d883eb043c7bb217db6",
+      "rgb_export_sha256": "b49c3a33599893e9f3ab8ba422d727a82a16cd87e50579949d17949adc77d3b7",
+      "final_sheet": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-rgb-inspection-01/final-labeled-sheets/whole-open_hold.png",
+      "final_sheet_sha256": "bd2b7817219d25f26a6a1c83bec18c71bd3d8a3cf486dd62d1ffd02f9a1ff1da"
+    },
+    {
+      "condition": "neck-close",
+      "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close",
+      "source_sha256": {
+        "sensor-captures.json": "234f2e2281a0f99848f8d1c39396e840cf6fbc94b0365cdbffbc5c57ca3bb38e",
+        "sensor-seal.json": "6ed718de376db58bda62716900577fea96d4bd08dd0518ad3eb9121785b73594"
+      },
+      "source_journal_sha256": "1929e21d7b9e0e533cda4255d464611e17f57a6150e085bb702164324d715002",
+      "captures": [
+        {
+          "label": "preintervention",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "approach",
+            "after_step": 28,
+            "control": 7,
+            "source_capture_stream": "primary",
+            "source_capture_seq": 30,
+            "capture_sim_time": 12.10000000000071,
+            "capture_read_sim_time_s": 12.10000000000071,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.10000000000071,
+            "own_tcp_world_m": [
+              -0.12697818678399897,
+              0.055804330565249166,
+              1.0316871225433253
+            ],
+            "tcp_source_field": "endpoint.own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12697818678399897,
+                0.055804330565249166,
+                1.0316871225433253
+              ],
+              "robot0_eef_quat": [
+                0.9995983833509899,
+                0.00020524549483663668,
+                -0.02833776682942868,
+                2.911174085722286e-05
+              ],
+              "robot0_gripper_qpos": [
+                0.039998514901787977,
+                -0.03999860677570724
+              ],
+              "robot0_gripper_qvel": [
+                -5.716656488891702e-06,
+                -8.242502914209834e-06
+              ]
+            },
+            "artifact": "frames/capture-000030.npz",
+            "artifact_sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+            "render_preserves_state_and_caches": true,
+            "own_packet_status": "recorded",
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "endpoint",
+              "step": 28
+            },
+            "capture_record_id": "4e2bfa0b2e561e86efd09045cf0ded3bce1d41d9e19f8be638731edffbc68eae",
+            "capture_id": 29
+          },
+          "unmarked_rgb_artifact": "preintervention.png",
+          "unmarked_rgb_sha256": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d"
+        },
+        {
+          "label": "postclose_or_hold",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "close_or_hold",
+            "after_step": 29,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 8,
+            "capture_sim_time": 12.500000000000844,
+            "capture_read_sim_time_s": 12.500000000000844,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.500000000000844,
+            "own_tcp_world_m": [
+              -0.12699290837672,
+              0.05603683621811731,
+              1.0316831992599949
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12699290837672,
+                0.05603683621811731,
+                1.0316831992599949
+              ],
+              "robot0_eef_quat": [
+                0.9995986344290507,
+                0.00011192577141883042,
+                -0.028329164547475996,
+                0.00012631801140458587
+              ],
+              "robot0_gripper_qpos": [
+                0.010923780192142598,
+                -0.01093260036511946
+              ],
+              "robot0_gripper_qvel": [
+                -0.09865838755956356,
+                0.09841662931857144
+              ]
+            },
+            "artifact": "auxiliary/capture-000008.npz",
+            "artifact_sha256": "0a9138d7605d6b60ce9ed2433b2b4a978e659b4199dab531a86174cd0906aec4",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 29,
+              "control": 7
+            },
+            "capture_id": 37
+          },
+          "unmarked_rgb_artifact": "postclose_or_hold.png",
+          "unmarked_rgb_sha256": "1130c58b1d48c62f2443f6671085b48b9be16a48760748cc05e91f48c570af02"
+        },
+        {
+          "label": "lift_control_0",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 0,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 9,
+            "capture_sim_time": 12.55000000000086,
+            "capture_read_sim_time_s": 12.55000000000086,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.55000000000086,
+            "own_tcp_world_m": [
+              -0.1269997465718569,
+              0.056051927278754146,
+              1.0328226992476766
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1269997465718569,
+                0.056051927278754146,
+                1.0328226992476766
+              ],
+              "robot0_eef_quat": [
+                0.9996021983880343,
+                0.00010915402218580894,
+                -0.02820290991887699,
+                0.00017010383475941394
+              ],
+              "robot0_gripper_qpos": [
+                0.007500561844558488,
+                -0.007513801181424863
+              ],
+              "robot0_gripper_qvel": [
+                0.009045090926954661,
+                -0.008976697028305856
+              ]
+            },
+            "artifact": "auxiliary/capture-000009.npz",
+            "artifact_sha256": "0acb3835ee0e0165dc1a43563a1d0a5d7816a120351b2b1dfca6e8627d38a229",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 0
+            },
+            "capture_id": 38
+          },
+          "unmarked_rgb_artifact": "lift_control_0.png",
+          "unmarked_rgb_sha256": "48edf096ded8c2bf40abec9387c3ba1751b5526a200de354f288717a8027524b"
+        },
+        {
+          "label": "lift_control_1",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 1,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 10,
+            "capture_sim_time": 12.600000000000877,
+            "capture_read_sim_time_s": 12.600000000000877,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.600000000000877,
+            "own_tcp_world_m": [
+              -0.12705562088238323,
+              0.056097014077252226,
+              1.0349782109753485
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12705562088238323,
+                0.056097014077252226,
+                1.0349782109753485
+              ],
+              "robot0_eef_quat": [
+                0.9996061983649808,
+                7.639405257908738e-05,
+                -0.028060573147323617,
+                0.00021584462498169463
+              ],
+              "robot0_gripper_qpos": [
+                0.0075481171662340465,
+                -0.007556432268239978
+              ],
+              "robot0_gripper_qvel": [
+                -0.0019327414457452736,
+                0.0020146636654053717
+              ]
+            },
+            "artifact": "auxiliary/capture-000010.npz",
+            "artifact_sha256": "7bdc389bc6cd0a8ea867a257693d82432217e641d386c43eb141f217e1d2c97e",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 1
+            },
+            "capture_id": 39
+          },
+          "unmarked_rgb_artifact": "lift_control_1.png",
+          "unmarked_rgb_sha256": "a41ef5055b64d81ce03657a3be67e97a28c8014e64aa8d5795114bb57816a1d5"
+        },
+        {
+          "label": "lift_control_2",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 2,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 11,
+            "capture_sim_time": 12.650000000000894,
+            "capture_read_sim_time_s": 12.650000000000894,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.650000000000894,
+            "own_tcp_world_m": [
+              -0.12711153467744493,
+              0.05613653730549393,
+              1.0369853393248096
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12711153467744493,
+                0.05613653730549393,
+                1.0369853393248096
+              ],
+              "robot0_eef_quat": [
+                0.9996081545587809,
+                3.0411928049922654e-05,
+                -0.027990815085088334,
+                0.00022513456944107078
+              ],
+              "robot0_gripper_qpos": [
+                0.007479992433365871,
+                -0.0074859646218515714
+              ],
+              "robot0_gripper_qvel": [
+                -0.0002626569964965821,
+                0.00027448500486024945
+              ]
+            },
+            "artifact": "auxiliary/capture-000011.npz",
+            "artifact_sha256": "8b7be2e9dc73350cf77d2857242e72101ac394f2277afb89be1792f8e49cb89c",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 2
+            },
+            "capture_id": 40
+          },
+          "unmarked_rgb_artifact": "lift_control_2.png",
+          "unmarked_rgb_sha256": "ef8d32ec78b6efc192a6af7577e552bd12f4d1b1f4eb4e5ec67666931bc6a914"
+        },
+        {
+          "label": "lift_control_3",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 3,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 12,
+            "capture_sim_time": 12.70000000000091,
+            "capture_read_sim_time_s": 12.70000000000091,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.70000000000091,
+            "own_tcp_world_m": [
+              -0.1271366491057365,
+              0.05615331152959958,
+              1.0385335840652172
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1271366491057365,
+                0.05615331152959958,
+                1.0385335840652172
+              ],
+              "robot0_eef_quat": [
+                0.9996084151407757,
+                -8.462476760839888e-06,
+                -0.02798162069278988,
+                0.0002126300473492184
+              ],
+              "robot0_gripper_qpos": [
+                0.00747793255620762,
+                -0.007483669013013874
+              ],
+              "robot0_gripper_qvel": [
+                -1.1857716083878915e-05,
+                1.4837139968613697e-05
+              ]
+            },
+            "artifact": "auxiliary/capture-000012.npz",
+            "artifact_sha256": "1a3265a9873f3f0ff70932de3013f315cabd196444a9703c61e80ba803a0176f",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 3
+            },
+            "capture_id": 41
+          },
+          "unmarked_rgb_artifact": "lift_control_3.png",
+          "unmarked_rgb_sha256": "14b7ed82c7f9a948f37f5065ba980f9e7ab5f47cb02f54183347cc0d3f0aa3b1"
+        },
+        {
+          "label": "lift_control_4",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 4,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 13,
+            "capture_sim_time": 12.750000000000927,
+            "capture_read_sim_time_s": 12.750000000000927,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.750000000000927,
+            "own_tcp_world_m": [
+              -0.12715392615456914,
+              0.05614814774050085,
+              1.0396125098815923
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12715392615456914,
+                0.05614814774050085,
+                1.0396125098815923
+              ],
+              "robot0_eef_quat": [
+                0.9996074503415164,
+                -3.153502585317991e-05,
+                -0.028016178669370253,
+                0.00019483336464925192
+              ],
+              "robot0_gripper_qpos": [
+                0.007477219037165507,
+                -0.007482804116981314
+              ],
+              "robot0_gripper_qvel": [
+                -1.0961310875018858e-05,
+                1.4371954515648483e-05
+              ]
+            },
+            "artifact": "auxiliary/capture-000013.npz",
+            "artifact_sha256": "0bb26b404aced3c5b4a92e995fbdd38fe68a7b21f004ecdee9cade52f277c6d0",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 4
+            },
+            "capture_id": 42
+          },
+          "unmarked_rgb_artifact": "lift_control_4.png",
+          "unmarked_rgb_sha256": "f688f860d1923e61ac9961bfa162e9c8f16225ef74cd12cd8bdcf3f891b75bc5"
+        },
+        {
+          "label": "lift_control_5",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 5,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 14,
+            "capture_sim_time": 12.800000000000944,
+            "capture_read_sim_time_s": 12.800000000000944,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.800000000000944,
+            "own_tcp_world_m": [
+              -0.12716933792286045,
+              0.0561362651617504,
+              1.0403196791710803
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12716933792286045,
+                0.0561362651617504,
+                1.0403196791710803
+              ],
+              "robot0_eef_quat": [
+                0.9996064569671328,
+                -3.7759234192580315e-05,
+                -0.02805171247018807,
+                0.00017661071582570492
+              ],
+              "robot0_gripper_qpos": [
+                0.007476900501806494,
+                -0.007482266098809436
+              ],
+              "robot0_gripper_qvel": [
+                -3.529335670149034e-06,
+                8.146390871688543e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000014.npz",
+            "artifact_sha256": "0b5449dc05fbd2644c559c95885c439e173db1c9ede9be6604878db4ee8e2bbd",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 5
+            },
+            "capture_id": 43
+          },
+          "unmarked_rgb_artifact": "lift_control_5.png",
+          "unmarked_rgb_sha256": "d5023afe6f88592b13e328f8d60ca1404933c19dbdf44232ae7fec53506a3277"
+        },
+        {
+          "label": "lift_control_6",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 6,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 15,
+            "capture_sim_time": 12.85000000000096,
+            "capture_read_sim_time_s": 12.85000000000096,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.85000000000096,
+            "own_tcp_world_m": [
+              -0.12717852938115237,
+              0.05612902027338984,
+              1.0407663073315765
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12717852938115237,
+                0.05612902027338984,
+                1.0407663073315765
+              ],
+              "robot0_eef_quat": [
+                0.9996059287738328,
+                -3.348472568470706e-05,
+                -0.02807062027940491,
+                0.00016222239050368154
+              ],
+              "robot0_gripper_qpos": [
+                0.0074767910656327145,
+                -0.007481934881932568
+              ],
+              "robot0_gripper_qvel": [
+                -1.3517275576140318e-06,
+                5.59721953481952e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000015.npz",
+            "artifact_sha256": "997850cbcb54d8270c33810d5454505e1ff13c5bfa41da67a463161c94fdfe18",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 6
+            },
+            "capture_id": 44
+          },
+          "unmarked_rgb_artifact": "lift_control_6.png",
+          "unmarked_rgb_sha256": "c2b42cbc8d1d0a1c91312906eddd81831b09a12db5066bc133e6a8aa4464b1c7"
+        },
+        {
+          "label": "lift_control_7",
+          "capture": {
+            "condition": "neck-close",
+            "anchor": "neck",
+            "arm": "close",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 16,
+            "capture_sim_time": 12.900000000000977,
+            "capture_read_sim_time_s": 12.900000000000977,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.900000000000977,
+            "own_tcp_world_m": [
+              -0.12718114951300194,
+              0.05612478788565839,
+              1.0410406758139148
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12718114951300194,
+                0.05612478788565839,
+                1.0410406758139148
+              ],
+              "robot0_eef_quat": [
+                0.9996058302049112,
+                -2.788204004150474e-05,
+                -0.028074176946026014,
+                0.00015502175357132338
+              ],
+              "robot0_gripper_qpos": [
+                0.007476745117617121,
+                -0.007481685192607465
+              ],
+              "robot0_gripper_qvel": [
+                -6.463524318232513e-07,
+                4.571729489109744e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000016.npz",
+            "artifact_sha256": "4afa9f45e3e148ba484fdde64f195ea018de17d8df68a5a6edfa306cb4d80f78",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 7
+            },
+            "capture_id": 45
+          },
+          "unmarked_rgb_artifact": "lift_control_7.png",
+          "unmarked_rgb_sha256": "071e3f66cfe26a2559ef0931bcbe644786366c2456fb0a927921d38b39c55651"
+        }
+      ],
+      "visual_inspection": {
+        "condition": "neck-close",
+        "visual_inspection_completed": true,
+        "rgb_export_sha256": "4646e42e1f82a0853c334eee01ee549f013c866a368f0dddfaf34fb1129700f7",
+        "viewed_artifacts": {
+          "all_fixed_original_rgb.png": "8925bb78de5986f7cdd33969d1c2ed6a81fe708c2de89dcbe26d3efe1d702599",
+          "preintervention.png": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d",
+          "postclose_or_hold.png": "1130c58b1d48c62f2443f6671085b48b9be16a48760748cc05e91f48c570af02",
+          "lift_control_7.png": "071e3f66cfe26a2559ef0931bcbe644786366c2456fb0a927921d38b39c55651"
+        },
+        "inspection_method": "All ten original384x384 arrays viewed on unscaled fixed sheet; preintervention, postclose and final lift additionally viewed as individual originals.",
+        "viewed_merged_capture_ids": [
+          29,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "observations": [
+          "The visible fingers move inward toward the upper bottle-neck region during the close intervention.",
+          "The hand hides the cap and part of the upper neck; precise finger-pad contact remains obscured.",
+          "The hand and visible bottle silhouette appear slightly higher across the lift endpoints relative to the cabinet background.",
+          "The body retains a near-upright outline without an obvious large lateral tilt; small silhouette changes do not resolve slip or a small tilt."
+        ],
+        "limits": [
+          "No image displacement, object pose, tilt angle or physical contact was computed.",
+          "The view does not establish holding, support-free retention, grasp success or superiority to the whole-anchor condition.",
+          "This closed-cell image review is not matrix-level sensor admission or temporal feature extraction."
+        ],
+        "new_tracking_model_physics_render_calls": 0,
+        "holding_truth": null,
+        "grasp_success": null,
+        "anchor_superiority": null
+      },
+      "visual_inspection_sha256": "cb58d056bc89d5a94ef9791b65a1bafa4027eb8a222a8e23fce87159cb21a771",
+      "rgb_export_sha256": "4646e42e1f82a0853c334eee01ee549f013c866a368f0dddfaf34fb1129700f7",
+      "final_sheet": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-rgb-inspection-01/final-labeled-sheets/neck-close.png",
+      "final_sheet_sha256": "b84aa3cc25969982ac207bbd230391ce6217a5bf90406369d7bfaa3b0226665a"
+    },
+    {
+      "condition": "neck-open_hold",
+      "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold",
+      "source_sha256": {
+        "sensor-captures.json": "6be35261bae2088893e1f5b3565b122788ab517b8e298c75f26a262e56c6269c",
+        "sensor-seal.json": "36563d42470857f7134c36ad4bf99e75929501299a0c917511d8d98472e78a63"
+      },
+      "source_journal_sha256": "e5f2dbdb1c6cf0b4302d30d49d200b48b1638f47178ff297826e77ed6d274865",
+      "captures": [
+        {
+          "label": "preintervention",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "approach",
+            "after_step": 28,
+            "control": 7,
+            "source_capture_stream": "primary",
+            "source_capture_seq": 30,
+            "capture_sim_time": 12.10000000000071,
+            "capture_read_sim_time_s": 12.10000000000071,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.10000000000071,
+            "own_tcp_world_m": [
+              -0.12697818678399897,
+              0.055804330565249166,
+              1.0316871225433253
+            ],
+            "tcp_source_field": "endpoint.own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12697818678399897,
+                0.055804330565249166,
+                1.0316871225433253
+              ],
+              "robot0_eef_quat": [
+                0.9995983833509899,
+                0.00020524549483663668,
+                -0.02833776682942868,
+                2.911174085722286e-05
+              ],
+              "robot0_gripper_qpos": [
+                0.039998514901787977,
+                -0.03999860677570724
+              ],
+              "robot0_gripper_qvel": [
+                -5.716656488891702e-06,
+                -8.242502914209834e-06
+              ]
+            },
+            "artifact": "frames/capture-000030.npz",
+            "artifact_sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+            "render_preserves_state_and_caches": true,
+            "own_packet_status": "recorded",
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "endpoint",
+              "step": 28
+            },
+            "capture_record_id": "3ab002b9e79d27b4a212eb645ec7b42cc708015c4ccac3c9963424d2706d146b",
+            "capture_id": 29
+          },
+          "unmarked_rgb_artifact": "preintervention.png",
+          "unmarked_rgb_sha256": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d"
+        },
+        {
+          "label": "postclose_or_hold",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "close_or_hold",
+            "after_step": 29,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 8,
+            "capture_sim_time": 12.500000000000844,
+            "capture_read_sim_time_s": 12.500000000000844,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.500000000000844,
+            "own_tcp_world_m": [
+              -0.12699347487177348,
+              0.056036303694906836,
+              1.0316823278349616
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12699347487177348,
+                0.056036303694906836,
+                1.0316823278349616
+              ],
+              "robot0_eef_quat": [
+                0.9995986074725338,
+                0.0001115128542835131,
+                -0.028330116407013,
+                0.00012652358789493057
+              ],
+              "robot0_gripper_qpos": [
+                0.03999835959909916,
+                -0.03999961350372724
+              ],
+              "robot0_gripper_qvel": [
+                1.2661818058131466e-06,
+                -5.124663100109599e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000008.npz",
+            "artifact_sha256": "74bed564add05850ac6eceb476e48f313cf17a7f28e6edffd7c0408e5e3a0b12",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 29,
+              "control": 7
+            },
+            "capture_id": 37
+          },
+          "unmarked_rgb_artifact": "postclose_or_hold.png",
+          "unmarked_rgb_sha256": "7f80487129f03dad677d8c8a36b07e189249c21b8d4770a4a47108650bdfa9dd"
+        },
+        {
+          "label": "lift_control_0",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 0,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 9,
+            "capture_sim_time": 12.55000000000086,
+            "capture_read_sim_time_s": 12.55000000000086,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.55000000000086,
+            "own_tcp_world_m": [
+              -0.1270000421152627,
+              0.056049336497218015,
+              1.032821761786192
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1270000421152627,
+                0.056049336497218015,
+                1.032821761786192
+              ],
+              "robot0_eef_quat": [
+                0.9996021793112626,
+                0.00010748467706517273,
+                -0.028203587264958602,
+                0.00017096375520949704
+              ],
+              "robot0_gripper_qpos": [
+                0.039998475660354096,
+                -0.03999958437851576
+              ],
+              "robot0_gripper_qvel": [
+                2.6558445435591925e-06,
+                9.534429803448991e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000009.npz",
+            "artifact_sha256": "f4d338778e8179f996b2f8767ea6c425655cc92b1513477a11f211c9aa261e33",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 0
+            },
+            "capture_id": 38
+          },
+          "unmarked_rgb_artifact": "lift_control_0.png",
+          "unmarked_rgb_sha256": "94b303dd3b15c15f55edc8af00a589ede2ef091757e102ee8b1cf12b338880ed"
+        },
+        {
+          "label": "lift_control_1",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 1,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 10,
+            "capture_sim_time": 12.600000000000877,
+            "capture_read_sim_time_s": 12.600000000000877,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.600000000000877,
+            "own_tcp_world_m": [
+              -0.1270481001518702,
+              0.05609524084001395,
+              1.034988799265453
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1270481001518702,
+                0.05609524084001395,
+                1.034988799265453
+              ],
+              "robot0_eef_quat": [
+                0.9996064377097114,
+                7.493529918878306e-05,
+                -0.028052051813969876,
+                0.00021555284127400612
+              ],
+              "robot0_gripper_qpos": [
+                0.039998563707667405,
+                -0.03999957953915795
+              ],
+              "robot0_gripper_qvel": [
+                8.80582337739096e-07,
+                -7.487853573979419e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000010.npz",
+            "artifact_sha256": "7b9a0027834116ca0d270667191ddd48eda8a885f911b0faafea68a6907105b0",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 1
+            },
+            "capture_id": 39
+          },
+          "unmarked_rgb_artifact": "lift_control_1.png",
+          "unmarked_rgb_sha256": "3b68cc342d6afeb8b758a41d735934ff5109d9fd3c2ed42db3455a37feb220fb"
+        },
+        {
+          "label": "lift_control_2",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 2,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 11,
+            "capture_sim_time": 12.650000000000894,
+            "capture_read_sim_time_s": 12.650000000000894,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.650000000000894,
+            "own_tcp_world_m": [
+              -0.1270956315419296,
+              0.05613631831095934,
+              1.0370094363083826
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1270956315419296,
+                0.05613631831095934,
+                1.0370094363083826
+              ],
+              "robot0_eef_quat": [
+                0.9996085654431704,
+                2.9445939063121873e-05,
+                -0.027976149526523757,
+                0.00022379287843333692
+              ],
+              "robot0_gripper_qpos": [
+                0.03999857877103185,
+                -0.03999964411424195
+              ],
+              "robot0_gripper_qvel": [
+                -3.099893132861612e-08,
+                -1.5904770513139497e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000011.npz",
+            "artifact_sha256": "477089a33c659013a59d5df2956e2efea6edc0f3d55dd76bc144b40e5fe35c98",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 2
+            },
+            "capture_id": 40
+          },
+          "unmarked_rgb_artifact": "lift_control_2.png",
+          "unmarked_rgb_sha256": "37f1c561c072dd2109db49f1b7e5020ee84fd23bd3510d151fcaeeb43536805c"
+        },
+        {
+          "label": "lift_control_3",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 3,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 12,
+            "capture_sim_time": 12.70000000000091,
+            "capture_read_sim_time_s": 12.70000000000091,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.70000000000091,
+            "own_tcp_world_m": [
+              -0.12711459520381063,
+              0.05615444171563782,
+              1.0385686127716434
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12711459520381063,
+                0.05615444171563782,
+                1.0385686127716434
+              ],
+              "robot0_eef_quat": [
+                0.9996088569915348,
+                -9.052312542778829e-06,
+                -0.027965844948504313,
+                0.00021085172150417907
+              ],
+              "robot0_gripper_qpos": [
+                0.03999857422356754,
+                -0.03999972488429933
+              ],
+              "robot0_gripper_qvel": [
+                -1.036400786950278e-07,
+                -1.5962281335720627e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000012.npz",
+            "artifact_sha256": "2a02896f550b962bdd3978693eafa2e976007095910927a9f69d49279951ee7a",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 3
+            },
+            "capture_id": 41
+          },
+          "unmarked_rgb_artifact": "lift_control_3.png",
+          "unmarked_rgb_sha256": "41b90578aaaa70d3cb71197c6eebf1c112ee9d71dc968717c9cd3157242f4df8"
+        },
+        {
+          "label": "lift_control_4",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 4,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 13,
+            "capture_sim_time": 12.750000000000927,
+            "capture_read_sim_time_s": 12.750000000000927,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.750000000000927,
+            "own_tcp_world_m": [
+              -0.1271303024054362,
+              0.05614983800127826,
+              1.0396540412721194
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1271303024054362,
+                0.05614983800127826,
+                1.0396540412721194
+              ],
+              "robot0_eef_quat": [
+                0.9996079029833558,
+                -3.190614438169925e-05,
+                -0.028000036828373452,
+                0.0001929062585073662
+              ],
+              "robot0_gripper_qpos": [
+                0.03999857893441854,
+                -0.0399997931264852
+              ],
+              "robot0_gripper_qvel": [
+                3.558817439912071e-07,
+                -1.0726789271219404e-06
+              ]
+            },
+            "artifact": "auxiliary/capture-000013.npz",
+            "artifact_sha256": "14969be8f92303794cb8717171c6ff023501a6f067a8728c87168bde5c958251",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 4
+            },
+            "capture_id": 42
+          },
+          "unmarked_rgb_artifact": "lift_control_4.png",
+          "unmarked_rgb_sha256": "8011e007d279a690a7ef996d0fb1c9dcc8c51d01e57962260e8fd247bfcc058c"
+        },
+        {
+          "label": "lift_control_5",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 5,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 14,
+            "capture_sim_time": 12.800000000000944,
+            "capture_read_sim_time_s": 12.800000000000944,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.800000000000944,
+            "own_tcp_world_m": [
+              -0.1271413595993995,
+              0.056138301927615396,
+              1.0403674264086182
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.1271413595993995,
+                0.056138301927615396,
+                1.0403674264086182
+              ],
+              "robot0_eef_quat": [
+                0.9996069530546297,
+                -3.81310565797377e-05,
+                -0.028034041830742054,
+                0.0001744978307469218
+              ],
+              "robot0_gripper_qpos": [
+                0.039998623302991795,
+                -0.039999818581557774
+              ],
+              "robot0_gripper_qvel": [
+                1.0564113293896166e-06,
+                -3.1087330100742534e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000014.npz",
+            "artifact_sha256": "7e2ba1022e0aada1e9ead6cdc93790be85ef6a66464197069bdf518b83fb26c4",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 5
+            },
+            "capture_id": 43
+          },
+          "unmarked_rgb_artifact": "lift_control_5.png",
+          "unmarked_rgb_sha256": "b04a4f175763297cccc7243b98a8b1d06b710e4b86a93240b22db63695e8cdce"
+        },
+        {
+          "label": "lift_control_6",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 6,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 15,
+            "capture_sim_time": 12.85000000000096,
+            "capture_read_sim_time_s": 12.85000000000096,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.85000000000096,
+            "own_tcp_world_m": [
+              -0.12714851457000748,
+              0.05613116051336526,
+              1.0408177270290444
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12714851457000748,
+                0.05613116051336526,
+                1.0408177270290444
+              ],
+              "robot0_eef_quat": [
+                0.9996063967936382,
+                -3.37637807452662e-05,
+                -0.028053960321993157,
+                0.00016018582210964617
+              ],
+              "robot0_gripper_qpos": [
+                0.03999867393844504,
+                -0.039999834774875676
+              ],
+              "robot0_gripper_qvel": [
+                9.717188872869167e-07,
+                -3.3692083099274577e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000015.npz",
+            "artifact_sha256": "e6cd3cb363a3b829a5ae46b96f8d57d5e137fa7d4e88816014f7a39e746c58ac",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 6
+            },
+            "capture_id": 44
+          },
+          "unmarked_rgb_artifact": "lift_control_6.png",
+          "unmarked_rgb_sha256": "c5843fe74dc38cba19aab8422d18a41c14fb6fce2d88578dc64d5d1f8f98ed7f"
+        },
+        {
+          "label": "lift_control_7",
+          "capture": {
+            "condition": "neck-open_hold",
+            "anchor": "neck",
+            "arm": "open_hold",
+            "phase": "lift",
+            "after_step": 30,
+            "control": 7,
+            "source_capture_stream": "auxiliary",
+            "source_capture_seq": 16,
+            "capture_sim_time": 12.900000000000977,
+            "capture_read_sim_time_s": 12.900000000000977,
+            "cached_geometry_sample_time_s": null,
+            "exact_observation_sample_time_s": null,
+            "tcp_read_sim_time_s": 12.900000000000977,
+            "own_tcp_world_m": [
+              -0.12715096380319307,
+              0.05612692098075406,
+              1.041093881493545
+            ],
+            "tcp_source_field": "control_completed.returned_own_observations.robot0_eef_pos",
+            "own_observations": {
+              "robot0_eef_pos": [
+                -0.12715096380319307,
+                0.05612692098075406,
+                1.041093881493545
+              ],
+              "robot0_eef_quat": [
+                0.9996063024200736,
+                -2.8038572876976087e-05,
+                -0.02805736953777047,
+                0.00015293961839040436
+              ],
+              "robot0_gripper_qpos": [
+                0.0399987208398219,
+                -0.03999985183587723
+              ],
+              "robot0_gripper_qvel": [
+                9.005258167354255e-07,
+                -3.519842833502428e-07
+              ]
+            },
+            "artifact": "auxiliary/capture-000016.npz",
+            "artifact_sha256": "b7f7dfd3332b830a35f9d469a8224555bef519d2046d17b9b3de69347affe8be",
+            "render_preserves_state_and_caches": true,
+            "own_source": {
+              "journal": "episodes.jsonl",
+              "kind": "control_completed",
+              "step": 30,
+              "control": 7
+            },
+            "capture_id": 45
+          },
+          "unmarked_rgb_artifact": "lift_control_7.png",
+          "unmarked_rgb_sha256": "6389528d21a693ae6e262f9bfbf64deeae44eb657af9646d8283f7524c3aa343"
+        }
+      ],
+      "visual_inspection": {
+        "condition": "neck-open_hold",
+        "visual_inspection_completed": true,
+        "rgb_export_sha256": "1ee00c0b6bf97bdd40a2adcdb5873931e4f9d3614d4d586f7208ca502cde48df",
+        "viewed_artifacts": {
+          "all_fixed_original_rgb.png": "7cb0e0b09de506b9510ca463e98e2392c134d7401056f1414a49a9cc0819cdcf",
+          "preintervention.png": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d",
+          "postclose_or_hold.png": "7f80487129f03dad677d8c8a36b07e189249c21b8d4770a4a47108650bdfa9dd",
+          "lift_control_7.png": "6389528d21a693ae6e262f9bfbf64deeae44eb657af9646d8283f7524c3aa343"
+        },
+        "inspection_method": "All ten original384x384 arrays viewed on unscaled fixed sheet; preintervention, posthold and final lift additionally viewed as individual originals.",
+        "viewed_merged_capture_ids": [
+          29,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "observations": [
+          "The visible fingers stay separated through hold and lift.",
+          "The hand appears slightly higher through the lift while the visible bottle body stays at approximately the same image height relative to the cabinet.",
+          "More of the small cap/top region becomes visible below the palm by the final lift frame.",
+          "The visible body remains near upright, without an obvious large lateral tilt."
+        ],
+        "limits": [
+          "Exact finger-pad contact, bottle support/clearance and small slip/tilt are not resolved by these RGBs.",
+          "No image displacement, bottle pose or tilt angle was measured.",
+          "This closed-cell image review is not matrix-level sensor admission or temporal feature extraction."
+        ],
+        "new_tracking_model_physics_render_calls": 0,
+        "holding_truth": null,
+        "grasp_success": null,
+        "anchor_superiority": null
+      },
+      "visual_inspection_sha256": "c491aa9bb3de9c3292e070de72311954efde9ab1431d1327ce706578bfac2a1e",
+      "rgb_export_sha256": "1ee00c0b6bf97bdd40a2adcdb5873931e4f9d3614d4d586f7208ca502cde48df",
+      "final_sheet": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-rgb-inspection-01/final-labeled-sheets/neck-open_hold.png",
+      "final_sheet_sha256": "72272d0074c4dc5e46d1579c5c4303f574ad8f206cee429cd048fdcde0c920b8"
+    }
+  ],
+  "tracking_projection_displacement_model_physics_render_calls": 0,
+  "no_masks": true,
+  "holding_grasp_success_or_anchor_superiority_established_by_images": false,
+  "mechanical_outcomes_not_used_for_image_selection": true,
+  "inspection_timing": "Per-cell original image inspection after sealed collection; matrix source admission only after all four collections and replays completed."
+}
