@@ -77,6 +77,9 @@ def processor_preflight(output):
     if model['content_id'] != baseline.MODEL_CONTENT_ID:
         raise ValueError('Existing checkpoint changed')
     config, references = native.source_config()
+    original_versions = native.read_json(Path(references[0]['directory']) / 'manifest.json')['versions']
+    if versions() != original_versions:
+        raise ValueError('Exact archived native POINT model environment required')
     processor = AutoProcessor.from_pretrained(baseline.MODEL, trust_remote_code=True, local_files_only=True)
     inputs = [adapter.prepare_native_input(processor, adapter.load_rgb(source['source_root'], row), row['case_id'])[2]
               for row in source['images']]
@@ -100,7 +103,8 @@ def load_preflight(path, expected_sha):
             or value['conditions'] != list(ORDER) or value['question'] != adapter.QUESTION
             or value['settings'] != native.SETTINGS or value['model']['content_id'] != baseline.MODEL_CONTENT_ID
             or value['model_constructions'] != 0 or value['model_calls'] != 0
-            or value['physical_gpu_for_inference'] != GPU or value['processor_device'] != 'cpu'):
+            or value['physical_gpu_for_inference'] != GPU or value['processor_device'] != 'cpu'
+            or value['versions'] != versions()):
         raise ValueError('Frozen code/configuration/input provenance mismatch')
     return value
 

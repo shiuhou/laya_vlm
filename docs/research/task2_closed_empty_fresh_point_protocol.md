@@ -35,12 +35,17 @@ messages. Source records belong only in the provenance lane.
 
 Checkpoint remains `/home/junhongli/models/huggingface/LocateAnything-3B`, content
 ID `4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f`.
-Use the original laya-embodied Python environment and physical GPU2 for all four
+Use the archived native POINT model environment, `locateanything`, and physical GPU2 for all four
 calls, seed1, BF16/eval, tokenizer maximum16384 and EOS151645. Preserve native
 settings: max_new_tokens256, use_cache=true, generation_mode=hybrid,
 temperature0, do_sample=false, verbose=false. Check loaded model configuration
 against the original BOX/POINT source; all new loaded environments must equal
 the first case. No new model or generation routine.
+The CPU preflight and all workers must match the archived source package versions.
+The initial processor-preflight setup attempt in `laya-embodied` failed before
+processor construction because decord/lmdb/torchvision were absent; it made zero
+model calls. Preserve that setup failure. Preflight02 uses the existing original
+model environment without installing packages or changing checkpoint bytes.
 
 First commit a clean source freeze. Then run CPU processor-only preflight with
 `CUDA_VISIBLE_DEVICES=''`: verify source seals/checkpoint bytes, construct only

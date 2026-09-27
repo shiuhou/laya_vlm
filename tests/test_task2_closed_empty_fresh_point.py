@@ -31,13 +31,17 @@ def test_exact_review_gate_rejects_changed_freeze_inputs_order_budget_or_gpu(tmp
         probe.check_review(path, {'code': {'commit': 'freeze'}}, 'preflight')
 
 
-def test_cpu_preflight_constructs_only_processor_and_seals_four_exact_inputs(tmp_path, monkeypatch):
+@pytest.mark.parametrize('environment_mismatch', [False, True])
+def test_cpu_preflight_constructs_only_processor_and_seals_four_exact_inputs(tmp_path, monkeypatch, environment_mismatch):
     monkeypatch.setenv('CUDA_VISIBLE_DEVICES', '')
     monkeypatch.setattr(probe, 'code_identity', lambda: {'commit': 'frozen', 'dirty_status': ''})
     source = {'source_root': 'source', 'images': [{'case_id': case} for case in probe.ORDER]}
     monkeypatch.setattr(probe, 'source_packet', lambda: source)
     monkeypatch.setattr(probe, 'model_identity', lambda _: {'content_id': probe.baseline.MODEL_CONTENT_ID})
-    monkeypatch.setattr(probe.native, 'source_config', lambda: ({'original': 'config'}, []))
+    reference = tmp_path / 'reference'
+    reference.mkdir()
+    (reference / 'manifest.json').write_text(json.dumps({'versions': {'different': 'environment'} if environment_mismatch else {}}))
+    monkeypatch.setattr(probe.native, 'source_config', lambda: ({'original': 'config'}, [{'directory': str(reference)}]))
     monkeypatch.setattr(probe, 'versions', lambda: {})
     monkeypatch.setitem(sys.modules, 'torch', SimpleNamespace(cuda=SimpleNamespace(is_initialized=lambda: False)))
     calls = []
@@ -53,6 +57,11 @@ def test_cpu_preflight_constructs_only_processor_and_seals_four_exact_inputs(tmp
         return None, None, {'condition': case, 'input_token_ids': [1, 2], 'question': probe.adapter.QUESTION}
     monkeypatch.setattr(probe.adapter, 'prepare_native_input', prepare)
     path = tmp_path / 'preflight.json'
+    if environment_mismatch:
+        with pytest.raises(ValueError, match='archived native POINT model environment'):
+            probe.processor_preflight(path)
+        assert calls == [] and not path.exists()
+        return
     value = probe.processor_preflight(path)
     assert calls == ['processor', *probe.ORDER]
     assert value['model_calls'] == value['model_constructions'] == value['physics_calls'] == 0
