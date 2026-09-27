@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations041–042 (POINT final audit pending). This is a short living assessment;
+Updated 2026-09-27 after iterations041–042. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -53,7 +53,7 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    tokens withEOS. Actual RGB shows whole-body/shoulder versus narrow-neck
    points; both are bottle-proxy interior, with40.456mm projectedZ difference.
    This supports use of explicit part text on this fixture, not independent
-   region choice or grasp quality. Final full-input/result audit is pending.
+   region choice or grasp quality. Full native-input/result/report audit passes (`77c415d`).
    Next compares BOTH anchors with the same18-pose original point-goal-cell
    geometry before any physical trial; no point is selected by outcome.
 3. **Coordinate consistency transfers; holding remains unknown:** justified

@@ -1505,7 +1505,11 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   Earlier42BOX/260token/noEOS failure remains immutable.
 - **Evidence:** raw `task2-point-region-control-run-01`, batchjournal
   `57d9ddcd1348303254d32cf844b0a29e75b90c4eef585a8add4c72afd30b508d`.
-  Report `5ef2673` (main `adade07`); full nativeinput/result/report audit pending.
+  Report `5ef2673` (main `adade07`); full nativeinput/result/report audit
+  `77c415d` (main `8dcaf8f`) passes. All24journal records/137frozen identities,
+  exact inputs/configs/outputvocabulary and scalar projection to1.11e−16m match.
+  Evaluator ordering is supported by sealed dependencies/reviewedcode; no
+  independent wall-clock evaluator-start timestamp is claimed.
 - **Next decision:** freeze matched2×9 original point-goal-cell calculations,
   exactP plus ±5mmworldcorners peranchor, same fixedpose/cloud/proxies. Both
   sources and fullaudit must qualify; no selecting a winningpose/region. A

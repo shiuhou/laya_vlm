@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iterations041–042 (POINT final audit pending). This is the authoritative current
+Reviewed 2026-09-27 after research iterations041–042. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -112,7 +112,7 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    Whole versus neck text produces different visibly relevant locations,
    projectedZ difference40.456mm. Same originalRGB/model/settings, freshprocesses,
    no retry; explicit part use is not independent planning or graspquality.
-   Final input/result audit is pending. Next compares both fixedanchors in the
+   Full input/result/report audit passes (`77c415d`). Next compares both fixedanchors in the
    same original point-rule stopping-cell geometry (18predetermined placements).
    A fresh paired approach wrapper is only being prepared; no dynamics yet.
 
