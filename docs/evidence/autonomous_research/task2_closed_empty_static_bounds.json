@@ -108,7 +108,7 @@
       0.0
     ]
   },
-  "script_sha256": "eba08d25c9e48bb696305674647a8d158d5fb03e2116b3daf745632bcc4b161d",
+  "script_sha256": "dba3ad2e24fcf86550adbc240a5026be6fa6b50f4bedbb53e295645aff59b128",
   "boundary_seq": 12216,
   "boundary_record_id": "7eb2f832e8aafa8077d89de94ba9915c7def3d44dbc87b0f0ea3c0021bce249a",
   "boundary_time_s": 12.10000000000071,
@@ -267,7 +267,36 @@
     "wine_rack_1_main": 0.15410685008226724
   },
   "table_XY_contains_relocated_collision_geometry": true,
-  "all_non_table_X_bounds_disjoint": true,
+  "all_finite_non_table_non_target_X_bounds_disjoint": true,
+  "direct_worldbody_collision_geometries": [
+    {
+      "name": "floor",
+      "type": "plane",
+      "position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "relocated_bottle_Z_clearance_lower_bound_m": 0.8999852792667999
+    }
+  ],
   "limits": [
     "Same-qpos geometric bounds, not old contact cache reconstruction.",
     "Fixture BDDL origin ranges/yaws are explicit setup-contract assumptions checked by source inspection, not measured runtime fixture poses.",

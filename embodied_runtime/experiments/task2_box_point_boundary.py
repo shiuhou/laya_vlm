@@ -354,7 +354,8 @@ class NativeReplayVerifier:
             'entire_snapshot_exact': True})
 
 
-def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=None):
+def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=None,
+           before_action=None, after_replay=None):
     from .privileged_multistage_task import WineBottleBottomDrawerAdapter
     from ..adapters.libero_rgbd import LiberoRgbdSource
 
@@ -364,6 +365,8 @@ def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=No
         raise ValueError('Completed source without partial runtime failure required')
     def rows(kind):
         return [r['data'] for r in records if r['kind'] == kind]
+    if any(r['kind'].startswith('scene_') for r in records) and (before_action is None or after_replay is None):
+        raise ValueError('Explicit scene-event replay handler required before constructing a world')
     if len(rows('termination')) != 1 or len(rows('initial_frame_gate')) != 1:
         raise ValueError('One complete source condition required')
     frozen = rows('run_start')[0]['manifest']
@@ -408,6 +411,8 @@ def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=No
             frames.append({'capture_seq': frame['capture_seq'], 'array_bytes_exact': checks})
         capture(0)
         for action_index, action in enumerate(actions):
+            if before_action is not None:
+                before_action(backend, action)
             step, tracking = action['step'], {'control': None}
             with native_observer(world, verifier, action.get('native_phase', 'approach'), step, tracking, groups):
                 for control in range(8):
@@ -442,6 +447,8 @@ def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=No
             capture(action_index + 1)
         if verifier.expected:
             raise ValueError('Unmatched native source snapshots')
+        if after_replay is not None:
+            after_replay()
         result = {'status': 'passed', 'source_journal_sha256': file_hash(source / 'episodes.jsonl'),
             'code': actual['code'], 'exact_controls': len(controls), 'exact_native_snapshots': len(verifier.states),
             'exact_captures': len(frames), 'control_states': controls, 'frame_checks': frames,

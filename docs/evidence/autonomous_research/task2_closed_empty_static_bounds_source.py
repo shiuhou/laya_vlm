@@ -110,6 +110,16 @@ for name,geoms in groups.items():
         out[name]['Y_Z_world_bounds']='not reconstructed or used'
 bottle=out['wine_bottle_1_main']; relocated_low=np.array(bottle['minimum'])+np.array([.35,0,0]);relocated_high=np.array(bottle['maximum'])+np.array([.35,0,0])
 separations={name:float(relocated_low[0]-value) for name,value in maximum_x.items() if name not in ('table','wine_bottle_1_main')}
+world_geoms = [g for g in tree.find('worldbody').findall('geom')
+               if not (g.get('contype') == '0' and g.get('conaffinity') == '0')]
+assert len(world_geoms) == 1 and world_geoms[0].get('name') == 'floor'
+floor = world_geoms[0]
+assert floor.get('type') == 'plane'
+floor_position = array(floor.get('pos'), '0 0 0')
+floor_rotation = rotation(array(floor.get('quat'), '1 0 0 0'))
+assert np.array_equal(floor_rotation, np.eye(3))
+floor_clearance = float(relocated_low[2] - floor_position[2])
+assert floor_clearance > 0
 result={'purpose':'Privileged static setup geometry only; no sensor feature or model input. No simulator import, model construction, forward, render, reset, or dynamics.',
     'xml':str(XML),'xml_sha256':hashlib.sha256(XML.read_bytes()).hexdigest(),
     'journal':str(JOURNAL),'journal_sha256':hashlib.sha256(JOURNAL.read_bytes()).hexdigest(),
@@ -126,6 +136,9 @@ result={'purpose':'Privileged static setup geometry only; no sensor feature or m
     'relocated_bottle_minimum_m':relocated_low.tolist(),'relocated_bottle_maximum_m':relocated_high.tolist(),
     'X_separation_lower_bounds_m':separations,
     'table_XY_contains_relocated_collision_geometry':bool(np.all(relocated_low[:2]>[-.5,-.6]) and np.all(relocated_high[:2]<[.5,.6])),
-    'all_non_table_X_bounds_disjoint':all(x>0 for x in separations.values()),
+    'all_finite_non_table_non_target_X_bounds_disjoint':all(x>0 for x in separations.values()),
+    'direct_worldbody_collision_geometries': [{'name': 'floor', 'type': 'plane',
+        'position_m': floor_position.tolist(), 'rotation': floor_rotation.tolist(),
+        'relocated_bottle_Z_clearance_lower_bound_m': floor_clearance}],
     'limits':['Same-qpos geometric bounds, not old contact cache reconstruction.','Fixture BDDL origin ranges/yaws are explicit setup-contract assumptions checked by source inspection, not measured runtime fixture poses.','Geometry and BDDL placement-contract consistency require independent review and future live identity checks.','No dynamic stability, post-event robot trajectory, or camera-visibility guarantee.','Fixture Y/Z world bounds are deliberately omitted.']}
 print(json.dumps(result,indent=2))

@@ -92,6 +92,10 @@ separation from the remaining collision geometry is:
 | Cabinet across its BDDL placement range | 57.257 mm |
 | Rack across its BDDL placement range | 154.107 mm |
 
+The direct worldbody floor plane is separately accounted for at Z=0, with a
+899.985 mm lower bound on relocated-bottle Z clearance. The finite-group X bounds
+do not describe the unbounded floor plane.
+
 X-disjoint bounds suffice for static separation regardless of unknown fixture
 Y/Z. Target Z/orientation and its table penetration/support geometry are preserved
 by pure horizontal translation over the same flat tabletop. The
@@ -129,11 +133,11 @@ own observation provenance and boundary image hash. Store pose/contact/geometry
 details in the mixed audit journal or evaluator lane. Strip condition, event name,
 target pose, geom IDs, contacts, solver state and absolute action/time identifiers
 from any later model-facing packet. Treat the jump as an exogenous discontinuity,
-not ordinary tracked object dynamics. A separately fixed through-event transfer
-of all original LK seeds may be preserved as a diagnostic, including every failure;
-do not choose a suffix cohort by which seeds survive. Holding judgments use the
-fixed causal post-event window in both cells and cannot borrow correspondence
-identity across the relocation without evidence.
+not ordinary tracked object dynamics. Initialize the same 492 fixed raster
+locations (x=212..223, y=169..209) afresh on each post-event image; process all 24
+suffix control captures. No primary through-event series or survival-selected
+seed cohort is admitted. Holding judgments use the fixed causal post-event
+window in both cells and cannot borrow correspondence identity across relocation.
 
 ## Recorder and replay work required
 
@@ -160,7 +164,7 @@ experimental `Intervention`, invoked after prefix verification, and an optional
 `before_action` callback in the existing experimental replay, invoked before the
 first suffix control/state check. The new experiment supplies a tightly bounded
 scene-event handler to these hooks; existing callers retain their default path.
-Use a separate one-image scene-boundary capture stream so the replay's primary
+Use a separate two-image scene-boundary capture stream so the replay's primary
 one-image-per-action accounting stays intact. The handler verifies event
 preconditions, applies the same named translation and synchronization, and checks
 its complete before/after record and image, then normal control replay continues.
@@ -169,13 +173,13 @@ exactly one expected event, no duplicate, unconsumed or unknown mutations, and
 normal exact state/own/image/native checks. Do not construct a standalone runtime.
 Keep new code under experiments; retain production/runtime/controller hashes.
 
-Minimal new sensor coverage is **four suffix RGB-D boundaries per cell**:
-post-event/preclose, after close 1, after close 2/prelift, and after lift. The
-pre-event image already exists in the approach prefix. Keep all 24 suffix control
-own packets and all existing native evaluator records; per-control RGB is not
-needed for this first falsifier. The current seal drops primary suffix images in
-favor of auxiliary captures, so a small experiment-local seal must retain these
-four boundaries and bind each to its actual own packet. Seal sensor files before
+Sensor coverage is **25 suffix RGB-D frames per cell**: the post-event/preclose
+reference plus all 24 existing per-control auxiliary captures, retaining the
+0.05 s image cadence. Primitive endpoints have local indices 0/8/16/24. Record
+separate pre-event and post-event RGB-D/own captures in the scene stream, even
+though the prefix already has its final image. Keep all 24 suffix control own
+packets and all existing native evaluator records; bind each image to its actual
+own packet and seal the explicit own-control export. Seal sensor files before
 writing separate labels. Preserve read times and explicit unknown exact sample
 times; a forced refresh does not silently establish new timestamp guarantees.
 

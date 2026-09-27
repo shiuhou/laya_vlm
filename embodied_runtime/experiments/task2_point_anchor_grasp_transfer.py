@@ -116,8 +116,11 @@ def verify_prefix(directory, anchor, termination):
         'source_state_restored': False, 'archived_controls_used': False, 'approach_STOP_executed': False}
 
 
-def sensor_row(condition, phase, step, control, frame, own, artifact, digest, stream):
-    anchor, arm = split_condition(condition)
+def sensor_row(condition, phase, step, control, frame, own, artifact, digest, stream, *, anchor=None, arm=None):
+    if anchor is None and arm is None:
+        anchor, arm = split_condition(condition)
+    elif anchor not in approach.ORDER or arm not in ('close', 'open_hold'):
+        raise ValueError('Explicit sensor anchor/arm must use existing mechanical cells')
     return {'condition': condition, 'anchor': anchor, 'arm': arm, 'phase': phase,
         'after_step': step, 'control': control, 'source_capture_stream': stream,
         'source_capture_seq': frame['capture_seq'], 'capture_sim_time': frame['capture_sim_time'],
@@ -131,13 +134,20 @@ def sensor_row(condition, phase, step, control, frame, own, artifact, digest, st
 
 class Intervention:
     """One fixed suffix; labels are buffered and cannot select the two tokens."""
-    def __init__(self, condition, *, schedule=None, after_primitive=None):
+    def __init__(self, condition, *, schedule=None, after_primitive=None, before_suffix=None,
+                 anchor=None, arm=None, extra_sensor_files=()):
         self.condition = condition
-        self.anchor, self.arm = split_condition(condition)
+        if anchor is None and arm is None:
+            anchor, arm = split_condition(condition)
+        elif anchor not in approach.ORDER or arm not in ('close', 'open_hold'):
+            raise ValueError('Explicit suffix anchor/arm must use existing mechanical cells')
+        self.anchor, self.arm = anchor, arm
         self.sensors, self.labels = [], []
         self.schedule = schedule if schedule is not None else (
             ('close_or_hold', 'GRASP' if self.arm == 'close' else 'STOP'), ('lift', 'MV_UP'))
         self.after_primitive = after_primitive
+        self.before_suffix = before_suffix
+        self.extra_sensor_files = extra_sensor_files
 
     def __call__(self, *, backend, executor, camera, recorder, groups, approach):
         from ..adapters.libero_rgbd import LiberoRgbdSource
@@ -146,6 +156,9 @@ class Intervention:
         recorder.record('approach_prefix_verified', prefix)
         if backend.step_m != .01 or backend._grip_cmd != -1:
             raise ValueError('Unchanged 10 mm executor and open approach jaw required')
+        if self.before_suffix is not None:
+            boundary_sensors = self.before_suffix(backend=backend, recorder=recorder, groups=groups, approach=approach)
+            self.sensors.extend(boundary_sensors)
         auxiliary = LiberoRgbdSource(world)
         (recorder.output / 'auxiliary').mkdir()
         attempted, completed, grasp_attempted = 0, 0, False
@@ -166,7 +179,8 @@ class Intervention:
                     with (recorder.output / artifact).open('xb') as stream:
                         np.savez_compressed(stream, **{key: frame[key] for key in base.FRAME_KEYS})
                     sensed = sensor_row(self.condition, phase, step, row['control'], frame,
-                        row['returned_own_observations'], artifact, file_hash(recorder.output / artifact), 'auxiliary')
+                        row['returned_own_observations'], artifact, file_hash(recorder.output / artifact), 'auxiliary',
+                        anchor=self.anchor, arm=self.arm)
                     sensed['own_source'] = {'journal': 'episodes.jsonl', 'kind': 'control_completed',
                                            'step': step, 'control': row['control']}
                     self.sensors.append(sensed)
@@ -227,7 +241,7 @@ class Intervention:
                        (None if endpoint is None else endpoint['own_observations']))
                 sensed = sensor_row(self.condition, 'reset' if reset else 'approach',
                     -1 if reset else (None if endpoint is None else endpoint['step']), None if endpoint is None else 7,
-                    frame, own, frame['artifact'], frame['artifact_sha256'], 'primary')
+                    frame, own, frame['artifact'], frame['artifact_sha256'], 'primary', anchor=self.anchor, arm=self.arm)
                 own_kind = 'initial_frame_gate' if reset else 'endpoint'
                 sensed['tcp_source_field'] = (own_kind + '.' +
                     ('initial_own_observations' if reset else 'own_observations') + '.robot0_eef_pos') if own is not None else None
@@ -242,6 +256,7 @@ class Intervention:
         approach.write(directory / 'sensor-captures.json', sensor_rows)
         hashes = {'sensor-captures.json': file_hash(directory / 'sensor-captures.json')}
         hashes.update({row['artifact']: row['artifact_sha256'] for row in sensor_rows})
+        hashes.update({name: file_hash(directory / name) for name in self.extra_sensor_files})
         approach.write(directory / 'sensor-seal.json', {'sha256': hashes,
             'journal_sha256_linkage_only': file_hash(directory / 'episodes.jsonl'),
             'journal_parse_errors': errors, 'holding': None,
@@ -308,7 +323,8 @@ def verify_review(path, freeze, preflight_sha):
         raise ValueError('Prospective PASS must bind exact clean freeze and no-world preflight SHA256')
 
 
-def worker(args, *, preflight_fn=prepare, protocol=PROTOCOL, intervention_factory=Intervention, auxiliary_count=16):
+def worker(args, *, preflight_fn=prepare, protocol=PROTOCOL, intervention_factory=Intervention,
+           auxiliary_count=16, before_action_factory=None):
     directory = Path(args.matrix)
     request = base.read(directory / 'request.json')
     rows, errors = load_records(directory / 'episodes.jsonl')
@@ -333,7 +349,9 @@ def worker(args, *, preflight_fn=prepare, protocol=PROTOCOL, intervention_factor
     else:
         args.source, args.output = str(directory / args.condition), str(directory / (args.condition + '-replay'))
         auxiliary = AuxiliaryReplay(args.source, expected_count=auxiliary_count)
-        base.replay(args, preflight_fn=preflight_fn, provenance_keys=PROVENANCE, after_control=auxiliary)
+        before_action = None if before_action_factory is None else before_action_factory(args.source, args.output)
+        base.replay(args, preflight_fn=preflight_fn, provenance_keys=PROVENANCE, after_control=auxiliary,
+                    before_action=before_action, after_replay=None if before_action is None else before_action.finish)
         if auxiliary.expected or len(auxiliary.checked) != auxiliary_count:
             raise ValueError('Auxiliary replay incomplete')
         approach.write(Path(args.output) / 'auxiliary-result.json', {'status': 'passed',
@@ -341,7 +359,8 @@ def worker(args, *, preflight_fn=prepare, protocol=PROTOCOL, intervention_factor
 
 
 def run_matrix(args, *, preflight_fn=prepare, protocol=PROTOCOL, module=MODULE, order=ORDER,
-               version=VERSION, scripted_action_count=2, completion_reason='all_four_fixed_cells_and_replays_complete'):
+               version=VERSION, scripted_action_count=2, completion_reason='all_four_fixed_cells_and_replays_complete',
+               replay_result_files=('result.json', 'auxiliary-result.json')):
     frozen, _, _ = preflight_fn(args)
     preflight = base.read(args.preflight_receipt)
     if any(preflight.get(key) != value for key, value in frozen.items()) or preflight['physics_calls'] != 0:
@@ -364,7 +383,7 @@ def run_matrix(args, *, preflight_fn=prepare, protocol=PROTOCOL, module=MODULE, 
         if stage == 'collect':
             check_collection(recorder.output / condition, scripted_action_count=scripted_action_count)
         else:
-            for name in ('result.json', 'auxiliary-result.json'):
+            for name in replay_result_files:
                 if base.read(recorder.output / (condition + '-replay') / name)['status'] != 'passed':
                     raise ValueError('Exact verification replay failed')
     try:
