@@ -1,0 +1,126 @@
+{
+  "status": "pass",
+  "source_admission": "pass",
+  "freeze": "d4045496dc330529eb8f637bd46d556fc9bc0598",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01",
+  "preflight_sha256": "34bac09d5a1170fe88f339c5896147944533b4b94f989d277762d2781a8aa498",
+  "source_frame_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+  "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+  "journal_sha256": "57d9ddcd1348303254d32cf844b0a29e75b90c4eef585a8add4c72afd30b508d",
+  "journal_records_checked": 24,
+  "frozen_source_files_checked": 137,
+  "model_calls": 2,
+  "fresh_processes": 2,
+  "physical_gpu": "1",
+  "conditions": [
+    {
+      "condition": "whole",
+      "status": "admitted_sensor_point",
+      "sensor_sha256": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+      "raw_return_sha256": "84a3ac13640b90d7eca42997e0e1cc8749cdcea68ce27026d44d885bc4e2c5e6",
+      "journal_sha256": "100701d36b3bd5c79671d0ec1cb7c8b7b2237b9c0bdaa7ccba4d3305f070e19d",
+      "native_input_sha256": "23b610a1662fd6b2c0050961be56770c857c7d95fca17c4dfd827f0411e06e2e",
+      "pid": 802086,
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152248,
+        152173,
+        151669,
+        151645
+      ],
+      "actual_generated_token_count": 10,
+      "input_token_count": 229,
+      "effective_limit": 256,
+      "terminal_eos": true,
+      "point": {
+        "position_world_m": [
+          -0.11673469557117522,
+          0.058971097589474636,
+          0.9883583307522877
+        ],
+        "sample_pixel_xy": [
+          219,
+          190
+        ],
+        "sample_pixel_center_xy": [
+          219.5,
+          190.5
+        ],
+        "depth_m": 0.9939957857131958,
+        "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+      },
+      "maximum_stored_projection_equation_residual_m": 1.1102230246251565e-16,
+      "whole_bottle_rendered_proxy_membership": true,
+      "proxy_stratum": "proxy_interior"
+    },
+    {
+      "condition": "neck",
+      "status": "admitted_sensor_point",
+      "sensor_sha256": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d",
+      "raw_return_sha256": "769b1f87d82636a1b56fa82581e8d805df58e0d7baf79aa5e841521ebc723553",
+      "journal_sha256": "014458d3129cea55dded74c434eb1bd8adf854f68055a793f659c453311483a3",
+      "native_input_sha256": "1a3f1470ed994660cbfb3aa6958724706df098681c1cd432be5bdeb785f704a8",
+      "pid": 802640,
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        12975,
+        315,
+        279,
+        13078,
+        16486,
+        151673,
+        151668,
+        152248,
+        152128,
+        151669,
+        151645
+      ],
+      "actual_generated_token_count": 13,
+      "input_token_count": 232,
+      "effective_limit": 256,
+      "terminal_eos": true,
+      "point": {
+        "position_world_m": [
+          -0.12337491393454869,
+          0.05776965007435101,
+          1.0288145621732854
+        ],
+        "sample_pixel_xy": [
+          219,
+          173
+        ],
+        "sample_pixel_center_xy": [
+          219.5,
+          173.5
+        ],
+        "depth_m": 0.9737445712089539,
+        "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+      },
+      "maximum_stored_projection_equation_residual_m": 0.0,
+      "whole_bottle_rendered_proxy_membership": true,
+      "proxy_stratum": "proxy_interior"
+    }
+  ],
+  "sensor_sha256": {
+    "whole": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+    "neck": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d"
+  },
+  "proxy_sha256": "4c8137aa858b22415b8c50c2e43016ef623076d7ebf447273ff749afed5c7a6f",
+  "portable_summary_sha256": "215456189695f6f8c62aff93856c973eb34a101107f7f41164e68ac3fc709feb",
+  "figure_sha256": "89abdd7933dfb996fb0742a804fcf1ca5fe0a70ca15fc3fa6e900f157c653fd4",
+  "producer_visual_receipt_sha256": "7553fa263d7605faf1634db85ba01c21d2c783b1f2da8ffc803e37e37cfbcc84",
+  "limits": [
+    "stored arrays, hashes, static vocabulary and scalar K/T equations only; no model, tokenizer, processor, physics or render rerun",
+    "checkpoint recorded identity map verified; weight bytes not reread",
+    "evaluator start binds both sensor hashes and completed batch journal; its JSON contains no wall-clock timestamp",
+    "POINT uses floor raster containment then pixel center +0.5, not LK nearest-index association",
+    "whole-bottle proxy membership does not establish neck truth, depth ownership, confidence or grasp quality",
+    "visual interpretation is separately reviewed in the accompanying Markdown receipt"
+  ]
+}
