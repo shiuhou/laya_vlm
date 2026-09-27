@@ -150,8 +150,9 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated added-GRASP/temporal-wrapper regression:1064 tests pass in40.94s
-  at `d29a805`.
+- Integrated scene-event/replay and sensor-wrapper regression:1131 tests pass
+  in43.44s at `1e665a2`. Log:
+  `runs/autonomous-research/regression-closed-empty-event-integration-01.log`.
   Production `runtime_core.py`, `adapters/libero.py` and `decision_interface.py`
   remain byte-identical to the baseline.
 
