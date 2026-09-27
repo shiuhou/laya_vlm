@@ -28,6 +28,15 @@ agent checkout was touched. Receipts:
 `runs/maintenance/research-cleanup-20260927/post-iteration040-cache-{inventory,result}.json`.
 All four active research worktrees remain in use and are retained.
 
+During iteration044, the retention agent removed exactly five reconstructible
+cache directories from its inactive local code/test context:73 files,
+809,624 bytes. No tracked file, raw experiment, source branch or active process
+was affected. Receipt:
+`runs/maintenance/retention-audit-cache-cleanup-20260927-01.json`.
+Its [inventory/disposition](../archive/maintenance/retention_cache_cleanup_20260927.md)
+records the exact checked paths and receipt SHA. Do not clear newly active caches
+again simply to generate another cleanup event.
+
 ## Routine closeout
 
 Before a new producer runs a model or simulator, check the actual frozen input

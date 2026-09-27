@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration043. This is a short living assessment;
+Updated 2026-09-27 after iteration044. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -58,9 +58,18 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    points and its ±5mm cell has104 shared hand witnesses; neck exactP contains
    zero, but four lower-Z corners contain24–31 points. All120,600 entries are
    independently reproduced. No whole-cell clearance or grasp claim follows.
-   This passes the predeclared exploratory gate for BOTH fixed anchors in a
-   fresh whole→neck approach pair; same point rule, BOX support and endpoint
-   guard, separate exact replays. No anchor is selected by outcome.
+   The fresh matched pair now completes: whole30 actions stops43.052mm from
+   its own point because DOWN is vetoed; neck29 actions stops5.010mm from its
+   own point under both guarded/unguarded rules. All472 controls replay exactly;
+   zero raw robot contacts in23,600 native snapshots. First difference is
+   decision5 DOWN/FWD at identical state/exclusions. However the terminal TCPs
+   are only9.022mm apart, both within6.130mm of the fixed neck point, and actual
+   RGB looks similar. Own-anchor43vs5mm is NOT grasp-superiority evidence.
+   Own-P finite-gap membership is false/true; object extent/holding unknown.
+   Next: both fresh approaches × close/open-hold, each followed by one10mm lift,
+   to distinguish useful region semantics from guard-induced similar preposes.
+   Post-approach actions will be explicitly scripted mechanical interventions;
+   no full-task/Laya policy claim or archived pregrasp is authorized by the pair.
 3. **Coordinate consistency transfers; holding remains unknown:** justified
    nearest-center association removes the epsilon-only switch. The unchanged
    method on30-frame10mm actual-executor pairs keeps all492 seeds and all29,520
@@ -130,6 +139,8 @@ measured interaction and available action behavior must not be conflated.
 - [Full finite-gap target-region exclusion](docs/evidence/autonomous_research/task2_finite_gap_target_region_findings.md)
 - [Two matched native POINT descriptions](docs/evidence/autonomous_research/task2_point_region_control_findings.md)
 - [Matched POINT goal cells](docs/evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md)
+- [Fresh matched POINT approaches and exact replays](docs/evidence/autonomous_research/task2_point_anchor_approach_findings.md)
+- [Actual paired images and own-pad relation](docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)

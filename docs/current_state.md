@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration043. This is the authoritative current
+Reviewed 2026-09-27 after research iteration044. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -117,8 +117,19 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    contains129 points and has104 shared hand witnesses across its ±5mm cell;
    neck exactP contains zero, but four lower-Z corners remain positive.
    The predeclared exploratory physical gate passes, not a clearance/grasp gate.
-   A fixed whole→neck fresh approach pair with separate replays is prepared;
-   no dynamics yet. See [matched cells](evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md).
+   See [matched cells](evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md).
+6. The fresh POINT pair now completes under unchanged point rule/BOX guard:
+   whole30 actions ends43.052mm from its own goal, guard-limited; neck29 ends
+   5.010mm from its own goal, original rule STOP. Separate replays reproduce
+   all472 controls/23,600 native snapshots/61captures; zero raw robot contacts.
+   First difference is decision5 at identical state/exclusions. Crucially, the
+   terminal TCPs differ only9.022mm and both lie within6.130mm of the neck point.
+   Root inspected the actualRGB and independently checked finite-gap arithmetic:
+   own-P membership false/true is not proof of grasp superiority. Next is a
+   fixed mechanical2×2 at BOTH freshly regenerated endpoints: close/open-hold
+   then one10mm lift. No new dynamics yet, no policy/model/pose-fitting change.
+   See [full paired trace](evidence/autonomous_research/task2_point_anchor_approach_findings.md)
+   and [RGB/gap interpretation](evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md).
 
 ## Protected execution and evidence boundaries
 

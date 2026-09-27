@@ -1551,6 +1551,56 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   admission must bind closed source/geometry and reviewed implementation.
   Main integration `c7db61d` passes981 tests in38.17s; no production runtime diff.
 
+### Parallel iteration 044 — changed point-rule outcome, similar physical endpoints
+
+- **Question:** does the admitted neck POINT alter fresh approach behavior under
+  the same original fullBOX endpoint guard, and does that mean better grasping?
+- **Competing hypotheses:** changing semantic region supplies a compatible goal;
+  or the guard already brings both trajectories near the neck, making own-goal
+  distance differences a misleading proxy for mechanical improvement.
+- **Intervention:** freeze `fb7899bef22e6473aed30e7dd0051568bd7db7f7`, rootPASS
+ `1c884d2`, admissionSHA
+ `753fd32754c67265956c845db0d689f7ca41e2ad1aa1155cb75ee6aecdb14fef`.
+  Two fresh seed1/init0 episodes, whole then neck, each with separate replay.
+  Same1,340-point support/five proxies/seven candidates/strict10mm rule/guard/
+  executor; only fixed POINT differs. Exact initialRGB-D gates, no retries,
+  source restoration, new model calls, grasp, pose adjustment or target refresh.
+- **Observed:** whole30 actions,209.961883→43.051502mm own-goal distance;
+  neck29 actions,173.664388→5.009756mm. First five actions/40controls/2,000native
+  snapshots/sixcaptures match. At decision5 wholeDOWN/neckFWD with identical
+  own packet and endpoint exclusions. Whole final DOWN would improve9.969108mm
+  but contains32 support points; all remaining moves worsen its objective.
+  Neck is inside the original axis stop cell; all moves worsen distance even
+  without the veto. Its vetoedDOWN contains36 points. Neither is a zero pool.
+- **Mechanical evidence:** all59 validators pass, no raw robot contacts in
+ 23,600 native BEFORE/AFTER samples including subthreshold rows. Whole exact
+  replay240controls/12,000snapshots/31captures; neck232/11,600/30. Independent
+  audit `f958094` (main `37930c5`) recomputes all2,860,900 memberships, rules,
+  native/control handoffs and replay exports. AuditSHA
+ `0cd47a1433ac25d14b45aa942a17d7322e19865804c33b3adb2fee25a2d2d56e`.
+- **What changed our interpretation:** terminalTCP separation is9.021938mm,
+  with only0.379440mm height difference. Whole endpoint is6.129808mm from the
+  same neck point versus5.009756mm for neck. Root opened actual unmarkedRGB at
+  initial/pre-divergence/final boundaries and original-resolution final images:
+  visible fingers flank the neck in both, partly occluded by the hand. The
+  own-P finite-gap predicate is false/true, independently reproduced by root,
+  but this does not establish different graspability or complete object fit.
+- **Interpretation/confidence:** high confidence in conditional goal/rule effect;
+  insufficient evidence that semantic neck grounding improves grasp mechanics.
+  Neither model planning nor Laya motor capability was tested. This is a single
+  stationary development fixture with oracle-assisted diagnostic aborts.
+- **Artifacts:** raw `task2-point-anchor-approach-run-01`; producer report
+ `93fd4c2` (main `4f7c5a6`), interpretation `9058a9c` (main `7d0dd25`), full
+ 61-decision trace and actualRGB. Portable report closure proceeds independently.
+- **Next decision:** test both endpoints rather than select an apparent winner.
+  Prepare fixed2×2 whole/neck × close/open-hold, then exactly one10mmMV_UP per
+  condition. Regenerate every approach from reset using the unchanged policy;
+  archived prefixes are equality references only. Reuse local-grasp validators,
+  contact abort and per-anchor lift-vs-open/bilateral criteria. Explicitly script
+  the two post-approach experimental actions; no autonomous grasp or task-success
+  claim. No dynamics before review. In parallel, inventory prior exactseven-
+  option Laya tests to avoid repeating privileged-interface microvariants.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
