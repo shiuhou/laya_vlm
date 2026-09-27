@@ -67,3 +67,10 @@ Bound SHA-256 identities:
 
 No LK, FK, physics, simulator rendering or model calls were made in this review.
 The already closed old 3D estimator audit remains its bulk arithmetic proof.
+
+The final producer report commit is
+`004a6040617ec9d5accbb7344ef92861726fdc12`. Its tracked summary and both PNGs
+match the raw portable/figure hashes above exactly. The findings SHA-256 is
+`6716724fe9067309ecfcbf48d69b73ee09e929cc7f8ce4bbc16276d4c8d3df61`.
+Its final future-work paragraph correctly leaves the future source-specific
+point policy separate; no extra feature run is released by this report PASS.
