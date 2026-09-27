@@ -39,3 +39,9 @@ The maximum residual between new vertices and translations of the historical pro
 | Feature seal | `2e849dd465a93c6f41a72a3bec31ba1ae5a63b2c3f39345db326daf19fe9c0e5` |
 | Combined result | `4e9e687e2fef7825ffdcde5e3fd07b946a7827b035a1e05beb4a76da4f787e06` |
 | Combined tensor | `a9f972d8898e1640e49d2e1828cecbe1fb415849d12578029674c0235cd8ff94` |
+
+## Final report closeout
+
+**Derived-report PASS at producer `ecd90da`.** The portable summary SHA-256 is `fc055247845be0c75bc12d813cb295c4c7f49df336361347b488a4b517de2e0b`. Its combined result, both complete nine-row results (apart from documented omission of raw vertex arrays), historical BOX summary and embedded independent audit exactly match their sealed sources. The complete portable tensor is byte-identical to the raw NPZ. The reviewer opened all three actual RGB images and independently verified that the unmarked image preserves every source RGB value, the whole overlay changes exactly the 104 common-witness pixels, and the zero-witness neck overlay is byte-identical to the unmarked PNG.
+
+The findings retain both producer and independently anchored slack values, the four positive lower-world-Z neck corners, null neck witness extrema, and the limits of exact-center noncontainment and absent common certificates. The historical BOX cell is explicitly a sealed secondary reference, with no third calculation. No anchor or pose is selected, and physical clearance/route/feasibility/grasp claims are absent. This closes the result and report review without another geometric calculation or dynamics call.
