@@ -1446,6 +1446,75 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   and model, to separate semantic-region information from BOX syntax failure.
   No inference before freeze/review, no prompt variants, no new physical policy.
 
+### Parallel iteration 041 — full finite-gap target region remains excluded
+
+- **Question:** could a different route reach zero finite-gap distance with the
+  original P, or is the entire zero-distance translation region excluded?
+- **Intervention:** freeze `22fa806`, prospective `fbc7dda`;14 focused tests.
+  Eight predetermined corners of T=P−R*G from exact calibrated finite-gap
+  bounds, frozen terminal orientation/jaws, unchanged1,340 support/fiveproxies.
+  No selected pose, new target, adaptive refinement, model or physics call.
+- **Observed:**124 same point/hand pairs at all8 corners. Point-union counts
+  [254,158,204,157,308,229,202,176]. Some individual corners have finger/pad
+  containment, but none supplies a shared8-corner witness. All53,600 entries
+  and every index/vertex/seal independently reproduce with fixed facets.
+- **Numerical proof:** same-pair minimum corner-facet slacks range
+ 0.341268–13.998971mm, strictly interior without numerical tolerance. This
+  supports exclusion of the entire convex T under the frozen geometric model.
+  T is the zero-distance target region, not the entire discrete-ruleSTOP set.
+  It need not contain the earlier ±5mm cell;124vs123 is no monotonicity claim.
+- **Interpretation:** a route-only repair cannot make this original P enter
+  the finite gap under those assumptions. Physical collision, full scene
+  clearance, object extent, all orientations and qualified grasp remain unknown.
+- **Artifacts/audit:** raw `task2-finite-gap-target-region-run-01`, seal
+  `df260ad8e38988d3c1e6c9159f3f88956023f1f36dcc27237d4d11eab3b05a47`.
+  Independent result `f797467` (main `72435e1`), report `437d9be` (main `5368def`),
+  final reportPASS `4643f2d` (main `f95b2b7`). Root inspected the original source
+  and all124-pixel overlay; full tensor/summary remain preserved.
+- **Next decision:** semantic anchor versus effector-region hypotheses must
+  remain separate. The parallel two-call POINT condition tests explicit part
+  information without another geometry/policy change. Compare both admitted
+  anchors on the original point-rule cell before a fresh approach comparison.
+
+### Parallel iteration 042 — explicit region text changes admitted native POINT output
+
+- **Question/competing hypotheses:** does explicit neck text move native POINT
+  to relevant image support, or only improve syntax relative to the failedBOX?
+- **Intervention:** freeze `d404549`, root prospective `e3672e7`. Exactly two
+  fixed questions `Point to: the wine bottle.` and `Point to: the neck of the
+  wine bottle.`; same full384RGB/checkpoint/nativeBF16hybrid256 settings,
+  separate fresh seed1processes on recheckedidleGPU1. No priorcall/warmup,
+  crop, coordinates, EOS relaxation, salvage, retry or physics. Both exact
+  descriptions reuse historicalBOXconditions; nativePOINT is a supported mode.
+- **Preflight/tests:**53 focused tests including15new; root independently15pass.
+  Actual processor-only preflight repeated exactly, including fullJSON/hash
+  `34bac09d5a1170fe88f339c5896147944533b4b94f989d277762d2781a8aa498`.
+  Input229/232tokens; identical BF16image tensors and grid. No model construction
+  during either preflight. Raw return/actualtokens seal before parsing.
+- **Observed:** whole normalized(571,496), pixel(219,190),10tokens/EOS; neck
+ (571,451),pixel(219,173),13tokens/EOS. Both strictadmissionpass. Depth
+ 0.993995786/0.973744571m; projectedZ0.988358331/1.028814562m. No pointchosen.
+  Both are True/interior in separately opened whole-bottle maskproxy; neck
+  truth, semanticconfidence, depthownership and graspquality remain unknown.
+- **Inspection:** producer and root viewed uncropped actualRGB/paired markers.
+  Whole marks wider upperbody/shoulder; neck marks narrow region belowcap.
+  This qualitative reading is not an independenthuman/neckmask annotation.
+- **Interpretation:** explicit researcher-specified part semantics is usable on
+  this one fixed image viaPOINT. This does not establish autonomous region
+  choice, planning, repeatability, graspquality or the cause of priorBOXfailure.
+  Earlier42BOX/260token/noEOS failure remains immutable.
+- **Evidence:** raw `task2-point-region-control-run-01`, batchjournal
+  `57d9ddcd1348303254d32cf844b0a29e75b90c4eef585a8add4c72afd30b508d`.
+  Report `5ef2673` (main `adade07`); full nativeinput/result/report audit pending.
+- **Next decision:** freeze matched2×9 original point-goal-cell calculations,
+  exactP plus ±5mmworldcorners peranchor, same fixedpose/cloud/proxies. Both
+  sources and fullaudit must qualify; no selecting a winningpose/region. A
+  fresh whole→neck approach pair is being prepared with original point rule,
+  identical BOXsupport guard and executor, plus separate exactreplays. No
+  dynamics before geometric gate/review: neck exactTCP=P must at least have
+  no observed-solid containment. This is a necessary exploratory gate, not
+  physical clearance, qualified grasp or permission to relax any stop.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

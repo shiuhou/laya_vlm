@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration040. This is a short living assessment;
+Updated 2026-09-27 after iterations041–042 (POINT final audit pending). This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -42,14 +42,20 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    No all-orientation or physical impossibility claim. The matched P-to-finite-gap intervention changes STOP→LEFT by only1.959µm
    nominal reduction, driven by small local rotation components. Its registered
    literal gate passes; physical usefulness remains unproved, so no dynamics.
-   Next: test exclusion of the complete rotated finite-gap target region, and
-   independently compare two fixed native POINT semantic queries. No new
-   physical policy, fitted threshold or target is selected.
-2. **Semantic target region test closes at nonadmission:** one fixed description,
+   The complete finite-gap target region is also excluded:124 same point/hand
+   witnesses, independently positive0.341–13.999mm facet slack. This is not a
+   route-only limitation under the frozen geometry. No new physical policy or
+   fitted threshold follows.
+2. **Semantic region is usable in one supported format:** one fixed description,
    `the neck of the wine bottle`, yields42 BOX records/260 actual tokens/no EOS
    under the unchanged native256-token cap. No point/support was extracted; no
-   prefix salvage or retry. This one researcher-specified condition does not
-   rescue region grounding, nor prove general part-localization incapacity.
+   prefix salvage or retry. The later matched native POINT pair admits both exact descriptions in10/13
+   tokens withEOS. Actual RGB shows whole-body/shoulder versus narrow-neck
+   points; both are bottle-proxy interior, with40.456mm projectedZ difference.
+   This supports use of explicit part text on this fixture, not independent
+   region choice or grasp quality. Final full-input/result audit is pending.
+   Next compares BOTH anchors with the same18-pose original point-goal-cell
+   geometry before any physical trial; no point is selected by outcome.
 3. **Coordinate consistency transfers; holding remains unknown:** justified
    nearest-center association removes the epsilon-only switch. The unchanged
    method on30-frame10mm actual-executor pairs keeps all492 seeds and all29,520
@@ -117,6 +123,8 @@ measured interaction and available action behavior must not be conflated.
 - [Short-lift transfer](docs/evidence/autonomous_research/task2_short_lift_transfer_findings.md)
 - [Point-goal cell and numerical certificate](docs/evidence/autonomous_research/task2_point_goal_cell_findings.md)
 - [Finite-gap local objective intervention](docs/evidence/autonomous_research/task2_finite_gap_control_findings.md)
+- [Full finite-gap target-region exclusion](docs/evidence/autonomous_research/task2_finite_gap_target_region_findings.md)
+- [Two matched native POINT descriptions](docs/evidence/autonomous_research/task2_point_region_control_findings.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)

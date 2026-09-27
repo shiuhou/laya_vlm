@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration040. This is the authoritative current
+Reviewed 2026-09-27 after research iterations041–042 (POINT final audit pending). This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -94,8 +94,9 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    witness margins. This is a conditional proxy exclusion, not physical/global
    unreachability. A matched finite-pad-gap
    objective changes STOP→LEFT by only1.959µm nominal reduction. This passes its
-   literal gate but earns no physical test. Next check covers the entire rotated
-   finite-gap target region, without adaptive search or a new policy.
+   literal gate but earns no physical test. The entire rotated finite-gap target region is also excluded by124 shared
+   hand-proxy witnesses, with independently positive0.341–13.999mm facet slack.
+   This remains conditional on frozen own pose/proxies/observed support.
 3. The privileged grasp contract targeted whole-object geometry center relative
    to pad midpoint. The sensory rule targets TCP distance to an unverified
    median-ray P. Neither better object naming nor adding planning silently fixes
@@ -107,10 +108,13 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    lift frames and failure panels; independent full-row/report closure passes (`0144331`).
    See [transfer](evidence/autonomous_research/task2_short_lift_transfer_findings.md).
 5. The earlier neck BOX query remains nonadmitted:42boxes/260tokens, noEOS.
-   An independent next condition prepares two matched native POINT calls for
-   whole-bottle versus neck descriptions, same originalRGB/model/settings.
-   This tests region semantics under a supported format; no salvage of the old
-   call, prompt sweep, model tournament or physical run.
+   Two later matched native POINT calls both admit in10/13tokens withEOS.
+   Whole versus neck text produces different visibly relevant locations,
+   projectedZ difference40.456mm. Same originalRGB/model/settings, freshprocesses,
+   no retry; explicit part use is not independent planning or graspquality.
+   Final input/result audit is pending. Next compares both fixedanchors in the
+   same original point-rule stopping-cell geometry (18predetermined placements).
+   A fresh paired approach wrapper is only being prepared; no dynamics yet.
 
 ## Protected execution and evidence boundaries
 
