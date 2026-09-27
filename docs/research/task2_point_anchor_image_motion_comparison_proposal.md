@@ -1,8 +1,8 @@
-# Preparation-only image-motion representation comparison
+# Fixed image-motion representation comparison
 
-**No new features have been extracted. Await root review before implementation
-and extraction of this proposed condition.** The preparation consists of an
-inventory of existing source/reports and this fixed full-population proposal.
+**Root approved implementation and one frozen extraction after reviewing the
+preparation at `6a56c12`. No new features have yet been extracted.** The preparation
+consisted of an inventory of existing source/reports and this fixed full-population proposal.
 The hypothesis was formed after seeing the completed 3D curves and four
 exploratory extreme-track contexts; this is a development comparison, not a
 preregistered independent validation of a general holding detector.
@@ -120,9 +120,43 @@ Camera-ray motion, perspective, rotation and occlusion remain limitations, and
 not establish identity or holding, and these executed close/open conditions
 are not validated held/not-held labels.
 
-After root review, the implementation needs only small synthetic checks for
+The implementation includes small synthetic checks for
 projection/index convention and offset cancellation, exact reference deltas,
 native failure/null preservation, missing TCP affecting only branch B, and
 complete row/summary denominators. Freeze code/environment/output contract
-before actual new arithmetic. Until then this proposal performs no TCP
-projection or native-pixel displacement extraction.
+before actual new arithmetic. Until the exact implementation freeze passes its
+quick whitelist/null review, no TCP projection or native-pixel displacement is
+extracted from actual sources.
+
+## Implemented execution contract
+
+`task2_point_anchor_image_motion.py` provides the small stored-only wrapper.
+Its input whitelist preserves the nine native fields, seed/capture identity,
+source stream/artifact hashes, phase/control metadata, saved own TCP and read-time
+provenance. `rgb_delta` receives only the native record. `project_own_tcp`
+receives only saved own position plus K/T; their results are combined afterward.
+Only K/T arrays are decoded from bound source NPZs. Synthetic tests cover these
+boundaries and full 492-denominator summaries, in addition to the arithmetic.
+
+Use `/home/junhongli/miniforge3/envs/locateanything/bin/python`, Python
+`3.10.21 | packaged by conda-forge | (main, Aug 21 2026, 22:42:31) [GCC 14.4.0]`,
+NumPy `1.26.4`, and `PYTHONDONTWRITEBYTECODE=1`. No OpenCV function is called.
+Pin the pure transform module hash above and unchanged summary helper module
+`task2_box_temporal_probe.py` SHA-256
+`655a6a84d1688be880d4348d7589251ad37392277102813fc91f5ee421f59b50`.
+
+The reviewer supplies one compact JSON receipt with `status: "pass"`, the exact
+`freeze_commit`, `protocol_sha256`, and `authorized_batches: 1`. Root has already
+authorized execution after this quick code-boundary review; no further human
+gate is added. The wrapper requires clean matching code and pinned runtime,
+rechecks the existing source hashes, and creates only the new fixed raw output
+`task2-point-anchor-image-motion-run-01`. An existing directory prevents rerun.
+
+Four append-only feature JSONL files retain every row, flushing/fsyncing each
+completed seed. `image-motion-summary.json` contains all 186 capture summaries;
+the complete sensor seal binds rows/summaries, protocol, review and run records
+before any later report reads old 3D summaries. Terminal status records all
+1,968 tracks / 91,512 rows, and final artifact hashes include the closed journal.
+On exception/interrupt, partial files and written-row/completed-track counts are
+retained with zero retries and no complete seal. No complete result is inferred
+from a partial final line after an external hard kill.
