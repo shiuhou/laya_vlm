@@ -1,0 +1,160 @@
+# Fixed image-region motion after the closed-empty scene event
+
+Freeze the smallest comparison that addresses the remaining alternative: **can
+the empty gripper produce local image motion resembling the prior close-cell
+signal when no bottle is in the closing region?** Use the physically matched
+neck present/away pair described in
+[the source design](task2_closed_empty_falsifier_design.md), freshly initialize
+the same 492 raw pixel locations after each event, and track only the 25-frame
+causal suffix. This is a fixed image-region assay. It is not a target tracker,
+reidentification method or holding estimator.
+
+This document freezes the feature design only. No future source, LK result,
+feature, simulator call or model call was produced for it. The source producer
+owns scene placement, event/cache/replay behavior and the independently
+qualified mechanical negative. Collection and offline extraction remain
+separate actions; an unproduced source cannot yet supply an admission hash.
+
+## Why this is the cheapest defensible comparison
+
+The prior assay used points descended from an initial bottle BOX. Carrying those
+trajectories across a privileged relocation would entangle the tested suffix
+with an exogenous correspondence jump. Selecting surviving tracks would change
+the population. Instead, initialize the same numerical pixels independently in
+both post-event images. No new grounding, texture detector, tracker setting,
+mask, depth operation or identity classifier is needed.
+
+The fixed pixel region is prior semantic support, not evidence of current
+ownership. In the away cell it may contain background, robot or occluded pixels;
+those are the contents whose local motion is being measured. Equal seed IDs
+across cells denote equal image coordinates, not equal physical material points.
+The comparison asks about the local signal under target presence versus absence,
+while holding robot approach, commands and timing fixed as far as the source
+records establish. It cannot make the post-event scenes visually identical.
+
+## Fixed inputs, population and timing
+
+Only the one prospective neck present/away pair is included. The source must
+bind its clean code/protocol, closed journals, replay results and complete sensor
+seal. The admitted observation stream must contain the same camera's native
+384 × 384 uint8 RGB, saved camera intrinsics and camera-to-world matrix, and
+saved own-TCP position with its actual own-packet provenance. Do not construct
+FK, a model or a world to obtain a missing measurement.
+
+The ordered seed grid is exactly:
+
+```python
+seeds = [[x, y] for y in range(169, 210) for x in range(212, 224)]
+```
+
+These are 492 native integer-center pixel-index locations, initialized in each
+cell's **post-event image**. They are not transported from any old track and are
+not adjusted after seeing the new images. All 492 begin as `seeded`, including
+low-texture locations. Seeded status alone says nothing about correspondence.
+
+The sole displacement reference is suffix capture 0, after the one declared
+event synchronization/refresh and before the first GRASP control. Capture 1–24
+is the existing auxiliary RGB stream after each of the 24 controls of
+GRASP / GRASP / MV_UP, in order. No interpolation or through-event LK is used.
+The separately recorded before/after event RGB remains source-setup evidence.
+
+| Suffix capture | Boundary | Primary reporting role |
+| --- | --- | --- |
+| 0 | Post-event / preclose | Sole A/B displacement reference |
+| 8 | End of first GRASP | Closing response |
+| 16 | End of second GRASP / prelift | Same-exposure closed-jaw observation |
+| 24 | End of MV_UP | Response after the fixed lift |
+
+The 25-frame schedule retains the original per-control cadence through the
+suffix. Record actual read times; never infer exact image sample times from
+the expected control period. A forced event refresh does not prove timestamp
+synchrony. Bind every RGB/K/T archive to its source stream, sequence, hash and
+own packet. Missing/duplicate/misordered source captures are source-admission
+failures, not permission to substitute another frame or extend a cell.
+
+The expected complete output is **984 trajectories / 24,600 rows**, with 492
+rows at every capture in each cell. There are 23,616 potential forward steps
+and at most 47,232 forward/backward LK calls; native failure may reduce actual
+calls but never output rows. A missing or invalid own TCP affects B only and
+must not delete an otherwise admitted RGB frame or A result.
+
+## Frozen motion definitions
+
+Use the existing single-seed RGB `track_lk` function unchanged, OpenCV 4.11.0,
+and its native forward/backward status rules. Settings remain window 21 × 21,
+maximum pyramid level 3, criteria `(3, 30, .01)`, flags 0 and minimum eigenvalue
+threshold `.0001`. Preserve all nine native fields. Native failure is absorbing:
+retain the attempted coordinates/status/error fields when defined and all
+subsequent `unknown_after_native_failure` rows. Do not add an error threshold,
+recovery, reseeding after capture 0, feature detector or cross-cell intersection.
+
+Reuse the current image-motion arithmetic with reference index 0:
+
+- **A:** `p[i] - p[0]`, where `p` is the native admitted RGB pixel coordinate.
+- **B:** A minus `project(saved_tcp[i], K[i], T[i]) -
+  project(saved_tcp[0], K[0], T[0])`.
+
+B uses saved proprioception and calibration. Projection retains the established
+edge-to-index subtraction of 0.5 and finite off-image projections. Neither
+branch reads measured scene depth. A receives only native RGB records; B adds
+saved own TCP and K/T. Source condition/event labels, privileged poses,
+contacts, evaluator fields and any old 3D results do not enter feature functions.
+
+Store the two vectors and projected TCP vector, plus the same four scalars:
+`rgb_delta_v_px`, `rgb_delta_norm_px`, `rgb_minus_tcp_delta_v_px`, and
+`rgb_minus_tcp_delta_norm_px`. Positive v means image-down. Invalid native
+current/reference points make A and B null; unavailable current/reference TCP
+projection makes only B null. A capture-0 zero is an initialized reference, not
+measured evidence of attachment. Keep `identity_verified` and `holding` null.
+
+Existing source identities to retain at implementation freeze:
+
+| Source | SHA-256 |
+| --- | --- |
+| `point_temporal_probe.py` (`track_lk`) | `86b5b12dd556e37b8b1d08443edd49ee5c852bcc4e63680e1c5928029ad21f36` |
+| `task2_point_anchor_image_motion.py` (pure motion helpers) | `3f3822e3609ccb3a1647d53e1d5b8143f04deb8c07b759d9d14919576672e19b` |
+| `pixel_footprint.py` (pure camera transform) | `5559a4ee170e50f45295252b3db2b08553b3ba0a2b886e8bbe6cdbc50b15da8c` |
+
+Reuse the pinned Python 3.10.21 / NumPy 1.26.4 runtime. The source-specific
+adapter must eventually bind the actual new sensor filenames, schedule and
+sealed hashes; this design does not invent them or authorize adapting the
+population after outcomes. No old-source extraction is rerun for this proposal.
+
+## Report and decision limits
+
+Report all 25 captures for both cells, and the four endpoints above. Every
+summary keeps denominator 492, native admitted/failed/unknown counts, A/B
+available counts, and metric count/missing count, minimum, q25, median, q75 and
+maximum. Quantiles use the existing linear method on available values; display
+missingness beside them. Do not suppress a cell or compare only common survivors.
+Dense neighboring seeds are dependent observations, not 492 trials.
+
+Show complete native RGB frames with the fixed seed region and all defined
+tracked positions at the four endpoints. Keep raw/native failure status distinct
+from admitted coordinates. Draw full-population motion curves with the same
+scales and denominator annotations. No extreme-seed search, favorable crop or
+threshold/classifier fit is needed for this question.
+
+Seal the sensor-only tracks/features before joining the source's separate
+mechanical qualification. That qualification must establish what the away
+condition actually did and report contacts, support and later target behavior
+for present without assuming it was retained. If empty jaws remain moving at
+prelift, report a same-exposure empty observation; do not rename it settled or
+extend only that cell. This lane neither constructs mechanical labels nor uses
+them to filter pixels.
+
+The specific confound under test is **robot-local image motion being mistaken
+for retained-target motion**. LK's 21 × 21 patch and pyramid support can include
+finger edges, background and occlusion boundaries outside the seed's pixel or
+the narrow ROI. Empty-cell co-motion would show that the local signal can occur
+without a bottle in the closing region, within this source's tested conditions.
+Differing motion would establish only a local descriptive difference. It would
+not identify which visible surface was tracked or validate a holding estimator.
+Failures or broad distributions are results, not a reason to add a tracker.
+
+All displacements remain relative to post-event capture 0, so final values
+include both closes and lift. The curve and named boundaries expose that
+history; no independent lift-only reference or fitted endpoint is introduced.
+Projection residual is not a calibrated rigid-attachment/slip error, and motion
+along the camera ray may remain weak in RGB. No general depth-unnecessary,
+grasp-quality or force-closure conclusion follows from this one matched pair.
