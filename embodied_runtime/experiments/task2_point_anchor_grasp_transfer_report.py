@@ -115,8 +115,8 @@ necessary: the neck sampled witness is not promoted to an unambiguous contact
 mechanism. Both conditions retained early native bottle/table contacts (whole
 28 raw/23 strong samples; neck 17 raw/15 strong, at each stage). Whole's first lift
 endpoint still had table contacts; its later seven and all eight neck lift
-endpoints had none. This does not establish support-free
-retention beyond the recorded short lift. Bottle rotation is unknown without a
+endpoints had none. These sampled contact absences do not establish support-free
+retention or a clean continuous grasp. Bottle rotation is unknown without a
 recorded source-specific quaternion mapping; center and bottom changes are
 reported separately.
 
