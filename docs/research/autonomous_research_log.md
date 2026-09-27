@@ -1667,6 +1667,37 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   91,512 expected rows, no masks/new threshold/classifier. Source-only admission
   and frozen unchanged helper review precede feature extraction.
 
+### Parallel iteration 046 — own-state evidence of unfinished jaw closure
+
+- **Question/why:** can saved robot proprioception expose the already observed
+  primitive/relation handoff gap without reading object/contact evaluator labels?
+- **Competing interpretations:** GRASP may have completed its allotted controls
+  while jaws remain moving; alternatively, a settled gripper may lack the desired
+  relation because of geometry. Neither a moving nor a stopped jaw alone proves
+  object holding.
+- **Intervention/controls:** descriptive extraction from the already closed four
+  cells, not new physics/inference. Read only sensor manifests/seals and preserve
+  all68 preclose plus suffix endpoint own packets. Difference the two signed
+  joint coordinates and velocities; no threshold, classifier, or result-based
+  sample selection. This exploratory report is not preregistered evidence.
+- **Result:** final first-GRASP joint separation21.848372/21.856381mm and rate
+  −197.321674/−197.075017mm/s for whole/neck. Final lift separation12.096128/
+  14.958430mm and rate+0.004594/−0.005218mm/s. OPEN remains near80mm.
+  Read endpoints occur0.4/0.8 simulated seconds after preclose; exact sample
+  times remain unknown. These arithmetic separations are not physical pad gaps.
+- **Artifacts/validation:** report/extract/generator commit `d4a97fa`,
+  `docs/evidence/autonomous_research/task2_grasp_proprio_findings.md`.
+  All68 differences checked separately with NumPy; RuffPASS. Independent
+  source/arithmetic review queued after active experiment freeze reviews.
+- **Interpretation/confidence:** high for stored own-state motion. It supports
+  checking relation/settling separately from command completion, but does not
+  identify contact or justify a holding threshold. Existing empty-close
+  counterexample remains in the interaction-observability report.
+- **Next decision:** retain the already specified additional stationary-GRASP
+  intervention; no new trajectory or executor behavior follows from this report.
+  The parallel fixed temporal extraction will assess transfer of descriptive
+  visual co-motion, without converting it into a holding classifier.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

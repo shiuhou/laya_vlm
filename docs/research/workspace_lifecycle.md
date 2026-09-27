@@ -39,6 +39,14 @@ again simply to generate another cleanup event.
 
 ## Routine closeout
 
+During iteration046, removed31 temporary report copies totaling5,955,924bytes
+only after same-name canonical evidence files matched byte-for-byte by SHA256.
+Three unique preliminary reports were retained. No raw evidence, active checkout,
+model, or failure was removed. Receipt:
+`runs/maintenance/canonical-report-duplicate-cleanup-20260927-01.json`.
+Main storage at inspection:37MB Git,38MB portable evidence,5.5GB raw runs;
+359GB remained available. Further active-cache churn is unnecessary.
+
 Before a new producer runs a model or simulator, check the actual frozen input
 schema and dependency imports without computing outcome-sensitive features.
 Synthetic API tests alone did not catch two recent bootstrap/schema failures.

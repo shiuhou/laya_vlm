@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration045. This is a short living assessment;
+Updated 2026-09-27 after iteration046. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -78,6 +78,10 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    Root inspected all40 fixed RGB frames. No autonomous grasp, clean continuous
    contact, full-task or Laya-policy claim follows. Next test adds one existing
    stationary GRASP interval before lift, both anchors, with no executor change.
+   A sensor-only extract of all68 preclose/suffix own-state rows independently
+   shows first-GRASP joint separation still shrinking at197.322/197.075mm/s.
+   This reveals ongoing jaw motion, not contact or holding. Joint-coordinate
+   separation is not a physical pad gap; no settling threshold is fitted.
    In parallel, freeze unchanged sensor co-motion extraction on all four cells;
    no threshold fitting, mask invention or holding classifier.
 3. **Coordinate consistency transfers; holding remains unknown:** justified
@@ -153,6 +157,7 @@ measured interaction and available action behavior must not be conflated.
 - [Fresh matched POINT approaches and exact replays](docs/evidence/autonomous_research/task2_point_anchor_approach_findings.md)
 - [Actual paired images and own-pad relation](docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md)
 - [Fresh four-cell local grasp-transfer audit](docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md)
+- [Jaw proprioception at phase handoff](docs/evidence/autonomous_research/task2_grasp_proprio_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
