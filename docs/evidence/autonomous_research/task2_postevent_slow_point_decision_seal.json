@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "source_binding_sha256": "1034338d0e51620393f0e9d3490d57415d01f7e4f1cc7b4c5d5b154c62d9f020",
+  "feature_intent_sha256": "53849b56e80d7349a589b3bde20ed6dc5159a17e214ac9009ed9e81fcb6384a4",
+  "result_sha256": "126a8f18bfd9f9b8ef716c2977e1c7df7cafea8af03748f428250ad3b4a25901",
+  "registered_records": 4,
+  "candidate_records": 28,
+  "projection_attempts": 2,
+  "selector_calls": 4,
+  "new_model_physics_render_calls": 0,
+  "source_freeze": "8a6906de95ac000a9cd49516a12e7f8c5207b249",
+  "retries": 0
+}

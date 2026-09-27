@@ -1,0 +1,210 @@
+{
+  "freeze": "8a6906de95ac000a9cd49516a12e7f8c5207b249",
+  "source_hashes": {
+    "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json": "e034ead7baad4f3dd24bb992aa556897563e08d5fb9cae034fd93485d575c251",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/request.json": "a961137cf551135017eb3d7532d4b79ad444f05d4bdb9070e4b1ff6c1d51ec29",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/episodes.jsonl": "f89ad281cc4e7ac168047c31d33a1c1b54db84700a1f7ad1091833b061422316",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/protocol.md": "368fc7f6080d73846a741c494d4235221ba804825e1ac1f7f329c6e7c3a2af3f",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/review.json": "8ae31671ab20adf91cc29413e2a0fc078f1307ce4f4d86f3197e30cee1165757",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01-exit.json": "685db30481a548fe1c08a494c58172a1c7cd959915ec3eafcab2d96d599e8c89",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-preflight-01.json": "35ff93678d77b147bf1f5e0f4767de9ea2e62d915e2f2db3526eeeece2ce1903",
+    "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_image_motion_source_binding.json": "49dbc6e182a6e516e43142537005234c7559264fd69c9f051a10e1b7b4f4d04f",
+    "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/episodes.jsonl": "4f2a96d65d799b6405f4ec17f69a63f28a70ec904434b03afd466f57817f068e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/episodes.jsonl": "57d9ddcd1348303254d32cf844b0a29e75b90c4eef585a8add4c72afd30b508d",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/request.json": "762de6e4a955882fb987988cf561eba36cc5edb9f7dbd6e873e3dcd965db7b9e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/episodes.jsonl": "100701d36b3bd5c79671d0ec1cb7c8b7b2237b9c0bdaa7ccba4d3305f070e19d",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/generation-return.json": "84a3ac13640b90d7eca42997e0e1cc8749cdcea68ce27026d44d885bc4e2c5e6",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/sensor-result.json": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/native-input.json": "23b610a1662fd6b2c0050961be56770c857c7d95fca17c4dfd827f0411e06e2e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/manifest.json": "045556bd775ad38bd000785b92ea46ab0f11b65ab18a733b629478273e21cc82",
+    "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_point_region_control_independent_audit.json": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole/resolved_config.yaml": "73f82530ddc3d3aa376559a36a7e221c23d75a15fef2a68d3bd54c21d1cdae9e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01/whole/manifest.json": "79c5037b6e0b8dd8a3c39c0348da4b9419069bfbe90b9a260bf142a067c602ab",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/sensor-result.json": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/generation-return.json": "c660cbf3f91d0dcdb76c5df085b6d03b7242c13cad4cc2dd245436e15f7a4ab3",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/native-input.json": "4bc74c452a804934292cd03216575dbd59238fe83656d2c3e251f05d5e6dbd40",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/generation-settings.json": "e74ef22b53d2b7c005a73f5af0a644981ecf10a93e951dd1f5960b06fa40bedd",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/resolved_config.yaml": "c25aa8d2ae4ff9ad36e6988f8526162c6364badac3b008410a5ad198a5a7f6f9",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/manifest.json": "99702254cfefd4d489d590cf566a90a9dcbd4c9bf6a069cb752f37ceb558d077",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/native-input.npz": "bd800327a724906429496754d89efb4c74416714cef1247d684af647ecefaca2",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/rgb-input.npy": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/present-postevent/episodes.jsonl": "38207a1bd261295fbf2a323cd6f981fc3384e2d983d93a3ddfd3fe153fc770a1",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/sensor-captures.json": "becd146f2ea367e2c8c557fffa16e8be9212db2dc2a8d74b039225c24fe5d3b2",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/sensor-seal.json": "2275535c40dc80e39c3df5ec9f46039c629fd3f4501926f6d4c2b97e280a9ce6",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/episodes.jsonl": "4529c644394177fc711e81a44e598dfc03f0837746c637a0e63f5bca577d9c72",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/own-controls.json": "77e1bb0b1fdf4ae6db6911d0b28b342ece8f3f57f1ea54dc1ea174c316eaec59",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/scene/capture-000002.npz": "8f92b8f85ecc0ec2b14b11eabbcd73f5d6a2439f6d476f10cf1b67f659c9b791",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/sensor-result.json": "7075c2b1683694deebf473fa0a2d7823a38f5836c14f6b3ff45264197615a733",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/generation-return.json": "f1100f2f0a999866f22839bd5235ecb4dbe185f411fd842ea55938068e82770e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/native-input.json": "da6c7932d0fb9f539b95c7c6c6dfae5100ad5c139e1b4a7fc1371fb001c36e6a",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/generation-settings.json": "e74ef22b53d2b7c005a73f5af0a644981ecf10a93e951dd1f5960b06fa40bedd",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/resolved_config.yaml": "702797693a69326b1e5f1fb6bb3ad61d2ebfc3255824fb355971ec9666909cf7",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/manifest.json": "57d43486f905b86e0eb41628bd0604fc480577a9f04ffbcc8281992f85348164",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/native-input.npz": "419186b980fd53041fc307fbadd7e03acdcbf8e61abb5a67508b8d8807f5faa1",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/rgb-input.npy": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01/away-postevent/episodes.jsonl": "821a6768d7359afa48f206d39c0a78160d196f38e3f76d4d3e3bbcdd9cff3474",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/sensor-captures.json": "8e4cb03407ff450caf46eff5b0636d2f8a8771878603c2c35f5a3ac1d8136787",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/sensor-seal.json": "2a194c1b6a9d50dacb862d0a0a966d9eebf046d8f755d9d54b51317920a0df07",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/episodes.jsonl": "c8571d9dcf5304e76b35fda95c756a5ac017a6f82169f94e596d9dee2e99c26e",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/own-controls.json": "4996e2e8fa4884a397030dd0f0335d2027c3255fce65c6668677f455222211eb",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/scene/capture-000002.npz": "c208fcdcfc7ce35a362b89dcf44291cd38eaefc676eb6eb6d2b4710764c54223"
+  },
+  "source_order": [
+    "present-postevent",
+    "away-postevent"
+  ],
+  "arm_order": [
+    "cached",
+    "fresh"
+  ],
+  "record_budget": 4,
+  "candidate_budget": 28,
+  "guard_packet_sha256": "5782d1905481f14903ea66d10dc91da1fb10382c929fc3da6e4d878b5d57c378",
+  "cached_goal": {
+    "point": [
+      -0.11673469557117522,
+      0.058971097589474636,
+      0.9883583307522877
+    ],
+    "question": "Point to: the wine bottle.",
+    "settings": {
+      "max_new_tokens": 256,
+      "use_cache": true,
+      "generation_mode": "hybrid",
+      "temperature": 0.0,
+      "do_sample": false,
+      "verbose": false
+    },
+    "provenance": {
+      "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole",
+      "sensor_sha256": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+      "original_POINT_audit_sha256": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1"
+    }
+  },
+  "slow_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "slow",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "root_visual_inspection_files": {
+    "full-rgb.png": "a41c1d8ad7a407ffb8c758c21f4c2c5f72b0157c1dcf7eaa9e6d796fa8d038ab",
+    "inputs.json": "c0f05c5d9fedc19e59a3f9a63e71c46a19f9ddab355e15bb31db95d4d910fd3f"
+  },
+  "root_authorization": "Root explicitly authorized exactly four prepared records at clean8a6906d after saved-output audit PASS and root original-resolution inspection; both prerequisites met.",
+  "physical_source_original_matrix_status": "interrupted_incomplete",
+  "physical_source_admission_status": "observational-source-qualified",
+  "source_own_rows": [
+    {
+      "condition": "neck-present",
+      "anchor": "neck",
+      "arm": "close",
+      "phase": "scene_after",
+      "after_step": 29,
+      "control": null,
+      "source_capture_stream": "scene",
+      "source_capture_seq": 2,
+      "capture_sim_time": 12.10000000000071,
+      "capture_read_sim_time_s": 12.10000000000071,
+      "cached_geometry_sample_time_s": null,
+      "exact_observation_sample_time_s": null,
+      "tcp_read_sim_time_s": 12.10000000000071,
+      "own_tcp_world_m": [
+        -0.12697750460266782,
+        0.05583112305808801,
+        1.0316877340353365
+      ],
+      "tcp_source_field": "scene_boundary.own_observations.robot0_eef_pos",
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.12697750460266782,
+          0.05583112305808801,
+          1.0316877340353365
+        ],
+        "robot0_eef_quat": [
+          0.9995984601623381,
+          0.00019917507906985765,
+          -0.028335094863099465,
+          3.4197487639534355e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999850362083001,
+          -0.03999862309949321
+        ],
+        "robot0_gripper_qvel": [
+          -5.640478984626206e-06,
+          -8.161892982771058e-06
+        ]
+      },
+      "artifact": "scene/capture-000002.npz",
+      "artifact_sha256": "8f92b8f85ecc0ec2b14b11eabbcd73f5d6a2439f6d476f10cf1b67f659c9b791",
+      "render_preserves_state_and_caches": true,
+      "scene_boundary": "after",
+      "own_source": {
+        "journal": "episodes.jsonl",
+        "kind": "scene_boundary",
+        "boundary": "after",
+        "step": 29
+      },
+      "capture_id": 31
+    },
+    {
+      "condition": "neck-away",
+      "anchor": "neck",
+      "arm": "close",
+      "phase": "scene_after",
+      "after_step": 29,
+      "control": null,
+      "source_capture_stream": "scene",
+      "source_capture_seq": 2,
+      "capture_sim_time": 12.10000000000071,
+      "capture_read_sim_time_s": 12.10000000000071,
+      "cached_geometry_sample_time_s": null,
+      "exact_observation_sample_time_s": null,
+      "tcp_read_sim_time_s": 12.10000000000071,
+      "own_tcp_world_m": [
+        -0.12697750460266782,
+        0.05583112305808801,
+        1.0316877340353365
+      ],
+      "tcp_source_field": "scene_boundary.own_observations.robot0_eef_pos",
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.12697750460266782,
+          0.05583112305808801,
+          1.0316877340353365
+        ],
+        "robot0_eef_quat": [
+          0.9995984601623381,
+          0.00019917507906985765,
+          -0.028335094863099465,
+          3.4197487639534355e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999850362083001,
+          -0.03999862309949321
+        ],
+        "robot0_gripper_qvel": [
+          -5.640478984626206e-06,
+          -8.161892982771058e-06
+        ]
+      },
+      "artifact": "scene/capture-000002.npz",
+      "artifact_sha256": "c208fcdcfc7ce35a362b89dcf44291cd38eaefc676eb6eb6d2b4710764c54223",
+      "render_preserves_state_and_caches": true,
+      "scene_boundary": "after",
+      "own_source": {
+        "journal": "episodes.jsonl",
+        "kind": "scene_boundary",
+        "boundary": "after",
+        "step": 29
+      },
+      "capture_id": 31
+    }
+  ],
+  "feature_code_sha256": "6ce59bcf02112e979c01677d0015c2500cf6f5cf47c5d6a08c1ad89b9933ed03",
+  "protocol_sha256": "247317d499d6f7fed6861a2a3737ee6659bb213643443862e174fa5e0647838f"
+}
