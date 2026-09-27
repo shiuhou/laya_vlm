@@ -1,0 +1,24 @@
+{
+  "status": "code_readiness_pass",
+  "freeze_commit": "58d00d09a1a38099b272eb2f2f8c5c815f5d8059",
+  "wrapper_sha256": "3a0ac81417aab00edf727cd1dbfac2cc892fa020f5f7a2d4b4dac23653cc1fef",
+  "tests_sha256": "f5608563b1344529fc1e705cad43af34f04450b95fde3bb91cbd144ab2bf042a",
+  "protocol_sha256": "94f6fb26b633665d77c7ffdec7863dfab5d31a6c9d285167f39b315523f31232",
+  "authorized_batches": 0,
+  "scope": "Prospective source inspection and synthetic tests only. Actual physical source, independent source binding and no-feature preflight do not yet exist; this is not an extraction release.",
+  "independent_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m pytest -q tests/test_task2_closed_empty_image_motion.py tests/test_task2_point_anchor_image_motion.py",
+    "passed": 20,
+    "seconds": 0.99,
+    "actual_source_LK_projection_displacement_computed": false
+  },
+  "reviewed_findings": [
+    "The declared 56-row sensor manifest contains the original 30-frame approach, two same-time scene boundaries, and all 24 suffix controls. Exact stream/phase/control/source-ordinal checks select scene_after plus all auxiliary rows, giving 25 frames without through-event tracking.",
+    "Scene capture 0 binds the actual forced-refresh own packet at pre-GRASP step 29. It is a reference boundary, not a completed first GRASP. Subsequent own packets bind just-returned control observations. Read times and unknown sample times remain distinct.",
+    "Only selected RGB, intrinsics and camera_to_world arrays are decoded. Mechanical/source journals and independent admission receipts are hash-only linkage. Feature functions do not receive measured scene depth, poses, contacts or evaluator labels.",
+    "The same 492 integer-center image locations initialize independently after the event in both arms. The unchanged native tracker and A/B helpers use sole reference 0. All 984 tracks / 24,600 rows and all native failures/nulls remain in output; no survivor intersection or reseeding is introduced.",
+    "Unavailable own projection nulls B only. Finite off-image projections and the established half-pixel convention remain unchanged. B adds proprioception/calibration and is not RGB-only.",
+    "Extraction requires the actual reviewed source binding, matching no-feature preflight, exact clean code/protocol freeze and a separate one-batch review at the fixed unused output path. The current code-only review does not satisfy that execution receipt.",
+    "Fresh pixel IDs identify equal image coordinates, not common material points. Empty-hand local co-motion can arise from finger/background patch support; no identity, rigid attachment, holding, classifier or anchor ranking follows."
+  ]
+}
