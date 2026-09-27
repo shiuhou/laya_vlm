@@ -1,0 +1,4815 @@
+{
+  "status": "PASS",
+  "freeze": "fb7899bef22e6473aed30e7dd0051568bd7db7f7",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-approach-run-01",
+  "pair_journal_sha256": "36a1a4a15cbbc9a9beb54e4ac63f5362220be075a8fc012a618dc98f9e88e4ad",
+  "request_sha256": "97eeebaa77c1b050b4de60d42b5f284690daf37038bef2eb020cc5d495c472f3",
+  "preflight_sha256": "dba534d9a685cdf027af6241b02b52618f32cd2f8dd6ada4f9fff3e80d8ed248",
+  "admission_sha256": "753fd32754c67265956c845db0d689f7ca41e2ad1aa1155cb75ee6aecdb14fef",
+  "source_POINT_audit_sha256": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1",
+  "geometry_audit_sha256": "bf1ce72a79fd50c796b68e3d41d6b73b474184a8c89501cc3b93d4af1861627c",
+  "final_integrity_delta_review": "fb7899b explicitly binds geometry producer/source/count/order/results and combined tensors; checked before root prospective1c884d2",
+  "conditions": [
+    {
+      "status": "pass",
+      "condition": "whole",
+      "freeze": "fb7899bef22e6473aed30e7dd0051568bd7db7f7",
+      "journal_sha256": "690f81aef2fe5b3d2b5aee09d72f269dfbf7f37ee24c1f9a83c061f7ce4b4541",
+      "journal_records": 12635,
+      "point_world_m": [
+        -0.11673469557117522,
+        0.058971097589474636,
+        0.9883583307522877
+      ],
+      "goal_anchor": {
+        "condition": "whole",
+        "query": "the wine bottle",
+        "question": "Point to: the wine bottle.",
+        "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/whole",
+        "sensor_sha256": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+        "raw_return_sha256": "84a3ac13640b90d7eca42997e0e1cc8749cdcea68ce27026d44d885bc4e2c5e6",
+        "journal_sha256": "100701d36b3bd5c79671d0ec1cb7c8b7b2237b9c0bdaa7ccba4d3305f070e19d",
+        "source_frame_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+        "parsed_point": {
+          "normalized": [
+            571,
+            496
+          ],
+          "continuous_xy": [
+            219.26399999999998,
+            190.464
+          ],
+          "sample_pixel_xy": [
+            219,
+            190
+          ]
+        },
+        "native_projection": {
+          "position_world_m": [
+            -0.11673469557117522,
+            0.058971097589474636,
+            0.9883583307522877
+          ],
+          "sample_pixel_xy": [
+            219,
+            190
+          ],
+          "sample_pixel_center_xy": [
+            219.5,
+            190.5
+          ],
+          "depth_m": 0.9939957857131958,
+          "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+        },
+        "calibration": {
+          "intrinsics": {
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "bytes_sha256": "268afd5e91c3d862ad4f1bb289345b517a91c3cef1fea129c8dcf2e1c05dae19"
+          },
+          "camera_to_world": {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64",
+            "bytes_sha256": "ecdee4c02cacaaf1a382499cf0747ab1e0de961a273a39e3e6cdfcf1fc47557b"
+          }
+        },
+        "native_admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification",
+        "semantic_confidence": null,
+        "resolved_depth_ownership": null,
+        "researcher_specified_region": true,
+        "new_model_calls": 0
+      },
+      "initial_own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "final_own_observations": {
+        "robot0_eef_pos": [
+          -0.11797678918575412,
+          0.056279970375673984,
+          1.0313076825422585
+        ],
+        "robot0_eef_quat": [
+          0.99961244467775,
+          -0.00016702603463064625,
+          -0.02783750533526106,
+          -7.644857189443612e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999848348727919,
+          -0.03999943013435018
+        ],
+        "robot0_gripper_qvel": [
+          1.6791343262305907e-06,
+          -1.5174061789080745e-07
+        ]
+      },
+      "all_seven_candidate_point_proxy_memberships_checked": 1453900,
+      "replay_sha256": "d784b0bc206fcbe07fc376426610b47e9f10fc38ae23d9a67ae3838dc9aaedd0",
+      "actions": 30,
+      "controls": 240,
+      "native_integrations": 6000,
+      "native_stage_samples": 12000,
+      "captures": 31,
+      "exact_initial_array_gate": true,
+      "initial_tcp_to_proxy_mm": 209.96188285853017,
+      "final_tcp_to_proxy_mm": 43.05150150002782,
+      "max_translation_residual_mm": 1.3054231059464858,
+      "max_rotation_change_deg": 0.23264101175550161,
+      "first_contact": null,
+      "strong_robot_pairs": [],
+      "trajectory": [
+        {
+          "step": 0,
+          "token": "MV_DOWN",
+          "before_distance_mm": 209.96188285853017,
+          "after_distance_mm": 202.08191240217485,
+          "translation_residual_mm": 0.45593504357095377,
+          "rotation_change_deg": 0.15526699323152798
+        },
+        {
+          "step": 1,
+          "token": "MV_DOWN",
+          "before_distance_mm": 202.08191240217485,
+          "after_distance_mm": 194.41254489951578,
+          "translation_residual_mm": 0.7350149159214427,
+          "rotation_change_deg": 0.11702672203638888
+        },
+        {
+          "step": 2,
+          "token": "MV_DOWN",
+          "before_distance_mm": 194.41254489951578,
+          "after_distance_mm": 186.88670680773112,
+          "translation_residual_mm": 0.6397252052776972,
+          "rotation_change_deg": 0.010776596536948681
+        },
+        {
+          "step": 3,
+          "token": "MV_DOWN",
+          "before_distance_mm": 186.88670680773112,
+          "after_distance_mm": 179.53198398305335,
+          "translation_residual_mm": 0.6171218816048091,
+          "rotation_change_deg": 0.005002163254526314
+        },
+        {
+          "step": 4,
+          "token": "MV_DOWN",
+          "before_distance_mm": 179.53198398305335,
+          "after_distance_mm": 172.37078510273278,
+          "translation_residual_mm": 0.6345191384723411,
+          "rotation_change_deg": 0.003947140261191573
+        },
+        {
+          "step": 5,
+          "token": "MV_DOWN",
+          "before_distance_mm": 172.37078510273278,
+          "after_distance_mm": 165.42796898535084,
+          "translation_residual_mm": 0.6360223910233944,
+          "rotation_change_deg": 0.0012198307217388118
+        },
+        {
+          "step": 6,
+          "token": "MV_DOWN",
+          "before_distance_mm": 165.42796898535084,
+          "after_distance_mm": 158.73222891566027,
+          "translation_residual_mm": 0.6375333244814084,
+          "rotation_change_deg": 0.0011985145388210931
+        },
+        {
+          "step": 7,
+          "token": "MV_DOWN",
+          "before_distance_mm": 158.73222891566027,
+          "after_distance_mm": 152.3161034485169,
+          "translation_residual_mm": 0.6396332741607003,
+          "rotation_change_deg": 0.0015181848014559013
+        },
+        {
+          "step": 8,
+          "token": "MV_DOWN",
+          "before_distance_mm": 152.3161034485169,
+          "after_distance_mm": 146.21672685807098,
+          "translation_residual_mm": 0.6408927498118666,
+          "rotation_change_deg": 0.0011152721973027694
+        },
+        {
+          "step": 9,
+          "token": "MV_FWD",
+          "before_distance_mm": 146.21672685807098,
+          "after_distance_mm": 140.12133556915245,
+          "translation_residual_mm": 0.9818846910989677,
+          "rotation_change_deg": 0.10027697472820632
+        },
+        {
+          "step": 10,
+          "token": "MV_DOWN",
+          "before_distance_mm": 140.12133556915245,
+          "after_distance_mm": 133.9882035380157,
+          "translation_residual_mm": 1.3054231059464858,
+          "rotation_change_deg": 0.21071627363805542
+        },
+        {
+          "step": 11,
+          "token": "MV_FWD",
+          "before_distance_mm": 133.9882035380157,
+          "after_distance_mm": 128.07604802563142,
+          "translation_residual_mm": 1.177394926138526,
+          "rotation_change_deg": 0.23264101175550161
+        },
+        {
+          "step": 12,
+          "token": "MV_DOWN",
+          "before_distance_mm": 128.07604802563142,
+          "after_distance_mm": 122.09405640814556,
+          "translation_residual_mm": 1.288168865771252,
+          "rotation_change_deg": 0.22876541782648688
+        },
+        {
+          "step": 13,
+          "token": "MV_FWD",
+          "before_distance_mm": 122.09405640814556,
+          "after_distance_mm": 116.35699523216647,
+          "translation_residual_mm": 1.1693291352910944,
+          "rotation_change_deg": 0.22776263351041898
+        },
+        {
+          "step": 14,
+          "token": "MV_DOWN",
+          "before_distance_mm": 116.35699523216647,
+          "after_distance_mm": 110.57705036609323,
+          "translation_residual_mm": 1.2780803836647934,
+          "rotation_change_deg": 0.22659532711580968
+        },
+        {
+          "step": 15,
+          "token": "MV_FWD",
+          "before_distance_mm": 110.57705036609323,
+          "after_distance_mm": 105.07724653883069,
+          "translation_residual_mm": 1.1733741962642086,
+          "rotation_change_deg": 0.227236204936911
+        },
+        {
+          "step": 16,
+          "token": "MV_DOWN",
+          "before_distance_mm": 105.07724653883069,
+          "after_distance_mm": 99.57370002695988,
+          "translation_residual_mm": 1.2711731566046929,
+          "rotation_change_deg": 0.22658066413283212
+        },
+        {
+          "step": 17,
+          "token": "MV_LEFT",
+          "before_distance_mm": 99.57370002695988,
+          "after_distance_mm": 93.98231423861573,
+          "translation_residual_mm": 0.4470252852451425,
+          "rotation_change_deg": 0.11355389032565591
+        },
+        {
+          "step": 18,
+          "token": "MV_FWD",
+          "before_distance_mm": 93.98231423861573,
+          "after_distance_mm": 88.33997315503306,
+          "translation_residual_mm": 0.9554155665041347,
+          "rotation_change_deg": 0.08874467562399281
+        },
+        {
+          "step": 19,
+          "token": "MV_DOWN",
+          "before_distance_mm": 88.33997315503306,
+          "after_distance_mm": 82.81683279285681,
+          "translation_residual_mm": 1.263707968903184,
+          "rotation_change_deg": 0.1999408699718571
+        },
+        {
+          "step": 20,
+          "token": "MV_LEFT",
+          "before_distance_mm": 82.81683279285681,
+          "after_distance_mm": 77.24642185226364,
+          "translation_residual_mm": 0.4482256332598639,
+          "rotation_change_deg": 0.12453393431412196
+        },
+        {
+          "step": 21,
+          "token": "MV_FWD",
+          "before_distance_mm": 77.24642185226364,
+          "after_distance_mm": 71.59572961129304,
+          "translation_residual_mm": 0.9720059754498503,
+          "rotation_change_deg": 0.0868325504319059
+        },
+        {
+          "step": 22,
+          "token": "MV_LEFT",
+          "before_distance_mm": 71.59572961129304,
+          "after_distance_mm": 66.37537603856602,
+          "translation_residual_mm": 0.7967587260134781,
+          "rotation_change_deg": 0.1576627872699404
+        },
+        {
+          "step": 23,
+          "token": "MV_FWD",
+          "before_distance_mm": 66.37537603856602,
+          "after_distance_mm": 61.20040338248682,
+          "translation_residual_mm": 1.027185656812893,
+          "rotation_change_deg": 0.1610540765519333
+        },
+        {
+          "step": 24,
+          "token": "MV_LEFT",
+          "before_distance_mm": 61.20040338248682,
+          "after_distance_mm": 56.79291103751813,
+          "translation_residual_mm": 0.7562329296243356,
+          "rotation_change_deg": 0.15395783543630873
+        },
+        {
+          "step": 25,
+          "token": "MV_FWD",
+          "before_distance_mm": 56.79291103751813,
+          "after_distance_mm": 52.369276175179046,
+          "translation_residual_mm": 1.0360018858393911,
+          "rotation_change_deg": 0.15560985564491028
+        },
+        {
+          "step": 26,
+          "token": "MV_LEFT",
+          "before_distance_mm": 52.369276175179046,
+          "after_distance_mm": 49.193036715888,
+          "translation_residual_mm": 0.7441166509222185,
+          "rotation_change_deg": 0.15465700022972967
+        },
+        {
+          "step": 27,
+          "token": "MV_FWD",
+          "before_distance_mm": 49.193036715888,
+          "after_distance_mm": 45.96531461500685,
+          "translation_residual_mm": 1.053187561813809,
+          "rotation_change_deg": 0.1570878681288842
+        },
+        {
+          "step": 28,
+          "token": "MV_LEFT",
+          "before_distance_mm": 45.96531461500685,
+          "after_distance_mm": 44.572156552955256,
+          "translation_residual_mm": 0.7317194066400536,
+          "rotation_change_deg": 0.15622293630336387
+        },
+        {
+          "step": 29,
+          "token": "MV_FWD",
+          "before_distance_mm": 44.572156552955256,
+          "after_distance_mm": 43.05150150002782,
+          "translation_residual_mm": 1.0718841334308524,
+          "rotation_change_deg": 0.15885859467255212
+        }
+      ],
+      "guard_decisions": [
+        {
+          "step": 0,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 205.45879372325962,
+              "nominal_reduction_mm": 4.50308913527056,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 214.8363763164454,
+              "nominal_reduction_mm": -4.874493457915241,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 207.25034507271045,
+              "nominal_reduction_mm": 2.7115377858197287,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 213.10860840013186,
+              "nominal_reduction_mm": -3.1467255416016693,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 218.36139939420497,
+              "nominal_reduction_mm": -8.399516535674778,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 201.70841271896126,
+              "nominal_reduction_mm": 8.253470139568925,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 209.96188285853017,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 1,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 197.37994417488994,
+              "nominal_reduction_mm": 4.7019682272849135,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 207.1602188591185,
+              "nominal_reduction_mm": -5.0783064569436265,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 199.26564417051094,
+              "nominal_reduction_mm": 2.816268231663921,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 205.34702747678588,
+              "nominal_reduction_mm": -3.2651150746110247,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 210.33254461429772,
+              "nominal_reduction_mm": -8.250632212122856,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 193.99592603020045,
+              "nominal_reduction_mm": 8.085986371974412,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 202.08191240217485,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 2,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 189.53389090725102,
+              "nominal_reduction_mm": 4.878653992264753,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 199.6731815396618,
+              "nominal_reduction_mm": -5.260636640146032,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 191.48430742069579,
+              "nominal_reduction_mm": 2.9282374788200114,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 197.80352686499035,
+              "nominal_reduction_mm": -3.3909819654745488,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 202.51591518883896,
+              "nominal_reduction_mm": -8.103370289323175,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 186.4933760856923,
+              "nominal_reduction_mm": 7.919168813823485,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 194.41254489951578,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 3,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 181.81521435838724,
+              "nominal_reduction_mm": 5.071492449343879,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 192.34476907545837,
+              "nominal_reduction_mm": -5.458062267727243,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 183.83933579431104,
+              "nominal_reduction_mm": 3.047371013420064,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 190.41108417732474,
+              "nominal_reduction_mm": -3.524377369593629,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 194.82162513473926,
+              "nominal_reduction_mm": -7.934918327008155,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 179.15863569121316,
+              "nominal_reduction_mm": 7.728071116517965,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 186.88670680773112,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 4,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 174.25491762219576,
+              "nominal_reduction_mm": 5.2770663608575905,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 185.1990556948507,
+              "nominal_reduction_mm": -5.667071711797367,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 176.3582185083236,
+              "nominal_reduction_mm": 3.1737654747297226,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 183.19728521556485,
+              "nominal_reduction_mm": -3.6653012325115197,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 187.27666575349727,
+              "nominal_reduction_mm": -7.744681770443934,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 172.0201064121154,
+              "nominal_reduction_mm": 7.511877570937936,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 179.53198398305335,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 5,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 166.87765492594946,
+              "nominal_reduction_mm": 5.493130176783323,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 178.2560613283058,
+              "nominal_reduction_mm": -5.885276225573,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 169.0632231534267,
+              "nominal_reduction_mm": 3.3075619493060926,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 176.18456711880194,
+              "nominal_reduction_mm": -3.813782016069134,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 179.90198099308336,
+              "nominal_reduction_mm": -7.531195890350562,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 165.1019453205481,
+              "nominal_reduction_mm": 7.268839782184678,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 172.37078510273278,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 6,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 159.70741796667747,
+              "nominal_reduction_mm": 5.720551018673358,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 171.54115101529828,
+              "nominal_reduction_mm": -6.113182029947456,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 161.97923150379378,
+              "nominal_reduction_mm": 3.4487374815570515,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 169.39762219900484,
+              "nominal_reduction_mm": -3.969653213654001,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 172.71841976896087,
+              "nominal_reduction_mm": -7.290450783610042,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 158.43349809225768,
+              "nominal_reduction_mm": 6.994470893093157,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 165.42796898535084,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 7,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.77339913923964,
+              "nominal_reduction_mm": 5.958829776420621,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 165.08219016147595,
+              "nominal_reduction_mm": -6.349961245815688,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 155.13518871566416,
+              "nominal_reduction_mm": 3.5970401999961266,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 162.86471138715842,
+              "nominal_reduction_mm": -4.132482471498139,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 165.75086013086184,
+              "nominal_reduction_mm": -7.018631215201577,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.04766804836765,
+              "nominal_reduction_mm": 6.684560867292605,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 158.73222891566027,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 8,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.10922717632266,
+              "nominal_reduction_mm": 6.206876272194267,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 158.91030323240958,
+              "nominal_reduction_mm": -6.59419978389264,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 148.56421212406127,
+              "nominal_reduction_mm": 3.7518913244556638,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 156.61757760684318,
+              "nominal_reduction_mm": -4.301474158326268,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 159.0276679708624,
+              "nominal_reduction_mm": -6.711564522345475,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 145.98147676752612,
+              "nominal_reduction_mm": 6.334626680990802,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.3161034485169,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 9,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 139.75378059956364,
+              "nominal_reduction_mm": 6.462946258507351,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 153.06058680896436,
+              "nominal_reduction_mm": -6.843859950893371,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 142.30446146287233,
+              "nominal_reduction_mm": 3.9122653951986774,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 150.6920790019747,
+              "nominal_reduction_mm": -4.475352143903683,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.58141031715883,
+              "nominal_reduction_mm": -6.364683459087833,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.27678229772133,
+              "nominal_reduction_mm": 5.939944560349658,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.21672685807098,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 10,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.042193667052,
+              "nominal_reduction_mm": 6.07914190210046,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.63105973936962,
+              "nominal_reduction_mm": -6.509724170217169,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 136.03349551310254,
+              "nominal_reduction_mm": 4.087840056049924,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 144.78558444076114,
+              "nominal_reduction_mm": -4.664248871608684,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.72786381329377,
+              "nominal_reduction_mm": -6.606528244141319,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 133.93622118065588,
+              "nominal_reduction_mm": 6.185114388496587,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.12133556915245,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 11,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 127.68264764578696,
+              "nominal_reduction_mm": 6.305555892228753,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.72248883832057,
+              "nominal_reduction_mm": -6.734285300304871,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 129.70742575462808,
+              "nominal_reduction_mm": 4.280777783387646,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 138.85842098625886,
+              "nominal_reduction_mm": -4.870217448243147,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.24259644703108,
+              "nominal_reduction_mm": -6.25439290901536,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.20956094022256,
+              "nominal_reduction_mm": 5.778642597793149,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 133.9882035380157,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 12,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.19488605157775,
+              "nominal_reduction_mm": 5.881161974053653,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.4446279275212,
+              "nominal_reduction_mm": -6.368579901889798,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 123.59113365839842,
+              "nominal_reduction_mm": 4.484914367232987,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 133.16223126982956,
+              "nominal_reduction_mm": -5.086183244198156,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.57331592435537,
+              "nominal_reduction_mm": -6.497267898723957,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.05314742705868,
+              "nominal_reduction_mm": 6.022900598572731,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.07604802563142,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 13,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 115.98086203888145,
+              "nominal_reduction_mm": 6.113194369264107,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.69482064601047,
+              "nominal_reduction_mm": -6.600764237864917,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 117.38172344189245,
+              "nominal_reduction_mm": 4.712332966253118,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 127.41839828769602,
+              "nominal_reduction_mm": -5.324341879550457,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.1922738266182,
+              "nominal_reduction_mm": -6.098217418472621,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.53608090008947,
+              "nominal_reduction_mm": 5.55797550805609,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.09405640814556,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 14,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.73274229607092,
+              "nominal_reduction_mm": 5.624252936095544,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.54044419092322,
+              "nominal_reduction_mm": -6.183448958756749,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 111.40346201621789,
+              "nominal_reduction_mm": 4.953533215948588,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 121.93100233213013,
+              "nominal_reduction_mm": -5.574007099963668,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.70622902885273,
+              "nominal_reduction_mm": -6.349233796686255,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.54900287399957,
+              "nominal_reduction_mm": 5.807992358166897,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.35699523216647,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 15,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 104.72087682843627,
+              "nominal_reduction_mm": 5.856173537656967,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.99617981632782,
+              "nominal_reduction_mm": -6.419129450234595,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.35366149895141,
+              "nominal_reduction_mm": 5.223388867141826,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.4266899988804,
+              "nominal_reduction_mm": -5.849639632787174,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.4678779551822,
+              "nominal_reduction_mm": -5.890827589088973,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.30812665672018,
+              "nominal_reduction_mm": 5.268923709373055,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.57705036609323,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 16,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.7921828036273,
+              "nominal_reduction_mm": 5.285063735203391,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 111.01340338739212,
+              "nominal_reduction_mm": -5.936156848561428,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.56751166561155,
+              "nominal_reduction_mm": 5.509734873219138,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 111.21495448491952,
+              "nominal_reduction_mm": -6.137707946088825,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 111.22208671870916,
+              "nominal_reduction_mm": -6.1448401798784715,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.55954452638053,
+              "nominal_reduction_mm": 5.517702012450151,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.07724653883069,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 17,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.06653018311663,
+              "nominal_reduction_mm": 5.5071698438432515,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.74181468760021,
+              "nominal_reduction_mm": -6.168114660640336,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 93.74311701872736,
+              "nominal_reduction_mm": 5.830583008232512,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 106.0286352158282,
+              "nominal_reduction_mm": -6.454935188868319,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.18327414464294,
+              "nominal_reduction_mm": -5.60957411768305,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.69066645837312,
+              "nominal_reduction_mm": 4.88303356858677,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.57370002695988,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 18,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.12559718944999,
+              "nominal_reduction_mm": 5.8567170491657246,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 100.49492474396222,
+              "nominal_reduction_mm": -6.512610505346489,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.86278482922158,
+              "nominal_reduction_mm": 5.119529409394142,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.84365904596693,
+              "nominal_reduction_mm": -5.8613448073512044,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.9044122088315,
+              "nominal_reduction_mm": -5.922097970215784,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.79447730855621,
+              "nominal_reduction_mm": 5.187836930059516,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 93.98231423861573,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 19,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 83.18374018798644,
+              "nominal_reduction_mm": 5.15623296704662,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.27813682080006,
+              "nominal_reduction_mm": -5.938163665766993,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.89646059777084,
+              "nominal_reduction_mm": 5.4435125572622205,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.53083377621374,
+              "nominal_reduction_mm": -6.190860621180683,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.58672252738246,
+              "nominal_reduction_mm": -6.246749372349411,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.83268458520395,
+              "nominal_reduction_mm": 5.507288569829114,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.33997315503306,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 20,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.39801952718874,
+              "nominal_reduction_mm": 5.41881326566808,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 89.0325904427638,
+              "nominal_reduction_mm": -6.215757649906991,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 76.99098481443602,
+              "nominal_reduction_mm": 5.825847978420798,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 89.38480768555297,
+              "nominal_reduction_mm": -6.567974892696157,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.43448205441454,
+              "nominal_reduction_mm": -5.6176492615577365,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 78.0807144655288,
+              "nominal_reduction_mm": 4.736118327328009,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.81683279285681,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 21,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.39611580456355,
+              "nominal_reduction_mm": 5.850306047700093,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 83.88452792963135,
+              "nominal_reduction_mm": -6.6381060773677,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.29937364554254,
+              "nominal_reduction_mm": 4.947048206721094,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 83.10727975585519,
+              "nominal_reduction_mm": -5.860857903591546,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 83.23490720321966,
+              "nominal_reduction_mm": -5.988485350956016,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.15240537104194,
+              "nominal_reduction_mm": 5.094016481221708,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.24642185226364,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 22,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_FWD",
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 66.61999721988307,
+              "nominal_reduction_mm": 4.97573239140997,
+              "support_indices": [
+                53
+              ]
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.5478753259529,
+              "nominal_reduction_mm": -5.952145714659865,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.26099852931654,
+              "nominal_reduction_mm": 5.334731081976504,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.85484616287336,
+              "nominal_reduction_mm": -6.259116551580318,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.98382391172116,
+              "nominal_reduction_mm": -6.388094300428124,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 66.10915371756343,
+              "nominal_reduction_mm": 5.486575893729611,
+              "support_indices": [
+                53
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.59572961129304,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 23,
+          "selected": "MV_FWD",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 61.06726762716972,
+              "nominal_reduction_mm": 5.308108411396291,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.67853818751253,
+              "nominal_reduction_mm": -6.303162148946523,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 62.143222558686844,
+              "nominal_reduction_mm": 4.232153479879167,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.76072030396297,
+              "nominal_reduction_mm": -5.385344265396955,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 73.27121572601605,
+              "nominal_reduction_mm": -6.895839687450042,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 60.35486752991597,
+              "nominal_reduction_mm": 6.02050850865004,
+              "support_indices": [
+                53
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.37537603856602,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 24,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_FWD",
+            "MV_RIGHT",
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 4,
+              "excluded": true,
+              "nominal_distance_mm": 57.00752447215514,
+              "nominal_reduction_mm": 4.192878910331682,
+              "support_indices": [
+                196,
+                256,
+                276,
+                296
+              ]
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.64173543594767,
+              "nominal_reduction_mm": -5.44133205346084,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.61962547162195,
+              "nominal_reduction_mm": 4.580777910864871,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 66.97161159634332,
+              "nominal_reduction_mm": -5.771208213856502,
+              "support_indices": [
+                53
+              ]
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 68.57361135498165,
+              "nominal_reduction_mm": -7.373207972494828,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 15,
+              "excluded": true,
+              "nominal_distance_mm": 54.668442213896505,
+              "nominal_reduction_mm": 6.5319611685903185,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 61.20040338248682,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 25,
+          "selected": "MV_FWD",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 52.34552428120855,
+              "nominal_reduction_mm": 4.447386756309582,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 62.536513941507025,
+              "nominal_reduction_mm": -5.743602903988898,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 53.640443310219815,
+              "nominal_reduction_mm": 3.152467727298311,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 61.42940932252231,
+              "nominal_reduction_mm": -4.6364982850041825,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 64.72664704144444,
+              "nominal_reduction_mm": -7.933736003926314,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 17,
+              "excluded": true,
+              "nominal_distance_mm": 49.61179951385726,
+              "nominal_reduction_mm": 7.181111523660875,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                116
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.79291103751813,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 26,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_RIGHT",
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.374146169703586,
+              "nominal_reduction_mm": 2.995130005475459,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.98487399509712,
+              "nominal_reduction_mm": -4.615597819918077,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 48.973033448548875,
+              "nominal_reduction_mm": 3.3962427266301667,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 5,
+              "excluded": true,
+              "nominal_distance_mm": 57.32995873949034,
+              "nominal_reduction_mm": -4.960682564311293,
+              "support_indices": [
+                176,
+                196,
+                256,
+                276,
+                296
+              ]
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.83084454412086,
+              "nominal_reduction_mm": -8.46156836894181,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 38,
+              "excluded": true,
+              "nominal_distance_mm": 44.54986561453753,
+              "nominal_reduction_mm": 7.819410560641511,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                172,
+                173,
+                174
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 52.369276175179046,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 27,
+          "selected": "MV_FWD",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 46.09970255852143,
+              "nominal_reduction_mm": 3.0933341573665674,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 53.98821303467324,
+              "nominal_reduction_mm": -4.79517631878524,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 47.61724937409137,
+              "nominal_reduction_mm": 1.575787341796628,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 52.65460364210335,
+              "nominal_reduction_mm": -3.4615669262153537,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 58.18100600432614,
+              "nominal_reduction_mm": -8.987969288438148,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 38,
+              "excluded": true,
+              "nominal_distance_mm": 40.68021955429904,
+              "nominal_reduction_mm": 8.512817161588956,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                172,
+                173,
+                174
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.193036715888,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 28,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.70274477090301,
+              "nominal_reduction_mm": 1.2625698441038335,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.26748324463741,
+              "nominal_reduction_mm": -3.302168629630564,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.31627441201012,
+              "nominal_reduction_mm": 1.649040202996728,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.61540201945905,
+              "nominal_reduction_mm": -3.6500874044522043,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 55.42025420961948,
+              "nominal_reduction_mm": -9.454939594612632,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 38,
+              "excluded": true,
+              "nominal_distance_mm": 36.79967008893256,
+              "nominal_reduction_mm": 9.165644526074288,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                172,
+                173,
+                174
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 45.96531461500685,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 29,
+          "selected": "MV_FWD",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 43.38094873026058,
+              "nominal_reduction_mm": 1.191207822694683,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 47.86906690990339,
+              "nominal_reduction_mm": -3.296910356948131,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 45.049728232554145,
+              "nominal_reduction_mm": -0.47757167959888713,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 46.302011465327496,
+              "nominal_reduction_mm": -1.7298549123722362,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 54.33594986175794,
+              "nominal_reduction_mm": -9.763793308802677,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 36,
+              "excluded": true,
+              "nominal_distance_mm": 34.942221340132804,
+              "nominal_reduction_mm": 9.629935212822453,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                173
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.572156552955256,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 30,
+          "selected": "STOP",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 43.91571369242813,
+              "nominal_reduction_mm": -0.8642121924003141,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.47778831842334,
+              "nominal_reduction_mm": -1.4262868183955237,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 43.58450684739802,
+              "nominal_reduction_mm": -0.5330053473701981,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.80239196385513,
+              "nominal_reduction_mm": -1.7508904638273148,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 53.03224318474858,
+              "nominal_reduction_mm": -9.98074168472076,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 32,
+              "excluded": true,
+              "nominal_distance_mm": 33.08239328717744,
+              "nominal_reduction_mm": 9.969108212850381,
+              "support_indices": [
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                151,
+                152,
+                153,
+                154,
+                155
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 43.05150150002782,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        }
+      ],
+      "termination": {
+        "attempted_actions": 30,
+        "completed_actions": 30,
+        "first_contact_evaluator_only": null,
+        "grasp_attempted": false,
+        "last_step": 30,
+        "new_model_calls": 0,
+        "reason": "rule_no_strict_nominal_improvement",
+        "task_success_claim": false
+      },
+      "official_executor_success_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "first_raw_robot_contact": null,
+      "raw_robot_contact_rows_by_action": {},
+      "final_native_after_raw_robot_contacts": [],
+      "raw_robot_contact_rows_by_class_and_stage": {
+        "pad/bottle": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "other_gripper/bottle": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "gripper/other_scene": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "arm/scene": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "self": {
+          "native_before": 0,
+          "native_after": 0
+        }
+      },
+      "limits": [
+        "stored arrays, journal and arithmetic only; reviewer performed no dynamics, rendering, FK, projection or inference",
+        "replay exports states/fingerprints and full-snapshot/image equality assertions; full replay contacts/images were compared by reviewed producer, not separately reexported",
+        "counts cover instrumented approach only; fresh reset and ten standard settling controls also occurred",
+        "first observed native contact is not continuous-time onset; native cached force/pose times remain unknown",
+        "point distance does not establish bottle center, clearance, jaw fit, grasp readiness or holding"
+      ]
+    },
+    {
+      "status": "pass",
+      "condition": "neck",
+      "freeze": "fb7899bef22e6473aed30e7dd0051568bd7db7f7",
+      "journal_sha256": "3e335ff3d4791f43b74750216fd928470145ea0d34d5a03fbeaba3f2ff492ae8",
+      "journal_records": 12214,
+      "point_world_m": [
+        -0.12337491393454869,
+        0.05776965007435101,
+        1.0288145621732854
+      ],
+      "goal_anchor": {
+        "condition": "neck",
+        "query": "the neck of the wine bottle",
+        "question": "Point to: the neck of the wine bottle.",
+        "source_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-region-control-run-01/neck",
+        "sensor_sha256": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d",
+        "raw_return_sha256": "769b1f87d82636a1b56fa82581e8d805df58e0d7baf79aa5e841521ebc723553",
+        "journal_sha256": "014458d3129cea55dded74c434eb1bd8adf854f68055a793f659c453311483a3",
+        "source_frame_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+        "parsed_point": {
+          "normalized": [
+            571,
+            451
+          ],
+          "continuous_xy": [
+            219.26399999999998,
+            173.184
+          ],
+          "sample_pixel_xy": [
+            219,
+            173
+          ]
+        },
+        "native_projection": {
+          "position_world_m": [
+            -0.12337491393454869,
+            0.05776965007435101,
+            1.0288145621732854
+          ],
+          "sample_pixel_xy": [
+            219,
+            173
+          ],
+          "sample_pixel_center_xy": [
+            219.5,
+            173.5
+          ],
+          "depth_m": 0.9737445712089539,
+          "admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification"
+        },
+        "calibration": {
+          "intrinsics": {
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "bytes_sha256": "268afd5e91c3d862ad4f1bb289345b517a91c3cef1fea129c8dcf2e1c05dae19"
+          },
+          "camera_to_world": {
+            "shape": [
+              4,
+              4
+            ],
+            "dtype": "float64",
+            "bytes_sha256": "ecdee4c02cacaaf1a382499cf0747ab1e0de961a273a39e3e6cdfcf1fc47557b"
+          }
+        },
+        "native_admission": "fresh_single_POINT_EOS_finite_depth_not_identity_or_safety_verification",
+        "semantic_confidence": null,
+        "resolved_depth_ownership": null,
+        "researcher_specified_region": true,
+        "new_model_calls": 0
+      },
+      "initial_own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "final_own_observations": {
+        "robot0_eef_pos": [
+          -0.12697818678399897,
+          0.055804330565249166,
+          1.0316871225433253
+        ],
+        "robot0_eef_quat": [
+          0.9995983833509899,
+          0.00020524549483663668,
+          -0.02833776682942868,
+          2.911174085722286e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.039998514901787977,
+          -0.03999860677570724
+        ],
+        "robot0_gripper_qvel": [
+          -5.716656488891702e-06,
+          -8.242502914209834e-06
+        ]
+      },
+      "all_seven_candidate_point_proxy_memberships_checked": 1407000,
+      "replay_sha256": "0134e2abf91aeabb8bc36880a77b3e237f7711e2e88ca38bbed0faadbae5326b",
+      "actions": 29,
+      "controls": 232,
+      "native_integrations": 5800,
+      "native_stage_samples": 11600,
+      "captures": 30,
+      "exact_initial_array_gate": true,
+      "initial_tcp_to_proxy_mm": 173.66438816036538,
+      "final_tcp_to_proxy_mm": 5.009756389283383,
+      "max_translation_residual_mm": 1.4306739882485193,
+      "max_rotation_change_deg": 0.260683649158463,
+      "first_contact": null,
+      "strong_robot_pairs": [],
+      "trajectory": [
+        {
+          "step": 0,
+          "token": "MV_DOWN",
+          "before_distance_mm": 173.66438816036538,
+          "after_distance_mm": 166.42272414520528,
+          "translation_residual_mm": 0.45593504357095377,
+          "rotation_change_deg": 0.15526699323152798
+        },
+        {
+          "step": 1,
+          "token": "MV_DOWN",
+          "before_distance_mm": 166.42272414520528,
+          "after_distance_mm": 159.41291497693612,
+          "translation_residual_mm": 0.7350149159214427,
+          "rotation_change_deg": 0.11702672203638888
+        },
+        {
+          "step": 2,
+          "token": "MV_DOWN",
+          "before_distance_mm": 159.41291497693612,
+          "after_distance_mm": 152.65707016319996,
+          "translation_residual_mm": 0.6397252052776972,
+          "rotation_change_deg": 0.010776596536948681
+        },
+        {
+          "step": 3,
+          "token": "MV_DOWN",
+          "before_distance_mm": 152.65707016319996,
+          "after_distance_mm": 146.19112291592452,
+          "translation_residual_mm": 0.6171218816048091,
+          "rotation_change_deg": 0.005002163254526314
+        },
+        {
+          "step": 4,
+          "token": "MV_DOWN",
+          "before_distance_mm": 146.19112291592452,
+          "after_distance_mm": 140.0492254705339,
+          "translation_residual_mm": 0.6345191384723411,
+          "rotation_change_deg": 0.003947140261191573
+        },
+        {
+          "step": 5,
+          "token": "MV_FWD",
+          "before_distance_mm": 140.0492254705339,
+          "after_distance_mm": 134.0704745776169,
+          "translation_residual_mm": 1.0231980320908294,
+          "rotation_change_deg": 0.10376017821415533
+        },
+        {
+          "step": 6,
+          "token": "MV_DOWN",
+          "before_distance_mm": 134.0704745776169,
+          "after_distance_mm": 127.90530202201023,
+          "translation_residual_mm": 1.4306739882485193,
+          "rotation_change_deg": 0.23740792059638594
+        },
+        {
+          "step": 7,
+          "token": "MV_FWD",
+          "before_distance_mm": 127.90530202201023,
+          "after_distance_mm": 122.13141579206365,
+          "translation_residual_mm": 1.234826888242951,
+          "rotation_change_deg": 0.260683649158463
+        },
+        {
+          "step": 8,
+          "token": "MV_DOWN",
+          "before_distance_mm": 122.13141579206365,
+          "after_distance_mm": 116.12827227101369,
+          "translation_residual_mm": 1.3961591296766742,
+          "rotation_change_deg": 0.2536188340148237
+        },
+        {
+          "step": 9,
+          "token": "MV_FWD",
+          "before_distance_mm": 116.12827227101369,
+          "after_distance_mm": 110.56238899479605,
+          "translation_residual_mm": 1.2171037532834943,
+          "rotation_change_deg": 0.25122178349480306
+        },
+        {
+          "step": 10,
+          "token": "MV_DOWN",
+          "before_distance_mm": 110.56238899479605,
+          "after_distance_mm": 104.77683792121343,
+          "translation_residual_mm": 1.3764833973861432,
+          "rotation_change_deg": 0.24845225882468927
+        },
+        {
+          "step": 11,
+          "token": "MV_FWD",
+          "before_distance_mm": 104.77683792121343,
+          "after_distance_mm": 99.49273251051773,
+          "translation_residual_mm": 1.2183264173737025,
+          "rotation_change_deg": 0.2487268168401685
+        },
+        {
+          "step": 12,
+          "token": "MV_LEFT",
+          "before_distance_mm": 99.49273251051773,
+          "after_distance_mm": 93.90369846846626,
+          "translation_residual_mm": 0.8722231228289349,
+          "rotation_change_deg": 0.20088226900415804
+        },
+        {
+          "step": 13,
+          "token": "MV_DOWN",
+          "before_distance_mm": 93.90369846846626,
+          "after_distance_mm": 88.10298446226474,
+          "translation_residual_mm": 0.6990039374669451,
+          "rotation_change_deg": 0.06171464533578462
+        },
+        {
+          "step": 14,
+          "token": "MV_FWD",
+          "before_distance_mm": 88.10298446226474,
+          "after_distance_mm": 82.78061740943062,
+          "translation_residual_mm": 1.0917879975421905,
+          "rotation_change_deg": 0.12696499847583326
+        },
+        {
+          "step": 15,
+          "token": "MV_LEFT",
+          "before_distance_mm": 82.78061740943062,
+          "after_distance_mm": 77.21986948810074,
+          "translation_residual_mm": 0.8594891628173891,
+          "rotation_change_deg": 0.18897331996049158
+        },
+        {
+          "step": 16,
+          "token": "MV_DOWN",
+          "before_distance_mm": 77.21986948810074,
+          "after_distance_mm": 71.34945194552641,
+          "translation_residual_mm": 0.7025846173472573,
+          "rotation_change_deg": 0.06112522892841952
+        },
+        {
+          "step": 17,
+          "token": "MV_FWD",
+          "before_distance_mm": 71.34945194552641,
+          "after_distance_mm": 66.11347314820564,
+          "translation_residual_mm": 1.0974630560277048,
+          "rotation_change_deg": 0.12961718809291395
+        },
+        {
+          "step": 18,
+          "token": "MV_LEFT",
+          "before_distance_mm": 66.11347314820564,
+          "after_distance_mm": 60.61961750507011,
+          "translation_residual_mm": 0.8257118532422583,
+          "rotation_change_deg": 0.18411716051347427
+        },
+        {
+          "step": 19,
+          "token": "MV_DOWN",
+          "before_distance_mm": 60.61961750507011,
+          "after_distance_mm": 54.639896155509014,
+          "translation_residual_mm": 0.7127816571996972,
+          "rotation_change_deg": 0.05311958509321482
+        },
+        {
+          "step": 20,
+          "token": "MV_FWD",
+          "before_distance_mm": 54.639896155509014,
+          "after_distance_mm": 49.52645034129102,
+          "translation_residual_mm": 1.1010831017019644,
+          "rotation_change_deg": 0.13296050561890707
+        },
+        {
+          "step": 21,
+          "token": "MV_LEFT",
+          "before_distance_mm": 49.52645034129102,
+          "after_distance_mm": 44.14966394901142,
+          "translation_residual_mm": 0.7978456369218073,
+          "rotation_change_deg": 0.17925793752698949
+        },
+        {
+          "step": 22,
+          "token": "MV_DOWN",
+          "before_distance_mm": 44.14966394901142,
+          "after_distance_mm": 37.989476476696844,
+          "translation_residual_mm": 0.6715402890505285,
+          "rotation_change_deg": 0.05510681309351416
+        },
+        {
+          "step": 23,
+          "token": "MV_FWD",
+          "before_distance_mm": 37.989476476696844,
+          "after_distance_mm": 33.08412692165272,
+          "translation_residual_mm": 1.0919384380664903,
+          "rotation_change_deg": 0.12622330992770903
+        },
+        {
+          "step": 24,
+          "token": "MV_DOWN",
+          "before_distance_mm": 33.08412692165272,
+          "after_distance_mm": 27.778364013802747,
+          "translation_residual_mm": 1.3665007957165136,
+          "rotation_change_deg": 0.24233588792612484
+        },
+        {
+          "step": 25,
+          "token": "MV_LEFT",
+          "before_distance_mm": 27.778364013802747,
+          "after_distance_mm": 21.498119776331116,
+          "translation_residual_mm": 0.5163460569343724,
+          "rotation_change_deg": 0.16949127924693025
+        },
+        {
+          "step": 26,
+          "token": "MV_FWD",
+          "before_distance_mm": 21.498119776331116,
+          "after_distance_mm": 17.10274321767127,
+          "translation_residual_mm": 1.0241361042776824,
+          "rotation_change_deg": 0.07776965165653549
+        },
+        {
+          "step": 27,
+          "token": "MV_DOWN",
+          "before_distance_mm": 17.10274321767127,
+          "after_distance_mm": 12.327294995132425,
+          "translation_residual_mm": 1.3699876123650132,
+          "rotation_change_deg": 0.23760866762618654
+        },
+        {
+          "step": 28,
+          "token": "MV_LEFT",
+          "before_distance_mm": 12.327294995132425,
+          "after_distance_mm": 5.009756389283383,
+          "translation_residual_mm": 0.5477025919597457,
+          "rotation_change_deg": 0.17602540192963845
+        }
+      ],
+      "guard_decisions": [
+        {
+          "step": 0,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 168.5866179360014,
+              "nominal_reduction_mm": 5.077770224363953,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 179.15689125213348,
+              "nominal_reduction_mm": -5.492503091768103,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 170.4466542489905,
+              "nominal_reduction_mm": 3.217733911374837,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 177.388211236128,
+              "nominal_reduction_mm": -3.7238230757626334,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 181.51557392849364,
+              "nominal_reduction_mm": -7.851185768128266,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 166.04437916303476,
+              "nominal_reduction_mm": 7.620008997330591,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 173.66438816036538,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 1,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 161.09335964446507,
+              "nominal_reduction_mm": 5.32936450074023,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 172.16845153012565,
+              "nominal_reduction_mm": -5.745727384920352,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 163.06517006639393,
+              "nominal_reduction_mm": 3.3575540788113587,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 170.30207437092542,
+              "nominal_reduction_mm": -3.879350225720141,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 174.0404507213665,
+              "nominal_reduction_mm": -7.617726576161221,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 159.06906593214717,
+              "nominal_reduction_mm": 7.353658213058112,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 166.42272414520528,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 2,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 153.85753155710913,
+              "nominal_reduction_mm": 5.555383419827003,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 165.38686436969803,
+              "nominal_reduction_mm": -5.973949392761913,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 155.9054482236706,
+              "nominal_reduction_mm": 3.5074667532655477,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 163.45778090095345,
+              "nominal_reduction_mm": -4.044865924017316,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 166.7927190362058,
+              "nominal_reduction_mm": -7.379804059269662,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.3323465302004,
+              "nominal_reduction_mm": 7.080568446735741,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 159.41291497693612,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 3,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.85746977538142,
+              "nominal_reduction_mm": 5.799600387818543,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 158.8749373337319,
+              "nominal_reduction_mm": -6.217867170531938,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 148.9915105801979,
+              "nominal_reduction_mm": 3.6655595830020484,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 156.875402522687,
+              "nominal_reduction_mm": -4.218332359487043,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 159.76195066752976,
+              "nominal_reduction_mm": -7.104880504329808,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 145.8920191803859,
+              "nominal_reduction_mm": 6.765050982814075,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.65707016319996,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 4,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.1345490209796,
+              "nominal_reduction_mm": 6.0565738949449335,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.66301781873887,
+              "nominal_reduction_mm": -6.471894902814329,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 142.35997096185338,
+              "nominal_reduction_mm": 3.83115195407116,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 150.5899316241899,
+              "nominal_reduction_mm": -4.3988087082653395,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 152.9821429247702,
+              "nominal_reduction_mm": -6.791020008845655,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 139.7860965367554,
+              "nominal_reduction_mm": 6.405026379169149,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.19112291592452,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 5,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 133.72753672604492,
+              "nominal_reduction_mm": 6.32168874448899,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.78050630440407,
+              "nominal_reduction_mm": -6.731280833870146,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 136.04594948506107,
+              "nominal_reduction_mm": 4.003275985472843,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 144.63426543700183,
+              "nominal_reduction_mm": -4.585039966467919,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 146.4844569733585,
+              "nominal_reduction_mm": -6.435231502824601,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.051762297305,
+              "nominal_reduction_mm": 5.997463173228912,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.0492254705339,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 6,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.160891306654,
+              "nominal_reduction_mm": 5.909583270962887,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.44418908028504,
+              "nominal_reduction_mm": -6.373714502668159,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 129.88078952670506,
+              "nominal_reduction_mm": 4.189685050911828,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 138.8551937050054,
+              "nominal_reduction_mm": -4.7847191273885095,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 140.75188124685673,
+              "nominal_reduction_mm": -6.681406669239831,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 127.82289400731614,
+              "nominal_reduction_mm": 6.247580570300753,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.0704745776169,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 7,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 121.77151724626955,
+              "nominal_reduction_mm": 6.133784775740669,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.50364366151862,
+              "nominal_reduction_mm": -6.598341639508398,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 123.50681178790319,
+              "nominal_reduction_mm": 4.39849023410703,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 132.9120010107092,
+              "nominal_reduction_mm": -5.00669898869896,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 134.23126925613988,
+              "nominal_reduction_mm": -6.325967234129648,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.07169583719634,
+              "nominal_reduction_mm": 5.833606184813878,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 127.90530202201023,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 8,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.45604250295418,
+              "nominal_reduction_mm": 5.67537328910947,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.33610408337165,
+              "nominal_reduction_mm": -6.204688291308005,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 117.51572783401981,
+              "nominal_reduction_mm": 4.615687958043832,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 127.36647580265556,
+              "nominal_reduction_mm": -5.235060010591916,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 128.70282561373978,
+              "nominal_reduction_mm": -6.57140982167613,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.0506274252197,
+              "nominal_reduction_mm": 6.080788366843947,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.13141579206365,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 9,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.22452603977698,
+              "nominal_reduction_mm": 5.9037462312367115,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.5646976115386,
+              "nominal_reduction_mm": -6.436425340524924,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 111.26403366964826,
+              "nominal_reduction_mm": 4.864238601365437,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 121.62181569463907,
+              "nominal_reduction_mm": -5.493543423625375,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 122.29338143645522,
+              "nominal_reduction_mm": -6.165109165441537,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.52547262119732,
+              "nominal_reduction_mm": 5.602799649816359,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.12827227101369,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 10,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.19192585477663,
+              "nominal_reduction_mm": 5.370463140019418,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.54502329759246,
+              "nominal_reduction_mm": -5.982634302796414,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.44126910319434,
+              "nominal_reduction_mm": 5.121119891601703,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.31948456892745,
+              "nominal_reduction_mm": -5.757095574131399,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 116.98009448044657,
+              "nominal_reduction_mm": -6.417705485650515,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 104.70788516544009,
+              "nominal_reduction_mm": 5.854503829355956,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.56238899479605,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 11,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.18165177302674,
+              "nominal_reduction_mm": 5.595186148186674,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.99266408691392,
+              "nominal_reduction_mm": -6.215826165700503,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.35833166297239,
+              "nominal_reduction_mm": 5.418506258241029,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.83453188734651,
+              "nominal_reduction_mm": -6.057693966133093,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 110.72364549967509,
+              "nominal_reduction_mm": -5.946807578461666,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.48188707899914,
+              "nominal_reduction_mm": 5.294950842214291,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 104.77683792121343,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 12,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.52602819330875,
+              "nominal_reduction_mm": 4.9667043172089835,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.17812338512542,
+              "nominal_reduction_mm": -5.68539087460769,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 93.76987260289837,
+              "nominal_reduction_mm": 5.722859907619352,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.85281591367834,
+              "nominal_reduction_mm": -6.360083403160618,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 105.69232396423675,
+              "nominal_reduction_mm": -6.199591453719025,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 93.95073336519353,
+              "nominal_reduction_mm": 5.541999145324203,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.49273251051773,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 13,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.69589937095164,
+              "nominal_reduction_mm": 5.20779909751462,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.8441115283785,
+              "nominal_reduction_mm": -5.940413059912247,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.89956043637937,
+              "nominal_reduction_mm": 5.00413803208688,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 99.66281817373918,
+              "nominal_reduction_mm": -5.759119705272917,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 100.48942469784072,
+              "nominal_reduction_mm": -6.585726229374464,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 87.96411027237338,
+              "nominal_reduction_mm": 5.939588196092887,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 93.90369846846626,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 14,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.55728089708391,
+              "nominal_reduction_mm": 5.5457035651808315,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.38520600812456,
+              "nominal_reduction_mm": -6.282221545859806,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.7671897823452,
+              "nominal_reduction_mm": 5.335794679919556,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.20118915305359,
+              "nominal_reduction_mm": -6.0982046907888385,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 94.10224815338812,
+              "nominal_reduction_mm": -5.999263691123372,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.87966357795072,
+              "nominal_reduction_mm": 5.223320884314028,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.10298446226474,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 15,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 78.01253813443796,
+              "nominal_reduction_mm": 4.768079274992648,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 88.4268349043203,
+              "nominal_reduction_mm": -5.6462174948896795,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.09092068784315,
+              "nominal_reduction_mm": 5.689696721587464,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 89.2314472866698,
+              "nominal_reduction_mm": -6.450829877239189,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 89.09443211546744,
+              "nominal_reduction_mm": -6.313814706036827,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.24922914434431,
+              "nominal_reduction_mm": 5.531388265086298,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.78061740943062,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 16,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.17248850299656,
+              "nominal_reduction_mm": 5.047380985104183,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 83.1681933842707,
+              "nominal_reduction_mm": -5.948323896169963,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.42227038791896,
+              "nominal_reduction_mm": 4.797599100181779,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 82.950776002264,
+              "nominal_reduction_mm": -5.730906514163276,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 84.00164643280547,
+              "nominal_reduction_mm": -6.781776944704735,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.20070142980728,
+              "nominal_reduction_mm": 6.019168058293459,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.21986948810074,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 17,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 65.88940199496885,
+              "nominal_reduction_mm": 5.460049950557572,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.71792129618085,
+              "nominal_reduction_mm": -6.368469350654438,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.14703229897165,
+              "nominal_reduction_mm": 5.202419646554768,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.49876582173917,
+              "nominal_reduction_mm": -6.149313876212759,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 77.44089503170369,
+              "nominal_reduction_mm": -6.091443086177276,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.21477450344914,
+              "nominal_reduction_mm": 5.134677442077281,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.34945194552641,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 18,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 61.654058601664644,
+              "nominal_reduction_mm": 4.459414546541002,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 71.69909149619346,
+              "nominal_reduction_mm": -5.585618347987806,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.47500264206442,
+              "nominal_reduction_mm": 5.638470506141233,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.696332224393,
+              "nominal_reduction_mm": -6.582859076187359,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 72.59122103597795,
+              "nominal_reduction_mm": -6.477747887772306,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.60113276121833,
+              "nominal_reduction_mm": 5.512340386987315,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.11347314820564,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 19,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 55.82937224258582,
+              "nominal_reduction_mm": 4.79024526248429,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.57745299965141,
+              "nominal_reduction_mm": -5.9578354945813015,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.150149420610695,
+              "nominal_reduction_mm": 4.469468084459416,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 66.30713968318268,
+              "nominal_reduction_mm": -5.687522178112567,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 67.68470042747214,
+              "nominal_reduction_mm": -7.06508292240203,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 54.481716024418304,
+              "nominal_reduction_mm": 6.137901480651804,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.61961750507011,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 20,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.32291580981367,
+              "nominal_reduction_mm": 5.316980345695346,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 61.141528274877544,
+              "nominal_reduction_mm": -6.501632119368529,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.656078212757016,
+              "nominal_reduction_mm": 4.983817942751996,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.87126087324112,
+              "nominal_reduction_mm": -6.231364717732106,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 60.870043613095646,
+              "nominal_reduction_mm": -6.230147457586634,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.657570362528325,
+              "nominal_reduction_mm": 4.98232579298069,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 54.639896155509014,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 21,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [
+            "MV_FWD"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 45.601859941615814,
+              "nominal_reduction_mm": 3.924590399675201,
+              "support_indices": [
+                96
+              ]
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 55.010989235624415,
+              "nominal_reduction_mm": -5.484538894333396,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 43.9798996294436,
+              "nominal_reduction_mm": 5.546550711847412,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.31613441457782,
+              "nominal_reduction_mm": -6.7896840732868045,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 56.256013863312184,
+              "nominal_reduction_mm": -6.72956352202117,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.05677554051769,
+              "nominal_reduction_mm": 5.469674800773324,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.52645034129102,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 22,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 39.83893526892578,
+              "nominal_reduction_mm": 4.310728680085633,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 50.112322738620065,
+              "nominal_reduction_mm": -5.962658789608652,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 40.28057364528361,
+              "nominal_reduction_mm": 3.8690903037278055,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 49.75802488471744,
+              "nominal_reduction_mm": -5.608360935706027,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 51.662196182767055,
+              "nominal_reduction_mm": -7.5125322337556355,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 37.80744819734024,
+              "nominal_reduction_mm": 6.342215751671175,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.14966394901142,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 23,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 32.945472328337814,
+              "nominal_reduction_mm": 5.044004148359031,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.732499360193735,
+              "nominal_reduction_mm": -6.743022883496895,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 33.43807268403962,
+              "nominal_reduction_mm": 4.5514037926572275,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.36548141431454,
+              "nominal_reduction_mm": -6.376004937617696,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 44.44807362583504,
+              "nominal_reduction_mm": -6.458597149138198,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 33.32820722600231,
+              "nominal_reduction_mm": 4.66126925069453,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 37.989476476696844,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 24,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [
+            "MV_RIGHT"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 30.270398739512288,
+              "nominal_reduction_mm": 2.813728182140429,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 38.37736140600322,
+              "nominal_reduction_mm": -5.293234484350498,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 27.756828834842,
+              "nominal_reduction_mm": 5.327298086810716,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 1,
+              "excluded": true,
+              "nominal_distance_mm": 40.232789629471824,
+              "nominal_reduction_mm": -7.148662707819109,
+              "support_indices": [
+                96
+              ]
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 40.24218347735811,
+              "nominal_reduction_mm": -7.158056555705395,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 27.743207768942256,
+              "nominal_reduction_mm": 5.340919152710462,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 33.08412692165272,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 25,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [
+            "MV_RIGHT"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 24.719459618383137,
+              "nominal_reduction_mm": 3.0589043954196113,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 33.64852642749439,
+              "nominal_reduction_mm": -5.870162413691638,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 21.14070652691856,
+              "nominal_reduction_mm": 6.637657486884187,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 5,
+              "excluded": true,
+              "nominal_distance_mm": 36.00479887611325,
+              "nominal_reduction_mm": -8.226434862310501,
+              "support_indices": [
+                96,
+                116,
+                176,
+                256,
+                276
+              ]
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 33.42673963171091,
+              "nominal_reduction_mm": -5.648375617908163,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 25.01855495748046,
+              "nominal_reduction_mm": 2.7598090563222857,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 27.778364013802747,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 26,
+          "selected": "MV_FWD",
+          "unguarded": "MV_FWD",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.229487542335264,
+              "nominal_reduction_mm": 4.268632233995852,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 28.766005403313684,
+              "nominal_reduction_mm": -7.267885626982569,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 18.120519368603365,
+              "nominal_reduction_mm": 3.377600407727752,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 28.213207645481017,
+              "nominal_reduction_mm": -6.715087869149899,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 28.402859337260494,
+              "nominal_reduction_mm": -6.904739560929376,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.821781316769453,
+              "nominal_reduction_mm": 3.676338459561664,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 21.498119776331116,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 27,
+          "selected": "MV_DOWN",
+          "unguarded": "MV_DOWN",
+          "excluded": [],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.54999879702467,
+              "nominal_reduction_mm": -0.44725557935339916,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 21.84044856141086,
+              "nominal_reduction_mm": -4.737705343739591,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 12.729477699897906,
+              "nominal_reduction_mm": 4.373265517773364,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 24.959327888126378,
+              "nominal_reduction_mm": -7.856584670455108,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 25.11415386886297,
+              "nominal_reduction_mm": -8.011410651191701,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 12.421228867961345,
+              "nominal_reduction_mm": 4.681514349709925,
+              "support_indices": []
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.10274321767127,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 28,
+          "selected": "MV_LEFT",
+          "unguarded": "MV_LEFT",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 13.609686721403465,
+              "nominal_reduction_mm": -1.282391726271039,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.852194014722336,
+              "nominal_reduction_mm": -5.5248990195899115,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 4.699940451594131,
+              "nominal_reduction_mm": 7.627354543538295,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 21.950739476051897,
+              "nominal_reduction_mm": -9.62344448091947,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 17.636125386560366,
+              "nominal_reduction_mm": -5.308830391427941,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 35,
+              "excluded": true,
+              "nominal_distance_mm": 13.888537905177595,
+              "nominal_reduction_mm": -1.5612429100451686,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 12.327294995132425,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        },
+        {
+          "step": 29,
+          "selected": "STOP",
+          "unguarded": "STOP",
+          "excluded": [
+            "MV_DOWN"
+          ],
+          "candidate_diagnostics": {
+            "MV_FWD": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 7.282321202127801,
+              "nominal_reduction_mm": -2.272564812844418,
+              "support_indices": []
+            },
+            "MV_BACK": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 14.041478414646061,
+              "nominal_reduction_mm": -9.03172202536268,
+              "support_indices": []
+            },
+            "MV_LEFT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 9.26235763172254,
+              "nominal_reduction_mm": -4.252601242439158,
+              "support_indices": []
+            },
+            "MV_RIGHT": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 12.822014243557936,
+              "nominal_reduction_mm": -7.812257854274552,
+              "support_indices": []
+            },
+            "MV_UP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 13.511064594648488,
+              "nominal_reduction_mm": -8.501308205365106,
+              "support_indices": []
+            },
+            "MV_DOWN": {
+              "contained_point_count": 36,
+              "excluded": true,
+              "nominal_distance_mm": 8.224746298772228,
+              "nominal_reduction_mm": -3.2149899094888443,
+              "support_indices": [
+                53,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                110,
+                111,
+                112,
+                113,
+                114,
+                115,
+                116,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136,
+                150,
+                151,
+                152,
+                153,
+                154,
+                155,
+                156,
+                173
+              ]
+            },
+            "STOP": {
+              "contained_point_count": 0,
+              "excluded": false,
+              "nominal_distance_mm": 5.009756389283383,
+              "nominal_reduction_mm": 0.0,
+              "support_indices": []
+            }
+          }
+        }
+      ],
+      "termination": {
+        "attempted_actions": 29,
+        "completed_actions": 29,
+        "first_contact_evaluator_only": null,
+        "grasp_attempted": false,
+        "last_step": 29,
+        "new_model_calls": 0,
+        "reason": "rule_no_strict_nominal_improvement",
+        "task_success_claim": false
+      },
+      "official_executor_success_flags": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "first_raw_robot_contact": null,
+      "raw_robot_contact_rows_by_action": {},
+      "final_native_after_raw_robot_contacts": [],
+      "raw_robot_contact_rows_by_class_and_stage": {
+        "pad/bottle": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "other_gripper/bottle": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "gripper/other_scene": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "arm/scene": {
+          "native_before": 0,
+          "native_after": 0
+        },
+        "self": {
+          "native_before": 0,
+          "native_after": 0
+        }
+      },
+      "limits": [
+        "stored arrays, journal and arithmetic only; reviewer performed no dynamics, rendering, FK, projection or inference",
+        "replay exports states/fingerprints and full-snapshot/image equality assertions; full replay contacts/images were compared by reviewed producer, not separately reexported",
+        "counts cover instrumented approach only; fresh reset and ten standard settling controls also occurred",
+        "first observed native contact is not continuous-time onset; native cached force/pose times remain unknown",
+        "point distance does not establish bottle center, clearance, jaw fit, grasp readiness or holding"
+      ]
+    }
+  ],
+  "action_sequences": {
+    "whole": [
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_FWD"
+    ],
+    "neck": [
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_LEFT",
+      "MV_DOWN",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_LEFT",
+      "MV_FWD",
+      "MV_DOWN",
+      "MV_LEFT"
+    ]
+  },
+  "first_between_anchor_policy_divergence": {
+    "step": 5,
+    "whole": "MV_DOWN",
+    "neck": "MV_FWD"
+  },
+  "exact_common_physical_prefix_actions": 5,
+  "exact_common_physical_prefix_captures": 6,
+  "limits": [
+    "stored evidence audit only; no new policy, physics, rendering, model, FK or projection calls",
+    "two fixed sensor anchors on one fixture do not establish general accuracy, physical safety, grasp readiness, holding or task success",
+    "geometry prerequisite uses prior terminal orientation/jaws; each live episode uses its own returned state",
+    "replay exports full states/fingerprints and equality assertions; full replay contact/image comparisons were executed by the reviewed verifier, not separately reexported"
+  ]
+}
