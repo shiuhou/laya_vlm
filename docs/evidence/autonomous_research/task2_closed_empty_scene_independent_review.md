@@ -15,3 +15,11 @@ Reviewer work used only stored records, arrays, hashes and code. No physics, ren
 Partial audit: `task2_closed_empty_scene_partial_independent_audit.json` (SHA-256 `338a373bd60f93f7ae32022656a79a09fd491c55bd096f000d6b8b924d49dbaa`).
 
 Separate verification invocation review: `task2_closed_empty_scene_away_verification_prospective_review.json` (SHA-256 `6f92d8c51d83f3a8021b71991abd8c2b4d894d60373ef65eef503af7a5550f17`).
+
+The separately named away verification completed in 57.159493 seconds with tool and launcher exit 0, no signals, and no recollection. Its saved base, auxiliary and nine-record scene replay pass independent checks. All original matrix files match the complete before/after/current inventories. The original matrix remains `interrupted_incomplete`; the amount of the first interrupted away replay remains unknown.
+
+The resulting status is `observational-source-qualified`, based on the two original sealed collections and their exact replays, with the away replay explicitly supplied by attempt 2. This uses root-authorized composite qualification in place of the protocol example’s complete-matrix orchestration placeholder; no scientific feature definition or source gate is changed.
+
+Composite audit: `task2_closed_empty_scene_independent_audit.json` (SHA-256 `57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42`).
+
+Frozen-wrapper source binding: `task2_closed_empty_image_motion_source_binding.json` (SHA-256 `49dbc6e182a6e516e43142537005234c7559264fd69c9f051a10e1b7b4f4d04f`). It preserves both away verification attempts, original present replay linkage, and the incomplete original matrix identity. Feature execution still requires its exact no-feature preflight and review.

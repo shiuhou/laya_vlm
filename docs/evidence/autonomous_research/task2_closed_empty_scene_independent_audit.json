@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "source_admitted": true,
+  "source_admission_status": "observational-source-qualified",
+  "qualification_basis": "Two complete original sealed collections, original present exact replay, and explicitly separate second away exact verification.",
+  "freeze": "cf00088824f4b74bd121cb6e8b3c89cc702fe9ab",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01",
+  "original_matrix_status": "interrupted_incomplete",
+  "original_matrix_journal_sha256": "4f2a96d65d799b6405f4ec17f69a63f28a70ec904434b03afd466f57817f068e",
+  "original_matrix_unchanged": true,
+  "original_away_replay_executed_controls": null,
+  "original_present_replay": {
+    "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present-replay",
+    "result_sha256": "f27433dd4559c934d86a74ea2f3be138b33db67e924462abcbb571c5bb527982",
+    "auxiliary_result_sha256": "c308abb2ab6fe68bc970aeb538d82f3d61252d9d063fd386146c72d1fa1ed38d",
+    "controls": 256,
+    "native_snapshots": 12800,
+    "primary_captures": 33,
+    "auxiliary_captures": 24,
+    "limit": "full replay contacts/images compared by reviewed verifier, not separately reexported; exported states/fingerprints/gates independently checked",
+    "status": "PASS",
+    "scene_result_sha256": "36ed5743b779314507ab6d1f7fa42150b6c7d8ca84b981d59f49e9de39dc145f",
+    "exact_event_records": 9
+  },
+  "original_away_verification_attempt": {
+    "attempt_number": 1,
+    "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away-replay",
+    "intent_record_seq": 7,
+    "result_files": [],
+    "executed_controls": null,
+    "executed_native_steps": null,
+    "status": "interrupted_without_result",
+    "observed_outer_exit_code": 143,
+    "driver_returncode": null,
+    "termination_origin": "not established"
+  },
+  "partial_source_audit": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_partial_independent_audit.json",
+    "sha256": "338a373bd60f93f7ae32022656a79a09fd491c55bd096f000d6b8b924d49dbaa"
+  },
+  "separate_verification_prospective_review": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_away_verification_prospective_review.json",
+    "sha256": "6f92d8c51d83f3a8021b71991abd8c2b4d894d60373ef65eef503af7a5550f17"
+  },
+  "separate_verification": {
+    "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01",
+    "attempt_number": 2,
+    "verification_retry_after_interruption": true,
+    "replay": {
+      "result_sha256": "c8a21926571c7bd238ef5763d924f503a3db4ebd3614367f0b2a5684839a7845",
+      "auxiliary_result_sha256": "5e79cdbc6b07764e95ffd689f47f718add95ee9f9b4b79e915a79b7314204d85",
+      "controls": 256,
+      "native_snapshots": 12800,
+      "primary_captures": 33,
+      "auxiliary_captures": 24,
+      "limit": "full replay contacts/images compared by reviewed verifier, not separately reexported; exported states/fingerprints/gates independently checked",
+      "status": "PASS",
+      "scene_result_sha256": "903b811bf58bddec85e7a097c376e1f2c0e84055ab925e5b38793c4bb05eef66",
+      "exact_event_records": 9
+    },
+    "result": {
+      "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01/verification-result.json",
+      "sha256": "1a6551cd955ed3eecd523642cf9e206430561aad7346017b0f3e35086ab14499"
+    },
+    "execution": {
+      "status": "passed",
+      "returncode": 0,
+      "ended_utc": "2026-09-27T04:37:42.919496+00:00",
+      "elapsed_s": 57.15949313202873,
+      "signals": [],
+      "error": null,
+      "pid": 1990035,
+      "pgid": 1990035,
+      "verification_attempt_number": 2,
+      "collection_attempts": 0,
+      "original_matrix_status": "incomplete"
+    },
+    "tool_exit_observation": {
+      "observed_at_utc": "2026-09-27T04:38:22.575902+00:00",
+      "tool_session": 75659,
+      "tool_exit_code": 0,
+      "launcher_returncode": 0,
+      "verification_attempt_number": 2,
+      "collection_attempts": 0,
+      "original_matrix_status": "incomplete"
+    },
+    "execution_file_sha256": {
+      "events.jsonl": "39c7f95e07abe86fe6d9c0ca4cacf2631756c2d5e852423fb47a4fd7e65e5619",
+      "exit.json": "b2220b5758a1b8095ac00ab0897fa35df0b52262c05057b4ecd543a61a0012be",
+      "launch.json": "39bd433d3924d86af2d424f7e8034821fa51458bb1d8d8220ea86b90b1388e69",
+      "original-matrix-inventory-after.json": "22ef1f8d3ee2676e9f4504cda8cce4819315291ba21c49f493c126240c9ba42d",
+      "original-matrix-inventory-before.json": "22ef1f8d3ee2676e9f4504cda8cce4819315291ba21c49f493c126240c9ba42d",
+      "replay-args.json": "d6ee6351c8ed99207981180dea806ee1e81390078eae2020687f1824762d2461",
+      "review.json": "6f92d8c51d83f3a8021b71991abd8c2b4d894d60373ef65eef503af7a5550f17",
+      "tool-exit.json": "3e2f364069e479f679a06c6ef9bbfa427250db872cd54cb5ce04a911e6037304"
+    }
+  },
+  "original_matrix_file_count": 150,
+  "collection_journal_sha256": {
+    "neck-present": "4529c644394177fc711e81a44e598dfc03f0837746c637a0e63f5bca577d9c72",
+    "neck-away": "c8571d9dcf5304e76b35fda95c756a5ac017a6f82169f94e596d9dee2e99c26e"
+  },
+  "new_physics_render_model_LK_FK_calls_during_audit": 0,
+  "protocol_interpretation": "Root authorized this explicit composite qualification after external interruption. The image protocol example requiring a complete matrix is superseded only as to orchestration closure: both original collections and their exact replays are required, with separate attempt-2 away replay bound here. The original matrix remains interrupted/incomplete; scientific feature definitions and all source gates are unchanged.",
+  "limitations": [
+    "Original matrix has no termination and is never promoted to a completed matrix.",
+    "Original interrupted away replay execution amount and termination origin remain unknown.",
+    "Both collected suffixes and exact replays are now verified; this is no extra collection.",
+    "Admission establishes source integrity for the fixed post-event feature batch; no settled-empty, identity, holding or task-success inference.",
+    "Own-observation read times are recorded; exact sample times remain unknown."
+  ]
+}

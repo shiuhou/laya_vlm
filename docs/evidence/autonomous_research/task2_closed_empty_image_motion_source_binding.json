@@ -1,0 +1,87 @@
+{
+  "schema": "task2-closed-empty-image-motion-binding-v1",
+  "source_admitted": true,
+  "source_admission_status": "observational-source-qualified",
+  "source_root": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01",
+  "matrix_journal_sha256": "4f2a96d65d799b6405f4ec17f69a63f28a70ec904434b03afd466f57817f068e",
+  "original_matrix_status": "interrupted_incomplete",
+  "qualification_basis": "Two complete original sealed collections, original present exact replay, and explicitly separate second away exact verification.",
+  "source_admission": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json",
+    "sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42"
+  },
+  "source_review": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json",
+    "sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42"
+  },
+  "source_receipt_roles": "The same independent composite receipt supplies observational-source qualification and its independent review, with exact links to prior collection and invocation reviews.",
+  "original_present_replay": {
+    "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present-replay",
+    "result_sha256": "f27433dd4559c934d86a74ea2f3be138b33db67e924462abcbb571c5bb527982",
+    "auxiliary_result_sha256": "c308abb2ab6fe68bc970aeb538d82f3d61252d9d063fd386146c72d1fa1ed38d",
+    "controls": 256,
+    "native_snapshots": 12800,
+    "primary_captures": 33,
+    "auxiliary_captures": 24,
+    "limit": "full replay contacts/images compared by reviewed verifier, not separately reexported; exported states/fingerprints/gates independently checked",
+    "status": "PASS",
+    "scene_result_sha256": "36ed5743b779314507ab6d1f7fa42150b6c7d8ca84b981d59f49e9de39dc145f",
+    "exact_event_records": 9
+  },
+  "away_verification_attempts": [
+    {
+      "attempt_number": 1,
+      "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away-replay",
+      "intent_record_seq": 7,
+      "result_files": [],
+      "executed_controls": null,
+      "executed_native_steps": null,
+      "status": "interrupted_without_result",
+      "observed_outer_exit_code": 143,
+      "driver_returncode": null,
+      "termination_origin": "not established"
+    },
+    {
+      "attempt_number": 2,
+      "directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01",
+      "status": "passed",
+      "verification_retry_after_interruption": true,
+      "collection_attempts": 0,
+      "result": {
+        "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01/verification-result.json",
+        "sha256": "1a6551cd955ed3eecd523642cf9e206430561aad7346017b0f3e35086ab14499"
+      },
+      "replay": {
+        "result_sha256": "c8a21926571c7bd238ef5763d924f503a3db4ebd3614367f0b2a5684839a7845",
+        "auxiliary_result_sha256": "5e79cdbc6b07764e95ffd689f47f718add95ee9f9b4b79e915a79b7314204d85",
+        "controls": 256,
+        "native_snapshots": 12800,
+        "primary_captures": 33,
+        "auxiliary_captures": 24,
+        "limit": "full replay contacts/images compared by reviewed verifier, not separately reexported; exported states/fingerprints/gates independently checked",
+        "status": "PASS",
+        "scene_result_sha256": "903b811bf58bddec85e7a097c376e1f2c0e84055ab925e5b38793c4bb05eef66",
+        "exact_event_records": 9
+      }
+    }
+  ],
+  "protocol_interpretation": "Root authorized this explicit composite qualification after external interruption. The image protocol example requiring a complete matrix is superseded only as to orchestration closure: both original collections and their exact replays are required, with separate attempt-2 away replay bound here. The original matrix remains interrupted/incomplete; scientific feature definitions and all source gates are unchanged.",
+  "cells": {
+    "present": {
+      "directory": "neck-present",
+      "condition": "neck-present",
+      "sha256": {
+        "sensor-captures.json": "becd146f2ea367e2c8c557fffa16e8be9212db2dc2a8d74b039225c24fe5d3b2",
+        "sensor-seal.json": "2275535c40dc80e39c3df5ec9f46039c629fd3f4501926f6d4c2b97e280a9ce6"
+      }
+    },
+    "away": {
+      "directory": "neck-away",
+      "condition": "neck-away",
+      "sha256": {
+        "sensor-captures.json": "8e4cb03407ff450caf46eff5b0636d2f8a8771878603c2c35f5a3ac1d8136787",
+        "sensor-seal.json": "2a194c1b6a9d50dacb862d0a0a966d9eebf046d8f755d9d54b51317920a0df07"
+      }
+    }
+  }
+}
