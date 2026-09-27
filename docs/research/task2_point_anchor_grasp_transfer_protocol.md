@@ -68,6 +68,9 @@ checking its validator/contact abort. Abort at the original after-primitive
 boundary, not a new threshold or early contact response. Do not execute the next
 primitive or cell after runtime, executor, count, unexpected-contact, prefix or
 replay failure. Preserve partial evidence and explicit suffix phase/action counts.
+On exceptions, collector failure/termination counters and step are explicitly
+prefixed `approach_`; the suffix failure record separately provides total attempted
+and completed actions plus the current suffix step, phase and token.
 A normal weak/no lift is a retained negative outcome, never an execution failure.
 
 ## Sensor and evaluator evidence

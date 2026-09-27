@@ -1,6 +1,7 @@
 from contextlib import contextmanager, nullcontext
 import inspect
-from types import SimpleNamespace
+import sys
+from types import ModuleType, SimpleNamespace
 
 import numpy as np
 import pytest
@@ -177,6 +178,10 @@ def test_failure_preserves_completed_endpoint_and_stops_tail(tmp_path, monkeypat
     assert failure_row['scripted_attempted_actions'] == failure_action + 1 and failure_row['no_retry']
     assert failure_row['token'] == trial.calls[-1] and failure_row['grasp_attempted']
     completed = failure_action + (failure != 'runtime')
+    assert failure_row['total_attempted_actions'] == 30 + failure_action + 1
+    assert failure_row['total_completed_actions'] == 30 + completed
+    assert failure_row['step'] == 30 + failure_action
+    assert failure_row['phase'] == ('close_or_hold', 'lift')[failure_action]
     assert sum(r['kind'] == 'action_completed' for r in trial.rows) == completed
     assert sum(r['kind'] == 'endpoint' for r in trial.rows) == completed
     assert len(trial.suffix.sensors) == completed * 8
@@ -188,6 +193,43 @@ def test_prefix_failure_executes_no_suffix_control(tmp_path, monkeypatch):
     trial = synthetic_suffix(tmp_path, monkeypatch, 'whole-close', prefix_ok=False)
     assert isinstance(trial.error, ValueError) and trial.calls == []
     assert not trial.suffix.sensors and not trial.suffix.labels
+
+
+@pytest.mark.parametrize('failure_action', [0, 1])
+def test_collector_suffix_failure_never_labels_approach_counters_as_totals(tmp_path, monkeypatch, failure_action):
+    from embodied_runtime.adapters.libero_rgbd import LiberoRgbdSource
+    from embodied_runtime.experiments.privileged_multistage_task import WineBottleBottomDrawerAdapter
+    world = SimpleNamespace(model=SimpleNamespace(opt=SimpleNamespace(timestep=.002, integrator=0)),
+        data=SimpleNamespace(time=.5), gripper_geoms=[1, 2], scene=SimpleNamespace(geoms=[3]), obs=own(),
+        env=SimpleNamespace(sim=SimpleNamespace(model=SimpleNamespace(geom_id2name=lambda g: f'{g}_pad_collision'))))
+    backend = SimpleNamespace(world=world, step_m=.01, _grip_cmd=-1, close=lambda: None,
+        proprioception=lambda: {'tcp_pos_world_m': [0., 0., 0.], 'gripper_width_m': .08, 'gripper_command': 'OPEN'})
+    monkeypatch.setattr(WineBottleBottomDrawerAdapter, 'make_backend', lambda *_a, **_k: backend)
+    monkeypatch.setattr(LiberoRgbdSource, '__init__', lambda *_: None)
+    monkeypatch.setattr(LiberoRgbdSource, 'capture', lambda _: frame())
+    measurements = ModuleType('jev_libero.measurements')
+    measurements.Measurements = lambda _: SimpleNamespace(ids=lambda _: {1, 2})
+    monkeypatch.setitem(sys.modules, 'jev_libero.measurements', measurements)
+    monkeypatch.setattr(probe.base, 'read_only_measurement', lambda _: nullcontext())
+    monkeypatch.setattr(probe.base, 'contact_snapshot', lambda *_: {'contacts': [], 'time_s': .5})
+    review, protocol = tmp_path / 'review.txt', tmp_path / 'protocol.md'
+    review.write_text('synthetic')
+    protocol.write_text('synthetic')
+    point = {'position_world_m': [0., 0., 0.], 'definition': 'fixed'}
+    def suffix(**context):
+        assert context['approach']['completed_actions'] == 0
+        raise RuntimeError(f'invalid suffix action {failure_action}')
+    args = SimpleNamespace(output=str(tmp_path / 'run'), review=str(review))
+    with pytest.raises(RuntimeError, match='invalid suffix'):
+        probe.base.collect(args, preflight_fn=lambda _: ({}, point, frame()),
+                           protocol=protocol, after_approach=suffix)
+    rows, errors = load_records(tmp_path / 'run' / 'episodes.jsonl')
+    assert not errors
+    for row in rows:
+        if row['kind'] in ('failure', 'termination'):
+            data = row['data']
+            assert data['approach_attempted_actions'] == data['approach_completed_actions'] == data['approach_step'] == 0
+            assert not {'attempted_actions', 'completed_actions', 'step', 'total_attempted_actions', 'total_completed_actions'} & data.keys()
 
 
 def test_fixed_stage_order_and_failure_never_retries_or_continues(tmp_path):

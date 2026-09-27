@@ -313,10 +313,16 @@ def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory
                 recorder=recorder, groups=groups, approach=termination)
         recorder.record('termination', termination)
     except BaseException as exc:
-        recorder.record('failure', {'type': type(exc).__name__, 'error': str(exc), 'step': step,
-            'attempted_actions': attempted, 'completed_actions': completed, 'no_retry': True})
+        progress = {'attempted_actions': attempted, 'completed_actions': completed}
+        boundary = {'step': step}
+        if after_approach is not None:
+            progress = {'approach_' + key: value for key, value in progress.items()}
+            boundary = {'approach_step': step}
+        recorder.record('failure', {'type': type(exc).__name__, 'error': str(exc),
+            **boundary, **progress, 'no_retry': True})
         recorder.record('termination', {'reason': 'wall_limit' if isinstance(exc, TimeoutError) else 'runtime_or_admission_failure',
-            'attempted_actions': attempted, 'completed_actions': completed, 'first_contact_evaluator_only': None if passive is None else passive.first})
+            **progress, **(boundary if after_approach is not None else {}),
+            'first_contact_evaluator_only': None if passive is None else passive.first})
         raise
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)

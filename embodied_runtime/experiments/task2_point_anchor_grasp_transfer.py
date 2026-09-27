@@ -198,6 +198,8 @@ class Intervention:
         except BaseException as exc:
             recorder.record('intervention_failure', {'exception': repr(exc), 'scripted_attempted_actions': attempted,
                 'scripted_completed_actions': completed, 'grasp_attempted': grasp_attempted,
+                'total_attempted_actions': approach['attempted_actions'] + attempted,
+                'total_completed_actions': approach['completed_actions'] + completed,
                 'phase': phase, 'step': step, 'token': token, 'no_retry': True})
             raise
 
