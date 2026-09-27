@@ -148,11 +148,11 @@ class PassiveContactRecorder:
 
 
 @contextmanager
-def observe_controls(world, recorder, step, tracking):
+def observe_controls(world, recorder, step, tracking, *, expected_grip=-1, after_control=None):
     original, override, controls = world.env.step, world.env.__dict__.get('step'), []
     def observed(command):
         control = len(controls)
-        if control >= 8 or not np.isfinite(command).all() or float(command[-1]) != -1:
+        if control >= 8 or not np.isfinite(command).all() or float(command[-1]) != expected_grip:
             raise RuntimeError('Unexpected control count/command/grip')
         tracking['control'] = control
         recorder.record('control_started', {'step': step, 'control': control,
@@ -165,6 +165,8 @@ def observe_controls(world, recorder, step, tracking):
                'returned_own_observations': {key: np.asarray(returned[0][key]).tolist() for key in OBS_KEYS}}
         recorder.record('control_completed', row)
         controls.append(row)
+        if after_control is not None:
+            after_control(row)
         return returned
     world.env.step = observed
     try:
@@ -201,7 +203,7 @@ def preflight(args):
 
 
 def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory=None,
-            condition='cached_BOX_P_live_proprio_approach_only', decision_fn=decision):
+            condition='cached_BOX_P_live_proprio_approach_only', decision_fn=decision, after_approach=None):
     wall_start = time.monotonic()
     frozen, point, original_frame = preflight_fn(args)
     selector = selector_factory(frozen) if selector_factory is not None else None
@@ -303,9 +305,13 @@ def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory
                 'elapsed_sim_s': result['execution_after']['sim_time'] - result['execution_before']['sim_time'],
                 'gripper_command': proprio['gripper_command'], 'source': 'proprioception'},)
             print(json.dumps({'step': step, 'token': token, 'completed': completed}), flush=True)
-        recorder.record('termination', {'reason': reason, 'attempted_actions': attempted, 'completed_actions': completed,
+        termination = {'reason': reason, 'attempted_actions': attempted, 'completed_actions': completed,
             'last_step': step, 'first_contact_evaluator_only': passive.first, 'new_model_calls': 0,
-            'grasp_attempted': False, 'task_success_claim': False})
+            'grasp_attempted': False, 'task_success_claim': False}
+        if after_approach is not None:
+            termination = after_approach(backend=backend, executor=executor, camera=camera,
+                recorder=recorder, groups=groups, approach=termination)
+        recorder.record('termination', termination)
     except BaseException as exc:
         recorder.record('failure', {'type': type(exc).__name__, 'error': str(exc), 'step': step,
             'attempted_actions': attempted, 'completed_actions': completed, 'no_retry': True})
@@ -342,7 +348,7 @@ class NativeReplayVerifier:
             'entire_snapshot_exact': True})
 
 
-def replay(args, *, preflight_fn=preflight, provenance_keys=()):
+def replay(args, *, preflight_fn=preflight, provenance_keys=(), after_control=None):
     from .privileged_multistage_task import WineBottleBottomDrawerAdapter
     from ..adapters.libero_rgbd import LiberoRgbdSource
 
@@ -397,7 +403,7 @@ def replay(args, *, preflight_fn=preflight, provenance_keys=()):
         capture(0)
         for action_index, action in enumerate(actions):
             step, tracking = action['step'], {'control': None}
-            with native_observer(world, verifier, 'approach', step, tracking, groups):
+            with native_observer(world, verifier, action.get('native_phase', 'approach'), step, tracking, groups):
                 for control in range(8):
                     before, after = starts[8 * action_index + control], afters[8 * action_index + control]
                     if before['step'] != step or before['control'] != control or after['step'] != step or after['control'] != control:
@@ -425,6 +431,8 @@ def replay(args, *, preflight_fn=preflight, provenance_keys=()):
                         raise ValueError('Exact returned own-observation mismatch')
                     controls.append({'step': step, 'control': control, 'state_before': state,
                                      'state_after': state_after, 'exact': True})
+                    if after_control is not None:
+                        after_control(world, action, control)
             capture(action_index + 1)
         if verifier.expected:
             raise ValueError('Unmatched native source snapshots')
