@@ -2051,6 +2051,40 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   current goals. Finish their bounded offline contrasts before choosing any
   fresh-reset short retargeting rollout; do not build another planner layer.
 
+### Parallel iteration 056 — current depth versus partial own silhouette
+
+- **Question:** can current depth replace stale support directly without another
+  semantic region call? Alternatives: a useful current goal-dependent pool,
+  self-surface dominated vetoes, or a mask-sensitive result.
+- **Intervention:** one stored-only calculation at `5131099`, present/away
+  current slow goals and saved own/five-proxy vertices fixed. Full valid depth
+  versus the unchanged projected collision-silhouette complement. No new margin,
+  crop, denoising, fitted threshold, segmentation, FK, model or physical call.
+- **Observed:**147,456valid points per scene;3,070already inside current own
+  proxies. Full depth excludes all6moves, selecting STOP in both scenes. Mask
+  excludes4,402pixels and leaves143,054. Remaining endpoint counts in canonical
+  FWD/BACK/LEFT/RIGHT/UP/DOWN order: present1/0/6/0/19/1, away1/0/6/0/19/0.
+  Resulting choices present STOP/away DOWN. All7candidate scores and complete
+  per-pixel/per-proxy membership arrays are retained.
+- **Inspection:** root viewed both fullRGB originals, raw overlays and residual
+  overlays. Raw overlap covers visible hand/gripper. Sole FWD[269,158] appears
+  at right housing edge in both; LEFT/UP follow upper/right edges. Present-only
+  DOWN[221,164] is at bottle-top/gripper boundary. Exact depth ownership remains
+  unknown, and silhouette removal can also hide external foreground.
+- **Artifacts/verification:** `task2-current-depth-diagnostic-01`, feature seal
+  `9da7c9abd2dad1f5d5f20415b0ae8ffb93bc6cd63df07ecfbb65f37b3650c3ce`,
+  report `4ae646f` (main `d26dd5c`), figure
+  `816e8b896aad6ceb4cb65af0ff24e9ce623c23eea075bbea1e480c170d2e07fd`.
+  Ten synthetic closed-halfspace parity checks pass; source choices reproduce,
+  all membership counts/indices checked against sealed arrays. Raw directory
+  moved intact from reviewer tree to canonical runs; no second feature run.
+- **Interpretation:** strong evidence that support ownership/representation
+  affects admission on these frames; not an environmental clearance result or
+  general rejection of depth. Do not fit a new mask margin to these edge pixels.
+- **Next:** finish the independently registered two currentBOX calls and the
+  fixed-current-goal support substitution. Only after that outcome decide
+  whether the proposed two-action fresh-reset retargeting pair is informative.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration054. This is the authoritative current
+Reviewed 2026-09-27 after research iteration056. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -201,7 +201,12 @@ All four offline guarded choices remain FWD; fresh away changes the unguarded
 preference DOWN→FWD, while the stale guard already vetoes DOWN for both goals.
 There is no immediate guarded-token divergence or physical outcome. Both current
 semanticBOX and current raw/partially self-excluded depth are being compared as
-alternative support representations. No new physical policy follows yet. See
+alternative support representations. The depth-only diagnostic now completes:
+raw support vetoes every translation in both scenes; existing partial silhouette
+leaves housing-edge witnesses that change choices to present STOP/away DOWN.
+Root inspected actual RGB overlays. Unknown ownership and partial visibility
+prevent treating either cloud as a verified environmental guard. No new physical
+policy follows yet. See
 [four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries

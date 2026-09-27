@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration054. This is a living assessment;
+Updated 2026-09-27 after iteration056. This is a living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -192,6 +192,17 @@ competent sensor-driven manipulation.
    All28candidate records remain; both projections are finite, ownership unknown.
    Test current support next, then only a bounded multi-action comparison if its
    decision contrast is physically meaningful. No movement was executed here.
+8. **Current depth does not automatically provide environmental obstacle support:**
+   with current slow goals and own geometry fixed, both full147,456point clouds
+   veto all six moves and select STOP. They contain3,070points inside current
+   own proxies. The unchanged partial silhouette removes4,402pixels, but a
+   residual right-housing-edge pixel still vetoes FWD in both scenes. Choices
+   become present STOP/away DOWN. Root inspected all6fullRGB witness panels;
+   exact depth ownership remains unknown. No fitted margin/mask or new physics.
+   This rejects using these raw/residual clouds directly as a verified scene
+   guard, without rejecting depth geometry generally. Current semanticBOX is
+   the separate next representation test; it too is partial/mixed support,
+   not segmentation or safety certification.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -265,6 +276,7 @@ measured interaction and available action behavior must not be conflated.
 - [Two-image slow decoding audit](docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json)
 - [Root's actual slow-output RGB inspection](docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json)
 - [Four offline goal-conditioned decisions](docs/evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md)
+- [Current-depth representation and self-overlap](docs/evidence/autonomous_research/task2_current_depth_diagnostic_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
