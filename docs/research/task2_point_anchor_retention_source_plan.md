@@ -151,7 +151,7 @@ sealing, without tuning or converting this into a holding classifier. Across
 anchors, paths and endpoints differ; larger visual co-motion cannot establish
 grasp superiority or support-free retention.
 
-No executable adapter or feature output is produced by this document. The later
+The initial source plan produced no executable adapter or feature output. The later
 freeze must bind complete source receipts, actual schema and schedule, unchanged
 helper hashes, synthetic-only coordinate tests, a source-only preflight and an
 independent prospective review before the one authorized extraction. Until then,
@@ -159,3 +159,38 @@ only documentary/source-schema work is in scope.
 These are checks for the later offline extraction, not additional gates on the
 already approved physical collector. The physical producer's16 auxiliary
 control-end captures per episode remain the complete suffix capture budget.
+
+## Subsequent implementation, before source outcomes
+
+`embodied_runtime/experiments/task2_point_anchor_retention_adapter.py` now provides
+a small prospective library, with no CLI, execution wrapper or evaluator route.
+It reads only the pinned sensor manifests/seals and bound NPZs; it hashes source
+journals for linkage without decoding them. The four source hash pairs must be
+supplied after matrix completion and review. This code introduces no additional
+gate on the physical collector and has not consumed actual matrix sources.
+
+The source schedule is fixed to whole47/preclose30 and neck46/preclose29, matching
+the producer's exact required approach prefixes plus16 suffix control endpoints.
+The adapter rejects incomplete/reordered source schedules rather than selecting
+a shorter comparison. It verifies initial source arrays and paired prefixes,
+preserves returned-own packet/time linkage and every native row, and adapts only
+the old transfer's hardcoded frame count/reference index. The existing tracker,
+nearest-center depth association, `reference_delta` and percentile helper remain
+unchanged and source-hash pinned. Missing own TCP prevents a reference-delta
+calculation and stays explicit; available own TCP with a missing surface follows
+the existing helper's null metric behavior. No missing value becomes zero.
+
+The API is `load_inputs(matrix, source_hashes)` for stored source/schema admission;
+`iter_cell_tracks(packet, seeds, cv2)` for a later admitted once-per-seed batch;
+`summarize_tracks(tracks, packet)` for full492-denominator curves; and
+`prefix_disagreements(left, right, count)` for complete nine-field prefix checks.
+The later execution wrapper must still seal complete outputs and retain any
+failure without retry. There is no automatic extraction, registration or source
+freeze implied by importing this library.
+
+The actual producer schema has no bottle masks. Therefore this transfer omits
+proxy memberships and departure witnesses entirely. It will not render masks,
+borrow old masks or replace them with an inferred ownership/holding classifier.
+Synthetic manifest/array tests verify schedule integrity, sensor-only loading,
+hash failures, unknown own packets, prior arithmetic compatibility, all492 calls
+and rows, fixed denominators and cross-anchor prefixes with different horizons.
