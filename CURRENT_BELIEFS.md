@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration048. This is a short living assessment;
+Updated 2026-09-27 after iteration049. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -108,9 +108,15 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    projection, delta and summary audit passes. However every capture passes
    all492 native/depth gates while final displacement tails reach210–242mm.
    Root inspected curves and all8 full-population overlays; compact-looking
-   clouds do not establish surface identity. Next: four fixed worst-final-seed
-   histories, source RGB/depth neighborhoods and largest interframe jumps;
-   no estimator/threshold/mask changes or outlier removal.
+   clouds do not establish surface identity. The four fixed worst-final-seed
+   histories now expose unflagged near/far surface switches: OPEN can change
+   only0.08px yet select a neighboring depth212.773mm farther away. CLOSE
+   extremal samples move from background-colored regions to visible fingers.
+   Root inspected all20 context panels; exact arithmetic is not correspondence
+   identity. The diagnostic is post-outcome and selected, not a population
+   failure-rate estimate. Next compare the full same-track population using
+   native2D displacement and projected-own-TCP residual versus existing3D
+   features, with no depth filter, threshold, mask or outlier removal.
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -178,6 +184,7 @@ measured interaction and available action behavior must not be conflated.
 - [Jaw proprioception at phase handoff](docs/evidence/autonomous_research/task2_grasp_proprio_findings.md)
 - [Added stationary-GRASP audit](docs/evidence/autonomous_research/task2_additional_stationary_grasp_raw_review.md)
 - [Four-cell visual co-motion and large tails](docs/evidence/autonomous_research/task2_point_anchor_retention_findings.md)
+- [Fixed extreme-track RGB/depth diagnosis](docs/evidence/autonomous_research/task2_point_anchor_extreme_track_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)

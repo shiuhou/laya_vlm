@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration048. This is the authoritative current
+Reviewed 2026-09-27 after research iteration049. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -147,7 +147,12 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    prefix comparisons. Close/open median motion contrast transfers, but210–242mm
    displacement tails survive all native/depth gates. Root independently audits
    all rows/arithmetic and inspects curves/overlays. A fixed four-seed source
-   diagnostic is next; no mask, classifier, tuned threshold or rejection rule.
+   diagnostic now shows unflagged depth-boundary switches, including a0.08px
+   shift selecting depth212.773mm farther away. Root inspected all20 original
+   context/depth panels. This is selected failure analysis, not a failure rate.
+   Next: same full-population2D displacement and calibrated projected-own-TCP
+   residual comparison, with no scene-depth input to newfeatures, classifier,
+   tuned threshold, rejection rule, model call or extra physics.
    See [raw mechanical audit](evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md).
 
 For these new POINT approach/grasp collections, the actual closed manifests use

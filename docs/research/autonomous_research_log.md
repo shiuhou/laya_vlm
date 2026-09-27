@@ -1787,6 +1787,52 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   settling as grasp proof. Prioritize the parallel visual surface-switch failure
   before inventing a live holding gate or higher-level planner.
 
+### Parallel iteration 049 — admitted RGB tracks can cross unrelated depth surfaces
+
+- **Question:** what produced the very large3D tails while every native LK/depth
+  gate passed? Competing explanations include target translation, image-track
+  drift, discrete depth association, and changing visible foreground surfaces.
+- **Design:** explicit post-outcome exploratory diagnosis; freeze `e363d25`
+  before selecting/extracting. For each of four cells choose maximum final
+  point-norm displacement (lowestseed tie), preserve its complete47/46-frame
+  trajectory, first exact pixel/depth changes and earliest largest consecutive
+  stored3D jump. Show original preclose/postclose/final plus jump−1/jump RGB and
+  21×21 exact depth neighborhoods. No new tracker/projection/model/physics,
+  masks, exclusions, thresholds or conditional reselection.
+- **Observed:** unique selected seeds3/11/3/17 in fixedcellorder; final norms
+  239.114248/210.251192/241.913868/230.096285mm. Largest adjacent jumps whole
+  CLOSE38→39:233.689534mm; wholeOPEN28→29:213.621322mm; neckCLOSE37→38:
+  236.518723mm; neckOPEN40→41:230.830968mm. WholeOPEN's largest jump is during
+  approach, before the displacement reference; a later lift39→40 switch is
+  also retained separately(206.776874mm).
+- **Concrete boundary:** wholeOPEN nativeX223.480652→223.560287 crosses selected
+  columns223/224, depth0.975404978→1.188177586m. NeckOPEN nativeY168.874191→
+  168.461395 crosses rows169/168, depth0.975021720→1.205093861m. Native status
+  remains successful. These changes are larger than commanded/object motion
+  because the measurement now samples a different visible surface.
+- **Inspection:** root and producer opened allfour five-context sheets. Close
+  seed3 samples change from background/table-colored regions to visible gray
+  finger regions; OPEN extrema straddle dark bottle/light table edges. Saved
+  neighborhoods directly show near/far depth boundaries. Visual interpretation
+  is separate from guaranteed semantic ownership or full causal attribution.
+- **Artifacts:** raw `task2-point-anchor-extreme-track-diagnostic-01`,
+  diagnosticSHA dda234ac..., artifactSHA19937143..., report `5d76900`
+  (main `e731b4d`). Three synthetic selection/tie/crop testsPASS; producer checks
+  all20 originalRGB tiles and saved depth neighborhoods exactly. Independent
+  case/report review assigned; original91,512-row numerical audit remainsPASS.
+- **Belief update:** correct nearest-center arithmetic and finite depth do not
+  preserve target-specific3D identity. A compact point cloud or low residual
+  cannot substitute for that missing condition. These selected extremes do not
+  estimate population failure rate, and no depth boundary filter is deployed.
+- **Next experiment:** compare complete native2D displacement with existing
+  depth-lifted3D motion on the same four cells. A second branch adds projected
+  own-TCP using stored proprioception/calibration, explicitly not pureRGB.
+  Hypothesis: useful local close/open motion contrast survives without scene
+  depth; alternative: depth supplies a distinction2D cannot preserve. Same
+  fullpopulation, causal preclose references, all tails/nulls, no thresholds or
+  new model/physical calls. Proposal `6a56c12` (main `c269990`) reviewed; minimal
+  implementation/freeze is authorized before any new arithmetic.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
