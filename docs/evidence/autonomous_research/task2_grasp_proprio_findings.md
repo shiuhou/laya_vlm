@@ -26,6 +26,15 @@ hashes. The generator reads only the sealed sensor manifests. It reads no
 contact, object pose, holding labels, image, or simulator state. All 68
 differences were cross-checked using separate NumPy arithmetic; Ruff passes.
 
+These velocities are archived by the experiment's own-observation recorder but
+are absent from the existing canonical Laya input. `LiberoBackend.proprioception`
+exposes joint positions, width, command, TCP and unknown holding;
+`decision_interface.project_belief` supplies width and command, while admitted
+recent outcomes contain TCP delta, elapsed time and retained jaw command.
+Neither path currently supplies jaw velocity. This is a specific interface
+omission, not proof that adding the field will repair a model decision. No
+production input or runtime is changed by this report.
+
 The independently established [contact audit](task2_point_anchor_grasp_transfer_raw_review.md)
 shows no contact at either final first-GRASP endpoint. That observation is
 consistent with these moving jaws, but the own-state extract alone does not
