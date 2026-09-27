@@ -17,3 +17,17 @@ The preceding 1.958849 µm nominal one-step improvement remains a formal strict-
 | `embodied_runtime/experiments/task2_finite_gap_target_region.py` | `8e1293e35df80d85c3f09b489bfc33526eda9219c4b10872d06ef2b9ecbca944` |
 | `docs/research/task2_finite_gap_target_region_protocol.md` | `99199e30289ce5f68319afad801fde6f78a12a6f69152eceb4587350fee555d9` |
 | `tests/test_task2_finite_gap_target_region.py` | `a8e5cc28148ae5835f0a4b4f5b498ff85b9ee3d772f4c93347b7d452784f0272` |
+
+## Independent stored-result audit
+
+**Stored-evidence PASS for `task2-finite-gap-target-region-run-01`.** The [independent checker](../../../experiments/task2_finite_gap_target_region_audit.py) and [complete receipt](task2_finite_gap_target_region_independent_audit.json) verify all frozen provenance/source/request/seal identities, exact previously sealed finite-gap geometry, all eight rotated/asymmetric target-corner identities and translated vertices, all per-proxy index lists and all **53,600 boolean tensor entries**. The reviewer uses **one original facet system per proxy** and shifts the stored query points for each saved translation; no translated hull refits, FK, projection, dynamics, rendering or pose search are performed.
+
+Corner union counts in registered site-choice order 000 through 111 are **254, 158, 204, 157, 308, 229, 202, 176**. The all-eight intersection contains **124 same-point/same-hand-proxy witnesses**. Every common pair is strictly inside at every corner in the independent fixed-facet calculation. Across those pairs, the minimum signed slack over all eight corners and all proxy facets ranges from **0.341268243 mm to 13.998970790 mm**. These are properties of the frozen geometric calculation, not physical safety margins or calibrated error bounds. The maximum inverse target relation residual is `5.637851296924623e-17 m`.
+
+The fixed-frame convexity argument therefore supports conditional exclusion of the entire exact region **T = P − R G**, not merely eight separate union positives. It concerns this P, unverified observed cloud, separate convex proxies and terminal orientation/jaws. It does not establish the entire discrete STOP set, all-orientation exclusion, actual contact or physical task impossibility. No pose or route was selected, and there is no automatic extension. Final derived-report review remains pending.
+
+| Result artifact | SHA-256 |
+| --- | --- |
+| Feature seal | `df260ad8e38988d3c1e6c9159f3f88956023f1f36dcc27237d4d11eab3b05a47` |
+| Result | `5b9ae028178c5903347f8347908e4982359117a11aa55f42b831beef37cf8d70` |
+| Containment tensor | `82b6029cbf00eb5ce84c220067f0f6a23fdaa7e80573815750fc507ec89c35a3` |
