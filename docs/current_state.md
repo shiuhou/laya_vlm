@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration049. This is the authoritative current
+Reviewed 2026-09-27 after research iteration050. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -150,9 +150,15 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    diagnostic now shows unflagged depth-boundary switches, including a0.08px
    shift selecting depth212.773mm farther away. Root inspected all20 original
    context/depth panels. This is selected failure analysis, not a failure rate.
-   Next: same full-population2D displacement and calibrated projected-own-TCP
-   residual comparison, with no scene-depth input to newfeatures, classifier,
-   tuned threshold, rejection rule, model call or extra physics.
+   The full-population2D comparison now completes: final median RGB motion
+   3.871/4.129px CLOSE versus0.003165/0.002232px OPEN, retaining all91,512 rows
+   and overlapping tails. Independent arithmetic, source, report and plot audit
+   passes. Neither RGB displacement nor its calibrated own-TCP residual needs
+   scene depth for this local contrast; neither establishes target ownership or
+   holding. Root inspected both complete plots. Next is the same-approach
+   neck present/relocated negative with matched privileged scene synchronization,
+   fixed suffix exposure and event-aware replay, currently in preparation.
+   See [image-motion findings](evidence/autonomous_research/task2_point_anchor_image_motion_findings.md).
    See [raw mechanical audit](evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md).
 
 For these new POINT approach/grasp collections, the actual closed manifests use

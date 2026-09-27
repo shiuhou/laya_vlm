@@ -1833,6 +1833,48 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   new model/physical calls. Proposal `6a56c12` (main `c269990`) reviewed; minimal
   implementation/freeze is authorized before any new arithmetic.
 
+### Parallel iteration 050 — local image-motion contrast survives without scene depth
+
+- **Question/hypothesis:** is sampled scene depth necessary for the descriptive
+  close/open motion contrast, or does native image motion already preserve it?
+  A competing explanation is that both representations mostly follow robot or
+  background surfaces and cannot identify target retention.
+- **Intervention/controls:** frozen `6e379ce`, same four cells,492 original seeds,
+  1,968 trajectories/91,512 rows. A uses saved native RGB displacement; B adds
+  calibrated projected saved own-TCP displacement. No LK rerun, physics, model,
+  depth-based feature, filtering, outlier removal or new holding threshold.
+  Reference is the causal preclose frame; earlier metrics stay null. Features
+  are sealed before joining old3D summaries. B is not an RGB-only condition.
+- **Observed:** whole/neck final A medians3.870711/4.129355px CLOSE versus
+  0.003165/0.002232px OPEN; B norm medians2.067484/2.486473px versus
+  3.648610/3.689048px. All full ranges retained and overlapping. Native status
+  admits all492 points per capture. The four previously selected extreme2D
+  histories change smoothly while old3D values jump across near/far surfaces.
+- **Inspection/audit:** root opened complete curves and all four paired extreme
+  panels. Independent review `4b7790a` (main `9dcad17`) checks all rows,
+  projected own geometry,186 summaries/old-summary joins and16 checkpoints;
+  all pass. Numerical receipt `a9e53304...`, report receipt `165a9bcf...`.
+  Five focused synthetic tests passed before freeze; no new full-suite count.
+- **Artifacts:** `runs/autonomous-research/task2-point-anchor-image-motion-run-01`;
+  sensor seal `6524ae13...`, journal `1f32a218...`, extraction `adf01c18...`.
+  Report `004a604` (main `886c8fd`) and
+  `docs/evidence/autonomous_research/task2_point_anchor_image_motion_findings.md`.
+- **Interpretation/confidence:** high confidence that scene depth is unnecessary
+  for this particular local median contrast. Neither smoother2D motion nor small
+  projected-TCP residual establishes semantic ownership, holding, force closure
+  or general manipulation. CLOSE/OPEN commands are not held/not-held gold labels.
+  Dense points are dependent, not1,968 independent trials. No architecture role
+  or sensor gate has been promoted on this result.
+- **Next experiment:** fixed neck sensor-selected approach in two fresh cells,
+  target present versus translated+0.35m worldX by an explicit oracle scene event;
+  matched sham synchronization and identical GRASP/GRASP/10mm-lift exposure.
+  Stored XML/STL setup bounds support static separation, not dynamic/visibility
+  certification. Event-aware exact replay and declared state changes are being
+  implemented. Future motion assay starts both arms at the same fixed492 raster
+  positions post-event and retains every suffix control frame; no cross-event
+  target-identity assumption, track repair, threshold or model call. This tests
+  whether empty-hand self-motion can mimic the previous co-motion signal.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

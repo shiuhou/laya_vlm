@@ -47,6 +47,12 @@ model, or failure was removed. Receipt:
 Main storage at inspection:37MB Git,38MB portable evidence,5.5GB raw runs;
 359GB remained available. Further active-cache churn is unnecessary.
 
+During iteration050, removed the six-day-old `/tmp/miniforge.sh` constructor
+download (124,514,161 bytes). The installed conda and environments remain; no
+process referenced the installer. The receipt preserves its exact SHA256 and
+disposition at `runs/maintenance/obsolete-installer-cleanup-20260927-01.json`.
+Unknown temporary files and unique experiment artifacts were retained.
+
 Before a new producer runs a model or simulator, check the actual frozen input
 schema and dependency imports without computing outcome-sensitive features.
 Synthetic API tests alone did not catch two recent bootstrap/schema failures.

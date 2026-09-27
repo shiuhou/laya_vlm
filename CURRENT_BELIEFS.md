@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration049. This is a short living assessment;
+Updated 2026-09-27 after iteration050. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -114,9 +114,20 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    extremal samples move from background-colored regions to visible fingers.
    Root inspected all20 context panels; exact arithmetic is not correspondence
    identity. The diagnostic is post-outcome and selected, not a population
-   failure-rate estimate. Next compare the full same-track population using
-   native2D displacement and projected-own-TCP residual versus existing3D
-   features, with no depth filter, threshold, mask or outlier removal.
+   failure-rate estimate. The full same-track image-motion comparison now
+   completes: all91,512 rows retained and independently audited. Final median
+   RGB displacement is3.871/4.129px for whole/neck CLOSE versus0.003165/
+   0.002232px OPEN. Adding calibrated own-TCP gives median residual norms
+   2.067/2.486px versus3.649/3.689px. Neither branch reads scene depth; the
+   second is explicitly not RGB-only. Full tails overlap, and small residuals
+   also occur in OPEN. Smooth image tracks still follow wrong surfaces.
+   Thus sampled depth is unnecessary for this local median motion contrast,
+   not for geometry or manipulation generally. No holding classifier follows.
+   Next: a fresh same-approach neck present/relocated pair with matched scene
+   synchronization and identical GRASP/GRASP/10mm-lift exposure. The relocation
+   is an explicit privileged experimental intervention, never sensor evidence
+   or policy. Fixed post-event image-region motion will test whether an empty
+   hand produces similar cues; it cannot borrow target identity across the event.
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -185,6 +196,9 @@ measured interaction and available action behavior must not be conflated.
 - [Added stationary-GRASP audit](docs/evidence/autonomous_research/task2_additional_stationary_grasp_raw_review.md)
 - [Four-cell visual co-motion and large tails](docs/evidence/autonomous_research/task2_point_anchor_retention_findings.md)
 - [Fixed extreme-track RGB/depth diagnosis](docs/evidence/autonomous_research/task2_point_anchor_extreme_track_findings.md)
+- [Complete image-motion comparison](docs/evidence/autonomous_research/task2_point_anchor_image_motion_findings.md)
+- [Independent image-motion audit](docs/evidence/autonomous_research/task2_image_motion_independent_review.md)
+- [Closed-empty source design](docs/research/task2_closed_empty_falsifier_design.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
