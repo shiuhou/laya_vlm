@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration056. This is the authoritative current
+Reviewed 2026-09-27 after research iteration057. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -205,8 +205,15 @@ alternative support representations. The depth-only diagnostic now completes:
 raw support vetoes every translation in both scenes; existing partial silhouette
 leaves housing-edge witnesses that change choices to present STOP/away DOWN.
 Root inspected actual RGB overlays. Unknown ownership and partial visibility
-prevent treating either cloud as a verified environmental guard. No new physical
-policy follows yet. See
+prevent treating either cloud as a verified environmental guard. Two currentBOX
+calls now both admit12tokens/EOS. Holding current goals fixed, present1220points
+include40current-handproxy witnesses and change choice FWD→STOP; away2250points
+have no endpoint containment, retain FWD and remove old DOWNveto. Root inspected
+all41present witnesspixels at the upperBOX/gripper-neck boundary. Neither BOX
+is certified segmentation or scene clearance. The preregistered away pair now
+has first-choice cachedDOWN versus refreshedFWD under common current support.
+Two fresh resets with at most2moves each and exact replay are authorized only
+after frozen implementation/mechanical review; no physical result yet. See
 [four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries

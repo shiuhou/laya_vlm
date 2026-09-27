@@ -2085,6 +2085,56 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   fixed-current-goal support substitution. Only after that outcome decide
   whether the proposed two-action fresh-reset retargeting pair is informative.
 
+### Parallel iteration 057 — current semantic rectangles change support admission
+
+- **Question/alternatives:** can a current semantic region provide different
+  usable support from stale or full-frame depth? It may remove stale witnesses,
+  retain self contamination, or fail native format admission.
+- **Model intervention:** clean `428d78e`, two cold fullRGB BOX calls using the
+  original whole-bottle question/nativehybrid mode. Current slow POINTs stay
+  outside model inputs. Both calls admit12tokens/EOS, no retries.237inputtokens
+  each; same visual tensors as POINT cases. Historical initial BOX used GPU0
+  and no recorded seed, so these GPU2/seed1 calls are not claimed as exact repeats.
+- **Model verification/inspection:** stored-output audit `fe2a236` PASS, SHA
+  `5494709f2e60c1160cc6642a46800f20eac702cb7508f857487bda4d94a25264`.
+  Root viewed both uncropped originals and boxes: visible bottle neck/body is
+  enclosed, with background slivers and present upper boundary near the gripper.
+  This is not segmentation/depth ownership. Raw
+  `task2-closed-empty-current-box-run-01`, journal
+  `b8bff413de03d13dcc042a52c4c20315573508bcc029c6a92472cd150cc483c4`.
+- **Geometry intervention:** one calculation at `65a30c1`; current slowPOINT,
+  saved own/proxy geometry and nominal scores fixed within each scene. Reuse
+  old results; only replace1340point original support with full current integer
+  rectangles. No new POINT projection/FK, mask/crop cleanup, geometry threshold
+  or physical action. Two support extractions, two new selections,28records.
+- **Observed:** present[208,162,228,223) supplies1220points;40already inside
+  current handproxy. FWD/LEFT/RIGHT veto40 each, DOWN41, so FWD→STOP. Away
+  [213,291,243,366) supplies2250points and zero containment for all7candidates;
+  choice staysFWD while old DOWN veto disappears. All witness indices retained.
+- **Actual inspection:** root viewed both fullRGB originals and complete witness
+  overlays. All40present current-proxy witnesses lie on the narrow upperBOX
+  gripper/neck image boundary; one additional endpoint witness is nearby. Away
+  has zero. Ownership remains unknown; do not repair by trimming those rows.
+- **Artifacts/tests:** `task2-postevent-box-support-run-01`, result SHA
+  `27de4407329ce72ebc520a81f2e56bf63b0cd9834aa5618c437866d781c19440`,
+  seal `a42204c7b2a1a159c40a858efb494a99a7af9a9ab7bcc937a85b7cd8243bc64f`.
+  Report `7a7872c` (main `08458a1`); full witnessfigure
+  `21504b55970a72df5e87cc6eac3db9c8fa938c85aa1e37cde8e657868ff8dd60`.
+  Integrated newBOX24tests and support3tests pass; prior main suite1173passed.
+- **Interpretation:** semantic region refresh changes candidate admission but
+  is not universally clean support. Full-scene clearance and holding remain
+  unknown. No general scene-guard or task-success claim follows.
+- **Next decision:** implement the away two-arm/two-action fresh-reset probe
+  preregistered before this support outcome (`bf567416`). Same currentBOXsupport
+  both arms, cachedhybrid versus refreshedslow goal, exact archived-model-input
+  equivalence, freshly regenerated sensor29actionprefix and explicitawayevent.
+  Independent saved-rule reconstruction predicts cachedDOWN/freshFWD already
+  at boundary0. This is a combined packet intervention and own-feedback
+  realization test, not pure freshness, continual VLM feedback or grasping.
+  Root authorizes one batch only after exact clean freeze/no-worldpreflight and
+  independent mechanical review. Contact/validation/replay failure halts remaining
+  batch; max2moves/arm, one exact replay each, no retries or extensions.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

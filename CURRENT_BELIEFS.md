@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration056. This is a living assessment;
+Updated 2026-09-27 after iteration057. This is a living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -201,8 +201,17 @@ competent sensor-driven manipulation.
    exact depth ownership remains unknown. No fitted margin/mask or new physics.
    This rejects using these raw/residual clouds directly as a verified scene
    guard, without rejecting depth geometry generally. Current semanticBOX is
-   the separate next representation test; it too is partial/mixed support,
-   not segmentation or safety certification.
+   now tested separately: two unchanged nativehybrid BOX calls both admit in
+   12tokens/EOS. With current POINT/own fixed, present1220point support contains
+   40points in current handproxy and changes FWD→STOP; away2250point support
+   contains none at any candidate endpoint, retains FWD and removes old DOWN
+   veto. Root inspected all41present witnesspixels: narrow upperBOX boundary
+   at gripper/neck; away has no witnesses. BOX is still partial/mixed support,
+   not segmentation or safety certification. No margins or mask repairs follow.
+   The preregistered away two-action fresh-reset comparison is conditionally
+   authorized after exact mechanical preflight/review. Common currentBOX support
+   gives predicted cachedDOWN versus refreshedFWD at the first boundary. Actual
+   execution/replay remain pending; no physical benefit is claimed yet.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -277,6 +286,8 @@ measured interaction and available action behavior must not be conflated.
 - [Root's actual slow-output RGB inspection](docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json)
 - [Four offline goal-conditioned decisions](docs/evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md)
 - [Current-depth representation and self-overlap](docs/evidence/autonomous_research/task2_current_depth_diagnostic_findings.md)
+- [Current BOX admission](docs/evidence/autonomous_research/task2_closed_empty_current_box_findings.md)
+- [Fixed-goal BOX support comparison](docs/evidence/autonomous_research/task2_postevent_box_support_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
