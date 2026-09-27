@@ -1,7 +1,9 @@
 # Proposed next experiment: what sensor information supports the grasp handoff?
 
-Status: proposal only; no new model calls, classifier, policy or physics is
-implemented or authorized here.
+Status: superseded by the [source feasibility decision](task2_sensor_handoff_feasibility.md).
+The archived empty-close fixture lacks matched raw jaw observations and RGB;
+the three-packet/all-boundary comparison below must not be implemented as written.
+This historical proposal introduced no model calls, classifier, policy or physics.
 
 The decisive next question is whether a decision maker can distinguish a completed
 primitive from an established object relation using available sensor evidence.
