@@ -1875,6 +1875,117 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   target-identity assumption, track repair, threshold or model call. This tests
   whether empty-hand self-motion can mimic the previous co-motion signal.
 
+### Parallel iteration 051 — same-exposure closed-empty source and observable phase
+
+- **Question:** can an empty gripper generate the local cues previously seen
+  with the bottle? Prior archives lacked a matched closed-empty sensor history.
+- **Design:** fresh neck approach twice, benchmarkinit0/seed1, same29 sensor-
+  selected actions and original guard. Present sham versus explicit privileged
+  +0.35m bottle translation, one forward/forced-refresh each, no clock/controller
+  reset. Then unchanged GRASP/GRASP/10mm-lift,24controls each. Freeze `cf000888`;
+  static placement source and conservative independent bounds reviewed first.
+  This is an experimental scene intervention, not sensor knowledge or policy.
+- **Observed:** both32-action/256-control collections complete. Present's first
+  GRASP has no bilateral relation; second has184/200 raw/strong bilateral samples
+  per native stage and8/8 qualified endpoints; lift200/200 and8/8, center rise
+  9.402435mm. Establishment includes9 zero-force non-pad samples and27 raw table
+  samples per stage; lift has no raw non-pad/table samples. No continuous-time
+  force-closure or support-free claim. Away center rise0, no raw robot/bottle
+  rows in1,200 native snapshots or24 endpoints. Empty prelift signed separation
+  rate−2.354314mm/s; no settled-empty label or fitted threshold.
+- **Operational boundary:** original outer launcher143, driver return code and
+  signal cause unknown, matrix ends at away-replay intent. Interrupted replay's
+  executed controls/world activity unknown. Both collections/present replay were
+  closed. No collection retry. Independent partial audit found no hidden source
+  failure. A separately reviewed verification attempt2 passed57.159493s/exit0;
+  original inventory remained exact. Matrix stays interrupted/incomplete.
+  Composite audit `57fa52a1...` admits observations with separate exact replays,
+  never relabels the original matrix as PASS. Each verified replay covers256
+  controls/12,800 native snapshots/33primary+24auxiliary+2scene images/9event rows.
+- **Sampling finding:** same-read-time old/newsham jaw separation differs
+  0.394020mm, but native final coordinates differ at most0.150893µm. All8old
+  packets exactly match native states2ms before endpoints; all8newsham packets
+  match4ms before. Forced refresh advances all19observable timers2ms at unchanged
+  time. Both new arms share the phase shift. Exact live sample metadata remains
+  null; retrospective state matches are not invented sensor timestamps.
+- **Artifacts/inspection:** root inspected all10original boundaryRGB panels and
+  recorded all50suffix own packets and complete phase/contact summaries.
+  `task2-closed-empty-scene-run-01`, separately
+  `task2-closed-empty-scene-away-verification-01`, report `7d8b901`,
+  `task2_closed_empty_scene_findings.md`. Runtime/backend/interface remain
+  baseline-identical; main1131testsPASS43.44s at `1e665a2`.
+- **Interpretation/next:** the matched observation-specific negative is now
+  available; command completion, small jaw motion and object relation remain
+  distinct. Execute the fixed post-event image-region assay, not a holding gate.
+
+### Parallel iteration 052 — empty-hand local motion and correspondence failures
+
+- **Question/alternatives:** does the empty hand reproduce the earlier median
+  motion signal, or do local motion and missingness retain a descriptive contrast?
+- **Intervention:** same492 raster pixels freshly initialized after each event,
+  all25suffix frames, no through-event correspondence, depth feature, mask,
+  threshold, reinitialization or tracker modification. A is nativeRGB motion;
+  B adds saved calibrated own-TCP. Reference0 only; preserve all unknowns.
+  Wrapper bytes frozen `58d00d`, actual complete extraction source `9891aa5`;
+  composite source interpretation/binding and no-feature preflight reviewed.
+- **Observed:**984trajectories/24,600rows retained. Final A norm medians
+  4.198223653px present versus0.058783435px away; B2.420117862 versus3.728218966px.
+  Present492/492 available throughout, away365/492 final with127unknown;
+  94fail at firstcontrol. Available-value medians therefore use different
+  populations. Away native-admitted norm tail reaches178.866005px and actual
+  overlays scatter onto robot/background while the bottle is elsewhere.
+- **Verification:** all24,600rows/50summaries and scalar own projections pass
+  independent audit `b195a27d...` (`748c7a1`, main `ba3b74b`), no LK rerun.
+  Sensor seal `669d9954...`. Root inspected complete curves and all8original
+  endpointRGBs/overlays. Raw `task2-closed-empty-image-motion-run-01`, report
+  `8e9163c` (main `9d7e40a`), `task2_closed_empty_image_motion_findings.md`.
+- **Interpretation:** this negative does not duplicate the positive bulk median
+  under the fixed assay, but neither point-level admission nor local co-motion
+  establishes intended-object ownership. No holding classifier, confidence
+  threshold or generic validity predicate is inferred. Single development pair,
+  dependent dense samples and partial visibility remain limits.
+- **Next decision:** test fresh semantic target identity as an independent input
+  to deterministic goal refresh; avoid further Laya wording probes without a
+  new capability mechanism. Any later physical retargeting must explicitly
+  handle the original BOX/support becoming stale as well as the POINT.
+
+### Parallel iteration 053 — moved target fails strict native POINT formatting
+
+- **Question:** can unchanged fresh semantic localization identify the current
+  target where inherited image-region support cannot? Four fixed fullRGB images:
+  present-postevent, away-postevent, away-prelift, present-prelift. One cold process
+  each, same LocateAnything3B/question `Point to: the wine bottle.`, original
+  greedyhybrid settings/256cap/strict parser, GPU2. No depth/proprioception,
+  labels or event metadata in model input, no prompt variants.
+- **Preparation failure:** CPUpreflight01 erroneously used physical laya-embodied
+  environment and failed missingdecord/lmdb/torchvision before processor/model
+  construction. Failure retained; corrected preflight02 in original locateanything
+  packages passed. Final source `8cc19eb`; no inference retries or installations.
+- **Observed:** present normalized[568,503]/[564,503] admit integerpixels
+  [218,193]/[216,193]. Both away calls produce identical mixed POINT/twoBOX output,
+  including zero-heightBOX; entire results are malformed, admittedpointnull.
+  Native outputs10/22/22/10tokens all reachEOS below cap. Four distinct processes,
+  all inputs/tensors/configs and64emitted IDs independently verified. No prefix
+  salvage, projected away goal or downstream eight-decision comparison.
+- **Inspection/artifacts:** root opened the full original-resolution4case sheet.
+  Both admitted points visibly fall on upper bottle body below fingers; away
+  bottle is visibly present lower in the full frame. This is visual adjudication,
+  not a mask/pose/holding ground truth. Raw `task2-closed-empty-fresh-point-run-01`,
+  journal `5e3e146b...`, audit `dd6e3e14...` (`4322eeb`, main `02b8f8d`),
+  report `d01f50e` (main `555fd1c`) and report review `bd41a31`.
+- **Belief update:** the first concrete new boundary is typed localization output
+  admission, not demonstrated inability to see an absent object or a Laya/control
+  failure. The first fragment is not an executable target. Four development
+  calls do not establish general semantic capability or reliability.
+- **Competing hypotheses/next:** native documentation supports `slow` pureAR
+  versus `hybrid` MTP/AR. Source pattern recognition treats points as nonterminal
+  and does not testBOXarea. Existing outputs lack per-step branch traces, so no
+  MTP/fallback bug is established. Run exactly two new coldslow calls on fixed
+  present/away postevent images with every other input/setting/parser unchanged;
+  reuse their sealed hybrid controls. This tests whole-decoder sensitivity.
+  Format rescue still requires separate semantic/RGB inspection and cannot
+  validate old malformed prefixes, holding or safe goal-refresh control.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration050. This is the authoritative current
+Reviewed 2026-09-27 after research iteration053. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -166,6 +166,33 @@ For these new POINT approach/grasp collections, the actual closed manifests use
 environment notes suggesting locateanything must not override those recorded
 dependencies. The root's mistaken environment assumption and its correction are
 preserved; admitted grasp freeze `1702cb2` uses preflight02, not alternative03.
+
+The subsequent matched neck present/away source is now observationally qualified:
+both fresh32-action/256-control collections complete; present lifts9.402435mm,
+away0mm with zero raw robot/bottle contacts. Both exact replays are available,
+but the original matrix remains interrupted/incomplete143: a separate second
+away verification passed, with zero recollection and the original files unchanged.
+Forced refresh changes own-observation sampling phase equally in both cells;
+old-source returned packets cannot substitute for the new sham. Empty prelift
+jaws still move; no settled-empty label. See
+[source and timing](evidence/autonomous_research/task2_closed_empty_scene_findings.md).
+
+The fixed post-event image assay retains24,600rows. Present/away final median
+motion4.198224/0.058783px, but available counts492/365 differ, and admitted away
+positions drift onto robot/background with extremes178.866px. Root inspected
+all8fullRGB endpoints and complete curves; full numerical audit passes. No
+holding/identity threshold follows. See
+[motion evidence](evidence/autonomous_research/task2_closed_empty_image_motion_findings.md).
+
+Four cold native POINT calls then admit both present images and reject both away
+images as malformed mixed POINT/BOX outputs. All reachEOS below the cap; exact
+inputs/configs/process isolation pass audit. Root's fullRGB inspection places
+the two admitted points on the visible bottle body. Away has no admitted goal;
+the downstream eight-decision comparison is held. Next is a two-call native
+hybrid-versus-slow decoder control using the same post-event images and unchanged
+question/checkpoint/parser. This precedes any semantic-retargeting control test
+or new physical policy. See
+[four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries
 

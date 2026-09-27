@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration050. This is a short living assessment;
+Updated 2026-09-27 after iteration053. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -133,6 +133,45 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    checked transform shows final P remains outside the finite pad Y/Z span, with
    nearest-pad distance34.300mm. It does not explain full palm/object geometry or
    supply a replacement grasp target. Exact observation times remain unknown.
+5. **Closed-empty specificity now has matched observations:** two fresh neck
+   approaches, sham versus explicit+350mm bottle relocation, then identical
+   GRASP/GRASP/10mm-lift. Present lifts9.402435mm with200/200 raw/strong bilateral
+   pad samples per native lift stage; away lifts0mm with no raw robot/bottle
+   contact in1,200suffix snapshots and24endpoints. Empty jaws still move at
+   prelift(−2.354314mm/s signed separation rate); no settled-empty claim.
+   Both512collected controls now replay exactly. Original matrix was externally
+   interrupted143 at away verification and remains incomplete; separately
+   recorded verification attempt2 passed without recollection. Observational
+   source qualification explicitly preserves both attempts and unknown first
+   verification activity. Root inspected all10original boundary RGB panels.
+   Forced refresh shifts returned-jaw sampling: old close packets match native
+   states2ms before endpoints, newsham4ms before. Both new cells share the shift;
+   live exact sample timestamps remain unknown. Comparing old/new reported jaw
+   positions directly would confound sampling phase with physical movement.
+6. **Local motion contrast survives the empty-hand control, ownership does not:**
+   fresh identical492raster seeds at each post-event frame,25frames/cell,
+   984trajectories/24,600rows, no depth or cross-event tracking. Final image
+   displacement median4.198224px present versus0.058783px away; projected-own-TCP
+   residual2.420118 versus3.728219px. Away has365/492available versus492present,
+   so medians summarize different available populations; all127missing retained.
+   Native-admitted away points visibly scatter onto robot/background and range
+   to178.866px. All rows/arithmetic/nulls independently audit exactly. This is
+   useful descriptive evidence, not a holding or ownership estimator.
+7. **Fresh semantic identity is blocked first by typed-output admission here:**
+   four cold unchanged native POINT calls on fullRGB produce valid present
+   points[218,193]/[216,193], visibly on upper bottle body. Both away images show
+   the relocated bottle clearly but return the same mixed POINT+twoBOX string,
+   including a zero-heightBOX. Both entire outputs are malformed; their points
+   stay null. All4reachEOS in10/22/22/10tokens, no truncation or retries, actual
+   native inputs/configs audited. No prefix salvage or eight-decision execution.
+   Failed CPU setup01 used the physical environment; corrected setup02 matches
+   archived locateanything packages and precedes all model calls.
+   Next test changes only the documented decoder mode hybrid→slow(pureAR) on
+   the fixed present/away post-event pair. This tests decoder sensitivity, not
+   an established MTP/fallback bug; saved hybrid outputs lack branch traces.
+   Semantic goal refresh feeding deterministic control is the next responsibility
+   hypothesis. Current BOX/support freshness must be explicit before any physical
+   retargeting test; a successful point alone does not earn safe grasping/planning.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -200,6 +239,9 @@ measured interaction and available action behavior must not be conflated.
 - [Complete image-motion comparison](docs/evidence/autonomous_research/task2_point_anchor_image_motion_findings.md)
 - [Independent image-motion audit](docs/evidence/autonomous_research/task2_image_motion_independent_review.md)
 - [Closed-empty source design](docs/research/task2_closed_empty_falsifier_design.md)
+- [Qualified matched source, timing and interrupted verification](docs/evidence/autonomous_research/task2_closed_empty_scene_findings.md)
+- [Closed-empty image-motion findings](docs/evidence/autonomous_research/task2_closed_empty_image_motion_findings.md)
+- [Four cold semantic POINT outcomes](docs/evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
