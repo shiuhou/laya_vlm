@@ -53,6 +53,15 @@ process referenced the installer. The receipt preserves its exact SHA256 and
 disposition at `runs/maintenance/obsolete-installer-cleanup-20260927-01.json`.
 Unknown temporary files and unique experiment artifacts were retained.
 
+During iteration054, removed **208,930,309 bytes** of six-day-old inactive pip
+downloads: two byte-identical incomplete robosuite wheel archives, one MuJoCo
+wheel download and two empty pip temporary directories. Ownership and absence
+of active process references were checked. Installed environments, model weights
+and all research evidence remain. Hash inventories and deletion receipt:
+`runs/maintenance/obsolete-pip-downloads-20260927-{inventory,result}.json`.
+The large shared `/tmp` research directories belong to other work and were not
+selected for cleanup.
+
 Before a new producer runs a model or simulator, check the actual frozen input
 schema and dependency imports without computing outcome-sensitive features.
 Synthetic API tests alone did not catch two recent bootstrap/schema failures.
