@@ -1,0 +1,2201 @@
+{
+  "post_outcome_exploratory": true,
+  "source_sensor_seal_sha256": "39ede31f44f5782fe24b68e623ba2e7eb6131e23c5d769ebf92cd3715fbeda60",
+  "cells": {
+    "whole-close": {
+      "selection": {
+        "selected_seed_id": 3,
+        "final_point_delta_norm_m": 0.23911424759242372,
+        "tied_maximum_seed_ids": [
+          3
+        ],
+        "available_final_count": 492,
+        "unavailable_seed_ids": []
+      },
+      "changes": {
+        "adjacent_pairs": [
+          {
+            "previous_capture_id": 0,
+            "capture_id": 1,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 1,
+            "capture_id": 2,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 2,
+            "capture_id": 3,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 3,
+            "capture_id": 4,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 4,
+            "capture_id": 5,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 5,
+            "capture_id": 6,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 6,
+            "capture_id": 7,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 7,
+            "capture_id": 8,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 8,
+            "capture_id": 9,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 9,
+            "capture_id": 10,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 10,
+            "capture_id": 11,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 11,
+            "capture_id": 12,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 12,
+            "capture_id": 13,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 13,
+            "capture_id": 14,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 14,
+            "capture_id": 15,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 15,
+            "capture_id": 16,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 16,
+            "capture_id": 17,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 17,
+            "capture_id": 18,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 18,
+            "capture_id": 19,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 19,
+            "capture_id": 20,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 20,
+            "capture_id": 21,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 21,
+            "capture_id": 22,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 22,
+            "capture_id": 23,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 23,
+            "capture_id": 24,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.004378220153595528
+          },
+          {
+            "previous_capture_id": 24,
+            "capture_id": 25,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 25,
+            "capture_id": 26,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 26,
+            "capture_id": 27,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 27,
+            "capture_id": 28,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.004353609235730263
+          },
+          {
+            "previous_capture_id": 28,
+            "capture_id": 29,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 29,
+            "capture_id": 30,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.008633791753122297
+          },
+          {
+            "previous_capture_id": 30,
+            "capture_id": 31,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 31,
+            "capture_id": 32,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 32,
+            "capture_id": 33,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 33,
+            "capture_id": 34,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 34,
+            "capture_id": 35,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 35,
+            "capture_id": 36,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 36,
+            "capture_id": 37,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.002563329533666602
+          },
+          {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23368953376111948
+          },
+          {
+            "previous_capture_id": 39,
+            "capture_id": 40,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0022765694468926457
+          },
+          {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.002158888286793132
+          },
+          {
+            "previous_capture_id": 41,
+            "capture_id": 42,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0023805924078350144
+          },
+          {
+            "previous_capture_id": 42,
+            "capture_id": 43,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0022077539086158204
+          },
+          {
+            "previous_capture_id": 43,
+            "capture_id": 44,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.001101039128298891
+          },
+          {
+            "previous_capture_id": 44,
+            "capture_id": 45,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0007067824020719381
+          },
+          {
+            "previous_capture_id": 45,
+            "capture_id": 46,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0004235914818838793
+          }
+        ],
+        "all_frames": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 0,
+              "capture_id": 1,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 23,
+              "capture_id": 24,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.004378220153595528
+            },
+            "depth_m": {
+              "previous_capture_id": 23,
+              "capture_id": 24,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.004378220153595528
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23368953376111948
+          }
+        },
+        "after_preclose": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 30,
+              "capture_id": 31,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 37,
+              "capture_id": 38,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.002563329533666602
+            },
+            "depth_m": {
+              "previous_capture_id": 38,
+              "capture_id": 39,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.23368953376111948
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23368953376111948
+          }
+        }
+      },
+      "display": {
+        "contexts": [
+          {
+            "label": "preclose",
+            "capture_id": 30,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close/frames/capture-000031.npz",
+            "artifact_sha256": "3335eb94ccbc04ff40dddf9029e42747c234458e4c818c2da407d2ec57da99b5",
+            "native_xy": [
+              215.0104522705078,
+              173.24081420898438
+            ],
+            "sample_pixel_xy": [
+              215,
+              173
+            ],
+            "sample_depth_m": 1.1881775856018066,
+            "phase": "approach",
+            "control": 7
+          },
+          {
+            "label": "postclose_or_hold",
+            "capture_id": 38,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close/auxiliary/capture-000008.npz",
+            "artifact_sha256": "358d4526c2bb9ff72691ad827420081baf55bccac9118efadd33d229cb41bb4a",
+            "native_xy": [
+              215.58065795898438,
+              172.89834594726562
+            ],
+            "sample_pixel_xy": [
+              216,
+              173
+            ],
+            "sample_depth_m": 1.1881775856018066,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "postlift",
+            "capture_id": 46,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close/auxiliary/capture-000016.npz",
+            "artifact_sha256": "aac0a2a7141d6076615221b1891c7e1770b069d3c3dfa0d1a699f3dc78e8b5a3",
+            "native_xy": [
+              214.41419982910156,
+              168.73794555664062
+            ],
+            "sample_pixel_xy": [
+              214,
+              169
+            ],
+            "sample_depth_m": 0.9494860768318176,
+            "phase": "lift",
+            "control": 7
+          },
+          {
+            "label": "before_largest_jump",
+            "capture_id": 38,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close/auxiliary/capture-000008.npz",
+            "artifact_sha256": "358d4526c2bb9ff72691ad827420081baf55bccac9118efadd33d229cb41bb4a",
+            "native_xy": [
+              215.58065795898438,
+              172.89834594726562
+            ],
+            "sample_pixel_xy": [
+              216,
+              173
+            ],
+            "sample_depth_m": 1.1881775856018066,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "largest_jump",
+            "capture_id": 39,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-close/auxiliary/capture-000009.npz",
+            "artifact_sha256": "6d3c6b888e06b9726daef8a86d42f5465a45fdcc92338b29c9186298f2dfa66d",
+            "native_xy": [
+              214.3410186767578,
+              172.06195068359375
+            ],
+            "sample_pixel_xy": [
+              214,
+              172
+            ],
+            "sample_depth_m": 0.9551792144775391,
+            "phase": "lift",
+            "control": 0
+          }
+        ],
+        "depth_color_range_m": [
+          0.9195358753204346,
+          1.2225062847137451
+        ],
+        "neighborhood_size": [
+          21,
+          21
+        ]
+      }
+    },
+    "whole-open_hold": {
+      "selection": {
+        "selected_seed_id": 11,
+        "final_point_delta_norm_m": 0.21025119213709395,
+        "tied_maximum_seed_ids": [
+          11
+        ],
+        "available_final_count": 492,
+        "unavailable_seed_ids": []
+      },
+      "changes": {
+        "adjacent_pairs": [
+          {
+            "previous_capture_id": 0,
+            "capture_id": 1,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 1,
+            "capture_id": 2,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 2,
+            "capture_id": 3,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 3,
+            "capture_id": 4,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 4,
+            "capture_id": 5,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 5,
+            "capture_id": 6,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 6,
+            "capture_id": 7,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 7,
+            "capture_id": 8,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 8,
+            "capture_id": 9,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 9,
+            "capture_id": 10,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 10,
+            "capture_id": 11,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 11,
+            "capture_id": 12,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 12,
+            "capture_id": 13,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 13,
+            "capture_id": 14,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 14,
+            "capture_id": 15,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 15,
+            "capture_id": 16,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 16,
+            "capture_id": 17,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 17,
+            "capture_id": 18,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 18,
+            "capture_id": 19,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 19,
+            "capture_id": 20,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.002649670029655539
+          },
+          {
+            "previous_capture_id": 20,
+            "capture_id": 21,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 21,
+            "capture_id": 22,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 22,
+            "capture_id": 23,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 23,
+            "capture_id": 24,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0053218532759860765
+          },
+          {
+            "previous_capture_id": 24,
+            "capture_id": 25,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 25,
+            "capture_id": 26,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0026751439259564648
+          },
+          {
+            "previous_capture_id": 26,
+            "capture_id": 27,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 27,
+            "capture_id": 28,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 28,
+            "capture_id": 29,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.21362132187394908
+          },
+          {
+            "previous_capture_id": 29,
+            "capture_id": 30,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.21025119213709395
+          },
+          {
+            "previous_capture_id": 30,
+            "capture_id": 31,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 31,
+            "capture_id": 32,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 32,
+            "capture_id": 33,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 33,
+            "capture_id": 34,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 34,
+            "capture_id": 35,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 35,
+            "capture_id": 36,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 36,
+            "capture_id": 37,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 39,
+            "capture_id": 40,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.2067768735054103
+          },
+          {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 41,
+            "capture_id": 42,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.004283655057020895
+          },
+          {
+            "previous_capture_id": 42,
+            "capture_id": 43,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 43,
+            "capture_id": 44,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 44,
+            "capture_id": 45,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 45,
+            "capture_id": 46,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          }
+        ],
+        "all_frames": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 0,
+              "capture_id": 1,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 19,
+              "capture_id": 20,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002649670029655539
+            },
+            "depth_m": {
+              "previous_capture_id": 19,
+              "capture_id": 20,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002649670029655539
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 28,
+            "capture_id": 29,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.21362132187394908
+          }
+        },
+        "after_preclose": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 30,
+              "capture_id": 31,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 39,
+              "capture_id": 40,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2067768735054103
+            },
+            "depth_m": {
+              "previous_capture_id": 39,
+              "capture_id": 40,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2067768735054103
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 39,
+            "capture_id": 40,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.2067768735054103
+          }
+        }
+      },
+      "display": {
+        "contexts": [
+          {
+            "label": "preclose",
+            "capture_id": 30,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold/frames/capture-000031.npz",
+            "artifact_sha256": "3335eb94ccbc04ff40dddf9029e42747c234458e4c818c2da407d2ec57da99b5",
+            "native_xy": [
+              223.46832275390625,
+              175.1768035888672
+            ],
+            "sample_pixel_xy": [
+              223,
+              175
+            ],
+            "sample_depth_m": 0.9789745807647705,
+            "phase": "approach",
+            "control": 7
+          },
+          {
+            "label": "postclose_or_hold",
+            "capture_id": 38,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold/auxiliary/capture-000008.npz",
+            "artifact_sha256": "1558f591c386d4c2969d0db0b408abe30897983858dcb7f426741b1f3bca322e",
+            "native_xy": [
+              223.46890258789062,
+              175.1780242919922
+            ],
+            "sample_pixel_xy": [
+              223,
+              175
+            ],
+            "sample_depth_m": 0.9789745807647705,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "postlift",
+            "capture_id": 46,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold/auxiliary/capture-000016.npz",
+            "artifact_sha256": "f585748e387c8e6c4c9992dc221d0cf75c606c78d3aede9fd4f92ac0710d96ee",
+            "native_xy": [
+              223.5845489501953,
+              172.645751953125
+            ],
+            "sample_pixel_xy": [
+              224,
+              173
+            ],
+            "sample_depth_m": 1.1881775856018066,
+            "phase": "lift",
+            "control": 7
+          },
+          {
+            "label": "before_largest_jump",
+            "capture_id": 28,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold/frames/capture-000029.npz",
+            "artifact_sha256": "d2f531d74f132e4f6e279a62de2678a53345fe24fa35947fea673a21affda153",
+            "native_xy": [
+              223.48065185546875,
+              173.10794067382812
+            ],
+            "sample_pixel_xy": [
+              223,
+              173
+            ],
+            "sample_depth_m": 0.9754049777984619,
+            "phase": "approach",
+            "control": 7
+          },
+          {
+            "label": "largest_jump",
+            "capture_id": 29,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/whole-open_hold/frames/capture-000030.npz",
+            "artifact_sha256": "982ff9734760e6cfa479ff72a365901b1a261dbc1bc0c70cbfee31d52b2a6048",
+            "native_xy": [
+              223.56028747558594,
+              173.06565856933594
+            ],
+            "sample_pixel_xy": [
+              224,
+              173
+            ],
+            "sample_depth_m": 1.1881775856018066,
+            "phase": "approach",
+            "control": 7
+          }
+        ],
+        "depth_color_range_m": [
+          0.9294043183326721,
+          1.2225062847137451
+        ],
+        "neighborhood_size": [
+          21,
+          21
+        ]
+      }
+    },
+    "neck-close": {
+      "selection": {
+        "selected_seed_id": 3,
+        "final_point_delta_norm_m": 0.24191386788810873,
+        "tied_maximum_seed_ids": [
+          3
+        ],
+        "available_final_count": 492,
+        "unavailable_seed_ids": []
+      },
+      "changes": {
+        "adjacent_pairs": [
+          {
+            "previous_capture_id": 0,
+            "capture_id": 1,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 1,
+            "capture_id": 2,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 2,
+            "capture_id": 3,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 3,
+            "capture_id": 4,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 4,
+            "capture_id": 5,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 5,
+            "capture_id": 6,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 6,
+            "capture_id": 7,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 7,
+            "capture_id": 8,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 8,
+            "capture_id": 9,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 9,
+            "capture_id": 10,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 10,
+            "capture_id": 11,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 11,
+            "capture_id": 12,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 12,
+            "capture_id": 13,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 13,
+            "capture_id": 14,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 14,
+            "capture_id": 15,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 15,
+            "capture_id": 16,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 16,
+            "capture_id": 17,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 17,
+            "capture_id": 18,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 18,
+            "capture_id": 19,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 19,
+            "capture_id": 20,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 20,
+            "capture_id": 21,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 21,
+            "capture_id": 22,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 22,
+            "capture_id": 23,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 23,
+            "capture_id": 24,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 24,
+            "capture_id": 25,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 25,
+            "capture_id": 26,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 26,
+            "capture_id": 27,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 27,
+            "capture_id": 28,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 28,
+            "capture_id": 29,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 29,
+            "capture_id": 30,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 30,
+            "capture_id": 31,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 31,
+            "capture_id": 32,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 32,
+            "capture_id": 33,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 33,
+            "capture_id": 34,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 34,
+            "capture_id": 35,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 35,
+            "capture_id": 36,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 36,
+            "capture_id": 37,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.2365187228110031
+          },
+          {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0022529812620805867
+          },
+          {
+            "previous_capture_id": 39,
+            "capture_id": 40,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0021631319369911674
+          },
+          {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0024119297836415854
+          },
+          {
+            "previous_capture_id": 41,
+            "capture_id": 42,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.00224521010730231
+          },
+          {
+            "previous_capture_id": 42,
+            "capture_id": 43,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0010937684927425546
+          },
+          {
+            "previous_capture_id": 43,
+            "capture_id": 44,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0006905463356827395
+          },
+          {
+            "previous_capture_id": 44,
+            "capture_id": 45,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.0004286850445352832
+          }
+        ],
+        "all_frames": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 0,
+              "capture_id": 1,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 37,
+              "capture_id": 38,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2365187228110031
+            },
+            "depth_m": {
+              "previous_capture_id": 37,
+              "capture_id": 38,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2365187228110031
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.2365187228110031
+          }
+        },
+        "after_preclose": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 29,
+              "capture_id": 30,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 37,
+              "capture_id": 38,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2365187228110031
+            },
+            "depth_m": {
+              "previous_capture_id": 37,
+              "capture_id": 38,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.2365187228110031
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.2365187228110031
+          }
+        }
+      },
+      "display": {
+        "contexts": [
+          {
+            "label": "preclose",
+            "capture_id": 29,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close/frames/capture-000030.npz",
+            "artifact_sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+            "native_xy": [
+              215.00497436523438,
+              169.32899475097656
+            ],
+            "sample_pixel_xy": [
+              215,
+              169
+            ],
+            "sample_depth_m": 1.2016721963882446,
+            "phase": "approach",
+            "control": 7
+          },
+          {
+            "label": "postclose_or_hold",
+            "capture_id": 37,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close/auxiliary/capture-000008.npz",
+            "artifact_sha256": "0a9138d7605d6b60ce9ed2433b2b4a978e659b4199dab531a86174cd0906aec4",
+            "native_xy": [
+              214.73196411132812,
+              168.91632080078125
+            ],
+            "sample_pixel_xy": [
+              215,
+              169
+            ],
+            "sample_depth_m": 1.2016721963882446,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "postlift",
+            "capture_id": 45,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close/auxiliary/capture-000016.npz",
+            "artifact_sha256": "4afa9f45e3e148ba484fdde64f195ea018de17d8df68a5a6edfa306cb4d80f78",
+            "native_xy": [
+              213.79281616210938,
+              164.8662109375
+            ],
+            "sample_pixel_xy": [
+              214,
+              165
+            ],
+            "sample_depth_m": 0.9602065682411194,
+            "phase": "lift",
+            "control": 7
+          },
+          {
+            "label": "before_largest_jump",
+            "capture_id": 37,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close/auxiliary/capture-000008.npz",
+            "artifact_sha256": "0a9138d7605d6b60ce9ed2433b2b4a978e659b4199dab531a86174cd0906aec4",
+            "native_xy": [
+              214.73196411132812,
+              168.91632080078125
+            ],
+            "sample_pixel_xy": [
+              215,
+              169
+            ],
+            "sample_depth_m": 1.2016721963882446,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "largest_jump",
+            "capture_id": 38,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-close/auxiliary/capture-000009.npz",
+            "artifact_sha256": "0acb3835ee0e0165dc1a43563a1d0a5d7816a120351b2b1dfca6e8627d38a229",
+            "native_xy": [
+              213.69393920898438,
+              168.14920043945312
+            ],
+            "sample_pixel_xy": [
+              214,
+              168
+            ],
+            "sample_depth_m": 0.9657567143440247,
+            "phase": "lift",
+            "control": 0
+          }
+        ],
+        "depth_color_range_m": [
+          0.9252323508262634,
+          1.233192801475525
+        ],
+        "neighborhood_size": [
+          21,
+          21
+        ]
+      }
+    },
+    "neck-open_hold": {
+      "selection": {
+        "selected_seed_id": 17,
+        "final_point_delta_norm_m": 0.2300962850736131,
+        "tied_maximum_seed_ids": [
+          17
+        ],
+        "available_final_count": 492,
+        "unavailable_seed_ids": []
+      },
+      "changes": {
+        "adjacent_pairs": [
+          {
+            "previous_capture_id": 0,
+            "capture_id": 1,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 1,
+            "capture_id": 2,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 2,
+            "capture_id": 3,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 3,
+            "capture_id": 4,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 4,
+            "capture_id": 5,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 5,
+            "capture_id": 6,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 6,
+            "capture_id": 7,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 7,
+            "capture_id": 8,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 8,
+            "capture_id": 9,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 9,
+            "capture_id": 10,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 10,
+            "capture_id": 11,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 11,
+            "capture_id": 12,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 12,
+            "capture_id": 13,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 13,
+            "capture_id": 14,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 14,
+            "capture_id": 15,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 15,
+            "capture_id": 16,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 16,
+            "capture_id": 17,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 17,
+            "capture_id": 18,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 18,
+            "capture_id": 19,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 19,
+            "capture_id": 20,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 20,
+            "capture_id": 21,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 21,
+            "capture_id": 22,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 22,
+            "capture_id": 23,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 23,
+            "capture_id": 24,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 24,
+            "capture_id": 25,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 25,
+            "capture_id": 26,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 26,
+            "capture_id": 27,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 27,
+            "capture_id": 28,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 28,
+            "capture_id": 29,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 29,
+            "capture_id": 30,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 30,
+            "capture_id": 31,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 31,
+            "capture_id": 32,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 32,
+            "capture_id": 33,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 33,
+            "capture_id": 34,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 34,
+            "capture_id": 35,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 35,
+            "capture_id": 36,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 36,
+            "capture_id": 37,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 37,
+            "capture_id": 38,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 38,
+            "capture_id": 39,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.002238758245807534
+          },
+          {
+            "previous_capture_id": 39,
+            "capture_id": 40,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23083096824357757
+          },
+          {
+            "previous_capture_id": 41,
+            "capture_id": 42,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 42,
+            "capture_id": 43,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 43,
+            "capture_id": 44,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          },
+          {
+            "previous_capture_id": 44,
+            "capture_id": 45,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": false,
+            "depth_m_changed": false,
+            "consecutive_stored_world_distance_m": 0.0
+          }
+        ],
+        "all_frames": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 0,
+              "capture_id": 1,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 38,
+              "capture_id": 39,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002238758245807534
+            },
+            "depth_m": {
+              "previous_capture_id": 38,
+              "capture_id": 39,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002238758245807534
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23083096824357757
+          }
+        },
+        "after_preclose": {
+          "first_changes": {
+            "point_pixel_index_xy": {
+              "previous_capture_id": 29,
+              "capture_id": 30,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": false,
+              "depth_m_changed": false,
+              "consecutive_stored_world_distance_m": 0.0
+            },
+            "sample_pixel_xy": {
+              "previous_capture_id": 38,
+              "capture_id": 39,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002238758245807534
+            },
+            "depth_m": {
+              "previous_capture_id": 38,
+              "capture_id": 39,
+              "point_pixel_index_xy_changed": true,
+              "sample_pixel_xy_changed": true,
+              "depth_m_changed": true,
+              "consecutive_stored_world_distance_m": 0.002238758245807534
+            }
+          },
+          "earliest_largest_consecutive_world_distance": {
+            "previous_capture_id": 40,
+            "capture_id": 41,
+            "point_pixel_index_xy_changed": true,
+            "sample_pixel_xy_changed": true,
+            "depth_m_changed": true,
+            "consecutive_stored_world_distance_m": 0.23083096824357757
+          }
+        }
+      },
+      "display": {
+        "contexts": [
+          {
+            "label": "preclose",
+            "capture_id": 29,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold/frames/capture-000030.npz",
+            "artifact_sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+            "native_xy": [
+              216.98638916015625,
+              170.28663635253906
+            ],
+            "sample_pixel_xy": [
+              217,
+              170
+            ],
+            "sample_depth_m": 0.9758893847465515,
+            "phase": "approach",
+            "control": 7
+          },
+          {
+            "label": "postclose_or_hold",
+            "capture_id": 37,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold/auxiliary/capture-000008.npz",
+            "artifact_sha256": "74bed564add05850ac6eceb476e48f313cf17a7f28e6edffd7c0408e5e3a0b12",
+            "native_xy": [
+              216.9864959716797,
+              170.2883758544922
+            ],
+            "sample_pixel_xy": [
+              217,
+              170
+            ],
+            "sample_depth_m": 0.9758893847465515,
+            "phase": "close_or_hold",
+            "control": 7
+          },
+          {
+            "label": "postlift",
+            "capture_id": 45,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold/auxiliary/capture-000016.npz",
+            "artifact_sha256": "b7f7dfd3332b830a35f9d469a8224555bef519d2046d17b9b3de69347affe8be",
+            "native_xy": [
+              217.1117401123047,
+              167.91558837890625
+            ],
+            "sample_pixel_xy": [
+              217,
+              168
+            ],
+            "sample_depth_m": 1.2050938606262207,
+            "phase": "lift",
+            "control": 7
+          },
+          {
+            "label": "before_largest_jump",
+            "capture_id": 40,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold/auxiliary/capture-000011.npz",
+            "artifact_sha256": "477089a33c659013a59d5df2956e2efea6edc0f3d55dd76bc144b40e5fe35c98",
+            "native_xy": [
+              217.06448364257812,
+              168.8741912841797
+            ],
+            "sample_pixel_xy": [
+              217,
+              169
+            ],
+            "sample_depth_m": 0.9750217199325562,
+            "phase": "lift",
+            "control": 2
+          },
+          {
+            "label": "largest_jump",
+            "capture_id": 41,
+            "artifact": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01/neck-open_hold/auxiliary/capture-000012.npz",
+            "artifact_sha256": "2a02896f550b962bdd3978693eafa2e976007095910927a9f69d49279951ee7a",
+            "native_xy": [
+              217.08526611328125,
+              168.46139526367188
+            ],
+            "sample_pixel_xy": [
+              217,
+              168
+            ],
+            "sample_depth_m": 1.2050938606262207,
+            "phase": "lift",
+            "control": 3
+          }
+        ],
+        "depth_color_range_m": [
+          0.9299616813659668,
+          1.233192801475525
+        ],
+        "neighborhood_size": [
+          21,
+          21
+        ]
+      }
+    }
+  },
+  "holding": null,
+  "identity_verified": null,
+  "reclassified_or_excluded_seeds": 0
+}
