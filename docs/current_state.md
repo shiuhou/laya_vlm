@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration053. This is the authoritative current
+Reviewed 2026-09-27 after research iteration054. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -187,11 +187,17 @@ holding/identity threshold follows. See
 Four cold native POINT calls then admit both present images and reject both away
 images as malformed mixed POINT/BOX outputs. All reachEOS below the cap; exact
 inputs/configs/process isolation pass audit. Root's fullRGB inspection places
-the two admitted points on the visible bottle body. Away has no admitted goal;
-the downstream eight-decision comparison is held. Next is a two-call native
-hybrid-versus-slow decoder control using the same post-event images and unchanged
-question/checkpoint/parser. This precedes any semantic-retargeting control test
-or new physical policy. See
+the two admitted points on the visible bottle body. The hybrid-based downstream
+eight-decision comparison remains held. The subsequent two-call native slow
+decoder control admits both post-event POINTs in10tokens/EOS, with identical
+archived native inputs and only generation mode changed. Present stays[218,193];
+away newly admits[228,328]. Root inspected both fullRGBs and found the points
+on visible bottle bodies. Independent stored-output audit passes; no inference
+retry or old-prefix salvage. This is a two-image decoder-sensitivity result,
+not general localization/holding competence or an established MTP bug. A separate
+four-record offline comparison now asks whether cached-hybrid versus fresh-slow
+goals change existing geometric decisions, with original stale support explicit.
+No new physical policy follows yet. See
 [four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries

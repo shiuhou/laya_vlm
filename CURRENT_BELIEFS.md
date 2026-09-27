@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration053. This is a short living assessment;
+Updated 2026-09-27 after iteration054. This is a living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -166,9 +166,14 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    native inputs/configs audited. No prefix salvage or eight-decision execution.
    Failed CPU setup01 used the physical environment; corrected setup02 matches
    archived locateanything packages and precedes all model calls.
-   Next test changes only the documented decoder mode hybrid→slow(pureAR) on
-   the fixed present/away post-event pair. This tests decoder sensitivity, not
-   an established MTP/fallback bug; saved hybrid outputs lack branch traces.
+   The two-call documented slow(pureAR) control now completes: present remains
+   [218,193], away newly admits [228,328], both10tokens/EOS. Exact archived
+   hybrid input tensors match; mode is the sole generation-settings change.
+   Root inspected both fullRGBs: the points lie on visible upper bottle bodies.
+   This supports whole-decoder sensitivity on two selected development images,
+   not general AR superiority or a proven MTP/fallback bug. The old malformed
+   hybrid prefix remains unusable; new admission belongs only to the new call.
+   Independent stored-output audit passes (`76033ce`).
    Semantic goal refresh feeding deterministic control is the next responsibility
    hypothesis. Current BOX/support freshness must be explicit before any physical
    retargeting test; a successful point alone does not earn safe grasping/planning.
@@ -242,6 +247,8 @@ measured interaction and available action behavior must not be conflated.
 - [Qualified matched source, timing and interrupted verification](docs/evidence/autonomous_research/task2_closed_empty_scene_findings.md)
 - [Closed-empty image-motion findings](docs/evidence/autonomous_research/task2_closed_empty_image_motion_findings.md)
 - [Four cold semantic POINT outcomes](docs/evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md)
+- [Two-image slow decoding audit](docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json)
+- [Root's actual slow-output RGB inspection](docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)

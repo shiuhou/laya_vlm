@@ -1986,6 +1986,39 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   Format rescue still requires separate semantic/RGB inspection and cannot
   validate old malformed prefixes, holding or safe goal-refresh control.
 
+### Parallel iteration 054 — documented slow decoding admits the moved target
+
+- **Question/competing hypotheses:** does the moved-image nonadmission persist
+  under the checkpoint's documented pureAR procedure, or is it sensitive to
+  native decoding mode? Reuse sealed hybrid outputs; no contemporaneous repeats.
+- **Intervention/controls:** exactly two cold calls, present then away postevent,
+  at clean `e4ce123`. Same fullRGB, question, checkpoint, native229token inputs,
+  image tensor hashes, seed1, GPU2, BF16/eval and256cap; only hybrid→slow.
+  Strict full-return parser unchanged. No depth/proprioception enters the model.
+- **Observed:** both new outputs admit in10tokens withEOS. Present[218,193]
+  equals its hybrid result; away[228,328] is newly admitted. Its numeric location
+  equals the old malformed prefix, but that old complete output remains invalid.
+  Two distinct processes, no retries, exit0; raw/native evidence audit PASS
+  `76033ce`, SHA `e034ead7baad4f3dd24bb992aa556897563e08d5fb9cae034fd93485d575c251`.
+- **Actual inspection:** root viewed both full384×384 images and hollow-marker
+  duplicates. Present point lies on upper bottle body below fingers; away point
+  lies on relocated upper body away from the gripper. This is visual judgment,
+  not segmentation, depth-ownership, pose or holding ground truth.
+- **Artifacts:** `task2-closed-empty-slow-point-run-01`, closed journal SHA
+  `f89ad281cc4e7ac168047c31d33a1c1b54db84700a1f7ad1091833b061422316`;
+  root image/receipt `task2-closed-empty-slow-point-root-inspection-01` and
+  `task2_closed_empty_slow_point_root_visual_receipt.json`.
+- **Interpretation/confidence:** high for recorded two-image procedure
+  sensitivity; weak for general decoder superiority. Mode changes decoding
+  history too. No per-step hybrid trace exists, so an MTP/fallback bug is not
+  established. Syntax rescue has visible target relevance here, not grasp or
+  safe-motion validation.
+- **Next decision:** execute the prepared four-record offline comparison with
+  all28candidate records and no physics, explicitly cached-hybrid versus
+  fresh-slow rather than pure freshness. In parallel assess current semanticBOX
+  support versus current unsegmented/self-excluded depth. A fresh target alone
+  cannot certify clearance against an old cloud. No more Laya prompt variants.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
