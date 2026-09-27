@@ -626,7 +626,7 @@ def audit_matrix(matrix, conditions=None, *, order=ORDER, schedule=None, first_g
             for name, digest in condition['sha256'].items():
                 require(sha(matrix / name) == digest, 'closeout condition artifact hash')
             audited = next((c for c in cells if c['condition'] == condition['condition']), None)
-            if audited is not None:
+            if audited is not None and first_grasp_check is None:
                 require(condition['descriptive_stored_labels_not_independent_audit'] == {
                     'bottle_center_rise_mm': audited['lift_motion']['bottle_center_delta_mm'][2],
                     'bottle_bottom_rise_mm': audited['lift_motion']['bottle_bottom_delta_mm'],

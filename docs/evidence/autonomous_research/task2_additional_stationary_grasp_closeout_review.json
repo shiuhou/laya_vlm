@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "execution_closeout_sha256": "011564a3e1504080f4b10ce1095fd3280985d4b710147ef9b0ad381af7b2ae2b",
+  "matrix_journal_sha256": "40261179ca643c48cf81d76daa7521cb8e9ba61023859813e97661573605e8fa",
+  "driver_and_outer_exit": 0,
+  "all_source_hashes_counts_and_descriptive_fields_exact": true,
+  "prefixes_recomputed": false,
+  "physics_retried": false,
+  "immutable_raw_audit_sha256": "13a6741bbf430be8c47a99217fe32acbe7f9d7cb5ad3e671ebd689eb24e95ad3"
+}

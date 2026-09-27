@@ -38,3 +38,5 @@ Identities:
 - Driver exit receipt: `632bc97a929c1543c65355a6b68cb2c47c5197f0de3c1c7fb8ec2e4919cc194b`, return code 0.
 
 The audit above was generated before the producer's separate execution-closeout receipt was available; it already includes the completed matrix and driver exit.
+
+The later [closeout review](task2_additional_stationary_grasp_closeout_review.json) separately verifies producer closeout SHA-256 `011564a3e1504080f4b10ce1095fd3280985d4b710147ef9b0ad381af7b2ae2b`: all artifact hashes, replay counts, copied phase labels/raw snapshots/own observations, full suffix action records, prefix receipt, native bilateral counts/first samples and rise arithmetic agree. Driver and outer tool status are both 0, with no discrepancy or retry. The immutable raw-audit hash above is unchanged; prefixes and physics were not repeated.

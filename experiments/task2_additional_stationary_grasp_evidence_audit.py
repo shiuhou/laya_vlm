@@ -122,6 +122,67 @@ def describe_own_motion(matrix, cell):
             'joint_separation_is_physical_pad_gap': False, 'holding_inferred': False}
 
 
+def verify_closeout(matrix, audited):
+    """Bind a later closeout to immutable raw-audit hashes, without repeating prefixes."""
+    path = matrix.with_name(matrix.name + '-execution-closeout.json')
+    closeout = read(path)
+    require(closeout['code_commit'] == FREEZE and closeout['code_dirty_status'] == ''
+            and closeout['physics_retried'] is False, 'closeout freeze and no retry')
+    require(closeout['matrix_subprocess_returncode'] == closeout['outer_tool_session_final_exit_code']
+            == closeout['outer_tool_session_stdout_driver_returncode'] == 0
+            and closeout['launcher_status_discrepancy_retained'] is False, 'driver and outer exit both zero')
+    require(sha(matrix / 'episodes.jsonl') == audited['matrix_journal_sha256'], 'unchanged audited matrix')
+    terminal = json.loads((matrix / 'episodes.jsonl').read_text().splitlines()[-1])
+    require(terminal['kind'] == 'termination' and terminal['data'] == closeout['matrix_termination'], 'closeout matrix terminal')
+    for name, digest in closeout['artifacts'].items():
+        require(sha(matrix / name) == digest, 'closeout matrix artifact')
+    for item in closeout['conditions']:
+        condition = item['condition']
+        cell = next(c for c in audited['conditions'] if c['condition'] == condition)
+        run = matrix / condition
+        require(sha(run / 'episodes.jsonl') == cell['journal_sha256'], 'unchanged audited cell')
+        for name, digest in item['sha256'].items():
+            require(sha(matrix / name) == digest, 'closeout source artifact')
+        require(item['replay_status'] == 'passed'
+                and item['exact_controls'] == cell['replay']['controls']
+                and item['exact_native_snapshots'] == cell['replay']['native_snapshots']
+                and item['exact_captures'] == cell['replay']['primary_captures']
+                and item['exact_auxiliary_captures'] == cell['replay']['auxiliary_captures'], 'closeout replay counts')
+        labels, sensors = read(run / 'evaluator-only/labels.json'), read(run / 'sensor-captures.json')
+        desc = item['descriptive_stored_labels_not_independent_audit']
+        require(desc['lift_center_delta_mm'] == cell['lift_motion']['bottle_center_delta_mm']
+                and desc['lift_bottom_delta_mm'] == cell['lift_motion']['bottle_bottom_delta_mm'], 'closeout lift arithmetic')
+        for phase, _ in SCHEDULE:
+            selected = [x for x in labels if x['phase'] == phase]
+            require(desc['phases'][phase] == {'endpoint_bilateral': [x['label']['valid_grasp_relation'] for x in selected],
+                'final_label': selected[-1]['label'], 'final_raw_contact_snapshot': selected[-1]['raw_contact_snapshot'],
+                'final_own_observations': next(x['own_observations'] for x in sensors if x['phase'] == phase and x['control'] == 7)},
+                'closeout complete phase source fields')
+        require(desc['native_bilateral_samples'] == {k: v['bilateral_pad_samples'] for k, v in
+                cell['native_contacts']['by_phase_and_stage'].items()}, 'closeout native counts')
+        first, actions, gate, groups = {}, [], None, None
+        with (run / 'episodes.jsonl').open() as stream:
+            for line in stream:
+                row = json.loads(line)
+                data = row['data']
+                if row['kind'] == 'initial_frame_gate':
+                    groups = {k: set(v) for k, v in data['groups_evaluator_only'].items()}
+                elif row['kind'] == 'action_completed' and 'native_phase' in data:
+                    actions.append(data)
+                elif row['kind'] == 'first_GRASP_prefix_verified':
+                    gate = data
+                elif row['kind'] in ('native_before', 'native_after') and data.get('arm') in dict(SCHEDULE):
+                    key = data['arm'] + '/' + row['kind']
+                    if key not in first and prior.contact_evidence(data, groups)['bilateral_pads']:
+                        first[key] = {k: data[k] for k in ('step', 'control', 'index', 'time_s')}
+        require(desc['actions'] == actions and desc['first_GRASP_prefix_verified'] == gate
+                and desc['first_bilateral_samples'] == first, 'closeout raw actions, first prefix and first bilateral samples')
+    require([c['condition'] for c in closeout['conditions']] == list(ORDER), 'both closeout cells')
+    return {'status': 'PASS', 'execution_closeout_sha256': sha(path), 'matrix_journal_sha256': audited['matrix_journal_sha256'],
+            'driver_and_outer_exit': 0, 'all_source_hashes_counts_and_descriptive_fields_exact': True,
+            'prefixes_recomputed': False, 'physics_retried': False}
+
+
 def audit(matrix, conditions=None):
     preflight = read(matrix / 'preflight.json')
     require(preflight['code']['commit'] == FREEZE and sha(matrix / 'preflight.json') == PREFLIGHT_SHA
@@ -154,6 +215,8 @@ def audit(matrix, conditions=None):
             'lift_bilateral_by_native_stage': stages,
             'prediction_satisfied': bool(second['bilateral_pads'] and all(n == 200 for n in stages.values())) if complete else None,
             'is_holding_classifier': False, 'support_free_retention': None, 'clean_interaction_valid_grasp': None}
+    if conditions is None and matrix.with_name(matrix.name + '-execution-closeout.json').exists():
+        result['execution_closeout_review'] = verify_closeout(matrix, result)
     return result
 
 
