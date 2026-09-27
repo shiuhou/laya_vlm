@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iterations041–042. This is the authoritative current
+Reviewed 2026-09-27 after research iteration043. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -112,9 +112,13 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    Whole versus neck text produces different visibly relevant locations,
    projectedZ difference40.456mm. Same originalRGB/model/settings, freshprocesses,
    no retry; explicit part use is not independent planning or graspquality.
-   Full input/result/report audit passes (`77c415d`). Next compares both fixedanchors in the
-   same original point-rule stopping-cell geometry (18predetermined placements).
-   A fresh paired approach wrapper is only being prepared; no dynamics yet.
+   Full input/result/report audit passes (`77c415d`). Matched18-placement geometry
+   now independently reproduces all120,600 containment booleans: whole exactP
+   contains129 points and has104 shared hand witnesses across its ±5mm cell;
+   neck exactP contains zero, but four lower-Z corners remain positive.
+   The predeclared exploratory physical gate passes, not a clearance/grasp gate.
+   A fixed whole→neck fresh approach pair with separate replays is prepared;
+   no dynamics yet. See [matched cells](evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md).
 
 ## Protected execution and evidence boundaries
 
@@ -131,10 +135,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `fe5de7f`: **935 tests pass** in32.32s, including
-the fresh endpoint, short-lift, goal-cell and finite-gap additions. The subsequent
-region test has a separate focused prospective review.
-Log: `runs/autonomous-research/regression-goal-cell-finite-gap-integration.log`.
+Latest integrated regression at `c7db61d`: **981 tests pass** in38.17s, including
+the paired POINT approach harness and its default-preserving collector hook.
+Log: `runs/autonomous-research/regression-matched-point-approach-integration.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 

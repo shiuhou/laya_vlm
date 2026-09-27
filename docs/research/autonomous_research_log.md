@@ -1519,6 +1519,38 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   no observed-solid containment. This is a necessary exploratory gate, not
   physical clearance, qualified grasp or permission to relax any stop.
 
+### Parallel iteration 043 — matched semantic anchors change geometric feasibility
+
+- **Question:** does the explicit neck POINT remove the incompatibility between
+  the unchanged TCP-point goal and the observed-surface endpoint guard?
+- **Competing predictions:** both goals remain excluded; or the neck removes
+  the exact-goal obstruction without establishing a complete free cell/route.
+- **Intervention:** freeze `77523e5`, prospective `53efefd`. ExactP and the eight
+  world±5mm corners for each of the two admitted POINT anchors; same1,340-point
+  fullBOX support, five own proxies, terminal orientation/jaws and numeric rule.
+  No dynamics, policy change, adaptive placement selection or new model call.
+- **Observed:** whole exactP129 points, corners[143,116,143,116,140,104,140,104],
+ 104 same-point/hand witnesses throughout the cell. Neck exactP0, corners
+ [31,0,31,0,24,0,24,0], no common witness. Fingers/pads have no containment in
+  these18 placements. Whole common-witness minimum facet margins span
+ 0.088906417–9.695951533mm. These are geometric slacks, not safety margins.
+- **Inspection and audit:** independent fixed historical facets reproduce all
+ 120,600 booleans; rawPASS `f927482`, report `ecd90da`, finalPASS `281352a`.
+  Root inspected originalRGB and the exact104-pixel overlay. Neck zero-common
+  overlay is unchangedRGB; no region identity or clearance is inferred.
+- **Artifacts:** raw `task2-point-anchor-goal-cells-run-01`, feature seal
+ `2e849dd465a93c6f41a72a3bec31ba1ae5a63b2c3f39345db326daf19fe9c0e5`;
+  audit `bf1ce72a79fd50c796b68e3d41d6b73b474184a8c89501cc3b93d4af1861627c`.
+- **Interpretation:** part semantics can change a necessary geometric property
+  on this development fixture. Whole remains conditionally excluded; neck cell
+  remains inconclusive. The source description is researcher supplied, not
+  autonomous affordance selection. No successful manipulation claim follows.
+- **Next experiment:** the registered exploratory neck exactP gate passes.
+  Run BOTH fresh fixed anchors with original point rule/fullBOX guard/executor,
+  whole then neck, each followed by exact replay; retain normal failures. Final
+  admission must bind closed source/geometry and reviewed implementation.
+  Main integration `c7db61d` passes981 tests in38.17s; no production runtime diff.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

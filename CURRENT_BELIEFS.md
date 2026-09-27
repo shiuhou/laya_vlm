@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iterations041–042. This is a short living assessment;
+Updated 2026-09-27 after iteration043. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -54,8 +54,13 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    points; both are bottle-proxy interior, with40.456mm projectedZ difference.
    This supports use of explicit part text on this fixture, not independent
    region choice or grasp quality. Full native-input/result/report audit passes (`77c415d`).
-   Next compares BOTH anchors with the same18-pose original point-goal-cell
-   geometry before any physical trial; no point is selected by outcome.
+   Matched18-pose geometry is now closed: whole exactP contains129 observed
+   points and its ±5mm cell has104 shared hand witnesses; neck exactP contains
+   zero, but four lower-Z corners contain24–31 points. All120,600 entries are
+   independently reproduced. No whole-cell clearance or grasp claim follows.
+   This passes the predeclared exploratory gate for BOTH fixed anchors in a
+   fresh whole→neck approach pair; same point rule, BOX support and endpoint
+   guard, separate exact replays. No anchor is selected by outcome.
 3. **Coordinate consistency transfers; holding remains unknown:** justified
    nearest-center association removes the epsilon-only switch. The unchanged
    method on30-frame10mm actual-executor pairs keeps all492 seeds and all29,520
@@ -87,8 +92,7 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated endpoint/short-lift/goal-cell/finite-gap regression:935 tests pass
-  in32.32s at `fe5de7f`; the subsequent region test has its own focused review.
+- Integrated paired-approach regression:981 tests pass in38.17s at `c7db61d`.
   Production `runtime_core.py`, `adapters/libero.py` and `decision_interface.py`
   remain byte-identical to the baseline.
 
@@ -125,6 +129,7 @@ measured interaction and available action behavior must not be conflated.
 - [Finite-gap local objective intervention](docs/evidence/autonomous_research/task2_finite_gap_control_findings.md)
 - [Full finite-gap target-region exclusion](docs/evidence/autonomous_research/task2_finite_gap_target_region_findings.md)
 - [Two matched native POINT descriptions](docs/evidence/autonomous_research/task2_point_region_control_findings.md)
+- [Matched POINT goal cells](docs/evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
 - [Independent information-boundary review](docs/evidence/autonomous_research/information_boundary_review.md)
