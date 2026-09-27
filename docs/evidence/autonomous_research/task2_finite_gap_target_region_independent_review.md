@@ -31,3 +31,9 @@ The fixed-frame convexity argument therefore supports conditional exclusion of t
 | Feature seal | `df260ad8e38988d3c1e6c9159f3f88956023f1f36dcc27237d4d11eab3b05a47` |
 | Result | `5b9ae028178c5903347f8347908e4982359117a11aa55f42b831beef37cf8d70` |
 | Containment tensor | `82b6029cbf00eb5ce84c220067f0f6a23fdaa7e80573815750fc507ec89c35a3` |
+
+## Final report closeout
+
+**Derived-report PASS at producer `437d9be`.** The portable summary (SHA-256 `dd436ec93e8b1a0a36174749c89ba406f791eccf0e38366fe048062712e8ae9d`) exactly preserves the sealed geometry, all eight corner/index lists, all 124 witness identities and the complete independent audit above. The portable containment NPZ is byte-identical to the raw tensor. The reviewer inspected both full RGB images and independently verified that the unmarked image is array-identical to the original source and that the marked image changes exactly the 124 common-witness source pixels to the documented color.
+
+The findings preserve the registered site-choice ordering, distinguish corner-specific finger/pad counts from common hand-only witnesses, call signed slack a frozen geometric property rather than a physical safety margin, and make no nesting claim relative to the earlier point-rule cell. They retain the separate finite-gap one-step formal PASS and its lack of dynamics evidence. No numerical experiment, model, physics, render or pose search was repeated. This closes the derived-report review.
