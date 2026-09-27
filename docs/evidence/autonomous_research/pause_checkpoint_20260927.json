@@ -1,0 +1,51 @@
+{
+  "status": "paused_by_user",
+  "recorded_utc": "2026-09-27T06:16:21.514038+00:00",
+  "checkpoint_tag": "research-checkpoint-20260927-paused",
+  "research_branch": "research/embodied-interface-discovery",
+  "baseline": "b73b5b43dbef29749677fae06b25e94ca27bad87",
+  "last_completed_iteration": 57,
+  "latest_attempt": {
+    "producer_freeze": "9385cd13aa145dbbeb7fc903556cde64367c9b49",
+    "review_commit": "a031cbf",
+    "exit_code": 1,
+    "error": "Matching clean no-world preflight required",
+    "stage": "run_pair gate before RunRecorder and worker launch",
+    "run_directory_created": false,
+    "collection_workers": 0,
+    "replay_workers": 0,
+    "world_constructions": 0,
+    "controls": 0,
+    "actions": 0,
+    "model_calls": 0,
+    "live_research_processes_at_pause": false,
+    "signal_sent": false,
+    "retry_or_repair_after_pause": false,
+    "artifacts": {
+      "task2-short-retargeting-run-01-launch.json": {
+        "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-retargeting-run-01-launch.json",
+        "sha256": "206db25c4e607f443d250234cf5ca69e7cad9229db97ce1e3e7f07114c3676f2"
+      },
+      "task2-short-retargeting-run-01.log": {
+        "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-retargeting-run-01.log",
+        "sha256": "6122021c8b6d49d93e57114859ee1df59ff884b6ec414b4859ab2f001f6d6369"
+      },
+      "task2-short-retargeting-run-01-exit.json": {
+        "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-retargeting-run-01-exit.json",
+        "sha256": "75dd9b5ad1ea16612253779d8d0fa8bcbb49fd36b09d883970ddc19568cdaab4"
+      },
+      "task2-short-retargeting-preflight-01.json": {
+        "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-retargeting-preflight-01.json",
+        "sha256": "bcfddbbecb4a2ea9ae5f944441b426a0649f75a7445c52f762715190e2389def"
+      }
+    }
+  },
+  "preserved_worktrees": {
+    "laya-information-boundary-review": "a031cbf",
+    "laya-offline-wrist-history": "9385cd13aa145dbbeb7fc903556cde64367c9b49",
+    "laya-render-measurement-semantics": "0c3e4115cde219b3dbe43f62586959b04baabadb"
+  },
+  "resume_requires_explicit_user_request": true,
+  "remote_push_or_share_main_merge": false,
+  "raw_evidence_is_local": "Canonical runs directory and model/environment assets remain; Git tag alone is not a backup of ignored raw files."
+}

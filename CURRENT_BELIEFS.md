@@ -1,5 +1,8 @@
 # Current research beliefs
 
+**PAUSED at the user’s request.** Local tag: `research-checkpoint-20260927-paused`.
+No experiments or automatic retries are authorized while paused.
+
 Updated 2026-09-27 after iteration057. Baseline: `share_main` at `b73b5b4`.
 Integration branch: `research/embodied-interface-discovery`; not merged/pushed
 into `share_main`. Historical detail remains in the
@@ -46,7 +49,10 @@ intervention, not pure freshness or continual visual-model feedback.
 Root has authorized one batch conditional on clean implementation freeze,
 no-world preflight and independent mechanical review. Contact, validation or
 replay failure halts the remaining batch; no retry, recovery or budget extension.
-Implementation/review are pending. **No physical retargeting result is claimed.**
+Implementation/review completed, but the first launch exited1 at the preflight
+matching gate before creating its batch directory or any worker/world. No
+controls/actions/model calls occurred; no diagnosis, repair or retry followed.
+**No physical retargeting result is claimed. Work is now paused by the user.**
 If first-arm failure leaves the second unrun, report a partial contrast with no
 comparative winner. Compare both arms against the same fresh sensor goal; it is
 not proven bottle material or official task success.

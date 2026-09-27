@@ -1,5 +1,9 @@
 # Current project state
 
+**Paused by the user on 2026-09-27.** Local checkpoint tag:
+`research-checkpoint-20260927-paused`. No active research processes or automatic
+retries. See [checkpoint receipt](evidence/autonomous_research/pause_checkpoint_20260927.json).
+
 Reviewed 2026-09-27 after research iteration057. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
@@ -213,7 +217,10 @@ all41present witnesspixels at the upperBOX/gripper-neck boundary. Neither BOX
 is certified segmentation or scene clearance. The preregistered away pair now
 has first-choice cachedDOWN versus refreshedFWD under common current support.
 Two fresh resets with at most2moves each and exact replay are authorized only
-after frozen implementation/mechanical review; no physical result yet. See
+after frozen implementation/mechanical review. Implementation and review
+completed, but launch01 exited1 at the preflight-matching gate before any worker
+or world construction. No actions occurred. Failure evidence is retained; no
+repair/retry occurred before user pause. No physical result exists. See
 [four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries

@@ -2135,6 +2135,29 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   independent mechanical review. Contact/validation/replay failure halts remaining
   batch; max2moves/arm, one exact replay each, no retries or extensions.
 
+## User pause and checkpoint — 2026-09-27
+
+- User explicitly requested a frozen checkpoint and pause. Stop new work and
+  retire pending launch authorization until an explicit resume request.
+- Completed scientific evidence remains through iteration057. Retargeting code
+  freeze `9385cd1` and exact review `a031cbf` are integrated into the checkpoint.
+- Launch01 exited1 at `run_pair` with `Matching clean no-world preflight required`,
+  before RunRecorder, batch directory, worker processes or simulator construction.
+  Actual new collection/replay stages, worlds, controls, actions and model calls
+  are all zero. This is a retained launch failure, not a physical outcome or a
+  user-killed trajectory. No owned research process remained; no signal was sent.
+- Tool session81206 exit receipt SHA
+  `75dd9b5ad1ea16612253779d8d0fa8bcbb49fd36b09d883970ddc19568cdaab4`.
+  Launch/log/preflight/review bindings and worktree identities are retained in
+  `docs/evidence/autonomous_research/pause_checkpoint_20260927.json`.
+- No diagnosis, repair, retry, further metrics or experiment followed the pause.
+  All three subagent lanes stopped. Local tag:
+  `research-checkpoint-20260927-paused`; no push or share_main merge.
+- Resumption should first read this checkpoint and the failed launch gate; do not
+  count this attempt as a physical pair or silently reuse its attempt identity.
+  Ignored raw evidence remains local under canonical runs; the Git tag does not
+  itself back up those files. Existing model weights/environments are unchanged.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,
