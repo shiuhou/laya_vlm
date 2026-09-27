@@ -72,7 +72,7 @@ def test_nonrule_approach_termination_rejects_before_read_or_action(reason):
         probe.verify_prefix('/does-not-exist', 'whole', {'reason': reason, 'first_contact_evaluator_only': None})
 
 
-def synthetic_suffix(tmp_path, monkeypatch, condition, *, fail=None, failure_action=0, prefix_ok=True):
+def synthetic_suffix(tmp_path, monkeypatch, condition, *, fail=None, failure_action=0, prefix_ok=True, factory=None):
     from embodied_runtime.adapters.libero_rgbd import LiberoRgbdSource
     sensors = own(-99)
     calls, stale_reads = [], []
@@ -123,7 +123,7 @@ def synthetic_suffix(tmp_path, monkeypatch, condition, *, fail=None, failure_act
     camera = Camera(world)
     recorder.capture(camera.capture())
     recorder.record('initial_frame_gate', {'initial_own_observations': own(-99)})
-    suffix = probe.Intervention(condition)
+    suffix = probe.Intervention(condition) if factory is None else factory(condition)
     termination = {'completed_actions': 30, 'attempted_actions': 30, 'last_step': 30, 'reason': 'rule_no_strict_nominal_improvement'}
     result, error = None, None
     try:

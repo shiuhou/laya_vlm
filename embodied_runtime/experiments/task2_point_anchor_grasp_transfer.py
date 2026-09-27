@@ -131,10 +131,13 @@ def sensor_row(condition, phase, step, control, frame, own, artifact, digest, st
 
 class Intervention:
     """One fixed suffix; labels are buffered and cannot select the two tokens."""
-    def __init__(self, condition):
+    def __init__(self, condition, *, schedule=None, after_primitive=None):
         self.condition = condition
         self.anchor, self.arm = split_condition(condition)
         self.sensors, self.labels = [], []
+        self.schedule = schedule if schedule is not None else (
+            ('close_or_hold', 'GRASP' if self.arm == 'close' else 'STOP'), ('lift', 'MV_UP'))
+        self.after_primitive = after_primitive
 
     def __call__(self, *, backend, executor, camera, recorder, groups, approach):
         from ..adapters.libero_rgbd import LiberoRgbdSource
@@ -146,11 +149,10 @@ class Intervention:
         auxiliary = LiberoRgbdSource(world)
         (recorder.output / 'auxiliary').mkdir()
         attempted, completed, grasp_attempted = 0, 0, False
-        tokens = ('GRASP' if self.arm == 'close' else 'STOP', 'MV_UP')
         grip = 1 if self.arm == 'close' else -1
         try:
-            for offset, token in enumerate(tokens):
-                step, phase = approach['completed_actions'] + offset, ('close_or_hold', 'lift')[offset]
+            for offset, (phase, token) in enumerate(self.schedule):
+                step = approach['completed_actions'] + offset
                 recorder.record('action_started', {'step': step, 'token': token, 'native_phase': phase,
                     'selection': 'registered_scripted_intervention', 'arm': self.arm})
                 attempted += 1
@@ -190,6 +192,8 @@ class Intervention:
                     raise RuntimeError('Unexpected postapproach native action/control counts')
                 if any(c['unexpected_robot_contact'] for r in native for stage in ('before', 'after') for c in r[stage]['contacts']):
                     raise RuntimeError('unexpected_robot_contact_at_native_stage')
+                if self.after_primitive is not None:
+                    self.after_primitive(recorder, offset, step)
             return {**approach, 'reason': 'fixed_approach_and_scripted_suffix_complete',
                 'approach_termination': approach, 'scripted_attempted_actions': attempted,
                 'scripted_completed_actions': completed, 'attempted_actions': approach['attempted_actions'] + attempted,
@@ -247,15 +251,15 @@ class Intervention:
 
 
 class AuxiliaryReplay:
-    def __init__(self, directory):
+    def __init__(self, directory, *, expected_count=16):
         self.directory = Path(directory)
         rows, errors = load_records(self.directory / 'episodes.jsonl')
         if errors:
             raise ValueError('Complete source journal required')
         captures = [r['data'] for r in rows if r['kind'] == 'auxiliary_capture']
         self.expected = {(r['after_step'], r['control']): r for r in captures}
-        if len(captures) != 16 or len(self.expected) != 16:
-            raise ValueError('All 16 auxiliary captures required')
+        if len(captures) != expected_count or len(self.expected) != expected_count:
+            raise ValueError(f'All {expected_count} auxiliary captures required')
         self.camera, self.checked = None, []
 
     def __call__(self, world, action, control):
@@ -278,11 +282,11 @@ class AuxiliaryReplay:
         self.checked.append({'step': action['step'], 'control': control, 'array_bytes_exact': checks})
 
 
-def check_collection(directory):
+def check_collection(directory, *, scripted_action_count=2):
     rows, errors = load_records(Path(directory) / 'episodes.jsonl')
     if (errors or not rows or rows[-1]['kind'] != 'termination'
             or rows[-1]['data']['reason'] != 'fixed_approach_and_scripted_suffix_complete'
-            or rows[-1]['data']['scripted_completed_actions'] != 2
+            or rows[-1]['data']['scripted_completed_actions'] != scripted_action_count
             or any(r['kind'] in ('failure', 'intervention_failure') for r in rows)):
         raise ValueError('Collection incomplete; stop matrix without replay or retry')
     for row in rows:
@@ -290,8 +294,8 @@ def check_collection(directory):
             local.require_pass(row['data']['result'])
 
 
-def execute_stages(recorder, launch):
-    for condition in ORDER:
+def execute_stages(recorder, launch, *, order=ORDER):
+    for condition in order:
         for stage in ('collect', 'replay'):
             recorder.record('stage_intent', {'condition': condition, 'stage': stage})
             launch(condition, stage)
@@ -304,14 +308,14 @@ def verify_review(path, freeze, preflight_sha):
         raise ValueError('Prospective PASS must bind exact clean freeze and no-world preflight SHA256')
 
 
-def worker(args):
+def worker(args, *, preflight_fn=prepare, protocol=PROTOCOL, intervention_factory=Intervention, auxiliary_count=16):
     directory = Path(args.matrix)
     request = base.read(directory / 'request.json')
     rows, errors = load_records(directory / 'episodes.jsonl')
     if errors or rows[-1]['kind'] != 'stage_intent' or rows[-1]['data'] != {'condition': args.condition, 'stage': args.worker_stage}:
         raise ValueError('Matching fixed matrix stage intent required')
     args.review = str(directory / 'review.txt')
-    frozen, _, _ = prepare(args)
+    frozen, _, _ = preflight_fn(args)
     verify_review(args.review, frozen['code']['commit'], request['preflight_sha256'])
     if (file_hash(args.review) != request['review_sha256']
             or file_hash(directory / 'preflight.json') != request['preflight_sha256']
@@ -319,53 +323,54 @@ def worker(args):
         raise ValueError('Reviewed admission changed between stages')
     if args.worker_stage == 'collect':
         args.output = str(directory / args.condition)
-        suffix = Intervention(args.condition)
+        suffix = intervention_factory(args.condition)
         try:
-            base.collect(args, preflight_fn=prepare, protocol=PROTOCOL,
+            base.collect(args, preflight_fn=preflight_fn, protocol=protocol,
                 selector_factory=lambda f: approach.guard.EndpointSelector(f['endpoint_guard']),
                 condition=args.condition, decision_fn=approach.point_decision, after_approach=suffix)
         finally:
             suffix.seal(args.output)
     else:
         args.source, args.output = str(directory / args.condition), str(directory / (args.condition + '-replay'))
-        auxiliary = AuxiliaryReplay(args.source)
-        base.replay(args, preflight_fn=prepare, provenance_keys=PROVENANCE, after_control=auxiliary)
-        if auxiliary.expected or len(auxiliary.checked) != 16:
+        auxiliary = AuxiliaryReplay(args.source, expected_count=auxiliary_count)
+        base.replay(args, preflight_fn=preflight_fn, provenance_keys=PROVENANCE, after_control=auxiliary)
+        if auxiliary.expected or len(auxiliary.checked) != auxiliary_count:
             raise ValueError('Auxiliary replay incomplete')
         approach.write(Path(args.output) / 'auxiliary-result.json', {'status': 'passed',
             'source_sensor_seal_sha256': file_hash(Path(args.source) / 'sensor-seal.json'), 'captures': auxiliary.checked})
 
 
-def run_matrix(args):
-    frozen, _, _ = prepare(args)
+def run_matrix(args, *, preflight_fn=prepare, protocol=PROTOCOL, module=MODULE, order=ORDER,
+               version=VERSION, scripted_action_count=2, completion_reason='all_four_fixed_cells_and_replays_complete'):
+    frozen, _, _ = preflight_fn(args)
     preflight = base.read(args.preflight_receipt)
     if any(preflight.get(key) != value for key, value in frozen.items()) or preflight['physics_calls'] != 0:
         raise ValueError('Matching no-world preflight required')
     preflight_sha = file_hash(args.preflight_receipt)
     verify_review(args.review, frozen['code']['commit'], preflight_sha)
-    request = {'version': VERSION, 'condition_order': list(ORDER), 'fresh_policy_episodes': 4,
+    request = {'version': version, 'condition_order': list(order), 'fresh_policy_episodes': len(order),
         'source_admission': frozen['transfer']['source_admission'], 'preflight_sha256': preflight_sha,
         'review_sha256': file_hash(args.review), 'new_model_calls': 0, 'retries': 0}
     recorder = RunRecorder(args.output, request, {'run_id': Path(args.output).name, **frozen})
     approach.write(recorder.output / 'request.json', request)
     (recorder.output / 'review.txt').write_bytes(Path(args.review).read_bytes())
-    (recorder.output / 'protocol.md').write_bytes(PROTOCOL.read_bytes())
+    (recorder.output / 'protocol.md').write_bytes(protocol.read_bytes())
     (recorder.output / 'preflight.json').write_bytes(Path(args.preflight_receipt).read_bytes())
     def launch(condition, stage):
         with (recorder.output / f'{condition}-{stage}.log').open('x') as stream:
-            subprocess.run([sys.executable, '-m', MODULE, '--worker-stage', stage, '--matrix', str(recorder.output.resolve()),
+            subprocess.run([sys.executable, '-m', module, '--worker-stage', stage, '--matrix', str(recorder.output.resolve()),
                 '--condition', condition, '--libero-root', args.libero_root, '--config-dir', args.config_dir],
                 stdout=stream, stderr=subprocess.STDOUT, check=True)
         if stage == 'collect':
-            check_collection(recorder.output / condition)
+            check_collection(recorder.output / condition, scripted_action_count=scripted_action_count)
         else:
             for name in ('result.json', 'auxiliary-result.json'):
                 if base.read(recorder.output / (condition + '-replay') / name)['status'] != 'passed':
                     raise ValueError('Exact verification replay failed')
     try:
-        execute_stages(recorder, launch)
-        recorder.record('termination', {'reason': 'all_four_fixed_cells_and_replays_complete',
-            'fresh_policy_episodes': 4, 'verification_replays': 4, 'winner_selected': False, 'task_success_claim': False})
+        execute_stages(recorder, launch, order=order)
+        recorder.record('termination', {'reason': completion_reason,
+            'fresh_policy_episodes': len(order), 'verification_replays': len(order), 'winner_selected': False, 'task_success_claim': False})
     except BaseException as exc:
         recorder.record('failure', {'exception': repr(exc), 'no_retry': True, 'unstarted_stages': 'not_run'})
         raise
