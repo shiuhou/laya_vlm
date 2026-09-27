@@ -54,13 +54,14 @@ The exact model question already says:
 > This is a geometric command test, not a contact or dynamics prediction.
 
 At the same time, `state.task.instruction` says **“close the top drawer of the
-cabinet”**. This is a critical competing-objective confound. The question supplies
-the intended local objective, so its absence cannot explain the result. However,
-the global drawer framing means this is not a clean test of arithmetic under one
-consistent approach-only objective. The observed failures cannot identify whether
-the cause is task priority, numeric comparison, candidate binding, or another
-presentation/checkpoint interaction. No phase variable resolving that competition
-was supplied in this condition.
+cabinet”**. Global drawer closure and local approach are logically compatible in
+a hierarchy, and the question explicitly specifies the local criterion. Its
+absence cannot explain the result. Task priority or presentation is a possible
+confound, not a demonstrated conflict, prompt defect or cause of failure. The
+observed failures cannot distinguish that possibility from numeric comparison,
+candidate binding, or another presentation/checkpoint interaction. This condition
+contains no separate phase variable; the explicit local question itself already
+provides the requested objective.
 
 ## Exact differences from the current POINT approach
 
@@ -74,7 +75,7 @@ this completed pair.
 | Layer | Historical seven-option family | Current fixed POINT approach |
 | --- | --- | --- |
 | State task | Global close-drawer instruction and handle identity | `Approach the cached reported point.` and `the wine bottle` |
-| Question / phase | Explicit local Euclidean-minimization question above; competing global state remains | Rule executes directly. Stock `model_questions()` would say `Choose for task. Offline probe, not safety approval. Null means unknown. Moves retain orientation/grip; rotations retain position/grip.` No model phase routing occurs. |
+| Question / phase | Explicit local Euclidean-minimization question above; global drawer task remains in state | Rule executes directly. Stock `model_questions()` would say `Choose for task. Offline probe, not safety approval. Null means unknown. Moves retain orientation/grip; rotations retain position/grip.` No model phase routing occurs. |
 | Target estimand | Accepted historical RGB-D/fused visible-handle surface-centroid estimate; target identity unverified | Unchanged native whole/neck POINT, containing-pixel-center depth projection, admitted by exact initial frame match; identity and depth ownership unknown |
 | Temporal / quality fields | Geometry and semantic validity, heuristic covariance, `covariance_calibrated=False`, semantic score, temporal consistency and velocity supplied when archived | Geometry finite under an unverified fixed-target assumption; age grows from initial capture. Covariance, semantic validity/confidence, temporal consistency, velocity, current visibility, holding and contact remain unknown. |
 | Provenance | Perceptual belief and natural gate retained in audit; model gets compact field values | POINT query/projection and separate original full-BOX guard support retained in audit metadata; compact provider serialization would omit metadata |
@@ -110,11 +111,12 @@ not evidence that one anchor is a better grasp location.
 
 No additional generic seven-option, explicit-approach, order, instruction-rewording,
 or effect-duplication run is justified by this inventory. The closest missing
-condition is consistent **approach-only task semantics on the actual current POINT
+condition is **approach-only task semantics on the actual current POINT
 states**, with a declared provider serialization and STOP contract. That is a
 source/interface transfer gap, not evidence that a prompt change will rescue Laya.
-The historical global/local priority confound is real; changing several POINT
-fields and presentation together would not isolate that confound causally.
+Historical task priority remains an unresolved hypothesis; changing several POINT
+fields and presentation together would not isolate it causally or establish a
+prompt bug. The negative outcomes remain negative evidence for the tested inputs.
 
 If a later architecture decision specifically requires whether Laya tracks the
 current target change, the smallest distinct transfer question is the already
