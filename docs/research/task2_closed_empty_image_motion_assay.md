@@ -73,7 +73,8 @@ own packet. Missing/duplicate/misordered source captures are source-admission
 failures, not permission to substitute another frame or extend a cell.
 
 The agreed producer mapping selects `source_capture_stream="scene"` with
-`phase="scene_after"`, `after_step=29`, `control=null` as capture 0. Its own
+`source_capture_seq=2`, `phase="scene_after"`, `scene_boundary="after"`,
+`after_step=29`, `control=null` as capture 0. Its own
 source is `episodes.jsonl` / `scene_boundary` / boundary `after` / step 29:
 the exact forced-refresh observation return assigned to `world.obs`. The
 `after_step` field here identifies the intervention at the unexecuted suffix
@@ -83,6 +84,16 @@ all auxiliary source sequences 1–24, with phases `close_or_hold`,
 `own_tcp_world_m` and their recorded source bindings. The `scene_before`
 record is never a tracker input. Actual sealed records must match this mapping;
 the producer's announced schema alone is not source admission.
+
+The complete per-cell sensor manifest has 56 rows: 30 original reset/approach
+captures, distinct before/after scene archives, then 24 auxiliary captures.
+The suffix selects merged capture IDs 31–55 and reports endpoints 31/39/47/55
+as local indices 0/8/16/24. Both source conditions retain `anchor="neck"` and
+`arm="close"`; their exact condition/directory names are `neck-present` and
+`neck-away`. The seal additionally binds `own-controls.json`; the motion
+loader hashes that file without decoding it. The capture's
+`render_preserves_state_and_caches=true` describes the individually guarded
+capture after synchronization, never the preceding scene event.
 
 The expected complete output is **984 trajectories / 24,600 rows**, with 492
 rows at every capture in each cell. There are 23,616 potential forward steps
@@ -131,6 +142,53 @@ Reuse the pinned Python 3.10.21 / NumPy 1.26.4 runtime. The source-specific
 adapter must eventually bind the actual new sensor filenames, schedule and
 sealed hashes; this design does not invent them or authorize adapting the
 population after outcomes. No old-source extraction is rerun for this proposal.
+
+## Concrete offline wrapper and later source binding
+
+The [extraction wrapper](../../embodied_runtime/experiments/task2_closed_empty_image_motion.py)
+reuses those helpers. Its [synthetic tests](../../tests/test_task2_closed_empty_image_motion.py)
+exercise the 56-to-25 selection, event/own binding, dropped/reordered/duplicate
+captures, archive hash changes, RGB/K/T-only decoding, failure/null retention,
+all 492 denominators and rejection before source access for an unreviewed binding.
+No future source or feature is needed for these tests.
+
+A later reviewed JSON binding must contain exactly this information (SHA values
+and paths below are placeholders, not an admission):
+
+```json
+{
+  "schema": "task2-closed-empty-image-motion-binding-v1",
+  "source_admitted": true,
+  "source_root": "/absolute/path/to/complete/physical/matrix",
+  "matrix_journal_sha256": "<closed matrix journal SHA-256>",
+  "source_admission": {"path": "/absolute/path/to/source-admission.json", "sha256": "<SHA-256>"},
+  "source_review": {"path": "/absolute/path/to/independent-source-review.json", "sha256": "<SHA-256>"},
+  "cells": {
+    "present": {"directory": "neck-present", "condition": "neck-present", "sha256": {
+      "sensor-captures.json": "<SHA-256>", "sensor-seal.json": "<SHA-256>"}},
+    "away": {"directory": "neck-away", "condition": "neck-away", "sha256": {
+      "sensor-captures.json": "<SHA-256>", "sensor-seal.json": "<SHA-256>"}}
+  }
+}
+```
+
+`preflight --binding BINDING --output RECEIPT` checks the clean frozen code,
+pinned runtime, helper identities and bound sensor source; it decodes RGB/K/T
+without calling LK or projecting TCP. After this source admission, the existing
+independent one-batch review record binds `status="pass"`, the exact
+`freeze_commit`, `protocol_sha256`, `binding_sha256`, `preflight_sha256` and
+`authorized_batches=1`. This is the concrete receipt needed by
+`run --binding BINDING --preflight RECEIPT --review REVIEW --output OUTPUT`.
+The source-specific hashes remain external to the already frozen feature code.
+
+The sole registered output is
+`runs/autonomous-research/task2-closed-empty-image-motion-run-01` in the main
+worktree. Existing output prevents rerun/resume. The wrapper retains failures,
+partial rows and the closed journal on an interrupted attempt; a complete seal
+requires both cells and all 24,600 rows. Source admission/review and mixed
+journals are hash linkages only and are never decoded for feature selection.
+No collection, preflight on a future source, extraction or model handoff is
+released merely by committing this wrapper.
 
 ## Report and decision limits
 
