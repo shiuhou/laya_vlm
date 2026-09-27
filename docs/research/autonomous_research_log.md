@@ -1591,7 +1591,9 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   stationary development fixture with oracle-assisted diagnostic aborts.
 - **Artifacts:** raw `task2-point-anchor-approach-run-01`; producer report
  `93fd4c2` (main `4f7c5a6`), interpretation `9058a9c` (main `7d0dd25`), full
- 61-decision trace and actualRGB. Portable report closure proceeds independently.
+ 61-decision trace and actualRGB. Final report/RGB closurePASS `f908941` (main
+ `05d2ba4`) verifies all portable data and all6 selected own-frame relations.
+  Integrated regression at `a2e87ec`:990 tests pass in33.51s.
 - **Next decision:** test both endpoints rather than select an apparent winner.
   Prepare fixed2×2 whole/neck × close/open-hold, then exactly one10mmMV_UP per
   condition. Regenerate every approach from reset using the unchanged policy;

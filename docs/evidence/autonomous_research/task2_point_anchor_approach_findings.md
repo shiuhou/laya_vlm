@@ -114,5 +114,8 @@ Existing executor `success` fields in those raw results remain evaluator-only.
 | Whole replay result | `d784b0bc206fcbe07fc376426610b47e9f10fc38ae23d9a67ae3838dc9aaedd0` |
 | Neck replay result | `0134e2abf91aeabb8bc36880a77b3e237f7711e2e88ca38bbed0faadbae5326b` |
 
-Portable-report review is pending. No additional physical action follows from
-this report; the first declared endpoint of each arm is retained unchanged.
+Portable-report and actual-RGB/gap review passed at `f908941`; see the
+[independent review](task2_point_anchor_approach_independent_review.md) and
+[image interpretation](task2_point_anchor_approach_interpretation_findings.md).
+No additional physical action follows from this report; the first declared
+endpoint of each arm is retained unchanged.

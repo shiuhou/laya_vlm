@@ -146,9 +146,9 @@ hidden surfaces and semantic confidence remain unknown. A parsed box's score1
 is not calibrated identity confidence. Real sensor calibration, complete visual
 manipulation and real-robot transfer are unvalidated.
 
-Latest integrated regression at `c7db61d`: **981 tests pass** in38.17s, including
-the paired POINT approach harness and its default-preserving collector hook.
-Log: `runs/autonomous-research/regression-matched-point-approach-integration.log`.
+Latest integrated regression at `a2e87ec`: **990 tests pass** in33.51s, including
+the paired POINT approach, strengthened source checks and stored interpretation.
+Log: `runs/autonomous-research/regression-matched-approach-closed-01.log`.
 Experiments additionally have frozen pre-execution reviews and independent raw
 checks; repeatability is not generalization.
 

@@ -101,7 +101,7 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated paired-approach regression:981 tests pass in38.17s at `c7db61d`.
+- Integrated closed-pair regression:990 tests pass in33.51s at `a2e87ec`.
   Production `runtime_core.py`, `adapters/libero.py` and `decision_interface.py`
   remain byte-identical to the baseline.
 
