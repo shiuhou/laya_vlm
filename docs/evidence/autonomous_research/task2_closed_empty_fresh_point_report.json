@@ -1,0 +1,285 @@
+{
+  "source_audit_sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+  "source_exit_sha256": "a3d807fb4d90a479e35e8cc0e6d6f615af14b0a76e8a25afcfee43773bd846ad",
+  "preflight02_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+  "report_source_sha256": "8b783c055dafd5b588108b7b24540507cedd84cf6764a6ae603b4efb855d59dc",
+  "figure": {
+    "filename": "four-case-full-rgb.png",
+    "sha256": "b4fa37602657cbf19a21950bb0d3506045c18a69e68d2383beb85d5d104bd527",
+    "size_px": [
+      872,
+      2012
+    ],
+    "full_original_panels": 4,
+    "full_repeated_panels": 4,
+    "admitted_markers": 2,
+    "panel_RGB_byte_checks_passed": true,
+    "cropping_or_resizing": false,
+    "marker_position": "stored continuous image-edge coordinate; PIL pixel-center offset -0.5"
+  },
+  "cases": [
+    {
+      "case_id": "present-postevent",
+      "source": {
+        "case_id": "present-postevent",
+        "directory": "neck-present",
+        "local_suffix_capture_id": 0,
+        "capture_id": 31,
+        "phase": "scene_after",
+        "after_step": 29,
+        "control": null,
+        "source_capture_stream": "scene",
+        "source_capture_seq": 2,
+        "capture_read_sim_time_s": 12.10000000000071,
+        "cached_geometry_sample_time_s": null,
+        "exact_observation_sample_time_s": null,
+        "artifact": "scene/capture-000002.npz",
+        "artifact_sha256": "8f92b8f85ecc0ec2b14b11eabbcd73f5d6a2439f6d476f10cf1b67f659c9b791"
+      },
+      "rgb_input_sha256": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+      "sensor_sha256": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+      "raw_return_sha256": "6582eb8a187f4460f63f14824acae0db41f875675ea0d8e069cca51c66af521a",
+      "raw_output": "<ref>the wine bottle</ref><box><568><503></box><|im_end|>",
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          568,
+          503
+        ],
+        "continuous_xy": [
+          218.11199999999997,
+          193.152
+        ],
+        "pixel_index_xy": [
+          218,
+          193
+        ]
+      },
+      "generation_audit": {
+        "actual_generated_token_ids": [
+          151672,
+          1782,
+          13078,
+          16486,
+          151673,
+          151668,
+          152245,
+          152180,
+          151669,
+          151645
+        ],
+        "actual_generated_token_count": 10,
+        "input_token_count": 229,
+        "model_max_length": 16384,
+        "eos_token_id": 151645,
+        "effective_limit": 256,
+        "terminal_eos_observed": true,
+        "length_limit_reached": false,
+        "complete_generation": true,
+        "truncation_status": "eos_terminated"
+      },
+      "original_RGB_bytes_exact": true,
+      "marker_drawn": true
+    },
+    {
+      "case_id": "away-postevent",
+      "source": {
+        "case_id": "away-postevent",
+        "directory": "neck-away",
+        "local_suffix_capture_id": 0,
+        "capture_id": 31,
+        "phase": "scene_after",
+        "after_step": 29,
+        "control": null,
+        "source_capture_stream": "scene",
+        "source_capture_seq": 2,
+        "capture_read_sim_time_s": 12.10000000000071,
+        "cached_geometry_sample_time_s": null,
+        "exact_observation_sample_time_s": null,
+        "artifact": "scene/capture-000002.npz",
+        "artifact_sha256": "c208fcdcfc7ce35a362b89dcf44291cd38eaefc676eb6eb6d2b4710764c54223"
+      },
+      "rgb_input_sha256": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+      "sensor_sha256": "d546f1704ab756137c93c3ea603b64415345483c3d22e311b0e017dfea5d9586",
+      "raw_return_sha256": "dc428d004da4e63f68787a0da7a13f05f80a8748ae57f53c0e8acb3299e3a9f3",
+      "raw_output": "<ref>the wine bottle</ref><box><594><856></box><box><607><855><1000><857></box><box><607><855><1000><855></box><|im_end|>",
+      "status": "not_admitted",
+      "reason": "malformed",
+      "point": null,
+      "generation_audit": {
+        "actual_generated_token_ids": [
+          151672,
+          1782,
+          13078,
+          16486,
+          151673,
+          151668,
+          152271,
+          152533,
+          151669,
+          151668,
+          152284,
+          152532,
+          152677,
+          152534,
+          151669,
+          151668,
+          152284,
+          152532,
+          152677,
+          152532,
+          151669,
+          151645
+        ],
+        "actual_generated_token_count": 22,
+        "input_token_count": 229,
+        "model_max_length": 16384,
+        "eos_token_id": 151645,
+        "effective_limit": 256,
+        "terminal_eos_observed": true,
+        "length_limit_reached": false,
+        "complete_generation": true,
+        "truncation_status": "eos_terminated"
+      },
+      "original_RGB_bytes_exact": true,
+      "marker_drawn": false
+    },
+    {
+      "case_id": "away-prelift",
+      "source": {
+        "case_id": "away-prelift",
+        "directory": "neck-away",
+        "local_suffix_capture_id": 16,
+        "capture_id": 47,
+        "phase": "additional_close",
+        "after_step": 30,
+        "control": 7,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 16,
+        "capture_read_sim_time_s": 12.900000000000977,
+        "cached_geometry_sample_time_s": null,
+        "exact_observation_sample_time_s": null,
+        "artifact": "auxiliary/capture-000016.npz",
+        "artifact_sha256": "7d214c722d0ac1c921b42131673dbffc7235f909cc5057e595323bbe9bce43a4"
+      },
+      "rgb_input_sha256": "ff72a80736023645794a5fc7cd5404c0b970cc5f65710fa39f7f791e4e99ee89",
+      "sensor_sha256": "d546f1704ab756137c93c3ea603b64415345483c3d22e311b0e017dfea5d9586",
+      "raw_return_sha256": "26dcae9f67d764d69129fa7f3ffbf3a966e1fb038cb3c273ffc2f260737738bb",
+      "raw_output": "<ref>the wine bottle</ref><box><594><856></box><box><607><855><1000><857></box><box><607><855><1000><855></box><|im_end|>",
+      "status": "not_admitted",
+      "reason": "malformed",
+      "point": null,
+      "generation_audit": {
+        "actual_generated_token_ids": [
+          151672,
+          1782,
+          13078,
+          16486,
+          151673,
+          151668,
+          152271,
+          152533,
+          151669,
+          151668,
+          152284,
+          152532,
+          152677,
+          152534,
+          151669,
+          151668,
+          152284,
+          152532,
+          152677,
+          152532,
+          151669,
+          151645
+        ],
+        "actual_generated_token_count": 22,
+        "input_token_count": 229,
+        "model_max_length": 16384,
+        "eos_token_id": 151645,
+        "effective_limit": 256,
+        "terminal_eos_observed": true,
+        "length_limit_reached": false,
+        "complete_generation": true,
+        "truncation_status": "eos_terminated"
+      },
+      "original_RGB_bytes_exact": true,
+      "marker_drawn": false
+    },
+    {
+      "case_id": "present-prelift",
+      "source": {
+        "case_id": "present-prelift",
+        "directory": "neck-present",
+        "local_suffix_capture_id": 16,
+        "capture_id": 47,
+        "phase": "additional_close",
+        "after_step": 30,
+        "control": 7,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 16,
+        "capture_read_sim_time_s": 12.900000000000977,
+        "cached_geometry_sample_time_s": null,
+        "exact_observation_sample_time_s": null,
+        "artifact": "auxiliary/capture-000016.npz",
+        "artifact_sha256": "7b86d03056a35fefe62955f0b035e07bc546f0b3fbc0d8c629aef9b9e4f50e83"
+      },
+      "rgb_input_sha256": "7a7d23b29b9abf55e8c21c18ab61d7e3811d8f98c5107c95ebdbbd8f41825cff",
+      "sensor_sha256": "cf0f6210043e4d1b6843e70adf3218d3448eb0f624d29249e8adf7c10f404edf",
+      "raw_return_sha256": "0370c409a5356a7d7f5fd66d4929c2cfb816ce66d4ffd64b869de4d757db7b8f",
+      "raw_output": "<ref>the wine bottle</ref><box><564><503></box><|im_end|>",
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          564,
+          503
+        ],
+        "continuous_xy": [
+          216.57599999999996,
+          193.152
+        ],
+        "pixel_index_xy": [
+          216,
+          193
+        ]
+      },
+      "generation_audit": {
+        "actual_generated_token_ids": [
+          151672,
+          1782,
+          13078,
+          16486,
+          151673,
+          151668,
+          152241,
+          152180,
+          151669,
+          151645
+        ],
+        "actual_generated_token_count": 10,
+        "input_token_count": 229,
+        "model_max_length": 16384,
+        "eos_token_id": 151645,
+        "effective_limit": 256,
+        "terminal_eos_observed": true,
+        "length_limit_reached": false,
+        "complete_generation": true,
+        "truncation_status": "eos_terminated"
+      },
+      "original_RGB_bytes_exact": true,
+      "marker_drawn": true
+    }
+  ],
+  "visual_inspection_at_generation": "pending",
+  "root_semantic_inspection": "pending",
+  "new_model_calls": 0,
+  "depth_reads": 0,
+  "projections": 0,
+  "policy_evaluations": 0,
+  "physics_calls": 0,
+  "render_calls": 0,
+  "salvaged_nonadmitted_candidates": 0
+}

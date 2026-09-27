@@ -1,5 +1,9 @@
 # Four fixed boundaries, eight matched POINT decision records
 
+**On hold:** the completed four-cold-call batch supplies no admitted fresh POINT
+in either away case. See the [retained findings](../evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
+This prepared decision experiment has not run; no malformed candidate is salvaged.
+
 Freeze the question: does a new same-question whole-bottle POINT change the
 existing deterministic choice when returned own state and the original BOX
 guard are held identical within each pair? This is an offline decision audit,
