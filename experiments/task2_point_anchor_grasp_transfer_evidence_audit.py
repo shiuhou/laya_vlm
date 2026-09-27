@@ -122,21 +122,22 @@ def contact_evidence(snapshot, groups):
             'unexpected_robot_contact': any(c['unexpected_robot_contact'] for c in snapshot['contacts'])}
 
 
-def suffix_audit(rows, suffix, groups, approach_end, arm):
+def suffix_audit(rows, suffix, groups, approach_end, arm, *, schedule=None):
     all_by = grouped(rows)
     by = grouped(suffix)
     actions = [r['data'] for r in by['action_completed']]
     starts = {(r['data']['step'], r['data']['control']): r['data'] for r in by['control_started']}
     ends = {(r['data']['step'], r['data']['control']): r['data'] for r in by['control_completed']}
     require(len(starts) == len(by['control_started']) and len(ends) == len(by['control_completed']), 'unique suffix controls')
-    tokens = ('GRASP' if arm == 'close' else 'STOP', 'MV_UP')
+    schedule = schedule or (('close_or_hold', 'GRASP' if arm == 'close' else 'STOP'), ('lift', 'MV_UP'))
+    phases, tokens = zip(*schedule)
     first_step = approach_end['completed_actions']
     expected_grip = 1 if arm == 'close' else -1
     action_starts = [r['data'] for r in by['action_started']]
-    require(len(action_starts) <= 2 and len(actions) <= len(action_starts), 'bounded suffix attempts')
+    require(len(action_starts) <= len(schedule) and len(actions) <= len(action_starts), 'bounded suffix attempts')
     for offset, a in enumerate(action_starts):
         require(a == {'step': first_step + offset, 'token': tokens[offset],
-            'native_phase': ('close_or_hold', 'lift')[offset], 'selection': 'registered_scripted_intervention', 'arm': arm},
+            'native_phase': phases[offset], 'selection': 'registered_scripted_intervention', 'arm': arm},
             'fixed suffix intent')
     previous_state = all_by['control_completed'][first_step * 8 - 1]['data']['state_after']
     previous_own = all_by['control_completed'][first_step * 8 - 1]['data']['returned_own_observations']
@@ -144,7 +145,7 @@ def suffix_audit(rows, suffix, groups, approach_end, arm):
     for offset, action in enumerate(action_starts):
         step = first_step + offset
         target = np.asarray(previous_own['robot0_eef_pos']).copy()
-        if offset == 1:
+        if tokens[offset] == 'MV_UP':
             target[2] += .01
         for control in range(8):
             key = step, control
@@ -171,7 +172,7 @@ def suffix_audit(rows, suffix, groups, approach_end, arm):
         step, control = first_step + offset, integration // 25
         require(offset < len(action_starts) and r['kind'] == ('native_before', 'native_after')[stage]
                 and (s['step'], s['control'], s['index'], s['arm']) ==
-                    (step, control, integration, ('close_or_hold', 'lift')[offset]), 'native suffix ordering')
+                    (step, control, integration, phases[offset]), 'native suffix ordering')
         state = [s['time_s'], *s['qpos'], *s['qvel']]
         if not stage:
             if previous_native is not None:
@@ -196,7 +197,7 @@ def suffix_audit(rows, suffix, groups, approach_end, arm):
         require(0 < control_count <= 8, 'observed completed primitive controls')
         last_control = control_count - 1
         require(a['token'] == result['token'] == tokens[offset] and a['step'] == step
-                and a['native_phase'] == ('close_or_hold', 'lift')[offset], 'completed suffix identity')
+                and a['native_phase'] == phases[offset], 'completed suffix identity')
         measured = np.asarray(result['after']) - result['before']
         require(result['delta_m'] == measured.tolist(), 'suffix TCP delta')
         require(result['before'] == starts[(step, 0)]['previous_returned_own_observations']['robot0_eef_pos']
@@ -211,12 +212,13 @@ def suffix_audit(rows, suffix, groups, approach_end, arm):
                 and after['sim_time'] == ends[(step, last_control)]['state_after'][0], 'validator boundary times')
         rotation = np.asarray(after['orientation']) @ np.asarray(before['orientation']).T
         angle = float(np.degrees(np.arccos(np.clip((np.trace(rotation) - 1) / 2, -1, 1))))
-        residual = float(np.linalg.norm(measured - ([0, 0, .01] if offset else [0, 0, 0])))
+        is_lift = tokens[offset] == 'MV_UP'
+        residual = float(np.linalg.norm(measured - ([0, 0, .01] if is_lift else [0, 0, 0])))
         reasons = []
         if after['gripper_command'] != expected_grip:
             reasons.append('gripper_command_changed_unexpectedly')
-        if residual > (.002 if offset else .0015):
-            reasons.append('translation_error' if offset else 'unintended_translation')
+        if residual > (.002 if is_lift else .0015):
+            reasons.append('translation_error' if is_lift else 'unintended_translation')
         if angle > 1:
             reasons.append('unintended_rotation')
         require(result['execution_contract_tolerances'] == TOLERANCES
@@ -241,7 +243,7 @@ def suffix_audit(rows, suffix, groups, approach_end, arm):
             'actions': validated}, summaries
 
 
-def sensor_and_labels(run, rows, groups):
+def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
     by = grouped(rows)
     captures = [r['data'] for r in by['vision_capture']]
     aux = [r['data'] for r in by['auxiliary_capture']]
@@ -253,7 +255,7 @@ def sensor_and_labels(run, rows, groups):
     for c in captures:
         check_image(run, c)
     require([c['capture_seq'] for c in captures] == list(range(1, len(captures) + 1)), 'primary camera IDs unchanged')
-    require([c['source_capture_seq'] for c in aux] == list(range(1, len(aux) + 1)) and len(aux) <= 16,
+    require([c['source_capture_seq'] for c in aux] == list(range(1, len(aux) + 1)) and len(aux) <= auxiliary_count,
             'separate sequential auxiliary IDs')
     require(len({(c['after_step'], c['control']) for c in aux}) == len(aux), 'unique auxiliary controls')
     for c in aux:
@@ -353,7 +355,7 @@ def sensor_and_labels(run, rows, groups):
             'write_order': ordering, 'write_order_basis': 'reviewed seal-before-label code and filesystem mtimes; no dedicated journal seal timestamp'}, measured
 
 
-def replay_audit(run, rows, replay_directory):
+def replay_audit(run, rows, replay_directory, *, auxiliary_count=16):
     by = grouped(rows)
     result = read(replay_directory / 'result.json')
     auxiliary = read(replay_directory / 'auxiliary-result.json')
@@ -378,7 +380,7 @@ def replay_audit(run, rows, replay_directory):
         require(replayed == {'capture_seq': source['capture_seq'], 'array_bytes_exact': {k: True for k in FRAME_KEYS}}, 'primary replay byte gates')
     aux = [r['data'] for r in by['auxiliary_capture']]
     require(auxiliary['status'] == 'passed' and auxiliary['source_sensor_seal_sha256'] == sha(run / 'sensor-seal.json')
-            and len(aux) == len(auxiliary['captures']) == 16, 'all auxiliary replay captures')
+            and len(aux) == len(auxiliary['captures']) == auxiliary_count, 'all auxiliary replay captures')
     require(auxiliary['captures'] == [{'step': c['after_step'], 'control': c['control'],
             'array_bytes_exact': {k: True for k in FRAME_KEYS}} for c in aux], 'auxiliary replay complete ordered gates')
     return {'result_sha256': sha(replay_directory / 'result.json'), 'auxiliary_result_sha256': sha(replay_directory / 'auxiliary-result.json'),
@@ -386,11 +388,11 @@ def replay_audit(run, rows, replay_directory):
             'limit': 'full replay contacts/images compared by reviewed verifier, not separately reexported; exported states/fingerprints/gates independently checked'}
 
 
-def summarize_contacts(samples):
+def summarize_contacts(samples, *, phases=('close_or_hold', 'lift')):
     result = {}
-    for phase in ('close_or_hold', 'lift'):
+    for offset, phase in enumerate(phases):
         phase_steps = sorted({s['step'] for s in samples})
-        step = phase_steps[0] + (phase == 'lift') if phase_steps else None
+        step = phase_steps[0] + offset if phase_steps else None
         for stage in ('native_before', 'native_after'):
             selected = [s for s in samples if s['step'] == step and s['kind'] == stage]
             key = phase + '/' + stage
@@ -421,7 +423,8 @@ def summarize_contacts(samples):
             'first_unexpected': next((s for s in samples if s['unexpected_robot_contact']), None)}
 
 
-def audit_cell(matrix, condition, preflight, source, closed_audit):
+def audit_cell(matrix, condition, preflight, source, closed_audit, *, order=ORDER,
+               schedule=None, first_grasp_check=None):
     run = matrix / condition
     rows = load_journal(run / 'episodes.jsonl')
     by = grouped(rows)
@@ -434,6 +437,9 @@ def audit_cell(matrix, condition, preflight, source, closed_audit):
                 'endpoint_guard', 'common', 'anchors', 'baseline_protocol_sha256', 'protocol_sha256'):
         require(manifest[key] == preflight[key], 'cell/preflight identity: ' + key)
     anchor, arm = condition.split('-', 1)
+    schedule = schedule or (('close_or_hold', 'GRASP' if arm == 'close' else 'STOP'), ('lift', 'MV_UP'))
+    phases, tokens = zip(*schedule)
+    action_count, auxiliary_count = len(schedule), len(schedule) * 8
     original_manifest = read(source / anchor / 'manifest.json')
     for key in ('versions', 'stepping_sources', 'jev', 'environment', 'endpoint_guard', 'common', 'anchors',
                 'source_sha256', 'unchanged_source_sha256', 'baseline_protocol_sha256'):
@@ -442,8 +448,8 @@ def audit_cell(matrix, condition, preflight, source, closed_audit):
             and manifest['goal_anchor'] == manifest['point']['provenance'], 'fixed anchor provenance')
     transfer = manifest['transfer']
     require(transfer['condition'] == condition and transfer['anchor'] == anchor and transfer['arm'] == arm
-            and transfer['order'] == list(ORDER) and transfer['scripted_tokens'] == ['GRASP' if arm == 'close' else 'STOP', 'MV_UP']
-            and transfer['scripted_control_count'] == transfer['auxiliary_control_captures'] == 16
+            and transfer['order'] == list(order) and transfer['scripted_tokens'] == list(tokens)
+            and transfer['scripted_control_count'] == transfer['auxiliary_control_captures'] == auxiliary_count
             and transfer['source_prefix_is_verification_only'] and transfer['archived_controls_in_collection'] is False,
             'fixed transfer settings')
     require(manifest['source_state_restored'] is False and manifest['archived_controls_used'] is False
@@ -464,18 +470,20 @@ def audit_cell(matrix, condition, preflight, source, closed_audit):
     gate = one(rows, 'initial_frame_gate')
     groups = {k: set(v) for k, v in gate['groups_evaluator_only'].items()}
     require(groups['pads'] == {78, 81}, 'original designated pads')
-    mechanical, native = suffix_audit(rows, suffix, groups, original_end, arm)
-    sensor, endpoints = sensor_and_labels(run, rows, groups)
+    first_grasp = first_grasp_check(run, rows, original_end) if first_grasp_check else None
+    mechanical, native = suffix_audit(rows, suffix, groups, original_end, arm, schedule=schedule)
+    sensor, endpoints = sensor_and_labels(run, rows, groups, auxiliary_count=auxiliary_count)
     failures = [r for r in rows if r['kind'] in ('failure', 'intervention_failure')]
     normal = not failures
     if normal:
-        require(mechanical['attempted_actions'] == mechanical['completed_actions'] == 2
-                and mechanical['controls_started'] == mechanical['controls_completed'] == 16
-                and mechanical['native_snapshots'] == 800 and sensor['auxiliary_captures'] == 16, 'complete normal suffix')
+        require(mechanical['attempted_actions'] == mechanical['completed_actions'] == action_count
+                and mechanical['controls_started'] == mechanical['controls_completed'] == auxiliary_count
+                and mechanical['native_snapshots'] == action_count * 400
+                and sensor['auxiliary_captures'] == auxiliary_count, 'complete normal suffix')
         require(termination['reason'] == 'fixed_approach_and_scripted_suffix_complete'
                 and termination['approach_termination'] == original_end
-                and termination['attempted_actions'] == termination['completed_actions'] == original_end['completed_actions'] + 2
-                and termination['scripted_attempted_actions'] == termination['scripted_completed_actions'] == 2
+                and termination['attempted_actions'] == termination['completed_actions'] == original_end['completed_actions'] + action_count
+                and termination['scripted_attempted_actions'] == termination['scripted_completed_actions'] == action_count
                 and termination['grasp_attempted'] == (arm == 'close') and not termination['winner_selected']
                 and not termination['task_success_claim'], 'complete bounded termination')
     else:
@@ -488,9 +496,9 @@ def audit_cell(matrix, condition, preflight, source, closed_audit):
                 and failure['scripted_completed_actions'] == mechanical['completed_actions']
                 and failure['total_attempted_actions'] == original_end['attempted_actions'] + mechanical['attempted_actions']
                 and failure['total_completed_actions'] == original_end['completed_actions'] + mechanical['completed_actions'], 'failure totals')
-    replay = replay_audit(run, rows, matrix / (condition + '-replay')) if normal and (matrix / (condition + '-replay/result.json')).exists() else None
+    replay = replay_audit(run, rows, matrix / (condition + '-replay'), auxiliary_count=auxiliary_count) if normal and (matrix / (condition + '-replay/auxiliary-result.json')).exists() else None
     lift = [e for e in endpoints if e['phase'] == 'lift']
-    prelift = next((e for e in endpoints if e['phase'] == 'close_or_hold' and e['control'] == 7), None)
+    prelift = next((e for e in endpoints if e['phase'] == phases[-2] and e['control'] == 7), None)
     final = next((e for e in lift if e['control'] == 7), None)
     motion = None
     if prelift is not None and final is not None:
@@ -499,13 +507,16 @@ def audit_cell(matrix, condition, preflight, source, closed_audit):
                   'prelift_center_mm': prelift['bottle_center_mm'], 'final_center_mm': final['bottle_center_mm'],
                   'prelift_bottom_mm': prelift['bottle_bottom_mm'], 'final_bottom_mm': final['bottle_bottom_mm'],
                   'bottle_rotation': None, 'rotation_status': 'unknown_no_source_specific_qpos_address_mapping'}
-    return {'status': 'PASS', 'condition': condition, 'outcome': 'normal_complete' if normal else 'failed_suffix',
+    result = {'status': 'PASS', 'condition': condition, 'outcome': 'normal_complete' if normal else 'failed_suffix',
             'journal_sha256': sha(run / 'episodes.jsonl'), 'journal_records': len(rows), 'prefix': prefix,
             'collection_wall_times': [rows[0]['wall_time'], rows[-1]['wall_time']],
             'suffix': mechanical, 'sensor_evidence': sensor, 'replay': replay, 'termination': termination,
-            'failures': failures, 'native_contacts': summarize_contacts(native), 'endpoint_measurements': endpoints,
+            'failures': failures, 'native_contacts': summarize_contacts(native, phases=phases), 'endpoint_measurements': endpoints,
             'lift_bilateral_endpoints': sum(e['bilateral_pads'] for e in lift), 'lift_endpoint_count': len(lift),
             'lift_motion': motion}
+    if first_grasp_check:
+        result['first_GRASP_prefix'] = first_grasp
+    return result
 
 
 def local_witnesses(cells):
@@ -531,10 +542,11 @@ def local_witnesses(cells):
     return witnesses
 
 
-def audit_matrix(matrix, conditions=None):
+def audit_matrix(matrix, conditions=None, *, order=ORDER, schedule=None, first_grasp_check=None,
+                 completion_reason='all_four_fixed_cells_and_replays_complete'):
     preflight = read(matrix / 'preflight.json')
     request, manifest, config = read(matrix / 'request.json'), read(matrix / 'manifest.json'), read(matrix / 'resolved_config.yaml')
-    require(config == request and request['condition_order'] == list(ORDER) and request['fresh_policy_episodes'] == 4
+    require(config == request and request['condition_order'] == list(order) and request['fresh_policy_episodes'] == len(order)
             and request['new_model_calls'] == request['retries'] == 0, 'registered fixed matrix')
     require(sha(matrix / 'preflight.json') == request['preflight_sha256'] and manifest['code'] == preflight['code']
             and preflight['code']['dirty_status'] == '' and preflight['physics_calls'] == 0
@@ -550,7 +562,7 @@ def audit_matrix(matrix, conditions=None):
     batch = load_journal(matrix / 'episodes.jsonl')
     require(batch[0]['data'] == {'manifest': manifest, 'resolved_config': config}
             and all(r['config_hash'] == canonical(config) for r in batch), 'matrix journal identity')
-    stages = [(c, s) for c in ORDER for s in ('collect', 'replay')]
+    stages = [(c, s) for c in order for s in ('collect', 'replay')]
     completed, intended, intervals, index = [], [], {}, 1
     for condition, stage in stages:
         if index >= len(batch) or batch[index]['kind'] != 'stage_intent':
@@ -572,12 +584,13 @@ def audit_matrix(matrix, conditions=None):
     require(not tail or len(tail) == 1 and tail[0]['kind'] in ('failure', 'termination'), 'no retry or extra matrix stage')
     successful = bool(tail and tail[0]['kind'] == 'termination')
     if successful:
-        require(len(completed) == 8 and tail[0]['data'] == {'reason': 'all_four_fixed_cells_and_replays_complete',
-            'fresh_policy_episodes': 4, 'verification_replays': 4, 'winner_selected': False, 'task_success_claim': False}, 'complete fixed matrix')
+        require(len(completed) == len(order) * 2 and tail[0]['data'] == {'reason': completion_reason,
+            'fresh_policy_episodes': len(order), 'verification_replays': len(order), 'winner_selected': False, 'task_success_claim': False}, 'complete fixed matrix')
     if conditions is None:
         require(bool(tail), 'matrix must be closed for final audit')
-        conditions = [c for c in ORDER if (matrix / c / 'episodes.jsonl').exists()]
-    cells = [audit_cell(matrix, c, preflight, source, closed) for c in conditions]
+        conditions = [c for c in order if (matrix / c / 'episodes.jsonl').exists()]
+    cells = [audit_cell(matrix, c, preflight, source, closed, order=order,
+                        schedule=schedule, first_grasp_check=first_grasp_check) for c in conditions]
     for cell in cells:
         interval = intervals.get((cell['condition'], 'collect'))
         if interval is not None:
@@ -625,12 +638,12 @@ def audit_matrix(matrix, conditions=None):
     return {'status': 'PASS', 'freeze': preflight['code']['commit'], 'raw_directory': str(matrix),
             'request_sha256': sha(matrix / 'request.json'), 'matrix_journal_sha256': sha(matrix / 'episodes.jsonl'),
             'preflight_sha256': request['preflight_sha256'], 'review_sha256': request['review_sha256'],
-            'source_audit_sha256': AUDIT_SHA, 'matrix_outcome': 'all_four_complete' if successful else 'failed' if tail else 'in_progress',
+            'source_audit_sha256': AUDIT_SHA, 'matrix_outcome': ('all_four_complete' if len(order) == 4 else 'all_registered_cells_complete') if successful else 'failed' if tail else 'in_progress',
             'launcher': launcher,
             'intended_stages': intended, 'completed_stages': completed,
             'first_matrix_failure': tail[0] if tail and tail[0]['kind'] == 'failure' else None,
-            'unstarted_conditions': [c for c in ORDER if not any(s['condition'] == c for s in intended)],
-            'conditions': cells, 'local_witnesses': local_witnesses(cells),
+            'unstarted_conditions': [c for c in order if not any(s['condition'] == c for s in intended)],
+            'conditions': cells, 'local_witnesses': local_witnesses(cells) if order == ORDER else None,
             'limits': ['stored journal/array/scalar checks only; no physics, rendering, model, FK or projection',
                        'approach evidence reused by byte-exact full scientific prefix and closed independent audit; zero membership recomputation',
                        'fresh child processes supported by reviewed subprocess code, worker argv and stage ordering; no standalone PID records',
