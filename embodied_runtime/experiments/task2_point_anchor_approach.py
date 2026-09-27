@@ -165,6 +165,7 @@ def physical_admission(path, frozen):
         if file_hash(directory / name) != expected:
             raise ValueError('Geometry feature seal changed: ' + name)
     audit = checked_artifact(admission['geometry_audit'])
+    manifest = base.read(directory / 'manifest.json')
     if audit.get('status') != 'PASS':
         raise ValueError('Independent 18-placement geometry audit PASS required')
     # The closed geometry audit must bind this exact feature seal, not another run.
@@ -174,11 +175,31 @@ def physical_admission(path, frozen):
             or audit.get('source_sensor_sha256') != {name: SOURCE_SHA[name + '/sensor-result.json'] for name in ORDER}
             or Path(audit.get('raw_directory', '')).resolve() != directory.resolve()):
         raise ValueError('Geometry audit does not bind the supplied feature seal')
+    if (audit.get('producer_commit') != manifest['code']['commit']
+            or audit.get('source_point_request_sha256') != SOURCE_SHA['request.json']
+            or manifest.get('source_point_request_sha256') != SOURCE_SHA['request.json']
+            or manifest.get('request_sha256') != audit['request_sha256']
+            or audit.get('tensor_entries_checked') != 120600
+            or audit.get('condition_order') != list(ORDER)
+            or [row['condition'] for row in audit.get('conditions', [])] != list(ORDER)):
+        raise ValueError('Geometry audit producer/source/count/condition bindings differ')
     combined = base.read(directory / 'features' / 'result.json')
     if ('features/result.json' not in seal or combined['condition_order'] != list(ORDER)
-            or combined['tensor_shape'] != [2, 9, 1340, 5]):
+            or combined['tensor_shape'] != [2, 9, 1340, 5]
+            or [row['condition'] for row in combined.get('conditions', [])] != list(ORDER)
+            or audit.get('result_sha256') != seal['features/result.json']):
         raise ValueError('The complete fixed 18-placement result is required')
-    for name in ORDER:
+    tensor_path = directory / 'features' / 'containment.npz'
+    if ('features/containment.npz' not in seal or combined['containment_artifact_sha256'] != file_hash(tensor_path)
+            or audit.get('tensor_sha256') != file_hash(tensor_path)):
+        raise ValueError('Combined containment tensor must bind the feature seal and audit')
+    with np.load(tensor_path, allow_pickle=False) as arrays:
+        combined_inside = arrays['inside']
+        combined_positions = arrays['hypothetical_TCP_world_m']
+    if (combined_inside.dtype != np.bool_ or combined_inside.shape != (2, 9, 1340, 5)
+            or combined_positions.shape != (2, 9, 3)):
+        raise ValueError('Unexpected combined geometry tensor schema')
+    for ordinal, name in enumerate(ORDER):
         result = base.read(directory / 'features' / name / 'result.json')
         if (f'features/{name}/result.json' not in seal or result['point_P_world_m'] != POSITIONS[name]
                 or result['array_shape'] != [9, 1340, 5] or len(result['placements']) != 9
@@ -196,9 +217,18 @@ def physical_admission(path, frozen):
             inside = arrays['inside']
             if inside.dtype != np.bool_ or inside.shape != (9, 1340, 5):
                 raise ValueError('Unexpected geometry containment tensor')
+            if (not np.array_equal(inside, combined_inside[ordinal])
+                    or not np.array_equal(arrays['hypothetical_TCP_world_m'], combined_positions[ordinal])):
+                raise ValueError('Combined and per-condition geometry arrays differ')
             exact_inside = bool(inside[0].any())
         if exact_inside != result['exact_P_any_containment'] or exact_inside != result['placements'][0]['any_containment']:
             raise ValueError('Exact P aggregate disagrees with its sealed tensor')
+        audited, summarized = audit['conditions'][ordinal], combined['conditions'][ordinal]
+        if (any(row['point_P_world_m'] != POSITIONS[name] or row['exact_P_any_containment'] != exact_inside
+                for row in (audited, summarized))
+                or summarized['complete_result'] != name + '/result.json'
+                or summarized['complete_result_sha256'] != seal[f'features/{name}/result.json']):
+            raise ValueError('Ordered geometry audit/summary conditions disagree with fixed result')
         if name == 'neck' and exact_inside:
             raise ValueError('Physical gate rejected: neck exact TCP=P contains observed support in a solid')
     return {'admission_sha256': file_hash(path), 'artifacts': admission,

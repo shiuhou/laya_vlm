@@ -179,13 +179,20 @@ def admission_fixture(tmp_path, monkeypatch, neck_inside):
     monkeypatch.setattr(cells, 'prepare', lambda: (common, {}))
     artifact('geometry/request.json', {**common, 'anchors': [
         {'condition': name, 'point_P_world_m': probe.POSITIONS[name]} for name in probe.ORDER]})
+    artifact('geometry/manifest.json', {'code': {'commit': 'geometry-freeze'},
+        'source_point_request_sha256': probe.SOURCE_SHA['request.json'],
+        'request_sha256': file_hash(tmp_path/'geometry/request.json')})
     seal = {}
+    tensors, positions, condition_rows = [], [], []
     for name in probe.ORDER:
         directory = tmp_path/'geometry/features'/name
         directory.mkdir(parents=True)
         inside = np.zeros((9, 1340, 5), bool)
         inside[0, 0, 0] = name == 'neck' and neck_inside
-        np.savez_compressed(directory/'containment.npz', inside=inside)
+        coordinates = cells.axis_stop_cell(probe.POSITIONS[name])[0]
+        tensors.append(inside)
+        positions.append(coordinates)
+        np.savez_compressed(directory/'containment.npz', inside=inside, hypothetical_TCP_world_m=coordinates)
         result = {'point_P_world_m': probe.POSITIONS[name], 'array_shape': [9, 1340, 5],
             'geometry_order': probe.guard.geometry.GEOMS, 'nominal_step_m': .01, 'terminal_own_packet': {},
             'exact_P_any_containment': bool(inside[0].any()),
@@ -195,13 +202,24 @@ def admission_fixture(tmp_path, monkeypatch, neck_inside):
         artifact(f'geometry/features/{name}/result.json', result)
         for file in ('result.json', 'containment.npz'):
             seal[f'features/{name}/{file}'] = file_hash(directory/file)
-    combined = artifact('geometry/features/result.json', {'condition_order': list(probe.ORDER), 'tensor_shape': [2, 9, 1340, 5]})
+        condition_rows.append({'condition': name, 'point_P_world_m': probe.POSITIONS[name],
+            'exact_P_any_containment': bool(inside[0].any()), 'complete_result': name+'/result.json',
+            'complete_result_sha256': seal[f'features/{name}/result.json']})
+    np.savez_compressed(tmp_path/'geometry/features/containment.npz', inside=np.stack(tensors),
+                        hypothetical_TCP_world_m=np.stack(positions))
+    seal['features/containment.npz'] = file_hash(tmp_path/'geometry/features/containment.npz')
+    combined = artifact('geometry/features/result.json', {'condition_order': list(probe.ORDER),
+        'tensor_shape': [2, 9, 1340, 5], 'conditions': condition_rows,
+        'containment_artifact_sha256': seal['features/containment.npz']})
     seal['features/result.json'] = combined['sha256']
     feature_seal = artifact('geometry/feature-seal.json', seal)
     audit = artifact('geometry-audit.json', {'status': 'PASS', 'feature_seal_sha256': feature_seal['sha256'],
         'request_sha256': file_hash(tmp_path/'geometry/request.json'), 'source_admission_audit_sha256': point_audit['sha256'],
         'source_sensor_sha256': {name: probe.SOURCE_SHA[name+'/sensor-result.json'] for name in probe.ORDER},
-        'raw_directory': str(tmp_path/'geometry')})
+        'raw_directory': str(tmp_path/'geometry'), 'producer_commit': 'geometry-freeze',
+        'source_point_request_sha256': probe.SOURCE_SHA['request.json'], 'tensor_entries_checked': 120600,
+        'condition_order': list(probe.ORDER), 'conditions': condition_rows,
+        'result_sha256': seal['features/result.json'], 'tensor_sha256': seal['features/containment.npz']})
     admission = artifact('admission.json', {'point_audit': point_audit, 'geometry_directory': str(tmp_path/'geometry'),
                                          'geometry_seal': feature_seal, 'geometry_audit': audit})
     return admission['path'], {'endpoint_guard': {'full_support': [], 'calibration': {}}, 'common': {}}
@@ -229,4 +247,69 @@ def test_geometry_review_or_support_mismatch_cannot_authorize_physics(tmp_path, 
     with open(admission['geometry_audit']['path'], 'a') as stream:
         stream.write(' ')
     with pytest.raises(ValueError, match='admission artifact changed'):
+        probe.physical_admission(path, frozen)
+
+
+@pytest.mark.parametrize('field,value', [
+    ('producer_commit', 'wrong-freeze'), ('source_point_request_sha256', 'wrong-source'),
+    ('tensor_entries_checked', 120599), ('condition_order', ['neck', 'whole']),
+    ('conditions', []),
+])
+def test_geometry_audit_internal_bindings_are_required(tmp_path, monkeypatch, field, value):
+    path, frozen = admission_fixture(tmp_path, monkeypatch, False)
+    admission = probe.base.read(path)
+    audit_path = admission['geometry_audit']['path']
+    audit = probe.base.read(audit_path)
+    audit[field] = value
+    with open(audit_path, 'w') as stream:
+        json.dump(audit, stream)
+    admission['geometry_audit']['sha256'] = file_hash(audit_path)
+    with open(path, 'w') as stream:
+        json.dump(admission, stream)
+    with pytest.raises(ValueError, match='producer/source/count/condition'):
+        probe.physical_admission(path, frozen)
+
+
+def test_resealed_combined_tensor_must_equal_per_condition_arrays(tmp_path, monkeypatch):
+    path, frozen = admission_fixture(tmp_path, monkeypatch, False)
+    directory = tmp_path/'geometry'
+    tensor = directory/'features/containment.npz'
+    with np.load(tensor) as arrays:
+        inside, positions = arrays['inside'], arrays['hypothetical_TCP_world_m']
+    inside[0, 1, 0, 0] = True
+    np.savez_compressed(tensor, inside=inside, hypothetical_TCP_world_m=positions)
+    combined = probe.base.read(directory/'features/result.json')
+    combined['containment_artifact_sha256'] = file_hash(tensor)
+    (directory/'features/result.json').write_text(json.dumps(combined))
+    seal = probe.base.read(directory/'feature-seal.json')
+    seal.update({'features/containment.npz': file_hash(tensor),
+                 'features/result.json': file_hash(directory/'features/result.json')})
+    (directory/'feature-seal.json').write_text(json.dumps(seal))
+    admission = probe.base.read(path)
+    audit_path = admission['geometry_audit']['path']
+    audit = probe.base.read(audit_path)
+    audit.update(feature_seal_sha256=file_hash(directory/'feature-seal.json'),
+                 tensor_sha256=file_hash(tensor), result_sha256=seal['features/result.json'])
+    with open(audit_path, 'w') as stream:
+        json.dump(audit, stream)
+    admission['geometry_seal']['sha256'] = audit['feature_seal_sha256']
+    admission['geometry_audit']['sha256'] = file_hash(audit_path)
+    with open(path, 'w') as stream:
+        json.dump(admission, stream)
+    with pytest.raises(ValueError, match='per-condition geometry arrays differ'):
+        probe.physical_admission(path, frozen)
+
+
+def test_audited_exact_point_flag_must_match_tensor(tmp_path, monkeypatch):
+    path, frozen = admission_fixture(tmp_path, monkeypatch, False)
+    admission = probe.base.read(path)
+    audit_path = admission['geometry_audit']['path']
+    audit = probe.base.read(audit_path)
+    audit['conditions'][0]['exact_P_any_containment'] = True
+    with open(audit_path, 'w') as stream:
+        json.dump(audit, stream)
+    admission['geometry_audit']['sha256'] = file_hash(audit_path)
+    with open(path, 'w') as stream:
+        json.dump(admission, stream)
+    with pytest.raises(ValueError, match='audit/summary conditions'):
         probe.physical_admission(path, frozen)
