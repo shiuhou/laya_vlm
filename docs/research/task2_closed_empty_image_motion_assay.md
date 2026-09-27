@@ -72,6 +72,18 @@ synchrony. Bind every RGB/K/T archive to its source stream, sequence, hash and
 own packet. Missing/duplicate/misordered source captures are source-admission
 failures, not permission to substitute another frame or extend a cell.
 
+The agreed producer mapping selects `source_capture_stream="scene"` with
+`phase="scene_after"`, `after_step=29`, `control=null` as capture 0. Its own
+source is `episodes.jsonl` / `scene_boundary` / boundary `after` / step 29:
+the exact forced-refresh observation return assigned to `world.obs`. The
+`after_step` field here identifies the intervention at the unexecuted suffix
+step 29; it must not be mistaken for a completed GRASP. Captures 1–24 select
+all auxiliary source sequences 1–24, with phases `close_or_hold`,
+`additional_close` and `lift`, retaining `own_observations`,
+`own_tcp_world_m` and their recorded source bindings. The `scene_before`
+record is never a tracker input. Actual sealed records must match this mapping;
+the producer's announced schema alone is not source admission.
+
 The expected complete output is **984 trajectories / 24,600 rows**, with 492
 rows at every capture in each cell. There are 23,616 potential forward steps
 and at most 47,232 forward/backward LK calls; native failure may reduce actual
