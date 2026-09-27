@@ -1,6 +1,6 @@
 # Current project state
 
-Reviewed 2026-09-27 after research iteration046. This is the authoritative current
+Reviewed 2026-09-27 after research iteration048. This is the authoritative current
 summary. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
@@ -135,9 +135,19 @@ Detailed entry points: [mechanical local witness](evidence/autonomous_research/l
    is172/200 and183/200 respectively. Both final GRASP endpoints lack contact;
    bilateral grasp arises during the lift. This is sensor-selected approach plus
    scripted experimental actions, not autonomous manipulation or fullTask2 success.
-   Root inspected all40 fixedRGBs. Next preparations: one additional existing
-   stationary GRASP interval before lift at both endpoints; unchangedLK/depth
-   co-motion transfer on the four original cells, without masks or classifier.
+   Root inspected all40 fixedRGBs. The added stationary-GRASP pair now also
+   completes: both final added endpoints have bilateral pads and all200 native
+   BEFORE/AFTER lift samples retain them, with9.403/9.363mm center rise. All520
+   controls/26,000 snapshots/67primary+48aux captures replay. Whole establishment
+   includes one strong finger/bilateral overlap perstage(max0.386N); no raw
+   non-pad/table contact occurs at sampled lift stages. Time, arm drift and
+   contact rearrangement are not isolated. No fixed two-GRASP policy is deployed.
+   Root inspected all36 new originalRGB panels.
+   The unchanged temporal extraction retains91,512 rows and exact32,964 native
+   prefix comparisons. Close/open median motion contrast transfers, but210–242mm
+   displacement tails survive all native/depth gates. Root independently audits
+   all rows/arithmetic and inspects curves/overlays. A fixed four-seed source
+   diagnostic is next; no mask, classifier, tuned threshold or rejection rule.
    See [raw mechanical audit](evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md).
 
 For these new POINT approach/grasp collections, the actual closed manifests use

@@ -1698,6 +1698,95 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   The parallel fixed temporal extraction will assess transfer of descriptive
   visual co-motion, without converting it into a holding classifier.
 
+### Parallel iteration 047 — visual co-motion transfers but hides extreme surface changes
+
+- **Question/why:** does the unchanged dense-seed LK/depth estimator retain its
+  descriptive close/open contrast after sensor-selected approaches, without
+  selecting successful tracks or assuming object ownership?
+- **Competing hypotheses:** the earlier co-motion contrast transfers; it may
+  instead depend on scripted pregrasp, timing or correspondence failures.
+- **Intervention/controls:** frozen `553c2fd`, prospective review `c687ef2`
+  (main `4b66523`), preflightSHA88d53bc6...; one stored-only extraction of all
+  four original cells, same492 seeds and helpers,47/47/46/46 frames, preclose
+  references30/30/29/29. All1,968 trajectories/91,512rows retained. No masks,
+  classifier, new threshold, reseeding, repairs, model or dynamics calls.
+- **Observed:** all32,964×9 native-prefix comparisons exact; every capture has
+  492 native-admitted/depth-valid points. Final median vertical displacement
+  whole/neck CLOSE8.281058/8.448493mm versus OPEN0/0; point-minus-TCP norm
+  medians5.112751/5.159369mm versus9.899415/9.413874mm. The reference includes
+  both closure and lift, and the dense points are dependent observations.
+- **Counterevidence/first representational boundary:** final point-displacement
+  maxima are239.114248/210.251192/241.913868/230.096285mm in fixed cell order.
+  Native success/valid depth do not make correspondence identity reliable. No
+  tail was removed; zero OPEN median/IQR does not mean all points are stationary.
+- **Inspection/audit:** root opened full curves and all8 full-population RGB
+  overlays. Points look concentrated around the bottle-shaped region, with
+  finger/neck occlusion; this does not resolve large surface changes. Independent
+  audit `72f0d81`/`71aed40` recomputes every saved-depth projection, every available
+  reference delta and all summaries; maximum projection difference2.22e-16m,
+  delta difference0. Native LK is not independently rerun.
+- **Artifacts:** raw `task2-point-anchor-retention-transfer-run-01`;
+  sensor seal39ede31f..., output artifacts5a510ca3..., full report `c42e4f5`
+  (main `c5910ba`), entry `task2_point_anchor_retention_findings.md`.
+- **Belief update/confidence:** high for a transferred descriptive motion
+  contrast; still no calibrated holding/identity estimator. The useful aggregate
+  must be interpreted alongside correspondence uncertainty.
+- **Next experiment:** post-outcome exploratory diagnosis with a fixed max-final-
+  norm seed percell (lowestID ties), its full history, exact sourceRGB/depth and
+  largest consecutive3D jump. Freeze selection/code before extraction. No new
+  cohort, estimator, mask, tuned threshold or rendering investigation.
+
+### Parallel iteration 048 — an extra closed-jaw interval changes the relation handoff
+
+- **Question/why:** does one additional existing stationary GRASP establish the
+  required bilateral relation before the lift, instead of acquiring it only
+  during movement? This separates action completion from the desired relation.
+- **Hypothesis/alternatives:** extra closed-jaw exposure will establish prelift
+  bilateral pads and maintain them at all sampled lift stages. Geometry, slip
+  or rearrangement could still prevent this; the intervention does not isolate
+  pure elapsed time from jaw control and contact rearrangement.
+- **Intervention:** exactfreeze `945c96d`, preflight5a3d0c77..., review0c884a05...
+  in literal laya-embodied/GPU4/EGL4 environment. Fresh whole-close then
+  neck-close, each original policy approach and firstGRASP exact against closed
+  source before one addedGRASP and original10mmMV_UP. No archived warm start,
+  new geometry, target, duration, threshold, model call, retry or selected winner.
+- **Observed:** both firstGRASP endpoints bilateralFALSE; both addedGRASP
+  endpointsTRUE. Both lifts8/8 endpoint and200/200 BEFORE+AFTER bilateral,
+  versus prior172/183 native samples. Center rise9.402736783/9.362801283mm from
+  addedGRASP end; bottom rise9.387343409/9.373159565mm. All six suffix validators
+  pass; official combined-task success remainsFALSE.
+- **Establishment caveat:** whole addedGRASP has12 raw finger/bilateral overlaps
+  perstage, one above0.05N(max0.385890355N). Neck has10 zero-force overlaps.
+  AddedGRASP table raw/strong samples whole34/32 and neck27/27 perstage.
+  Subsequent lifts have no raw non-pad/table contacts at saved native samples.
+  Do not infer continuous clean establishment or continuous support-free holding.
+- **Other measured changes:** addedGRASP arm translation norms0.203580097/
+  0.070986466mm and rotation0.057892898/0.005976239degrees. Jaw separation rates
+  change from−197.322/−197.075 to+0.004832/−0.006020mm/s. Object rearrangement
+  is retained; rotation lacks a bound archived address mapping and stays unknown.
+- **Audit/replay:** exact13,062/12,641 scientific prefix records plus40/39
+  primary/aux images through firstGRASP; equality references never execute
+  commands. Full65actions/520controls/26,000native snapshots/67primary+48aux
+  captures replay. Independent audit13a6741b... (`662240b`, main `c8db3bc`);
+  separately bound closeout011564a3... (`0bccdb2`, main `962a6c5`). Driver,
+  subprocess and outer session all return0. Root opened all36 originalRGBs.
+- **Interpretation:** both approach endpoints can support a maintained sampled
+  local lift after additional closed-jaw exposure. This weakens an exclusive
+  neck-anchor explanation and supports checking physical relations at handoff.
+  It does not earn a fixed two-GRASP runtime policy, autonomous Laya capability
+  or fullTask2 success. Old OPEN controls lack the added interval.
+- **Action-interface caution:** retained-CLOSED executedSTOP andGRASP are
+  nominal-command equivalent in unchanged World.execute; diagnosticapproachSTOP
+  executes nothing. Source proof `b69f838`, independently reviewed `0bccdb2`.
+  A future ranking test must allow physically equivalent actions, not encode a
+  unique GRASP winner. Existing empty-close evidence already defeats width-only
+  holding; no duplicate negative-control physics is warranted.
+- **Validation/next decision:** main1064testsPASS40.94s at `d29a805`; protected
+  production runtime/backend/decision interface remain baseline-identical.
+  Prepare a sensor-only handoff evidence comparison without treating joint
+  settling as grasp proof. Prioritize the parallel visual surface-switch failure
+  before inventing a live holding gate or higher-level planner.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

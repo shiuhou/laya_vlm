@@ -1,6 +1,6 @@
 # Current research beliefs
 
-Updated 2026-09-27 after iteration046. This is a short living assessment;
+Updated 2026-09-27 after iteration048. This is a short living assessment;
 [the research log](docs/research/autonomous_research_log.md) preserves iteration
 history and evidence identities. Starting baseline: `b73b5b4` on `share_main`.
 Current research branch: `research/embodied-interface-discovery`.
@@ -76,14 +76,22 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    Thus completed GRASP command does not establish phase completion here.
    Raw zero-force finger contacts and early table contacts remain explicit.
    Root inspected all40 fixed RGB frames. No autonomous grasp, clean continuous
-   contact, full-task or Laya-policy claim follows. Next test adds one existing
-   stationary GRASP interval before lift, both anchors, with no executor change.
+   contact, full-task or Laya-policy claim follows. The next two-cell test now
+   completes: one additional existing stationary GRASP establishes bilateral
+   pads before lift at BOTH anchors, then200/200 BEFORE+AFTER and8/8 endpoints
+   maintain them; rise9.402737/9.362801mm. All520 controls and images replay
+   exactly. This supports a physical handoff gap, not pure latency: the extra
+   interval includes contact rearrangement and small arm drift. Whole added
+   GRASP has one strong non-pad finger sample per stage(max0.385890N), while
+   the subsequent lifts have no raw non-pad/table contacts at saved samples.
+   No clean continuous establishment or support-free retention claim follows.
    A sensor-only extract of all68 preclose/suffix own-state rows independently
    shows first-GRASP joint separation still shrinking at197.322/197.075mm/s.
    This reveals ongoing jaw motion, not contact or holding. Joint-coordinate
    separation is not a physical pad gap; no settling threshold is fitted.
-   In parallel, freeze unchanged sensor co-motion extraction on all four cells;
-   no threshold fitting, mask invention or holding classifier.
+   Executed STOP after retained CLOSED is command-equivalent to GRASP here;
+   the approach diagnostic STOP executes nothing. A future model score must
+   distinguish these meanings and cannot demand GRASP as a unique winner.
 3. **Coordinate consistency transfers; holding remains unknown:** justified
    nearest-center association removes the epsilon-only switch. The unchanged
    method on30-frame10mm actual-executor pairs keeps all492 seeds and all29,520
@@ -93,6 +101,16 @@ hierarchy. This is bounded negative evidence, not universal model incapacity.
    Root inspected all16 lift RGB frames, curves and both departure panels.
    This is descriptive transfer, not a calibrated holding/identity estimator;
    full independent29,520-row/report audit passes (`0144331`).
+   The unchanged estimator now transfers to the four sensory-approach cells:
+   all91,512 rows/1,968 tracks retained; all32,964 native-prefix rows exact.
+   Final median rise8.281/8.448mm for whole/neck CLOSE versus0/0 OPEN; median
+   point–TCP norms5.113/5.159 versus9.899/9.414mm. Full independent source,
+   projection, delta and summary audit passes. However every capture passes
+   all492 native/depth gates while final displacement tails reach210–242mm.
+   Root inspected curves and all8 full-population overlays; compact-looking
+   clouds do not establish surface identity. Next: four fixed worst-final-seed
+   histories, source RGB/depth neighborhoods and largest interframe jumps;
+   no estimator/threshold/mask changes or outlier removal.
 4. **Frame accounting is qualified locally:**240 saved observations support the
    fixed body-to-site rotation; model packets currently omit orientation. The
    checked transform shows final P remains outside the finite pad Y/Z span, with
@@ -115,8 +133,8 @@ measured interaction and available action behavior must not be conflated.
   A1022-token consumed input can still have silently clipped options.
 - No new Task2 Laya run, strict placement/closure success, non-oracle manipulation,
   real-robot calibration, learned world model or cross-task generality is claimed.
-- Integrated grasp-transfer/source-adapter regression:1034 tests pass in35.22s
-  at `48820bd`.
+- Integrated added-GRASP/temporal-wrapper regression:1064 tests pass in40.94s
+  at `d29a805`.
   Production `runtime_core.py`, `adapters/libero.py` and `decision_interface.py`
   remain byte-identical to the baseline.
 
@@ -158,6 +176,8 @@ measured interaction and available action behavior must not be conflated.
 - [Actual paired images and own-pad relation](docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md)
 - [Fresh four-cell local grasp-transfer audit](docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md)
 - [Jaw proprioception at phase handoff](docs/evidence/autonomous_research/task2_grasp_proprio_findings.md)
+- [Added stationary-GRASP audit](docs/evidence/autonomous_research/task2_additional_stationary_grasp_raw_review.md)
+- [Four-cell visual co-motion and large tails](docs/evidence/autonomous_research/task2_point_anchor_retention_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
