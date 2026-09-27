@@ -1,0 +1,278 @@
+{
+  "purpose": "Privileged static setup geometry only; no sensor feature or model input. No simulator import, model construction, forward, render, reset, or dynamics.",
+  "xml": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-pre22-counterfactual-run-01/current-model.xml",
+  "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03",
+  "journal": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-additional-stationary-grasp-run-01/neck-close/episodes.jsonl",
+  "journal_sha256": "eadf8b061bc3a77254b610d9603c648d058a5fd90fe4d33392a204eaf6670661",
+  "static_model_journal": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-pre22-counterfactual-run-01/episodes.jsonl",
+  "static_model_journal_sha256": "35f1dee4edfcf4c3d5e059e6db3533d8df9876d0aff7b6adbbdfad7fda2f76d8",
+  "static_model_identity_record_seq": 3,
+  "static_model_identity_record_id": "f9f4ddd6c0e27a9437819419c5b0bba54f3224478d428cc0408d24a79db4dfe6",
+  "XML_joint_mapping_hashes_equal_compiled_arrays": {
+    "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+    "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9"
+  },
+  "named_joint_mapping": [
+    {
+      "joint": "robot0_joint1",
+      "type": "hinge",
+      "qpos_address": 0
+    },
+    {
+      "joint": "robot0_joint2",
+      "type": "hinge",
+      "qpos_address": 1
+    },
+    {
+      "joint": "robot0_joint3",
+      "type": "hinge",
+      "qpos_address": 2
+    },
+    {
+      "joint": "robot0_joint4",
+      "type": "hinge",
+      "qpos_address": 3
+    },
+    {
+      "joint": "robot0_joint5",
+      "type": "hinge",
+      "qpos_address": 4
+    },
+    {
+      "joint": "robot0_joint6",
+      "type": "hinge",
+      "qpos_address": 5
+    },
+    {
+      "joint": "robot0_joint7",
+      "type": "hinge",
+      "qpos_address": 6
+    },
+    {
+      "joint": "gripper0_finger_joint1",
+      "type": "slide",
+      "qpos_address": 7
+    },
+    {
+      "joint": "gripper0_finger_joint2",
+      "type": "slide",
+      "qpos_address": 8
+    },
+    {
+      "joint": "akita_black_bowl_1_joint0",
+      "type": "free",
+      "qpos_address": 9
+    },
+    {
+      "joint": "wine_bottle_1_joint0",
+      "type": "free",
+      "qpos_address": 16
+    },
+    {
+      "joint": "white_cabinet_1_top_level",
+      "type": "slide",
+      "qpos_address": 23
+    },
+    {
+      "joint": "white_cabinet_1_middle_level",
+      "type": "slide",
+      "qpos_address": 24
+    },
+    {
+      "joint": "white_cabinet_1_bottom_level",
+      "type": "slide",
+      "qpos_address": 25
+    }
+  ],
+  "BDDL": "/home/junhongli/projects/laya-embodied-runtime/embodied_runtime/experiments/tasks/KITCHEN_SCENE4_put_the_wine_bottle_in_the_bottom_drawer_and_close_it.bddl",
+  "BDDL_sha256": "9000e826d46309d4f465f38e7adcc40aa08ad66329806bfe06662a0d186218f1",
+  "reset_source": "/home/junhongli/projects/LIBERO/libero/libero/envs/bddl_base_domain.py",
+  "reset_source_sha256": "055836670ac5fcac7e033fc86404718fd53854996e5776b1ff68b646f7bbcc9d",
+  "fixture_contract_assumptions": {
+    "white_cabinet_1": {
+      "world_X_origin_range_m": [
+        -0.01,
+        0.01
+      ],
+      "yaw_rad": 0.0
+    },
+    "wine_rack_1": {
+      "world_X_origin_range_m": [
+        -0.11,
+        -0.09
+      ],
+      "yaw_rad": 3.141592653589793
+    },
+    "table_workspace_origin_XY_m": [
+      0.0,
+      0.0
+    ]
+  },
+  "script_sha256": "eba08d25c9e48bb696305674647a8d158d5fb03e2116b3daf745632bcc4b161d",
+  "boundary_seq": 12216,
+  "boundary_record_id": "7eb2f832e8aafa8077d89de94ba9915c7def3d44dbc87b0f0ea3c0021bce249a",
+  "boundary_time_s": 12.10000000000071,
+  "method": "Pure XML joint transforms and exact raw STL vertices; boxes by corners; cylinders enclosed by a box. Fixed fixture X spans conservatively expanded across BDDL placement intervals; rack yaw pi, cabinet yaw zero. Fixture Y/Z are not reconstructed and are not used for clearance.",
+  "qpos": [
+    0.0338859148729662,
+    0.3330992427724469,
+    0.06796786163132951,
+    -2.2327431670618725,
+    -0.028233972336288892,
+    2.5085181433685313,
+    0.907483275093837,
+    0.03999850362083001,
+    -0.03999862309949321,
+    0.011367279712431996,
+    -0.0651281171565278,
+    0.8984070750980836,
+    0.707106783005648,
+    -1.3874755319827726e-05,
+    1.6673002342739386e-06,
+    0.7071067792293566,
+    -0.12958185510951836,
+    0.060797557765774696,
+    0.8988754774203452,
+    1.109359094528038e-08,
+    -6.204091079947097e-06,
+    3.8784043987561164e-07,
+    0.9999999999806799,
+    0.0,
+    0.0,
+    -0.1596102127349155
+  ],
+  "mesh_sha256": {
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link0.stl": "dfc6d94330de8ddb005b311bfdba9f3b8e1aa7c256b71592ee7ff32cb9a9a5aa",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link1.stl": "d24e332dffccf260b91d05dde17c5998bb9559d37da8608a8ee5213d9661f603",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link2.stl": "370f7605a0fae3529db169ded50f52f171024aa792d4d773bc84197301f6a039",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link3.stl": "0a8d638b9349c6c0eefc4e888636ac4838c4b27170f18a51699321118af709c1",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link4.stl": "0180ebb5772ec9840cb049750cffb29a9ddc90311752a16ea34757782ef9e48d",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link5.stl": "dd17e688c7870e722283525879643d53a74c0024d328b0e14b034b54c8b6c31a",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link6.stl": "20b768e99a0e0440b5754dcca108016434e57937cc356acd9c352ccd3cb27f77",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/robots/panda/meshes/link7.stl": "92ac6afcf7574c034d3170d8a68e95ac9048ab9d0dd5bbd8311b86e551b9ab1c",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl": "94493e94f30fe940f2c8ca2f155c3bbe67bbff406d3edf5e261670d2f0f6e2ed",
+    "/home/junhongli/miniforge3/envs/locateanything/lib/python3.10/site-packages/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl": "2d07a740392f3b9b0816f65d64fff9927d3d57c897870fc4b6ff9c56fff3a0c8"
+  },
+  "bounds": {
+    "table": {
+      "collision_geoms": 1,
+      "world_X_interval_m": [
+        -0.5,
+        0.5
+      ],
+      "max_x_geom": "table_collision",
+      "minimum": [
+        -0.5,
+        -0.6,
+        0.85
+      ],
+      "maximum": [
+        0.5,
+        0.6,
+        0.9
+      ]
+    },
+    "robot0_base": {
+      "collision_geoms": 16,
+      "world_X_interval_m": [
+        -1.1675,
+        -0.07042332702522713
+      ],
+      "max_x_geom": "robot0_link6_collision",
+      "minimum": [
+        -1.1675,
+        -0.35,
+        0.009000000000000036
+      ],
+      "maximum": [
+        -0.07042332702522713,
+        0.35,
+        1.5718386451171154
+      ]
+    },
+    "akita_black_bowl_1_main": {
+      "collision_geoms": 40,
+      "world_X_interval_m": [
+        -0.04174713930953974,
+        0.06526006208181799
+      ],
+      "max_x_geom": "akita_black_bowl_1_g26",
+      "minimum": [
+        -0.04174713930953974,
+        -0.11891089848810824,
+        0.8999962962101091
+      ],
+      "maximum": [
+        0.06526006208181799,
+        -0.011710958206219313,
+        0.9505401863259786
+      ]
+    },
+    "wine_bottle_1_main": {
+      "collision_geoms": 21,
+      "world_X_interval_m": [
+        -0.15151314991773274,
+        -0.10892069300255307
+      ],
+      "max_x_geom": "wine_bottle_1_g20",
+      "minimum": [
+        -0.15151314991773274,
+        0.038606730010349165,
+        0.8999852792667999
+      ],
+      "maximum": [
+        -0.10892069300255307,
+        0.0828463035591329,
+        1.0569155583252638
+      ]
+    },
+    "white_cabinet_1_main": {
+      "collision_geoms": 36,
+      "world_X_interval_m": [
+        -0.13335000000000002,
+        0.14123000000000002
+      ],
+      "max_x_geom": "white_cabinet_1_g9",
+      "Y_Z_world_bounds": "not reconstructed or used"
+    },
+    "wine_rack_1_main": {
+      "collision_geoms": 9,
+      "world_X_interval_m": [
+        -0.24438,
+        0.04438
+      ],
+      "max_x_geom": "wine_rack_1_g1",
+      "Y_Z_world_bounds": "not reconstructed or used"
+    }
+  },
+  "delta_world_m": [
+    0.35,
+    0,
+    0
+  ],
+  "relocated_bottle_minimum_m": [
+    0.19848685008226724,
+    0.038606730010349165,
+    0.8999852792667999
+  ],
+  "relocated_bottle_maximum_m": [
+    0.2410793069974469,
+    0.0828463035591329,
+    1.0569155583252638
+  ],
+  "X_separation_lower_bounds_m": {
+    "robot0_base": 0.2689101771074944,
+    "akita_black_bowl_1_main": 0.13322678800044924,
+    "white_cabinet_1_main": 0.05725685008226722,
+    "wine_rack_1_main": 0.15410685008226724
+  },
+  "table_XY_contains_relocated_collision_geometry": true,
+  "all_non_table_X_bounds_disjoint": true,
+  "limits": [
+    "Same-qpos geometric bounds, not old contact cache reconstruction.",
+    "Fixture BDDL origin ranges/yaws are explicit setup-contract assumptions checked by source inspection, not measured runtime fixture poses.",
+    "Geometry and BDDL placement-contract consistency require independent review and future live identity checks.",
+    "No dynamic stability, post-event robot trajectory, or camera-visibility guarantee.",
+    "Fixture Y/Z world bounds are deliberately omitted."
+  ]
+}
