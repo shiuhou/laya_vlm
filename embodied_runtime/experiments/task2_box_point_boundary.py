@@ -201,7 +201,7 @@ def preflight(args):
 
 
 def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory=None,
-            condition='cached_BOX_P_live_proprio_approach_only'):
+            condition='cached_BOX_P_live_proprio_approach_only', decision_fn=decision):
     wall_start = time.monotonic()
     frozen, point, original_frame = preflight_fn(args)
     selector = selector_factory(frozen) if selector_factory is not None else None
@@ -259,7 +259,7 @@ def collect(args, *, preflight_fn=preflight, protocol=PROTOCOL, selector_factory
                 proprio = backend.proprioception()
                 own_observations = ({key: np.asarray(world.obs[key]).tolist() for key in OBS_KEYS}
                                     if selector is not None else None)
-            view = decision(point, proprio, source_time, world.data.time, step, history)
+            view = decision_fn(point, proprio, source_time, world.data.time, step, history)
             token = view.rule_token()
             selection, stop_reason = {}, 'rule_no_strict_nominal_improvement'
             if selector is not None:
