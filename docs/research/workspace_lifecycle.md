@@ -21,6 +21,13 @@ root inspection panel were removed. Every original RGB-D frame and the canonical
 contact figure remain. Receipt:
 `runs/maintenance/research-cleanup-20260927/closeout-cache-01.json`.
 
+After iteration040 and the935-test integration, removed another **2,601,947
+bytes** in six reconstructible main-checkout cache directories. The inventory
+found no other process using that tree; no tracked files, raw evidence or active
+agent checkout was touched. Receipts:
+`runs/maintenance/research-cleanup-20260927/post-iteration040-cache-{inventory,result}.json`.
+All four active research worktrees remain in use and are retained.
+
 ## Routine closeout
 
 Before a new producer runs a model or simulator, check the actual frozen input
