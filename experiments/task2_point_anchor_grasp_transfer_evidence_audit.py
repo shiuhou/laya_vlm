@@ -122,7 +122,7 @@ def contact_evidence(snapshot, groups):
             'unexpected_robot_contact': any(c['unexpected_robot_contact'] for c in snapshot['contacts'])}
 
 
-def suffix_audit(rows, suffix, groups, approach_end, arm, *, schedule=None):
+def suffix_audit(rows, suffix, groups, approach_end, arm, *, schedule=None, scene_handoff=None):
     all_by = grouped(rows)
     by = grouped(suffix)
     actions = [r['data'] for r in by['action_completed']]
@@ -141,6 +141,9 @@ def suffix_audit(rows, suffix, groups, approach_end, arm, *, schedule=None):
             'fixed suffix intent')
     previous_state = all_by['control_completed'][first_step * 8 - 1]['data']['state_after']
     previous_own = all_by['control_completed'][first_step * 8 - 1]['data']['returned_own_observations']
+    if scene_handoff is not None:
+        # A separately audited exogenous event supplies the actual new boundary.
+        previous_state, previous_own = scene_handoff
     command_count = 0
     for offset, action in enumerate(action_starts):
         step = first_step + offset
@@ -243,7 +246,8 @@ def suffix_audit(rows, suffix, groups, approach_end, arm, *, schedule=None):
             'actions': validated}, summaries
 
 
-def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
+def sensor_and_labels(run, rows, groups, *, auxiliary_count=16, scene_rows=(),
+                      actual_arm=None, extra_sensor_files=()):
     by = grouped(rows)
     captures = [r['data'] for r in by['vision_capture']]
     aux = [r['data'] for r in by['auxiliary_capture']]
@@ -252,6 +256,8 @@ def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
     gate = one(rows, 'initial_frame_gate')
     condition = run.name
     anchor, arm = condition.split('-', 1)
+    if actual_arm is not None:
+        arm = actual_arm
     for c in captures:
         check_image(run, c)
     require([c['capture_seq'] for c in captures] == list(range(1, len(captures) + 1)), 'primary camera IDs unchanged')
@@ -276,7 +282,7 @@ def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
     expected_prefix = [r for r in by['vision_capture']
                        if r['data']['capture_seq'] not in endpoints
                        or 'native_phase' not in endpoints[r['data']['capture_seq']]['data']]
-    require(len(sensor) == len(expected_prefix) + len(aux)
+    require(len(sensor) == len(expected_prefix) + len(scene_rows) + len(aux)
             and [c['capture_id'] for c in sensor] == list(range(len(sensor))), 'complete deduplicated chronological sensor export')
     for exported, record in zip(sensor, expected_prefix):
         source = record['data']
@@ -304,11 +310,12 @@ def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
         field = ('initial_frame_gate.initial_own_observations.robot0_eef_pos' if reset
                  else 'endpoint.own_observations.robot0_eef_pos') if own is not None else None
         require(exported['tcp_source_field'] == field, 'primary exact TCP field provenance')
-    for index, (exported, source) in enumerate(zip(sensor[len(expected_prefix):], aux), len(expected_prefix)):
-        require(exported == {**source, 'capture_id': index}, 'all auxiliary manifest fields preserved')
+    for index, (exported, source) in enumerate(zip(sensor[len(expected_prefix):], [*scene_rows, *aux]), len(expected_prefix)):
+        require(exported == {**source, 'capture_id': index}, 'all scene/auxiliary manifest fields preserved')
     seal = read(run / 'sensor-seal.json')
     expected_hashes = {'sensor-captures.json': sha(run / 'sensor-captures.json'),
                        **{c['artifact']: c['artifact_sha256'] for c in sensor}}
+    expected_hashes.update({name: sha(run / name) for name in extra_sensor_files})
     require(seal['sha256'] == expected_hashes
             and all(sha(run / path) == digest for path, digest in expected_hashes.items()), 'sensor seal exact complete artifacts')
     require(seal['journal_sha256_linkage_only'] == sha(run / 'episodes.jsonl')
@@ -340,7 +347,7 @@ def sensor_and_labels(run, rows, groups, *, auxiliary_count=16):
         require(np.asarray(label['bottle_center_mm']).shape == (3,) and np.isfinite(label['bottle_center_mm']).all()
                 and np.isfinite(label['bottle_bottom_mm']), 'finite evaluator center/bottom')
         measured.append({'phase': source['phase'], 'step': source['step'], 'control': source['control'],
-            'auxiliary_capture_seq': c['source_capture_seq'], 'sensor_capture_id': len(expected_prefix) + auxiliary_index,
+            'auxiliary_capture_seq': c['source_capture_seq'], 'sensor_capture_id': len(expected_prefix) + len(scene_rows) + auxiliary_index,
             'time_s': c['capture_sim_time'],
             'bottle_center_mm': label['bottle_center_mm'], 'bottle_bottom_mm': label['bottle_bottom_mm'],
             'bottle_rotation': None, 'rotation_status': 'unknown_no_archived_quaternion_address_mapping',
