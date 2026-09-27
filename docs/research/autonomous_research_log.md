@@ -2019,6 +2019,38 @@ in31.84s; log `regression-canonical-attribution-integration.log`.
   support versus current unsegmented/self-excluded depth. A fresh target alone
   cannot certify clearance against an old cloud. No more Laya prompt variants.
 
+### Parallel iteration 055 — fresh goal changes preference, not guarded action
+
+- **Question/alternatives:** does an admitted current semantic goal change the
+  existing deterministic action at the same own state, or is this boundary
+  insensitive once the guard has acted?
+- **Intervention:** frozen `8a6906d`; present/away postevent × cached/fresh,
+  exactly four records/28candidates. Fresh slow POINT plus same-frame depth,
+  cached original whole-bottle hybrid POINT; same own state and original1340point
+  support. This changes mode and observation together, not pure freshness.
+- **Observed:** all four guarded choices are FWD. Present cached/fresh and away
+  cached prefer DOWN without the guard; away fresh prefers FWD. The stale guard
+  vetoes only DOWN with36contained points in all four records. Finite current
+  projected goals differ substantially after relocation, but no immediate
+  guarded-token divergence follows. Zero nonadmissions, new model calls,
+  physical actions or retries.
+- **Inspection:** root read every goal/pool/score and checked selected argmins
+  from recorded distances. Selected nominal gains are1.190494/1.479605/
+  1.190494/9.938782mm for the four fixed rows. This consistency check is not a
+  separate raw-source or execution audit. The reused `terminal_reason` string
+  is a dormant STOP template; it does not claim termination for these moves.
+- **Artifacts:** `task2-postevent-slow-point-decision-run-01`, result SHA
+  `126a8f18bfd9f9b8ef716c2977e1c7df7cafea8af03748f428250ad3b4a25901`,
+  source binding/seal and report `2f19e9f` (main `45495af`). Root consistency
+  receipt `task2-postevent-slow-point-decision-root-check-01.json`.
+- **Interpretation/confidence:** high for this one-step non-divergence. No
+  sustained behavior, safety or general goal-refresh value is established.
+  Inherited support can dominate candidate admission even when the goal changes.
+- **Next:** current semanticBOX support and current full-frame depth with the
+  existing partial self silhouette are independent alternatives under the same
+  current goals. Finish their bounded offline contrasts before choosing any
+  fresh-reset short retargeting rollout; do not build another planner layer.
+
 ## Iteration and stopping rules
 
 Each next experiment gets a question, competing predictions, fixed controls,

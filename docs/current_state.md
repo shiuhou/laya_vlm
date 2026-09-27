@@ -197,7 +197,11 @@ retry or old-prefix salvage. This is a two-image decoder-sensitivity result,
 not general localization/holding competence or an established MTP bug. A separate
 four-record offline comparison now asks whether cached-hybrid versus fresh-slow
 goals change existing geometric decisions, with original stale support explicit.
-No new physical policy follows yet. See
+All four offline guarded choices remain FWD; fresh away changes the unguarded
+preference DOWN→FWD, while the stale guard already vetoes DOWN for both goals.
+There is no immediate guarded-token divergence or physical outcome. Both current
+semanticBOX and current raw/partially self-excluded depth are being compared as
+alternative support representations. No new physical policy follows yet. See
 [four-call evidence](evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md).
 
 ## Protected execution and evidence boundaries

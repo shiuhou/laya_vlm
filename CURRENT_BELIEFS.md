@@ -185,6 +185,13 @@ competent sensor-driven manipulation.
    Semantic goal refresh feeding deterministic control is the next responsibility
    hypothesis. Current BOX/support freshness must be explicit before any physical
    retargeting test; a successful point alone does not earn safe grasping/planning.
+   The four-record offline goal comparison now completes: all four guarded
+   choices remain FWD. Fresh away changes unguarded DOWN→FWD, but the stale
+   support already vetoes DOWN for both goals (36contained points). Thus this
+   boundary supplies no immediate guarded action benefit from the fresh goal.
+   All28candidate records remain; both projections are finite, ownership unknown.
+   Test current support next, then only a bounded multi-action comparison if its
+   decision contrast is physically meaningful. No movement was executed here.
 
 These address different uncertainties: visibility, identifiable relative geometry,
 measured interaction and available action behavior must not be conflated.
@@ -257,6 +264,7 @@ measured interaction and available action behavior must not be conflated.
 - [Four cold semantic POINT outcomes](docs/evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md)
 - [Two-image slow decoding audit](docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json)
 - [Root's actual slow-output RGB inspection](docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json)
+- [Four offline goal-conditioned decisions](docs/evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md)
 - [Already-tested Laya interface inventory](docs/evidence/autonomous_research/laya_interface_inventory.md)
 - [Observation versus effector goal](docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md)
 - [Workspace lifecycle](docs/research/workspace_lifecycle.md)
