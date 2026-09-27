@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "freeze_commit": "cf00088824f4b74bd121cb6e8b3c89cc702fe9ab",
+  "preflight_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-preflight-01.json",
+  "preflight_sha256": "ed641f604e596eca418efa1b036a749c911af98183687d9b1dc3f0f0392dae8b",
+  "protocol_sha256": "6962f5576e04a78826a439c4c213e1cfdf1e416ec0c6ebed1f53e62eac9c27b8",
+  "source_sha256": {
+    "embodied_runtime/experiments/task2_closed_empty_scene.py": "697279c2d642130803a046470dbaa3ee8c5669a14777fd35d5d4424c66492315",
+    "embodied_runtime/experiments/task2_box_point_boundary.py": "a8ed44da4fce016fdb3cdaa06c4bb65447ea11d1e3b6772de60f12438a0e62cf",
+    "embodied_runtime/experiments/task2_point_anchor_grasp_transfer.py": "e5d822574b674a363f15b5207adf2098dd32beafc650f0997abb9a8360615f61",
+    "tests/test_task2_closed_empty_scene.py": "8c55e15927b09bba9b5d748fb8ca1ff39abb157df561d2ad00e4c2ccbdfe6acd"
+  },
+  "static_bounds_sha256": "5c9a6702516a73d0c577e7c4de64a52a209b5d5a9c821470f36adec9d4e89790",
+  "authorized_matrix_attempts": 1,
+  "authorization": "Root conditionally authorized one fixed matrix after exact-freeze and no-world preflight PASS; this review satisfies that condition. No retry, extra arm, model call or image-motion extraction is released.",
+  "registered_order": ["neck-present collection", "neck-present replay", "neck-away collection", "neck-away replay"],
+  "independent_validation": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /home/junhongli/miniforge3/envs/laya-embodied/bin/python -m pytest -q tests/test_task2_closed_empty_scene.py tests/test_task2_point_anchor_grasp_transfer.py tests/test_task2_additional_stationary_grasp.py",
+    "passed": 94,
+    "seconds": 4.57,
+    "all_preflight_code_and_unchanged_source_hashes_exact": true,
+    "clean_HEAD_equals_freeze": true,
+    "present_configuration_independently_reproduces_archived_preflight": true,
+    "away_fixed_delta_schedule_and_25_frame_contract_checked": true,
+    "backend_construction_forbidden_during_independent_prepare": true,
+    "backend_construction_calls": 0,
+    "physics_render_model_calls": 0,
+    "environment": {"CUDA_VISIBLE_DEVICES": "4", "MUJOCO_GL": "egl", "MUJOCO_EGL_DEVICE_ID": "4"}
+  },
+  "reviewed_findings": [
+    "Both cells freshly regenerate the same admitted neck approach and verify its full scientific prefix before the event. Approach STOP remains unexecuted. Archived controls and state restoration are absent from collection.",
+    "The sole event writes only the named bottle free-joint translation: zero in present, +0.35 m world X in away. Live compiled model arrays, joint type/address and exact pre-event qpos must match the reviewed setup source.",
+    "Independent static conservative bounds keep the bottle footprint on the table and separated from finite non-table groups. The corrected source now accounts for the direct worldbody floor plane with 0.8999852792667999 m Z clearance. Existing static arithmetic remains unchanged. The archived camera frustum check places translated collision bounds inside the image, but does not certify occlusion or actual visibility.",
+    "One explicit forward and one forced observation getter occur in each arm. State snapshots separate before, after write, after forward and after refresh. The explicit write may change only target translation; synchronization preserves primary state except recorded solver warm-start, and preserves time, controller, recent robot state, retained command and RNG.",
+    "Immediate event contact pairs, positions, frames, distances, constraint addresses/dimensions and forces, ncon/nefc and named solver buffer shapes/hashes are recorded as privileged audit evidence. Coverage is limited to named buffers, not every MuJoCo workspace. Snapshot serialization avoids process-specific repr and never restores state.",
+    "The returned forced-refresh observation becomes world.obs. Sensor rows export only the named own packet, RGB-D/K/T and explicit read/source provenance; exact sample times remain null. Separate sealed own-controls preserves all 24 just-returned own packets and commands without flattened states or contact labels.",
+    "All 24 per-control suffix RGB-D captures plus post-event reference are retained, with a separate before/after scene stream. Primary action capture accounting and existing runtime/controller behavior retain their defaults. All 56 merged source captures remain available per cell; no through-event tracking is performed here.",
+    "GRASP/GRASP/MV_UP is fixed. At each completed away primitive, every 400 native and eight endpoint snapshots are checked for raw robot/mount/gripper-bottle contact, including zero-force rows. A violation is source-linked and stops collection after preserving that primitive; passing this check does not infer settled jaws.",
+    "Replay requires an explicit event handler before any world construction, dispatches before the first suffix state/own check, rejects unknown/missing/duplicated scene records, compares event records and both images exactly, and never restores the recorded after-state. Event completion must pass before overall result.json is written. Matrix admission requires base, auxiliary and scene replay results.",
+    "Event and suffix failures preserve partial records/images and stop the remaining matrix without retry. Model/runtime/controller files remain hash-pinned and unchanged. Current source review has no remaining code correction."
+  ],
+  "interpretation_limits": [
+    "This is the total effect of a declared target-near versus target-away scene intervention with matched synchronization. It is not an isolated contact-only manipulation or a visually identical control.",
+    "Static bounds do not certify dynamic stability, post-event visibility or swept clearance. Inspect actual boundary images and mechanical results after collection; retain failures and present-arm adverse outcomes.",
+    "The empty jaws need not settle by the fixed second-close endpoint. No conditional extension, fitted velocity threshold, holding label or force-closure claim is authorized.",
+    "The fresh post-event image grid denotes fixed local image locations, not material identity. Later feature extraction and any semantic model call require their separate admitted-source task; this receipt releases neither."
+  ]
+}
