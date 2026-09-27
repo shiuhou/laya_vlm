@@ -48,6 +48,17 @@ would support explicit relation/settling evidence at phase handoff. It would not
 justify silently lengthening the executor or implementing a fixed two-GRASP
 manipulation policy. Model use of this information is still untested.
 
+The next decision experiment must also respect state-dependent action
+equivalence. With the jaw command already CLOSED, executed `STOP` maps to
+`World.execute("hold", grip=+1)`, while `GRASP` sets +1 and executes `"close"`.
+In the unchanged Jev `world.py:241` control loop, both use the current TCP target,
+zero rotation, the same jaw command and up to eight controls with the same
+success break. Thus an extra executed STOP would provide the same nominal
+closed-jaw exposure; it is not an independent timing control, nor should a model
+be scored wrong merely for choosing it instead of GRASP. This source-level
+equivalence is distinct from the diagnostic approach STOP, which terminates
+without executing any primitive. No new physical comparison was needed.
+
 Reproduce the extract without simulator or model inference:
 
 ```sh
