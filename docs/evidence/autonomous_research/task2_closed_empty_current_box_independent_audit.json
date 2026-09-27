@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "freeze": "428d78e7a9bd473ffac95d480d165c0f7288a905",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-current-box-run-01",
+  "preflight_sha256": "7671ec4ce265d0d41898d91de15a3ca520bb5c6c1e6265d581c7eb22c4b20dac",
+  "prospective_review_sha256": "cbad04d2b5fb136773f5457053b88d5e7c6cc75595a33e8cd8d33c06de7ed95b",
+  "protocol_sha256": "469457a38792aeaaa28bc835cb681c7b91c86da346297432fda8c2aa0d65dfcd",
+  "request_sha256": "0bc99072f3c754bd7d60dcbf4582ab9994415be80ca8b9f521608fcde32f0ba5",
+  "journal_sha256": "b8bff413de03d13dcc042a52c4c20315573508bcc029c6a92472cd150cc483c4",
+  "exit_receipt_sha256": "cf5cfd12af633c3c0692c12436c8818b7a292379f9e30d8b87cb0cfb15a0b86f",
+  "question": "Locate a single instance that matches the following description: the wine bottle.",
+  "generation_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "hybrid",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "model_calls": 2,
+  "fresh_processes": 2,
+  "physical_gpu": "2",
+  "retries": 0,
+  "conditions": [
+    {
+      "case_id": "present-postevent",
+      "pid": 2565070,
+      "pgid": 2564994,
+      "status": "admitted_rgb_box",
+      "raw_output": "<ref>the wine bottle</ref><box><542><422><594><582></box><|im_end|>",
+      "admitted_box": [
+        208.12800000000001,
+        162.048,
+        228.096,
+        223.488
+      ],
+      "parsed": {
+        "status": "single_box",
+        "points": [],
+        "boxes": [
+          {
+            "normalized": [
+              542,
+              422,
+              594,
+              582
+            ],
+            "continuous_xyxy": [
+              208.12800000000001,
+              162.048,
+              228.096,
+              223.488
+            ]
+          }
+        ],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "token_count": 12,
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152219,
+        152099,
+        152271,
+        152259,
+        151669,
+        151645
+      ],
+      "generation_settings": {
+        "max_new_tokens": 256,
+        "use_cache": true,
+        "generation_mode": "hybrid",
+        "temperature": 0.0,
+        "do_sample": false,
+        "verbose": false
+      },
+      "sha256": {
+        "episodes.jsonl": "f9d3ed8e33ee881ce7a484d49fb814649fb631ab04703edd8d8cd0c8b879dd49",
+        "manifest.json": "57a901c03346d118f897c17816f0bd4b2c66897201b6767677fd0ccd522744ec",
+        "resolved_config.yaml": "01191e01a851b37a71d176ec9c00f60fe139f62b867688c2d8bc2e2987fa2814",
+        "rgb-input.npy": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+        "native-input.json": "d6070f839b74a62ca111b6f94a90cfe09f55152195d033afe9620f9d9f17f9ef",
+        "native-input.npz": "bd800327a724906429496754d89efb4c74416714cef1247d684af647ecefaca2",
+        "generation-settings.json": "2f284ec28cd4216978c458c1b2988a9af3f7334c4c6b232d26510a4e1cfa1a96",
+        "generation-return.json": "109b040c846d3e580878690b04c12d14eeae4e00b22187db32a63119f9b6eb39",
+        "model-output.json": "1aa8844f4caefe8e3ddf95f8dcfcd6ba71bb9071f9539dfff1638217fd4cb00c"
+      },
+      "input_tensor_and_RGB_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    },
+    {
+      "case_id": "away-postevent",
+      "pid": 2565738,
+      "pgid": 2564994,
+      "status": "admitted_rgb_box",
+      "raw_output": "<ref>the wine bottle</ref><box><556><760><635><955></box><|im_end|>",
+      "admitted_box": [
+        213.50400000000002,
+        291.84000000000003,
+        243.84,
+        366.71999999999997
+      ],
+      "parsed": {
+        "status": "single_box",
+        "points": [],
+        "boxes": [
+          {
+            "normalized": [
+              556,
+              760,
+              635,
+              955
+            ],
+            "continuous_xyxy": [
+              213.50400000000002,
+              291.84000000000003,
+              243.84,
+              366.71999999999997
+            ]
+          }
+        ],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "token_count": 12,
+      "actual_generated_token_ids": [
+        151672,
+        1782,
+        13078,
+        16486,
+        151673,
+        151668,
+        152233,
+        152437,
+        152312,
+        152632,
+        151669,
+        151645
+      ],
+      "generation_settings": {
+        "max_new_tokens": 256,
+        "use_cache": true,
+        "generation_mode": "hybrid",
+        "temperature": 0.0,
+        "do_sample": false,
+        "verbose": false
+      },
+      "sha256": {
+        "episodes.jsonl": "d359174c16228e53db9a10bd0bb10961db5242a8e53d341214426f88909029bd",
+        "manifest.json": "351cf4d08035c518d823727f715168e6c20e29b3dd48b814732db91ad53f897b",
+        "resolved_config.yaml": "ad2285292dda35de2a8c74b209e8869133867ac796ac5e0f2ab8180642b5f11a",
+        "rgb-input.npy": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+        "native-input.json": "e2d9707dbc86f400b397a0740f64c14af04d130d6e4d287906f93bcf4dd3c2f8",
+        "native-input.npz": "419186b980fd53041fc307fbadd7e03acdcbf8e61abb5a67508b8d8807f5faa1",
+        "generation-settings.json": "2f284ec28cd4216978c458c1b2988a9af3f7334c4c6b232d26510a4e1cfa1a96",
+        "generation-return.json": "3ea4203d2072e8939ed28af0cc7c8de379e02b6a18fc9a601e01d379e709513b",
+        "model-output.json": "9d216908c690eac25bcba2d7c6b896a19651f2ac8b65458a81a7d5f65f1a9524"
+      },
+      "input_tensor_and_RGB_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    }
+  ],
+  "new_model_processor_tokenizer_physics_render_FK_calls_during_audit": 0,
+  "limits": [
+    "Integrity PASS does not establish target segmentation, depth ownership, extent completeness or safety.",
+    "No depth/calibration array was accessed and no support/projection/policy was computed.",
+    "RGB semantics are owned by root; output admission here is exact syntax and coordinates."
+  ]
+}
