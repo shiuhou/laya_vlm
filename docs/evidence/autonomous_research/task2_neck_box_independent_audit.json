@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "scientific_outcome": "grounding_not_admitted",
+  "freeze": "f1cae7c9160e31d2439683a7818c339b6f854dca",
+  "journal_records": 8,
+  "journal_sha256": "e099159c3f9e017c2e6afc7022edad9ec1988f91cbcf6aad11d688024161bbcf",
+  "generation_return_sha256": "e19129163c257e9e5cde4e91094809c0e6a3b73d21ef45fe765ee82f946e56fc",
+  "model_output_sha256": "33ed071dc19ec0990e83689c23a247536f7c4207f0712541964297e9e9dacb05",
+  "input_token_count": 240,
+  "configured_max_new_tokens": 256,
+  "actual_generated_token_count": 260,
+  "terminal_eos_observed": false,
+  "raw_box_records": 42,
+  "admitted_box": null,
+  "sensor_representation_created": false,
+  "evaluator_opened": false,
+  "model_calls": 1,
+  "retries": 0,
+  "physics_calls": 0,
+  "render_calls": 0,
+  "native_decoder_sha256": "ffe736fb8ded5d597201704ccd85134d18a8e4dea43d309228644737234b7244",
+  "limits": [
+    "independent stored bytes, token vocabulary and scalar counts only",
+    "recorded checkpoint hash map checked; model weights not reread",
+    "no inference, model construction, processor, projection, FK, physics or rendering",
+    "no individual BOX selected; no point/support or proxy evaluation exists",
+    "one fixture and one fixed condition; no semantic or generalization conclusion"
+  ]
+}

@@ -1,0 +1,2408 @@
+{
+  "status": "PASS",
+  "producer_commit": "77523e59b2a66dd13665a15e996048198526ad4f",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-goal-cells-run-01",
+  "request_sha256": "3c4ed225b8af20aa7d97a2c63cfad753bf562dbea11b57d1527b70c166c34fc1",
+  "feature_seal_sha256": "2e849dd465a93c6f41a72a3bec31ba1ae5a63b2c3f39345db326daf19fe9c0e5",
+  "source_admission_audit_sha256": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1",
+  "source_point_request_sha256": "762de6e4a955882fb987988cf561eba36cc5edb9f7dbd6e873e3dcd965db7b9e",
+  "source_sensor_sha256": {
+    "whole": "87fb2c2b9587ae1cd08f85d4bf331288c20b4b50b65aa6f0132b78294eb3cef5",
+    "neck": "fd6edea327618a8bb86a52dafe48fe2d857a2e71fa7677bdcadb89d65657fd0d"
+  },
+  "tensor_entries_checked": 120600,
+  "result_sha256": "4e9e687e2fef7825ffdcde5e3fd07b946a7827b035a1e05beb4a76da4f787e06",
+  "tensor_sha256": "a9f972d8898e1640e49d2e1828cecbe1fb415849d12578029674c0235cd8ff94",
+  "condition_order": [
+    "whole",
+    "neck"
+  ],
+  "conditions": [
+    {
+      "condition": "whole",
+      "point_P_world_m": [
+        -0.11673469557117522,
+        0.058971097589474636,
+        0.9883583307522877
+      ],
+      "exact_P_any_containment": true,
+      "exact_P_contained_point_union_count": 129,
+      "per_placement_union_counts": [
+        129,
+        143,
+        116,
+        143,
+        116,
+        140,
+        104,
+        140,
+        104
+      ],
+      "per_placement_proxy_counts": [
+        [
+          129,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          143,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          116,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          143,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          116,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          140,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          104,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          140,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          104,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "common_same_point_same_proxy_count": 104,
+      "certificate": "entire_original_rule_goal_cell_excluded",
+      "all_common_pairs_strictly_inside": true,
+      "common_pair_slacks": [
+        {
+          "full_support_index": 72,
+          "pixel_xy": [
+            220,
+            159
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.005954680318271829,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.011812560905853572,
+            0.009917161653373738,
+            0.01181092899323534,
+            0.009915529740755505,
+            0.0019938308957880915,
+            9.843164330826382e-05,
+            0.0019921989831698586,
+            9.67997306900309e-05
+          ],
+          "minimum_signed_corner_facet_slack_m": 9.67997306900309e-05,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 73,
+          "pixel_xy": [
+            221,
+            159
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006160225350428775,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012018105938010545,
+            0.010122706685530725,
+            0.012016474025392312,
+            0.010121074772912492,
+            0.0021993759279450714,
+            0.0003039766754652437,
+            0.0021977440153268385,
+            0.0003023447628470108
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0003023447628470108,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 74,
+          "pixel_xy": [
+            222,
+            159
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.005946787004241144,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.011804667591822943,
+            0.009909268339343108,
+            0.01180303567920471,
+            0.009907636426724875,
+            0.0019859375817574687,
+            9.0538329277641e-05,
+            0.001984305669139236,
+            8.890641665940807e-05
+          ],
+          "minimum_signed_corner_facet_slack_m": 8.890641665940807e-05,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 90,
+          "pixel_xy": [
+            218,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009055138255366413,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014913018842948184,
+            0.013017619590468349,
+            0.01491138693032995,
+            0.013015987677850116,
+            0.005094288832882703,
+            0.003198889580402875,
+            0.00509265692026447,
+            0.003197257667784642
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003197257667784642,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 91,
+          "pixel_xy": [
+            219,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009433644116060388,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01529152470364216,
+            0.013396125451162325,
+            0.015289892791023926,
+            0.013394493538544092,
+            0.005472794693576678,
+            0.0035773954410968506,
+            0.005471162780958445,
+            0.0035757635284786177
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0035757635284786177,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 92,
+          "pixel_xy": [
+            220,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009714213216924159,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01557209380450593,
+            0.013676694552026109,
+            0.015570461891887696,
+            0.013675062639407876,
+            0.0057533637944404276,
+            0.0038579645419606,
+            0.005751731881822195,
+            0.003856332629342367
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003856332629342367,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 93,
+          "pixel_xy": [
+            221,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009803653376370167,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015661533963951965,
+            0.013766134711472144,
+            0.015659902051333732,
+            0.013764502798853911,
+            0.005842803953886491,
+            0.0039474047014066635,
+            0.005841172041268258,
+            0.003945772788788431
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003945772788788431,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 94,
+          "pixel_xy": [
+            222,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009748806330574011,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015606686918155754,
+            0.01371128766567592,
+            0.015605055005537521,
+            0.013709655753057687,
+            0.00578795690809028,
+            0.0038925576556104458,
+            0.0057863249954720475,
+            0.003890925742992213
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003890925742992213,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 95,
+          "pixel_xy": [
+            223,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009443501820034658,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015301382407616415,
+            0.013405983155136594,
+            0.015299750494998182,
+            0.013404351242518361,
+            0.005482652397550948,
+            0.0035872531450711134,
+            0.005481020484932715,
+            0.0035856212324528805
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0035856212324528805,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 96,
+          "pixel_xy": [
+            224,
+            160
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009108151380122928,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014966031967704727,
+            0.013070632715224892,
+            0.014964400055086494,
+            0.013069000802606659,
+            0.005147301957639225,
+            0.00325190270515939,
+            0.005145670045020992,
+            0.0032502707925411572
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0032502707925411572,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 110,
+          "pixel_xy": [
+            218,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011938479694001969,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017796360281583698,
+            0.015900961029103877,
+            0.017794728368965465,
+            0.015899329116485644,
+            0.007977630271518224,
+            0.006082231019038403,
+            0.007975998358899991,
+            0.00608059910642017
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00608059910642017,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 111,
+          "pixel_xy": [
+            219,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012703303120218556,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018561183707800327,
+            0.016665784455320493,
+            0.018559551795182094,
+            0.01666415254270226,
+            0.008742453697734853,
+            0.006847054445255019,
+            0.00874082178511662,
+            0.006845422532636786
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006845422532636786,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 112,
+          "pixel_xy": [
+            220,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012906159315848209,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018764039903430008,
+            0.016868640650950173,
+            0.018762407990811775,
+            0.01686700873833194,
+            0.008945309893364534,
+            0.007049910640884699,
+            0.0089436779807463,
+            0.007048278728266466
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007048278728266466,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 113,
+          "pixel_xy": [
+            221,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012944461650814393,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018802342238396164,
+            0.01690694298591633,
+            0.01880071032577793,
+            0.016905311073298096,
+            0.008983612228330662,
+            0.007088212975850827,
+            0.008981980315712429,
+            0.007086581063232594
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007086581063232594,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 114,
+          "pixel_xy": [
+            222,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012923718558585928,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018781599146167727,
+            0.016886199893687892,
+            0.018779967233549494,
+            0.01688456798106966,
+            0.008962869136102253,
+            0.007067469883622418,
+            0.00896123722348402,
+            0.007065837971004185
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007065837971004185,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 115,
+          "pixel_xy": [
+            223,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01282704443732588,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018684925024907637,
+            0.016789525772427816,
+            0.018683293112289404,
+            0.016787893859809583,
+            0.008866195014842163,
+            0.006970795762362342,
+            0.00886456310222393,
+            0.006969163849744109
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006969163849744109,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 116,
+          "pixel_xy": [
+            224,
+            161
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012143348468422965,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018001229056004667,
+            0.016105829803524915,
+            0.017999597143386434,
+            0.016104197890906682,
+            0.008182499045939193,
+            0.006287099793459441,
+            0.00818086713332096,
+            0.0062854678808412084
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0062854678808412084,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 130,
+          "pixel_xy": [
+            218,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01219884987031565,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01805673045789738,
+            0.01616133120541763,
+            0.018055098545279147,
+            0.016159699292799395,
+            0.008238000447831906,
+            0.006342601195352154,
+            0.008236368535213673,
+            0.0063409692827339215
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0063409692827339215,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 131,
+          "pixel_xy": [
+            219,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014346844039836673,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.020204724627418444,
+            0.01830932537493861,
+            0.02020309271480021,
+            0.018307693462320376,
+            0.01038599461735297,
+            0.008490595364873135,
+            0.010384362704734737,
+            0.008488963452254902
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008488963452254902,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 132,
+          "pixel_xy": [
+            220,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015280577407987092,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.021138457995568863,
+            0.019243058743089042,
+            0.02113682608295063,
+            0.01924142683047081,
+            0.011319727985503389,
+            0.009424328733023568,
+            0.011318096072885156,
+            0.009422696820405335
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009422696820405335,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 133,
+          "pixel_xy": [
+            221,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015553832120976413,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.021411712708558198,
+            0.019516313456078363,
+            0.021410080795939965,
+            0.01951468154346013,
+            0.011592982698492738,
+            0.009697583446012903,
+            0.011591350785874505,
+            0.00969595153339467
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00969595153339467,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 134,
+          "pixel_xy": [
+            222,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015432454065654105,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.021290334653235876,
+            0.019394935400756055,
+            0.021288702740617643,
+            0.019393303488137822,
+            0.011471604643170402,
+            0.009576205390690581,
+            0.01146997273055217,
+            0.009574573478072348
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009574573478072348,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 135,
+          "pixel_xy": [
+            223,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014701634827784402,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.0205595154153662,
+            0.018664116162886366,
+            0.020557883502747967,
+            0.018662484250268133,
+            0.010740785405300726,
+            0.008845386152820892,
+            0.010739153492682493,
+            0.008843754240202659
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008843754240202659,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 136,
+          "pixel_xy": [
+            224,
+            162
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012441908621603645,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018299789209185444,
+            0.016404389956705623,
+            0.01829815729656721,
+            0.01640275804408739,
+            0.00848105919911997,
+            0.006585659946640149,
+            0.008479427286501737,
+            0.006584028034021916
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006584028034021916,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 150,
+          "pixel_xy": [
+            218,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01189648686119689,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01775436744877866,
+            0.015858968196298825,
+            0.017752735536160427,
+            0.015857336283680593,
+            0.007935637438713186,
+            0.0060402381862333515,
+            0.007934005526094953,
+            0.006038606273615119
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006038606273615119,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 151,
+          "pixel_xy": [
+            219,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014006174063100868,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01986405465068264,
+            0.017968655398202804,
+            0.019862422738064392,
+            0.017967023485584557,
+            0.010045324640617137,
+            0.008149925388137302,
+            0.010043692727998904,
+            0.00814829347551907
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00814829347551907,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 152,
+          "pixel_xy": [
+            220,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015042625136953244,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.020900505724535015,
+            0.01900510647205518,
+            0.020898873811916782,
+            0.019003474559436948,
+            0.011081775714469541,
+            0.009186376461989706,
+            0.011080143801851308,
+            0.009184744549371474
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009184744549371474,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 153,
+          "pixel_xy": [
+            221,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015442482974370661,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.021300363561952446,
+            0.019404964309472625,
+            0.021298731649334213,
+            0.019403332396854392,
+            0.011481633551886958,
+            0.009586234299407137,
+            0.011480001639268725,
+            0.009584602386788904
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009584602386788904,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 154,
+          "pixel_xy": [
+            222,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015186345647524024,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.02104422623510581,
+            0.019148826982625974,
+            0.021042594322487576,
+            0.01914719507000774,
+            0.011225496225040349,
+            0.009330096972560514,
+            0.011223864312422116,
+            0.009328465059942281
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009328465059942281,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 155,
+          "pixel_xy": [
+            223,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014188831353990794,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.020046711941572565,
+            0.018151312689092744,
+            0.020045080028954332,
+            0.01814968077647451,
+            0.01022798193150709,
+            0.00833258267902727,
+            0.010226350018888858,
+            0.008330950766409037
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008330950766409037,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 156,
+          "pixel_xy": [
+            224,
+            163
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011834925868234022,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017692806455815793,
+            0.01579740720333596,
+            0.01769117454319756,
+            0.015795775290717726,
+            0.00787407644575032,
+            0.005978677193270485,
+            0.007872444533132086,
+            0.005977045280652252
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005977045280652252,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 170,
+          "pixel_xy": [
+            218,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009896189375451614,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015754069963033412,
+            0.013858670710553578,
+            0.01575243805041518,
+            0.013857038797935345,
+            0.0059353399529679385,
+            0.004039940700488104,
+            0.0059337080403497056,
+            0.004038308787869871
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004038308787869871,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 171,
+          "pixel_xy": [
+            219,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01364333132140047,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019501211908982255,
+            0.017605812656502434,
+            0.019499579996364022,
+            0.0176041807438842,
+            0.009682481898916767,
+            0.007787082646436946,
+            0.009680849986298534,
+            0.0077854507338187134
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0077854507338187134,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 172,
+          "pixel_xy": [
+            220,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014635472514860706,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.020493353102442463,
+            0.01859795384996263,
+            0.02049172118982423,
+            0.018596321937344396,
+            0.010674623092376975,
+            0.00877922383989714,
+            0.010672991179758742,
+            0.008777591927278908
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008777591927278908,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 173,
+          "pixel_xy": [
+            221,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.015010837200227015,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.02086871778780877,
+            0.018973318535328937,
+            0.02086708587519054,
+            0.018971686622710704,
+            0.011049987777743284,
+            0.009154588525263449,
+            0.01104835586512505,
+            0.009152956612645216
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.009152956612645216,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 174,
+          "pixel_xy": [
+            222,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.014699339200708816,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.020557219788290546,
+            0.018661820535810808,
+            0.020555587875672313,
+            0.018660188623192575,
+            0.010738489778225058,
+            0.00884309052574532,
+            0.010736857865606825,
+            0.008841458613127087
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008841458613127087,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 175,
+          "pixel_xy": [
+            223,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013674269213677842,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01953214980125957,
+            0.017636750548779834,
+            0.01953051788864134,
+            0.0176351186361616,
+            0.009713419791194097,
+            0.00781802053871436,
+            0.009711787878575864,
+            0.007816388626096127
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007816388626096127,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 176,
+          "pixel_xy": [
+            224,
+            164
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009898223789155516,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015756104376737218,
+            0.013860705124257466,
+            0.015754472464118985,
+            0.013859073211639233,
+            0.005937374366671744,
+            0.004041975114191999,
+            0.005935742454053511,
+            0.004040343201573766
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004040343201573766,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 189,
+          "pixel_xy": [
+            217,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006903597483992163,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012761478071573906,
+            0.010866078819094072,
+            0.012759846158955673,
+            0.010864446906475839,
+            0.0029427480615084253,
+            0.0010473488090285976,
+            0.0029411161488901924,
+            0.0010457168964103647
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0010457168964103647,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 190,
+          "pixel_xy": [
+            218,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010825259601614956,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016683140189196713,
+            0.014787740936716962,
+            0.01668150827657848,
+            0.014786109024098729,
+            0.006864410179131239,
+            0.0049690109266514945,
+            0.006862778266513006,
+            0.004967379014033262
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004967379014033262,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 191,
+          "pixel_xy": [
+            219,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012923646695026894,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01878152728260865,
+            0.016886128030128816,
+            0.018779895369990418,
+            0.016884496117510583,
+            0.008962797272543163,
+            0.0070673980200633285,
+            0.00896116535992493,
+            0.007065766107445096
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007065766107445096,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 192,
+          "pixel_xy": [
+            220,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013389753725604234,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019247634313185977,
+            0.017352235060706225,
+            0.019246002400567744,
+            0.017350603148087992,
+            0.009428904303120489,
+            0.0075335050506407375,
+            0.009427272390502256,
+            0.007531873138022505
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007531873138022505,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 193,
+          "pixel_xy": [
+            221,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013390091821175051,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019247972408756808,
+            0.017352573156276974,
+            0.019246340496138575,
+            0.01735094124365874,
+            0.00942924239869132,
+            0.007533843146211486,
+            0.009427610486073087,
+            0.007532211233593253
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007532211233593253,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 194,
+          "pixel_xy": [
+            222,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013394659738003287,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01925254032558507,
+            0.017357141073105237,
+            0.01925090841296684,
+            0.017355509160487004,
+            0.009433810315519611,
+            0.007538411063039777,
+            0.009432178402901378,
+            0.007536779150421544
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007536779150421544,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 195,
+          "pixel_xy": [
+            223,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012691871662506515,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01854975225008823,
+            0.016654352997608493,
+            0.018548120337469998,
+            0.01665272108499026,
+            0.008731022240022743,
+            0.006835622987543005,
+            0.00872939032740451,
+            0.006833991074924772
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006833991074924772,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 196,
+          "pixel_xy": [
+            224,
+            165
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009590994246548815,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015448874834130613,
+            0.013553475581650778,
+            0.01544724292151238,
+            0.013551843669032546,
+            0.005630144824065139,
+            0.0037347455715853045,
+            0.005628512911446906,
+            0.0037331136589670716
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0037331136589670716,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 209,
+          "pixel_xy": [
+            217,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.007007821347992549,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012865701935574292,
+            0.010970302683094457,
+            0.012864070022956059,
+            0.010968670770476224,
+            0.003046971925508818,
+            0.0011515726730289833,
+            0.003045340012890585,
+            0.0011499407604107503
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0011499407604107503,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 210,
+          "pixel_xy": [
+            218,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011128845592279432,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01698672617986119,
+            0.015091326927381354,
+            0.016985094267242956,
+            0.015089695014763121,
+            0.007167996169795701,
+            0.0052725969173158735,
+            0.007166364257177468,
+            0.0052709650046976406
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0052709650046976406,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 211,
+          "pixel_xy": [
+            219,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012489943762114583,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018347824349696354,
+            0.01645242509721652,
+            0.01834619243707812,
+            0.016450793184598286,
+            0.008529094339630852,
+            0.0066336950871510175,
+            0.00852746242701262,
+            0.006632063174532785
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006632063174532785,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 212,
+          "pixel_xy": [
+            220,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013465688602704251,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019323569190286036,
+            0.0174281699378062,
+            0.019321937277667803,
+            0.017426538025187968,
+            0.009504839180220548,
+            0.007609439927740713,
+            0.009503207267602315,
+            0.00760780801512248
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00760780801512248,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 213,
+          "pixel_xy": [
+            221,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013766714373940878,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019624594961522662,
+            0.01772919570904284,
+            0.019622963048904415,
+            0.017727563796424595,
+            0.009805864951457188,
+            0.007910465698977368,
+            0.009804233038838955,
+            0.007908833786359135
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007908833786359135,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 214,
+          "pixel_xy": [
+            222,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013352016595684746,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019209897183266475,
+            0.017314497930786724,
+            0.019208265270648242,
+            0.01731286601816849,
+            0.009391167173200973,
+            0.007495767920721222,
+            0.00938953526058274,
+            0.007494136008102989
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007494136008102989,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 215,
+          "pixel_xy": [
+            223,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012096251127344762,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017954131714926477,
+            0.01605873246244674,
+            0.017952499802308244,
+            0.016057100549828507,
+            0.008135401704860976,
+            0.006240002452381238,
+            0.008133769792242743,
+            0.006238370539763005
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006238370539763005,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 216,
+          "pixel_xy": [
+            224,
+            166
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010282501300805769,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01614038188838754,
+            0.014244982635907705,
+            0.016138749975769306,
+            0.014243350723289472,
+            0.006321651878322038,
+            0.00442625262584221,
+            0.006320019965703805,
+            0.004424620713223977
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004424620713223977,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 229,
+          "pixel_xy": [
+            217,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006922834724581536,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012780715312163335,
+            0.0108853160596835,
+            0.012779083399545102,
+            0.010883684147065267,
+            0.002961985302097861,
+            0.0010665860496180263,
+            0.002960353389479628,
+            0.0010649541369997934
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0010649541369997934,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 230,
+          "pixel_xy": [
+            218,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010925532873707816,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016783413461289615,
+            0.01488801420880978,
+            0.01678178154867138,
+            0.014886382296191547,
+            0.006964683451224141,
+            0.005069284198744306,
+            0.006963051538605908,
+            0.005067652286126073
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005067652286126073,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 231,
+          "pixel_xy": [
+            219,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012692601127242631,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018550481714824416,
+            0.016655082462344595,
+            0.018548849802206183,
+            0.016653450549726362,
+            0.008731751704758942,
+            0.006836352452279121,
+            0.008730119792140709,
+            0.006834720539660888
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006834720539660888,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 232,
+          "pixel_xy": [
+            220,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013601193715527385,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019459074303109183,
+            0.01756367505062935,
+            0.01945744239049095,
+            0.017562043138011116,
+            0.00964034429304371,
+            0.007744945040563875,
+            0.009638712380425477,
+            0.007743313127945642
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007743313127945642,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 233,
+          "pixel_xy": [
+            221,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013860059433896427,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019717940021478197,
+            0.017822540768998363,
+            0.019716308108859965,
+            0.01782090885638013,
+            0.009899210011412723,
+            0.008003810758932889,
+            0.00989757809879449,
+            0.008002178846314656
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.008002178846314656,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 234,
+          "pixel_xy": [
+            222,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01344917916873073,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019307059756312514,
+            0.01741166050383268,
+            0.01930542784369428,
+            0.017410028591214446,
+            0.009488329746247026,
+            0.0075929304937671915,
+            0.009486697833628793,
+            0.007591298581148959
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007591298581148959,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 235,
+          "pixel_xy": [
+            223,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012311415932363734,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018169296519945463,
+            0.016273897267465712,
+            0.01816766460732723,
+            0.01627226535484748,
+            0.008350566509879961,
+            0.00645516725740021,
+            0.008348934597261728,
+            0.006453535344781977
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006453535344781977,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 236,
+          "pixel_xy": [
+            224,
+            167
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009509083914290534,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015366964501872304,
+            0.01347156524939247,
+            0.015365332589254072,
+            0.013469933336774237,
+            0.0055482344918068235,
+            0.003652835239326996,
+            0.005546602579188591,
+            0.003651203326708763
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003651203326708763,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 250,
+          "pixel_xy": [
+            218,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010550766088217103,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01640864667579882,
+            0.014513247423319081,
+            0.016407014763180586,
+            0.014511615510700848,
+            0.006589916665733331,
+            0.004694517413253586,
+            0.006588284753115098,
+            0.004692885500635353
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004692885500635353,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 251,
+          "pixel_xy": [
+            219,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012257438638130835,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01811531922571255,
+            0.0162199199732328,
+            0.018113687313094318,
+            0.016218288060614566,
+            0.008296589215647063,
+            0.006401189963167311,
+            0.00829495730302883,
+            0.0063995580505490784
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0063995580505490784,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 252,
+          "pixel_xy": [
+            220,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013146696462780008,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01900457705036175,
+            0.017109177797881917,
+            0.019002945137743518,
+            0.017107545885263684,
+            0.009185847040296277,
+            0.0072904477878164425,
+            0.009184215127678044,
+            0.00728881587519821
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00728881587519821,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 253,
+          "pixel_xy": [
+            221,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.013359442121052098,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.019217322708633883,
+            0.017321923456154048,
+            0.01921569079601565,
+            0.017320291543535815,
+            0.009398592698568423,
+            0.007503193446088588,
+            0.00939696078595019,
+            0.007501561533470355
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007501561533470355,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 254,
+          "pixel_xy": [
+            222,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012922159622862486,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.018780040210444257,
+            0.016884640957964436,
+            0.018778408297826024,
+            0.016883009045346203,
+            0.008961310200378783,
+            0.007065910947898962,
+            0.00895967828776055,
+            0.007064279035280729
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007064279035280729,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 255,
+          "pixel_xy": [
+            223,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011713513375431264,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017571393963013035,
+            0.0156759947105332,
+            0.017569762050394802,
+            0.015674362797914967,
+            0.007752663952947561,
+            0.005857264700467726,
+            0.007751032040329328,
+            0.0058556327878494935
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0058556327878494935,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 256,
+          "pixel_xy": [
+            224,
+            168
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.007180469570478493,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.013038350158060236,
+            0.011142950905580401,
+            0.013036718245442003,
+            0.011141318992962168,
+            0.0032196201479947617,
+            0.001324220895514927,
+            0.0032179882353765288,
+            0.0013225889828966941
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0013225889828966941,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 270,
+          "pixel_xy": [
+            218,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009454783861367222,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015312664448948965,
+            0.01304514436861437,
+            0.015311032536330732,
+            0.013044448388677132,
+            0.005493934438883498,
+            0.0035985351864037535,
+            0.005492302526265265,
+            0.0035969032737855205
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0035969032737855205,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 271,
+          "pixel_xy": [
+            219,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011274436075300251,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017132316662882036,
+            0.014349600560094045,
+            0.017130684750263803,
+            0.01434890458015703,
+            0.007313586652816548,
+            0.005418187400336713,
+            0.007311954740198315,
+            0.00541655548771848
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00541655548771848,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 272,
+          "pixel_xy": [
+            220,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012690749453790687,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01854863004137247,
+            0.015364893123999357,
+            0.01854699812875424,
+            0.01536419714406212,
+            0.008729900031306984,
+            0.006834500778827149,
+            0.00872826811868875,
+            0.006832868866208916
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006832868866208916,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 273,
+          "pixel_xy": [
+            221,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.012861364494894015,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.0187192450824758,
+            0.015487112522810653,
+            0.018717613169857567,
+            0.015486416542873416,
+            0.008900515072410312,
+            0.007005115819930477,
+            0.008898883159792079,
+            0.007003483907312244
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.007003483907312244,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 274,
+          "pixel_xy": [
+            222,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.0123975238153443,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01825540440292607,
+            0.01515447410720161,
+            0.018253772490307837,
+            0.015153778127264372,
+            0.008436674392860596,
+            0.006541275140380762,
+            0.008435042480242363,
+            0.006539643227762529
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.006539643227762529,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 275,
+          "pixel_xy": [
+            223,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010424854540029324,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016282735127611067,
+            0.013740116844934924,
+            0.016281103214992834,
+            0.013739420864997687,
+            0.006464005117545579,
+            0.004568605865065828,
+            0.006462373204927346,
+            0.004566973952447595
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004566973952447595,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 276,
+          "pixel_xy": [
+            224,
+            169
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.0062062200786600075,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012064100666241792,
+            0.010168701413761971,
+            0.01206246875362356,
+            0.010167069501143738,
+            0.002245370656176325,
+            0.0003499714036964974,
+            0.002243738743558092,
+            0.00034833949107826445
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.00034833949107826445,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 290,
+          "pixel_xy": [
+            218,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.0091063377953267,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014964218382908484,
+            0.010563623429820534,
+            0.014962586470290251,
+            0.010562927449883297,
+            0.005145488372843024,
+            0.0032500891203631962,
+            0.005143856460224791,
+            0.0032484572077449633
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0032484572077449633,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 291,
+          "pixel_xy": [
+            219,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01086102390234936,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016718904489931102,
+            0.011825960122856305,
+            0.01671727257731287,
+            0.011825264142919067,
+            0.0069001744798656145,
+            0.005004775227385794,
+            0.006898542567247382,
+            0.005003143314767561
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005003143314767561,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 292,
+          "pixel_xy": [
+            220,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011733737281825765,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01759161786940755,
+            0.012453747706770768,
+            0.017589985956789317,
+            0.01245305172683353,
+            0.007772887859342062,
+            0.005877488606862227,
+            0.007771255946723829,
+            0.005875856694243994
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005875856694243994,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 293,
+          "pixel_xy": [
+            221,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011857947521254075,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.01771582810883586,
+            0.012543012742928905,
+            0.017714196196217627,
+            0.012542316762991668,
+            0.007897098098770372,
+            0.006001698846290537,
+            0.007895466186152139,
+            0.0060000669336723045
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0060000669336723045,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 294,
+          "pixel_xy": [
+            222,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011345445479437652,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017203326067019423,
+            0.012174184737561822,
+            0.017201694154401176,
+            0.012173488757624806,
+            0.007384596056953949,
+            0.005489196804474121,
+            0.007382964144335716,
+            0.005487564891855888
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005487564891855888,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 295,
+          "pixel_xy": [
+            223,
+            170
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009846679364489463,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015704559952071248,
+            0.011095772675892235,
+            0.015702928039453015,
+            0.011095076695954997,
+            0.00588582994200576,
+            0.003990430689525926,
+            0.005884198029387527,
+            0.003988798776907693
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003988798776907693,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 310,
+          "pixel_xy": [
+            218,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.008756883740094673,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014614764327676458,
+            0.008074600799863774,
+            0.014613132415058225,
+            0.008073904819926536,
+            0.00479603431761097,
+            0.002900635065131142,
+            0.004794402404992737,
+            0.0028990031525129092
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0028990031525129092,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 311,
+          "pixel_xy": [
+            219,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010441950518900081,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016299831106481824,
+            0.009291137863473464,
+            0.01629819919386359,
+            0.009290441883536227,
+            0.00648110109641635,
+            0.0045857018439365155,
+            0.006479469183798117,
+            0.0045840699313182826
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0045840699313182826,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 312,
+          "pixel_xy": [
+            220,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.011286539332770795,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017144419920352538,
+            0.009900840046841664,
+            0.017142788007734305,
+            0.009900144066904648,
+            0.007325689910287078,
+            0.005430290657807327,
+            0.007324057997668845,
+            0.005428658745189094
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005428658745189094,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 313,
+          "pixel_xy": [
+            221,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01137247411658654,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.017230354704168338,
+            0.009962784940472202,
+            0.017228722791550105,
+            0.009962088960534965,
+            0.007411624694102864,
+            0.005516225441623036,
+            0.007409992781484631,
+            0.005514593529004803
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005514593529004803,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 314,
+          "pixel_xy": [
+            222,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.01083743803886339,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016695318626445174,
+            0.009576381228641573,
+            0.01669368671382694,
+            0.009575685248704557,
+            0.006876588616379714,
+            0.004981189363899879,
+            0.006874956703761481,
+            0.0049795574512816465
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0049795574512816465,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 315,
+          "pixel_xy": [
+            223,
+            171
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009270701388764388,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015128581976346173,
+            0.008445076729237,
+            0.01512695006372794,
+            0.008444380749299762,
+            0.005309851966280678,
+            0.00341445271380085,
+            0.005308220053662445,
+            0.003412820801182617
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003412820801182617,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 330,
+          "pixel_xy": [
+            218,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.00840202300150876,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014259903589090475,
+            0.005574858831316254,
+            0.014258271676472242,
+            0.0055741628513790165,
+            0.004441173579025008,
+            0.002524275297946049,
+            0.004439541666406775,
+            0.0025148234752864485
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0025148234752864485,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 331,
+          "pixel_xy": [
+            219,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010025854403234738,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.015883734990816523,
+            0.006751325696489285,
+            0.01588210307819829,
+            0.006750629716552048,
+            0.0060650049807510625,
+            0.004169605728271235,
+            0.00606337306813283,
+            0.004162451889929128
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004162451889929128,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 332,
+          "pixel_xy": [
+            220,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010825000162010462,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016682880749592205,
+            0.007330255579133915,
+            0.016681248836973972,
+            0.007329559599196678,
+            0.006864150739526717,
+            0.004968751487046889,
+            0.006862518826908484,
+            0.004967119574428656
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.004967119574428656,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 333,
+          "pixel_xy": [
+            221,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010889693848766743,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016747574436348514,
+            0.00737702818039776,
+            0.016745942523730267,
+            0.0073763322004605225,
+            0.006928844426283026,
+            0.0050334451738031985,
+            0.006927212513664793,
+            0.005031813261184966
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.005031813261184966,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 334,
+          "pixel_xy": [
+            222,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.010319100680794308,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.016176981268376106,
+            0.006963494793138958,
+            0.016175349355757873,
+            0.0069627988132017204,
+            0.006358251258310632,
+            0.0044628520058307974,
+            0.006356619345692399,
+            0.0044612200932125645
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0044612200932125645,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 335,
+          "pixel_xy": [
+            223,
+            172
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.008692674290815897,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014550554878397653,
+            0.005784942375861579,
+            0.01454892296577942,
+            0.005784246395924342,
+            0.004731824868332159,
+            0.0028270829663541996,
+            0.004730192955713926,
+            0.002817631143694571
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.002817631143694571,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 350,
+          "pixel_xy": [
+            218,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.007678072640060485,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.013039388387284356,
+            0.003067440954575229,
+            0.013038692407347341,
+            0.0030667449746379916,
+            0.004085180314134497,
+            0.0018067529981450337,
+            0.004083548401516264,
+            0.0018009204228288667
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0018009204228288667,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 351,
+          "pixel_xy": [
+            219,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.00881435795209784,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014175343843661592,
+            0.0042033964109520205,
+            0.014174647863724577,
+            0.004202700431014783,
+            0.005647587024343453,
+            0.0033938707210611208,
+            0.0056459551117252205,
+            0.003407625998418151
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0033938707210611208,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 352,
+          "pixel_xy": [
+            220,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.009359134445058759,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014719985578750538,
+            0.004748038146041189,
+            0.014719289598813301,
+            0.004747342166104174,
+            0.006396767444096063,
+            0.0039978352258922545,
+            0.00639513553147783,
+            0.003997353651243651
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.003997353651243651,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 353,
+          "pixel_xy": [
+            221,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.00939050918103157,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014751394991082023,
+            0.004779447558372452,
+            0.014750699011145008,
+            0.004778751578435214,
+            0.006440106244789079,
+            0.004029209961864844,
+            0.006438474332170846,
+            0.0040287283872162405
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0040287283872162405,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 354,
+          "pixel_xy": [
+            222,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.008939951847398264,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.014301031484096782,
+            0.004329084051386989,
+            0.014300335504159545,
+            0.004328388071449751,
+            0.005820869448086047,
+            0.0035353888781732845,
+            0.005819237535467814,
+            0.003549144155530315
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0035353888781732845,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 355,
+          "pixel_xy": [
+            223,
+            173
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.007725762325735852,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.013087288090793514,
+            0.0031153406580837206,
+            0.013086592110856277,
+            0.003114644678146483,
+            0.0041517672999142816,
+            0.0018557676152556324,
+            0.004150135387296049,
+            0.0018758134648740876
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0018557676152556324,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 371,
+          "pixel_xy": [
+            219,
+            174
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006255186649907429,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.011616101066775464,
+            0.0016441536340661145,
+            0.011615405086838226,
+            0.001643457654128877,
+            0.0052245137491144025,
+            0.000893887430740703,
+            0.00522288183649617,
+            0.0008934058560923219
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0008934058560923219,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 372,
+          "pixel_xy": [
+            220,
+            174
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006771565551862757,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012132355395069183,
+            0.0021604079623593897,
+            0.012131659415131946,
+            0.0021597119824221522,
+            0.0059321602696995185,
+            0.0014102663326960307,
+            0.0059305283570812856,
+            0.0014097847580474276
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0014097847580474276,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 373,
+          "pixel_xy": [
+            221,
+            174
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.006784245229170427,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.012145076013817535,
+            0.0021731285811081857,
+            0.012144380033880298,
+            0.0021724326011709483,
+            0.00594973611573249,
+            0.0014229460100039226,
+            0.005948104203114257,
+            0.0014224644353553195
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0014224644353553195,
+          "strictly_inside_all_corners": true
+        },
+        {
+          "full_support_index": 374,
+          "pixel_xy": [
+            222,
+            174
+          ],
+          "proxy": "gripper0_hand_collision",
+          "center_minimum_signed_facet_slack_m": 0.00629330429217978,
+          "corner_minimum_signed_facet_slacks_m": [
+            0.011654341613916985,
+            0.0016823941812071919,
+            0.011653645633979748,
+            0.0016816982012699544,
+            0.00527734946636918,
+            0.0009320050730130536,
+            0.005275717553750947,
+            0.0009315234983644505
+          ],
+          "minimum_signed_corner_facet_slack_m": 0.0009315234983644505,
+          "strictly_inside_all_corners": true
+        }
+      ],
+      "minimum_common_pair_corner_slack_m": 8.890641665940807e-05,
+      "maximum_common_pair_corner_slack_m": 0.00969595153339467
+    },
+    {
+      "condition": "neck",
+      "point_P_world_m": [
+        -0.12337491393454869,
+        0.05776965007435101,
+        1.0288145621732854
+      ],
+      "exact_P_any_containment": false,
+      "exact_P_contained_point_union_count": 0,
+      "per_placement_union_counts": [
+        0,
+        31,
+        0,
+        31,
+        0,
+        24,
+        0,
+        24,
+        0
+      ],
+      "per_placement_proxy_counts": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "common_same_point_same_proxy_count": 0,
+      "certificate": "no_common_witness_certificate",
+      "all_common_pairs_strictly_inside": false,
+      "common_pair_slacks": [],
+      "minimum_common_pair_corner_slack_m": null,
+      "maximum_common_pair_corner_slack_m": null
+    }
+  ],
+  "fixed_facets_per_proxy": {
+    "gripper0_hand_collision": 200,
+    "gripper0_finger1_collision": 32,
+    "gripper0_finger1_pad_collision": 12,
+    "gripper0_finger2_collision": 32,
+    "gripper0_finger2_pad_collision": 12
+  },
+  "maximum_historical_proxy_translation_residual_m": 2.220446049250313e-16,
+  "producer_maximum_proxy_translation_residual_m": 2.220446049250313e-16,
+  "maximum_independent_vs_producer_minimum_facet_slack_difference_m": 1.2212453270876722e-15,
+  "limits": [
+    "PASS concerns evidence integrity independently of either anchor outcome; no dynamics authorization",
+    "historical sealed original BOX exact-P geometry anchors one fixed facet system per proxy for all 18 translations",
+    "stored vertices, arrays and scalar equations only; no FK/projection/model/physics/render rerun or new placement",
+    "exact-center noncontainment is not physical clearance or feasibility; absent common witnesses are inconclusive about whole-cell exclusion",
+    "signed slacks characterize frozen geometric calculation and are not physical safety margins or uncertainty estimates"
+  ]
+}

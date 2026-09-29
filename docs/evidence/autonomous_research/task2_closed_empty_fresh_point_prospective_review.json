@@ -1,0 +1,200 @@
+{
+  "status": "PASS",
+  "freeze_commit": "8cc19ebff9cec07eba4f416d35a157445b60f554",
+  "preflight_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+  "protocol_sha256": "856014997b0b0ffd23dcb1c7b0a641d2b669358cd5310c76cd3208361ab0852e",
+  "source_admission_sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42",
+  "conditions": [
+    "present-postevent",
+    "away-postevent",
+    "away-prelift",
+    "present-prelift"
+  ],
+  "model_calls_authorized": 4,
+  "physical_gpu": "2",
+  "authorized_batches": 1,
+  "output_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-fresh-point-run-01",
+  "python": "/home/junhongli/miniforge3/envs/locateanything/bin/python",
+  "producer_worktree": "/home/junhongli/projects/laya-offline-wrist-history",
+  "runner_sha256": "00dc92040a83763e2f3a5844b9b7c69ab21942b481e79b1e005449bba0ce4843",
+  "adapter_sha256": "875abd9a8d4108e9c793754aed4c91f89ff3ce1f6d59a5e72173e1db2f819b83",
+  "binding_sha256": "49dbc6e182a6e516e43142537005234c7559264fd69c9f051a10e1b7b4f4d04f",
+  "source_admission_status": "observational-source-qualified",
+  "original_matrix_status": "interrupted_incomplete",
+  "authorization_basis": "Root explicitly selected four cold current-identity POINT queries and authorized this one batch conditional on exact code/config/input review. No further human gate.",
+  "question": "Point to: the wine bottle.",
+  "settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "hybrid",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "versions": {
+    "python": "3.10.21 | packaged by conda-forge | (main, Aug 21 2026, 22:42:31) [GCC 14.4.0]",
+    "numpy": "1.26.4",
+    "mujoco": "3.5.0",
+    "robosuite": "1.4.1",
+    "torch": "2.2.0",
+    "transformers": "4.57.3",
+    "laya": "0.3.4",
+    "pytest": "9.1.1",
+    "ruff": "0.15.22"
+  },
+  "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+  "independent_checks": {
+    "exact_CPU_preflight_reproduced": true,
+    "model_constructor_and_generation_blocked": true,
+    "model_constructions": 0,
+    "model_calls": 0,
+    "output_writes": 0,
+    "source_NPZ_accessor_restricted_to_rgb": true,
+    "RGB_decodes": 8,
+    "decoded_depth_calibration_arrays": 0,
+    "all_four_formatted_texts_equal": true,
+    "token_counts": [
+      229,
+      229,
+      229,
+      229
+    ],
+    "input_grids": [
+      [
+        [
+          28,
+          28
+        ]
+      ],
+      [
+        [
+          28,
+          28
+        ]
+      ],
+      [
+        [
+          28,
+          28
+        ]
+      ],
+      [
+        [
+          28,
+          28
+        ]
+      ]
+    ],
+    "focused_synthetic_tests": {
+      "passed": 23,
+      "seconds": 0.2,
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m pytest -q tests/test_task2_closed_empty_fresh_point.py tests/test_task2_closed_empty_point_adapter.py"
+    }
+  },
+  "input_receipts": [
+    {
+      "case_id": "present-postevent",
+      "rgb": {
+        "shape": [
+          384,
+          384,
+          3
+        ],
+        "dtype": "uint8",
+        "bytes_sha256": "fd5174f91edd7ed6a2148f109f260db72ee22c212680ae145ad241d6f6be7106"
+      },
+      "pixel_values_float32": {
+        "shape": [
+          784,
+          3,
+          14,
+          14
+        ],
+        "dtype": "float32",
+        "bytes_sha256": "42c474387b9000adc00fb963f9aa938856f7b0d2c3152e540b66a1b0568a858f"
+      }
+    },
+    {
+      "case_id": "away-postevent",
+      "rgb": {
+        "shape": [
+          384,
+          384,
+          3
+        ],
+        "dtype": "uint8",
+        "bytes_sha256": "46fccf5705c46ed4cf6182f3fd982b92efd1ea1e5a07ccde2d027cf2b0872401"
+      },
+      "pixel_values_float32": {
+        "shape": [
+          784,
+          3,
+          14,
+          14
+        ],
+        "dtype": "float32",
+        "bytes_sha256": "757fc289117d128c20546016bd46a7f0a11192caf9a9202a0e60da9248184e4a"
+      }
+    },
+    {
+      "case_id": "away-prelift",
+      "rgb": {
+        "shape": [
+          384,
+          384,
+          3
+        ],
+        "dtype": "uint8",
+        "bytes_sha256": "3b332c0c2131f80353cf0587c191d1cfb231fed93d41339aaf4de69a7abb4a38"
+      },
+      "pixel_values_float32": {
+        "shape": [
+          784,
+          3,
+          14,
+          14
+        ],
+        "dtype": "float32",
+        "bytes_sha256": "b9aa9ff5a39e868cd8579626eb1e97184b9f21c3f2c639a34d062306cb440dc6"
+      }
+    },
+    {
+      "case_id": "present-prelift",
+      "rgb": {
+        "shape": [
+          384,
+          384,
+          3
+        ],
+        "dtype": "uint8",
+        "bytes_sha256": "1da7231418b3e0a41beb1ea982d57004b53bd7e97373b6263eff8e39ee757f89"
+      },
+      "pixel_values_float32": {
+        "shape": [
+          784,
+          3,
+          14,
+          14
+        ],
+        "dtype": "float32",
+        "bytes_sha256": "7c8a7117fa426c8db160de9c141e9d620f0aeeedaf99e06a13ef64c1a384ba51"
+      }
+    }
+  ],
+  "preparatory_failure_preserved": {
+    "path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-fresh-point-preflight-01-failure.json",
+    "sha256": "2ae80018cc0b5756e778320113893feffe003b805364780ce40faf42818862ed",
+    "model_constructions": 0,
+    "model_calls": 0,
+    "reason": "Initial processor setup used physical laya-embodied environment without decord/lmdb/torchvision. Root authorized existing archived locateanything environment; no package install, checkpoint change or inference retry."
+  },
+  "reviewed_boundary": [
+    "Each case uses one fresh Python/model process, seed1, sameGPU2, BF16/eval and unchanged native call_once with300s generation timeout.",
+    "Source selection is post-event/prelift at merged31/47 in both cells, fixed reversed condition order at prelift.",
+    "Only full384x384uint8 RGB and sole fixed question enter model messages. Case names, paths, source history, own packets, depth, calibration, motion and evaluator data remain outside messages.",
+    "Raw response and actual decoded token IDs are sealed before strict RGB point parsing. Native malformed/absent/multiple/out-of-frame/incomplete returns remain nonadmissions with no repair or retry.",
+    "Infrastructure failure preserves partial evidence and stops all remaining cases. Four sensor outputs and batch are sealed before interpretation.",
+    "Source remains the explicit composite qualification with incomplete original matrix and separate second away verification.",
+    "This measures current semantic localization only; no identity persistence, holding inference, pixel-selected motion cohort, controller execution or safety-guard refresh is authorized."
+  ]
+}

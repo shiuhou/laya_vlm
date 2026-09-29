@@ -1,0 +1,173 @@
+{
+  "schema_version": "task1-valid-interaction-attribution-v1",
+  "method": "post-control endpoint contact attribution; closure is opening_before - opening_after",
+  "contact_sampling": "after each recorded low-level environment control",
+  "designated_relation": "either Panda fingerpad contacting top-drawer handle geometry g18, g19, or g20",
+  "task_config_sha256": "fb5cd2c73b27ff6ab244667a215dc0a16528eb9a52e25f72e846910dd2d14497",
+  "source_runs": [
+    {
+      "run_id": "local-objective-task-adapter-episode-01",
+      "manifest_sha256": "a19ddc51c95e094be6d4dbac3fbb1271902de30ede8f630d432c8e40f9ec4b2a",
+      "episodes_sha256": "9b77651de9474ecb8cdf24d67ea54a71bfc8d19be33a4e3c1d5ee70c514cc3f2"
+    },
+    {
+      "run_id": "local-objective-task-adapter-episode-02",
+      "manifest_sha256": "1c31b51bc770d18e93e84a405996703923683bae742bbeeafc04e62b0afe7fa0",
+      "episodes_sha256": "cdd8894d34421678a69d5bfa3c6d0b5e0e9f33052560089a341d53e07ab8cb1e"
+    },
+    {
+      "run_id": "local-objective-task-adapter-episode-03",
+      "manifest_sha256": "b162d329808a413d2e9e1a3a1587b7fc62e95bed4d8472102fd630bc5a9b1614",
+      "episodes_sha256": "804c94fd194310c435b13bb5a0970ca99010d9125ca407bff65982310a8a4128"
+    }
+  ],
+  "runs": [
+    {
+      "run": 1,
+      "controls": 970,
+      "opening_start_mm": 151.65901295563316,
+      "opening_final_mm": -0.392883786551319,
+      "net_closure_mm": 152.05189674218448,
+      "attribution": {
+        "designated_handle_interaction": {
+          "controls": 0,
+          "positive_closure_mm": 0.0,
+          "negative_closure_mm": 0.0,
+          "net_closure_mm": 0.0
+        },
+        "non_designated_robot_contact": {
+          "controls": 134,
+          "positive_closure_mm": 49.31465205160685,
+          "negative_closure_mm": -3.228531666467763,
+          "net_closure_mm": 46.08612038513909
+        },
+        "no_current_robot_drawer_contact": {
+          "controls": 836,
+          "positive_closure_mm": 108.4450441671966,
+          "negative_closure_mm": -2.4792678101513204,
+          "net_closure_mm": 105.96577635704527
+        }
+      },
+      "contact_pair_net_closure_mm": [
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 30.286906888492883
+        },
+        {
+          "robot_geom": "gripper0_hand_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 13.743647276246534
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g18",
+          "net_closure_mm": 1.3645430650489991
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g12",
+          "net_closure_mm": 0.6910231553506776
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "controls": 970,
+      "opening_start_mm": 151.65901295563316,
+      "opening_final_mm": -0.392883786551319,
+      "net_closure_mm": 152.05189674218448,
+      "attribution": {
+        "designated_handle_interaction": {
+          "controls": 0,
+          "positive_closure_mm": 0.0,
+          "negative_closure_mm": 0.0,
+          "net_closure_mm": 0.0
+        },
+        "non_designated_robot_contact": {
+          "controls": 134,
+          "positive_closure_mm": 49.31465205160685,
+          "negative_closure_mm": -3.228531666467763,
+          "net_closure_mm": 46.08612038513909
+        },
+        "no_current_robot_drawer_contact": {
+          "controls": 836,
+          "positive_closure_mm": 108.4450441671966,
+          "negative_closure_mm": -2.4792678101513204,
+          "net_closure_mm": 105.96577635704527
+        }
+      },
+      "contact_pair_net_closure_mm": [
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 30.286906888492883
+        },
+        {
+          "robot_geom": "gripper0_hand_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 13.743647276246534
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g18",
+          "net_closure_mm": 1.3645430650489991
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g12",
+          "net_closure_mm": 0.6910231553506776
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "controls": 970,
+      "opening_start_mm": 151.65901295563316,
+      "opening_final_mm": -0.392883786551319,
+      "net_closure_mm": 152.05189674218448,
+      "attribution": {
+        "designated_handle_interaction": {
+          "controls": 0,
+          "positive_closure_mm": 0.0,
+          "negative_closure_mm": 0.0,
+          "net_closure_mm": 0.0
+        },
+        "non_designated_robot_contact": {
+          "controls": 134,
+          "positive_closure_mm": 49.31465205160685,
+          "negative_closure_mm": -3.228531666467763,
+          "net_closure_mm": 46.08612038513909
+        },
+        "no_current_robot_drawer_contact": {
+          "controls": 836,
+          "positive_closure_mm": 108.4450441671966,
+          "negative_closure_mm": -2.4792678101513204,
+          "net_closure_mm": 105.96577635704527
+        }
+      },
+      "contact_pair_net_closure_mm": [
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 30.286906888492883
+        },
+        {
+          "robot_geom": "gripper0_hand_collision",
+          "drawer_geom": "wooden_cabinet_1_g11",
+          "net_closure_mm": 13.743647276246534
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g18",
+          "net_closure_mm": 1.3645430650489991
+        },
+        {
+          "robot_geom": "robot0_link7_collision",
+          "drawer_geom": "wooden_cabinet_1_g12",
+          "net_closure_mm": 0.6910231553506776
+        }
+      ]
+    }
+  ]
+}

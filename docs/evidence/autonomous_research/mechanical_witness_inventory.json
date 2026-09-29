@@ -1,0 +1,196 @@
+{
+  "passed": true,
+  "source_hashes": {
+    "manifest.json": "b68dfcbf65048555069bb1c27639915ec2fda9c520822600f81549547031b02f",
+    "evaluator-only/labels.json": "493c7b1ff32943217351d73b631c385199dfaab4d3ed8427a52de32c768945c5",
+    "endpoints.json": "c28136d9e0e67b359491a3d270b0566e49a7f5939287363a18cdd8192ab7abe5",
+    "sensors.jsonl": "59a38821e165393d607be1b3ec9100f093fcc52718282173fe8b28c556174bbe"
+  },
+  "producer_commit": "2dd31e06c9676d841a6a9c5c993519ce647ff0fb",
+  "contact_threshold_strict_gt_N": 0.05,
+  "sample_period_s": 0.05,
+  "all_native_rotation_commands_zero": true,
+  "arms": {
+    "close": {
+      "local_slices": [
+        {
+          "step": 13,
+          "before_bilateral": false,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+          ],
+          "center_rise_mm": 0.013504383909094031,
+          "bottom_before_mm": 899.9691765089414,
+          "bottom_after_mm": 899.8793665135751,
+          "gripper_contact_row_count": 7
+        },
+        {
+          "step": 14,
+          "before_bilateral": true,
+          "bilateral_samples": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "center_rise_mm": 37.90284897158028,
+          "bottom_before_mm": 899.8793665135751,
+          "bottom_after_mm": 937.8363410536577,
+          "gripper_contact_row_count": 46
+        },
+        {
+          "step": 15,
+          "before_bilateral": true,
+          "bilateral_samples": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "center_rise_mm": 37.83918506955388,
+          "bottom_before_mm": 937.8363410536577,
+          "bottom_after_mm": 975.7014645088004,
+          "gripper_contact_row_count": 53
+        },
+        {
+          "step": 16,
+          "before_bilateral": true,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+          ],
+          "center_rise_mm": 37.64429957749735,
+          "bottom_before_mm": 975.7014645088004,
+          "bottom_after_mm": 1013.257654989926,
+          "gripper_contact_row_count": 36
+        }
+      ],
+      "step13_hold_check": {
+        "returned_tcp_delta_mm": [
+          -0.09972070939115452,
+          0.19591845684875653,
+          0.010356923392240702
+        ],
+        "exact_validator_translation_norm_mm": 0.2200807294554112,
+        "passes_hold_translation_1_5mm": true,
+        "grip_commands_match": true,
+        "returned_quaternion_rotation_deg": 0.029369887521611425,
+        "archived_scratch_FK_rotation_deg": 0.028118461989837463,
+        "exact_cached_site_matrix_rotation_deg": null,
+        "exact_full_AtomicExecutor_validation": "unavailable; cached site matrices were not archived"
+      }
+    },
+    "open_hold": {
+      "local_slices": [
+        {
+          "step": 13,
+          "before_bilateral": false,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "center_rise_mm": -0.002731533853534529,
+          "bottom_before_mm": 899.9691765089414,
+          "bottom_after_mm": 899.9690500244192,
+          "gripper_contact_row_count": 0
+        },
+        {
+          "step": 14,
+          "before_bilateral": false,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "center_rise_mm": 0.0010808864653881756,
+          "bottom_before_mm": 899.9690500244192,
+          "bottom_after_mm": 899.9710167334568,
+          "gripper_contact_row_count": 0
+        },
+        {
+          "step": 15,
+          "before_bilateral": false,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "center_rise_mm": 0.00023518379975939752,
+          "bottom_before_mm": 899.9710167334568,
+          "bottom_after_mm": 899.970811565047,
+          "gripper_contact_row_count": 0
+        },
+        {
+          "step": 16,
+          "before_bilateral": false,
+          "bilateral_samples": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "center_rise_mm": -2.328441121335345e-05,
+          "bottom_before_mm": 899.970811565047,
+          "bottom_after_mm": 899.97119959816,
+          "gripper_contact_row_count": 0
+        }
+      ],
+      "step13_hold_check": {
+        "returned_tcp_delta_mm": [
+          -0.026929395321673155,
+          0.3087972795282057,
+          -0.006986082595972221
+        ],
+        "exact_validator_translation_norm_mm": 0.31004799229546626,
+        "passes_hold_translation_1_5mm": true,
+        "grip_commands_match": true,
+        "returned_quaternion_rotation_deg": 0.022966294028206168,
+        "archived_scratch_FK_rotation_deg": 0.02175708375160239,
+        "exact_cached_site_matrix_rotation_deg": null,
+        "exact_full_AtomicExecutor_validation": "unavailable; cached site matrices were not archived"
+      }
+    }
+  },
+  "scope": "stored-evidence arithmetic only; no physics, FK, projection, inference, or controller change"
+}

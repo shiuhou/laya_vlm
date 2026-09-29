@@ -1,0 +1,106 @@
+{
+  "inspector": "Codex /root/retention_audit",
+  "view_method": "view_image original resolution",
+  "source_sensor_seal_sha256": "669d99542346b7b7f7f9d76090b16ebf84c9575f0365498a55f91d84496d57ac",
+  "report_artifact_sha256": {
+    "image-motion-curves.png": "2097b364cee6bdc5f39ff46ac107721abd1ed3b63ad53185fce8fd281bd1d88a",
+    "present-endpoint-rgb.png": "02ef81b513a0280a3f375d497d13bd00714997fc712e1017029d97df82ffb162",
+    "away-endpoint-rgb.png": "bd67db44287237acb94cb2d45b81bab12af4f6d5f3e26c002f7fdd486505d15f",
+    "index.json": "777ae6dd8e95bcaa267187e3f40d92b970be50b66b00a19be8f39ae1d2793b20"
+  },
+  "full_curves_inspected": true,
+  "uncropped_RGB_panels_inspected": 8,
+  "all_defined_forward_position_overlays_inspected": 8,
+  "capture_ids": [
+    0,
+    8,
+    16,
+    24
+  ],
+  "cells": [
+    "present",
+    "away"
+  ],
+  "source_RGB_bindings": {
+    "present": [
+      {
+        "capture_id": 31,
+        "source_capture_stream": "scene",
+        "source_capture_seq": 2,
+        "artifact": "scene/capture-000002.npz",
+        "artifact_sha256": "8f92b8f85ecc0ec2b14b11eabbcd73f5d6a2439f6d476f10cf1b67f659c9b791",
+        "capture_read_sim_time_s": 12.10000000000071
+      },
+      {
+        "capture_id": 39,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 8,
+        "artifact": "auxiliary/capture-000008.npz",
+        "artifact_sha256": "4064fad61caa9317d5d3bd9e711efd589bca4fb2241a72f7dabbcc475168ae8b",
+        "capture_read_sim_time_s": 12.500000000000844
+      },
+      {
+        "capture_id": 47,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 16,
+        "artifact": "auxiliary/capture-000016.npz",
+        "artifact_sha256": "7b86d03056a35fefe62955f0b035e07bc546f0b3fbc0d8c629aef9b9e4f50e83",
+        "capture_read_sim_time_s": 12.900000000000977
+      },
+      {
+        "capture_id": 55,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 24,
+        "artifact": "auxiliary/capture-000024.npz",
+        "artifact_sha256": "52ae6496dcab929927e0083daf21fe9298b27685f48887fd1318f6bce7497f2b",
+        "capture_read_sim_time_s": 13.300000000001111
+      }
+    ],
+    "away": [
+      {
+        "capture_id": 31,
+        "source_capture_stream": "scene",
+        "source_capture_seq": 2,
+        "artifact": "scene/capture-000002.npz",
+        "artifact_sha256": "c208fcdcfc7ce35a362b89dcf44291cd38eaefc676eb6eb6d2b4710764c54223",
+        "capture_read_sim_time_s": 12.10000000000071
+      },
+      {
+        "capture_id": 39,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 8,
+        "artifact": "auxiliary/capture-000008.npz",
+        "artifact_sha256": "7b96fbc1651d6eff565c57b402a51b9f4443e0b71ef439979e3c9f8876e3bd5d",
+        "capture_read_sim_time_s": 12.500000000000844
+      },
+      {
+        "capture_id": 47,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 16,
+        "artifact": "auxiliary/capture-000016.npz",
+        "artifact_sha256": "7d214c722d0ac1c921b42131673dbffc7235f909cc5057e595323bbe9bce43a4",
+        "capture_read_sim_time_s": 12.900000000000977
+      },
+      {
+        "capture_id": 55,
+        "source_capture_stream": "auxiliary",
+        "source_capture_seq": 24,
+        "artifact": "auxiliary/capture-000024.npz",
+        "artifact_sha256": "0bfbaa8e3476e394a6eb6b210be8123b4b771210cc8a1faafe6914b0f46c0d0d",
+        "capture_read_sim_time_s": 13.300000000001111
+      }
+    ]
+  },
+  "visual_observations": [
+    "Present panels show the bottle below the gripper and the fixed pixel region across that local bottle/background area.",
+    "Away panels show the bottle lower in the image, separate from the closing gripper and outside the fixed pixel region.",
+    "Away overlays retain admitted coordinates scattered onto the robot and background, alongside many coordinates near the original region.",
+    "The full-range curves retain the large away outliers and every missing/failed status; no cohort, crop or range filter was introduced."
+  ],
+  "semantic_ownership_labels_created": false,
+  "holding_labels_created": false,
+  "mechanical_evaluation_performed": false,
+  "report_index_pending_visual_status_superseded_by_this_separate_receipt": true,
+  "original_matrix_status": "interrupted_incomplete",
+  "source_admission_status": "observational-source-qualified"
+}

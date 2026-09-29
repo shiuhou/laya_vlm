@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "source_output": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-retention-transfer-run-01",
+  "source_sensor_seal_sha256": "39ede31f44f5782fe24b68e623ba2e7eb6131e23c5d769ebf92cd3715fbeda60",
+  "source_artifacts_sha256": "5a510ca3e4e9d0110b819f690a66c14feb6d051aafbe9d65b5f5e036bc34e5bc",
+  "audit_script_sha256": "c3dc780a2f92062507a4447af6e8a50bc25bcc127066638fa3ca5582d781df7a",
+  "rows_checked": 91512,
+  "prefix_rows_checked": 32964,
+  "native_fields_per_prefix_row": 9,
+  "max_projection_abs_error_m": 2.220446049250313e-16,
+  "max_delta_abs_error_m": 0.0,
+  "numerical_tolerance_m": 1e-12,
+  "LK_reexecuted": false,
+  "oracle_labels_read": false,
+  "cells": {
+    "whole-close": {
+      "rows": 23124,
+      "captures": 47,
+      "final_summary": {
+        "capture_id": 46,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "valid_surface_count": 492,
+        "references": {
+          "preclose": {
+            "reference_capture_id": 30,
+            "available": true,
+            "reference_surface_valid_count": 492,
+            "reference_own_tcp_available": true,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "median": 0.00828105808187729,
+                "q25": 0.006120315435303614,
+                "q75": 0.011230381212903234,
+                "missing_count": 0
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "median": 0.009463665811997085,
+                "q25": 0.006852048168855405,
+                "q75": 0.012065508405434827,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "median": -0.001539711729875659,
+                "q25": -0.003700454376449336,
+                "q75": 0.0014096114011502847,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "median": 0.005112751209598846,
+                "q25": 0.004847445283264936,
+                "q75": 0.010225245951816442,
+                "missing_count": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "whole-open_hold": {
+      "rows": 23124,
+      "captures": 47,
+      "final_summary": {
+        "capture_id": 46,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "valid_surface_count": 492,
+        "references": {
+          "preclose": {
+            "reference_capture_id": 30,
+            "available": true,
+            "reference_surface_valid_count": 492,
+            "reference_own_tcp_available": true,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "median": 0.0,
+                "q25": 0.0,
+                "q75": 0.0,
+                "missing_count": 0
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "median": 0.0,
+                "q25": 0.0,
+                "q75": 0.0,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "median": -0.009876932069980526,
+                "q25": -0.009876932069980526,
+                "q75": -0.009876932069980526,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "median": 0.009899415024211808,
+                "q25": 0.009899415024211808,
+                "q75": 0.009899415024211808,
+                "missing_count": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "neck-close": {
+      "rows": 22632,
+      "captures": 46,
+      "final_summary": {
+        "capture_id": 45,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "valid_surface_count": 492,
+        "references": {
+          "preclose": {
+            "reference_capture_id": 29,
+            "available": true,
+            "reference_surface_valid_count": 492,
+            "reference_own_tcp_available": true,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "median": 0.008448493158726533,
+                "q25": 0.005971456541296022,
+                "q75": 0.010760542428300268,
+                "missing_count": 0
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "median": 0.011109596347974404,
+                "q25": 0.007713824387012617,
+                "q75": 0.011917202518440603,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "median": -0.0009050601118629764,
+                "q25": -0.003382096729293488,
+                "q75": 0.0014069891577107585,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "median": 0.00515936892086878,
+                "q25": 0.00504180272687257,
+                "q75": 0.009224615596354234,
+                "missing_count": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "neck-open_hold": {
+      "rows": 22632,
+      "captures": 46,
+      "final_summary": {
+        "capture_id": 45,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "valid_surface_count": 492,
+        "references": {
+          "preclose": {
+            "reference_capture_id": 29,
+            "available": true,
+            "reference_surface_valid_count": 492,
+            "reference_own_tcp_available": true,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "median": 0.0,
+                "q25": 0.0,
+                "q75": 0.0,
+                "missing_count": 0
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "median": 0.0,
+                "q25": 0.0,
+                "q75": 0.0,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "median": -0.009406758950219807,
+                "q25": -0.009406758950219807,
+                "q75": -0.009406758950219807,
+                "missing_count": 0
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "median": 0.009413874357674297,
+                "q25": 0.009413874357674297,
+                "q75": 0.009413874357674297,
+                "missing_count": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

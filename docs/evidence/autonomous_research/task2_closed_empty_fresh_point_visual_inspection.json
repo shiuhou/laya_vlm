@@ -1,0 +1,23 @@
+{
+  "inspector": "Codex /root/retention_audit",
+  "view_method": "view_image original resolution",
+  "figure_sha256": "b4fa37602657cbf19a21950bb0d3506045c18a69e68d2383beb85d5d104bd527",
+  "index_sha256": "52575c32bb40edf610312dbadb1649cd52c5f60045fff3d5b2466826139321f4",
+  "full_original_RGB_panels_inspected": 4,
+  "full_repeated_RGB_panels_inspected": 4,
+  "admitted_present_markers_inspected": 2,
+  "nonadmitted_away_markers": 0,
+  "all_raw_text_visible": true,
+  "original_panel_pixels_byte_checked": true,
+  "layout_observations": [
+    "All eight full RGB panels are visible without cropping or resizing.",
+    "Only the two admitted present results have point rings.",
+    "Both nonadmitted away copies remain unchanged, without point or box markers.",
+    "Exact full native raw text and EOS/token counts are visible under all four cases."
+  ],
+  "semantic_identity_adjudicated": false,
+  "root_semantic_inspection": "pending",
+  "depth_read": false,
+  "projection_or_policy_evaluation_performed": false,
+  "generation_index_pending_visual_status_superseded_for_layout_only": true
+}

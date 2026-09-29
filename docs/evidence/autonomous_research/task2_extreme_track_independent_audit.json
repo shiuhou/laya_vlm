@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "diagnostic_freeze": "e363d2517367c570e89fa0a12644f407208ae572",
+  "population_rows_read": 91512,
+  "complete_selected_history_rows": 186,
+  "full_RGB_tiles_checked": 20,
+  "exact_depth_neighborhoods_checked": 20,
+  "diagnostic_sha256": "dda234acfd67cbbbc2b9a701d03de475101768490631f3dcad06ea8686c362c4",
+  "artifacts_sha256": "19937143109dba6b6a98900fd3cbfc4b1f89280dd58e83e2d0d8919c61e16506",
+  "visual_inspection_receipt_sha256": "83e8304bf9ba1337a355c551bf9c569bebe9b90d2e32be88ddf7a234be407503",
+  "findings_sha256": "28b2e56fe8bebcaebb7e4be8413524e42394c1685e5eccb6e02ff0137e378cac",
+  "cells": {
+    "whole-close": {
+      "selected_seed_id": 3,
+      "seed_pixel_xy": [
+        215,
+        169
+      ],
+      "available_final_metrics": 492,
+      "maximum_ties": [
+        3
+      ],
+      "final_point_norm_m": 0.23911424759242372,
+      "complete_history_rows": 47,
+      "all_native_statuses_admitted": true,
+      "all_nearest_pixel_depth_samples_exact": true,
+      "full_largest_jump": {
+        "previous_capture_id": 38,
+        "capture_id": 39,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.23368953376111948
+      },
+      "suffix_largest_jump": {
+        "previous_capture_id": 38,
+        "capture_id": 39,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.23368953376111948
+      },
+      "five_contexts_RGB_depth_and_metadata_exact": true
+    },
+    "whole-open_hold": {
+      "selected_seed_id": 11,
+      "seed_pixel_xy": [
+        223,
+        169
+      ],
+      "available_final_metrics": 492,
+      "maximum_ties": [
+        11
+      ],
+      "final_point_norm_m": 0.21025119213709395,
+      "complete_history_rows": 47,
+      "all_native_statuses_admitted": true,
+      "all_nearest_pixel_depth_samples_exact": true,
+      "full_largest_jump": {
+        "previous_capture_id": 28,
+        "capture_id": 29,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.21362132187394908
+      },
+      "suffix_largest_jump": {
+        "previous_capture_id": 39,
+        "capture_id": 40,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.2067768735054103
+      },
+      "five_contexts_RGB_depth_and_metadata_exact": true
+    },
+    "neck-close": {
+      "selected_seed_id": 3,
+      "seed_pixel_xy": [
+        215,
+        169
+      ],
+      "available_final_metrics": 492,
+      "maximum_ties": [
+        3
+      ],
+      "final_point_norm_m": 0.24191386788810873,
+      "complete_history_rows": 46,
+      "all_native_statuses_admitted": true,
+      "all_nearest_pixel_depth_samples_exact": true,
+      "full_largest_jump": {
+        "previous_capture_id": 37,
+        "capture_id": 38,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.2365187228110031
+      },
+      "suffix_largest_jump": {
+        "previous_capture_id": 37,
+        "capture_id": 38,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.2365187228110031
+      },
+      "five_contexts_RGB_depth_and_metadata_exact": true
+    },
+    "neck-open_hold": {
+      "selected_seed_id": 17,
+      "seed_pixel_xy": [
+        217,
+        170
+      ],
+      "available_final_metrics": 492,
+      "maximum_ties": [
+        17
+      ],
+      "final_point_norm_m": 0.2300962850736131,
+      "complete_history_rows": 46,
+      "all_native_statuses_admitted": true,
+      "all_nearest_pixel_depth_samples_exact": true,
+      "full_largest_jump": {
+        "previous_capture_id": 40,
+        "capture_id": 41,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.23083096824357757
+      },
+      "suffix_largest_jump": {
+        "previous_capture_id": 40,
+        "capture_id": 41,
+        "point_pixel_index_xy_changed": true,
+        "sample_pixel_xy_changed": true,
+        "depth_m_changed": true,
+        "consecutive_stored_world_distance_m": 0.23083096824357757
+      },
+      "five_contexts_RGB_depth_and_metadata_exact": true
+    }
+  },
+  "independent_synthetic_tests_passed": 3,
+  "new_LK_projection_estimator_physics_render_model_FK_calls": 0,
+  "interpretation": "Four post-outcome selected extremes; no population-frequency, authenticated material-point or holding inference."
+}

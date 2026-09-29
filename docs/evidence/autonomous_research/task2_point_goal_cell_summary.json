@@ -1,0 +1,4534 @@
+{
+  "producer_commit": "60ad6d7dd69aa5deb7be0dfe999e26fd417dd75e",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-goal-cell-run-01",
+  "feature_seal_sha256": "190a9423fc1d984d011ba9428c122a87a8ef5419b806c52a3f3dc8a4b3c34bd9",
+  "feature_sha256": {
+    "features/containment.npz": "2fafbc642c12b1f623d51c7cef488e4a16abeea6b120f494b8bb7581f420a78a",
+    "features/result.json": "4ffa028909dff507fb43173e161fc73eff315fe047b0de477bb9cb5432c7f88b"
+  },
+  "request_sha256": "485e2428b71bcc8fbfb02f6db4cc615bc9da709c3c7dcf79fb96747109a9f3e4",
+  "protocol_sha256": "c2fb3a2c23d1ee691d1c57dda4a76bbba870a234fc1680b0476c5f9639dabb63",
+  "review_sha256": "c54b5b10ab7b26e8e9187a5762765799138ca75b1de7699957b26fa9397fac4d",
+  "sources_sha256": {
+    "task2-endpoint-containment-veto-run-01/episodes.jsonl": "17f504c75f9898ec515f474588dac730503c5bd4bef85c3782310b09212de36b",
+    "task2-endpoint-containment-veto-replay-01/result.json": "341abd1d43e7a7c114cc764cef8506196b7cc8dc1f664d4fdf2f70b602a42def",
+    "interaction-observability-paired-01/close/0000.npz": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+    "task2-box-support-run-02/sensor-representation.json": "be102057222f2442ead64c8416709d5b2fd792b134271b49f9d8b14722507ead",
+    "robot-geometry-observability-03/robot-calibration.json": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa"
+  },
+  "terminal_endpoint_record_id": "26be0ccef7ef12e6e15df2544b56d347945c47d7661f992f03b67f63aadf2a03",
+  "terminal_own_packet": {
+    "robot0_eef_pos": [
+      -0.16614079897406514,
+      0.055516522851181034,
+      1.002583127433395
+    ],
+    "robot0_eef_quat": [
+      0.9996096073047641,
+      0.00011368993521776449,
+      -0.027939558387858623,
+      3.370020025383197e-05
+    ],
+    "robot0_gripper_qpos": [
+      0.03999827821057408,
+      -0.03999859350116466
+    ]
+  },
+  "exact_own_sample_time_s": null,
+  "point_P_world_m": [
+    -0.12371558041536501,
+    0.05615888976955092,
+    0.9855272687809821
+  ],
+  "nominal_step_m": 0.01,
+  "axis_stop_cell_half_width_m": 0.005,
+  "geometry_order": [
+    "gripper0_hand_collision",
+    "gripper0_finger1_collision",
+    "gripper0_finger1_pad_collision",
+    "gripper0_finger2_collision",
+    "gripper0_finger2_pad_collision"
+  ],
+  "tensor_shape": [
+    9,
+    1340,
+    5
+  ],
+  "exact_P_any_containment": true,
+  "all_eight_corner_unions_positive": true,
+  "same_point_same_proxy_common_count": 123,
+  "same_point_same_proxy_common_witnesses": [
+    {
+      "full_support_index": 53,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        158
+      ],
+      "depth_m": 0.9664809107780457,
+      "position_world_m": [
+        -0.13719116338778747,
+        0.061508817852240764,
+        1.057485005518255
+      ]
+    },
+    {
+      "full_support_index": 70,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        159
+      ],
+      "depth_m": 0.9635579586029053,
+      "position_world_m": [
+        -0.1334783872749088,
+        0.05508656420576774,
+        1.0575397909628061
+      ]
+    },
+    {
+      "full_support_index": 71,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        159
+      ],
+      "depth_m": 0.9627681374549866,
+      "position_world_m": [
+        -0.1328291159823255,
+        0.057118449854306606,
+        1.0579929250006024
+      ]
+    },
+    {
+      "full_support_index": 72,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        159
+      ],
+      "depth_m": 0.9626607298851013,
+      "position_world_m": [
+        -0.13274082188064973,
+        0.05918888562165131,
+        1.0580545463061442
+      ]
+    },
+    {
+      "full_support_index": 73,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        159
+      ],
+      "depth_m": 0.9624366760253906,
+      "position_world_m": [
+        -0.13255663884861457,
+        0.061251434346957456,
+        1.0581830896502296
+      ]
+    },
+    {
+      "full_support_index": 74,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        159
+      ],
+      "depth_m": 0.962670087814331,
+      "position_world_m": [
+        -0.13274851485605477,
+        0.06334311730825182,
+        1.0580491768648903
+      ]
+    },
+    {
+      "full_support_index": 75,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        159
+      ],
+      "depth_m": 0.9627821445465088,
+      "position_world_m": [
+        -0.13284063109748856,
+        0.06542756047999411,
+        1.0579848876207805
+      ]
+    },
+    {
+      "full_support_index": 90,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        160
+      ],
+      "depth_m": 0.9603366255760193,
+      "position_world_m": [
+        -0.12952865598108798,
+        0.05490240059409947,
+        1.0577760745410556
+      ]
+    },
+    {
+      "full_support_index": 91,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        160
+      ],
+      "depth_m": 0.959923267364502,
+      "position_world_m": [
+        -0.12918941581850119,
+        0.056949671195980954,
+        1.0580139189290447
+      ]
+    },
+    {
+      "full_support_index": 92,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        160
+      ],
+      "depth_m": 0.9596169590950012,
+      "position_world_m": [
+        -0.1289380308255853,
+        0.059001740202282396,
+        1.0581901671980427
+      ]
+    },
+    {
+      "full_support_index": 93,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        160
+      ],
+      "depth_m": 0.9595195651054382,
+      "position_world_m": [
+        -0.1288581003816881,
+        0.061065783303881765,
+        1.058246207005027
+      ]
+    },
+    {
+      "full_support_index": 94,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        160
+      ],
+      "depth_m": 0.9595798850059509,
+      "position_world_m": [
+        -0.12890760467015527,
+        0.06313978365706473,
+        1.0582114988545288
+      ]
+    },
+    {
+      "full_support_index": 95,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        160
+      ],
+      "depth_m": 0.959913969039917,
+      "position_world_m": [
+        -0.12918178534790947,
+        0.06523264839899906,
+        1.0580192678887035
+      ]
+    },
+    {
+      "full_support_index": 96,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        160
+      ],
+      "depth_m": 0.9602808952331543,
+      "position_world_m": [
+        -0.12948291936574463,
+        0.06732925732088513,
+        1.0578081396722188
+      ]
+    },
+    {
+      "full_support_index": 110,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        161
+      ],
+      "depth_m": 0.9582456946372986,
+      "position_world_m": [
+        -0.12651383833683771,
+        0.05478286201851119,
+        1.057370845397589
+      ]
+    },
+    {
+      "full_support_index": 111,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        161
+      ],
+      "depth_m": 0.957409143447876,
+      "position_world_m": [
+        -0.12582842039401654,
+        0.056800514821329,
+        1.0578535974633003
+      ]
+    },
+    {
+      "full_support_index": 112,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        161
+      ],
+      "depth_m": 0.9571875333786011,
+      "position_world_m": [
+        -0.12564684701577877,
+        0.05885236759310927,
+        1.0579814826746183
+      ]
+    },
+    {
+      "full_support_index": 113,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        161
+      ],
+      "depth_m": 0.9571459889411926,
+      "position_world_m": [
+        -0.1256128082338357,
+        0.060914723922730625,
+        1.0580054565970065
+      ]
+    },
+    {
+      "full_support_index": 114,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        161
+      ],
+      "depth_m": 0.9571690559387207,
+      "position_world_m": [
+        -0.125631708049195,
+        0.0629811523933875,
+        1.0579921449062404
+      ]
+    },
+    {
+      "full_support_index": 115,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        161
+      ],
+      "depth_m": 0.9572752118110657,
+      "position_world_m": [
+        -0.12571868572864964,
+        0.06505332684294654,
+        1.057930884742392
+      ]
+    },
+    {
+      "full_support_index": 116,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        161
+      ],
+      "depth_m": 0.958023726940155,
+      "position_world_m": [
+        -0.1263319726917954,
+        0.06717099778471933,
+        1.0574989354145299
+      ]
+    },
+    {
+      "full_support_index": 130,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        162
+      ],
+      "depth_m": 0.9590235352516174,
+      "position_world_m": [
+        -0.12585129370659232,
+        0.054827330980060415,
+        1.05531232519652
+      ]
+    },
+    {
+      "full_support_index": 131,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        162
+      ],
+      "depth_m": 0.9566708207130432,
+      "position_world_m": [
+        -0.12392681453785981,
+        0.056756711965101986,
+        1.0566739653590762
+      ]
+    },
+    {
+      "full_support_index": 132,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        162
+      ],
+      "depth_m": 0.9556483030319214,
+      "position_world_m": [
+        -0.12309041311901714,
+        0.05875772836051826,
+        1.0572657501687832
+      ]
+    },
+    {
+      "full_support_index": 133,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        162
+      ],
+      "depth_m": 0.955349326133728,
+      "position_world_m": [
+        -0.1228458553982632,
+        0.06080038048552907,
+        1.057438783616869
+      ]
+    },
+    {
+      "full_support_index": 134,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        162
+      ],
+      "depth_m": 0.9554826617240906,
+      "position_world_m": [
+        -0.12295492172761613,
+        0.06287018851112271,
+        1.0573616149370983
+      ]
+    },
+    {
+      "full_support_index": 135,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        162
+      ],
+      "depth_m": 0.9562836289405823,
+      "position_world_m": [
+        -0.12361009904378284,
+        0.06498594192865084,
+        1.056898052483918
+      ]
+    },
+    {
+      "full_support_index": 136,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        162
+      ],
+      "depth_m": 0.9587594866752625,
+      "position_world_m": [
+        -0.1256353074941381,
+        0.06722258478629684,
+        1.0554651422008656
+      ]
+    },
+    {
+      "full_support_index": 150,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        163
+      ],
+      "depth_m": 0.9604202508926392,
+      "position_world_m": [
+        -0.12569203062755674,
+        0.054907180997809106,
+        1.0528919794213176
+      ]
+    },
+    {
+      "full_support_index": 151,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        163
+      ],
+      "depth_m": 0.9581069350242615,
+      "position_world_m": [
+        -0.12380291434629875,
+        0.05684191262223844,
+        1.0542347002119206
+      ]
+    },
+    {
+      "full_support_index": 152,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        163
+      ],
+      "depth_m": 0.9569706320762634,
+      "position_world_m": [
+        -0.12287497871379516,
+        0.05883903118619722,
+        1.0548942457781814
+      ]
+    },
+    {
+      "full_support_index": 153,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        163
+      ],
+      "depth_m": 0.9565324783325195,
+      "position_world_m": [
+        -0.12251717064205936,
+        0.06087567855567223,
+        1.0551485636435105
+      ]
+    },
+    {
+      "full_support_index": 154,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        163
+      ],
+      "depth_m": 0.9568137526512146,
+      "position_world_m": [
+        -0.12274686702370707,
+        0.06295777334914815,
+        1.0549853028903264
+      ]
+    },
+    {
+      "full_support_index": 155,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        163
+      ],
+      "depth_m": 0.9579080939292908,
+      "position_world_m": [
+        -0.12364053592010893,
+        0.06509633516407985,
+        1.0543501125642751
+      ]
+    },
+    {
+      "full_support_index": 156,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        163
+      ],
+      "depth_m": 0.9604899883270264,
+      "position_world_m": [
+        -0.1257489810100727,
+        0.06734391724895349,
+        1.0528514997353349
+      ]
+    },
+    {
+      "full_support_index": 170,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        164
+      ],
+      "depth_m": 0.9636842608451843,
+      "position_world_m": [
+        -0.12705133354920362,
+        0.05509378414362003,
+        1.0493799747715173
+      ]
+    },
+    {
+      "full_support_index": 171,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        164
+      ],
+      "depth_m": 0.959570586681366,
+      "position_world_m": [
+        -0.12369757155965555,
+        0.05692874699573352,
+        1.0517745844882436
+      ]
+    },
+    {
+      "full_support_index": 172,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        164
+      ],
+      "depth_m": 0.9584816694259644,
+      "position_world_m": [
+        -0.12280980828483312,
+        0.05893193668082628,
+        1.0524084535763385
+      ]
+    },
+    {
+      "full_support_index": 173,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        164
+      ],
+      "depth_m": 0.958069920539856,
+      "position_world_m": [
+        -0.12247412121945589,
+        0.06097352436439843,
+        1.0526481363226288
+      ]
+    },
+    {
+      "full_support_index": 174,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        164
+      ],
+      "depth_m": 0.9584122896194458,
+      "position_world_m": [
+        -0.12275324519237618,
+        0.06306295597645384,
+        1.052448839612419
+      ]
+    },
+    {
+      "full_support_index": 175,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        164
+      ],
+      "depth_m": 0.9595381021499634,
+      "position_world_m": [
+        -0.12367108844224795,
+        0.06520710509911012,
+        1.0517934927926704
+      ]
+    },
+    {
+      "full_support_index": 176,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        164
+      ],
+      "depth_m": 0.9636842608451843,
+      "position_world_m": [
+        -0.12705133445584393,
+        0.06756788072760632,
+        1.0493799728740167
+      ]
+    },
+    {
+      "full_support_index": 189,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        165
+      ],
+      "depth_m": 0.9680458307266235,
+      "position_world_m": [
+        -0.12929511017275852,
+        0.053254709154283375,
+        1.045216271095362
+      ]
+    },
+    {
+      "full_support_index": 190,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        165
+      ],
+      "depth_m": 0.9637357592582703,
+      "position_world_m": [
+        -0.12578707288344648,
+        0.05509672815437398,
+        1.047732439732098
+      ]
+    },
+    {
+      "full_support_index": 191,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        165
+      ],
+      "depth_m": 0.9614297151565552,
+      "position_world_m": [
+        -0.12391014614121221,
+        0.05703904394668978,
+        1.049078680800021
+      ]
+    },
+    {
+      "full_support_index": 192,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        165
+      ],
+      "depth_m": 0.9609177708625793,
+      "position_world_m": [
+        -0.12349346648400761,
+        0.05908171944222161,
+        1.0493775475334217
+      ]
+    },
+    {
+      "full_support_index": 193,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        165
+      ],
+      "depth_m": 0.9609177708625793,
+      "position_world_m": [
+        -0.12349346663468053,
+        0.06115476721834972,
+        1.0493775472180795
+      ]
+    },
+    {
+      "full_support_index": 194,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        165
+      ],
+      "depth_m": 0.9609131217002869,
+      "position_world_m": [
+        -0.12348968275635908,
+        0.06322750908237772,
+        1.0493802610289267
+      ]
+    },
+    {
+      "full_support_index": 195,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        165
+      ],
+      "depth_m": 0.9616859555244446,
+      "position_world_m": [
+        -0.12411870495768951,
+        0.06535306611485454,
+        1.0489290894290695
+      ]
+    },
+    {
+      "full_support_index": 196,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        165
+      ],
+      "depth_m": 0.9650946259498596,
+      "position_world_m": [
+        -0.12689307754716672,
+        0.0676667670944535,
+        1.0469391474635112
+      ]
+    },
+    {
+      "full_support_index": 209,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        166
+      ],
+      "depth_m": 0.9690098762512207,
+      "position_world_m": [
+        -0.12876636814904574,
+        0.05330774364429172,
+        1.0430270631603942
+      ]
+    },
+    {
+      "full_support_index": 210,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        166
+      ],
+      "depth_m": 0.9644756317138672,
+      "position_world_m": [
+        -0.1250820184516206,
+        0.05513902647672716,
+        1.0456817117791695
+      ]
+    },
+    {
+      "full_support_index": 211,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        166
+      ],
+      "depth_m": 0.9629783034324646,
+      "position_world_m": [
+        -0.1238653481776778,
+        0.057130917380764444,
+        1.0465583472284874
+      ]
+    },
+    {
+      "full_support_index": 212,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        166
+      ],
+      "depth_m": 0.9619050025939941,
+      "position_world_m": [
+        -0.12299322602660279,
+        0.05914241891621978,
+        1.04718672875412
+      ]
+    },
+    {
+      "full_support_index": 213,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        166
+      ],
+      "depth_m": 0.961574137210846,
+      "position_world_m": [
+        -0.12272437790177482,
+        0.06119653956097064,
+        1.047380439084589
+      ]
+    },
+    {
+      "full_support_index": 214,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        166
+      ],
+      "depth_m": 0.962030827999115,
+      "position_world_m": [
+        -0.12309546713352193,
+        0.06330105333795437,
+        1.0471130615448339
+      ]
+    },
+    {
+      "full_support_index": 215,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        166
+      ],
+      "depth_m": 0.9634130001068115,
+      "position_world_m": [
+        -0.12421856630555195,
+        0.06547043032595697,
+        1.0463038455601896
+      ]
+    },
+    {
+      "full_support_index": 216,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        166
+      ],
+      "depth_m": 0.9654091596603394,
+      "position_world_m": [
+        -0.12584056767385987,
+        0.06768882019957376,
+        1.0451351604034627
+      ]
+    },
+    {
+      "full_support_index": 229,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        167
+      ],
+      "depth_m": 0.9701845049858093,
+      "position_world_m": [
+        -0.12840583905362524,
+        0.05337236286189077,
+        1.04071097617767
+      ]
+    },
+    {
+      "full_support_index": 230,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        167
+      ],
+      "depth_m": 0.9657755494117737,
+      "position_world_m": [
+        -0.1248292701610727,
+        0.05521334255890753,
+        1.0432996723842733
+      ]
+    },
+    {
+      "full_support_index": 231,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        167
+      ],
+      "depth_m": 0.9638293385505676,
+      "position_world_m": [
+        -0.12325049334252747,
+        0.05718140685837029,
+        1.0444423801784781
+      ]
+    },
+    {
+      "full_support_index": 232,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        167
+      ],
+      "depth_m": 0.9628288149833679,
+      "position_world_m": [
+        -0.1224388632650888,
+        0.05919921907212261,
+        1.0450298323417937
+      ]
+    },
+    {
+      "full_support_index": 233,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        167
+      ],
+      "depth_m": 0.9625440239906311,
+      "position_world_m": [
+        -0.12220783939408786,
+        0.061258264983133665,
+        1.045197045653202
+      ]
+    },
+    {
+      "full_support_index": 234,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        167
+      ],
+      "depth_m": 0.9629970192909241,
+      "position_world_m": [
+        -0.12257531182784087,
+        0.06336462799632474,
+        1.0449310713798585
+      ]
+    },
+    {
+      "full_support_index": 235,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        167
+      ],
+      "depth_m": 0.9642507433891296,
+      "position_world_m": [
+        -0.12359233987337104,
+        0.06552736049767587,
+        1.0441949531395573
+      ]
+    },
+    {
+      "full_support_index": 236,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        167
+      ],
+      "depth_m": 0.9673381447792053,
+      "position_world_m": [
+        -0.1260968570394525,
+        0.0678240691550442,
+        1.0423822003146594
+      ]
+    },
+    {
+      "full_support_index": 250,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        168
+      ],
+      "depth_m": 0.9672674536705017,
+      "position_world_m": [
+        -0.12472847839516654,
+        0.05529863450326729,
+        1.0408002231656563
+      ]
+    },
+    {
+      "full_support_index": 251,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        168
+      ],
+      "depth_m": 0.9653856754302979,
+      "position_world_m": [
+        -0.12320452023303008,
+        0.0572737399954422,
+        1.041908258085561
+      ]
+    },
+    {
+      "full_support_index": 252,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        168
+      ],
+      "depth_m": 0.964405357837677,
+      "position_world_m": [
+        -0.12241061007456222,
+        0.059296152149693276,
+        1.0424854917986703
+      ]
+    },
+    {
+      "full_support_index": 253,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        168
+      ],
+      "depth_m": 0.9641711115837097,
+      "position_world_m": [
+        -0.12222090587129297,
+        0.061361816005136766,
+        1.0426234211799303
+      ]
+    },
+    {
+      "full_support_index": 254,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        168
+      ],
+      "depth_m": 0.964653730392456,
+      "position_world_m": [
+        -0.12261175491779286,
+        0.0634736384448322,
+        1.0423392435700656
+      ]
+    },
+    {
+      "full_support_index": 255,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        168
+      ],
+      "depth_m": 0.9659870266914368,
+      "position_world_m": [
+        -0.12369152522355742,
+        0.06564535254134651,
+        1.0415541670671522
+      ]
+    },
+    {
+      "full_support_index": 256,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        168
+      ],
+      "depth_m": 0.970986545085907,
+      "position_world_m": [
+        -0.12774038589794434,
+        0.06807987340381036,
+        1.038610332855249
+      ]
+    },
+    {
+      "full_support_index": 269,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        169
+      ],
+      "depth_m": 0.9750217199325562,
+      "position_world_m": [
+        -0.1296867287849216,
+        0.05363847028104632,
+        1.0345978294016158
+      ]
+    },
+    {
+      "full_support_index": 270,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        169
+      ],
+      "depth_m": 0.9695589542388916,
+      "position_world_m": [
+        -0.12527011176735037,
+        0.0554296393301773,
+        1.0378236026971017
+      ]
+    },
+    {
+      "full_support_index": 271,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        169
+      ],
+      "depth_m": 0.9675503373146057,
+      "position_world_m": [
+        -0.12364615575946492,
+        0.05740216342105719,
+        1.039009694524343
+      ]
+    },
+    {
+      "full_support_index": 272,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        169
+      ],
+      "depth_m": 0.9659870266914368,
+      "position_world_m": [
+        -0.12238222754029249,
+        0.05939340039719045,
+        1.039932832128049
+      ]
+    },
+    {
+      "full_support_index": 273,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        169
+      ],
+      "depth_m": 0.9657990336418152,
+      "position_world_m": [
+        -0.12223023630535856,
+        0.06146542013368573,
+        1.0400438420674547
+      ]
+    },
+    {
+      "full_support_index": 274,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        169
+      ],
+      "depth_m": 0.966311514377594,
+      "position_world_m": [
+        -0.12264457442145626,
+        0.06358271948791945,
+        1.0397412208928198
+      ]
+    },
+    {
+      "full_support_index": 275,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        169
+      ],
+      "depth_m": 0.9684898257255554,
+      "position_world_m": [
+        -0.1244057277782995,
+        0.06581543451315369,
+        1.0384549235448504
+      ]
+    },
+    {
+      "full_support_index": 276,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        169
+      ],
+      "depth_m": 0.9731478095054626,
+      "position_world_m": [
+        -0.1281716831842613,
+        0.06823140841802525,
+        1.0357043748654164
+      ]
+    },
+    {
+      "full_support_index": 289,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        170
+      ],
+      "depth_m": 0.9758893847465515,
+      "position_world_m": [
+        -0.12906551232907337,
+        0.05368620261683912,
+        1.0324475154193626
+      ]
+    },
+    {
+      "full_support_index": 290,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        170
+      ],
+      "depth_m": 0.9710293412208557,
+      "position_world_m": [
+        -0.12514278029161952,
+        0.05551370113178946,
+        1.035325537332926
+      ]
+    },
+    {
+      "full_support_index": 291,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        170
+      ],
+      "depth_m": 0.9690902829170227,
+      "position_world_m": [
+        -0.12357769025715137,
+        0.05749352410659143,
+        1.0364738092230819
+      ]
+    },
+    {
+      "full_support_index": 292,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        170
+      ],
+      "depth_m": 0.9681260585784912,
+      "position_world_m": [
+        -0.12279942703902114,
+        0.0595249179302213,
+        1.0370448036035795
+      ]
+    },
+    {
+      "full_support_index": 293,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        170
+      ],
+      "depth_m": 0.9679891467094421,
+      "position_world_m": [
+        -0.12268892023889066,
+        0.06160480324400394,
+        1.0371258798033494
+      ]
+    },
+    {
+      "full_support_index": 294,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        170
+      ],
+      "depth_m": 0.9685559868812561,
+      "position_world_m": [
+        -0.12314643937765268,
+        0.0637304042838895,
+        1.0367902078785303
+      ]
+    },
+    {
+      "full_support_index": 295,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        170
+      ],
+      "depth_m": 0.9702129364013672,
+      "position_world_m": [
+        -0.12448382862747664,
+        0.06593253138654735,
+        1.0358089946256133
+      ]
+    },
+    {
+      "full_support_index": 296,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        224,
+        170
+      ],
+      "depth_m": 0.9753187298774719,
+      "position_world_m": [
+        -0.12860491542092656,
+        0.06838362045023069,
+        1.032785443773839
+      ]
+    },
+    {
+      "full_support_index": 309,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        171
+      ],
+      "depth_m": 0.9768787622451782,
+      "position_world_m": [
+        -0.12854001793371317,
+        0.053740630682359194,
+        1.030222008673481
+      ]
+    },
+    {
+      "full_support_index": 310,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        171
+      ],
+      "depth_m": 0.9725041389465332,
+      "position_world_m": [
+        -0.12501501700202355,
+        0.05559801509494757,
+        1.0328199167440881
+      ]
+    },
+    {
+      "full_support_index": 311,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        171
+      ],
+      "depth_m": 0.9706399440765381,
+      "position_world_m": [
+        -0.1235128789149883,
+        0.05758546118955388,
+        1.0339269848895003
+      ]
+    },
+    {
+      "full_support_index": 312,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        171
+      ],
+      "depth_m": 0.9697057604789734,
+      "position_world_m": [
+        -0.12276012895103727,
+        0.05962204523915258,
+        1.0344817576894798
+      ]
+    },
+    {
+      "full_support_index": 313,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        171
+      ],
+      "depth_m": 0.9696110486984253,
+      "position_world_m": [
+        -0.12268381187378985,
+        0.06170802424196944,
+        1.0345380027924111
+      ]
+    },
+    {
+      "full_support_index": 314,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        171
+      ],
+      "depth_m": 0.9702034592628479,
+      "position_world_m": [
+        -0.1231611669296293,
+        0.06383880682850446,
+        1.0341861942670456
+      ]
+    },
+    {
+      "full_support_index": 315,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        171
+      ],
+      "depth_m": 0.9719374775886536,
+      "position_world_m": [
+        -0.12455841115703248,
+        0.06604972547233086,
+        1.0331564319636812
+      ]
+    },
+    {
+      "full_support_index": 329,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        172
+      ],
+      "depth_m": 0.9781737327575684,
+      "position_world_m": [
+        -0.1282576692715558,
+        0.053811870210648836,
+        1.0278111887331165
+      ]
+    },
+    {
+      "full_support_index": 330,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        172
+      ],
+      "depth_m": 0.9739882349967957,
+      "position_world_m": [
+        -0.1248907356730451,
+        0.05568286064241337,
+        1.0303038079851177
+      ]
+    },
+    {
+      "full_support_index": 331,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        172
+      ],
+      "depth_m": 0.9721897840499878,
+      "position_world_m": [
+        -0.12344401059947396,
+        0.05767740888058082,
+        1.031374852088348
+      ]
+    },
+    {
+      "full_support_index": 332,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        172
+      ],
+      "depth_m": 0.9713048934936523,
+      "position_world_m": [
+        -0.12273217955469362,
+        0.05972036726336097,
+        1.0319018370048005
+      ]
+    },
+    {
+      "full_support_index": 333,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        172
+      ],
+      "depth_m": 0.971233606338501,
+      "position_world_m": [
+        -0.12267483428654247,
+        0.06181128696639864,
+        1.0319442908381444
+      ]
+    },
+    {
+      "full_support_index": 334,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        172
+      ],
+      "depth_m": 0.9718660712242126,
+      "position_world_m": [
+        -0.12318360722858468,
+        0.0639482055478865,
+        1.0315676341581081
+      ]
+    },
+    {
+      "full_support_index": 335,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        172
+      ],
+      "depth_m": 0.9736681580543518,
+      "position_world_m": [
+        -0.12463325741663078,
+        0.06616733676306476,
+        1.0304944241102043
+      ]
+    },
+    {
+      "full_support_index": 349,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        173
+      ],
+      "depth_m": 0.9794673323631287,
+      "position_world_m": [
+        -0.12797070926916732,
+        0.05388303432139765,
+        1.0253968405003238
+      ]
+    },
+    {
+      "full_support_index": 350,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        173
+      ],
+      "depth_m": 0.9754769206047058,
+      "position_world_m": [
+        -0.12476611701173856,
+        0.05576796857420346,
+        1.0277799763855542
+      ]
+    },
+    {
+      "full_support_index": 351,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        173
+      ],
+      "depth_m": 0.9737445712089539,
+      "position_world_m": [
+        -0.12337491393454869,
+        0.05776965007435101,
+        1.0288145621732854
+      ]
+    },
+    {
+      "full_support_index": 352,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        173
+      ],
+      "depth_m": 0.9729140996932983,
+      "position_world_m": [
+        -0.12270798473788658,
+        0.05981930863358637,
+        1.0293105324100444
+      ]
+    },
+    {
+      "full_support_index": 353,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        173
+      ],
+      "depth_m": 0.972866415977478,
+      "position_world_m": [
+        -0.12266969138009953,
+        0.06191520214843041,
+        1.0293390095504127
+      ]
+    },
+    {
+      "full_support_index": 354,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        173
+      ],
+      "depth_m": 0.9735535383224487,
+      "position_world_m": [
+        -0.12322150101676765,
+        0.06405923971986646,
+        1.0289286490374057
+      ]
+    },
+    {
+      "full_support_index": 355,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        173
+      ],
+      "depth_m": 0.9754049777984619,
+      "position_world_m": [
+        -0.12470834244276807,
+        0.06628536525874616,
+        1.027822940152244
+      ]
+    },
+    {
+      "full_support_index": 369,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        217,
+        174
+      ],
+      "depth_m": 0.9807692170143127,
+      "position_world_m": [
+        -0.12768688484909818,
+        0.05395465421355371,
+        1.022973187985643
+      ]
+    },
+    {
+      "full_support_index": 370,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        174
+      ],
+      "depth_m": 0.977008581161499,
+      "position_world_m": [
+        -0.12467191660437726,
+        0.05585553338127802,
+        1.0252254100537819
+      ]
+    },
+    {
+      "full_support_index": 371,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        174
+      ],
+      "depth_m": 0.9753091335296631,
+      "position_world_m": [
+        -0.1233094394780807,
+        0.05786247120172364,
+        1.0262431987877096
+      ]
+    },
+    {
+      "full_support_index": 372,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        174
+      ],
+      "depth_m": 0.9745238423347473,
+      "position_world_m": [
+        -0.12267985776510015,
+        0.05991828298625776,
+        1.0267135046826086
+      ]
+    },
+    {
+      "full_support_index": 373,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        174
+      ],
+      "depth_m": 0.9745047092437744,
+      "position_world_m": [
+        -0.12266451857984229,
+        0.06201946631917162,
+        1.0267249630569253
+      ]
+    },
+    {
+      "full_support_index": 374,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        174
+      ],
+      "depth_m": 0.9752516150474548,
+      "position_world_m": [
+        -0.12326332635046766,
+        0.0641709719984025,
+        1.0262776453036389
+      ]
+    },
+    {
+      "full_support_index": 375,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        174
+      ],
+      "depth_m": 0.9771673083305359,
+      "position_world_m": [
+        -0.12479917175441058,
+        0.06640512738445974,
+        1.02513034769526
+      ]
+    },
+    {
+      "full_support_index": 390,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        218,
+        175
+      ],
+      "depth_m": 0.9785498976707458,
+      "position_world_m": [
+        -0.12458129243712712,
+        0.05594365021820597,
+        1.0226599030709411
+      ]
+    },
+    {
+      "full_support_index": 391,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        219,
+        175
+      ],
+      "depth_m": 0.9768739342689514,
+      "position_world_m": [
+        -0.12323991463246209,
+        0.05795530647333949,
+        1.0236664402163418
+      ]
+    },
+    {
+      "full_support_index": 392,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        220,
+        175
+      ],
+      "depth_m": 0.9761437177658081,
+      "position_world_m": [
+        -0.12265547701026402,
+        0.060017880349711956,
+        1.0241049878191286
+      ]
+    },
+    {
+      "full_support_index": 393,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        221,
+        175
+      ],
+      "depth_m": 0.9761485457420349,
+      "position_world_m": [
+        -0.12265934129358436,
+        0.062124083271980816,
+        1.0241020879492173
+      ]
+    },
+    {
+      "full_support_index": 394,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        222,
+        175
+      ],
+      "depth_m": 0.9769508838653564,
+      "position_world_m": [
+        -0.1233015026495985,
+        0.0642827827154042,
+        1.0236202254459634
+      ]
+    },
+    {
+      "full_support_index": 395,
+      "proxy": "gripper0_hand_collision",
+      "pixel_xy": [
+        223,
+        175
+      ],
+      "depth_m": 0.9789745807647705,
+      "position_world_m": [
+        -0.12492119355138753,
+        0.06652794361581675,
+        1.0224048484933697
+      ]
+    }
+  ],
+  "registered_conditional_whole_cell_certificate": true,
+  "placements": [
+    {
+      "index": 0,
+      "kind": "exact_P",
+      "corner_signs": null,
+      "hypothetical_TCP_world_m": [
+        -0.12371558041536501,
+        0.05615888976955092,
+        0.9855272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 137,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 137,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 1,
+      "kind": "cell_corner",
+      "corner_signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.12871558041536502,
+        0.05115888976955092,
+        0.9805272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 152,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 152,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            449,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            470,
+            471,
+            472,
+            473,
+            474,
+            475,
+            492
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 2,
+      "kind": "cell_corner",
+      "corner_signs": [
+        -1,
+        -1,
+        1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.12871558041536502,
+        0.05115888976955092,
+        0.9905272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 125,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 125,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            412,
+            413
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 3,
+      "kind": "cell_corner",
+      "corner_signs": [
+        -1,
+        1,
+        -1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.12871558041536502,
+        0.06115888976955092,
+        0.9805272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 152,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 152,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            449,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            470,
+            471,
+            472,
+            473,
+            474,
+            475,
+            492
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 4,
+      "kind": "cell_corner",
+      "corner_signs": [
+        -1,
+        1,
+        1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.12871558041536502,
+        0.06115888976955092,
+        0.9905272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 125,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 125,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            412,
+            413
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 5,
+      "kind": "cell_corner",
+      "corner_signs": [
+        1,
+        -1,
+        -1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.11871558041536501,
+        0.05115888976955092,
+        0.9805272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 150,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 150,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            449,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            470,
+            471,
+            472,
+            473,
+            474
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 6,
+      "kind": "cell_corner",
+      "corner_signs": [
+        1,
+        -1,
+        1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.11871558041536501,
+        0.05115888976955092,
+        0.9905272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 123,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 123,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 7,
+      "kind": "cell_corner",
+      "corner_signs": [
+        1,
+        1,
+        -1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.11871558041536501,
+        0.06115888976955092,
+        0.9805272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 150,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 150,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            449,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            470,
+            471,
+            472,
+            473,
+            474
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    },
+    {
+      "index": 8,
+      "kind": "cell_corner",
+      "corner_signs": [
+        1,
+        1,
+        1
+      ],
+      "hypothetical_TCP_world_m": [
+        -0.11871558041536501,
+        0.06115888976955092,
+        0.9905272687809821
+      ],
+      "returned_orientation_and_jaws_unchanged": true,
+      "any_containment": true,
+      "contained_point_union_count": 123,
+      "per_proxy": {
+        "gripper0_hand_collision": {
+          "contained_point_count": 123,
+          "full_support_indices": [
+            53,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395
+          ]
+        },
+        "gripper0_finger1_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger1_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        },
+        "gripper0_finger2_pad_collision": {
+          "contained_point_count": 0,
+          "full_support_indices": []
+        }
+      }
+    }
+  ],
+  "source_RGB": {
+    "source_npz": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/interaction-observability-paired-01/close/0000.npz",
+    "source_npz_sha256": "3753552576da3254ecac0e061bc75910be598550b6efd1d2415f76710aa27969",
+    "unmarked_rgb_values_exact": true,
+    "common_overlay_unique_pixels": 123,
+    "only_changed_pixels_are_all_common_source_pixels": true,
+    "artifacts": {
+      "task2_point_goal_cell_source_rgb.png": "9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3",
+      "task2_point_goal_cell_common_pixels.png": "db3854a02a1a91b9502323bbe31b6f068e569e196b86116cc933b8ba1f994bf2"
+    }
+  },
+  "containment_artifact": "task2_point_goal_cell_containment.npz",
+  "containment_artifact_sha256": "2fafbc642c12b1f623d51c7cef488e4a16abeea6b120f494b8bb7581f420a78a",
+  "halfspace_numeric_tolerance": 1e-12,
+  "independent_audit": {
+    "sha256": "eaf14227c8afb4954370f82be98176e28dc2c2c01832c08b749857bf983b3c46",
+    "commit": "b60bf3e",
+    "status": "PASS",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-goal-cell-run-01",
+    "producer_commit": "60ad6d7dd69aa5deb7be0dfe999e26fd417dd75e",
+    "result_sha256": "4ffa028909dff507fb43173e161fc73eff315fe047b0de477bb9cb5432c7f88b",
+    "feature_seal_sha256": "190a9423fc1d984d011ba9428c122a87a8ef5419b806c52a3f3dc8a4b3c34bd9",
+    "all_60300_boolean_entries_recomputed": true,
+    "maximum_proxy_translation_residual_m": 2.220446049250313e-16,
+    "contained_point_counts": [
+      137,
+      152,
+      125,
+      152,
+      125,
+      150,
+      123,
+      150,
+      123
+    ],
+    "common_same_point_proxy_witness_count": 123,
+    "all_witnesses_strictly_inside_without_tolerance": true,
+    "minimum_common_witness_facet_margin_m": 0.0002929249710361681,
+    "maximum_common_witness_facet_margin_m": 0.017087352087196774,
+    "common_witnesses": [
+      {
+        "full_support_index": 53,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          158
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0030109579876806602
+      },
+      {
+        "full_support_index": 70,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.006665768585086896
+      },
+      {
+        "full_support_index": 71,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.007389489115237137
+      },
+      {
+        "full_support_index": 72,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.007488200284492137
+      },
+      {
+        "full_support_index": 73,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.007693745316649124
+      },
+      {
+        "full_support_index": 74,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.007480306970461507
+      },
+      {
+        "full_support_index": 75,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          159
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0073780153044319795
+      },
+      {
+        "full_support_index": 90,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010588658221586748
+      },
+      {
+        "full_support_index": 91,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010967164082280724
+      },
+      {
+        "full_support_index": 92,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011247733183144508
+      },
+      {
+        "full_support_index": 93,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011337173342590543
+      },
+      {
+        "full_support_index": 94,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011282326296794319
+      },
+      {
+        "full_support_index": 95,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010977021786254993
+      },
+      {
+        "full_support_index": 96,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          160
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010641671346343263
+      },
+      {
+        "full_support_index": 110,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013471999660222275
+      },
+      {
+        "full_support_index": 111,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01423682308643889
+      },
+      {
+        "full_support_index": 112,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01443967928206857
+      },
+      {
+        "full_support_index": 113,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014477981617034726
+      },
+      {
+        "full_support_index": 114,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01445723852480629
+      },
+      {
+        "full_support_index": 115,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014360564403546213
+      },
+      {
+        "full_support_index": 116,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          161
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01367686843464323
+      },
+      {
+        "full_support_index": 130,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013732369836535942
+      },
+      {
+        "full_support_index": 131,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015880364006057007
+      },
+      {
+        "full_support_index": 132,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01681409737420744
+      },
+      {
+        "full_support_index": 133,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.017087352087196774
+      },
+      {
+        "full_support_index": 134,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.016965974031874453
+      },
+      {
+        "full_support_index": 135,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.016235154794004777
+      },
+      {
+        "full_support_index": 136,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          162
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01397542858782402
+      },
+      {
+        "full_support_index": 150,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013430006827417223
+      },
+      {
+        "full_support_index": 151,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015539694029321215
+      },
+      {
+        "full_support_index": 152,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01657614510317362
+      },
+      {
+        "full_support_index": 153,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01697600294059101
+      },
+      {
+        "full_support_index": 154,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.016719865613744386
+      },
+      {
+        "full_support_index": 155,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01572235132021114
+      },
+      {
+        "full_support_index": 156,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          163
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013368445834454356
+      },
+      {
+        "full_support_index": 170,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011429709341671977
+      },
+      {
+        "full_support_index": 171,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015176851287620818
+      },
+      {
+        "full_support_index": 172,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.016168992481081012
+      },
+      {
+        "full_support_index": 173,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01654435716644732
+      },
+      {
+        "full_support_index": 174,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.016232859166929108
+      },
+      {
+        "full_support_index": 175,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015207789179898148
+      },
+      {
+        "full_support_index": 176,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          164
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011431743755375782
+      },
+      {
+        "full_support_index": 189,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.00843711745021247
+      },
+      {
+        "full_support_index": 190,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01235877956783529
+      },
+      {
+        "full_support_index": 191,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014457166661247228
+      },
+      {
+        "full_support_index": 192,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014923273691824526
+      },
+      {
+        "full_support_index": 193,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014923611787395357
+      },
+      {
+        "full_support_index": 194,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014928179704223648
+      },
+      {
+        "full_support_index": 195,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014225391628726793
+      },
+      {
+        "full_support_index": 196,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          165
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011124514212769178
+      },
+      {
+        "full_support_index": 209,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.008541341314212856
+      },
+      {
+        "full_support_index": 210,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012662365558499752
+      },
+      {
+        "full_support_index": 211,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014023463728334889
+      },
+      {
+        "full_support_index": 212,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014999208568924585
+      },
+      {
+        "full_support_index": 213,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015300234340161239
+      },
+      {
+        "full_support_index": 214,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01488553656190501
+      },
+      {
+        "full_support_index": 215,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013629771093565026
+      },
+      {
+        "full_support_index": 216,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          166
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011816021267026102
+      },
+      {
+        "full_support_index": 229,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0084563546908019
+      },
+      {
+        "full_support_index": 230,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012459052839928177
+      },
+      {
+        "full_support_index": 231,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014226121093462992
+      },
+      {
+        "full_support_index": 232,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.015134713681747746
+      },
+      {
+        "full_support_index": 233,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01539357940011676
+      },
+      {
+        "full_support_index": 234,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014982699134951077
+      },
+      {
+        "full_support_index": 235,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013844935898583998
+      },
+      {
+        "full_support_index": 236,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          167
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011042603880510869
+      },
+      {
+        "full_support_index": 250,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012084286054437409
+      },
+      {
+        "full_support_index": 251,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013790958604351127
+      },
+      {
+        "full_support_index": 252,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014680216429000314
+      },
+      {
+        "full_support_index": 253,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014892962087272445
+      },
+      {
+        "full_support_index": 254,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014455679589082834
+      },
+      {
+        "full_support_index": 255,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013247033341651625
+      },
+      {
+        "full_support_index": 256,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          168
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0087139895366988
+      },
+      {
+        "full_support_index": 269,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0060400416898176695
+      },
+      {
+        "full_support_index": 270,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010988303827587543
+      },
+      {
+        "full_support_index": 271,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012807956041520584
+      },
+      {
+        "full_support_index": 272,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.01422426942001102
+      },
+      {
+        "full_support_index": 273,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.014394884461114362
+      },
+      {
+        "full_support_index": 274,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013931043781564633
+      },
+      {
+        "full_support_index": 275,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011958374506249616
+      },
+      {
+        "full_support_index": 276,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          169
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.00773974004488037
+      },
+      {
+        "full_support_index": 289,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.006242434793640226
+      },
+      {
+        "full_support_index": 290,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010639857761547076
+      },
+      {
+        "full_support_index": 291,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012394543868569665
+      },
+      {
+        "full_support_index": 292,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013267257248046099
+      },
+      {
+        "full_support_index": 293,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.013391467487474409
+      },
+      {
+        "full_support_index": 294,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012878965445658
+      },
+      {
+        "full_support_index": 295,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011380199330709799
+      },
+      {
+        "full_support_index": 296,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          224,
+          170
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0067611318673051046
+      },
+      {
+        "full_support_index": 309,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.006336590052556058
+      },
+      {
+        "full_support_index": 310,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010290403706315008
+      },
+      {
+        "full_support_index": 311,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.011887774601270664
+      },
+      {
+        "full_support_index": 312,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012497476784638419
+      },
+      {
+        "full_support_index": 313,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012559421678269402
+      },
+      {
+        "full_support_index": 314,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.012173017966438772
+      },
+      {
+        "full_support_index": 315,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          171
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.010804221354984723
+      },
+      {
+        "full_support_index": 329,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.005432686501209982
+      },
+      {
+        "full_support_index": 330,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.008171323431452437
+      },
+      {
+        "full_support_index": 331,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.009347962434286263
+      },
+      {
+        "full_support_index": 332,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.009926892316931115
+      },
+      {
+        "full_support_index": 333,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.00997366491819496
+      },
+      {
+        "full_support_index": 334,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.009560131530936157
+      },
+      {
+        "full_support_index": 335,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          172
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.008381251192939976
+      },
+      {
+        "full_support_index": 349,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0030467267180209756
+      },
+      {
+        "full_support_index": 350,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.005663992966731479
+      },
+      {
+        "full_support_index": 351,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.006800033148749219
+      },
+      {
+        "full_support_index": 352,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.007344674883837944
+      },
+      {
+        "full_support_index": 353,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.00737608429616965
+      },
+      {
+        "full_support_index": 354,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.006925720789184187
+      },
+      {
+        "full_support_index": 355,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          173
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0057116826524070685
+      },
+      {
+        "full_support_index": 369,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          217,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.000651253383650241
+      },
+      {
+        "full_support_index": 370,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.003123729299530531
+      },
+      {
+        "full_support_index": 371,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.004240790371862869
+      },
+      {
+        "full_support_index": 372,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.004757044700156588
+      },
+      {
+        "full_support_index": 373,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.00476976531890494
+      },
+      {
+        "full_support_index": 374,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0042790309190043905
+      },
+      {
+        "full_support_index": 375,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          174
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0030198824210077024
+      },
+      {
+        "full_support_index": 390,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          218,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0005722139883954648
+      },
+      {
+        "full_support_index": 391,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          219,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0016764707198344555
+      },
+      {
+        "full_support_index": 392,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          220,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0021576772464346754
+      },
+      {
+        "full_support_index": 393,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          221,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.002154642854283129
+      },
+      {
+        "full_support_index": 394,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          222,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.001626216062330599
+      },
+      {
+        "full_support_index": 395,
+        "proxy": "gripper0_hand_collision",
+        "pixel_xy": [
+          223,
+          175
+        ],
+        "minimum_signed_facet_margin_over_eight_corners_m": 0.0002929249710361681
+      }
+    ],
+    "scope": "Fixed terminal orientation/jaws, frozen partial observed support and calibrated convex proxies only; no physical or global reachability claim."
+  },
+  "physical_margin_m": 0.0,
+  "physics_or_model_calls": 0,
+  "scope": "conditional sensor/proxy exclusion under the existing1e-12numeric convention at this fixed terminal orientation/jaw state; no all-orientation/all-horizon impossibility claim",
+  "convexity_basis": "For one fixed observed q and one fixed convex proxy C, admissible TCP translations with q in C+TCP form q-C. This set is convex; containing all8cell corners contains their convex hull."
+}

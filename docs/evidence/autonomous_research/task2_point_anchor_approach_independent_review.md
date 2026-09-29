@@ -1,0 +1,100 @@
+# Fixed whole/neck POINT approach: prospective review
+
+Prospective **PASS**, 2026-09-27, before any paired physical collection.
+Scientific implementation freeze:
+`fb7899bef22e6473aed30e7dd0051568bd7db7f7`.
+Final canonical-path admission JSON SHA-256:
+`753fd32754c67265956c845db0d689f7ca41e2ad1aa1155cb75ee6aecdb14fef`.
+
+The root reviewer read the complete wrapper/protocol, underlying collector and
+replay paths, unchanged endpoint selector, and the final integrity-only delta.
+Main integrated regression at `c7db61d`:981 passed in38.17s. Final delta focused
+checks: producer37 passed; root independently23 wrapper tests passed. The
+collector's optional decision hook preserves default behavior. Production
+runtime_core, LIBERO adapter and decision_interface remain identical to baseline.
+
+Root independently called prepare and physical_admission from the clean frozen
+producer tree, without a world/model/render. The result was PASS for the exact
+admission SHA above, retained order whole/neck, neck exactP containment false.
+The admission binds the closed POINT source audit, original fullBOX support,
+calibration/own packet, geometry request/producer, all120,600 audited entries,
+and exact combined/per-condition tensors. Canonical main audit paths are used.
+
+Proceed with only the registered whole collection→whole exact replay→neck
+collection→neck exact replay. Each policy episode starts from original reset,
+seed1/init0, independently matches initial RGB/depth/K/T, and uses at most
+40actions/900s. Recheck idle GPU4 before starting. Keep the producer freeze clean
+through all stages. The only behavioral difference is the fixed POINT anchor;
+fullBOX support, endpoint veto, strict point rule, tie break and executor stay
+fixed. There is no GRASP, model call, archived-control policy warm start or
+adaptive target selection.
+
+Retain and replay normal STOP/contact/action-budget outcomes before the next
+fixed arm. Admission/runtime/execution/count/replay failure or wall timeout
+stops the batch; no retry or partial-evidence replay. Oracle native-contact
+monitoring remains an explicitly labeled post-primitive diagnostic abort, not
+a sensor-only safety system. Absence of sampled containment is not clearance;
+rule STOP is not grasp readiness, manipulation success or temporal stability.
+
+Inspect all action/effect/exclusion traces, first shared-state decision
+divergence, actual RGB and native contacts after the run. Independent stored
+audit and descriptive RGB/gap interpretation proceed in parallel. No new policy
+or physical continuation is admitted by this receipt.
+
+---
+
+# Independent fixed POINT-anchor approach audit
+
+**Stored-evidence PASS** for both registered fresh approach episodes and their separate exact-control verification replays in `task2-point-anchor-approach-run-01`. The [independent checker](../../../experiments/task2_point_anchor_approach_evidence_audit.py) and [complete receipt](task2_point_anchor_approach_independent_audit.json) verify the finalized batch, both source/goal/support bindings, every canonical decision and nominal effect, every endpoint exclusion/index list, all raw commands and state handoffs, validator arithmetic, native snapshots/contacts and exported replay evidence. Reviewer calls used stored records/arrays/scalar equations only, with no simulation, rendering, model, FK or source-projection rerun.
+
+The reviewer inspected the complete original `48f3757` wrapper/protocol and two-line default-preserving collector hook, then the final integrity delta at **`fb7899bef22e6473aed30e7dd0051568bd7db7f7`**. The delta explicitly checks geometry producer/source/count/order and all aggregate/tensor bindings, including equality of the combined tensor with both per-condition tensors; seven additional negative cases exercise altered binding/array/flag failures. Root prospective **`1c884d2`** binds that final clean freeze and final admission SHA-256 `753fd32754c67265956c845db0d689f7ca41e2ad1aa1155cb75ee6aecdb14fef`. All admission references were independently verified byte for byte. No-world preflight 02 SHA-256 is `dba534d9a685cdf027af6241b02b52618f32cd2f8dd6ada4f9fff3e80d8ed248`.
+
+| Stored measurement | Whole bottle POINT | Neck POINT |
+| --- | ---: | ---: |
+| Journal records | 12,635 | 12,214 |
+| Decisions including terminal STOP | 31 | 30 |
+| Completed approach actions | 30 | 29 |
+| Raw controls | 240 | 232 |
+| Native integrations | 6,000 | 5,800 |
+| Native BEFORE/AFTER snapshots | 12,000 | 11,600 |
+| Full RGB-D captures | 31 | 30 |
+| Initial P distance (mm) | 209.961882859 | 173.664388160 |
+| Final P distance (mm) | 43.051501500 | 5.009756389 |
+| Maximum translation residual (mm) | 1.305423106 | 1.430673988 |
+| Maximum rotation change (degrees) | 0.232641012 | 0.260683649 |
+
+Both initial RGB/depth/K/T arrays match the original source exactly, and both initial own/native/contact states match each other. Each canonical target remains its one originally admitted POINT with corrected native-POINT provenance; the object identity text remains `the wine bottle`. The guard retains the same original full BOX support/calibration and five separate solids. Semantic confidence/validity, holding, current visibility and stationarity remain unknown. No model, tracker, support refresh, gap objective or privileged motor input appears. All 59 completed primitives independently meet the unchanged translation/rotation/open-jaw validator limits, and STOP terminates without a hold.
+
+All **2,860,900** candidate/point/proxy membership values were independently checked from saved vertices under the unchanged `1e-12` halfspace convention, including all seven candidates at all 61 decisions. Every exclusion union, remaining candidate subset, distance/effect value, strict-improvement rule result and tuple tie-break matches. The first between-anchor policy difference occurs at **decision 5**: whole chooses DOWN, neck chooses FWD. Their first five actions, 40 controls, 2,000 native snapshots, returned endpoints and six full RGB-D captures are exact common physical prefixes. At decision 5, the live own packet, proxy vertices and endpoint exclusions still match; the admitted target changes the nominal distance ranking.
+
+The whole-anchor guard first changes the unguarded choice at step 22, DOWN→LEFT; FWD and DOWN are each vetoed by full-support index 53. At terminal decision 30, DOWN is the sole excluded movement, with 32 hand-contained observed points and a nominal P-distance reduction of **9.969108213 mm**. All other movements increase distance, so the guarded rule stops **43.051501500 mm** from its P. STOP/current-pose containment is zero.
+
+The neck episode never changes a selected token relative to the unguarded point rule. At terminal decision 29, both rules choose STOP. Its final P−TCP vector is **(3.603273, 1.965320, −2.872560) mm**, inside the original ±5 mm axis-rule cell; the 5.009756 mm Euclidean distance is not a failed 5 mm radial criterion. DOWN has 36 hand-contained points but would also worsen P distance by 3.214989909 mm; every other nominal movement worsens it as well. STOP/current-pose containment is zero. This establishes the specific point-approach endpoint behavior, not jaw fit, physical clearance, holding or grasp success.
+
+There are **zero raw robot contact rows**, including the initial snapshots and all 23,600 recorded native BEFORE/AFTER samples; consequently there are also no new >0.05 N robot pairs or contact-abort records. This finding concerns the recorded snapshots, not an inferred continuous-time guarantee. All official executor success flags are false, and both terminal records explicitly decline a grasp/task-success claim.
+
+Both verification replays bind their exact source journals and reproduce every exported control-before/after state, native time/qpos/qvel/integration fingerprint and capture equality gate. The reviewed verifier compared full native snapshots and image arrays during replay; those replay contacts/images were not separately reexported for a second comparison here. Counts above cover the instrumented fresh approaches; standard reset/ten open-jaw settling controls per world and separate verification replays remain distinct. The final batch contains exactly whole collection→whole replay→neck collection→neck replay, with no retry, extra policy episode or selected winner.
+
+The POINT and geometry source receipts remain immutable (`c083504f…` and `bf1ce72a…`). The offline neck exact-center prerequisite concerned prior terminal orientation/jaws, while these live episodes use their own returned states. A reachable nominal point-rule stop does not settle the finite-pad-gap/grasp question. Actual RGB/gap interpretation and final portable-report review remain separate pending work.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| Batch journal | `36a1a4a15cbbc9a9beb54e4ac63f5362220be075a8fc012a618dc98f9e88e4ad` |
+| Batch request | `97eeebaa77c1b050b4de60d42b5f284690daf37038bef2eb020cc5d495c472f3` |
+| Whole journal | `690f81aef2fe5b3d2b5aee09d72f269dfbf7f37ee24c1f9a83c061f7ce4b4541` |
+| Neck journal | `3e335ff3d4791f43b74750216fd928470145ea0d34d5a03fbeaba3f2ff492ae8` |
+| Whole replay | `d784b0bc206fcbe07fc376426610b47e9f10fc38ae23d9a67ae3838dc9aaedd0` |
+| Neck replay | `0134e2abf91aeabb8bc36880a77b3e237f7711e2e88ca38bbed0faadbae5326b` |
+| Independent audit | `0cd47a1433ac25d14b45aa942a17d7322e19865804c33b3adb2fee25a2d2d56e` |
+
+## Final report and interpretation closeout
+
+**Derived-report PASS** at producer **`93fd4c2`**, with final summary SHA-256 `db8038a373b9a57e842ac191800eeba10eacb499fda8991f3947633ebcb41c1a`. The full portable traces preserve all 61 decisions (including original record IDs/candidates/effects/exclusions), 59 action results and 59 endpoints exactly. All condition summaries, initial gates, terminal candidates, distances, counters, replay identities and first-divergence records match sealed raw evidence. The reviewer inspected the distance/action figure and checked its source series, guard-altered markers and complete action sequences. The trace SHA-256 is `203ad25dc660b00c8f2c66b8dd4dd99f6522634c5d7b451200cb7e5d786e7d2f`; figure SHA-256 is `86575dcb2aac9f6a09e3adc51d77b5a53807eb60ca3f95c2aae88b0ff39e6a98`.
+
+The descriptive cross-anchor table was independently checked from the two stored terminal TCPs and unchanged P values. Terminal TCP separation is **9.021938077 mm**, with neck-minus-whole translation **(−9.001397598, −0.475639810, +0.379440001) mm**. Whole's endpoint is **6.129807956 mm** from the neck P, versus neck's **5.009756389 mm**. The findings therefore correctly distinguish own-goal distances from physical endpoint differences and make no grasp-superiority inference.
+
+**Actual-RGB/own-gap interpretation PASS** at retention **`9058a9c`**, portable summary SHA-256 `d7af1fc268645125d223e174059f75493721d6bc94abbd04e284de1762698519`. The reviewer read the stored-only utility and scoped findings, opened the complete six-panel RGB figure and both original-resolution terminal PNGs, and verified every selected boundary record ID, own packet, exact capture ID/time and all six unmarked RGB arrays. Pre-divergence is recorded capture 6 at `2.4999999999999463 s`; terminal captures are whole 31 at `12.500000000000844 s` and neck 30 at `12.10000000000071 s`. Both terminal images are visually very similar, with the hand occluding the cap/upper neck and visible fingers flanking that area. This is qualitative alignment evidence, not bilateral pad contact, enclosed extent, stability or holding.
+
+For all six predeclared packets, independent scalar/array equations using the **already saved site-rotation matrices**, exact own positions and signed joints reproduce the reported own-P site coordinates with zero discrepancy. The existing finite-gap intervals/predicate agree: both initial and pre-divergence points are outside; terminal whole's own P is outside and terminal neck's own P is inside. Their terminal site Z values are respectively **42.814095678 mm** and **2.663674272 mm**, against the unchanged `[-11.6,+4.4] mm` pad Z interval. No FK, new placement, source projection, alternate point evaluation or renderer was invoked. The findings preserve this as a different-own-point comparison and do not infer superior grasp mechanics.
+
+The interpretation preserves the original pending visual field in its raw result and attaches the separate visual receipt. Its raw result SHA-256 is `bfb681e9913dfb154843542685b6ee140e90200b90601188e15b1e7160e90aea`, visual receipt SHA-256 is `d81ded0ce630defbf78443348ee41815488fbbf35e67af29ed3c31d44daddea1`, and six-panel figure SHA-256 is `f320b40ee5d7d9fbf7c220a487d4e0ff7351d31df1daff7c2f130578d0f87e6d`. This closes both portable reporting and the scoped interpretation; any closing/lift test remains a separately reviewed condition.

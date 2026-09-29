@@ -1,0 +1,36 @@
+{
+  "status": "pass",
+  "freeze_commit": "553c2fd4a8cec43c7e9be5ae2cfd74719f5aafaf",
+  "preflight_sha256": "88d53bc641b57614132beccca376bad1f0ec7a3a0f6e3ae16725878ad238baa6",
+  "protocol_sha256": "8c80d1f9c9502791c00e871da19731a5bcd7bf4231608345ced26171e506c03f",
+  "authorized_batches": 1,
+  "registered_output": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-retention-transfer-run-01",
+  "authorization": "Root explicitly delegated release of the one registered offline batch after independent prospective PASS.",
+  "reviewed_scope": "Complete frozen adapter, wrapper, protocol, synthetic tests and source-only preflight; source code and protocol hashes match the clean exact freeze.",
+  "independent_tests": {
+    "runtime": "/home/junhongli/miniforge3/envs/locateanything/bin/python",
+    "files": ["tests/test_task2_point_anchor_retention_adapter.py", "tests/test_task2_point_anchor_retention_transfer.py"],
+    "passed": 12,
+    "seconds": 5.50,
+    "archived_features_computed": false
+  },
+  "scope": {
+    "conditions": ["whole-close", "whole-open_hold", "neck-close", "neck-open_hold"],
+    "seeds_per_cell": 492,
+    "tracks": 1968,
+    "rows": 91512,
+    "native_prefix_rows": 32964,
+    "native_fields_per_prefix_row": 9,
+    "preclose_reference_only": true,
+    "retries": 0
+  },
+  "findings": [
+    "The unchanged adapter pins original tracker and arithmetic helper hashes. All failure rows, attempted coordinates, later unknowns and nulls remain; all summaries use fixed denominator 492.",
+    "The mechanical audit and source journals are hash linkage only. The extractor receives sealed sensor RGB, depth, calibration and own observations, with no evaluator/mask/holding classifier.",
+    "Runtime identity pins locateanything, Python, OpenCV, NumPy, build hash and observed 256 threads without modifying settings.",
+    "Exactly one chronological tracker call per seed/cell is authorized. Prefix disagreement is reported after complete batch sealing without repair; runtime failure preserves partial rows and receipts without an incomplete complete seal.",
+    "Synthetic tests cover all 91512 output rows, all 32964 nine-field prefix comparisons, mismatch-after-seal, runtime failure preservation, output reuse rejection and exact admission gates."
+  ],
+  "reviewer_physics_render_FK_archived_projection_LK_model_calls": 0,
+  "interpretation": "Descriptive temporal transfer only; no semantic identity, contact, holding, support-free retention, task success or anchor superiority inference."
+}

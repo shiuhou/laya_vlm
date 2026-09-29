@@ -1,0 +1,164 @@
+{
+  "audit_scope": "independent post-result source review and stored-evidence arithmetic; no new experiment",
+  "source_sha256": "e09300d6ce11b86ba21339d92f52c86a24ac584f585a9fed8208ca51df7607cf",
+  "candidate_witness": {
+    "raw_sha256": "23a5e0ea9a59317ad843141a4ec0017958d0c180fdbc7c2aed90cf41697943fa",
+    "producer_commit": "e13bc36e3083bbd081669a4eb3e6724ffa3bed5c",
+    "record_count": 2971,
+    "prefix_controls_verified": 1400,
+    "native_controls_verified": 56,
+    "original_MV_RIGHT_exact": true,
+    "artifact_hashes": {
+      "frames/MV_FWD-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_FWD-after.npz": "a2f539aa0c0af63e61a68cc0eefa941c7e9dde7c0f556677b706636123926136",
+      "frames/MV_BACK-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_BACK-after.npz": "4be7f132e5866c42b0de426595f7eb9ea11def6dc25d96ce81a70e8d2d49ccec",
+      "frames/MV_LEFT-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_LEFT-after.npz": "468e67a48d4b1c146768100bf708144fa00d274d097babf302a768a1cd9fa5d7",
+      "frames/MV_RIGHT-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_RIGHT-after.npz": "b4bccb25ac43ccad17458bf612761a650d1ee3c1e7b9e961a7699df39e21c711",
+      "frames/MV_UP-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_UP-after.npz": "294538c4b4859c184b61d312d4777ee631ca24be6674c9cf298f8f9dca6b919d",
+      "frames/MV_DOWN-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/MV_DOWN-after.npz": "dd0a664c27165aecb06bb565d483ffaf51d1e4f946a6dac71dc9855b86b12c73",
+      "frames/STOP-before.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+      "frames/STOP-after.npz": "47ad40ed7186a33dfdd24cd30408eac57dc32e2b4c3a3a19a1c4f3717f15e5cc",
+      "trajectory/action-000.npz": "5b4653de1596aef3a0ee3d3fca37edc6af0d24bad967b36a0f22cc198183b580",
+      "trajectory/action-001.npz": "5f76e3659f414d29957d6723dc6ab5578debe09f26450bf61df4dae04a947892",
+      "trajectory/action-002.npz": "28b39ffe15965678557297a00762159c69b0efa36ad87e314a7e1b96896c2044",
+      "trajectory/action-003.npz": "9f5c4b160112a1524d22657cb79878ae86f3360455819774f70f215cf3fb6585",
+      "trajectory/action-004.npz": "3a409ae8fa9346a76afe9977103813f006071ae941028cbeea7ed972dd701237",
+      "trajectory/action-005.npz": "32aad77f8d40a2051d07b84317c0e6393dd13a16828a5f611741a531c5c253bd",
+      "trajectory/action-006.npz": "ba964d9813e1d8bde55b3de8483c167880b32c5ef56d28f7149c8e126565c9b3"
+    },
+    "arms": [
+      {
+        "arm": "MV_FWD",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": -0.03638066101566295,
+        "point_gain_mm": 4.143664780979946,
+        "translation_error_mm": 0.3156458356966002,
+        "contract_reasons": [],
+        "drawer_joint_delta_mm": 0.0,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "MV_BACK",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": -1.4920753565617488,
+        "point_gain_mm": -4.896673322759032,
+        "translation_error_mm": 3.032151894287905,
+        "contract_reasons": [
+          "translation_error"
+        ],
+        "drawer_joint_delta_mm": 0.0,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "MV_LEFT",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": -0.5574865315060791,
+        "point_gain_mm": -6.359074644558454,
+        "translation_error_mm": 1.3804124761699588,
+        "contract_reasons": [],
+        "drawer_joint_delta_mm": 0.0,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "MV_RIGHT",
+        "sampled_robot_contacts": 5,
+        "sampled_nonhandle_contacts": 5,
+        "maximum_force_N": 4.839180784535814,
+        "handle_gap_gain_mm": -0.7554051542544507,
+        "point_gain_mm": 5.069832632068727,
+        "translation_error_mm": 1.6500319397716567,
+        "contract_reasons": [],
+        "drawer_joint_delta_mm": 6.8446707636462545,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "MV_UP",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": -10.119414146843226,
+        "point_gain_mm": -6.207307788748214,
+        "translation_error_mm": 0.9623284025671526,
+        "contract_reasons": [],
+        "drawer_joint_delta_mm": 0.0,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "MV_DOWN",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": 8.466454011120675,
+        "point_gain_mm": 5.313087609559765,
+        "translation_error_mm": 2.1147869929060334,
+        "contract_reasons": [
+          "translation_error"
+        ],
+        "drawer_joint_delta_mm": 1.4062045695444891,
+        "sampled_contact_free_progress": true,
+        "contract_valid_sampled_contact_free_progress": false
+      },
+      {
+        "arm": "STOP",
+        "sampled_robot_contacts": 0,
+        "sampled_nonhandle_contacts": 0,
+        "maximum_force_N": 0.0,
+        "handle_gap_gain_mm": -0.6743658028816775,
+        "point_gain_mm": 0.09129900785398437,
+        "translation_error_mm": 1.2380217650212866,
+        "contract_reasons": [],
+        "drawer_joint_delta_mm": 0.0,
+        "sampled_contact_free_progress": false,
+        "contract_valid_sampled_contact_free_progress": false
+      }
+    ],
+    "contract_valid_sampled_contact_free_progress_arms": []
+  },
+  "robot_geometry": {
+    "artifacts_manifest_sha256": "8a23a3464173f37759342733d36f07dd92cb3bdae00b1c859d0c5349852ccb23",
+    "artifact_hashes": {
+      "archive-admission-map.json": "f60adc5b01aa0ccd527459d5711269a66f85b70b8b4cc32105033768251fec51",
+      "constructor-half-step-evaluator-only.json": "ff0c24d77bb9e217fa2aeebcab3455d4a626340e3938bc843bae958e89af1251",
+      "encoder-packets.json": "5b6ae9866d4fde887b0236a8d735c981fd010fe85ca156997473ab4277051e25",
+      "estimator-input.json": "071bcde0a7a80d62f66c6a8ee14ae50447f201c064454b28eae84897f492c614",
+      "evaluator-recomputed-poses.json": "0e67254c95e588e32b7c01e99a9357bc4ff733e63f533e83a451a4c6f38b27e1",
+      "manifest.json": "04ad26e756c414fb439e87de6deb2b4db750b42e76cd63dc6c76c85283dff35e",
+      "protocol.md": "0227d585e70718e5875f72bbf7d018b44e7afe6723bbc5115f199f836206926f",
+      "robot-calibration.json": "11d2d8c788439c7a10cd9a4e26022762096b712e55d9fb2d93bb51e3ee56bdaa",
+      "sensor-estimates-seal.json": "1d10bcaf656520396e45cb5c4b1e5b4bac336d7223703cf713dc0bb65fb045f8",
+      "sensor-estimates.json": "9649e90b531730f078fa68ebc66161d246e4b871684ebd43b51eba1ae63394d0",
+      "static-setup.json": "cd500c2464cd9692796e89ce5a9ce1485576d8ba8c17398a490b89f8f2be2bab",
+      "summary.json": "e4bee02dc4507af2bf57fe18fff19995a5b80893bc2180447d0f9f93333768c4"
+    },
+    "array_fields_compared": 264,
+    "max_errors": {
+      "position_world_m": 8.881784197001252e-16,
+      "rotation_world": 3.6637359812630166e-15,
+      "vertices_world_m": 1.1102230246251565e-15,
+      "aabb_world_m": 1.1102230246251565e-15
+    },
+    "poison_variants_bit_equal": 8,
+    "export_counts": {
+      "bodies": 21,
+      "sites": 2,
+      "geometries": 5
+    }
+  },
+  "passed": true
+}

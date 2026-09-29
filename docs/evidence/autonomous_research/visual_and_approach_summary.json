@@ -1,0 +1,220 @@
+{
+  "visual-target-verification-run-01": {
+    "audit_sha256": "69a4471c6b7854677a5ddb36f51de97c3d3aad65f7c60bdeacdcb8ff90cac09e",
+    "audit_pass": true,
+    "run_sha256": "a58c58abfbcead2a72be782031f9f5f132028bfe5a3141781ffb3a5298f7e18b",
+    "model_content_id": "11fccd61f55d2716ae7f8d4e28790b58b63d4126ade6994cef640a3cf337aa33",
+    "run_commit": "a7dc274d543259a9d56dd5c0c6731fa6d4a01ece",
+    "metrics_per_repeat": {
+      "1": {
+        "planned": 14,
+        "valid": 14,
+        "missing": 0,
+        "uncertain": 0,
+        "accepted": 14,
+        "coarse_correct": 12,
+        "coarse_accuracy": 0.8571428571428571,
+        "target_retained": 12,
+        "target_total": 12,
+        "wrong_handle_rejected": 0,
+        "wrong_handle_false_accepted": 2,
+        "wrong_handle_total": 2,
+        "strict_mask_hits_accepted": 9,
+        "strict_mask_misses_accepted": 5
+      },
+      "2": {
+        "planned": 14,
+        "valid": 14,
+        "missing": 0,
+        "uncertain": 0,
+        "accepted": 14,
+        "coarse_correct": 12,
+        "coarse_accuracy": 0.8571428571428571,
+        "target_retained": 12,
+        "target_total": 12,
+        "wrong_handle_rejected": 0,
+        "wrong_handle_false_accepted": 2,
+        "wrong_handle_total": 2,
+        "strict_mask_hits_accepted": 9,
+        "strict_mask_misses_accepted": 5
+      }
+    },
+    "limitations": [
+      "14 already-inspected development images, including only two wrong-handle cases; repeated generations are not independent scenes.",
+      "Coarse evaluator labels were independently reviewed but not blind to prior point/mask overlays.",
+      "Same-process exact repeat consistency does not establish fresh-process bitwise determinism.",
+      "Audit validates recorded forward-hook consumption; no independent model re-execution performed.",
+      "Frozen input verifier result does not establish universal VLM incapability or contact/manipulation competence."
+    ]
+  },
+  "visual-marker-control-run-01": {
+    "audit_sha256": "b40bc6e5ff03543fc153dc64cd18f0f6df93fc42c7cfdc7877efb7fc748d3644",
+    "audit_pass": true,
+    "run_sha256": "59e691f14da268fb479c7ba33ec1c54fd63297fdf575c319c92ba9e24d8e5eb8",
+    "model_content_id": "11fccd61f55d2716ae7f8d4e28790b58b63d4126ade6994cef640a3cf337aa33",
+    "run_commit": "14a05fc8a54b39889a96fe43703808657c3be053",
+    "metrics": {
+      "planned": 16,
+      "valid": 16,
+      "invalid": 0,
+      "missing": 0,
+      "uncertain": 0,
+      "tablemarker_other_region": 0,
+      "tablemarker_total": 8,
+      "tablemarker_false_target": 8,
+      "original_label_replications": 8,
+      "original_replication_total": 8,
+      "marker_induced_label_changes": 0,
+      "matched_interventions": 8,
+      "original_coarse_correct": 4,
+      "overall_coarse_correct": 4
+    },
+    "matched_image_interventions": [
+      {
+        "parent_source_index": 0,
+        "repeat": 1,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 1.140625,
+        "changed_logit_elements": 410032,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 0,
+        "repeat": 2,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 1.140625,
+        "changed_logit_elements": 410032,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 8,
+        "repeat": 1,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.875,
+        "changed_logit_elements": 415101,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 8,
+        "repeat": 2,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.875,
+        "changed_logit_elements": 415101,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 11,
+        "repeat": 1,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.625,
+        "changed_logit_elements": 446290,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 11,
+        "repeat": 2,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.625,
+        "changed_logit_elements": 446290,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 17,
+        "repeat": 1,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.75,
+        "changed_logit_elements": 421090,
+        "total_logit_elements": 455808
+      },
+      {
+        "parent_source_index": 17,
+        "repeat": 2,
+        "original_label": "target_handle",
+        "table_label": "target_handle",
+        "label_changed": false,
+        "image_processor_hash_changed": true,
+        "consumed_image_hash_changed": true,
+        "text_ids_unchanged": true,
+        "logits_bitwise_identical": false,
+        "max_abs_logit_difference": 0.75,
+        "changed_logit_elements": 421090,
+        "total_logit_elements": 455808
+      }
+    ],
+    "limitations": [
+      "Four correlated previously inspected development images; repeats are not independent scenes.",
+      "Same labels across marker locations do not imply images were ignored; raw logits differ.",
+      "The result does not isolate marker salience, spatial grounding, prompt prior, or visual resolution.",
+      "No safety/contact/grasp/planning competence or universal VLM incapability is established.",
+      "Audit verifies recorded forward consumption without independent model execution."
+    ]
+  },
+  "approach-selector-run-01": {
+    "audit_sha256": "16f30e6cd187b898a6108a25ff68c4e86496eb44f87793f94de7571ce03df72b",
+    "audit_pass": true,
+    "raw_sha256": "2ed444a6ee96519a60b276df0462c0230f227676365464a5e4df5e72c17a947e",
+    "model_content_id": "9fba4af58ef08fd2703a011f5678c9a999223c939380048b9f2b7383b6b9e704",
+    "run_commit": "ac4385a5852cdc08f638fe16df3bff683d1b24a0",
+    "coverage": {
+      "planned": 12,
+      "completed": 12,
+      "invalid": 0,
+      "missing": 0,
+      "fixtures": 6
+    },
+    "choice_counts": {
+      "GRASP": 12
+    },
+    "temperature": 1.0000158548355103,
+    "no_truncation": true,
+    "limitations": [
+      "Global close-drawer state persists alongside the local approach instruction; objective priority/context is not experimentally isolated.",
+      "This probes the unrestricted natural ten-option pool, not a translation/STOP seven-option family.",
+      "GRASP nominal effects are unknown, not measured zero motion or demonstrated physical failure.",
+      "Historical accepted sensor estimates carry uncalibrated covariance and unverified target identity.",
+      "Six inspected development states and two repeats do not establish generalization."
+    ]
+  }
+}

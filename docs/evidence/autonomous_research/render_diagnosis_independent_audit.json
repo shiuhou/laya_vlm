@@ -1,0 +1,159 @@
+{
+  "passed": true,
+  "manifest_sha256": "6e8d7db6edb80ad04692da0cf887aea14e63eb03360bef1c00e2a2b626750194",
+  "measurements_sha256": "8b8c288538b89d707b84b931a9bef658f337c91edf26779994095b4c864462b4",
+  "output_seal_sha256": "e3ea43709c6f6bf553e787ab032ad4bf4941c5c2fca7e2193517850bd33b9cec",
+  "sealed_artifacts": 12,
+  "checked_neighborhood_entries": 99,
+  "recorded_state_gate_checks": 402,
+  "recorded_cache_checks": 6,
+  "counts": {
+    "bootstrap": {
+      "env_controls": 10,
+      "mj_step": 250,
+      "mj_step1": 2,
+      "mj_step2": 0,
+      "mj_forward": 509
+    },
+    "prefix": {
+      "env_controls": 200,
+      "mj_step": 5000,
+      "mj_step1": 0,
+      "mj_step2": 0,
+      "mj_forward": 10000
+    },
+    "diagnostic": {
+      "env_controls": 0,
+      "mj_step": 0,
+      "mj_step1": 0,
+      "mj_step2": 0,
+      "mj_forward": 0
+    }
+  },
+  "frames": {
+    "24": {
+      "whole_frame": {
+        "rgb_different_pixels": 17073,
+        "rgb_max_channel_difference": 185,
+        "depth_different_pixels": 147412,
+        "depth_max_absolute_difference_m": 1.5999337434768677,
+        "depth_mean_absolute_difference_m": 0.003615417844331306
+      },
+      "centers": [
+        {
+          "pixel_xy": [
+            216,
+            97
+          ],
+          "native_depth_m": 0.758036196231842,
+          "zero_depth_m": 1.471535563468933,
+          "zero_minus_native_mm": 713.4993672370911
+        },
+        {
+          "pixel_xy": [
+            147,
+            162
+          ],
+          "native_depth_m": 0.8406006097793579,
+          "zero_depth_m": 0.8415093421936035,
+          "zero_minus_native_mm": 0.9087324142456055
+        },
+        {
+          "pixel_xy": [
+            147,
+            163
+          ],
+          "native_depth_m": 0.8381868004798889,
+          "zero_depth_m": 0.8390903472900391,
+          "zero_minus_native_mm": 0.9035468101501465
+        },
+        {
+          "pixel_xy": [
+            165,
+            176
+          ],
+          "native_depth_m": 0.8572311401367188,
+          "zero_depth_m": 0.8585399985313416,
+          "zero_minus_native_mm": 1.3088583946228027
+        },
+        {
+          "pixel_xy": [
+            165,
+            177
+          ],
+          "native_depth_m": 0.855085551738739,
+          "zero_depth_m": 0.8564728498458862,
+          "zero_minus_native_mm": 1.3872981071472168
+        },
+        {
+          "pixel_xy": [
+            237,
+            102
+          ],
+          "native_depth_m": 0.7616868019104004,
+          "zero_depth_m": 1.4964642524719238,
+          "zero_minus_native_mm": 734.7774505615234
+        }
+      ],
+      "producer_recorded_max_projected_vertex_difference_px": 0.004568182957760455
+    },
+    "25": {
+      "whole_frame": {
+        "rgb_different_pixels": 17228,
+        "rgb_max_channel_difference": 202,
+        "depth_different_pixels": 147416,
+        "depth_max_absolute_difference_m": 1.5809742212295532,
+        "depth_mean_absolute_difference_m": 0.0037571311400420703
+      },
+      "centers": [
+        {
+          "pixel_xy": [
+            119,
+            126
+          ],
+          "native_depth_m": 0.7605748176574707,
+          "zero_depth_m": 0.7594515681266785,
+          "zero_minus_native_mm": -1.1232495307922363
+        },
+        {
+          "pixel_xy": [
+            156,
+            165
+          ],
+          "native_depth_m": 0.8344271183013916,
+          "zero_depth_m": 1.2167882919311523,
+          "zero_minus_native_mm": 382.36117362976074
+        },
+        {
+          "pixel_xy": [
+            236,
+            145
+          ],
+          "native_depth_m": 0.7932089567184448,
+          "zero_depth_m": 1.291032075881958,
+          "zero_minus_native_mm": 497.8231191635132
+        },
+        {
+          "pixel_xy": [
+            240,
+            110
+          ],
+          "native_depth_m": 0.7629369497299194,
+          "zero_depth_m": 1.420939326286316,
+          "zero_minus_native_mm": 658.0023765563965
+        },
+        {
+          "pixel_xy": [
+            156,
+            155
+          ],
+          "native_depth_m": 0.8346341252326965,
+          "zero_depth_m": 1.2528151273727417,
+          "zero_minus_native_mm": 418.18100214004517
+        }
+      ],
+      "producer_recorded_max_projected_vertex_difference_px": 0.004881923025331481
+    }
+  },
+  "scope": "independent stored array/hash/arithmetic audit; recorded live-state/cache gates checked for consistency, not replayed; no rendering, FK or projection"
+}

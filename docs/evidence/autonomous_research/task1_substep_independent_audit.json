@@ -1,0 +1,4431 @@
+{
+  "passed": true,
+  "raw_identity": {
+    "sha256": "e8e253cefe4c694c6091e1bf944a8f269cfc47c7ed08c053419d97e1a73615d4",
+    "records": 100158
+  },
+  "source_hashes": {
+    "episodes.jsonl": "9b77651de9474ecb8cdf24d67ea54a71bfc8d19be33a4e3c1d5ee70c514cc3f2",
+    "manifest.json": "a19ddc51c95e094be6d4dbac3fbb1271902de30ede8f630d432c8e40f9ec4b2a",
+    "reference-evidence.json": "063ad9585ca4bd5c9c5e7dbedff39efe522d51261a5a5e2e8246a94653cba008"
+  },
+  "producer_commit": "f6efbcb4a1d461faf8a37720d50efacb76f37260",
+  "record_counts": {
+    "run_start": 1,
+    "frozen_inputs": 1,
+    "environment": 1,
+    "primitive_started": 122,
+    "control_started": 970,
+    "native_forward_completed": 48500,
+    "integrator_call_started": 24250,
+    "integrator_call_completed": 24250,
+    "control_state_observed": 970,
+    "control_completed": 970,
+    "primitive_completed": 122,
+    "termination": 1
+  },
+  "official_success": true,
+  "net_drawer_closure_mm": 152.05189674218448,
+  "attribution": {
+    "before": {
+      "neither_historical_relation": {
+        "intervals": 21212,
+        "positive_change_mm": 98.58864201237216,
+        "negative_change_mm": -2.49023828745464,
+        "net_change_mm": 96.09840372491763
+      },
+      "designated_only": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      },
+      "historical_non_designated_only": {
+        "intervals": 3038,
+        "positive_change_mm": 59.46490362925336,
+        "negative_change_mm": -3.511410611986989,
+        "net_change_mm": 55.95349301726637
+      },
+      "simultaneous": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      }
+    },
+    "after": {
+      "neither_historical_relation": {
+        "intervals": 21212,
+        "positive_change_mm": 98.569656900614,
+        "negative_change_mm": -2.4946485824351554,
+        "net_change_mm": 96.07500831817896
+      },
+      "designated_only": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      },
+      "historical_non_designated_only": {
+        "intervals": 3038,
+        "positive_change_mm": 59.48388874101151,
+        "negative_change_mm": -3.507000317006473,
+        "net_change_mm": 55.97688842400504
+      },
+      "simultaneous": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      }
+    },
+    "interval": {
+      "neither_historical_relation": {
+        "intervals": 21209,
+        "positive_change_mm": 98.56499900495069,
+        "negative_change_mm": -2.490217441443764,
+        "net_change_mm": 96.07478156350706
+      },
+      "designated_only": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      },
+      "historical_non_designated_only": {
+        "intervals": 3035,
+        "positive_change_mm": 59.46024573359006,
+        "negative_change_mm": -3.5069794709955975,
+        "net_change_mm": 55.953266262594454
+      },
+      "simultaneous": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      },
+      "ambiguous_stage_difference": {
+        "intervals": 6,
+        "positive_change_mm": 0.028300903084754747,
+        "negative_change_mm": -0.004451987002267177,
+        "net_change_mm": 0.02384891608248757
+      }
+    },
+    "control": {
+      "neither_historical_relation": {
+        "intervals": 836,
+        "positive_change_mm": 108.44504416719654,
+        "negative_change_mm": -2.479267810151318,
+        "net_change_mm": 105.96577635704521
+      },
+      "designated_only": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      },
+      "historical_non_designated_only": {
+        "intervals": 134,
+        "positive_change_mm": 49.314652051606885,
+        "negative_change_mm": -3.228531666467766,
+        "net_change_mm": 46.08612038513913
+      },
+      "simultaneous": {
+        "intervals": 0,
+        "positive_change_mm": 0.0,
+        "negative_change_mm": 0.0,
+        "net_change_mm": 0.0
+      }
+    }
+  },
+  "stage_counts": {
+    "before": {
+      "neither_historical_relation": 21212,
+      "bilateral": 0,
+      "raw_designated_rows": 0,
+      "historical_non_designated_only": 3038
+    },
+    "after": {
+      "neither_historical_relation": 21212,
+      "bilateral": 0,
+      "raw_designated_rows": 0,
+      "historical_non_designated_only": 3038
+    }
+  },
+  "designated_samples": [],
+  "raw_designated_sample_count": 0,
+  "native_forward_calls": 48500,
+  "per_primitive": [
+    {
+      "step": 0,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 1,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 2,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 3,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 4,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 5,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 6,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 7,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 8,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 146,
+          "positive_change_mm": 1.0052276960214324,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.0052276960214324
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 54,
+          "positive_change_mm": 1.0895277097866807,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.0895277097866807
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 9,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 169,
+          "positive_change_mm": 1.6186854761413294,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.6186854761413294
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 31,
+          "positive_change_mm": 0.15108730414048477,
+          "negative_change_mm": -0.014029597671216809,
+          "net_change_mm": 0.13705770646926796
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 10,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 0.05992128986795353,
+          "negative_change_mm": -0.004699269431834852,
+          "net_change_mm": 0.05522202043611868
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.002490580211650384,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.002490580211650384
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": -0.001327383452376374,
+          "net_change_mm": -0.001327383452376374
+        }
+      }
+    },
+    {
+      "step": 11,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 195,
+          "positive_change_mm": 1.1832905579859387,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.1832905579859387
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 5,
+          "positive_change_mm": 0.09134577605021676,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.09134577605021676
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 12,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 181,
+          "positive_change_mm": 0.5476580158539912,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.5476580158539912
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 19,
+          "positive_change_mm": 0.11551891206237896,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.11551891206237896
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 13,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.057537633214727046,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.057537633214727046
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 14,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 189,
+          "positive_change_mm": 1.635068086243363,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.635068086243363
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 11,
+          "positive_change_mm": 0.1548789732880862,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1548789732880862
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 15,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.1374407058842564,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1374407058842564
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 16,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 188,
+          "positive_change_mm": 1.6566291658800247,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.6566291658800247
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 11,
+          "positive_change_mm": 0.14356688631089742,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.14356688631089742
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.015571083333637548,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.015571083333637548
+        }
+      }
+    },
+    {
+      "step": 17,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.1221321755879301,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1221321755879301
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 18,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.9751876505846857,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.9751876505846857
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.032582007492454323,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.032582007492454323
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 19,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0021199632616042408,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0021199632616042408
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 20,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 194,
+          "positive_change_mm": 0.1258291996845129,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1258291996845129
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 6,
+          "positive_change_mm": 0.024198429903532492,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.024198429903532492
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 21,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.017560157539897592,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.017560157539897592
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 22,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 97,
+          "positive_change_mm": 2.391141890045745e-05,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.391141890045745e-05
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 103,
+          "positive_change_mm": 0.26868981038633,
+          "negative_change_mm": -0.11937052963487127,
+          "net_change_mm": 0.14931928075145873
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 23,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 1.011795333114185,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.011795333114185
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.06882812690620077,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.06882812690620077
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 24,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 160,
+          "positive_change_mm": 2.086125074379469,
+          "negative_change_mm": -0.07292402054434599,
+          "net_change_mm": 2.0132010538351217
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 40,
+          "positive_change_mm": 0.31602146365744543,
+          "negative_change_mm": -0.011323425060910663,
+          "net_change_mm": 0.30469803859653477
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 25,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 195,
+          "positive_change_mm": 0.5167791766755858,
+          "negative_change_mm": -0.0025008487142541558,
+          "net_change_mm": 0.5142783279613317
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 5,
+          "positive_change_mm": 0.037757504615071324,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.037757504615071324
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 26,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 147,
+          "positive_change_mm": 0.4645790157622176,
+          "negative_change_mm": -0.07493112694587079,
+          "net_change_mm": 0.3896478888163468
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 53,
+          "positive_change_mm": 0.16685155518528227,
+          "negative_change_mm": -0.021331745057667773,
+          "net_change_mm": 0.1455198101276145
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 27,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 195,
+          "positive_change_mm": 0.46302802510991836,
+          "negative_change_mm": -0.0032135676470979035,
+          "net_change_mm": 0.45981445746282046
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 5,
+          "positive_change_mm": 0.02332786544134713,
+          "negative_change_mm": -0.0015554284202301538,
+          "net_change_mm": 0.021772437021116975
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 28,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 185,
+          "positive_change_mm": 0.08288653011997993,
+          "negative_change_mm": -0.07475641418136503,
+          "net_change_mm": 0.008130115938614901
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 15,
+          "positive_change_mm": 0.0694646533908605,
+          "negative_change_mm": -0.006236664859132768,
+          "net_change_mm": 0.06322798853172773
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 29,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 0.28953111731477854,
+          "negative_change_mm": -0.0053911081363267055,
+          "net_change_mm": 0.28414000917845184
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.013089931745924321,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.013089931745924321
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 30,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 111,
+          "positive_change_mm": 0.13256154979249257,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.13256154979249257
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 89,
+          "positive_change_mm": 0.3475518412623668,
+          "negative_change_mm": -0.059957067480381765,
+          "net_change_mm": 0.28759477378198506
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 31,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 196,
+          "positive_change_mm": 0.4674718997373095,
+          "negative_change_mm": -0.004109601209972835,
+          "net_change_mm": 0.4633622985273367
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 4,
+          "positive_change_mm": 0.020381409267578032,
+          "negative_change_mm": -0.002158105377930708,
+          "net_change_mm": 0.018223303889647324
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 32,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 195,
+          "positive_change_mm": 0.3096751845089729,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.3096751845089729
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 5,
+          "positive_change_mm": 0.04189510769334048,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.04189510769334048
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 33,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 160,
+          "positive_change_mm": 0.9264326133124612,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.9264326133124612
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 40,
+          "positive_change_mm": 0.5864342399344025,
+          "negative_change_mm": -0.0773523566772738,
+          "net_change_mm": 0.5090818832571287
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 34,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 192,
+          "positive_change_mm": 6.415452251031956,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 6.415452251031956
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 8,
+          "positive_change_mm": 0.8821920031102104,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.8821920031102104
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 35,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.015848752178609926,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.015848752178609926
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 36,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 95,
+          "positive_change_mm": 0.15962473119679466,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.15962473119679466
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 105,
+          "positive_change_mm": 0.9736814525244386,
+          "negative_change_mm": -1.1560363832874287e-05,
+          "net_change_mm": 0.9736698921606057
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 37,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 181,
+          "positive_change_mm": 0.3799266552630687,
+          "negative_change_mm": -0.0006060283128939137,
+          "net_change_mm": 0.37932062695017477
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 18,
+          "positive_change_mm": 0.09472516013009358,
+          "negative_change_mm": -9.474214662796854e-06,
+          "net_change_mm": 0.09471568591543078
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": -2.0846010875819054e-05,
+          "net_change_mm": -2.0846010875819054e-05
+        }
+      }
+    },
+    {
+      "step": 38,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.1645258309046077,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1645258309046077
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.010523473025325636,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.010523473025325636
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 39,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 191,
+          "positive_change_mm": 3.6051128006024693,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.6051128006024693
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 9,
+          "positive_change_mm": 0.7347439100746089,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.7347439100746089
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 40,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 112,
+          "positive_change_mm": 2.0446900067959968,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.0446900067959968
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 88,
+          "positive_change_mm": 1.1641593191872301,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.1641593191872301
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 41,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.13952715580425878,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.13952715580425878
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.004657895663298661,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.004657895663298661
+        }
+      }
+    },
+    {
+      "step": 42,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 165,
+          "positive_change_mm": 0.00020392718755313233,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.00020392718755313233
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 35,
+          "positive_change_mm": 0.715621689497653,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.715621689497653
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 43,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 183,
+          "positive_change_mm": 0.2652242277722261,
+          "negative_change_mm": -0.07886622308131419,
+          "net_change_mm": 0.1863580046909119
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 17,
+          "positive_change_mm": 0.06657093795225943,
+          "negative_change_mm": -0.0016712770092991436,
+          "net_change_mm": 0.06489966094296029
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 44,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 196,
+          "positive_change_mm": 3.5942921849350795,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.5942921849350795
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.26586900312795814,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.26586900312795814
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.008071924087818538,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.008071924087818538
+        }
+      }
+    },
+    {
+      "step": 45,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.017528401398139715,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.017528401398139715
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 46,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 95,
+          "positive_change_mm": 2.379802954699528e-05,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.379802954699528e-05
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 105,
+          "positive_change_mm": 0.8562686316730267,
+          "negative_change_mm": -0.4700886984063818,
+          "net_change_mm": 0.3861799332666449
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 47,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 0.8311007291563755,
+          "negative_change_mm": -0.1344106370203546,
+          "net_change_mm": 0.6966900921360208
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.04264080639551637,
+          "negative_change_mm": -0.01242323748321117,
+          "net_change_mm": 0.030217568912305204
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 48,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 157,
+          "positive_change_mm": 2.49844511523023,
+          "negative_change_mm": -0.11818149599557293,
+          "net_change_mm": 2.380263619234657
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 43,
+          "positive_change_mm": 0.28163026039645933,
+          "negative_change_mm": -0.05328233674521676,
+          "net_change_mm": 0.22834792365124257
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 49,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.34477348087981474,
+          "negative_change_mm": -0.008864458426405264,
+          "net_change_mm": 0.3359090224534095
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.011511364663652213,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.011511364663652213
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 50,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 154,
+          "positive_change_mm": 3.0051539242115086,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.0051539242115086
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 46,
+          "positive_change_mm": 4.936409196338921,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 4.936409196338921
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 51,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 2.0217820595089253,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.0217820595089253
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.004459789566188532,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.004459789566188532
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 52,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.011053870524149745,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.011053870524149745
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 53,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 83,
+          "positive_change_mm": 0.4443062858933422,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.4443062858933422
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 117,
+          "positive_change_mm": 2.4814184165124615,
+          "negative_change_mm": -0.0031289165905723504,
+          "net_change_mm": 2.478289499921889
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 54,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 169,
+          "positive_change_mm": 2.3175603360693233,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.3175603360693233
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 31,
+          "positive_change_mm": 0.38849695402513873,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.38849695402513873
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 55,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 190,
+          "positive_change_mm": 0.25148126103161084,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.25148126103161084
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 10,
+          "positive_change_mm": 0.019522890644149693,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.019522890644149693
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 56,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.04165540099082543,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.04165540099082543
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 57,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.01719700681562797,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.01719700681562797
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 58,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.027702811776289527,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.027702811776289527
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 59,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.022871927916903734,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.022871927916903734
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 60,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.018890002120991456,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.018890002120991456
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 61,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.014485763064855939,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.014485763064855939
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 62,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.010095355079758894,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.010095355079758894
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 63,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.25343324791918254,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.25343324791918254
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.03303467643783753,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.03303467643783753
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 64,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 190,
+          "positive_change_mm": 3.0470498222938,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.0470498222938
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 10,
+          "positive_change_mm": 0.20054418711769328,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.20054418711769328
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 65,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.25898582250029334,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.25898582250029334
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.0070756697172214,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0070756697172214
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 66,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 115,
+          "positive_change_mm": 1.5652986575442478,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.5652986575442478
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 85,
+          "positive_change_mm": 2.1177956016477526,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.1177956016477526
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 67,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 57,
+          "positive_change_mm": 0.05094915343097084,
+          "negative_change_mm": -0.008590399193431075,
+          "net_change_mm": 0.042358754237539764
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 143,
+          "positive_change_mm": 0.18585095542392183,
+          "negative_change_mm": -0.20413922434815712,
+          "net_change_mm": -0.018288268924235296
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 68,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 193,
+          "positive_change_mm": 4.472384629327713,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 4.472384629327713
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 7,
+          "positive_change_mm": 0.6836644933515684,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.6836644933515684
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 69,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.012550210630513092,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.012550210630513092
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 70,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 154,
+          "positive_change_mm": 3.881004419726344,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.881004419726344
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 46,
+          "positive_change_mm": 5.240070781093037,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 5.240070781093037
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 71,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 196,
+          "positive_change_mm": 2.1676366939083507,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.1676366939083507
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 4,
+          "positive_change_mm": 0.04524822240141446,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.04524822240141446
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 72,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.1569834239357193,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.1569834239357193
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.008086596860884532,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.008086596860884532
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 73,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 3.2399078578993916,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 3.2399078578993916
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.13159268102853894,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.13159268102853894
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 74,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.04932828983247872,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.04932828983247872
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 75,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 100,
+          "positive_change_mm": 0.08776634230339003,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.08776634230339003
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 100,
+          "positive_change_mm": 1.7987973480392898,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.7987973480392898
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 76,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 123,
+          "positive_change_mm": 1.1413329010452613,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.1413329010452613
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 77,
+          "positive_change_mm": 0.3134306306653428,
+          "negative_change_mm": -0.0728974687411732,
+          "net_change_mm": 0.24053316192416963
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 77,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 190,
+          "positive_change_mm": 0.1617867722237057,
+          "negative_change_mm": -0.05130148018894082,
+          "net_change_mm": 0.11048529203476487
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 9,
+          "positive_change_mm": 0.014569390685864603,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.014569390685864603
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 1,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": -0.003103757539014984,
+          "net_change_mm": -0.003103757539014984
+        }
+      }
+    },
+    {
+      "step": 78,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.05162979115629074,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.05162979115629074
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 79,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.02711892766279339,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.02711892766279339
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 80,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.01818994207557212,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.01818994207557212
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 81,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.012925810128683324,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.012925810128683324
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 82,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.010294881848844917,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.010294881848844917
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 83,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.4340341890721952,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.4340341890721952
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.018549281619997804,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.018549281619997804
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 84,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 72,
+          "positive_change_mm": 0.000689962146901979,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.000689962146901979
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 128,
+          "positive_change_mm": 0.40454305428611753,
+          "negative_change_mm": -0.03325111733665925,
+          "net_change_mm": 0.3712919369494583
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 85,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 63,
+          "positive_change_mm": 0.2289269280026235,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.2289269280026235
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 137,
+          "positive_change_mm": 0.1380341313297062,
+          "negative_change_mm": -0.2721920437895112,
+          "net_change_mm": -0.13415791245980496
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 86,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 174,
+          "positive_change_mm": 2.2936883336147105,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.2936883336147105
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 26,
+          "positive_change_mm": 0.9873125067523106,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.9873125067523106
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 87,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.00982592746714972,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.00982592746714972
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 88,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 66,
+          "positive_change_mm": 1.2356729459095384e-05,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.2356729459095384e-05
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 134,
+          "positive_change_mm": 0.505955381076145,
+          "negative_change_mm": -0.00037195771594722427,
+          "net_change_mm": 0.5055834233601978
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 89,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 173,
+          "positive_change_mm": 1.36959933877439,
+          "negative_change_mm": -0.27768460475813966,
+          "net_change_mm": 1.0919147340162498
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 27,
+          "positive_change_mm": 1.0239918074543692,
+          "negative_change_mm": -0.009745233698281452,
+          "net_change_mm": 1.0142465737560877
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 90,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 157,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": -0.008388869325283432,
+          "net_change_mm": -0.008388869325283432
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 43,
+          "positive_change_mm": 2.578995360909906,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.578995360909906
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 91,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 200,
+          "positive_change_mm": 1.271088734622644,
+          "negative_change_mm": -1.07074825820349,
+          "net_change_mm": 0.2003404764191548
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 92,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 94,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": -0.8764846143316448,
+          "net_change_mm": -0.8764846143316448
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 106,
+          "positive_change_mm": 6.39032331711709,
+          "negative_change_mm": -0.07504845416499845,
+          "net_change_mm": 6.315274862952091
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 93,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 164,
+          "positive_change_mm": 1.5559538083969449,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.5559538083969449
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 36,
+          "positive_change_mm": 0.6751646333269941,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.6751646333269941
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 94,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.110941063281432,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.110941063281432
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.0011646689813613054,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0011646689813613054
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 95,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.02727087687708768,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.02727087687708768
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.007654752041633128,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.007654752041633128
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 96,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.11639669687340398,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.11639669687340398
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 97,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 0.8924501715710449,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.8924501715710449
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.029807923255659174,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.029807923255659174
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 98,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.41328501579011856,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.41328501579011856
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.022531075366490072,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.022531075366490072
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 99,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 56,
+          "positive_change_mm": 0.003919517037369313,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.003919517037369313
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 144,
+          "positive_change_mm": 0.7907119878983877,
+          "negative_change_mm": -0.15862451368153785,
+          "net_change_mm": 0.6320874742168499
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 100,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 196,
+          "positive_change_mm": 0.8596034015832605,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.8596034015832605
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 4,
+          "positive_change_mm": 0.09649371503562404,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.09649371503562404
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 101,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.9002891108239173,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.9002891108239173
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.048627323951756785,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.048627323951756785
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 102,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 2.270321644453872,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.270321644453872
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.12203269377358827,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.12203269377358827
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 103,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 194,
+          "positive_change_mm": 5.011914102152965,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 5.011914102152965
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 6,
+          "positive_change_mm": 0.4743023884135403,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.4743023884135403
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 104,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 1.1159217349848296,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.1159217349848296
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 105,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 199,
+          "positive_change_mm": 1.393249099478533,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.393249099478533
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 1,
+          "positive_change_mm": 0.046622220333917413,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.046622220333917413
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 106,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 119,
+          "positive_change_mm": 0.005924784080572204,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.005924784080572204
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 81,
+          "positive_change_mm": 8.462349067559353,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 8.462349067559353
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 107,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 200,
+          "positive_change_mm": 2.460905126395487,
+          "negative_change_mm": -0.6921672654043864,
+          "net_change_mm": 1.7687378609911
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 108,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 156,
+          "positive_change_mm": 4.661552045370573,
+          "negative_change_mm": -0.684312673998714,
+          "net_change_mm": 3.9772393713718603
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 44,
+          "positive_change_mm": 2.5162455594789144,
+          "negative_change_mm": -0.0629558488408899,
+          "net_change_mm": 2.453289710638025
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 109,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 162,
+          "positive_change_mm": 2.276862105413195,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.276862105413195
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 38,
+          "positive_change_mm": 0.10208246019772355,
+          "negative_change_mm": -0.0008990287793195911,
+          "net_change_mm": 0.10118343141840395
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 110,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 0.024809944165758366,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.024809944165758366
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.001260037744315809,
+          "negative_change_mm": -8.635238458315486e-06,
+          "net_change_mm": 0.0012514025058574935
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 111,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 0.3689721070806764,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.3689721070806764
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.013888068400396553,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.013888068400396553
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 112,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 197,
+          "positive_change_mm": 1.4957536940371046,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.4957536940371046
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 3,
+          "positive_change_mm": 0.24012192745274766,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.24012192745274766
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 113,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 4.2091227906176485,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 4.2091227906176485
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.12143060050104608,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.12143060050104608
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 114,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.0149525784607662,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0149525784607662
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 115,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 2.1213459975178567e-05,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 2.1213459975178567e-05
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 116,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 198,
+          "positive_change_mm": 1.224540586848275,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.224540586848275
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 2,
+          "positive_change_mm": 0.06781628121571397,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.06781628121571397
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 117,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 0.03187773100282537,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.03187773100282537
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 118,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 4.522528623492929e-05,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 4.522528623492929e-05
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 119,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 6.416202465164833e-08,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 6.416202465164833e-08
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 120,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 200,
+          "positive_change_mm": 9.102853019971047e-11,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 9.102853019971047e-11
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    },
+    {
+      "step": 121,
+      "interval_attribution": {
+        "neither_historical_relation": {
+          "intervals": 28,
+          "positive_change_mm": 7.795413620170777e-14,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 7.795413620170777e-14
+        },
+        "designated_only": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "historical_non_designated_only": {
+          "intervals": 22,
+          "positive_change_mm": 1.3645430650489938,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 1.3645430650489938
+        },
+        "simultaneous": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        },
+        "ambiguous_stage_difference": {
+          "intervals": 0,
+          "positive_change_mm": 0.0,
+          "negative_change_mm": 0.0,
+          "net_change_mm": 0.0
+        }
+      }
+    }
+  ],
+  "scope": "independent streaming stored-evidence audit only; no replay, model, FK or force estimation; contact-class sums are descriptive"
+}

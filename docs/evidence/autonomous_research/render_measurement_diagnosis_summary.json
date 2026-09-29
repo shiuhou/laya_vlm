@@ -1,0 +1,513 @@
+{
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/render-measurement-diagnosis-01",
+  "producer_commit": "5b17822f853418734e880e7560ac5f52986ed5fc",
+  "protocol_sha256": "cd1e26ba097ad763bb7983614feaf5b51abca8741097e09ef00a80c6e1699eae",
+  "raw_artifact_hashes": {
+    "baseline-before-24.json": "6d077290355a893a2621cfe769aa1e0d7aa3e06d17755586014078ba28600070",
+    "baseline-before-25.json": "7091050306c8a505cf12cce4a5b57421bb8ec4b5f28174296882466ed903e3b5",
+    "baseline-gate.json": "f931f3788cf573fd1df88f3b7b09eab933e0703a4b05f18baf7bca49d0e3d2e3",
+    "copy-cache-checks.json": "62f6b9dd2f2b250609db3e232fa638b0cf16478d8be90f0751c64a6d33aa5c1f",
+    "manifest.json": "6e8d7db6edb80ad04692da0cf887aea14e63eb03360bef1c00e2a2b626750194",
+    "measurements.json": "8b8c288538b89d707b84b931a9bef658f337c91edf26779994095b4c864462b4",
+    "native-before-24.npz": "3999edda9befca7a7dad6080c66bd03f609e408ce5a7563994b9704422029dab",
+    "native-before-25.npz": "907e9f36073adfdd7397fb79a8c205ce7567d7a729cc69d9b512087a42383d05",
+    "output-seal.json": "e3ea43709c6f6bf553e787ab032ad4bf4941c5c2fca7e2193517850bd33b9cec",
+    "protocol.md": "cd1e26ba097ad763bb7983614feaf5b51abca8741097e09ef00a80c6e1699eae",
+    "zero-msaa-before-24.npz": "2dd34febe888d2da6f5b383c706586e62c41f23580a50e14a67678bb03264a2d",
+    "zero-msaa-before-25.npz": "002f9492c8ed021413e528127bbfa5d440df1e22c7716515862f10d3703e0f98"
+  },
+  "artifacts_manifest_sha256": "e8852ee0a9162cd46acc3ea78ecfff6d7b6eccc10d3510ca62447cfaf570050c",
+  "post_seal_check_count": 239,
+  "baseline_state_checks": 402,
+  "original_RGB_depth_K_T_byte_identical": true,
+  "copy_cache_operations_checked": 6,
+  "counts": {
+    "bootstrap": {
+      "env_controls": 10,
+      "mj_step": 250,
+      "mj_step1": 2,
+      "mj_step2": 0,
+      "mj_forward": 509
+    },
+    "prefix": {
+      "env_controls": 200,
+      "mj_step": 5000,
+      "mj_step1": 0,
+      "mj_step2": 0,
+      "mj_forward": 10000
+    },
+    "diagnostic": {
+      "env_controls": 0,
+      "mj_step": 0,
+      "mj_step1": 0,
+      "mj_step2": 0,
+      "mj_forward": 0
+    }
+  },
+  "native_context": {
+    "model_requested_offsamples": 4,
+    "context_actual_offSamples": 4,
+    "geomgroup": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "render_collision_mesh": false,
+    "render_visual_mesh": true,
+    "offWidth": 640,
+    "offHeight": 480,
+    "readDepthMap": 0,
+    "model_integrator": 0,
+    "model_timestep_s": 0.002,
+    "scene_flags": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "gl": {
+      "vendor": "NVIDIA Corporation",
+      "renderer": "NVIDIA GeForce RTX 4090/PCIe/SSE2",
+      "version": "4.6.0 NVIDIA 575.57.08",
+      "bound_framebuffer_samples": 4,
+      "sample_positions_bottom_left_pixel_coordinates": [
+        [
+          0.375,
+          0.125
+        ],
+        [
+          0.875,
+          0.375
+        ],
+        [
+          0.125,
+          0.625
+        ],
+        [
+          0.625,
+          0.875
+        ]
+      ]
+    }
+  },
+  "zero_context": {
+    "model_requested_offsamples": 0,
+    "context_actual_offSamples": 0,
+    "geomgroup": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "render_collision_mesh": false,
+    "render_visual_mesh": true,
+    "offWidth": 640,
+    "offHeight": 480,
+    "readDepthMap": 0,
+    "model_integrator": 0,
+    "model_timestep_s": 0.002,
+    "scene_flags": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "gl": {
+      "vendor": "NVIDIA Corporation",
+      "renderer": "NVIDIA GeForce RTX 4090/PCIe/SSE2",
+      "version": "4.6.0 NVIDIA 575.57.08",
+      "bound_framebuffer_samples": 0,
+      "sample_positions_bottom_left_pixel_coordinates": []
+    }
+  },
+  "fixed_center_results": {
+    "24": [
+      {
+        "pixel_xy": [
+          216,
+          97
+        ],
+        "native_rgb": [
+          168,
+          168,
+          168
+        ],
+        "zero_rgb": [
+          123,
+          123,
+          123
+        ],
+        "native_depth_m": 0.758036196231842,
+        "zero_depth_m": 1.471535563468933,
+        "zero_minus_native_depth_m": 0.7134993672370911,
+        "zero_minus_native_depth_mm": 713.4993672370911
+      },
+      {
+        "pixel_xy": [
+          147,
+          162
+        ],
+        "native_rgb": [
+          52,
+          45,
+          39
+        ],
+        "zero_rgb": [
+          52,
+          45,
+          39
+        ],
+        "native_depth_m": 0.8406006097793579,
+        "zero_depth_m": 0.8415093421936035,
+        "zero_minus_native_depth_m": 0.0009087324142456055,
+        "zero_minus_native_depth_mm": 0.9087324142456055
+      },
+      {
+        "pixel_xy": [
+          147,
+          163
+        ],
+        "native_rgb": [
+          52,
+          45,
+          39
+        ],
+        "zero_rgb": [
+          52,
+          45,
+          39
+        ],
+        "native_depth_m": 0.8381868004798889,
+        "zero_depth_m": 0.8390903472900391,
+        "zero_minus_native_depth_m": 0.0009035468101501465,
+        "zero_minus_native_depth_mm": 0.9035468101501465
+      },
+      {
+        "pixel_xy": [
+          165,
+          176
+        ],
+        "native_rgb": [
+          103,
+          103,
+          103
+        ],
+        "zero_rgb": [
+          96,
+          96,
+          96
+        ],
+        "native_depth_m": 0.8572311401367188,
+        "zero_depth_m": 0.8585399985313416,
+        "zero_minus_native_depth_m": 0.0013088583946228027,
+        "zero_minus_native_depth_mm": 1.3088583946228027
+      },
+      {
+        "pixel_xy": [
+          165,
+          177
+        ],
+        "native_rgb": [
+          93,
+          93,
+          93
+        ],
+        "zero_rgb": [
+          97,
+          97,
+          97
+        ],
+        "native_depth_m": 0.855085551738739,
+        "zero_depth_m": 0.8564728498458862,
+        "zero_minus_native_depth_m": 0.0013872981071472168,
+        "zero_minus_native_depth_mm": 1.3872981071472168
+      },
+      {
+        "pixel_xy": [
+          237,
+          102
+        ],
+        "native_rgb": [
+          133,
+          133,
+          133
+        ],
+        "zero_rgb": [
+          11,
+          11,
+          11
+        ],
+        "native_depth_m": 0.7616868019104004,
+        "zero_depth_m": 1.4964642524719238,
+        "zero_minus_native_depth_m": 0.7347774505615234,
+        "zero_minus_native_depth_mm": 734.7774505615234
+      }
+    ],
+    "25": [
+      {
+        "pixel_xy": [
+          119,
+          126
+        ],
+        "native_rgb": [
+          92,
+          92,
+          89
+        ],
+        "zero_rgb": [
+          106,
+          106,
+          106
+        ],
+        "native_depth_m": 0.7605748176574707,
+        "zero_depth_m": 0.7594515681266785,
+        "zero_minus_native_depth_m": -0.0011232495307922363,
+        "zero_minus_native_depth_mm": -1.1232495307922363
+      },
+      {
+        "pixel_xy": [
+          156,
+          165
+        ],
+        "native_rgb": [
+          118,
+          109,
+          98
+        ],
+        "zero_rgb": [
+          193,
+          175,
+          154
+        ],
+        "native_depth_m": 0.8344271183013916,
+        "zero_depth_m": 1.2167882919311523,
+        "zero_minus_native_depth_m": 0.38236117362976074,
+        "zero_minus_native_depth_mm": 382.36117362976074
+      },
+      {
+        "pixel_xy": [
+          236,
+          145
+        ],
+        "native_rgb": [
+          146,
+          137,
+          128
+        ],
+        "zero_rgb": [
+          199,
+          182,
+          164
+        ],
+        "native_depth_m": 0.7932089567184448,
+        "zero_depth_m": 1.291032075881958,
+        "zero_minus_native_depth_m": 0.4978231191635132,
+        "zero_minus_native_depth_mm": 497.8231191635132
+      },
+      {
+        "pixel_xy": [
+          240,
+          110
+        ],
+        "native_rgb": [
+          89,
+          89,
+          89
+        ],
+        "zero_rgb": [
+          46,
+          46,
+          46
+        ],
+        "native_depth_m": 0.7629369497299194,
+        "zero_depth_m": 1.420939326286316,
+        "zero_minus_native_depth_m": 0.6580023765563965,
+        "zero_minus_native_depth_mm": 658.0023765563965
+      },
+      {
+        "pixel_xy": [
+          156,
+          155
+        ],
+        "native_rgb": [
+          151,
+          142,
+          131
+        ],
+        "zero_rgb": [
+          192,
+          174,
+          152
+        ],
+        "native_depth_m": 0.8346341252326965,
+        "zero_depth_m": 1.2528151273727417,
+        "zero_minus_native_depth_m": 0.41818100214004517,
+        "zero_minus_native_depth_mm": 418.18100214004517
+      }
+    ]
+  },
+  "cache_FK_geometry_discrepancies": {
+    "24": [
+      {
+        "geometry": "gripper0_hand_collision",
+        "max_world_displacement_um": 10.928842761490037,
+        "max_projected_displacement_px": 0.004568182957760455
+      },
+      {
+        "geometry": "gripper0_finger1_collision",
+        "max_world_displacement_um": 10.552501726057189,
+        "max_projected_displacement_px": 0.004144650213936922
+      },
+      {
+        "geometry": "gripper0_finger1_pad_collision",
+        "max_world_displacement_um": 10.458843590492165,
+        "max_projected_displacement_px": 0.003971057537875332
+      },
+      {
+        "geometry": "gripper0_finger2_collision",
+        "max_world_displacement_um": 10.609019947086944,
+        "max_projected_displacement_px": 0.004102131570052871
+      },
+      {
+        "geometry": "gripper0_finger2_pad_collision",
+        "max_world_displacement_um": 10.503860846260878,
+        "max_projected_displacement_px": 0.003944378798661889
+      },
+      {
+        "geometry": "gripper0_hand_visual",
+        "max_world_displacement_um": 10.927706826459067,
+        "max_projected_displacement_px": 0.004566914528739305
+      },
+      {
+        "geometry": "gripper0_finger1_visual",
+        "max_world_displacement_um": 10.55228266726747,
+        "max_projected_displacement_px": 0.004144610503836747
+      },
+      {
+        "geometry": "gripper0_finger2_visual",
+        "max_world_displacement_um": 10.609312853607765,
+        "max_projected_displacement_px": 0.004102342717159512
+      }
+    ],
+    "25": [
+      {
+        "geometry": "gripper0_hand_collision",
+        "max_world_displacement_um": 34.74404694107833,
+        "max_projected_displacement_px": 0.004881923025331481
+      },
+      {
+        "geometry": "gripper0_finger1_collision",
+        "max_world_displacement_um": 31.029354374779608,
+        "max_projected_displacement_px": 0.003668281408767551
+      },
+      {
+        "geometry": "gripper0_finger1_pad_collision",
+        "max_world_displacement_um": 29.370970804940722,
+        "max_projected_displacement_px": 0.003103109263072082
+      },
+      {
+        "geometry": "gripper0_finger2_collision",
+        "max_world_displacement_um": 31.073244017540684,
+        "max_projected_displacement_px": 0.0029117421635433123
+      },
+      {
+        "geometry": "gripper0_finger2_pad_collision",
+        "max_world_displacement_um": 29.411547833752397,
+        "max_projected_displacement_px": 0.002598552116289415
+      },
+      {
+        "geometry": "gripper0_hand_visual",
+        "max_world_displacement_um": 34.74848093365652,
+        "max_projected_displacement_px": 0.004877232232518268
+      },
+      {
+        "geometry": "gripper0_finger1_visual",
+        "max_world_displacement_um": 31.028723499541833,
+        "max_projected_displacement_px": 0.0036677838792582448
+      },
+      {
+        "geometry": "gripper0_finger2_visual",
+        "max_world_displacement_um": 31.075013104233346,
+        "max_projected_displacement_px": 0.0029112953022191416
+      }
+    ]
+  },
+  "frame_difference_summaries": {
+    "24": {
+      "array_exact": {
+        "rgb": false,
+        "depth_m": false,
+        "intrinsics": true,
+        "camera_to_world": true
+      },
+      "native_array_sha256": {
+        "rgb": "32d491f1aeb7b71224062b02444f5f805b1133917f409aa4467b58423f20af89",
+        "depth_m": "2dd9c37aad06ee94d4543bbf84268c9fd8d2bc7ea91d44fdaf8bf27a2a49f9a6",
+        "intrinsics": "4a20380aa98855da0fb4c10ba5086007a766b2f092a62d519e298fecd75c2709",
+        "camera_to_world": "807c2ed70ace37900cea0287cb683e8e087591a5b1341648cc7a3c5cea8606ad"
+      },
+      "other_array_sha256": {
+        "rgb": "e7bbd04006a37283b08a585de835fa50db4fbae9da40fcd7abe64b7af49a6158",
+        "depth_m": "801498330438e5972916441199a1b719072ad01c9df35723f06c979276293a50",
+        "intrinsics": "4a20380aa98855da0fb4c10ba5086007a766b2f092a62d519e298fecd75c2709",
+        "camera_to_world": "807c2ed70ace37900cea0287cb683e8e087591a5b1341648cc7a3c5cea8606ad"
+      },
+      "rgb_different_pixels": 17073,
+      "rgb_max_channel_difference": 185,
+      "depth_different_pixels": 147412,
+      "depth_max_absolute_difference_m": 1.5999337434768677,
+      "depth_mean_absolute_difference_m": 0.003615417844331306
+    },
+    "25": {
+      "array_exact": {
+        "rgb": false,
+        "depth_m": false,
+        "intrinsics": true,
+        "camera_to_world": true
+      },
+      "native_array_sha256": {
+        "rgb": "3158350fffe7b77bfcc4194ac486e0dbfde4635e5cd4b4ee48f78090b44e87bb",
+        "depth_m": "b605cb3dca8148801e02d5235714a031c3646e506d6af98850010daa48e35815",
+        "intrinsics": "4a20380aa98855da0fb4c10ba5086007a766b2f092a62d519e298fecd75c2709",
+        "camera_to_world": "807c2ed70ace37900cea0287cb683e8e087591a5b1341648cc7a3c5cea8606ad"
+      },
+      "other_array_sha256": {
+        "rgb": "c694f1bd9d049bb6635688a489914065a86839c7f6d4d4eddb35d73f85cb4f79",
+        "depth_m": "286b87b69fa1d725b64e041c192c39f9d7eb440d0adf0f6333e4af123386180b",
+        "intrinsics": "4a20380aa98855da0fb4c10ba5086007a766b2f092a62d519e298fecd75c2709",
+        "camera_to_world": "807c2ed70ace37900cea0287cb683e8e087591a5b1341648cc7a3c5cea8606ad"
+      },
+      "rgb_different_pixels": 17228,
+      "rgb_max_channel_difference": 202,
+      "depth_different_pixels": 147416,
+      "depth_max_absolute_difference_m": 1.5809742212295532,
+      "depth_mean_absolute_difference_m": 0.0037571311400420703
+    }
+  },
+  "limits": [
+    "explicit evaluator scene; no estimator/mask integration",
+    "sampling effect demonstrated at fixed caches; no guarantee of residual pixel identity",
+    "cache mismatch separately nonzero; no fresh-FK render condition",
+    "development data only; no physical-calibration, free-space, action-gate or safety claim"
+  ],
+  "process_note": "Exit 0 with ignored EGL destructor cleanup exceptions after all results were sealed; original log retained."
+}

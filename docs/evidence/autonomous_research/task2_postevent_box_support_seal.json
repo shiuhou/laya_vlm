@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "freeze": "65a30c100059dd4ef533bf87a7caa888e699d927",
+  "source_binding_sha256": "75e290803f79b8d82959c14b3358719ad406a5ba55700687af46f1d5d03bd87c",
+  "feature_intent_sha256": "373c707d8a2613bccfe7fa5c5e0b6ca3e96ca1e48dec4d5aa59fc927e33378e0",
+  "result_sha256": "27de4407329ce72ebc520a81f2e56bf63b0cd9834aa5618c437866d781c19440",
+  "record_count": 4,
+  "candidate_records": 28,
+  "new_support_extractions": 2,
+  "new_guard_selections": 2,
+  "stored_old_decisions_reused": 2,
+  "new_POINT_projections": 0,
+  "new_FK_calls": 0,
+  "new_model_physics_render_calls": 0,
+  "executed_actions": 0,
+  "retries": 0
+}

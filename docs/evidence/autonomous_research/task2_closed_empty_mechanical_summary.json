@@ -1,0 +1,258 @@
+{
+  "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01",
+  "generator_sha256": "3a6e6ea759a1bcb44b386d61d649275d8f5657a0bd6200c39152dff5b4c6e300",
+  "provenance": "simulator oracle evaluation of recorded transitions",
+  "continuous_relation_claim": false,
+  "cells": {
+    "neck-present": {
+      "journal_sha256": "4529c644394177fc711e81a44e598dfc03f0837746c637a0e63f5bca577d9c72",
+      "labels_sha256": "a9bc216528ba5aaa2e91f030112b333077131f0b023c1cbaf60bc377547f4426",
+      "phases": {
+        "close_or_hold": {
+          "end_center_mm": [
+            -130.21685864209894,
+            60.24931931247282,
+            978.5845241445204
+          ],
+          "end_bottom_mm": 899.9654193900142,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "native_before": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 9,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 9,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        },
+        "additional_close": {
+          "end_center_mm": [
+            -130.37446496794837,
+            55.88838979750088,
+            978.8922152088085
+          ],
+          "end_bottom_mm": 900.4055431605044,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "native_before": {
+            "raw_bilateral": 184,
+            "strong_bilateral": 184,
+            "raw_other_robot": 9,
+            "strong_other_robot": 0,
+            "raw_table": 27,
+            "strong_table": 27,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 184,
+            "strong_bilateral": 184,
+            "raw_other_robot": 9,
+            "strong_other_robot": 0,
+            "raw_table": 27,
+            "strong_table": 27,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        },
+        "lift": {
+          "end_center_mm": [
+            -130.5255431943319,
+            55.86590842814426,
+            988.2946502945155
+          ],
+          "end_bottom_mm": 909.8183875259666,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "native_before": {
+            "raw_bilateral": 200,
+            "strong_bilateral": 200,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 0,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 200,
+            "strong_bilateral": 200,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 0,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        }
+      },
+      "lift_center_rise_mm": 9.402435085706998,
+      "lift_bottom_rise_mm": 9.412844365462206
+    },
+    "neck-away": {
+      "journal_sha256": "c8571d9dcf5304e76b35fda95c756a5ac017a6f82169f94e596d9dee2e99c26e",
+      "labels_sha256": "e724d603d93b58eab21092752d9c45a8db6b7bb6292d0fb93f2ebd0e8f86660b",
+      "phases": {
+        "close_or_hold": {
+          "end_center_mm": [
+            219.78307853985706,
+            60.726516784741044,
+            978.4504187960318
+          ],
+          "end_bottom_mm": 899.9852792667999,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "native_before": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        },
+        "additional_close": {
+          "end_center_mm": [
+            219.78307853985706,
+            60.726516784741044,
+            978.4504187960318
+          ],
+          "end_bottom_mm": 899.9852792667999,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "native_before": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        },
+        "lift": {
+          "end_center_mm": [
+            219.78307853985706,
+            60.72651678474106,
+            978.4504187960318
+          ],
+          "end_bottom_mm": 899.9852792667999,
+          "official_success": false,
+          "grasp_relation_endpoints": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "native_before": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          },
+          "native_after": {
+            "raw_bilateral": 0,
+            "strong_bilateral": 0,
+            "raw_other_robot": 0,
+            "strong_other_robot": 0,
+            "raw_table": 200,
+            "strong_table": 0,
+            "samples": 200,
+            "maximum_other_robot_force_N": 0.0
+          }
+        }
+      },
+      "lift_center_rise_mm": 0.0,
+      "lift_bottom_rise_mm": 0.0
+    }
+  }
+}

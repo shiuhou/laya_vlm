@@ -1,0 +1,112 @@
+[
+  {
+    "condition": "neck-present",
+    "boundary": "before event",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/scene/capture-000001.npz",
+    "sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+    "unchanged_rgb_array_sha256": "a84c32a721e8c7d02ef099f96cc653c4a38b6105e6e02d9b89b304d54b88e6e1",
+    "tile_xy": [
+      0,
+      30
+    ]
+  },
+  {
+    "condition": "neck-present",
+    "boundary": "after event",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/scene/capture-000002.npz",
+    "sha256": "8f92b8f85ecc0ec2b14b11eabbcd73f5d6a2439f6d476f10cf1b67f659c9b791",
+    "unchanged_rgb_array_sha256": "fd5174f91edd7ed6a2148f109f260db72ee22c212680ae145ad241d6f6be7106",
+    "tile_xy": [
+      384,
+      30
+    ]
+  },
+  {
+    "condition": "neck-present",
+    "boundary": "close 1 end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/auxiliary/capture-000008.npz",
+    "sha256": "4064fad61caa9317d5d3bd9e711efd589bca4fb2241a72f7dabbcc475168ae8b",
+    "unchanged_rgb_array_sha256": "040444a04e191188b7735f0df961aa4198ff8ee71bac023e4c2f0d28cd9c5d3f",
+    "tile_xy": [
+      768,
+      30
+    ]
+  },
+  {
+    "condition": "neck-present",
+    "boundary": "close 2 end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/auxiliary/capture-000016.npz",
+    "sha256": "7b86d03056a35fefe62955f0b035e07bc546f0b3fbc0d8c629aef9b9e4f50e83",
+    "unchanged_rgb_array_sha256": "1da7231418b3e0a41beb1ea982d57004b53bd7e97373b6263eff8e39ee757f89",
+    "tile_xy": [
+      1152,
+      30
+    ]
+  },
+  {
+    "condition": "neck-present",
+    "boundary": "lift end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-present/auxiliary/capture-000024.npz",
+    "sha256": "52ae6496dcab929927e0083daf21fe9298b27685f48887fd1318f6bce7497f2b",
+    "unchanged_rgb_array_sha256": "90c2481397ea48cf7a607af452ed54cc6893c538128d7da51fcf111ccee83954",
+    "tile_xy": [
+      1536,
+      30
+    ]
+  },
+  {
+    "condition": "neck-away",
+    "boundary": "before event",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/scene/capture-000001.npz",
+    "sha256": "4ad9d862476d710aa557d606fd07df8de082b9e6d0cde15ec917d174a59395ff",
+    "unchanged_rgb_array_sha256": "a84c32a721e8c7d02ef099f96cc653c4a38b6105e6e02d9b89b304d54b88e6e1",
+    "tile_xy": [
+      0,
+      444
+    ]
+  },
+  {
+    "condition": "neck-away",
+    "boundary": "after event",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/scene/capture-000002.npz",
+    "sha256": "c208fcdcfc7ce35a362b89dcf44291cd38eaefc676eb6eb6d2b4710764c54223",
+    "unchanged_rgb_array_sha256": "46fccf5705c46ed4cf6182f3fd982b92efd1ea1e5a07ccde2d027cf2b0872401",
+    "tile_xy": [
+      384,
+      444
+    ]
+  },
+  {
+    "condition": "neck-away",
+    "boundary": "close 1 end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/auxiliary/capture-000008.npz",
+    "sha256": "7b96fbc1651d6eff565c57b402a51b9f4443e0b71ef439979e3c9f8876e3bd5d",
+    "unchanged_rgb_array_sha256": "3dab39524920185e27f5a8338c60ae4cb352200a51ce2b1ca6e223e20b3dfc32",
+    "tile_xy": [
+      768,
+      444
+    ]
+  },
+  {
+    "condition": "neck-away",
+    "boundary": "close 2 end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/auxiliary/capture-000016.npz",
+    "sha256": "7d214c722d0ac1c921b42131673dbffc7235f909cc5057e595323bbe9bce43a4",
+    "unchanged_rgb_array_sha256": "3b332c0c2131f80353cf0587c191d1cfb231fed93d41339aaf4de69a7abb4a38",
+    "tile_xy": [
+      1152,
+      444
+    ]
+  },
+  {
+    "condition": "neck-away",
+    "boundary": "lift end",
+    "source": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-run-01/neck-away/auxiliary/capture-000024.npz",
+    "sha256": "0bfbaa8e3476e394a6eb6b210be8123b4b771210cc8a1faafe6914b0f46c0d0d",
+    "unchanged_rgb_array_sha256": "3c04e393a912a27b17ef8d2ae3044292b67f462714b1dfda3e1fa1ede780c4b5",
+    "tile_xy": [
+      1536,
+      444
+    ]
+  }
+]

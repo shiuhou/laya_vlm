@@ -1,0 +1,3536 @@
+{
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-pre22-counterfactual-run-01",
+  "journal_sha256": "35f1dee4edfcf4c3d5e059e6db3533d8df9876d0aff7b6adbbdfad7fda2f76d8",
+  "journal_chain_valid": true,
+  "journal_records": 67188,
+  "record_counts": {
+    "run_start": 1,
+    "branch_started": 7,
+    "capture": 168,
+    "initial_gates": 7,
+    "control_started": 1288,
+    "native_before": 32200,
+    "native_after": 32200,
+    "control_completed": 1288,
+    "prefix_qualified": 7,
+    "probe_started": 7,
+    "probe_result": 7,
+    "branch_completed": 7,
+    "termination": 1
+  },
+  "producer_commit": "69d649111e3272c17b7ffd1f6db4a7908927ee78",
+  "protocol_sha256": "9c191b5b73e430432bbef63469591be80247113d1f032a7a1de3606b94af7e91",
+  "review_sha256": "c63d8ec062f85093568d38397ba0991b6fb15fea7ccb4a89a6145c0b8023861e",
+  "source_approach_sha256": "f834673a379523f8c90619d2fd00dd69174f4dd7499cb91a8340742de225e771",
+  "prior_geometry_sha256": {
+    "task2-observed-surface-sweep-run-01/feature-seal.json": "2272dd32051a5965b1188360c993bf89e0b1a77d9f569b053351b5e65c8e9601",
+    "task2-observed-surface-sweep-run-01/features/features.json": "4468151c3cf9e9abecb199131189fab02752ebdd7bf179234d30725c7bc9a55b"
+  },
+  "fixed_point": {
+    "box_xyxy": [
+      208,
+      156,
+      228,
+      223
+    ],
+    "definition": "cached_BOX_center_ray_at_fixed_crop_median_depth",
+    "holding": null,
+    "identity_verified": null,
+    "ownership": null,
+    "position_world_m": [
+      -0.12371558041536501,
+      0.05615888976955092,
+      0.9855272687809821
+    ]
+  },
+  "prefix_qualifications": [
+    {
+      "branch": "MV_FWD",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "MV_BACK",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "MV_LEFT",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "MV_RIGHT",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "MV_UP",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "MV_DOWN",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    },
+    {
+      "branch": "STOP",
+      "captures": 23,
+      "controls": 176,
+      "execution_before": {
+        "contacts": [],
+        "finger_gap_m": 0.07899761439642118,
+        "gripper_command": -1.0,
+        "orientation": [
+          [
+            -0.00010145405886134262,
+            0.9983552128465757,
+            -0.057331131936664385
+          ],
+          [
+            0.999999983117727,
+            0.00011007057488173389,
+            0.0001471360285525275
+          ],
+          [
+            0.00015320449175384998,
+            -0.05733111604123736,
+            -0.9983552071591787
+          ]
+        ],
+        "sim_time": 9.299999999999775,
+        "success": false,
+        "tcp_xyz": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "native_stage_samples": 8800,
+      "no_selector_or_model_called": true,
+      "proprioception": {
+        "gripper_command": "OPEN",
+        "gripper_joint_positions": [
+          0.03999836396244052,
+          -0.03999925043398099
+        ],
+        "gripper_width_m": 0.0799976143964215,
+        "holding": null,
+        "proprioception_source": "robot_observation_and_retained_command",
+        "tcp_pos_world_m": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ]
+      },
+      "raw_prefix_controls_not_recomputed": true
+    }
+  ],
+  "current_model_gates": [
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_FWD",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_BACK",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_LEFT",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_RIGHT",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_UP",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "MV_DOWN",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    },
+    {
+      "backend_gripper_command": -1.0,
+      "branch": "STOP",
+      "current_model_identity": {
+        "dimensions": {
+          "nbody": 31,
+          "ngeom": 207,
+          "nmesh": 83,
+          "nq": 26,
+          "nsite": 20,
+          "nu": 9,
+          "nv": 24
+        },
+        "historical_model_byte_identity_claimed": false,
+        "model_array_sha256": {
+          "actuator_biasprm": "0f0db4f769ed44167b1b36f8b1233011aaa035a5433ff0441018e0f0a767bd80",
+          "actuator_gainprm": "a633a289f8fe4c28da893520f3e557ee35cf11c9fd559fda1e3fbfd3df875ed7",
+          "actuator_trnid": "a08921915f5773d8f509f00586f6cfbed2b7cdf271f3eebc5a0bdcf6bcb3ef3b",
+          "body_inertia": "6b601ab9df42f73dd72ebbfd3fdafa68357a035f202a72b0448e1f064d48ca26",
+          "body_mass": "c7d33a26555ca36616d3b1a3691d8b3c107b57565bb139577b19c0516e029360",
+          "body_parentid": "fdc7bf2390c3a3c3c939986dfaae8eeb448e371904fb21b0aa9dc34ba0b6afcf",
+          "body_pos": "1dd21af28f8334b99eec2fc815215e7b3143512b3b81b97b068ba953042587ca",
+          "body_quat": "70e9cd40cac66a22bde6855a55906dfd4a0ce0dee81cbe26c2efc0b957662aa2",
+          "cam_fovy": "a16f83dae1ce8a3bd2bbb9b152aa8c23d7b2384c091ba18ccc9dd1753eed80f9",
+          "cam_pos": "c3144a07d2046e3090e34be5a58a92549962089c67b804a714422e7a3309253e",
+          "cam_quat": "9d7af0013576ad4ecad8c6b6ac46e3c4a7830f53240a32dc90558f140e07fb57",
+          "dof_armature": "be8de40ba17b2f3468b987e4f5248cdfcaf635e389eb01f9ca600df3fe4db20b",
+          "dof_damping": "846ce06e26c96f830613d520780795d9a8b2b73f0b8f7ea42a2b13c8e14a3c3f",
+          "geom_bodyid": "d919e283d46d7a1b8267c08bc99a8233df122904479caff49e6816dbaacd27fd",
+          "geom_conaffinity": "08f68c30496c2db1aea47a41190c3521b0c3c241bf5f708ce6d96d0b7ae58ceb",
+          "geom_contype": "55e50c546633c652595b419b0e17649f4cdf61694170099396da842a798df7c1",
+          "geom_dataid": "9f7e766aa3eaf569d0e4094dfc4f9c3d661f251941488ac7de3e21a0dd158cf5",
+          "geom_friction": "e11b15adf9929bf99c96910e61defe53e7f25a74e61ca36fb55cb61924d54b07",
+          "geom_pos": "4b8b467fc4bf0bc19bc0c4ed3637c96e6d93c0c3b9c1cadb38532114b47f3283",
+          "geom_quat": "2fff845ef749bca5fbccb93214b0f94a711e3f90b7d3c54b603252612f907bfa",
+          "geom_size": "9a3b02d23f908894ef7843167a7651a84c74090dc770cb0021160006c571cc1d",
+          "geom_solimp": "973265770e717d7fe5b4a590bad5fcd468d9703d49e839ba557f86e5c9e881e2",
+          "geom_solref": "25c4578653201d3344d9e2975ddbd0bc846ba677505943165a9e993913911bd8",
+          "geom_type": "b3714cb32a0f66e6e779722e8ded400ec448b9b7b01480d61c8b7755590b93e8",
+          "jnt_axis": "1c19407016793600089b246fa86227d2a619aa4fc3148d732de76ea4f0da637a",
+          "jnt_bodyid": "2b595373ad4f2f51469bc6ef01f93618a91dc21a22c1db37e38d97f753846eab",
+          "jnt_dofadr": "2808d6bff971d3535b6a6dfce6170e181ae4b6241964f9f3742980d39e4466ff",
+          "jnt_pos": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+          "jnt_qposadr": "5653195424835b41953badc2c588678ace244d2fa0f1f1e7bc59ad240da760c9",
+          "jnt_range": "37790e08a8f8a4c0c8e0cbcf9c390cc18e22527c0800446930099cb49973ed0b",
+          "jnt_type": "3d7e59e1f416621b3df008c72884fcd41527664b5a182690f91080e47d090aec",
+          "mesh_face": "5ced1953695f0d8bb3eee4e8d7fdaaf1d22488ba6789f018411d2046bdb0a29f",
+          "mesh_faceadr": "f3d179511c0c57dda07426d308eb7ea0a6578d4e2096c7e1a26f594496cf8bc5",
+          "mesh_facenum": "8a529d3a58e11e8d2c33637b123b4e5dcf0a0cb956edea50c61b6b9970fcbbf2",
+          "mesh_vert": "576cbec54cdef9e3c9a1ebfb8e19800ce3ca52ff8e274ba22ddd776f76e170ad",
+          "mesh_vertadr": "8ab0afaa475d390d577c52037ed3d39f3dbc3ff084e6e6908270eec2f9a70267",
+          "mesh_vertnum": "cd04a151fa760ea2a7639a249e3dbe6dce6c1aabe4c3786a3520c9bf6576bf0c",
+          "qpos0": "d5512a613b69b06deaa7448ec467f173f07f6db6e2b413a56e4657b7305aec64",
+          "site_bodyid": "9d9bf558cba4feb463a4fd9dd813a96e63b41d52c75bb820c5c2ca1e01e52001",
+          "site_pos": "7d7312b733ad64c6df97863d4a2c766a6b1f2b9b1f757641e3e4b194d353a2c1",
+          "site_quat": "d0a2ccdbd90699b6152b522e202717178827cdf479792c74a1b43a10ad70c73d"
+        },
+        "native_options": {
+          "gravity": [
+            0.0,
+            0.0,
+            -9.81
+          ],
+          "integrator": 0,
+          "iterations": 100,
+          "solver": 2,
+          "timestep": 0.002,
+          "tolerance": 1e-08
+        },
+        "xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03"
+      },
+      "initial_state": [
+        0.5000000000000003,
+        -0.0010631437982059548,
+        -0.16359069915288843,
+        -0.004425159213756817,
+        -2.476456969987973,
+        -0.0023232841739502493,
+        2.25458790249969,
+        0.7820942859734514,
+        0.03872738635155816,
+        -0.03873093851385858,
+        0.011367279712431873,
+        -0.06512811715652768,
+        0.8984070750976497,
+        0.707106783005648,
+        -1.3874755286598009e-05,
+        1.667300229588828e-06,
+        0.7071067792293566,
+        -0.12958185510951836,
+        0.060797557765774765,
+        0.8988754774200162,
+        1.1093590909892308e-08,
+        -6.204091071455273e-06,
+        3.878404393336061e-07,
+        0.9999999999806799,
+        0.0,
+        0.0,
+        -0.1596102127349155,
+        -9.009459617386545e-06,
+        -0.021963306470086645,
+        -0.0010910184466837944,
+        -0.0395869159635646,
+        0.004898058886928965,
+        0.04833876326267188,
+        -0.0074844522738004154,
+        0.003207780514341844,
+        -0.00316860945027314,
+        8.49644946486156e-15,
+        -1.086804310049035e-14,
+        2.8789574405982737e-11,
+        -2.70944560590639e-12,
+        3.5491541144727216e-12,
+        -1.0078881896787678e-15,
+        2.4366739456293953e-15,
+        -1.5399870063577742e-16,
+        2.2023862903164453e-11,
+        7.100025927992156e-14,
+        1.135232874143285e-12,
+        -7.862317952272551e-16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "own_observations": {
+        "robot0_eef_pos": [
+          -0.21526851233528546,
+          -0.00259323844760531,
+          1.1632437553471047
+        ],
+        "robot0_eef_quat": [
+          0.9995735265117577,
+          -5.235421737631585e-05,
+          -0.029199457161938492,
+          0.0003925013773302122
+        ],
+        "robot0_gripper_qpos": [
+          0.038720970790529476,
+          -0.038724601294958035
+        ],
+        "robot0_gripper_qvel": [
+          0.0032831932807376573,
+          -0.003243283316333804
+        ]
+      },
+      "source_state_own_groups_native_exact": true
+    }
+  ],
+  "branch_completions": [
+    {
+      "branch": "MV_FWD",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": true
+    },
+    {
+      "branch": "MV_BACK",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    },
+    {
+      "branch": "MV_LEFT",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    },
+    {
+      "branch": "MV_RIGHT",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    },
+    {
+      "branch": "MV_UP",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    },
+    {
+      "branch": "MV_DOWN",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    },
+    {
+      "branch": "STOP",
+      "completed_primitive": true,
+      "execution_contract_violation": false,
+      "no_subsequent_action": true,
+      "source_FWD_qualification_exact": null
+    }
+  ],
+  "canonical_results": [
+    {
+      "branch": "MV_FWD",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [
+            [
+              "gripper0_hand_collision",
+              "wine_bottle_1_g6"
+            ]
+          ],
+          "all_strong_robot_pairs": [],
+          "first_raw": {
+            "class": "other_gripper/bottle",
+            "control": 7,
+            "force_contact_frame": [
+              0.017556175735477287,
+              -0.0005834344247538285,
+              0.017546478584803665,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geom_ids": [
+              134,
+              75
+            ],
+            "geom_names": [
+              "wine_bottle_1_g6",
+              "gripper0_hand_collision"
+            ],
+            "index": 186,
+            "normal_force_N": 0.017556175735477287,
+            "time_s": 9.6739999999999,
+            "unexpected_robot_contact": false
+          },
+          "first_strong": null,
+          "max_normal_force_N": 0.017556175735477287,
+          "raw_robot_rows": 13,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [
+            [
+              "gripper0_hand_collision",
+              "wine_bottle_1_g6"
+            ]
+          ],
+          "all_strong_robot_pairs": [],
+          "first_raw": {
+            "class": "other_gripper/bottle",
+            "control": 7,
+            "force_contact_frame": [
+              0.0175559689573816,
+              -0.0005832315716143075,
+              0.017546278436364183,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geom_ids": [
+              134,
+              75
+            ],
+            "geom_names": [
+              "wine_bottle_1_g6",
+              "gripper0_hand_collision"
+            ],
+            "index": 186,
+            "normal_force_N": 0.0175559689573816,
+            "time_s": 9.6719999999999,
+            "unexpected_robot_contact": false
+          },
+          "first_strong": null,
+          "max_normal_force_N": 0.0175559689573816,
+          "raw_robot_rows": 13,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.15619240046187371,
+          0.017253059993423036,
+          1.0215892157614528
+        ],
+        "robot0_eef_quat": [
+          0.9996125608058913,
+          -1.0970819102007479e-05,
+          -0.027833633178308278,
+          -0.00013047154100517475
+        ],
+        "robot0_gripper_qpos": [
+          0.03999897996317986,
+          -0.03999934011253606
+        ],
+        "robot0_gripper_qvel": [
+          9.974828486888546e-07,
+          -4.76691323653388e-07
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.15619240046187371,
+          0.017253059993423036,
+          1.0215892157614528
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          0.009032727453389289,
+          9.240561285348697e-05,
+          -0.00031735346049677204
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899832007571563,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              2.9358171091927083e-05,
+              0.9984482492892082,
+              -0.05568745486561617
+            ],
+            [
+              0.999999966091395,
+              -1.4903082025867302e-05,
+              0.0002599905844792687
+            ],
+            [
+              0.0002587572291973296,
+              -0.0556874606101804,
+              -0.9984482158707495
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.15619240046187371,
+            0.017253059993423036,
+            1.0215892157614528
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 7.056792944437618e-07,
+        "low_level_commands": [
+          [
+            0.20000000000000018,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.18112548789785854,
+            -6.933728783423132e-05,
+            0.004726613752725761,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.1492474845476588,
+            -0.00014850459810561434,
+            0.011914360064939622,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.1188085638753611,
+            -0.0002655851701969386,
+            0.017630636025209867,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.09184283436292184,
+            -0.0004983948799471005,
+            0.01989842502547745,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.06869572103945065,
+            -0.0008213507640310314,
+            0.01888741170243513,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.049070043415396225,
+            -0.0011896080285153654,
+            0.015574145234724668,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.03268677251139496,
+            -0.0015544883995441405,
+            0.011081006619511058,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.09481709703310537,
+        "rotation_delta": [
+          [
+            0.9999986362790304,
+            0.00013106431243609343,
+            -0.0016462874048365566
+          ],
+          [
+            -0.00013123817955025318,
+            0.9999999858227138,
+            -0.00010550405694333977
+          ],
+          [
+            0.0016462735536799892,
+            0.00010571996882727419,
+            0.9999986393024084
+          ]
+        ],
+        "success": false,
+        "token": "MV_FWD"
+      },
+      "raw_robot_contact": true,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.061944874264759815,
+      "actual_tcp_to_fixed_P_after_m": 0.062200252820423726,
+      "nominal_fixed_P_reduction_m": 0.00563736006997393,
+      "actual_fixed_P_reduction_m": 0.005381981514310019,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.01608100582582851,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.01608100582582851,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.0,
+            "contained_point_count": 1,
+            "any_contained_point": true
+          },
+          "sweep": {
+            "minimum_m": 0.0,
+            "contained_point_count": 1,
+            "any_contained_point": true
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": {
+          "camera_to_world": true,
+          "depth_m": true,
+          "intrinsics": true,
+          "rgb": true
+        },
+        "artifact": "MV_FWD/capture-0024.npz",
+        "branch": "MV_FWD",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "38c927eda147fedbd3715d64241348fdf739808f5e02dec10c2357ffabbf14c2"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "MV_BACK",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.17440847209673346,
+          0.017068576175657366,
+          1.0221123132040049
+        ],
+        "robot0_eef_quat": [
+          0.9995854772067583,
+          0.0003331635987360859,
+          -0.02878816341511463,
+          6.638175199747201e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999880169799166,
+          -0.03999951838537751
+        ],
+        "robot0_gripper_qvel": [
+          1.0541447097880973e-06,
+          -4.2002178871851407e-07
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.17440847209673346,
+          0.017068576175657366,
+          1.0221123132040049
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          -0.00918334418147046,
+          -9.207820491218335e-05,
+          0.00020574398205530642
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899832008336892,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.0006702639356445893,
+              0.998344657960529,
+              -0.057510822180944554
+            ],
+            [
+              0.9999997690746177,
+              0.0006626997665342461,
+              -0.00015059790112608926
+            ],
+            [
+              -0.00011223620165679363,
+              -0.05751090984057794,
+              -0.9983448716011623
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.17440847209673346,
+            0.017068576175657366,
+            1.0221123132040049
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 7.056869477384264e-07,
+        "low_level_commands": [
+          [
+            -0.20000000000000018,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.18072701732251228,
+            0.00023709332094071223,
+            0.000414154856196447,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.14832968310921069,
+            0.0003674110364658423,
+            -0.0059734326225857615,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.1171827786847518,
+            0.00047164400042300214,
+            -0.012204968905082936,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.08964124031428489,
+            0.0006533611023541025,
+            -0.015279764750752989,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.06603903008272294,
+            0.0009066409725098923,
+            -0.015014093648604288,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.04611421489933765,
+            0.0012124840340858173,
+            -0.012335545135599979,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.029614525878032816,
+            0.0015359868446471192,
+            -0.008383913270839649,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.03741551874397478,
+        "rotation_delta": [
+          [
+            0.9999998220276642,
+            -0.0005688374678716819,
+            0.00017991267022147533
+          ],
+          [
+            0.0005687896791774926,
+            0.9999998029777157,
+            0.00026556133793584276
+          ],
+          [
+            -0.000180063696013704,
+            -0.00026545895820329345,
+            0.9999999485542991
+          ]
+        ],
+        "success": false,
+        "token": "MV_BACK"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.0741454607354545,
+      "actual_tcp_to_fixed_P_after_m": 0.07373118308641498,
+      "nominal_fixed_P_reduction_m": -0.006563226400720754,
+      "actual_fixed_P_reduction_m": -0.0061489487516812324,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.0329829286015279,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.01721360660160308,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "MV_BACK/capture-0024.npz",
+        "branch": "MV_BACK",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "1cf5c062308debc2938ce84e798f1db0ddbb1f91edb7b994dab00d15ec9a76a2"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "MV_LEFT",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.16542223194873554,
+          0.026709737976042727,
+          1.021863959840886
+        ],
+        "robot0_eef_quat": [
+          0.9995982891703606,
+          0.00015644723727187282,
+          -0.028341395237866353,
+          3.3584507189996296e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999839498890851,
+          -0.039998462026319695
+        ],
+        "robot0_gripper_qvel": [
+          -5.518417732559728e-06,
+          -8.27646267614897e-06
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.16542223194873554,
+          0.026709737976042727,
+          1.021863959840886
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          -0.0001971040334725338,
+          0.009549083595473178,
+          -4.260938106348533e-05
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899685701522792,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00030915953690839186,
+              0.998393534465964,
+              -0.056659110096594814
+            ],
+            [
+              0.9999999502648202,
+              0.0003051287415934592,
+              -7.979226532050729e-05
+            ],
+            [
+              -6.237575883280902e-05,
+              -0.05665913194718365,
+              -0.9983935791441438
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.16542223194873554,
+            0.026709737976042727,
+            1.021863959840886
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": -7.573811932615193e-07,
+        "low_level_commands": [
+          [
+            0.0,
+            0.19999999999999996,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.0002444435227777486,
+            0.17938222126132752,
+            0.0023966251945584105,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.0010095166165297043,
+            0.1415489504758287,
+            0.0025963977579746,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.001933953241069486,
+            0.10477150299743596,
+            0.0021591962412825794,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.002668194695469861,
+            0.0735744740101503,
+            0.0016410024995439088,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.0031989652862712825,
+            0.04886134461212395,
+            0.0012641746248442942,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.003574837213567994,
+            0.030393253445019988,
+            0.0010421410596306302,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.003815004669367461,
+            0.01743367697546079,
+            0.0009215699030207247,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.04220637409917873,
+        "rotation_delta": [
+          [
+            0.9999997518882643,
+            -0.0002076023778331347,
+            -0.0006731453459783909
+          ],
+          [
+            0.00020774739683425436,
+            0.9999999552279271,
+            0.0002153721364161409
+          ],
+          [
+            0.0006731006040726456,
+            -0.00021551192717310383,
+            0.9999997502450589
+          ]
+        ],
+        "success": false,
+        "token": "MV_LEFT"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.06234896703150131,
+      "actual_tcp_to_fixed_P_after_m": 0.06266619854966465,
+      "nominal_fixed_P_reduction_m": 0.005233267303232439,
+      "actual_fixed_P_reduction_m": 0.004916035785069092,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.025570112265578933,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.025570112265578933,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.007685985654429882,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "MV_LEFT/capture-0024.npz",
+        "branch": "MV_LEFT",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "4edd3eee5b80856ee84a77ac1fd640cd26305be0b02bb86f9dbb9682a122f136"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "MV_RIGHT",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.16504642014225823,
+          0.007606884628915291,
+          1.0219340193142266
+        ],
+        "robot0_eef_quat": [
+          0.9995926348508112,
+          0.0003143187879622311,
+          -0.028538788848012656,
+          -5.555897201958357e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.03999791232367434,
+          -0.03999841008047343
+        ],
+        "robot0_gripper_qvel": [
+          8.80008932044599e-06,
+          5.572918131597012e-06
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.16504642014225823,
+          0.007606884628915291,
+          1.0219340193142266
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          0.00017870777300477148,
+          -0.009553769751654258,
+          2.745009227700379e-05
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899632240414756,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.0006314347049582785,
+              0.9983708898838366,
+              -0.057054075426458274
+            ],
+            [
+              0.9999997918286521,
+              0.0006379822933820995,
+              9.654659060177179e-05
+            ],
+            [
+              0.00013278879546171213,
+              -0.057054002586566586,
+              -0.9983710848957847
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.16504642014225823,
+            0.007606884628915291,
+            1.0219340193142266
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": -1.2919922736248646e-06,
+        "low_level_commands": [
+          [
+            0.0,
+            -0.19999999999999998,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            5.376772060361468e-06,
+            -0.17914381208848842,
+            0.002279573864396589,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0005741505201867225,
+            -0.14123124725683614,
+            0.0021678501395205885,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0014026188929899819,
+            -0.10443871274073552,
+            0.0014595155313434915,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.002117014640375947,
+            -0.07327837238727711,
+            0.0007616286327705168,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.002675509127610942,
+            -0.04862439844810815,
+            0.0002176516904217607,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0031012331237961765,
+            -0.030215897724463585,
+            -0.00016513875105150788,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.003401627485565273,
+            -0.017305587223707224,
+            -0.00041032856208378377,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.03429611842393756,
+        "rotation_delta": [
+          [
+            0.9999998210572152,
+            -0.0005299381465745087,
+            -0.00027758078709953684
+          ],
+          [
+            0.0005299437852364926,
+            0.9999998593749423,
+            2.0240431506176256e-05
+          ],
+          [
+            0.00027757002188795715,
+            -2.0387530097315933e-05,
+            0.9999999612696125
+          ]
+        ],
+        "success": false,
+        "token": "MV_RIGHT"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.0738059828567745,
+      "actual_tcp_to_fixed_P_after_m": 0.07342334097612517,
+      "nominal_fixed_P_reduction_m": -0.006223748522040759,
+      "actual_fixed_P_reduction_m": -0.005841106641391425,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.025076890573270703,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.025076890573270703,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.0076680883245651785,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.0076680883245651785,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "MV_RIGHT/capture-0024.npz",
+        "branch": "MV_RIGHT",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "bf3b834a8165315a9afeb96e06c63f7725b723334ad0510f168687bc17b0c71c"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "MV_UP",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.1654183098968557,
+          0.017172066721141185,
+          1.0312975204375319
+        ],
+        "robot0_eef_quat": [
+          0.9996070184489766,
+          9.767843980434954e-05,
+          -0.02803178867775042,
+          0.0001339775899404285
+        ],
+        "robot0_gripper_qpos": [
+          0.03999882140993895,
+          -0.039999498666389056
+        ],
+        "robot0_gripper_qvel": [
+          7.818953772553392e-07,
+          -6.922771778751222e-07
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.1654183098968557,
+          0.017172066721141185,
+          1.0312975204375319
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          -0.00019318198159268274,
+          1.1412340571635704e-05,
+          0.00939095121558231
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899832007632768,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00020302768958385128,
+              0.9984283164325625,
+              -0.05604333792158943
+            ],
+            [
+              0.9999999448240828,
+              0.00018797317984481913,
+              -0.00027389398033555654
+            ],
+            [
+              -0.0002629288612292016,
+              -0.05604339043740894,
+              -0.998428299507126
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.1654183098968557,
+            0.017172066721141185,
+            1.0312975204375319
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 7.056799064958375e-07,
+        "low_level_commands": [
+          [
+            0.0,
+            0.0,
+            0.20000000000000018,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.00038939841872642766,
+            0.00020539723508572472,
+            0.17978768967743974,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.0019121161020502209,
+            0.00026946181278283965,
+            0.13694358713103316,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.0034963782743868688,
+            0.00013411432740390028,
+            0.09635886449224529,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.004280351617398925,
+            -3.4970515186971696e-05,
+            0.06477762355025618,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.00425930742026015,
+            -0.00015955041700856099,
+            0.04236273925709799,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.004207361209032645,
+            -0.0002170642698486741,
+            0.02752495028230939,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            0.004049259215772594,
+            -0.00023332690037909665,
+            0.018047477219980124,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.0778691288825902,
+        "rotation_delta": [
+          [
+            0.9999991629626159,
+            -0.00010137610155695845,
+            -0.0012898825324062233
+          ],
+          [
+            0.00010191260263317613,
+            0.9999999083324542,
+            0.0004158712525918845
+          ],
+          [
+            0.001289840254759517,
+            -0.0004160023597780638,
+            0.9999990816266522
+          ]
+        ],
+        "success": false,
+        "token": "MV_UP"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.07345028527170071,
+      "actual_tcp_to_fixed_P_after_m": 0.07317107320737003,
+      "nominal_fixed_P_reduction_m": -0.005868050936966962,
+      "actual_fixed_P_reduction_m": -0.005588838872636281,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.026620050107508425,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.011252701776331933,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "MV_UP/capture-0024.npz",
+        "branch": "MV_UP",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "dd532b23393658d125fe66392c4c243bdd2c2bb30dc436ab92a0123e39d3c5c0"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "MV_DOWN",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.16520404736443287,
+          0.01714183059131539,
+          1.012389464326856
+        ],
+        "robot0_eef_quat": [
+          0.9995925790622631,
+          0.0003025158000130035,
+          -0.02854047208593678,
+          -0.00016068899991006531
+        ],
+        "robot0_gripper_qpos": [
+          0.0399989516150514,
+          -0.039999368463789216
+        ],
+        "robot0_gripper_qvel": [
+          1.2383279631123479e-06,
+          -2.358422239378895e-07
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.16520404736443287,
+          0.01714183059131539,
+          1.012389464326856
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          2.1080550830138156e-05,
+          -1.88237892541597e-05,
+          -0.009517104895093498
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899832007884042,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.0005959783849347228,
+              0.9983707480641211,
+              -0.05705693840059647
+            ],
+            [
+              0.9999997650366368,
+              0.0006143342281006686,
+              0.000304171209587277
+            ],
+            [
+              0.0003387276682653359,
+              -0.057056743714840166,
+              -0.9983708796134948
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.16520404736443287,
+            0.01714183059131539,
+            1.012389464326856
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 7.056824192358535e-07,
+        "low_level_commands": [
+          [
+            0.0,
+            0.0,
+            -0.20000000000000018,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            2.7044365479289567e-05,
+            -2.4030931236387887e-05,
+            -0.17465149777550426,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.000807892697836099,
+            2.1792005885298837e-05,
+            -0.13104251439164827,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.001425303765989483,
+            0.00015191545138439067,
+            -0.09098332414781751,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0012865466792683078,
+            0.00027147690251527745,
+            -0.06013602830708287,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0009360317382245409,
+            0.00034178068668226647,
+            -0.0385126406121028,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0006985468352177504,
+            0.00037019401858240375,
+            -0.024244593560327488,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0005356390225591534,
+            0.00037733982107164554,
+            -0.015201747908046848,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.03411058799858063,
+        "rotation_delta": [
+          [
+            0.9999998400111235,
+            -0.0004944822640063585,
+            -0.0002747089592106548
+          ],
+          [
+            0.0004944312642828411,
+            0.9999998605290331,
+            -0.00018568692212229997
+          ],
+          [
+            0.0002748007397863783,
+            0.00018555106771644755,
+            0.999999945027673
+          ]
+        ],
+        "success": false,
+        "token": "MV_DOWN"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.06276760620619137,
+      "actual_tcp_to_fixed_P_after_m": 0.06296984473735505,
+      "nominal_fixed_P_reduction_m": 0.0048146281285423725,
+      "actual_fixed_P_reduction_m": 0.004612389597378697,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.019137165071905157,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.019137165071905157,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.004668090337451137,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.004668090337451137,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "MV_DOWN/capture-0024.npz",
+        "branch": "MV_DOWN",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "324cc3e6cefeb39a0fd6c67eb2bf7a9ae92281747b9dcbf1590e531c36ff4d7d"
+      },
+      "original_loop_STOP_would_execute_this_hold": null
+    },
+    {
+      "branch": "STOP",
+      "contact_summary": {
+        "after": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        },
+        "before": {
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": [],
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0
+        }
+      },
+      "controls": 8,
+      "endpoint_own_observations": {
+        "robot0_eef_pos": [
+          -0.16518179469051525,
+          0.017161912101702034,
+          1.0218769021385536
+        ],
+        "robot0_eef_quat": [
+          0.9995935562982332,
+          6.757581852817607e-05,
+          -0.028508097665687328,
+          -7.751156327125142e-05
+        ],
+        "robot0_gripper_qpos": [
+          0.039998909344878535,
+          -0.03999941072769141
+        ],
+        "robot0_gripper_qvel": [
+          1.1071036993112892e-06,
+          -3.6707141412122446e-07
+        ]
+      },
+      "native_integrations": 200,
+      "result": {
+        "after": [
+          -0.16518179469051525,
+          0.017161912101702034,
+          1.0218769021385536
+        ],
+        "before": [
+          -0.165225127915263,
+          0.01716065438056955,
+          1.0219065692219496
+        ],
+        "delta_m": [
+          4.3333224747754695e-05,
+          1.2577211324846238e-06,
+          -2.9667083395912286e-05
+        ],
+        "environment_step_count": 8,
+        "execution_after": {
+          "contacts": [],
+          "finger_gap_m": 0.07899832007256974,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.0001308382336612082,
+              0.9983745863078419,
+              -0.05699270388391943
+            ],
+            [
+              0.9999999788360652,
+              0.00013967453391018766,
+              0.0001510592326992126
+            ],
+            [
+              0.00015877412830532858,
+              -0.05699268291340642,
+              -0.9983745834530775
+            ]
+          ],
+          "sim_time": 9.699999999999909,
+          "success": false,
+          "tcp_xyz": [
+            -0.16518179469051525,
+            0.017161912101702034,
+            1.0218769021385536
+          ]
+        },
+        "execution_before": {
+          "contacts": [],
+          "finger_gap_m": 0.07899761439642118,
+          "gripper_command": -1.0,
+          "orientation": [
+            [
+              -0.00010145405886134262,
+              0.9983552128465757,
+              -0.057331131936664385
+            ],
+            [
+              0.999999983117727,
+              0.00011007057488173389,
+              0.0001471360285525275
+            ],
+            [
+              0.00015320449175384998,
+              -0.05733111604123736,
+              -0.9983552071591787
+            ]
+          ],
+          "sim_time": 9.299999999999775,
+          "success": false,
+          "tcp_xyz": [
+            -0.165225127915263,
+            0.01716065438056955,
+            1.0219065692219496
+          ]
+        },
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 7.056761485574325e-07,
+        "low_level_commands": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            5.804915069407279e-05,
+            1.0482494228122863e-05,
+            0.002290121341368412,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.00011171672380905218,
+            8.347479283493664e-07,
+            0.002240128139368025,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.000306724419988913,
+            -4.461587581952586e-06,
+            0.0018198355719745152,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0004976950043711348,
+            -9.603068028551931e-06,
+            0.0013998946769744336,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0006456099437529561,
+            -1.420942064705999e-05,
+            0.0010742386116335823,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.000749912102951944,
+            -1.8269578721252788e-05,
+            0.0008455332614643041,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            -0.0008202435418563914,
+            -2.188277181132403e-05,
+            0.0006926904812010193,
+            0.0,
+            0.0,
+            0.0,
+            -1.0
+          ]
+        ],
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.019497727457647673,
+        "rotation_delta": [
+          [
+            0.9999999421138436,
+            -2.9332246896094118e-05,
+            -0.0003389866126502107
+          ],
+          [
+            2.933034551684628e-05,
+            0.9999999995541043,
+            -5.613979954899556e-06
+          ],
+          [
+            0.00033898677716971053,
+            5.604037035459627e-06,
+            0.9999999425282755
+          ]
+        ],
+        "success": false,
+        "token": "STOP"
+      },
+      "raw_robot_contact": false,
+      "strict_above_005N_robot_contact": false,
+      "tcp_to_fixed_P_before_m": 0.06758223433473375,
+      "nominal_tcp_to_fixed_P_after_m": 0.06758223433473375,
+      "actual_tcp_to_fixed_P_after_m": 0.06753892980177624,
+      "nominal_fixed_P_reduction_m": 0.0,
+      "actual_fixed_P_reduction_m": 4.330453295750547e-05,
+      "frozen_geometric_comparison": {
+        "inner": {
+          "current": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.025589298823719863,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        },
+        "full": {
+          "current": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "endpoint": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          },
+          "sweep": {
+            "minimum_m": 0.007677036989497564,
+            "contained_point_count": 0,
+            "any_contained_point": false
+          }
+        }
+      },
+      "endpoint_capture": {
+        "array_bytes_exact": null,
+        "artifact": "STOP/capture-0024.npz",
+        "branch": "STOP",
+        "capture_seq": 24,
+        "capture_sim_time": 9.699999999999909,
+        "sha256": "1ce50cdd7933f10c5d4822213d271a234f376540ec9d4d25c5aa4148928db79d"
+      },
+      "original_loop_STOP_would_execute_this_hold": false
+    }
+  ],
+  "termination": {
+    "completed": [
+      "MV_FWD",
+      "MV_BACK",
+      "MV_LEFT",
+      "MV_RIGHT",
+      "MV_UP",
+      "MV_DOWN",
+      "STOP"
+    ],
+    "native_integrations_total": 32200,
+    "new_model_calls": 0,
+    "original_loop_STOP_semantics": "no further primitive; represented analytically, no eighth world",
+    "policy_or_safety_filter_changed": false,
+    "prefix_controls_total": 1232,
+    "probe_controls_total": 56,
+    "reason": "seven_branches_complete"
+  },
+  "all_capture_hashes_checked": 168,
+  "limits": [
+    "single retrospective boundary and one trial per branch",
+    "executed STOP/hold differs from original approach-loop termination",
+    "nominal endpoint and sweep flags identical here",
+    "raw contact presence differs from strict force threshold",
+    "no continuation, fitted margin, policy, clearance or grasp qualification"
+  ]
+}

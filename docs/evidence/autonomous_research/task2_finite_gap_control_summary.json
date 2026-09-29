@@ -1,0 +1,495 @@
+{
+  "candidate_order": [
+    "MV_FWD",
+    "MV_BACK",
+    "MV_LEFT",
+    "MV_RIGHT",
+    "MV_UP",
+    "MV_DOWN",
+    "STOP"
+  ],
+  "current_gap_distance_m": 0.036772006875590776,
+  "current_point_in_site_m": [
+    0.0006336849019391396,
+    0.043311820777678166,
+    0.01465942508250982
+  ],
+  "finite_gap_lower_site_m": [
+    -0.039498278210574105,
+    -0.007999999999999997,
+    -0.0116
+  ],
+  "finite_gap_upper_site_m": [
+    0.039498593501164685,
+    0.007999999999999997,
+    0.004399999999999987
+  ],
+  "calibrated_pad_vertices_site_m": {
+    "gripper0_finger1_pad_collision": [
+      [
+        -0.04749827821057412,
+        0.007999999999999995,
+        -0.0116
+      ],
+      [
+        -0.04749827821057412,
+        0.007999999999999995,
+        0.004399999999999987
+      ],
+      [
+        -0.03949827821057411,
+        0.007999999999999997,
+        -0.0116
+      ],
+      [
+        -0.03949827821057411,
+        0.007999999999999997,
+        0.004399999999999987
+      ],
+      [
+        -0.04749827821057411,
+        -0.008000000000000016,
+        -0.0116
+      ],
+      [
+        -0.04749827821057411,
+        -0.008000000000000016,
+        0.004399999999999987
+      ],
+      [
+        -0.039498278210574105,
+        -0.008000000000000014,
+        -0.0116
+      ],
+      [
+        -0.039498278210574105,
+        -0.008000000000000014,
+        0.004399999999999987
+      ]
+    ],
+    "gripper0_finger2_pad_collision": [
+      [
+        0.039498593501164685,
+        0.008000000000000014,
+        -0.0116
+      ],
+      [
+        0.039498593501164685,
+        0.008000000000000014,
+        0.004399999999999987
+      ],
+      [
+        0.04749859350116469,
+        0.008000000000000016,
+        -0.0116
+      ],
+      [
+        0.04749859350116469,
+        0.008000000000000016,
+        0.004399999999999987
+      ],
+      [
+        0.03949859350116469,
+        -0.007999999999999997,
+        -0.0116
+      ],
+      [
+        0.03949859350116469,
+        -0.007999999999999997,
+        0.004399999999999987
+      ],
+      [
+        0.0474985935011647,
+        -0.007999999999999995,
+        -0.0116
+      ],
+      [
+        0.0474985935011647,
+        -0.007999999999999995,
+        0.004399999999999987
+      ]
+    ]
+  },
+  "mount": {
+    "body_to_site_position_m": [
+      0.0,
+      0.0,
+      0.097
+    ],
+    "body_to_site_rotation": [
+      [
+        -2.220446049250313e-16,
+        1.0000000000000002,
+        0.0
+      ],
+      [
+        -1.0000000000000002,
+        -2.220446049250313e-16,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "returned_site_rotation_world": [
+      [
+        -0.00022917424042063835,
+        0.9984387363033803,
+        -0.0558572943139647
+      ],
+      [
+        0.9999999718777903,
+        0.00022540796556994085,
+        -7.372698104990709e-05
+      ],
+      [
+        -6.102119471738029e-05,
+        -0.05585730963945905,
+        -0.9984387598827758
+      ]
+    ]
+  },
+  "candidates": {
+    "MV_FWD": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 7,
+        "excluded": true,
+        "nominal_delta_m": [
+          0.01,
+          0.0,
+          0.0
+        ],
+        "nominal_tcp_to_P_m": 0.036643004082749196,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 7,
+            "full_support_indices": [
+              53,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75
+            ]
+          }
+        },
+        "reason": "observed_point_inside_nominal_endpoint"
+      },
+      "excluded": true,
+      "point_in_site_m": [
+        0.000635976644343346,
+        0.033327433414644364,
+        0.015217998025649467
+      ],
+      "gap_distance_m": 0.027541023304448947,
+      "gap_distance_change_m": -0.00923098357114183,
+      "strict_improvement": true,
+      "point_in_finite_gap": false
+    },
+    "MV_BACK": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 0,
+        "excluded": false,
+        "nominal_delta_m": [
+          -0.01,
+          0.0,
+          0.0
+        ],
+        "nominal_tcp_to_P_m": 0.05513364209406431,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          }
+        },
+        "reason": "no_observed_endpoint_containment"
+      },
+      "excluded": false,
+      "point_in_site_m": [
+        0.0006313931595349333,
+        0.053296208140711974,
+        0.014100852139370172
+      ],
+      "gap_distance_m": 0.04632335268691834,
+      "gap_distance_change_m": 0.009551345811327563,
+      "strict_improvement": false,
+      "point_in_finite_gap": false
+    },
+    "MV_LEFT": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 0,
+        "excluded": false,
+        "nominal_delta_m": [
+          0.0,
+          0.01,
+          0.0
+        ],
+        "nominal_tcp_to_P_m": 0.04667297698899203,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          }
+        },
+        "reason": "no_observed_endpoint_containment"
+      },
+      "excluded": false,
+      "point_in_site_m": [
+        -0.009366314816838764,
+        0.04330956669802247,
+        0.01466016235232032
+      ],
+      "gap_distance_m": 0.0367700480268665,
+      "gap_distance_change_m": -1.958848724274709e-06,
+      "strict_improvement": true,
+      "point_in_finite_gap": false
+    },
+    "MV_RIGHT": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 0,
+        "excluded": false,
+        "nominal_delta_m": [
+          0.0,
+          -0.01,
+          0.0
+        ],
+        "nominal_tcp_to_P_m": 0.046947432919700466,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          }
+        },
+        "reason": "no_observed_endpoint_containment"
+      },
+      "excluded": false,
+      "point_in_site_m": [
+        0.010633684620717045,
+        0.043314074857333865,
+        0.014658687812699321
+      ],
+      "gap_distance_m": 0.03677396577291884,
+      "gap_distance_change_m": 1.95889732806237e-06,
+      "strict_improvement": false,
+      "point_in_finite_gap": false
+    },
+    "MV_UP": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 0,
+        "excluded": false,
+        "nominal_delta_m": [
+          0.0,
+          0.0,
+          0.01
+        ],
+        "nominal_tcp_to_P_m": 0.05032227431695267,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          }
+        },
+        "reason": "no_observed_endpoint_containment"
+      },
+      "excluded": false,
+      "point_in_site_m": [
+        0.0006342951138863134,
+        0.04387039387407275,
+        0.024643812681337578
+      ],
+      "gap_distance_m": 0.04118855555318979,
+      "gap_distance_change_m": 0.004416548677599011,
+      "strict_improvement": false,
+      "point_in_finite_gap": false
+    },
+    "MV_DOWN": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 1,
+        "excluded": true,
+        "nominal_delta_m": [
+          0.0,
+          0.0,
+          -0.01
+        ],
+        "nominal_tcp_to_P_m": 0.04301275329869177,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 1,
+            "full_support_indices": [
+              53
+            ]
+          }
+        },
+        "reason": "observed_point_inside_nominal_endpoint"
+      },
+      "excluded": true,
+      "point_in_site_m": [
+        0.0006330746899919658,
+        0.04275324768128357,
+        0.004675037483682061
+      ],
+      "gap_distance_m": 0.034754335988680204,
+      "gap_distance_change_m": -0.002017670886910572,
+      "strict_improvement": true,
+      "point_in_finite_gap": false
+    },
+    "STOP": {
+      "original_guard_and_P_effect": {
+        "contained_point_count": 0,
+        "excluded": false,
+        "nominal_delta_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "nominal_tcp_to_P_m": 0.04572979465712018,
+        "proxies": {
+          "gripper0_finger1_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger1_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_finger2_pad_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          },
+          "gripper0_hand_collision": {
+            "contained_point_count": 0,
+            "full_support_indices": []
+          }
+        },
+        "reason": "terminal_option_no_primitive"
+      },
+      "excluded": false,
+      "point_in_site_m": [
+        0.0006336849019391396,
+        0.043311820777678166,
+        0.01465942508250982
+      ],
+      "gap_distance_m": 0.036772006875590776,
+      "gap_distance_change_m": 0.0,
+      "strict_improvement": false,
+      "point_in_finite_gap": false
+    }
+  },
+  "original_selected": "STOP",
+  "gap_selected": "MV_LEFT",
+  "gate_pass": true,
+  "gate_result": "eligible_strict_improving_move",
+  "identity_verified": null,
+  "extent_established": null,
+  "holding": null,
+  "qualified_grasp": null,
+  "executed_actions": 0,
+  "model_physics_render_calls": 0,
+  "evaluator_read": false,
+  "guard_recomputed": false,
+  "guard_basis": "exact copied frozen sensor-only endpoint exclusions",
+  "automatic_extension": false
+}

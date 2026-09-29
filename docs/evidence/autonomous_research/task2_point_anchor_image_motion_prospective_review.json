@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "freeze_commit": "6e379ce604e9cb7b026ff7b3cc910d1bcdd7534a",
+  "protocol_sha256": "c14a1d0f33c52de4aefb57cce370ee71bcdc6ad604dc951e17a5140237a79bd4",
+  "authorized_batches": 1,
+  "wrapper_sha256": "3f3822e3609ccb3a1647d53e1d5b8143f04deb8c07b759d9d14919576672e19b",
+  "registered_output": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-image-motion-run-01",
+  "authorization": "Root approved the design and explicitly delegated release of exactly one full batch after this bounded whitelist/null review.",
+  "independent_validation": {
+    "tests": "tests/test_task2_point_anchor_image_motion.py",
+    "passed": 5,
+    "seconds": 0.47,
+    "runtime": "/home/junhongli/miniforge3/envs/locateanything/bin/python",
+    "actual_source_features_computed_by_reviewer": false
+  },
+  "reviewed_findings": [
+    "The feature input whitelist drops sampled scene depth, selected-depth pixel, surface-world point and old 3D deltas before enrichment. The RGB displacement function receives only the original native record; the projection function receives only saved own TCP and K/T.",
+    "The NPZ reader decodes only intrinsics and camera_to_world. Existing source admission and audit receipts are hashed only, with original source track hashes pinned. No old 3D summary, mask or evaluator is read by feature computation.",
+    "Native failure and attempted coordinates remain recorded. Current/reference native unavailability nulls A/B; missing current/reference own projection nulls only B. Earlier-than-preclose rows remain null. Finite off-image TCP projections remain unclipped.",
+    "The pure rigid camera transform and half-pixel index convention are correct. The fixed preclose references, all 1968 tracks / 91512 rows, 186 capture summaries and denominator 492 are preserved, with all four metrics and underlying vectors retained.",
+    "A clean exact commit, pinned locateanything Python/NumPy runtime and fixed new output directory gate the sole batch. Complete outputs are sealed before any later report joins old 3D summaries; partial output and failure counters are retained without retry."
+  ],
+  "interpretation": "Development comparison formed after observed 3D results. A is RGB-coordinate displacement; B adds calibrated own-robot state and is not RGB-only. No material-point identity, rigid attachment, holding classifier, token winner, anchor ranking or calibrated pixel/metre error equivalence is inferred.",
+  "reviewer_archived_projection_LK_physics_render_FK_model_calls": 0
+}

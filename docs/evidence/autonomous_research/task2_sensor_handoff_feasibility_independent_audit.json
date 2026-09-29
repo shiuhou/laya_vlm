@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only source feasibility spot inventory, all 20 fixed modern boundaries plus named empty archive and unmatched demo. No sensor reconstruction or feature/model/physical execution.",
+  "producer_commit": "c97a8da",
+  "inventory_sha256": "53ab301c93ea27b2366187254e84f1016ce8f2ba7ddff4e34ebd649abf2b1842",
+  "memo_sha256": "123a9ddf58a0aff398278e8ae3c2d9ea00e54d8ddd83520bd75a89f4f4fd20b0",
+  "modern_boundaries": [
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-close",
+      "capture_id": 30,
+      "journal_seq": 12632,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-close",
+      "capture_id": 38,
+      "journal_seq": 13058,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-close",
+      "capture_id": 46,
+      "journal_seq": 13486,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-open_hold",
+      "capture_id": 30,
+      "journal_seq": 12632,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-open_hold",
+      "capture_id": 38,
+      "journal_seq": 13058,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "whole-open_hold",
+      "capture_id": 46,
+      "journal_seq": 13486,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-close",
+      "capture_id": 29,
+      "journal_seq": 12211,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-close",
+      "capture_id": 37,
+      "journal_seq": 12637,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-close",
+      "capture_id": 45,
+      "journal_seq": 13065,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-open_hold",
+      "capture_id": 29,
+      "journal_seq": 12211,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-open_hold",
+      "capture_id": 37,
+      "journal_seq": 12637,
+      "exact": true
+    },
+    {
+      "run": "task2-point-anchor-grasp-transfer-run-01",
+      "cell": "neck-open_hold",
+      "capture_id": 45,
+      "journal_seq": 13065,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "whole-close",
+      "capture_id": 30,
+      "journal_seq": 12632,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "whole-close",
+      "capture_id": 38,
+      "journal_seq": 13058,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "whole-close",
+      "capture_id": 46,
+      "journal_seq": 13487,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "whole-close",
+      "capture_id": 54,
+      "journal_seq": 13915,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "neck-close",
+      "capture_id": 29,
+      "journal_seq": 12211,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "neck-close",
+      "capture_id": 37,
+      "journal_seq": 12637,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "neck-close",
+      "capture_id": 45,
+      "journal_seq": 13066,
+      "exact": true
+    },
+    {
+      "run": "task2-additional-stationary-grasp-run-01",
+      "cell": "neck-close",
+      "capture_id": 53,
+      "journal_seq": 13494,
+      "exact": true
+    }
+  ],
+  "all_modern_source_hashes_own_packets_journal_links_and_RGB_D_schemas_exact": true,
+  "named_empty_journal_sha256": "0bf519b66ace3eede5169a7cc9e4c727bf5c14872157073de87e71ebf8de042a",
+  "named_empty_records_checked": [
+    26,
+    54
+  ],
+  "named_empty_has_returned_jaw_qpos_qvel_or_RGB_D": false,
+  "unmatched_demo_journal_sha256": "bf3f990c19d0ea576d43f523de2a13d81c9b49ed922caf4c94aa4a64aee8eeb3",
+  "unmatched_demo_proprio_sequences_checked": [
+    11,
+    27
+  ],
+  "unmatched_demo_RGB_D_sequences_checked": [
+    6,
+    22
+  ],
+  "unmatched_demo_has_named_qvel": false,
+  "source_review": [
+    "privileged_reference.preflight renders off, applies unrecorded setup close to closed_gripper, restores fixture snapshot before each action; records 26/54 are not contiguous observed history.",
+    "WineBottleBottomDrawerAdapter.measured_outcome actual_joint_qpos_m is drawer_qpos_m.",
+    "Returned modern own packets and unknown sample-time fields remain distinct from privileged contact/evaluator labels."
+  ],
+  "decision": "Original three-packet model comparison lacks the necessary sensor-complete closed-empty source. No model probe released."
+}

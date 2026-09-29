@@ -1,0 +1,109 @@
+{
+  "status": "PASS_FOR_STATIC_SETUP_BOUNDS_ONLY",
+  "producer_commit": "361cf1e",
+  "producer_bounds_sha256": "642b279cc3c24b9f2e09b7e135d4f87e5de5ef0e1f0d0dffd9a7deee819925bc",
+  "method": "Independent homogeneous transforms using scipy rotations; transformed local mesh AABB corners give a deliberately looser conservative robot envelope. Box/cylinder collision geometry and fixture X ranges retain the producer assumptions. No simulator imported or constructed.",
+  "all_source_hashes_and_boundary_identity_checked": true,
+  "bottle_bounds_agreement_absolute_tolerance_m": 1e-14,
+  "bounds": {
+    "table": {
+      "collision_geoms": 1,
+      "conservative_minimum_m": [
+        -0.5,
+        -0.6,
+        0.85
+      ],
+      "conservative_maximum_m": [
+        0.5,
+        0.6,
+        0.9
+      ]
+    },
+    "robot0_base": {
+      "collision_geoms": 16,
+      "conservative_minimum_m": [
+        -1.1675,
+        -0.35,
+        0.009000000000000036
+      ],
+      "conservative_maximum_m": [
+        -0.02991385981164972,
+        0.35,
+        1.6391552546065538
+      ]
+    },
+    "akita_black_bowl_1_main": {
+      "collision_geoms": 40,
+      "conservative_minimum_m": [
+        -0.04174713930953974,
+        -0.11891089848810824,
+        0.8999962962101091
+      ],
+      "conservative_maximum_m": [
+        0.06526006208181798,
+        -0.01171095820621932,
+        0.9505401863259786
+      ]
+    },
+    "wine_bottle_1_main": {
+      "collision_geoms": 21,
+      "conservative_minimum_m": [
+        -0.15151314991773274,
+        0.03860673001034917,
+        0.8999852792667999
+      ],
+      "conservative_maximum_m": [
+        -0.10892069300255307,
+        0.0828463035591329,
+        1.0569155583252638
+      ]
+    },
+    "white_cabinet_1_main": {
+      "collision_geoms": 36,
+      "conservative_minimum_m": [
+        -0.13335000000000002,
+        -0.26892021273491545,
+        0.004586809838061778
+      ],
+      "conservative_maximum_m": [
+        0.14123000000000002,
+        0.11170429438331654,
+        0.22299
+      ]
+    },
+    "wine_rack_1_main": {
+      "collision_geoms": 9,
+      "conservative_minimum_m": [
+        -0.24438,
+        -0.1294609271463996,
+        -0.00218900870202934
+      ],
+      "conservative_maximum_m": [
+        0.04438,
+        0.12437483562433217,
+        0.3282405913456469
+      ]
+    }
+  },
+  "independent_conservative_X_separations_m": {
+    "robot0_base": 0.22840070989391698,
+    "akita_black_bowl_1_main": 0.13322678800044926,
+    "white_cabinet_1_main": 0.05725685008226722,
+    "wine_rack_1_main": 0.15410685008226724
+  },
+  "table_XY_contains_translated_bottle": true,
+  "worldbody_collision_planes": [
+    {
+      "name": "floor",
+      "z_m": 0.0,
+      "bottle_minimum_Z_gap_m": 0.8999852792667999
+    }
+  ],
+  "fixture_assumptions_reviewed": "BDDL range/yaw and reset source apply sampled fixture body_pos/body_quat with workspace XY origin zero; live fixture identity/pose contract still required.",
+  "limits": [
+    "Same-state static clearance only; does not certify future trajectory or dynamic support.",
+    "Table collision support geometry is retained, including original penetration; no claim of new contact solve or equilibrium.",
+    "No camera visibility guarantee.",
+    "Future post-event raster seeds identify local image locations; they cannot inherit pre-event material identity."
+  ]
+}

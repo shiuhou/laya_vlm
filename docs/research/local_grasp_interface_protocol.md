@@ -1,0 +1,95 @@
+# Local grasp transfer to the existing visual atomic interface
+
+Prospective mechanical diagnostic, not autonomous grasping or Task2 completion.
+The strongest existing positive witness is the paired bottle close/first40mm lift.
+Does the same pregrasp boundary permit GRASP then one10mm MV_UP using the unchanged
+visual AtomicExecutor and its unchanged reset-calibrated validator?
+
+## Registered arms and boundaries
+
+Exactly two fresh worlds, close arm then open_hold arm; Task2 bottle/bottom drawer,
+init0/seed1, native controller, standard ten settling controls. Regenerate the
+original native actions0–12 from the archived strict Task2 gate (no control warm
+start, qpos restoration, model, preview, candidate search or recovery). Require
+all104 commands, returned robot observations, after-control flattened states and
+all14 boundary RGB/depth/K/T arrays to match the prior paired-observability arm.
+At13 use unchanged AtomicExecutor GRASP in close and STOP in open_hold. At14 use
+one MV_UP, nominal10mm with retained jaw command. Both use eight native controls.
+Step13 must match the old close/hold command/state/observation sequence exactly.
+Step14 is a new physical intervention; no equality to the40mm lift is expected.
+
+Stop the whole run immediately on source/prefix/state/image mismatch, runtime
+error, nonfinite value, unexpected control/integrator count, unexpected robot
+contact outside the designated bottle interaction, or unchanged execution
+validator failure. Do not continue the other arm after a failure. Save the first
+failure and missing comparisons; do not retry, change thresholds, substitute
+another movement, extend the lift or run complete placement/closure.
+
+The original prefix is deliberately scripted and privileged-selected. Neither
+successful transfer nor sensor recording establishes sensory approach, a model
+policy, general grasping or generality. There are no Laya or LocateAnything calls.
+Target identity is supplied by the archived experimental condition.
+
+## Measurements and safeguards
+
+Use the original RobotSensors reader and capture schedule, including its scratch
+FK and evaluator segmentation renders. Neither updates live physics. Preserve
+raw RGB-D and direct/returned proprioceptive histories; wrist sample times and
+holding remain unknown. At13/14 passively wrap native mj_step to record BEFORE/
+AFTER raw contacts, six force components, direct state and wrist buffers. No
+added forward or integration on live data. Verify integration fingerprints around
+all reads/renders and unchanged geom/site/camera pose caches, sensordata and qacc
+around sensor/evaluator/render operations. Count25 integrations per control, Euler2ms. Labels use Task2's
+existing strict>0.05N rule, not Task1's1N. Both stages stay separate; no exact
+causal or continuous-contact claim is made.
+
+The policy consumes only fixed registered actions. Sensor artifacts are sealed
+before separate evaluator labels are written. Evaluator records include bottle
+center/bottom, contact pairs, bilateral fingerpad relation, drawer state and
+success. Any external-contact abort is explicitly oracle-assisted diagnostic
+safety, never a deployable sensor gate. Native contact abort is applied after the
+current atomic action; it cannot prevent contact. Treat any above-threshold
+robot/scene pair except designated gripper/bottle as unexpected; robot self
+contacts also abort. Existing paired baseline contact evidence is retained.
+
+Report actual TCP/bottle displacement, raw contacts and bilateral relation at all
+sample stages, grip commands, validator flags, and visual before/after frames.
+Report bottle movement and relation continuity descriptively without inventing a
+new learned holding threshold. A positive SAMPLED-ENDPOINT local witness requires all four unchanged atomic
+validations pass; close-arm net bottle-center rise is positive and greater than
+the open-arm rise; close-arm bilateral pad relation is true at all eight lift
+endpoints, and open-arm relation at none. Native BEFORE/AFTER relation counts are
+reported separately using the same strict0.05N rule. Native-stage maintenance may
+only be claimed if both stages of all200 lift integrations are bilateral. Neither
+label certifies continuous-time grasp or support-free retention. No displacement
+threshold, noise claim or criterion is fitted to the results. Final official combined-task success is recorded but is
+not an objective of this slice.
+
+## Reproducibility and review
+
+Freeze code/protocol/tests and exact source artifact hashes before dynamics;
+independent review must pass. Run on GPU4 with EGL and offline model flags (no
+model is used). Preserve environment/package/source identity and full new control
+trace. If both arms finish, replay those recorded new controls once from fresh
+resets and require every flattened state exact. Before world construction, replay
+requires the same clean scientific source identity, protocol, Jev repository,
+stepping-source hashes, packages and GPU environment as collection. Replay is verification, not a new
+policy attempt. After a failure, stop this condition and interpret it; any next
+experiment needs a separate stated question. No production runtime file changes.
+
+
+## Recorded setup failure and infrastructure correction
+
+Collection attempt01 at ef58bf9 failed during source introspection, before
+RunRecorder or any world construction, because LIBERO was not importable before
+the normal World initialization installed its configured path. The complete
+terminal log remains `runs/autonomous-research/local-grasp-interface-run-01.log`.
+No simulation reset, control, image or physical outcome occurred. This attempt
+remains failed; it is not relabeled as a successful run or erased.
+
+The correction calls existing `jev_libero.environment.load_libero` with the same
+explicit root/config before source introspection in collection and replay. This
+is package/config initialization, without world construction or dynamics. Freeze
+and review this change, perform import/source preflight without a world, then
+use a separately named attempt02. Scientific arms, stop rules, controls,
+measurements, acceptance and executor thresholds remain exactly as declared.

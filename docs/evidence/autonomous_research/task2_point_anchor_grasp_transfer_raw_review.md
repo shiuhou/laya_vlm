@@ -1,0 +1,50 @@
+# Independent fixed POINT grasp-transfer raw audit
+
+**Stored-evidence PASS** for all four fresh collections and their four separate verification replays in `task2-point-anchor-grasp-transfer-run-01`. The registered sampled-endpoint witness is **false for whole and true for neck**. Both CLOSE cells show bottle center and bottom rise versus zero rise in their matched OPEN-hold cells. Neither CLOSE cell maintains bilateral pad contact at all recorded native stages, and both contain simultaneous bilateral-pad and raw zero-force finger contact. These results do not establish a clean grasp mechanism, support-free retention, autonomous grasp selection or full Task2 success.
+
+The [independent checker](../../../experiments/task2_point_anchor_grasp_transfer_evidence_audit.py) and [complete receipt](task2_point_anchor_grasp_transfer_independent_audit.json) use stored journals, arrays and scalar equations only. Receipt SHA-256: `6051e9a498f73e8399b232a2d64b9a0174e8e0ab8d3187cffdb69a4c31a9a018`.
+
+## Exact reuse and execution
+
+Root prospective `f15b394` admitted clean producer **`1702cb2739bfdb2817a329c8047e16bcb7836657`** and preflight 02 SHA-256 `3bc68d41b02d3a17f1f9354ff2369d5256edf842ef0371d8c186af602c55b787`. The final delta only qualifies approach-only failure counters and supplies suffix totals/current phase; independent focused regression passed **75 tests**. Collection used the literal archived **laya-embodied** interpreter, GPU4/EGL4 and offline flags. Both archived approach manifests match the new runtime, stepping-source paths, geometry/support packet, calibration, POINT and unchanged-source identities exactly. The recorded environment correction preserves preflight 03 as an unexecuted alternative; it does not replace or normalize source identities.
+
+All **118 approach actions**, all **122 decisions including terminal STOPs**, every original control/native/endpoint record, and all **122 approach RGB-D captures** equal their corresponding already-audited whole/neck source prefixes. The checker compares **49,690 scientific prefix records** and full image shape/dtype/bytes, then reuses immutable source audit `0cd47a1433ac25d14b45aa942a17d7322e19865804c33b3adb2fee25a2d2d56e`. It recomputes **zero** point/proxy memberships. Each approach is freshly policy-selected; archived source data only verifies the completed prefix. Approach STOP executes no hold.
+
+The matrix contains precisely whole-close → whole-open_hold → neck-close → neck-open_hold, each collection followed by its replay. The reviewed subprocess launcher, separate worker arguments, source manifests and enclosing stage timestamps support the fresh-process claim; standalone PID records were not exported. There are no failed, retried or unstarted cells.
+
+The eight new primitives contain **64 controls, 1,600 native integrations and 3,200 BEFORE/AFTER snapshots**. Across approaches and continuations, totals are **126 actions, 1,008 controls, 25,200 integrations, 50,400 native snapshots, 130 primary RGB-D captures and 64 auxiliary captures**. Standard reset/ten settling controls and the separate verification replays are additional to these instrumented collection counts. Every continuation command is independently reconstructed from its recorded prior returned TCP, fixed arm target and retained jaw command. All state/own handoffs, 25 integrations per control, 2 ms native increments, eight unchanged validations and strict unexpected-contact classifications pass. Official executor success remains false throughout.
+
+## Fixed outcomes and contact mechanism
+
+Rise uses final lift minus final close/hold, as registered. Bilateral relations use both designated pads at the original strict **>0.05 N** per-contact threshold.
+
+| Cell | Center rise (mm) | Bottom rise (mm) | Bilateral lift endpoints | Bilateral native BEFORE | Bilateral native AFTER |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Whole CLOSE | 8.261958451 | 8.216198444 | 7/8 | 172/200 | 172/200 |
+| Whole OPEN hold | 0 | 0 | 0/8 | 0/200 | 0/200 |
+| Neck CLOSE | 9.012689165 | 9.157942191 | 8/8 | 183/200 | 183/200 |
+| Neck OPEN hold | 0 | 0 | 0/8 | 0/200 | 0/200 |
+
+All four validations in each matched pair pass. Whole's first lift endpoint is not bilateral, so its literal 8/8 sampled-endpoint witness is false despite positive closing-dependent movement. Neck meets that descriptive witness. Both remain below 200/200 in each native stage, so neither satisfies registered native-stage maintenance. Each cell is one fixed observation on this fixture; no repeat, threshold adjustment or general grasp-superiority claim follows.
+
+Whole CLOSE has no raw robot/bottle contacts during the close primitive. Neck CLOSE has transient one-pad contact during closing but no bilateral native sample. During lifting, whole has **9** and neck **8** simultaneous bilateral-plus-raw-finger samples in **each** native stage. All those finger-contact normal forces are **0 N**; no finger, hand or other non-pad robot/bottle contact exceeds 0.05 N. Neck's first lift endpoint also contains that raw zero-force finger contact. Broad gripper/bottle allowance in the abort rule is distinct from the pad witness. The raw non-designated contacts remain visible and prevent promoting the sampled witness alone into a clean interaction-valid grasp claim.
+
+Raw bottle/table contact is present at all 200 close/hold samples in both stages. During the closed lifts it persists at **28/200 whole** and **17/200 neck** samples per stage; the corresponding >0.05 N counts are **23** and **15**. Whole's first lift endpoint still has raw table contact; its later seven and all eight neck lift endpoints have none. Both OPEN lifts retain raw table contact throughout. Per-contact thresholding is not a support test: the open table contact forces are individually below 0.05 N. Late sampled absence of table contacts does not establish continuous or support-free retention.
+
+Center and bottom are explicitly privileged evaluator fields. Both are retained at every control endpoint, together with all raw bottle/scene contacts. No source-specific bottle free-joint quaternion/address mapping was archived, so bottle rotation is **unknown**; no guessed state offset or FK reconstruction was introduced. Center/bottom motion can involve tilt or changing support, and neither is silently treated as pure translation. Cached native contact timestamps do not establish continuous-time onset or maintenance.
+
+## Sensor seal, replay and closeout
+
+The primary camera schedule and IDs match the closed approaches. Each separate auxiliary stream has exactly 16 unique control-end captures. Every auxiliary own packet equals the explicitly returned control observation, avoiding stale `world.obs` inside the collection callback. The combined sensor timelines contain 47 captures per whole cell and 46 per neck cell; the two repeated primary suffix endpoints are deliberately omitted from those timelines. Auxiliary sequence and merged sensor ID remain separate fields. All source record links, phases, read timestamps and missing exact sample/cache times were checked.
+
+Each sensor seal binds its complete manifest and listed arrays before separate evaluator labels are written. This ordering is supported by the reviewed code and observed file mtimes, without a dedicated seal journal timestamp. The labels' full states/times and thresholded contacts match the corresponding returned controls/raw snapshots; bilateral endpoint labels were independently recomputed from the raw designated-pad pairs. Labels do not enter policy or continuation selection.
+
+All four replays reproduce every exported control state, native state/fingerprint and primary/auxiliary equality gate. The reviewed verifier compared full native contacts and image arrays; those replay contacts/images were not separately reexported for a second independent byte comparison. Read-only integration/cache guards and exact instrumented replay passed; this is not an observer-removal experiment.
+
+The matrix journal SHA-256 is `39d2a972869d98944bdfb29cce721174cdb9d617ec3696b5139ac5ffd8b139f4`, request `32c914ffb0994d8bcc58c74090d803fe0d9a6bc7c3f2f27dcf985e011f5683be`. The sibling driver exit receipt reports return code **0** (`972f7aa0188d6ad88258239d8be0dac0223a39010565dd127686a9d3774cd6bd`). The outer tool session separately reported **143** after driver completion; this launcher-status discrepancy is preserved in execution closeout `a2df13d38ac8641ecdf4d6c40e4431f60f5b3019a454fadbeade299727831d8d`. All condition journals, both replay receipts per cell and hashes corroborate the complete matrix; no retry or replacement run was made. Portable producer reporting remains a separate closeout.
+
+## Portable report closeout
+
+**Derived-report PASS** at producer `174b4ea51ef3d8e69dddd8d8f2c76e8bc4b41637`, with the support-interpretation wording correction in `f5a6f77baa23c7d283f210f9868e74fa0c5e38f9`. The final summary SHA-256 is `7f1161c2e1ecf513a9904b5ee2cf09df42f7e76c68384b1cfe64c0c40995fc20`; compressed suffix traces SHA-256 is `b4176e26aa4fe112e71f60bf0d1576e5e1b451220346041579058f1ac7ce3694`. Every summary field equals the independent raw receipt. All **3,432** portable suffix record IDs/kinds/data (**858 per cell**), all **64** complete evaluator labels and all **64** audited endpoint measurements equal their sealed sources; journal envelopes and original image arrays remain in the raw archive. The reviewer independently decompressed and compared the complete payload, without rerunning tensors or duplicating RGB inspection.
+
+The narrative accurately retains both final GRASP endpoints' absence of raw robot/bottle contact, the transient unilateral neck contact during closing, contact formation during lifting, the literal whole/neck witness outcomes, native-stage failures and raw non-pad/support limitations. It now explicitly states that sampled contact absence establishes neither support-free retention nor a clean continuous grasp. This closes the portable mechanical report; the separate RGB interpretation and any future sensor extraction or extra stationary GRASP condition remain distinct work.

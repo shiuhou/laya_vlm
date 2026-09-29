@@ -1,0 +1,32 @@
+{
+  "actual_full_RGB_inspected": true,
+  "image": "runs/autonomous-research/task2-closed-empty-slow-point-root-inspection-01/full-rgb.png",
+  "image_sha256": "a41c1d8ad7a407ffb8c758c21f4c2c5f72b0157c1dcf7eaa9e6d796fa8d038ab",
+  "input_identities": [
+    {
+      "case": "present-postevent",
+      "rgb_npy_sha256": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+      "sensor_result_sha256": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+      "point": [
+        218,
+        193
+      ]
+    },
+    {
+      "case": "away-postevent",
+      "rgb_npy_sha256": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+      "sensor_result_sha256": "7075c2b1683694deebf473fa0a2d7823a38f5836c14f6b3ff45264197615a733",
+      "point": [
+        228,
+        328
+      ]
+    }
+  ],
+  "observations": {
+    "present-postevent": "[218,193] lies on visible upper bottle body below the fingers.",
+    "away-postevent": "[228,328] lies on visible upper bottle body of the relocated bottle, distant from the gripper."
+  },
+  "limits": "Visual judgment on two development images, not mask/pose/depth ownership/holding truth. The old malformed hybrid prefix remains nonadmitted.",
+  "independent_audit_sha256": "e034ead7baad4f3dd24bb992aa556897563e08d5fb9cae034fd93485d575c251",
+  "next": "Authorize only the prepared four-record cached-hybrid versus fresh-slow offline comparison; stale guard explicit; no physics."
+}

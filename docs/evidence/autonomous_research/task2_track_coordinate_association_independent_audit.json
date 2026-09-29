@@ -1,0 +1,1427 @@
+{
+  "status": "pass",
+  "freeze": "dc1ec6c44d84f3337aec2f7fc0f7fc14a03f6d43",
+  "journal_sha256": "b68ddf216f1164273301d58f35caf2a9b53f79d32b6e0c3e152a61ac7d20cbb3",
+  "journal_records": 5,
+  "sensor_seal_sha256": "d0bbf1a0671a34c8af96e10fd50321697200d5c07d775eb44b7f83c09862ec22",
+  "summary_sha256": "282cbb97218622bf9575863bebd0c299461107d7f0aa29a2e3e6dd4773f847fa",
+  "proxy_sha256": "5fadd07e60a134a305333056b844b22e828377a805087f7efefd1e2b055ec051",
+  "track_rows": 45264,
+  "tracks": 984,
+  "arms": {
+    "close": {
+      "native_fields_exact_rows": 22632,
+      "changed_pixels_total": 15883,
+      "changed_depths_total": 15138,
+      "changed_by_capture": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "changed_sample_pixel_count": 0,
+          "changed_depth_value_count": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "changed_sample_pixel_count": 371,
+          "changed_depth_value_count": 338
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "changed_sample_pixel_count": 384,
+          "changed_depth_value_count": 352
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "changed_sample_pixel_count": 351,
+          "changed_depth_value_count": 324
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "changed_sample_pixel_count": 361,
+          "changed_depth_value_count": 328
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "changed_sample_pixel_count": 384,
+          "changed_depth_value_count": 379
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "changed_sample_pixel_count": 330,
+          "changed_depth_value_count": 316
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "changed_sample_pixel_count": 213,
+          "changed_depth_value_count": 205
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "changed_sample_pixel_count": 286,
+          "changed_depth_value_count": 271
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "changed_sample_pixel_count": 288,
+          "changed_depth_value_count": 267
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "changed_sample_pixel_count": 292,
+          "changed_depth_value_count": 278
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "changed_sample_pixel_count": 310,
+          "changed_depth_value_count": 300
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "changed_sample_pixel_count": 327,
+          "changed_depth_value_count": 318
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "changed_sample_pixel_count": 372,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "changed_sample_pixel_count": 373,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "changed_sample_pixel_count": 376,
+          "changed_depth_value_count": 362
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "changed_sample_pixel_count": 381,
+          "changed_depth_value_count": 369
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "changed_sample_pixel_count": 378,
+          "changed_depth_value_count": 364
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "changed_sample_pixel_count": 378,
+          "changed_depth_value_count": 367
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "changed_sample_pixel_count": 369,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "changed_sample_pixel_count": 347,
+          "changed_depth_value_count": 322
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "changed_sample_pixel_count": 350,
+          "changed_depth_value_count": 324
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "changed_sample_pixel_count": 364,
+          "changed_depth_value_count": 340
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "changed_sample_pixel_count": 401,
+          "changed_depth_value_count": 395
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "changed_sample_pixel_count": 365,
+          "changed_depth_value_count": 356
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "changed_sample_pixel_count": 353,
+          "changed_depth_value_count": 335
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "changed_sample_pixel_count": 349,
+          "changed_depth_value_count": 328
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "changed_sample_pixel_count": 360,
+          "changed_depth_value_count": 334
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "changed_sample_pixel_count": 349,
+          "changed_depth_value_count": 334
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "changed_sample_pixel_count": 363,
+          "changed_depth_value_count": 338
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "changed_sample_pixel_count": 367,
+          "changed_depth_value_count": 340
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "changed_sample_pixel_count": 399,
+          "changed_depth_value_count": 382
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "changed_sample_pixel_count": 381,
+          "changed_depth_value_count": 368
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "changed_sample_pixel_count": 356,
+          "changed_depth_value_count": 349
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "changed_sample_pixel_count": 348,
+          "changed_depth_value_count": 339
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "changed_sample_pixel_count": 354,
+          "changed_depth_value_count": 341
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "changed_sample_pixel_count": 363,
+          "changed_depth_value_count": 349
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "changed_sample_pixel_count": 331,
+          "changed_depth_value_count": 315
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "changed_sample_pixel_count": 346,
+          "changed_depth_value_count": 321
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "changed_sample_pixel_count": 396,
+          "changed_depth_value_count": 380
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "changed_sample_pixel_count": 372,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "changed_sample_pixel_count": 350,
+          "changed_depth_value_count": 338
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "changed_sample_pixel_count": 356,
+          "changed_depth_value_count": 348
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "changed_sample_pixel_count": 353,
+          "changed_depth_value_count": 335
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "changed_sample_pixel_count": 350,
+          "changed_depth_value_count": 335
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "changed_sample_pixel_count": 336,
+          "changed_depth_value_count": 318
+        }
+      ],
+      "final_summary": {
+        "capture_id": 45,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "valid_surface_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "references": {
+          "initial": {
+            "reference_capture_id": 0,
+            "reference_surface_valid_count": 492,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "q25": 0.10012841752889429,
+                "median": 0.1124411310887184,
+                "q75": 0.11946150763353133
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "q25": 0.10788215033572929,
+                "median": 0.11797693893152411,
+                "q75": 0.12293571535670852
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "q25": 0.16741276760491902,
+                "median": 0.17972548116474313,
+                "q75": 0.18674585770955607
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "q25": 0.1967574971917072,
+                "median": 0.20428248309633315,
+                "q75": 0.20938582813124307
+              }
+            }
+          },
+          "preclose": {
+            "reference_capture_id": 13,
+            "reference_surface_valid_count": 492,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "q25": 0.10302463469315704,
+                "median": 0.11093485755049626,
+                "q75": 0.11423186125519091
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "q25": 0.10851021342669569,
+                "median": 0.11270003632112077,
+                "q75": 0.11605255421967431
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "q25": -0.01110796741664366,
+                "median": -0.0031977445593044385,
+                "q75": 9.925914539021807e-05
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "q25": 0.0024218608762932806,
+                "median": 0.004404282597121551,
+                "q75": 0.020178565839817527
+              }
+            }
+          }
+        }
+      },
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 413,
+          "proxy_false": 79,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 406,
+          "proxy_false": 86,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 415,
+          "proxy_false": 77,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 412,
+          "proxy_false": 80,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 416,
+          "proxy_false": 76,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 415,
+          "proxy_false": 77,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 412,
+          "proxy_false": 80,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 409,
+          "proxy_false": 83,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 421,
+          "proxy_false": 71,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 418,
+          "proxy_false": 74,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 417,
+          "proxy_false": 75,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 422,
+          "proxy_false": 70,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 421,
+          "proxy_false": 71,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "proxy_true": 418,
+          "proxy_false": 74,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "proxy_true": 417,
+          "proxy_false": 75,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "proxy_true": 412,
+          "proxy_false": 80,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "proxy_true": 409,
+          "proxy_false": 83,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "proxy_true": 418,
+          "proxy_false": 74,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "proxy_true": 421,
+          "proxy_false": 71,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "proxy_true": 419,
+          "proxy_false": 73,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "proxy_true": 420,
+          "proxy_false": 72,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "proxy_true": 412,
+          "proxy_false": 80,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "proxy_true": 413,
+          "proxy_false": 79,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "proxy_true": 421,
+          "proxy_false": 71,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "proxy_true": 419,
+          "proxy_false": 73,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "proxy_true": 422,
+          "proxy_false": 70,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "proxy_true": 419,
+          "proxy_false": 73,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "proxy_true": 419,
+          "proxy_false": 73,
+          "proxy_unknown": 0
+        }
+      ],
+      "departure_seed_count": 30,
+      "earliest_departure": {
+        "seed_id": 124,
+        "capture_id": 6,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          216,
+          178
+        ]
+      },
+      "seed5_capture1": {
+        "point_pixel_index_xy": [
+          216.99996948242188,
+          169.00015258789062
+        ],
+        "sample_pixel_xy": [
+          217,
+          169
+        ],
+        "depth_m": 0.9750217199325562,
+        "surface_point_world_m": [
+          -0.1296867287849216,
+          0.05363847028104632,
+          1.034597829401616
+        ]
+      }
+    },
+    "open_hold": {
+      "native_fields_exact_rows": 22632,
+      "changed_pixels_total": 15002,
+      "changed_depths_total": 14349,
+      "changed_by_capture": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "changed_sample_pixel_count": 0,
+          "changed_depth_value_count": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "changed_sample_pixel_count": 371,
+          "changed_depth_value_count": 338
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "changed_sample_pixel_count": 384,
+          "changed_depth_value_count": 352
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "changed_sample_pixel_count": 351,
+          "changed_depth_value_count": 324
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "changed_sample_pixel_count": 361,
+          "changed_depth_value_count": 328
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "changed_sample_pixel_count": 384,
+          "changed_depth_value_count": 379
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "changed_sample_pixel_count": 330,
+          "changed_depth_value_count": 316
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "changed_sample_pixel_count": 213,
+          "changed_depth_value_count": 205
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "changed_sample_pixel_count": 286,
+          "changed_depth_value_count": 271
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "changed_sample_pixel_count": 288,
+          "changed_depth_value_count": 267
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "changed_sample_pixel_count": 292,
+          "changed_depth_value_count": 278
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "changed_sample_pixel_count": 310,
+          "changed_depth_value_count": 300
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "changed_sample_pixel_count": 327,
+          "changed_depth_value_count": 318
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "changed_sample_pixel_count": 372,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "changed_sample_pixel_count": 373,
+          "changed_depth_value_count": 359
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "changed_sample_pixel_count": 371,
+          "changed_depth_value_count": 357
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "changed_sample_pixel_count": 369,
+          "changed_depth_value_count": 357
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "changed_sample_pixel_count": 370,
+          "changed_depth_value_count": 358
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "changed_sample_pixel_count": 369,
+          "changed_depth_value_count": 355
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "changed_sample_pixel_count": 370,
+          "changed_depth_value_count": 356
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "changed_sample_pixel_count": 370,
+          "changed_depth_value_count": 356
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "changed_sample_pixel_count": 370,
+          "changed_depth_value_count": 355
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "changed_sample_pixel_count": 355,
+          "changed_depth_value_count": 346
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "changed_sample_pixel_count": 332,
+          "changed_depth_value_count": 320
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "changed_sample_pixel_count": 324,
+          "changed_depth_value_count": 311
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "changed_sample_pixel_count": 326,
+          "changed_depth_value_count": 312
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "changed_sample_pixel_count": 322,
+          "changed_depth_value_count": 311
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "changed_sample_pixel_count": 322,
+          "changed_depth_value_count": 311
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 310
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "changed_sample_pixel_count": 322,
+          "changed_depth_value_count": 310
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "changed_sample_pixel_count": 321,
+          "changed_depth_value_count": 308
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "changed_sample_pixel_count": 320,
+          "changed_depth_value_count": 307
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "changed_sample_pixel_count": 320,
+          "changed_depth_value_count": 307
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "changed_sample_pixel_count": 320,
+          "changed_depth_value_count": 307
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "changed_sample_pixel_count": 320,
+          "changed_depth_value_count": 307
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "changed_sample_pixel_count": 320,
+          "changed_depth_value_count": 307
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "changed_sample_pixel_count": 321,
+          "changed_depth_value_count": 308
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "changed_sample_pixel_count": 321,
+          "changed_depth_value_count": 308
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "changed_sample_pixel_count": 322,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "changed_sample_pixel_count": 322,
+          "changed_depth_value_count": 308
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "changed_sample_pixel_count": 323,
+          "changed_depth_value_count": 309
+        }
+      ],
+      "final_summary": {
+        "capture_id": 45,
+        "denominator": 492,
+        "native_surviving_count": 492,
+        "valid_surface_count": 492,
+        "native_failure_count": 0,
+        "unknown_after_failure_count": 0,
+        "references": {
+          "initial": {
+            "reference_capture_id": 0,
+            "reference_surface_valid_count": 492,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "q25": -0.00014576486578743442,
+                "median": 0.0045572769494193754,
+                "q75": 0.00860976176291059
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "q25": 0.016944992650355692,
+                "median": 0.019531218516682068,
+                "q75": 0.02883748455822805
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "q25": 0.0669509948865381,
+                "median": 0.07165403670174492,
+                "q75": 0.07570652151523613
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "q25": 0.10800732491683142,
+                "median": 0.11455777970988962,
+                "q75": 0.11838180909218536
+              }
+            }
+          },
+          "preclose": {
+            "reference_capture_id": 13,
+            "reference_surface_valid_count": 492,
+            "metrics": {
+              "point_delta_z_m": {
+                "count": 492,
+                "q25": -1.2352086677658303e-05,
+                "median": 3.9713320225676085e-06,
+                "q75": 4.012109126788621e-05
+              },
+              "point_delta_norm_m": {
+                "count": 492,
+                "q25": 2.2939923604890138e-05,
+                "median": 5.287253952144291e-05,
+                "q75": 0.0033481213716264665
+              },
+              "point_minus_tcp_delta_z_m": {
+                "count": 492,
+                "q25": -0.11433254452017755,
+                "median": -0.11431622110147732,
+                "q75": -0.114280071342232
+              },
+              "point_minus_tcp_delta_norm_m": {
+                "count": 492,
+                "q25": 0.11428950383726949,
+                "median": 0.11432899679956228,
+                "q75": 0.11434866803667436
+              }
+            }
+          }
+        }
+      },
+      "proxy_counts": [
+        {
+          "capture_id": 0,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 1,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 2,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 3,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 4,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 5,
+          "denominator": 492,
+          "proxy_true": 414,
+          "proxy_false": 78,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 6,
+          "denominator": 492,
+          "proxy_true": 413,
+          "proxy_false": 79,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 7,
+          "denominator": 492,
+          "proxy_true": 406,
+          "proxy_false": 86,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 8,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 9,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 10,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 11,
+          "denominator": 492,
+          "proxy_true": 415,
+          "proxy_false": 77,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 12,
+          "denominator": 492,
+          "proxy_true": 411,
+          "proxy_false": 81,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 13,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 14,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 15,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 16,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 17,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 18,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 19,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 20,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 21,
+          "denominator": 492,
+          "proxy_true": 410,
+          "proxy_false": 82,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 22,
+          "denominator": 492,
+          "proxy_true": 407,
+          "proxy_false": 85,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 23,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 24,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 25,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 26,
+          "denominator": 492,
+          "proxy_true": 404,
+          "proxy_false": 88,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 27,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 28,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 29,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 30,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 31,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 32,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 33,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 34,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 35,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 36,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 37,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 38,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 39,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 40,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 41,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 42,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 43,
+          "denominator": 492,
+          "proxy_true": 405,
+          "proxy_false": 87,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 44,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        },
+        {
+          "capture_id": 45,
+          "denominator": 492,
+          "proxy_true": 402,
+          "proxy_false": 90,
+          "proxy_unknown": 0
+        }
+      ],
+      "departure_seed_count": 25,
+      "earliest_departure": {
+        "seed_id": 124,
+        "capture_id": 6,
+        "proxy_membership": false,
+        "tracker_status": "native_status_ok",
+        "sample_pixel_xy": [
+          216,
+          178
+        ]
+      },
+      "seed5_capture1": {
+        "point_pixel_index_xy": [
+          216.99996948242188,
+          169.00015258789062
+        ],
+        "sample_pixel_xy": [
+          217,
+          169
+        ],
+        "depth_m": 0.9750217199325562,
+        "surface_point_world_m": [
+          -0.1296867287849216,
+          0.05363847028104632,
+          1.034597829401616
+        ]
+      }
+    }
+  },
+  "limits": [
+    "stored evidence only; no LK/projection/FK/model/physics/render calls",
+    "changed-pixel world generation source-reviewed, unchanged pixels compare exactly to original stored points",
+    "same dependent paired trace; no semantic identity, depth ownership, held-out or universal repair claim",
+    "sensor-before-evaluator code and referenced complete seal checked; no independent evaluator start wall timestamp"
+  ]
+}

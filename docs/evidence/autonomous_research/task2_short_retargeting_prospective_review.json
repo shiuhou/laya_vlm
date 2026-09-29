@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "freeze_commit": "9385cd13aa145dbbeb7fc903556cde64367c9b49",
+  "preflight_sha256": "bcfddbbecb4a2ea9ae5f944441b426a0649f75a7445c52f762715190e2389def",
+  "protocol_sha256": "6663c6fc8988269795825c4566a72bf691e6fec7f7928fc553a4c90aef240b8e",
+  "condition_order": ["cached", "refreshed"],
+  "fresh_collection_episodes": 2,
+  "verification_replays": 2,
+  "max_moves_per_arm": 2,
+  "new_model_calls": 0,
+  "input_sha256": {
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-postevent-box-support-run-01/result.json": "27de4407329ce72ebc520a81f2e56bf63b0cd9834aa5618c437866d781c19440",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-postevent-box-support-run-01/source-binding.json": "75e290803f79b8d82959c14b3358719ad406a5ba55700687af46f1d5d03bd87c",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-postevent-box-support-run-01/feature-seal.json": "a42204c7b2a1a159c40a858efb494a99a7af9a9ab7bcc937a85b7cd8243bc64f",
+    "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-postevent-slow-point-decision-run-01/result.json": "126a8f18bfd9f9b8ef716c2977e1c7df7cafea8af03748f428250ad3b4a25901"
+  },
+  "original_initial_contact_baseline_preserved": true,
+  "zero_move_STOP_event_replay_verified": true,
+  "authorized_batches": 1,
+  "authorization_basis": "Root explicitly authorized this exact physical away pair and one exact replay per normally completed arm, conditional on this independent frozen-code/no-world-preflight/input-equivalence/initial-baseline/zero-STOP-replay PASS. Reviewer may release directly without another root or user acknowledgement.",
+  "runner_sha256": "ce95e2bf2facafafddbed57e1c050e27c06ca32df544f88008cc669002f1dde8",
+  "callback_sha256": "9741ba5221edfc7cc7567340a8568d6a29bb69263185a5ca49f74a59c7b62783",
+  "producer_worktree": "/home/junhongli/projects/laya-offline-wrist-history",
+  "preflight_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-short-retargeting-preflight-01.json",
+  "python": "/home/junhongli/miniforge3/envs/laya-embodied/bin/python",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "4",
+    "MUJOCO_GL": "egl",
+    "MUJOCO_EGL_DEVICE_ID": "4",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "independent_validation": {
+    "clean_frozen_HEAD_and_three_source_hashes_checked": true,
+    "stored_no_world_preflight_exact_hash_checked": true,
+    "both_preflight_configurations_and_all_input_hashes_checked": true,
+    "both_goal_packets_and_common_evaluation_point_exact": true,
+    "all_2250_support_rows_and_calibration_exact": true,
+    "both_postevent_own_packets_source_archive_and_readtime_exact": true,
+    "first_boundary_rule_predictions_independently_reproduced": {"cached": "MV_DOWN", "refreshed": "MV_FWD"},
+    "first_boundary_excluded_candidates": [],
+    "focused_tests": {
+      "passed": 87,
+      "seconds": 4.42,
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/junhongli/miniforge3/envs/laya-embodied/bin/python -m pytest -q tests/test_task2_short_retargeting.py tests/test_task2_closed_empty_scene.py tests/test_task2_point_anchor_grasp_transfer.py tests/test_task2_endpoint_containment_veto.py"
+    },
+    "new_world_model_processor_FK_calls_in_reviewer_preflight_inspection": 0,
+    "reviewer_physics_render_or_model_inference_calls": 0
+  },
+  "reviewed_mechanics": [
+    "Normal reset and settling regenerate the original 29-action neck approach using the existing rule, executor and original guard. Complete scientific-prefix verification occurs before suffix records/actions; archived controls are used only in replay.",
+    "The unchanged away event performs its explicit +0.35 m world-X write, one forward and one forced observable refresh without physics controls. Exact live RGB/depth/K/T, all four returned own fields and read time must match the qualified source before goal/support reuse.",
+    "The two arms share the exact current 2250-point full-BOX support and calibration. Only the selected fixed goal changes. Existing relation/effect/rule/endpoint-selector arithmetic recomputes actual decisions; the recorded prediction is never a forced action.",
+    "Each suffix has at most two 10 mm translations, eight controls and 200 native integrations per executed primitive. OPEN and orientation behavior persist. STOP terminates before any hold. The next decision uses the just-returned endpoint own state.",
+    "PassiveContactRecorder is reconstructed from the same fresh episode's original initial snapshot and exact baseline pairs, preserving its last prefix native sample. No event rebaseline occurs. New robot-pair force strictly above 0.05 N stops after the already-started primitive.",
+    "A contact abort, execution-contract violation, runtime failure or replay mismatch stops every remaining batch stage without retry. Cached-first termination may leave refreshed unrun; partial evidence and absent counterfactual are retained without a winner claim.",
+    "Normal stages are cached collect, cached replay, refreshed collect, refreshed replay in separate processes. Existing replay compares actual controls/states/own/native/images. Explicit scene dispatch is preserved for the retarget phase and for zero-move STOP at finalization while the backend is alive, without a hold or fake action.",
+    "Common fresh sensor-point distance is calculated only after selection/execution for evaluation. It does not enter cached-arm action selection. All semantic goals and support remain fixed after the source boundary; no new model call or support refresh occurs."
+  ],
+  "interpretation_limits": [
+    "This tests bounded one-time goal-packet retargeting and its physical realization with own feedback, not continual visual model feedback or live inference latency.",
+    "Observation and decoding mode differ between cached hybrid and refreshed slow goal sources. The experiment does not isolate freshness from mode.",
+    "Current BOX support has unknown depth ownership and incomplete scene coverage; this receipt supplies no safety certification, clearance, grasp, holding or task-success claim.",
+    "The predeclared away fixture and two-move budget are fixed. No outcome-based support substitution, target repair, recovery, rollout extension or further batch is released.",
+    "The existing closed-empty source retains composite observational qualification and its original interrupted/incomplete matrix status. This new pair is a separately authorized fresh collection."
+  ]
+}

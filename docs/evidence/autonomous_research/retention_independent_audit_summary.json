@@ -1,0 +1,374 @@
+{
+  "audit": {
+    "raw": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/retention-audit-01",
+    "all_checks_passed": true,
+    "checks": 30,
+    "check_names": [
+      "all_sealed_sensor_artifacts",
+      "manifest_source_hashes_match_frozen_git_objects",
+      "frozen_protocol",
+      "archived_primitive_source",
+      "registered_single_primitive_intervention",
+      "frozen_seed_equals_sealed_seed",
+      "seed_image_hash_chain",
+      "complete_unique_control_sequence",
+      "seed_frozen_before_any_close_control",
+      "sensor_analysis_seal",
+      "seal_order_consistent_with_current_mtimes",
+      "all_sensor_records_keep_unknown_holding_and_sample_times",
+      "all_control_durations_50ms",
+      "native_jaw_command_schedule",
+      "common_prefix_all_sensor_fields_except_walltime_equal",
+      "all_14_common_prefix_rgb_hashes_equal",
+      "capture_hash_rgb_array_and_read_time_consistency",
+      "opencv_frozen_version",
+      "independent_LK_coordinates_status_and_residuals",
+      "independent_depth_backprojection",
+      "evaluator_state_dimensions_and_timestamps",
+      "reported_landmark_and_relation_aggregates",
+      "evaluator_and_sensor_summary_hash_chain",
+      "evaluation_artifact_hashes",
+      "evaluation-audit_artifact_hashes",
+      "both_existing_reports_equal",
+      "portable_artifact_and_replay_anchors",
+      "archived_empty_close_counterexample_source_and_rows",
+      "replay_source_hash_chain",
+      "recorded_replay_all_controls_exact_and_ordered"
+    ],
+    "annotation_provenance": {
+      "actor": "Codex assistant using raw RGB visual inspection",
+      "exact_model_identifier_recorded": false,
+      "exact_model_independently_verified": false,
+      "note": "Assistant attribution is recorded by append-only erratum. Artifacts contain no model/session/tool-call record."
+    },
+    "integrity_limits": [
+      "Hashes verify present bytes against present recorded anchors; no external notarization.",
+      "seed-frozen.json is outside the 188-file sensor seal; its seed currently equals the sealed seed.json.",
+      "Source review supports oracle separation; local timestamps alone cannot prove absence of out-of-band reads.",
+      "Evaluator masks label visual rendered geometry, not complete physical support or collision geometry.",
+      "Render/read time is not an asserted exact sample time for cached derived geometry."
+    ],
+    "bilateral_pad_flicker": [
+      {
+        "step": 16,
+        "control": 0,
+        "bilateral_pad_relation": false,
+        "both_physical_fingers_have_recorded_contact": true,
+        "bottle_center_z_mm": 1059.3209827294631,
+        "contacts": [
+          {
+            "hand": "gripper0_finger1_collision",
+            "normal_force_N": 0.3411797082379117
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.69732822280396
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 5.958026443883969
+          },
+          {
+            "hand": "gripper0_finger2_collision",
+            "normal_force_N": 12.246002235952819
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "control": 1,
+        "bilateral_pad_relation": false,
+        "both_physical_fingers_have_recorded_contact": true,
+        "bottle_center_z_mm": 1068.0492372117644,
+        "contacts": [
+          {
+            "hand": "gripper0_finger1_collision",
+            "normal_force_N": 0.5174308511277981
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.872299980132779
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.113684667053965
+          },
+          {
+            "hand": "gripper0_finger2_collision",
+            "normal_force_N": 12.760247666680376
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "control": 2,
+        "bilateral_pad_relation": false,
+        "both_physical_fingers_have_recorded_contact": true,
+        "bottle_center_z_mm": 1075.92267574153,
+        "contacts": [
+          {
+            "hand": "gripper0_finger1_collision",
+            "normal_force_N": 0.5625331840438497
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.96492777626783
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.171150640732872
+          },
+          {
+            "hand": "gripper0_finger2_collision",
+            "normal_force_N": 12.957129499478606
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "control": 3,
+        "bilateral_pad_relation": false,
+        "both_physical_fingers_have_recorded_contact": true,
+        "bottle_center_z_mm": 1081.8942246888162,
+        "contacts": [
+          {
+            "hand": "gripper0_finger1_collision",
+            "normal_force_N": 0.5999177571194987
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 7.031760245799395
+          },
+          {
+            "hand": "gripper0_finger1_pad_collision",
+            "normal_force_N": 6.202443649164731
+          },
+          {
+            "hand": "gripper0_finger2_collision",
+            "normal_force_N": 13.098902973194184
+          }
+        ]
+      }
+    ]
+  },
+  "support_plane_probe": {
+    "raw": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/retention-audit-support-plane-01",
+    "scope": "post-outcome exploratory sensor-only support-plane feasibility",
+    "freeze_commit": "f98b10fe1bf4d5752de1534349cbb2bf37e7abea",
+    "physical_runs": 0,
+    "oracle_inputs": false,
+    "holding": null,
+    "arms": {
+      "close": {
+        "frames": 33,
+        "seed_plane": {
+          "capture_id": 13,
+          "after_step": 12,
+          "control": 7,
+          "valid_patch_points": 961,
+          "centroid_world_m": [
+            0.08177102872401341,
+            -0.03956981124528118,
+            0.9005648787910562
+          ],
+          "normal_world": [
+            0.0006013042635106734,
+            1.5200530987038996e-07,
+            0.9999998192165634
+          ],
+          "offset_m": -0.9006138792372246,
+          "covariance_eigenvalues_m2": [
+            1.6474091708591123e-12,
+            0.00029722354219827775,
+            0.00047472318040524036
+          ],
+          "within_frame_plane_residual": {
+            "min_mm": -0.0020771309411360406,
+            "max_mm": 0.0029194379265184978,
+            "rms_mm": 0.0012835143828090127,
+            "median_abs_mm": 0.0009412568042765912,
+            "max_abs_mm": 0.0029194379265184978
+          },
+          "seed_plane_residual": {
+            "min_mm": -0.0020771309411360406,
+            "max_mm": 0.0029194379265184978,
+            "rms_mm": 0.0012835143828090127,
+            "median_abs_mm": 0.0009412568042765912,
+            "max_abs_mm": 0.0029194379265184978
+          },
+          "calibration_exactly_equal_to_seed": true,
+          "patch_rgb_exactly_equal_to_seed": true,
+          "patch_depth_exactly_equal_to_seed": true,
+          "landmarks": {
+            "bottle_landmark_1": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 153.92347536286366,
+              "seed_plane_distance_change_mm": 0.0
+            },
+            "bottle_landmark_2": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 18.23734115486697,
+              "seed_plane_distance_change_mm": 0.0
+            },
+            "table_reference": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 0.0023762770754442997,
+              "seed_plane_distance_change_mm": 0.0
+            }
+          }
+        },
+        "final_landmarks": {
+          "bottle_landmark_1": {
+            "tracker_status": "native_status_ok",
+            "seed_plane_signed_distance_mm": 266.8657749014428,
+            "seed_plane_distance_change_mm": 112.94229953857881
+          },
+          "bottle_landmark_2": {
+            "tracker_status": "native_status_ok",
+            "seed_plane_signed_distance_mm": 128.04561925449732,
+            "seed_plane_distance_change_mm": 109.8082780996304
+          },
+          "table_reference": {
+            "tracker_status": "unknown_after_native_failure",
+            "seed_plane_signed_distance_mm": null,
+            "seed_plane_distance_change_mm": null
+          }
+        },
+        "all_patch_rgb_unchanged": true,
+        "all_patch_depth_unchanged": true,
+        "all_calibration_unchanged": true,
+        "first_transition_LK_min_eigenvalue_diagnostic": [
+          {
+            "role": "bottle_landmark_1",
+            "forward_status": 1,
+            "min_eigenvalue": 0.2922591269016266,
+            "unchanged_minEigThreshold": 0.0001
+          },
+          {
+            "role": "bottle_landmark_2",
+            "forward_status": 1,
+            "min_eigenvalue": 0.4912322461605072,
+            "unchanged_minEigThreshold": 0.0001
+          },
+          {
+            "role": "table_reference",
+            "forward_status": 0,
+            "min_eigenvalue": 4.929049828206189e-05,
+            "unchanged_minEigThreshold": 0.0001
+          }
+        ]
+      },
+      "open_hold": {
+        "frames": 33,
+        "seed_plane": {
+          "capture_id": 13,
+          "after_step": 12,
+          "control": 7,
+          "valid_patch_points": 961,
+          "centroid_world_m": [
+            0.08177102872401341,
+            -0.03956981124528118,
+            0.9005648787910562
+          ],
+          "normal_world": [
+            0.0006013042635106734,
+            1.5200530987038996e-07,
+            0.9999998192165634
+          ],
+          "offset_m": -0.9006138792372246,
+          "covariance_eigenvalues_m2": [
+            1.6474091708591123e-12,
+            0.00029722354219827775,
+            0.00047472318040524036
+          ],
+          "within_frame_plane_residual": {
+            "min_mm": -0.0020771309411360406,
+            "max_mm": 0.0029194379265184978,
+            "rms_mm": 0.0012835143828090127,
+            "median_abs_mm": 0.0009412568042765912,
+            "max_abs_mm": 0.0029194379265184978
+          },
+          "seed_plane_residual": {
+            "min_mm": -0.0020771309411360406,
+            "max_mm": 0.0029194379265184978,
+            "rms_mm": 0.0012835143828090127,
+            "median_abs_mm": 0.0009412568042765912,
+            "max_abs_mm": 0.0029194379265184978
+          },
+          "calibration_exactly_equal_to_seed": true,
+          "patch_rgb_exactly_equal_to_seed": true,
+          "patch_depth_exactly_equal_to_seed": true,
+          "landmarks": {
+            "bottle_landmark_1": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 153.92347536286366,
+              "seed_plane_distance_change_mm": 0.0
+            },
+            "bottle_landmark_2": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 18.23734115486697,
+              "seed_plane_distance_change_mm": 0.0
+            },
+            "table_reference": {
+              "tracker_status": "seeded",
+              "seed_plane_signed_distance_mm": 0.0023762770754442997,
+              "seed_plane_distance_change_mm": 0.0
+            }
+          }
+        },
+        "final_landmarks": {
+          "bottle_landmark_1": {
+            "tracker_status": "native_status_ok",
+            "seed_plane_signed_distance_mm": -0.04776602329670254,
+            "seed_plane_distance_change_mm": -153.97124138616053
+          },
+          "bottle_landmark_2": {
+            "tracker_status": "native_status_ok",
+            "seed_plane_signed_distance_mm": 18.23734115486697,
+            "seed_plane_distance_change_mm": 0.0
+          },
+          "table_reference": {
+            "tracker_status": "unknown_after_native_failure",
+            "seed_plane_signed_distance_mm": null,
+            "seed_plane_distance_change_mm": null
+          }
+        },
+        "all_patch_rgb_unchanged": true,
+        "all_patch_depth_unchanged": true,
+        "all_calibration_unchanged": true,
+        "first_transition_LK_min_eigenvalue_diagnostic": [
+          {
+            "role": "bottle_landmark_1",
+            "forward_status": 1,
+            "min_eigenvalue": 0.2922591269016266,
+            "unchanged_minEigThreshold": 0.0001
+          },
+          {
+            "role": "bottle_landmark_2",
+            "forward_status": 1,
+            "min_eigenvalue": 0.4912322461605072,
+            "unchanged_minEigThreshold": 0.0001
+          },
+          {
+            "role": "table_reference",
+            "forward_status": 0,
+            "min_eigenvalue": 4.929049828206189e-05,
+            "unchanged_minEigThreshold": 0.0001
+          }
+        ]
+      }
+    }
+  },
+  "artifact_sha256": {
+    "retention-audit-01/audit-complete.json": "0348886a2992a36a273339c49e1bb42c1c2e7c4dba418bf828dbda13685be23d",
+    "retention-audit-01/independent-audit-complete.py": "d55b239a2d0021afbe5f53b5ea443478fdd01764153afcec285378e3f2bc6b3c",
+    "retention-audit-support-plane-01/protocol.md": "943e7ff5056fef85bf5dae3efffa22b3d5e477f47f773218be61a232fc98a596",
+    "retention-audit-support-plane-01/probe.py": "f50c769a24048335334b5fffb1c02012decbd29af5a21c07fadb61c9c7aa7fb2",
+    "retention-audit-support-plane-01/freeze.json": "c84fd1a349e8291e26d571454e04b517d1bd51f53d2983612e95af0dcb49c2e3",
+    "retention-audit-support-plane-01/sensor-results.json": "bdcb0a78d191b609e8303f2a469e4ac4f8ecf03f824ec5348f13725561412ce9",
+    "retention-audit-support-plane-01/sensor-results-seal.json": "23830bf67b32fa0d29de77e694a3b9a7f6a424471329cd5476a3a808cde6d91b",
+    "retention-audit-support-plane-01/artifacts.json": "a02cf0cbb664a947895f20ea88e3a3e194c7a6bf04f842aa4eb34e28803c9424",
+    "retention-audit-support-plane-01/close-patch.png": "38e843734021442112a9a64e88cac5d0118a7acd90b40ea471379e9b8ce9b9db",
+    "retention-audit-support-plane-01/open_hold-patch.png": "38e843734021442112a9a64e88cac5d0118a7acd90b40ea471379e9b8ce9b9db"
+  }
+}

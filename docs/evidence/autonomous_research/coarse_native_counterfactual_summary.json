@@ -1,0 +1,431 @@
+{
+  "raw_sha256": "23a5e0ea9a59317ad843141a4ec0017958d0c180fdbc7c2aed90cf41697943fa",
+  "source_sha256": "e09300d6ce11b86ba21339d92f52c86a24ac584f585a9fed8208ca51df7607cf",
+  "prefix_and_arm_control_checks": 1456,
+  "native_arms": 7,
+  "counterfactual_controls": 56,
+  "diagnostic_replay_controls": 1400,
+  "model_calls": 0,
+  "no_observed_robot_contact_positive_approach_arms": [
+    "MV_DOWN"
+  ],
+  "contract_valid_no_observed_robot_contact_positive_approach_arms": [],
+  "no_observed_nonhandle_contact_positive_approach_arms": [
+    "MV_DOWN"
+  ],
+  "scope": "one-step evaluator-only feasibility at one archived state; no policy or global reachability claim",
+  "frozen_code_commit": "e13bc36",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/coarse-native-counterfactual-run-01",
+  "offline_summary_sha256": "6068ac9ba41191bf09418791b70d55f2f767123d082c70d46338b7310ee0f79d",
+  "protocol_sha256": "3fb00b0fed6edf21305eabf7046954e9905a5e877b8a5b833ca8a96f6ba19e8a",
+  "independent_raw_audit": "pass: 2971 record hashes, 1400 prefix controls, 56 arm controls, 21 artifacts; reviewer joint_interface",
+  "setup_failure_retained": "coarse-native-counterfactual-preflight-01: import order before any world/reset/control/capture/model",
+  "arms": [
+    {
+      "actual_fixed_point_gain_mm": 4.143664780979946,
+      "arm": "MV_FWD",
+      "arm_index": 0,
+      "drawer_joint_delta_m": 0.0,
+      "handle_center_displacement_mm": 0.0,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": -0.03638066101566295,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": 4.207974608563085,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 0.31564583569660015,
+      "native_execution": {
+        "after": [
+          -0.01525228061449093,
+          -0.02427382390324213,
+          1.1309120672356185
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.009713474522879684,
+          -0.00011495566538049715,
+          6.57315719461149e-05
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 4.926496170315486e-07,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.24192785828266125,
+        "success": false,
+        "token": "MV_FWD"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 24.522575652374194,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": -4.896673322759032,
+      "arm": "MV_BACK",
+      "arm_index": 1,
+      "drawer_joint_delta_m": 0.0,
+      "handle_center_displacement_mm": 0.0,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": -1.4920753565617488,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": -5.528618289495468,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 3.0321518942879053,
+      "native_execution": {
+        "after": [
+          -0.03239727792923307,
+          -0.02420562106637117,
+          1.132457137983741
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          -0.0074315227918624535,
+          -4.675282850953588e-05,
+          0.001610802320068494
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [
+          "translation_error"
+        ],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": true,
+        "finger_gap_delta": 4.926767348811811e-07,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.5934900844536428,
+        "success": false,
+        "token": "MV_BACK"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 25.97827034792028,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": -6.359074644558454,
+      "arm": "MV_LEFT",
+      "arm_index": 2,
+      "drawer_joint_delta_m": 0.0,
+      "handle_center_displacement_mm": 0.0,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": -0.5574865315060791,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": -6.746793249713362,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 1.3804124761699588,
+      "native_execution": {
+        "after": [
+          -0.02393174361431913,
+          -0.014659469728184925,
+          1.1316116832464402
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0010340115230514854,
+          0.009499398509676708,
+          0.0007653475827678058
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": -1.6125582859433107e-06,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.3971469937833124,
+        "success": false,
+        "token": "MV_LEFT"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 25.04368152286461,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": 5.069832632068727,
+      "arm": "MV_RIGHT",
+      "arm_index": 3,
+      "drawer_joint_delta_m": 0.0068446707636462545,
+      "handle_center_displacement_mm": 6.826181565943945,
+      "max_nonhandle_normal_force_N": 4.839180784535814,
+      "max_robot_normal_force_N": 4.839180784535814,
+      "measured_handle_surface_gap_gain_mm": -0.7554051542544507,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": 5.6833261932475105,
+      "nonhandle_contact_above_1N": true,
+      "observed_nonhandle_contact_rows": 5,
+      "observed_robot_contact_rows": 5,
+      "original_selected_continuation_exact": true,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": true,
+      "translation_residual_mm": 1.6500319397716567,
+      "native_execution": {
+        "after": [
+          -0.024054468680318984,
+          -0.03301892711299873,
+          1.1316162035921558
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0009112864570516299,
+          -0.008860058875137099,
+          0.0007698679284833254
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": -0.0009622089289930968,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.30514527246141715,
+        "success": false,
+        "token": "MV_RIGHT"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 25.24160014561298,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": -6.207307788748214,
+      "arm": "MV_UP",
+      "arm_index": 4,
+      "drawer_joint_delta_m": 0.0,
+      "handle_center_displacement_mm": 0.0,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": -10.119414146843226,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": -6.532712983067388,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 0.9623284025671526,
+      "native_execution": {
+        "after": [
+          -0.024025023789473368,
+          -0.02423985853402702,
+          1.1410321879098195
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0009407313478972459,
+          -8.099029616538689e-05,
+          0.010185852246147098
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 4.926553256040522e-07,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.37436097307724364,
+        "success": false,
+        "token": "MV_UP"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 34.60560913820176,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": 5.313087609559765,
+      "arm": "MV_DOWN",
+      "arm_index": 5,
+      "drawer_joint_delta_m": 0.0014062045695444891,
+      "handle_center_displacement_mm": 1.4020207867130874,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": 8.466454011120675,
+      "no_observed_nonhandle_contact_and_positive_approach": true,
+      "no_observed_robot_contact_and_positive_approach": true,
+      "no_robot_contact_above_1N_and_positive_approach": true,
+      "nominal_fixed_point_gain_mm": 5.41895371992096,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": true,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 2.1147869929060334,
+      "native_execution": {
+        "after": [
+          -0.023628758852932998,
+          -0.024139644578727058,
+          1.1224847481305726
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0013369962844376158,
+          1.922365913457555e-05,
+          -0.00836158753309979
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [
+          "translation_error"
+        ],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": true,
+        "finger_gap_delta": -0.0004165760486938147,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.45917732801888167,
+        "success": false,
+        "token": "MV_DOWN"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 16.019740980237856,
+      "official_success": false,
+      "valid_handle_contact": false
+    },
+    {
+      "actual_fixed_point_gain_mm": 0.09129900785398437,
+      "arm": "STOP",
+      "arm_index": 6,
+      "drawer_joint_delta_m": 0.0,
+      "handle_center_displacement_mm": 0.0,
+      "max_nonhandle_normal_force_N": 0.0,
+      "max_robot_normal_force_N": 0.0,
+      "measured_handle_surface_gap_gain_mm": -0.6743658028816775,
+      "no_observed_nonhandle_contact_and_positive_approach": false,
+      "no_observed_robot_contact_and_positive_approach": false,
+      "no_robot_contact_above_1N_and_positive_approach": false,
+      "nominal_fixed_point_gain_mm": 0.0,
+      "nonhandle_contact_above_1N": false,
+      "observed_nonhandle_contact_rows": 0,
+      "observed_robot_contact_rows": 0,
+      "original_selected_continuation_exact": null,
+      "positive_measured_handle_approach": false,
+      "robot_contact_above_1N": false,
+      "translation_residual_mm": 1.2380217650212866,
+      "native_execution": {
+        "after": [
+          -0.023973857854726097,
+          -0.024253661503706298,
+          1.1315810818158225
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0009918972826445174,
+          -9.479326584466499e-05,
+          0.0007347461521500787
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": 4.926482649186825e-07,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.38697385702732406,
+        "success": false,
+        "token": "STOP"
+      },
+      "before_handle_gap_mm": 24.48619499135853,
+      "after_handle_gap_mm": 25.160560794240208,
+      "official_success": false,
+      "valid_handle_contact": false
+    }
+  ],
+  "no_robot_contact_above_1N_positive_approach_arms": [
+    "MV_DOWN"
+  ]
+}

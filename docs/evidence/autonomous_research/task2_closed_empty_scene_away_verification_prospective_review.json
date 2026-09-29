@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "One separately named second away verification invocation only; no source admission or extraction release.",
+  "freeze_commit": "cf00088824f4b74bd121cb6e8b3c89cc702fe9ab",
+  "launcher_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01-launcher.py",
+  "launcher_sha256": "16508f4993fde31ea157d211d25de6640527f3a45f8f9aa45003daf6ad61983c",
+  "source_journal_sha256": "c8571d9dcf5304e76b35fda95c756a5ac017a6f82169f94e596d9dee2e99c26e",
+  "source_sensor_seal_sha256": "2a194c1b6a9d50dacb862d0a0a966d9eebf046d8f755d9d54b51317920a0df07",
+  "original_matrix_journal_sha256": "4f2a96d65d799b6405f4ec17f69a63f28a70ec904434b03afd466f57817f068e",
+  "output_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-scene-away-verification-01",
+  "verification_attempt_number": 2,
+  "collection_attempts_authorized": 0,
+  "verification_attempts_authorized": 1,
+  "authorization_basis": "Root explicitly authorized one separate verification after invocation PASS; original matrix remains incomplete and immutable.",
+  "partial_source_audit": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_partial_independent_audit.json",
+    "sha256": "338a373bd60f93f7ae32022656a79a09fd491c55bd096f000d6b8b924d49dbaa",
+    "both_collections": "PASS",
+    "present_replay": "PASS",
+    "original_away_replay": "INCOMPLETE"
+  },
+  "execution": {
+    "python": "/home/junhongli/miniforge3/envs/laya-embodied/bin/python",
+    "cwd": "/home/junhongli/projects/laya-offline-wrist-history",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "CUDA_VISIBLE_DEVICES": "4",
+      "MUJOCO_GL": "egl",
+      "MUJOCO_EGL_DEVICE_ID": "4"
+    },
+    "wall_limit_s": 900
+  },
+  "reviewed_checks": [
+    "Exact clean collector freeze and launcher digest independently verified.",
+    "All 14 pinned source, protocol, manifest and original matrix inputs independently hashed.",
+    "Both collections passed complete independent stored-only audit with no hidden collection failures.",
+    "One direct frozen base.replay call with SceneReplay before_action and finish callback plus all 24 AuxiliaryReplay checks.",
+    "No collection dispatcher or recorded-state restoration; fixed away seed1/init0 source.",
+    "New sibling result and execution directories are absent before launch and may be created only once.",
+    "Original matrix file inventories are hashed before and after verification and must remain exactly equal.",
+    "Signals, PID/PPID/PGID/SID, command, environment and start/end/exit are retained; 900-second SIGALRM bound.",
+    "Original interruption retained as unknown driver return code and unknown executed replay controls, separate from observed outer143.",
+    "No model, LK, new collection, extraction binding or feature release in this receipt."
+  ],
+  "new_physics_render_model_LK_FK_calls_during_review": 0
+}

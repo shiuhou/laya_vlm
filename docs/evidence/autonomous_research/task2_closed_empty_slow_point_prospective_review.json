@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "freeze_commit": "e4ce123f391969f542dbb8985cf3282a181103eb",
+  "preflight_sha256": "35ff93678d77b147bf1f5e0f4767de9ea2e62d915e2f2db3526eeeece2ce1903",
+  "protocol_sha256": "368fc7f6080d73846a741c494d4235221ba804825e1ac1f7f329c6e7c3a2af3f",
+  "source_admission_sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42",
+  "conditions": ["present-postevent", "away-postevent"],
+  "model_calls_authorized": 2,
+  "physical_gpu": "2",
+  "generation_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "slow",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "hybrid_preflight_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+  "hybrid_audit_sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+  "authorized_batches": 1,
+  "output_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-run-01",
+  "output_directory_absent_at_review": true,
+  "preflight_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-slow-point-preflight-01.json",
+  "python": "/home/junhongli/miniforge3/envs/locateanything/bin/python",
+  "producer_worktree": "/home/junhongli/projects/laya-offline-wrist-history",
+  "runner_sha256": "6416abcf0c990864efea5a6c29677d5c137c3eff73d3847be78cbee953050a31",
+  "source_admission_status": "observational-source-qualified",
+  "original_matrix_status": "interrupted_incomplete",
+  "authorization_basis": "Root explicitly authorized one two-cold-call slow-mode batch conditional on this exact independent review PASS, without further root or user confirmation.",
+  "question": "Point to: the wine bottle.",
+  "primary_outcome": "Whole-return strict point admission; visible localization is assessed separately.",
+  "independent_checks": {
+    "clean_frozen_producer_head_verified": true,
+    "exact_CPU_preflight_reproduced": true,
+    "archived_preflight_all_fields_equal": true,
+    "model_constructor_and_native_call_once_blocked": true,
+    "model_constructions": 0,
+    "model_calls": 0,
+    "preflight_output_writes": 0,
+    "source_NPZ_accessor_restricted_to_rgb": true,
+    "RGB_decodes": 6,
+    "source_revalidation_RGB_decodes": 4,
+    "processor_input_RGB_decodes": 2,
+    "decoded_depth_calibration_arrays": 0,
+    "token_counts": [229, 229],
+    "processor_input_metadata_equals_archived_hybrid_postevent": true,
+    "native_settings_binding_identity_and_values_preserved": true,
+    "only_generation_setting_difference": "generation_mode",
+    "focused_synthetic_tests": {
+      "passed": 41,
+      "seconds": 0.23,
+      "command": "PYTHONDONTWRITEBYTECODE=1 /home/junhongli/miniforge3/envs/locateanything/bin/python -m pytest -q tests/test_task2_closed_empty_slow_point.py tests/test_task2_closed_empty_fresh_point.py tests/test_task2_closed_empty_point_adapter.py"
+    }
+  },
+  "reviewed_boundary": [
+    "Fixed order is present-postevent then away-postevent, one fresh process and one native call per case, with seed 1, GPU 2, BF16/eval, tokenizer limit 16384, EOS 151645 and the existing 300-second generation timeout.",
+    "Both full 384 by 384 RGB images, question, processor/chat template, token IDs, attention mask, image grid and BF16 pixel tensor exactly match the corresponding archived hybrid cases.",
+    "Every loaded configuration field must match the corresponding archived hybrid case and the first slow case.",
+    "Unchanged helper hashes are checked. Native source_config runs with original hybrid settings. slow_call_once seals the slow settings, replaces native.SETTINGS with a new dictionary, invokes the original helper once, and restores the exact original binding in finally, including exceptions.",
+    "Tests exercise the real native helper with a fake model: exact generation kwargs differ only in generation_mode, input/tensor identities are preserved, and original settings/tokenizer callback are restored after success or failure.",
+    "No parser change, prefix salvage, token-cap increase, prompt or image variant, prelift call, additional hybrid repeat, model-source edit or per-step instrumentation is introduced.",
+    "Nonadmission continues to the second registered case. Infrastructure failure stops the batch without retry. The complete batch must seal before interpretation.",
+    "The source retains composite observational qualification; the original physical matrix remains interrupted_incomplete.",
+    "This receipt releases only the specified two-call model batch. It does not authorize downstream projection, policy execution, physical execution, rendering or additional inference."
+  ],
+  "interpretation_limits": [
+    "This is a two-image development control selected after the four observed hybrid outcomes, with archived hybrid outcomes and no contemporaneous hybrid repeats.",
+    "It can establish sensitivity to the whole native decoding procedure on these two images. It cannot establish general autoregressive superiority, a proven MTP bug, the particular hybrid branch or fallback that executed, or a syntax-only mechanism.",
+    "Archived hybrid calls have no per-step mode trace. A zero-area numeric box does not establish fallback: native pattern handling accepts four coordinate tokens structurally without validating box geometry.",
+    "A valid return at the wrong location is syntax rescue only. Continued malformed output rejects simple autoregressive rescue on these images, not visual blindness. Malformed point prefixes remain unusable.",
+    "Both archived away returns reached EOS at 22 tokens, far below the fixed cap of 256; they do not support a truncation or token-cap explanation.",
+    "Any eventual comparison against the cached WHOLE goal changes observation and mode together because the cached WHOLE goal used hybrid; it is not a pure freshness contrast."
+  ],
+  "read_only_native_source_evidence": {
+    "directory": "/home/junhongli/models/huggingface/LocateAnything-3B",
+    "README.md": {
+      "sha256": "761d6cd50b579b7a178a6976222484769b049f91dd937cdde39e5ef9d7d3abb7",
+      "lines": "129; 432-435; 512; 516-522"
+    },
+    "modeling_locateanything.py": {
+      "sha256": "ffe736fb8ded5d597201704ccd85134d18a8e4dea43d309228644737234b7244",
+      "lines": "347-358; 430-458; 503-510"
+    },
+    "generate_utils.py": {
+      "sha256": "863187051772549928bf103b58f6176263c9b786fb19ef83fd7b2e76169fa65e",
+      "lines": "454-470; 481-487"
+    }
+  }
+}

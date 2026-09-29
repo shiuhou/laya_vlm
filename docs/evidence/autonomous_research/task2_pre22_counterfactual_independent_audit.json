@@ -1,0 +1,324 @@
+{
+  "status": "pass",
+  "freeze": "69d649111e3272c17b7ffd1f6db4a7908927ee78",
+  "journal_sha256": "35f1dee4edfcf4c3d5e059e6db3533d8df9876d0aff7b6adbbdfad7fda2f76d8",
+  "journal_records": 67188,
+  "record_counts": {
+    "run_start": 1,
+    "branch_started": 7,
+    "capture": 168,
+    "initial_gates": 7,
+    "control_started": 1288,
+    "native_before": 32200,
+    "native_after": 32200,
+    "control_completed": 1288,
+    "prefix_qualified": 7,
+    "probe_started": 7,
+    "probe_result": 7,
+    "branch_completed": 7,
+    "termination": 1
+  },
+  "prefix_controls": 1232,
+  "probe_controls": 56,
+  "native_integrations": 32200,
+  "native_stage_samples": 64400,
+  "captures": 168,
+  "separate_standard_settling_controls": 70,
+  "current_model_xml_sha256": "3d4b4f0ded735a29b947b8b14f393e8c25c056ffda41d4b5edf28d7706541f03",
+  "outcomes": {
+    "MV_FWD": {
+      "translation_delta_m": [
+        0.009032727453389289,
+        9.240561285348697e-05,
+        -0.00031735346049677204
+      ],
+      "nominal_translation_error_mm": 1.022187945342184,
+      "rotation_deg": 0.09481709703310537,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": 5.381981514310019,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 13,
+          "strict_above_005N_rows": 0,
+          "first_raw": {
+            "control": 7,
+            "index": 186,
+            "time_s": 9.6719999999999,
+            "force_contact_frame": [
+              0.0175559689573816,
+              -0.0005832315716143075,
+              0.017546278436364183,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geom_ids": [
+              134,
+              75
+            ],
+            "geom_names": [
+              "wine_bottle_1_g6",
+              "gripper0_hand_collision"
+            ],
+            "normal_force_N": 0.0175559689573816,
+            "unexpected_robot_contact": false,
+            "class": "other_gripper/bottle"
+          },
+          "first_strong": null,
+          "max_normal_force_N": 0.0175559689573816,
+          "all_raw_robot_pairs": [
+            [
+              "gripper0_hand_collision",
+              "wine_bottle_1_g6"
+            ]
+          ],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 13,
+          "strict_above_005N_rows": 0,
+          "first_raw": {
+            "control": 7,
+            "index": 186,
+            "time_s": 9.6739999999999,
+            "force_contact_frame": [
+              0.017556175735477287,
+              -0.0005834344247538285,
+              0.017546478584803665,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "geom_ids": [
+              134,
+              75
+            ],
+            "geom_names": [
+              "wine_bottle_1_g6",
+              "gripper0_hand_collision"
+            ],
+            "normal_force_N": 0.017556175735477287,
+            "unexpected_robot_contact": false,
+            "class": "other_gripper/bottle"
+          },
+          "first_strong": null,
+          "max_normal_force_N": 0.017556175735477287,
+          "all_raw_robot_pairs": [
+            [
+              "gripper0_hand_collision",
+              "wine_bottle_1_g6"
+            ]
+          ],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9568,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "MV_BACK": {
+      "translation_delta_m": [
+        -0.00918334418147046,
+        -9.207820491218335e-05,
+        0.00020574398205530642
+      ],
+      "nominal_translation_error_mm": 0.8471928398599566,
+      "rotation_deg": 0.03741551874397478,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": -6.148948751681233,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "MV_LEFT": {
+      "translation_delta_m": [
+        -0.0001971040334725338,
+        0.009549083595473178,
+        -4.260938106348533e-05
+      ],
+      "nominal_translation_error_mm": 0.49395461657641393,
+      "rotation_deg": 0.04220637409917873,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": 4.916035785069092,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "MV_RIGHT": {
+      "translation_delta_m": [
+        0.00017870777300477148,
+        -0.009553769751654258,
+        2.745009227700379e-05
+      ],
+      "nominal_translation_error_mm": 0.4814679742589777,
+      "rotation_deg": 0.03429611842393756,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": -5.841106641391425,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "MV_UP": {
+      "translation_delta_m": [
+        -0.00019318198159268274,
+        1.1412340571635704e-05,
+        0.00939095121558231
+      ],
+      "nominal_translation_error_mm": 0.6390539424258832,
+      "rotation_deg": 0.0778691288825902,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": -5.588838872636281,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "MV_DOWN": {
+      "translation_delta_m": [
+        2.1080550830138156e-05,
+        -1.88237892541597e-05,
+        -0.009517104895093498
+      ],
+      "nominal_translation_error_mm": 0.4837214146674189,
+      "rotation_deg": 0.03411058799858063,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": 4.612389597378696,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": false
+    },
+    "STOP": {
+      "translation_delta_m": [
+        4.3333224747754695e-05,
+        1.2577211324846238e-06,
+        -2.9667083395912286e-05
+      ],
+      "nominal_translation_error_mm": 0.052530810642008305,
+      "rotation_deg": 0.019497727457647673,
+      "validator_violation": false,
+      "tcp_to_cached_P_gain_mm": 0.04330453295750547,
+      "contact_summary": {
+        "before": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        },
+        "after": {
+          "raw_robot_rows": 0,
+          "strict_above_005N_rows": 0,
+          "first_raw": null,
+          "first_strong": null,
+          "max_normal_force_N": 0.0,
+          "all_raw_robot_pairs": [],
+          "all_strong_robot_pairs": []
+        }
+      },
+      "source_exact_control_and_native_records": 9152,
+      "STOP_is_executed_hold_not_original_loop_termination": true
+    }
+  },
+  "limits": [
+    "stored hashes, exact source records, arrays and scalar arithmetic only; no dynamics/render/FK/replay rerun",
+    "current compiled model identity compared through recorded fingerprints, not independent recompilation",
+    "raw and strict threshold samples remain stage-separated; cached times are not continuous onset",
+    "one preselected boundary and one0.4s primitive per branch, no learned threshold or future-clearance claim",
+    "executed STOP is a hold diagnostic; original loop STOP terminates with no additional world"
+  ]
+}

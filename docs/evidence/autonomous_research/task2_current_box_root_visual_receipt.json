@@ -1,0 +1,36 @@
+{
+  "actual_full_RGB_inspected": true,
+  "sheet": "runs/autonomous-research/task2-current-box-root-inspection-01/full-rgb.png",
+  "sheet_sha256": "f1dab347363b28ec141d3e4a901bc2e948fd2a1565492854df58f89f0fe7f78d",
+  "inputs": [
+    {
+      "case": "present-postevent",
+      "continuous_box": [
+        208.12800000000001,
+        162.048,
+        228.096,
+        223.488
+      ],
+      "RGB_sha256": "a29101a80cf477c9656cb98d85fcb85bc3abd87985c98d63cfdeca4b1918f4f4",
+      "result_sha256": "1aa8844f4caefe8e3ddf95f8dcfcd6ba71bb9071f9539dfff1638217fd4cb00c"
+    },
+    {
+      "case": "away-postevent",
+      "continuous_box": [
+        213.50400000000002,
+        291.84000000000003,
+        243.84,
+        366.71999999999997
+      ],
+      "RGB_sha256": "3947588e1ad4f0ddac6cda7f29679202818eb83965829532c1b88747c6dcefca",
+      "result_sha256": "9d216908c690eac25bcba2d7c6b896a19651f2ac8b65458a81a7d5f65f1a9524"
+    }
+  ],
+  "observations": {
+    "present-postevent": "Rectangle encloses visible bottle neck/body below the gripper, upper boundary adjacent to gripper/bottle boundary.",
+    "away-postevent": "Rectangle encloses relocated bottle, including its visible neck/body; far from hand."
+  },
+  "limits": "Both rectangles include background slivers; neither verifies segmentation, geometric extent, depth ownership, collision freedom or holding.",
+  "independent_output_audit_sha256": "5494709f2e60c1160cc6642a46800f20eac702cb7508f857487bda4d94a25264",
+  "released_work": "Prepared old-versus-current fullrectangle support comparison only, same current goal and own state; no physical actions."
+}

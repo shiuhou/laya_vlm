@@ -1,0 +1,100 @@
+{
+  "status": "pass",
+  "freeze_commit": "9891aa5ced02cf7b9924f582c221faeb8f400fa8",
+  "binding_sha256": "49dbc6e182a6e516e43142537005234c7559264fd69c9f051a10e1b7b4f4d04f",
+  "preflight_sha256": "a2c641097eead7c51a8b992461b593abe10ca4cb8bcc07bc169ed7b8c531f8a8",
+  "protocol_sha256": "94f6fb26b633665d77c7ffdec7863dfab5d31a6c9d285167f39b315523f31232",
+  "authorized_batches": 1,
+  "output_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-image-motion-run-01",
+  "source_admission_status": "observational-source-qualified",
+  "original_matrix_status": "interrupted_incomplete",
+  "source_audit": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json",
+    "sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42"
+  },
+  "binding_path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_image_motion_source_binding.json",
+  "preflight_path": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-image-motion-preflight-01.json",
+  "wrapper_sha256": "3a0ac81417aab00edf727cd1dbfac2cc892fa020f5f7a2d4b4dac23653cc1fef",
+  "authorization_basis": "Root authorized one fixed 492x25x2 post-event extraction after composite source and exact preflight review, with no further human gate.",
+  "protocol_interpretation": "Root authorized this explicit composite qualification after external interruption. The image protocol example requiring a complete matrix is superseded only as to orchestration closure: both original collections and their exact replays are required, with separate attempt-2 away replay bound here. The original matrix remains interrupted/incomplete; scientific feature definitions and all source gates are unchanged.",
+  "independent_preflight_check": {
+    "exact_archived_output_match": true,
+    "feature_functions_patched_to_fail": [
+      "track_lk",
+      "project_own_tcp",
+      "enrich_track",
+      "summarize"
+    ],
+    "feature_function_calls": 0,
+    "output_writes": 0,
+    "model_physics_render_calls": 0,
+    "clean_code_and_all_source_hashes_exact": true,
+    "fixed_output_absent": true
+  },
+  "reused_code_readiness_review": {
+    "path": "/home/junhongli/projects/laya-information-boundary-review/docs/evidence/autonomous_research/task2_closed_empty_image_motion_code_review.json",
+    "sha256": "e93aa11ca948a11ff4d5d546c0d68080295ba946e70106ce20942421acb89e58",
+    "reason": "Wrapper, helpers and protocol bytes remain unchanged at the later report/adapter commit; prior independent20synthetic tests apply."
+  },
+  "population": {
+    "cells": [
+      "present",
+      "away"
+    ],
+    "seed_count": 492,
+    "frames_per_cell": 25,
+    "tracks": 984,
+    "rows": 24600,
+    "reference_capture_id": 0,
+    "source_merged_capture_ids": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "endpoint_capture_ids": [
+      0,
+      8,
+      16,
+      24
+    ],
+    "fresh_postevent_seed_initialization": true,
+    "through_event_tracking": false,
+    "survivor_selection": false
+  },
+  "limits": [
+    "Original matrix remains interrupted/incomplete and both away verification attempts stay bound.",
+    "Only selected saved RGB, calibration and named own packets feed features; measured scene depth/evaluator fields excluded.",
+    "A is RGB-coordinate displacement; B also uses calibrated own TCP and is not RGB-only.",
+    "Same fresh numerical pixels across conditions do not establish material identity, holding, or a classifier."
+  ],
+  "runtime": {
+    "executable": "/home/junhongli/miniforge3/envs/locateanything/bin/python",
+    "python": "3.10.21 | packaged by conda-forge | (main, Aug 21 2026, 22:42:31) [GCC 14.4.0]",
+    "opencv": "4.11.0",
+    "numpy": "1.26.4",
+    "opencv_threads": 256,
+    "opencv_build_sha256": "f3f58b60f58039df358dceb98f617583025ea7b080b4b3b5c84cc15ef13edf09"
+  }
+}

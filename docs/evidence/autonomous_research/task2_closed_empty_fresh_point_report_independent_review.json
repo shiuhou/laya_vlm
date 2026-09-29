@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "producer_report_commit": "d01f50e2414759b34ac507d3905d16c5f018bdde",
+  "sha256": {
+    "task2_closed_empty_fresh_point_findings.md": "f718dfd09ee3afcb2220980745e574e8cb0071085665071ae7ffc5020b2b6e51",
+    "task2_closed_empty_fresh_point_rgb.png": "b4fa37602657cbf19a21950bb0d3506045c18a69e68d2383beb85d5d104bd527",
+    "task2_closed_empty_fresh_point_report.json": "52575c32bb40edf610312dbadb1649cd52c5f60045fff3d5b2466826139321f4",
+    "task2_closed_empty_fresh_point_visual_inspection.json": "b92a2f58cc4dc9e780175d474caf0b21a95f682f8f3fc0eee9cca808c041a47f",
+    "task2_closed_empty_fresh_point_report_source.py": "8b783c055dafd5b588108b7b24540507cedd84cf6764a6ae603b4efb855d59dc"
+  },
+  "basis": {
+    "full4case_raw_return_status_reason_point_fields_match_independent_audit": true,
+    "full4original_RGB_panels_and2unmarked_away_copies_independently_byte_checked": true,
+    "portable_figure_and_manifest_equal_raw_report_artifacts": true,
+    "actual_figure_viewed": true,
+    "admitted_present_markers": 2,
+    "nonadmitted_away_markers": 0,
+    "all_raw_text_and_EOS_counts_visible": true
+  },
+  "wording_review": [
+    "Away entire-output status remains malformed and point=null; no first-point salvage or absence/abstention inference.",
+    "Admitted present coordinates are correct syntax observations, not verified semantic identity or holding.",
+    "Completed4call audit PASS is clearly distinguished from2/4point admission; allEOS and below-cap counts retained.",
+    "Failed processor setup01 and corrected archived-environment02 are explicit; no inference retry.",
+    "Original physical matrix interrupted/incomplete and composite observational source qualification remain explicit.",
+    "Eight-decision downstream experiment remains on hold; no depth projection or policy evaluation claimed."
+  ],
+  "semantic_identity_adjudication": "Root-owned separate inspection; this review verifies display and wording.",
+  "new_model_processor_tokenizer_physics_render_LK_projection_calls": 0
+}

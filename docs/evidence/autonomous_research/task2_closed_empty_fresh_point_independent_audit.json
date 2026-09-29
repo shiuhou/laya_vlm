@@ -1,0 +1,237 @@
+{
+  "status": "PASS",
+  "freeze": "8cc19ebff9cec07eba4f416d35a157445b60f554",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-closed-empty-fresh-point-run-01",
+  "preflight_sha256": "366b576db8398de8c51425f0e45a3cb1e5eda732e1eeefc677e53aeb8586308a",
+  "prospective_review_sha256": "0538793b32fb7bfaff626fa143e932d2a0b745a6262f8402b968a29c8fa49c7e",
+  "journal_sha256": "5e3e146be17297a28b512a44e6b1e6710f1277db60c2b7be4c975f4856f78720",
+  "model_calls": 4,
+  "fresh_processes": 4,
+  "physical_gpu": "2",
+  "retries": 0,
+  "conditions": [
+    {
+      "case_id": "present-postevent",
+      "pid": 2523893,
+      "pgid": 2523823,
+      "journal_sha256": "0edd2ab71a0c4f2b071a1b36808dd7bb4962e674e481ff3f469f5ebee32f8bf2",
+      "sensor_sha256": "e34f760c4f8782afd5bdfdda53197676e822b8d2324bea5e2e6e77aca5a197eb",
+      "raw_return_sha256": "6582eb8a187f4460f63f14824acae0db41f875675ea0d8e069cca51c66af521a",
+      "native_input_sha256": "4bc74c452a804934292cd03216575dbd59238fe83656d2c3e251f05d5e6dbd40",
+      "raw_output": "<ref>the wine bottle</ref><box><568><503></box><|im_end|>",
+      "token_count": 10,
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          568,
+          503
+        ],
+        "continuous_xy": [
+          218.11199999999997,
+          193.152
+        ],
+        "pixel_index_xy": [
+          218,
+          193
+        ]
+      },
+      "parsed_candidates_not_admitted_separately": {
+        "status": "single_point",
+        "points": [
+          {
+            "normalized": [
+              568,
+              503
+            ],
+            "continuous_xy": [
+              218.11199999999997,
+              193.152
+            ],
+            "sample_pixel_xy": [
+              218,
+              193
+            ]
+          }
+        ],
+        "boxes": [],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    },
+    {
+      "case_id": "away-postevent",
+      "pid": 2524478,
+      "pgid": 2523823,
+      "journal_sha256": "002a26375cc502c7b1609fc18ca5e9dc8425f081c15bf3b9de83c04ba2a1f0b0",
+      "sensor_sha256": "d546f1704ab756137c93c3ea603b64415345483c3d22e311b0e017dfea5d9586",
+      "raw_return_sha256": "dc428d004da4e63f68787a0da7a13f05f80a8748ae57f53c0e8acb3299e3a9f3",
+      "native_input_sha256": "da6c7932d0fb9f539b95c7c6c6dfae5100ad5c139e1b4a7fc1371fb001c36e6a",
+      "raw_output": "<ref>the wine bottle</ref><box><594><856></box><box><607><855><1000><857></box><box><607><855><1000><855></box><|im_end|>",
+      "token_count": 22,
+      "status": "not_admitted",
+      "reason": "malformed",
+      "point": null,
+      "parsed_candidates_not_admitted_separately": {
+        "status": "malformed",
+        "points": [
+          {
+            "normalized": [
+              594,
+              856
+            ],
+            "continuous_xy": [
+              228.096,
+              328.704
+            ],
+            "sample_pixel_xy": [
+              228,
+              328
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "normalized": [
+              607,
+              855,
+              1000,
+              857
+            ],
+            "continuous_xyxy": [
+              233.088,
+              328.32,
+              384.0,
+              329.08799999999997
+            ]
+          }
+        ],
+        "empty_count": 0,
+        "invalid": [
+          "<607><855><1000><855>"
+        ],
+        "confidence": null
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    },
+    {
+      "case_id": "away-prelift",
+      "pid": 2525060,
+      "pgid": 2523823,
+      "journal_sha256": "ee3b354094f316725e34a7d87cc532278ff9478198338634de138b9dfe3427b2",
+      "sensor_sha256": "d546f1704ab756137c93c3ea603b64415345483c3d22e311b0e017dfea5d9586",
+      "raw_return_sha256": "26dcae9f67d764d69129fa7f3ffbf3a966e1fb038cb3c273ffc2f260737738bb",
+      "native_input_sha256": "52c5022f2989aaacd7d194a50bf2ab192bcde0edf3ad7dbdce5cbee0b6a0eb69",
+      "raw_output": "<ref>the wine bottle</ref><box><594><856></box><box><607><855><1000><857></box><box><607><855><1000><855></box><|im_end|>",
+      "token_count": 22,
+      "status": "not_admitted",
+      "reason": "malformed",
+      "point": null,
+      "parsed_candidates_not_admitted_separately": {
+        "status": "malformed",
+        "points": [
+          {
+            "normalized": [
+              594,
+              856
+            ],
+            "continuous_xy": [
+              228.096,
+              328.704
+            ],
+            "sample_pixel_xy": [
+              228,
+              328
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "normalized": [
+              607,
+              855,
+              1000,
+              857
+            ],
+            "continuous_xyxy": [
+              233.088,
+              328.32,
+              384.0,
+              329.08799999999997
+            ]
+          }
+        ],
+        "empty_count": 0,
+        "invalid": [
+          "<607><855><1000><855>"
+        ],
+        "confidence": null
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    },
+    {
+      "case_id": "present-prelift",
+      "pid": 2525611,
+      "pgid": 2523823,
+      "journal_sha256": "61a6f2a384b51c871da23eac217774fd1de8e92f736c29f13485a1e2c0d39b04",
+      "sensor_sha256": "cf0f6210043e4d1b6843e70adf3218d3448eb0f624d29249e8adf7c10f404edf",
+      "raw_return_sha256": "0370c409a5356a7d7f5fd66d4929c2cfb816ce66d4ffd64b869de4d757db7b8f",
+      "native_input_sha256": "5ab8f031afbebf6fb33da9800b25f4d0b19b9cfe7187912fca35820a0b155302",
+      "raw_output": "<ref>the wine bottle</ref><box><564><503></box><|im_end|>",
+      "token_count": 10,
+      "status": "admitted_rgb_point",
+      "reason": null,
+      "point": {
+        "normalized": [
+          564,
+          503
+        ],
+        "continuous_xy": [
+          216.57599999999996,
+          193.152
+        ],
+        "pixel_index_xy": [
+          216,
+          193
+        ]
+      },
+      "parsed_candidates_not_admitted_separately": {
+        "status": "single_point",
+        "points": [
+          {
+            "normalized": [
+              564,
+              503
+            ],
+            "continuous_xy": [
+              216.57599999999996,
+              193.152
+            ],
+            "sample_pixel_xy": [
+              216,
+              193
+            ]
+          }
+        ],
+        "boxes": [],
+        "empty_count": 0,
+        "invalid": [],
+        "confidence": null
+      },
+      "all_RGB_and_processor_tensor_bytes_exact": true,
+      "all_emitted_ids_checked_against_static_vocabulary": true
+    }
+  ],
+  "new_model_processor_tokenizer_physics_render_LK_calls_during_audit": 0,
+  "limits": [
+    "Both away raw strings contain a point, a valid box and a degenerate box. Strict full-return status remains malformed; the first point is not salvaged.",
+    "Admitted points are RGB-coordinate syntax observations, not independently verified semantic identity, holding or execution targets.",
+    "Static vocabulary and recorded checkpoint identity were checked; no model or tokenizer was constructed and weight bytes were not reread.",
+    "Actual image/point semantic interpretation is separately owned by root; no depth/calibration/labels used in this audit."
+  ]
+}

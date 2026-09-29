@@ -1,0 +1,611 @@
+{
+  "raw_sha256": "7fce36f5df64da7009d3ddb71b98f01d2383065c13d3b88069af39aed997337a",
+  "reference_sha256": "23a5e0ea9a59317ad843141a4ec0017958d0c180fdbc7c2aed90cf41697943fa",
+  "prefix_controls": 400,
+  "native_controls": 16,
+  "integrator_calls": 400,
+  "snapshots": 800,
+  "model_calls": 0,
+  "arms": [
+    {
+      "arm": "MV_RIGHT",
+      "integrator": 0,
+      "model_timestep_s": 0.002,
+      "native_calls": 200,
+      "native_forward_calls": 400,
+      "exact_reference_match": true,
+      "native_boundary_robot_contact_rows": 224,
+      "native_boundary_nonhandle_contact_rows": 224,
+      "max_robot_normal_force_N": 6.912956696021244,
+      "first_observed_robot_contact": {
+        "call_index": 22,
+        "control": 0,
+        "within_control_index": 22,
+        "phase": "before",
+        "buffer_time_s": 10.54400000000019,
+        "integration_interval_s": [
+          10.54400000000019,
+          10.546000000000191
+        ],
+        "above_original_1N": true,
+        "distance_m": -2.5628613856888263e-05,
+        "drawer_sides": [
+          true,
+          false
+        ],
+        "force_contact_frame": [
+          6.912956696021244,
+          -1.648926969279217,
+          -3.8261354910744703,
+          -1.6549207715624947,
+          0.0,
+          0.0
+        ],
+        "geom_ids": [
+          145,
+          77
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "handle_sides": [
+          false,
+          false
+        ],
+        "index": 32,
+        "normal_force_N": 6.912956696021244,
+        "position_world_m": [
+          -0.019045100128571163,
+          -0.07962210538784098,
+          1.1223561238592115
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      },
+      "first_observed_nonhandle_contact": {
+        "call_index": 22,
+        "control": 0,
+        "within_control_index": 22,
+        "phase": "before",
+        "buffer_time_s": 10.54400000000019,
+        "integration_interval_s": [
+          10.54400000000019,
+          10.546000000000191
+        ],
+        "above_original_1N": true,
+        "distance_m": -2.5628613856888263e-05,
+        "drawer_sides": [
+          true,
+          false
+        ],
+        "force_contact_frame": [
+          6.912956696021244,
+          -1.648926969279217,
+          -3.8261354910744703,
+          -1.6549207715624947,
+          0.0,
+          0.0
+        ],
+        "geom_ids": [
+          145,
+          77
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "handle_sides": [
+          false,
+          false
+        ],
+        "index": 32,
+        "normal_force_N": 6.912956696021244,
+        "position_world_m": [
+          -0.019045100128571163,
+          -0.07962210538784098,
+          1.1223561238592115
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      },
+      "per_control": [
+        {
+          "control": 0,
+          "drawer_delta_mm": 0.0476148994913439,
+          "native_boundary_robot_contact_rows": 6,
+          "max_robot_normal_force_N": 6.912956696021244,
+          "after_control_robot_contact_rows": 1
+        },
+        {
+          "control": 1,
+          "drawer_delta_mm": 1.0360520724856659,
+          "native_boundary_robot_contact_rows": 28,
+          "max_robot_normal_force_N": 4.1468360057207,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 2,
+          "drawer_delta_mm": 1.2818253066097796,
+          "native_boundary_robot_contact_rows": 24,
+          "max_robot_normal_force_N": 3.1669412087797952,
+          "after_control_robot_contact_rows": 1
+        },
+        {
+          "control": 3,
+          "drawer_delta_mm": 1.2474990484024617,
+          "native_boundary_robot_contact_rows": 22,
+          "max_robot_normal_force_N": 2.7065329687592605,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 4,
+          "drawer_delta_mm": 1.1080936601378932,
+          "native_boundary_robot_contact_rows": 32,
+          "max_robot_normal_force_N": 2.3986435669910526,
+          "after_control_robot_contact_rows": 1
+        },
+        {
+          "control": 5,
+          "drawer_delta_mm": 0.9000996271492645,
+          "native_boundary_robot_contact_rows": 40,
+          "max_robot_normal_force_N": 1.37213776834253,
+          "after_control_robot_contact_rows": 1
+        },
+        {
+          "control": 6,
+          "drawer_delta_mm": 0.6978533963162004,
+          "native_boundary_robot_contact_rows": 40,
+          "max_robot_normal_force_N": 0.8488758575614078,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 7,
+          "drawer_delta_mm": 0.5256327530536453,
+          "native_boundary_robot_contact_rows": 32,
+          "max_robot_normal_force_N": 0.8817307473797232,
+          "after_control_robot_contact_rows": 1
+        }
+      ],
+      "reference_result": {
+        "after": [
+          -0.024054468680318984,
+          -0.03301892711299873,
+          1.1316162035921558
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0009112864570516299,
+          -0.008860058875137099,
+          0.0007698679284833254
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": false,
+        "finger_gap_delta": -0.0009622089289930968,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.30514527246141715,
+        "success": false,
+        "token": "MV_RIGHT"
+      },
+      "drawer_joint_delta_mm": 6.8446707636462545,
+      "scope": "native integrator-boundary cached contacts; before/after can duplicate one event; not continuous contact onset or causal isolation"
+    },
+    {
+      "arm": "MV_DOWN",
+      "integrator": 0,
+      "model_timestep_s": 0.002,
+      "native_calls": 200,
+      "native_forward_calls": 400,
+      "exact_reference_match": true,
+      "native_boundary_robot_contact_rows": 14,
+      "native_boundary_nonhandle_contact_rows": 14,
+      "max_robot_normal_force_N": 14.913734474124869,
+      "first_observed_robot_contact": {
+        "call_index": 45,
+        "control": 1,
+        "within_control_index": 20,
+        "phase": "before",
+        "buffer_time_s": 10.590000000000206,
+        "integration_interval_s": [
+          10.590000000000206,
+          10.592000000000207
+        ],
+        "above_original_1N": true,
+        "distance_m": -9.012287084859418e-06,
+        "drawer_sides": [
+          true,
+          false
+        ],
+        "force_contact_frame": [
+          14.913734474124869,
+          14.448331080947407,
+          -2.997461146961066,
+          -0.6490291558350595,
+          0.0,
+          0.0
+        ],
+        "geom_ids": [
+          145,
+          77
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "handle_sides": [
+          false,
+          false
+        ],
+        "index": 32,
+        "normal_force_N": 14.913734474124869,
+        "position_world_m": [
+          -0.01813288543352717,
+          -0.07961418537254046,
+          1.1223586336343134
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      },
+      "first_observed_nonhandle_contact": {
+        "call_index": 45,
+        "control": 1,
+        "within_control_index": 20,
+        "phase": "before",
+        "buffer_time_s": 10.590000000000206,
+        "integration_interval_s": [
+          10.590000000000206,
+          10.592000000000207
+        ],
+        "above_original_1N": true,
+        "distance_m": -9.012287084859418e-06,
+        "drawer_sides": [
+          true,
+          false
+        ],
+        "force_contact_frame": [
+          14.913734474124869,
+          14.448331080947407,
+          -2.997461146961066,
+          -0.6490291558350595,
+          0.0,
+          0.0
+        ],
+        "geom_ids": [
+          145,
+          77
+        ],
+        "geom_names": [
+          "wooden_cabinet_1_g11",
+          "gripper0_finger1_collision"
+        ],
+        "handle_sides": [
+          false,
+          false
+        ],
+        "index": 32,
+        "normal_force_N": 14.913734474124869,
+        "position_world_m": [
+          -0.01813288543352717,
+          -0.07961418537254046,
+          1.1223586336343134
+        ],
+        "robot_sides": [
+          false,
+          true
+        ]
+      },
+      "per_control": [
+        {
+          "control": 0,
+          "drawer_delta_mm": 0.0,
+          "native_boundary_robot_contact_rows": 0,
+          "max_robot_normal_force_N": 0.0,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 1,
+          "drawer_delta_mm": 0.0593899576269985,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 14.913734474124869,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 2,
+          "drawer_delta_mm": 0.33385219226020335,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 12.56473711697926,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 3,
+          "drawer_delta_mm": 0.30949439306915405,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 10.255538903261536,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 4,
+          "drawer_delta_mm": 0.25145943622634226,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 7.657642445606878,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 5,
+          "drawer_delta_mm": 0.18966930490285638,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 5.547664849603197,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 6,
+          "drawer_delta_mm": 0.1452516012884486,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 4.100116567932287,
+          "after_control_robot_contact_rows": 0
+        },
+        {
+          "control": 7,
+          "drawer_delta_mm": 0.11708768417048598,
+          "native_boundary_robot_contact_rows": 2,
+          "max_robot_normal_force_N": 3.3392602189399985,
+          "after_control_robot_contact_rows": 0
+        }
+      ],
+      "reference_result": {
+        "after": [
+          -0.023628758852932998,
+          -0.024139644578727058,
+          1.1224847481305726
+        ],
+        "before": [
+          -0.024965755137370614,
+          -0.024158868237861633,
+          1.1308463356636724
+        ],
+        "delta_m": [
+          0.0013369962844376158,
+          1.922365913457555e-05,
+          -0.00836158753309979
+        ],
+        "environment_step_count": 8,
+        "execution_contract_reason": [
+          "translation_error"
+        ],
+        "execution_contract_tolerances": {
+          "hold_rotation_deg": 1.0,
+          "hold_translation_m": 0.0015,
+          "rotation_error_deg": 2.0,
+          "translation_error_m": 0.002
+        },
+        "execution_contract_version": "atomic-top-drawer-v1",
+        "execution_contract_violation": true,
+        "finger_gap_delta": -0.0004165760486938147,
+        "low_level_step_count": 200,
+        "rotation_angle_deg": 0.45917732801888167,
+        "success": false,
+        "token": "MV_DOWN"
+      },
+      "drawer_joint_delta_mm": 1.4062045695444891,
+      "scope": "native integrator-boundary cached contacts; before/after can duplicate one event; not continuous contact onset or causal isolation"
+    }
+  ],
+  "frozen_commit": "ef5a4e0",
+  "raw_directory": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/native-substep-observability-run-01",
+  "artifact_sha256": {
+    "summary.json": "6a95eb76ca1b371a59e6dc3b230d43efce8b8c6ddbddcd842f893e01c6c56440",
+    "protocol.md": "e6ddb63706231088537a9bab42b5ff9e679425972320b695d102581748d02ef4",
+    "temporal_metrics.json": "e7f20a76dbe704238dbdb1688e7ebad0f2065608bec4331486b08e3c4a0dd400",
+    "derive_temporal_metrics.py": "82da3ec4db97d15ffc8c126195b83f45723079036df3aa46dd4752f843fd5a17",
+    "native_contact_timing.png": "38165fc4b78637343d21acd5d66188a6c9e5dd7b1656d92278cb064fbd6d94ad"
+  },
+  "temporal_arithmetic": [
+    {
+      "arm": "MV_RIGHT",
+      "contact_present_native_calls": 112,
+      "contact_present_call_indices": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        43,
+        44,
+        47,
+        48,
+        51,
+        52,
+        55,
+        56,
+        60,
+        61,
+        62,
+        66,
+        67,
+        70,
+        71,
+        74,
+        76,
+        77,
+        81,
+        82,
+        83,
+        87,
+        88,
+        91,
+        92,
+        95,
+        96,
+        100,
+        101,
+        102,
+        103,
+        108,
+        109,
+        110,
+        111,
+        112,
+        116,
+        117,
+        118,
+        121,
+        122,
+        123,
+        124,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        148,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        162,
+        163,
+        164,
+        165,
+        167,
+        168,
+        169,
+        170,
+        172,
+        173,
+        175,
+        176,
+        177,
+        179,
+        181,
+        182,
+        183,
+        186,
+        187,
+        188,
+        190,
+        193,
+        194,
+        195,
+        198,
+        199
+      ],
+      "robot_contact_pairs": [
+        {
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "sample_rows": 224
+        }
+      ],
+      "drawer_nonrobot_contact_pairs": [],
+      "first_motion_interval": {
+        "call_index": 22,
+        "control": 0,
+        "substep": 22,
+        "before_time_s": 10.54400000000019,
+        "after_time_s": 10.546000000000191,
+        "drawer_delta_mm": 0.009126017890048743,
+        "drawer_displacement_after_mm": 0.009126017890048743,
+        "robot_contact_boundary_rows": 2,
+        "max_robot_normal_force_N": 6.912956696021244,
+        "drawer_qvel_before_m_s": 0.0,
+        "drawer_qvel_after_m_s": 0.00456300894502271,
+        "drawer_constraint_force_before": 7.087888786346631,
+        "drawer_constraint_force_after": 7.0726638647852
+      },
+      "first_contact_call_index": 22,
+      "max_abs_generalized_or_cartesian_applied_force": 0.0,
+      "identical_pre_post_cached_handle_geometry_calls": 200,
+      "translation_residual_mm": 1.6500319397716567
+    },
+    {
+      "arm": "MV_DOWN",
+      "contact_present_native_calls": 7,
+      "contact_present_call_indices": [
+        45,
+        57,
+        81,
+        107,
+        135,
+        162,
+        187
+      ],
+      "robot_contact_pairs": [
+        {
+          "geom_names": [
+            "wooden_cabinet_1_g11",
+            "gripper0_finger1_collision"
+          ],
+          "sample_rows": 14
+        }
+      ],
+      "drawer_nonrobot_contact_pairs": [],
+      "first_motion_interval": {
+        "call_index": 45,
+        "control": 1,
+        "substep": 20,
+        "before_time_s": 10.590000000000206,
+        "after_time_s": 10.592000000000207,
+        "drawer_delta_mm": 0.012669554105310121,
+        "drawer_displacement_after_mm": 0.012669554105310121,
+        "robot_contact_boundary_rows": 2,
+        "max_robot_normal_force_N": 14.913734474124869,
+        "drawer_qvel_before_m_s": 0.0,
+        "drawer_qvel_after_m_s": 0.006334777052657314,
+        "drawer_constraint_force_before": 9.830526854157329,
+        "drawer_constraint_force_after": 9.818904431618837
+      },
+      "first_contact_call_index": 45,
+      "max_abs_generalized_or_cartesian_applied_force": 0.0,
+      "identical_pre_post_cached_handle_geometry_calls": 200,
+      "translation_residual_mm": 2.1147869929060334
+    }
+  ]
+}

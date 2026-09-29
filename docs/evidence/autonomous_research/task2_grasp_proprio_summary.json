@@ -1,0 +1,2005 @@
+{
+  "version": "task2-grasp-proprio-descriptive-v1",
+  "source_matrix": "/home/junhongli/projects/laya-embodied-runtime/runs/autonomous-research/task2-point-anchor-grasp-transfer-run-01",
+  "generator_sha256": "582d1b24c3a88f8931aa7b951a8ac18d85b7019b062815efebd488fcb3ce5fdd",
+  "evaluator_read": false,
+  "provenance": "saved proprioception",
+  "holding_inferred": false,
+  "physical_pad_gap_inferred": false,
+  "new_threshold": null,
+  "warning": "Joint-coordinate separation is not a measured object width or pad-surface clearance.",
+  "cells": {
+    "whole-close": {
+      "source_manifest_sha256": "ace96f704d26b98e2f18a7163e65c24ef85ca589501712185ae767188e5ce760",
+      "source_seal_sha256": "689d9f87ed22cf6c8c4fbe76a34348ea33a1b45e2861d8aa0992e0409daaaa64",
+      "rows": [
+        {
+          "capture_id": 30,
+          "phase": "approach",
+          "after_step": 29,
+          "control": 7,
+          "capture_read_sim_time_s": 12.500000000000844,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "endpoint",
+            "step": 29
+          },
+          "gripper_qpos_m": [
+            0.03999848348727919,
+            -0.03999943013435018
+          ],
+          "gripper_qvel_m_s": [
+            1.6791343262305907e-06,
+            -1.5174061789080745e-07
+          ],
+          "signed_joint_separation_m": 0.07999791362162936,
+          "signed_joint_separation_rate_m_s": 1.8308749441213981e-06,
+          "tcp_world_m": [
+            -0.11797678918575412,
+            0.056279970375673984,
+            1.0313076825422585
+          ]
+        },
+        {
+          "capture_id": 31,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 0,
+          "capture_read_sim_time_s": 12.55000000000086,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.03956011929103226,
+            -0.039560805157369296
+          ],
+          "gripper_qvel_m_s": [
+            -0.025216968601812655,
+            0.025225496785497153
+          ],
+          "signed_joint_separation_m": 0.07912092444840155,
+          "signed_joint_separation_rate_m_s": -0.05044246538730981,
+          "tcp_world_m": [
+            -0.1175455076574015,
+            0.05630492103213297,
+            1.031502551097374
+          ]
+        },
+        {
+          "capture_id": 32,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 1,
+          "capture_read_sim_time_s": 12.600000000000877,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.037394943291946287,
+            -0.03739524105454106
+          ],
+          "gripper_qvel_m_s": [
+            -0.057467774162239534,
+            0.057473317652370674
+          ],
+          "signed_joint_separation_m": 0.07479018434648735,
+          "signed_joint_separation_rate_m_s": -0.11494109181461021,
+          "tcp_world_m": [
+            -0.11730370081707618,
+            0.05632937068342128,
+            1.0316520460578837
+          ]
+        },
+        {
+          "capture_id": 33,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 2,
+          "capture_read_sim_time_s": 12.650000000000894,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.03399201406337765,
+            -0.03399220046458612
+          ],
+          "gripper_qvel_m_s": [
+            -0.07612423306399074,
+            0.07612378412732013
+          ],
+          "signed_joint_separation_m": 0.06798421452796377,
+          "signed_joint_separation_rate_m_s": -0.15224801719131087,
+          "tcp_world_m": [
+            -0.11717106040010118,
+            0.056352436265972874,
+            1.0317554461122351
+          ]
+        },
+        {
+          "capture_id": 34,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 3,
+          "capture_read_sim_time_s": 12.70000000000091,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.029888573959060374,
+            -0.0298888828575248
+          ],
+          "gripper_qvel_m_s": [
+            -0.08659278207990055,
+            0.08658917234589372
+          ],
+          "signed_joint_separation_m": 0.059777456816585174,
+          "signed_joint_separation_rate_m_s": -0.17318195442579426,
+          "tcp_world_m": [
+            -0.11712785325138818,
+            0.056370529356424726,
+            1.031805126197272
+          ]
+        },
+        {
+          "capture_id": 35,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 4,
+          "capture_read_sim_time_s": 12.750000000000927,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.02539220714167572,
+            -0.025392656671894404
+          ],
+          "gripper_qvel_m_s": [
+            -0.09246703422699223,
+            0.09246278971165525
+          ],
+          "signed_joint_separation_m": 0.05078486381357013,
+          "signed_joint_separation_rate_m_s": -0.1849298239386475,
+          "tcp_world_m": [
+            -0.11714467359703874,
+            0.05638275963170974,
+            1.0318013938425978
+          ]
+        },
+        {
+          "capture_id": 36,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 5,
+          "capture_read_sim_time_s": 12.800000000000944,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.020675237189668946,
+            -0.020675832926198134
+          ],
+          "gripper_qvel_m_s": [
+            -0.09576515124154038,
+            0.09576334311473841
+          ],
+          "signed_joint_separation_m": 0.041351070115867083,
+          "signed_joint_separation_rate_m_s": -0.19152849435627878,
+          "tcp_world_m": [
+            -0.11718794395421153,
+            0.05638897196452703,
+            1.0317772890370092
+          ]
+        },
+        {
+          "capture_id": 37,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 6,
+          "capture_read_sim_time_s": 12.85000000000096,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.015834363931809117,
+            -0.015835024277125142
+          ],
+          "gripper_qvel_m_s": [
+            -0.09761892412694266,
+            0.09761799376481828
+          ],
+          "signed_joint_separation_m": 0.03166938820893426,
+          "signed_joint_separation_rate_m_s": -0.19523691789176095,
+          "tcp_world_m": [
+            -0.11723814795674384,
+            0.05639117017992421,
+            1.0317487491055044
+          ]
+        },
+        {
+          "capture_id": 38,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 7,
+          "capture_read_sim_time_s": 12.900000000000977,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.010923839119017547,
+            -0.010924532882604577
+          ],
+          "gripper_qvel_m_s": [
+            -0.09866104778826303,
+            0.09866062644068518
+          ],
+          "signed_joint_separation_m": 0.021848372001622124,
+          "signed_joint_separation_rate_m_s": -0.1973216742289482,
+          "tcp_world_m": [
+            -0.11728986458131475,
+            0.056390546820339504,
+            1.031718597376899
+          ]
+        },
+        {
+          "capture_id": 39,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 0,
+          "capture_read_sim_time_s": 12.950000000000994,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.006705804398974082,
+            -0.006714953069738808
+          ],
+          "gripper_qvel_m_s": [
+            -0.0663800604430209,
+            0.06642298497250058
+          ],
+          "signed_joint_separation_m": 0.01342075746871289,
+          "signed_joint_separation_rate_m_s": -0.1328030454155215,
+          "tcp_world_m": [
+            -0.11728413222388107,
+            0.056405181737159006,
+            1.0328684845880902
+          ]
+        },
+        {
+          "capture_id": 40,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 1,
+          "capture_read_sim_time_s": 13.00000000000101,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.00606719517095466,
+            -0.006077695925217756
+          ],
+          "gripper_qvel_m_s": [
+            -0.0017662792502492787,
+            0.0016430495500577129
+          ],
+          "signed_joint_separation_m": 0.012144891096172415,
+          "signed_joint_separation_rate_m_s": -0.0034093288003069913,
+          "tcp_world_m": [
+            -0.11730050367917108,
+            0.05644897579421098,
+            1.035050731433487
+          ]
+        },
+        {
+          "capture_id": 41,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 2,
+          "capture_read_sim_time_s": 13.050000000001027,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.006035282980026794,
+            -0.0060441022313359495
+          ],
+          "gripper_qvel_m_s": [
+            0.00022083090926875476,
+            -0.00021107480346975495
+          ],
+          "signed_joint_separation_m": 0.012079385211362745,
+          "signed_joint_separation_rate_m_s": 0.0004319057127385097,
+          "tcp_world_m": [
+            -0.11734301056412896,
+            0.056487048913186844,
+            1.0370648988163467
+          ]
+        },
+        {
+          "capture_id": 42,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 3,
+          "capture_read_sim_time_s": 13.100000000001044,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.006041136784883045,
+            -0.006049633368042318
+          ],
+          "gripper_qvel_m_s": [
+            4.920496314487191e-05,
+            -4.425066489160009e-05
+          ],
+          "signed_joint_separation_m": 0.012090770152925364,
+          "signed_joint_separation_rate_m_s": 9.3455628036472e-05,
+          "tcp_world_m": [
+            -0.11737697747245603,
+            0.05650497023590634,
+            1.0386054748876103
+          ]
+        },
+        {
+          "capture_id": 43,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 4,
+          "capture_read_sim_time_s": 13.15000000000106,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.00604273179602848,
+            -0.006050942778597348
+          ],
+          "gripper_qvel_m_s": [
+            2.53417092902845e-05,
+            -1.492018194335593e-05
+          ],
+          "signed_joint_separation_m": 0.012093674574625828,
+          "signed_joint_separation_rate_m_s": 4.026189123364043e-05,
+          "tcp_world_m": [
+            -0.11739128941157229,
+            0.05650424536080604,
+            1.0396822840676625
+          ]
+        },
+        {
+          "capture_id": 44,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 5,
+          "capture_read_sim_time_s": 13.200000000001078,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.006043596539624148,
+            -0.006051496646103193
+          ],
+          "gripper_qvel_m_s": [
+            1.3208843994245958e-05,
+            -6.940605777556515e-06
+          ],
+          "signed_joint_separation_m": 0.012095093185727341,
+          "signed_joint_separation_rate_m_s": 2.0149449771802474e-05,
+          "tcp_world_m": [
+            -0.11738770325825551,
+            0.05649530096872232,
+            1.0403964349565353
+          ]
+        },
+        {
+          "capture_id": 45,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 6,
+          "capture_read_sim_time_s": 13.250000000001094,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.006044102622728946,
+            -0.006051689824990979
+          ],
+          "gripper_qvel_m_s": [
+            7.104483785479519e-06,
+            -2.2634728357576996e-06
+          ],
+          "signed_joint_separation_m": 0.012095792447719925,
+          "signed_joint_separation_rate_m_s": 9.367956621237218e-06,
+          "tcp_world_m": [
+            -0.11737937963584705,
+            0.05648947082142081,
+            1.0408508223076647
+          ]
+        },
+        {
+          "capture_id": 46,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 7,
+          "capture_read_sim_time_s": 13.300000000001111,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.006044423061404174,
+            -0.006051704880840169
+          ],
+          "gripper_qvel_m_s": [
+            4.948287874395724e-06,
+            3.543112375185711e-07
+          ],
+          "signed_joint_separation_m": 0.012096127942244343,
+          "signed_joint_separation_rate_m_s": 4.5939766368771525e-06,
+          "tcp_world_m": [
+            -0.11737584467427825,
+            0.05648566236230504,
+            1.0411284523540114
+          ]
+        }
+      ]
+    },
+    "whole-open_hold": {
+      "source_manifest_sha256": "4c57a7edbd745a1d819ec9d7e19dfabb1d1478c6b139544adc05b84fce840240",
+      "source_seal_sha256": "41333d57710df6dc70d78052f64868d95ee9ce9fc2c7a8f4891f7b33fb17b57c",
+      "rows": [
+        {
+          "capture_id": 30,
+          "phase": "approach",
+          "after_step": 29,
+          "control": 7,
+          "capture_read_sim_time_s": 12.500000000000844,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "endpoint",
+            "step": 29
+          },
+          "gripper_qpos_m": [
+            0.03999848348727919,
+            -0.03999943013435018
+          ],
+          "gripper_qvel_m_s": [
+            1.6791343262305907e-06,
+            -1.5174061789080745e-07
+          ],
+          "signed_joint_separation_m": 0.07999791362162936,
+          "signed_joint_separation_rate_m_s": 1.8308749441213981e-06,
+          "tcp_world_m": [
+            -0.11797678918575412,
+            0.056279970375673984,
+            1.0313076825422585
+          ]
+        },
+        {
+          "capture_id": 31,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 0,
+          "capture_read_sim_time_s": 12.55000000000086,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.039998554365462936,
+            -0.03999944874443798
+          ],
+          "gripper_qvel_m_s": [
+            1.2789888400212602e-06,
+            -4.733791017837668e-07
+          ],
+          "signed_joint_separation_m": 0.07999800310990092,
+          "signed_joint_separation_rate_m_s": 1.752367941805027e-06,
+          "tcp_world_m": [
+            -0.11754550762378586,
+            0.056304921438938,
+            1.0315025511340046
+          ]
+        },
+        {
+          "capture_id": 32,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 1,
+          "capture_read_sim_time_s": 12.600000000000877,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.03999861569210506,
+            -0.03999947306799592
+          ],
+          "gripper_qvel_m_s": [
+            1.1263254580998598e-06,
+            -5.508663025963143e-07
+          ],
+          "signed_joint_separation_m": 0.07999808876010098,
+          "signed_joint_separation_rate_m_s": 1.6771917606961742e-06,
+          "tcp_world_m": [
+            -0.11730370014501587,
+            0.056329384271630804,
+            1.031652046945594
+          ]
+        },
+        {
+          "capture_id": 33,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 2,
+          "capture_read_sim_time_s": 12.650000000000894,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.03999866453279731,
+            -0.03999950620289846
+          ],
+          "gripper_qvel_m_s": [
+            8.507903984549726e-07,
+            -7.544459527561017e-07
+          ],
+          "signed_joint_separation_m": 0.07999817073569576,
+          "signed_joint_separation_rate_m_s": 1.6052363512110744e-06,
+          "tcp_world_m": [
+            -0.11717105919677759,
+            0.056352483889680255,
+            1.0317554487620146
+          ]
+        },
+        {
+          "capture_id": 34,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 3,
+          "capture_read_sim_time_s": 12.70000000000091,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.039998701774236305,
+            -0.03999954742031446
+          ],
+          "gripper_qvel_m_s": [
+            6.759918048658092e-07,
+            -8.603843338949213e-07
+          ],
+          "signed_joint_separation_m": 0.07999824919455076,
+          "signed_joint_separation_rate_m_s": 1.5363761387607305e-06,
+          "tcp_world_m": [
+            -0.11712785248729335,
+            0.05637062138410521,
+            1.0318051308617624
+          ]
+        },
+        {
+          "capture_id": 35,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 4,
+          "capture_read_sim_time_s": 12.750000000000927,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.039998736222554745,
+            -0.039999588065375395
+          ],
+          "gripper_qvel_m_s": [
+            6.090087895407838e-07,
+            -8.614681279393396e-07
+          ],
+          "signed_joint_separation_m": 0.07999832428793013,
+          "signed_joint_separation_rate_m_s": 1.4704769174801234e-06,
+          "tcp_world_m": [
+            -0.11714467474290029,
+            0.05638289007905593,
+            1.031801400028759
+          ]
+        },
+        {
+          "capture_id": 36,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 5,
+          "capture_read_sim_time_s": 12.800000000000944,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.039998768990204825,
+            -0.03999962717025385
+          ],
+          "gripper_qvel_m_s": [
+            6.89518415537432e-07,
+            -7.178885885950602e-07
+          ],
+          "signed_joint_separation_m": 0.07999839616045867,
+          "signed_joint_separation_rate_m_s": 1.4074070041324923e-06,
+          "tcp_world_m": [
+            -0.1171879469979499,
+            0.056389124152498075,
+            1.0317772958477411
+          ]
+        },
+        {
+          "capture_id": 37,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 6,
+          "capture_read_sim_time_s": 12.85000000000096,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.03999880400140623,
+            -0.03999966094890914
+          ],
+          "gripper_qvel_m_s": [
+            7.071714690190125e-07,
+            -6.398707619039537e-07
+          ],
+          "signed_joint_separation_m": 0.07999846495031537,
+          "signed_joint_separation_rate_m_s": 1.3470422309229661e-06,
+          "tcp_world_m": [
+            -0.11723815225849812,
+            0.05639132402966832,
+            1.0317487559229497
+          ]
+        },
+        {
+          "capture_id": 38,
+          "phase": "close_or_hold",
+          "after_step": 30,
+          "control": 7,
+          "capture_read_sim_time_s": 12.900000000000977,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.039998839540037225,
+            -0.03999969124968455
+          ],
+          "gripper_qvel_m_s": [
+            7.147281894536435e-07,
+            -5.745381737757066e-07
+          ],
+          "signed_joint_separation_m": 0.07999853078972177,
+          "signed_joint_separation_rate_m_s": 1.28926636322935e-06,
+          "tcp_world_m": [
+            -0.11728986927181034,
+            0.05639068618291168,
+            1.0317186037035613
+          ]
+        },
+        {
+          "capture_id": 39,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 0,
+          "capture_read_sim_time_s": 12.950000000000994,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.03999892592127741,
+            -0.039999667885041036
+          ],
+          "gripper_qvel_m_s": [
+            2.166616911883034e-06,
+            9.326032408139256e-07
+          ],
+          "signed_joint_separation_m": 0.07999859380631845,
+          "signed_joint_separation_rate_m_s": 1.2340136710691087e-06,
+          "tcp_world_m": [
+            -0.11728577408281557,
+            0.0564026742704322,
+            1.0328658502821353
+          ]
+        },
+        {
+          "capture_id": 40,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 1,
+          "capture_read_sim_time_s": 13.00000000000101,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.039998995427954195,
+            -0.03999965869259335
+          ],
+          "gripper_qvel_m_s": [
+            5.885543090191885e-07,
+            -5.9249927190918e-07
+          ],
+          "signed_joint_separation_m": 0.07999865412054755,
+          "signed_joint_separation_rate_m_s": 1.1810535809283686e-06,
+          "tcp_world_m": [
+            -0.11729682995084598,
+            0.05644563047631085,
+            1.0350557540775265
+          ]
+        },
+        {
+          "capture_id": 41,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 2,
+          "capture_read_sim_time_s": 13.050000000001027,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.039998997083331295,
+            -0.03999971476301749
+          ],
+          "gripper_qvel_m_s": [
+            -2.9782023718060073e-07,
+            -1.428201483038237e-06
+          ],
+          "signed_joint_separation_m": 0.07999871184634878,
+          "signed_joint_separation_rate_m_s": 1.1303812458576364e-06,
+          "tcp_world_m": [
+            -0.11733115640864725,
+            0.05648581878132607,
+            1.0370837726297029
+          ]
+        },
+        {
+          "capture_id": 42,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 3,
+          "capture_read_sim_time_s": 13.100000000001044,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.03999897948427651,
+            -0.03999978761182057
+          ],
+          "gripper_qvel_m_s": [
+            -2.952672921881759e-07,
+            -1.3771695547685808e-06
+          ],
+          "signed_joint_separation_m": 0.07999876709609707,
+          "signed_joint_separation_rate_m_s": 1.0819022625804049e-06,
+          "tcp_world_m": [
+            -0.11735738731690928,
+            0.0565055067957602,
+            1.0386372949357803
+          ]
+        },
+        {
+          "capture_id": 43,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 4,
+          "capture_read_sim_time_s": 13.15000000000106,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.03999897269738892,
+            -0.0399998472789489
+          ],
+          "gripper_qvel_m_s": [
+            4.238870229998899e-08,
+            -9.931118928630404e-07
+          ],
+          "signed_joint_separation_m": 0.07999881997633781,
+          "signed_joint_separation_rate_m_s": 1.0355005951630293e-06,
+          "tcp_world_m": [
+            -0.11736447566016578,
+            0.056506058806042675,
+            1.0397248479524128
+          ]
+        },
+        {
+          "capture_id": 44,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 5,
+          "capture_read_sim_time_s": 13.200000000001078,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.03999899217338788,
+            -0.039999878415101976
+          ],
+          "gripper_qvel_m_s": [
+            6.401273043439531e-07,
+            -3.5095926880123303e-07
+          ],
+          "signed_joint_separation_m": 0.07999887058848985,
+          "signed_joint_separation_rate_m_s": 9.910865731451861e-07,
+          "tcp_world_m": [
+            -0.11735468878792367,
+            0.056497710483759414,
+            1.0404472853727564
+          ]
+        },
+        {
+          "capture_id": 45,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 6,
+          "capture_read_sim_time_s": 13.250000000001094,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.03999902371565929,
+            -0.03999989531418677
+          ],
+          "gripper_qvel_m_s": [
+            6.122217611714827e-07,
+            -3.363561399741782e-07
+          ],
+          "signed_joint_separation_m": 0.07999891902984606,
+          "signed_joint_separation_rate_m_s": 9.485779011456609e-07,
+          "tcp_world_m": [
+            -0.1173471825786372,
+            0.056491719771529794,
+            1.0409045867137072
+          ]
+        },
+        {
+          "capture_id": 46,
+          "phase": "lift",
+          "after_step": 31,
+          "control": 7,
+          "capture_read_sim_time_s": 13.300000000001111,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 31,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.03999905322670334,
+            -0.03999991216677952
+          ],
+          "gripper_qvel_m_s": [
+            5.666133175028191e-07,
+            -3.4127846900015167e-07
+          ],
+          "signed_joint_separation_m": 0.07999896539348286,
+          "signed_joint_separation_rate_m_s": 9.078917865029708e-07,
+          "tcp_world_m": [
+            -0.11734324513436932,
+            0.05648794306988075,
+            1.041184614612239
+          ]
+        }
+      ]
+    },
+    "neck-close": {
+      "source_manifest_sha256": "234f2e2281a0f99848f8d1c39396e840cf6fbc94b0365cdbffbc5c57ca3bb38e",
+      "source_seal_sha256": "6ed718de376db58bda62716900577fea96d4bd08dd0518ad3eb9121785b73594",
+      "rows": [
+        {
+          "capture_id": 29,
+          "phase": "approach",
+          "after_step": 28,
+          "control": 7,
+          "capture_read_sim_time_s": 12.10000000000071,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "endpoint",
+            "step": 28
+          },
+          "gripper_qpos_m": [
+            0.039998514901787977,
+            -0.03999860677570724
+          ],
+          "gripper_qvel_m_s": [
+            -5.716656488891702e-06,
+            -8.242502914209834e-06
+          ],
+          "signed_joint_separation_m": 0.07999712167749522,
+          "signed_joint_separation_rate_m_s": 2.5258464253181326e-06,
+          "tcp_world_m": [
+            -0.12697818678399897,
+            0.055804330565249166,
+            1.0316871225433253
+          ]
+        },
+        {
+          "capture_id": 30,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 0,
+          "capture_read_sim_time_s": 12.150000000000727,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.039557895740544066,
+            -0.039562472893352005
+          ],
+          "gripper_qvel_m_s": [
+            -0.025261830002077948,
+            0.025173787065867613
+          ],
+          "signed_joint_separation_m": 0.07912036863389607,
+          "signed_joint_separation_rate_m_s": -0.05043561706794556,
+          "tcp_world_m": [
+            -0.1269873643222855,
+            0.05602329783453917,
+            1.0316879081247041
+          ]
+        },
+        {
+          "capture_id": 31,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 1,
+          "capture_read_sim_time_s": 12.200000000000744,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.037391450597338304,
+            -0.03739843188852797
+          ],
+          "gripper_qvel_m_s": [
+            -0.057472646535995965,
+            0.05746483259828687
+          ],
+          "signed_joint_separation_m": 0.07478988248586627,
+          "signed_joint_separation_rate_m_s": -0.11493747913428284,
+          "tcp_world_m": [
+            -0.1269955268857935,
+            0.056093676523092134,
+            1.0316867199348685
+          ]
+        },
+        {
+          "capture_id": 32,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 2,
+          "capture_read_sim_time_s": 12.25000000000076,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.033989041061961066,
+            -0.03399500432854589
+          ],
+          "gripper_qvel_m_s": [
+            -0.07610543824622852,
+            0.07614061151119178
+          ],
+          "signed_joint_separation_m": 0.06798404539050695,
+          "signed_joint_separation_rate_m_s": -0.1522460497574203,
+          "tcp_world_m": [
+            -0.12699631518604249,
+            0.056092355776051935,
+            1.0316853655139702
+          ]
+        },
+        {
+          "capture_id": 33,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 3,
+          "capture_read_sim_time_s": 12.300000000000777,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.029886647795333364,
+            -0.029890714057339528
+          ],
+          "gripper_qvel_m_s": [
+            -0.08657088692384755,
+            0.08660995440441939
+          ],
+          "signed_joint_separation_m": 0.05977736185267289,
+          "signed_joint_separation_rate_m_s": -0.17318084132826694,
+          "tcp_world_m": [
+            -0.12699504672954992,
+            0.05607315246255165,
+            1.031684451769068
+          ]
+        },
+        {
+          "capture_id": 34,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 4,
+          "capture_read_sim_time_s": 12.350000000000794,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.02539115768145115,
+            -0.025393652928874872
+          ],
+          "gripper_qvel_m_s": [
+            -0.09245262003506513,
+            0.09247658028984686
+          ],
+          "signed_joint_separation_m": 0.050784810610326026,
+          "signed_joint_separation_rate_m_s": -0.184929200324912,
+          "tcp_world_m": [
+            -0.12699410223646496,
+            0.056058026599506865,
+            1.0316837770050593
+          ]
+        },
+        {
+          "capture_id": 35,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 5,
+          "capture_read_sim_time_s": 12.40000000000081,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.02067471869933549,
+            -0.02067632161849872
+          ],
+          "gripper_qvel_m_s": [
+            -0.09575750872489563,
+            0.09577063597955211
+          ],
+          "signed_joint_separation_m": 0.04135104031783421,
+          "signed_joint_separation_rate_m_s": -0.19152814470444773,
+          "tcp_world_m": [
+            -0.12699362230911496,
+            0.05604785094508771,
+            1.0316832208723514
+          ]
+        },
+        {
+          "capture_id": 36,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 6,
+          "capture_read_sim_time_s": 12.450000000000827,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.015834127464319423,
+            -0.015835244060634846
+          ],
+          "gripper_qvel_m_s": [
+            -0.0976147976605285,
+            0.09762192444481525
+          ],
+          "signed_joint_separation_m": 0.03166937152495427,
+          "signed_joint_separation_rate_m_s": -0.19523672210534376,
+          "tcp_world_m": [
+            -0.1269934522957721,
+            0.05604101522331915,
+            1.0316827469536434
+          ]
+        },
+        {
+          "capture_id": 37,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 7,
+          "capture_read_sim_time_s": 12.500000000000844,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.010923780192142598,
+            -0.01093260036511946
+          ],
+          "gripper_qvel_m_s": [
+            -0.09865838755956356,
+            0.09841662931857144
+          ],
+          "signed_joint_separation_m": 0.021856380557262058,
+          "signed_joint_separation_rate_m_s": -0.197075016878135,
+          "tcp_world_m": [
+            -0.12699290837672,
+            0.05603683621811731,
+            1.0316831992599949
+          ]
+        },
+        {
+          "capture_id": 38,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 0,
+          "capture_read_sim_time_s": 12.55000000000086,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.007500561844558488,
+            -0.007513801181424863
+          ],
+          "gripper_qvel_m_s": [
+            0.009045090926954661,
+            -0.008976697028305856
+          ],
+          "signed_joint_separation_m": 0.01501436302598335,
+          "signed_joint_separation_rate_m_s": 0.018021787955260517,
+          "tcp_world_m": [
+            -0.1269997465718569,
+            0.056051927278754146,
+            1.0328226992476766
+          ]
+        },
+        {
+          "capture_id": 39,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 1,
+          "capture_read_sim_time_s": 12.600000000000877,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.0075481171662340465,
+            -0.007556432268239978
+          ],
+          "gripper_qvel_m_s": [
+            -0.0019327414457452736,
+            0.0020146636654053717
+          ],
+          "signed_joint_separation_m": 0.015104549434474025,
+          "signed_joint_separation_rate_m_s": -0.003947405111150645,
+          "tcp_world_m": [
+            -0.12705562088238323,
+            0.056097014077252226,
+            1.0349782109753485
+          ]
+        },
+        {
+          "capture_id": 40,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 2,
+          "capture_read_sim_time_s": 12.650000000000894,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.007479992433365871,
+            -0.0074859646218515714
+          ],
+          "gripper_qvel_m_s": [
+            -0.0002626569964965821,
+            0.00027448500486024945
+          ],
+          "signed_joint_separation_m": 0.014965957055217444,
+          "signed_joint_separation_rate_m_s": -0.0005371420013568315,
+          "tcp_world_m": [
+            -0.12711153467744493,
+            0.05613653730549393,
+            1.0369853393248096
+          ]
+        },
+        {
+          "capture_id": 41,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 3,
+          "capture_read_sim_time_s": 12.70000000000091,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.00747793255620762,
+            -0.007483669013013874
+          ],
+          "gripper_qvel_m_s": [
+            -1.1857716083878915e-05,
+            1.4837139968613697e-05
+          ],
+          "signed_joint_separation_m": 0.014961601569221494,
+          "signed_joint_separation_rate_m_s": -2.669485605249261e-05,
+          "tcp_world_m": [
+            -0.1271366491057365,
+            0.05615331152959958,
+            1.0385335840652172
+          ]
+        },
+        {
+          "capture_id": 42,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 4,
+          "capture_read_sim_time_s": 12.750000000000927,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.007477219037165507,
+            -0.007482804116981314
+          ],
+          "gripper_qvel_m_s": [
+            -1.0961310875018858e-05,
+            1.4371954515648483e-05
+          ],
+          "signed_joint_separation_m": 0.014960023154146821,
+          "signed_joint_separation_rate_m_s": -2.533326539066734e-05,
+          "tcp_world_m": [
+            -0.12715392615456914,
+            0.05614814774050085,
+            1.0396125098815923
+          ]
+        },
+        {
+          "capture_id": 43,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 5,
+          "capture_read_sim_time_s": 12.800000000000944,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.007476900501806494,
+            -0.007482266098809436
+          ],
+          "gripper_qvel_m_s": [
+            -3.529335670149034e-06,
+            8.146390871688543e-06
+          ],
+          "signed_joint_separation_m": 0.01495916660061593,
+          "signed_joint_separation_rate_m_s": -1.1675726541837576e-05,
+          "tcp_world_m": [
+            -0.12716933792286045,
+            0.0561362651617504,
+            1.0403196791710803
+          ]
+        },
+        {
+          "capture_id": 44,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 6,
+          "capture_read_sim_time_s": 12.85000000000096,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.0074767910656327145,
+            -0.007481934881932568
+          ],
+          "gripper_qvel_m_s": [
+            -1.3517275576140318e-06,
+            5.59721953481952e-06
+          ],
+          "signed_joint_separation_m": 0.014958725947565282,
+          "signed_joint_separation_rate_m_s": -6.948947092433552e-06,
+          "tcp_world_m": [
+            -0.12717852938115237,
+            0.05612902027338984,
+            1.0407663073315765
+          ]
+        },
+        {
+          "capture_id": 45,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 7,
+          "capture_read_sim_time_s": 12.900000000000977,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.007476745117617121,
+            -0.007481685192607465
+          ],
+          "gripper_qvel_m_s": [
+            -6.463524318232513e-07,
+            4.571729489109744e-06
+          ],
+          "signed_joint_separation_m": 0.014958430310224586,
+          "signed_joint_separation_rate_m_s": -5.218081920932995e-06,
+          "tcp_world_m": [
+            -0.12718114951300194,
+            0.05612478788565839,
+            1.0410406758139148
+          ]
+        }
+      ]
+    },
+    "neck-open_hold": {
+      "source_manifest_sha256": "6be35261bae2088893e1f5b3565b122788ab517b8e298c75f26a262e56c6269c",
+      "source_seal_sha256": "36563d42470857f7134c36ad4bf99e75929501299a0c917511d8d98472e78a63",
+      "rows": [
+        {
+          "capture_id": 29,
+          "phase": "approach",
+          "after_step": 28,
+          "control": 7,
+          "capture_read_sim_time_s": 12.10000000000071,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "endpoint",
+            "step": 28
+          },
+          "gripper_qpos_m": [
+            0.039998514901787977,
+            -0.03999860677570724
+          ],
+          "gripper_qvel_m_s": [
+            -5.716656488891702e-06,
+            -8.242502914209834e-06
+          ],
+          "signed_joint_separation_m": 0.07999712167749522,
+          "signed_joint_separation_rate_m_s": 2.5258464253181326e-06,
+          "tcp_world_m": [
+            -0.12697818678399897,
+            0.055804330565249166,
+            1.0316871225433253
+          ]
+        },
+        {
+          "capture_id": 30,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 0,
+          "capture_read_sim_time_s": 12.150000000000727,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.03999817173638592,
+            -0.039999073395543865
+          ],
+          "gripper_qvel_m_s": [
+            -4.193336849094936e-06,
+            -6.610792059676344e-06
+          ],
+          "signed_joint_separation_m": 0.07999724513192978,
+          "signed_joint_separation_rate_m_s": 2.4174552105814086e-06,
+          "tcp_world_m": [
+            -0.12698736600126165,
+            0.05602332609790355,
+            1.0316879091787405
+          ]
+        },
+        {
+          "capture_id": 31,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 1,
+          "capture_read_sim_time_s": 12.200000000000744,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.03999801619189309,
+            -0.039999347097610466
+          ],
+          "gripper_qvel_m_s": [
+            -1.6764736647459206e-06,
+            -3.990245866586012e-06
+          ],
+          "signed_joint_separation_m": 0.07999736328950355,
+          "signed_joint_separation_rate_m_s": 2.313772201840091e-06,
+          "tcp_world_m": [
+            -0.12699553636030986,
+            0.05609378955743066,
+            1.0316867226195168
+          ]
+        },
+        {
+          "capture_id": 32,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 2,
+          "capture_read_sim_time_s": 12.25000000000076,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.039998002383287795,
+            -0.03999947399662501
+          ],
+          "gripper_qvel_m_s": [
+            6.738936616203777e-07,
+            -1.5406398270820454e-06
+          ],
+          "signed_joint_separation_m": 0.07999747637991281,
+          "signed_joint_separation_rate_m_s": 2.2145334887024233e-06,
+          "tcp_world_m": [
+            -0.126996326268828,
+            0.05609248478877513,
+            1.0316853682545015
+          ]
+        },
+        {
+          "capture_id": 33,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 3,
+          "capture_read_sim_time_s": 12.300000000000777,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.03999806398121905,
+            -0.03999952063844523
+          ],
+          "gripper_qvel_m_s": [
+            1.6636734382285482e-06,
+            -4.558760463264646e-07
+          ],
+          "signed_joint_separation_m": 0.07999758461966427,
+          "signed_joint_separation_rate_m_s": 2.1195494845550125e-06,
+          "tcp_world_m": [
+            -0.12699505122687457,
+            0.0560732097057161,
+            1.0316844527389195
+          ]
+        },
+        {
+          "capture_id": 34,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 4,
+          "capture_read_sim_time_s": 12.350000000000794,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.03999814708201638,
+            -0.03999954113491314
+          ],
+          "gripper_qvel_m_s": [
+            1.6046601754105134e-06,
+            -4.239804999679681e-07
+          ],
+          "signed_joint_separation_m": 0.07999768821692951,
+          "signed_joint_separation_rate_m_s": 2.0286406753784816e-06,
+          "tcp_world_m": [
+            -0.12699409938594494,
+            0.05605800413495584,
+            1.031683776018346
+          ]
+        },
+        {
+          "capture_id": 35,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 5,
+          "capture_read_sim_time_s": 12.40000000000081,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.03999822372070781,
+            -0.03999956365014448
+          ],
+          "gripper_qvel_m_s": [
+            1.4677984115877737e-06,
+            -4.738328971333253e-07
+          ],
+          "signed_joint_separation_m": 0.0799977873708523,
+          "signed_joint_separation_rate_m_s": 1.941631308721099e-06,
+          "tcp_world_m": [
+            -0.12699361514096924,
+            0.05604778121184977,
+            1.0316832186938527
+          ]
+        },
+        {
+          "capture_id": 36,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 6,
+          "capture_read_sim_time_s": 12.450000000000827,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.03999829416428773,
+            -0.03999958810772992
+          ],
+          "gripper_qvel_m_s": [
+            1.3565814301229706e-06,
+            -5.017724166533642e-07
+          ],
+          "signed_joint_separation_m": 0.07999788227201765,
+          "signed_joint_separation_rate_m_s": 1.8583538467763349e-06,
+          "tcp_world_m": [
+            -0.12699344362183904,
+            0.056040928199741304,
+            1.0316827442860625
+          ]
+        },
+        {
+          "capture_id": 37,
+          "phase": "close_or_hold",
+          "after_step": 29,
+          "control": 7,
+          "capture_read_sim_time_s": 12.500000000000844,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 29,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.03999835959909916,
+            -0.03999961350372724
+          ],
+          "gripper_qvel_m_s": [
+            1.2661818058131466e-06,
+            -5.124663100109599e-07
+          ],
+          "signed_joint_separation_m": 0.0799979731028264,
+          "signed_joint_separation_rate_m_s": 1.7786481158241065e-06,
+          "tcp_world_m": [
+            -0.12699347487177348,
+            0.056036303694906836,
+            1.0316823278349616
+          ]
+        },
+        {
+          "capture_id": 38,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 0,
+          "capture_read_sim_time_s": 12.55000000000086,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 0
+          },
+          "gripper_qpos_m": [
+            0.039998475660354096,
+            -0.03999958437851576
+          ],
+          "gripper_qvel_m_s": [
+            2.6558445435591925e-06,
+            9.534429803448991e-07
+          ],
+          "signed_joint_separation_m": 0.07999806003886986,
+          "signed_joint_separation_rate_m_s": 1.7024015632142933e-06,
+          "tcp_world_m": [
+            -0.1270000421152627,
+            0.056049336497218015,
+            1.032821761786192
+          ]
+        },
+        {
+          "capture_id": 39,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 1,
+          "capture_read_sim_time_s": 12.600000000000877,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 1
+          },
+          "gripper_qpos_m": [
+            0.039998563707667405,
+            -0.03999957953915795
+          ],
+          "gripper_qvel_m_s": [
+            8.80582337739096e-07,
+            -7.487853573979419e-07
+          ],
+          "signed_joint_separation_m": 0.07999814324682536,
+          "signed_joint_separation_rate_m_s": 1.629367695137038e-06,
+          "tcp_world_m": [
+            -0.1270481001518702,
+            0.05609524084001395,
+            1.034988799265453
+          ]
+        },
+        {
+          "capture_id": 40,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 2,
+          "capture_read_sim_time_s": 12.650000000000894,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 2
+          },
+          "gripper_qpos_m": [
+            0.03999857877103185,
+            -0.03999964411424195
+          ],
+          "gripper_qvel_m_s": [
+            -3.099893132861612e-08,
+            -1.5904770513139497e-06
+          ],
+          "signed_joint_separation_m": 0.0799982228852738,
+          "signed_joint_separation_rate_m_s": 1.5594781199853335e-06,
+          "tcp_world_m": [
+            -0.1270956315419296,
+            0.05613631831095934,
+            1.0370094363083826
+          ]
+        },
+        {
+          "capture_id": 41,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 3,
+          "capture_read_sim_time_s": 12.70000000000091,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 3
+          },
+          "gripper_qpos_m": [
+            0.03999857422356754,
+            -0.03999972488429933
+          ],
+          "gripper_qvel_m_s": [
+            -1.036400786950278e-07,
+            -1.5962281335720627e-06
+          ],
+          "signed_joint_separation_m": 0.07999829910786688,
+          "signed_joint_separation_rate_m_s": 1.4925880548770348e-06,
+          "tcp_world_m": [
+            -0.12711459520381063,
+            0.05615444171563782,
+            1.0385686127716434
+          ]
+        },
+        {
+          "capture_id": 42,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 4,
+          "capture_read_sim_time_s": 12.750000000000927,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 4
+          },
+          "gripper_qpos_m": [
+            0.03999857893441854,
+            -0.0399997931264852
+          ],
+          "gripper_qvel_m_s": [
+            3.558817439912071e-07,
+            -1.0726789271219404e-06
+          ],
+          "signed_joint_separation_m": 0.07999837206090374,
+          "signed_joint_separation_rate_m_s": 1.4285606711131474e-06,
+          "tcp_world_m": [
+            -0.1271303024054362,
+            0.05614983800127826,
+            1.0396540412721194
+          ]
+        },
+        {
+          "capture_id": 43,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 5,
+          "capture_read_sim_time_s": 12.800000000000944,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 5
+          },
+          "gripper_qpos_m": [
+            0.039998623302991795,
+            -0.039999818581557774
+          ],
+          "gripper_qvel_m_s": [
+            1.0564113293896166e-06,
+            -3.1087330100742534e-07
+          ],
+          "signed_joint_separation_m": 0.07999844188454958,
+          "signed_joint_separation_rate_m_s": 1.367284630397042e-06,
+          "tcp_world_m": [
+            -0.1271413595993995,
+            0.056138301927615396,
+            1.0403674264086182
+          ]
+        },
+        {
+          "capture_id": 44,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 6,
+          "capture_read_sim_time_s": 12.85000000000096,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 6
+          },
+          "gripper_qpos_m": [
+            0.03999867393844504,
+            -0.039999834774875676
+          ],
+          "gripper_qvel_m_s": [
+            9.717188872869167e-07,
+            -3.3692083099274577e-07
+          ],
+          "signed_joint_separation_m": 0.07999850871332072,
+          "signed_joint_separation_rate_m_s": 1.3086397182796625e-06,
+          "tcp_world_m": [
+            -0.12714851457000748,
+            0.05613116051336526,
+            1.0408177270290444
+          ]
+        },
+        {
+          "capture_id": 45,
+          "phase": "lift",
+          "after_step": 30,
+          "control": 7,
+          "capture_read_sim_time_s": 12.900000000000977,
+          "exact_observation_sample_time_s": null,
+          "own_source": {
+            "journal": "episodes.jsonl",
+            "kind": "control_completed",
+            "step": 30,
+            "control": 7
+          },
+          "gripper_qpos_m": [
+            0.0399987208398219,
+            -0.03999985183587723
+          ],
+          "gripper_qvel_m_s": [
+            9.005258167354255e-07,
+            -3.519842833502428e-07
+          ],
+          "signed_joint_separation_m": 0.07999857267569913,
+          "signed_joint_separation_rate_m_s": 1.2525101000856684e-06,
+          "tcp_world_m": [
+            -0.12715096380319307,
+            0.05612692098075406,
+            1.041093881493545
+          ]
+        }
+      ]
+    }
+  }
+}

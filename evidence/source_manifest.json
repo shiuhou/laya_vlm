@@ -1,0 +1,2609 @@
+{
+  "package_created_date": "2026-09-29",
+  "source_repository": "LilRodriguez/laya-embodied-runtime",
+  "source_commit": "ea853019d3343ef4cb8eff8a2fdb43a91e760642",
+  "source_branch": "research/embodied-interface-discovery",
+  "source_checkpoint_tag": "research-checkpoint-20260927-paused",
+  "research_baseline_commit": "b73b5b43dbef29749677fae06b25e94ca27bad87",
+  "raw_runs_weights_and_environment_included": false,
+  "files": [
+    {
+      "path": "docs/current_state.md",
+      "source_repo_path": "docs/current_state.md",
+      "sha256": "7745a84ad62982386505805bdf5f6f8bb19359daf71d7727d42c8c37feba346b",
+      "size_bytes": 20214
+    },
+    {
+      "path": "docs/evidence/autonomous_research/action_semantics_binding_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/action_semantics_binding_findings.md",
+      "sha256": "b1dfa50a444f9adef2a4803ac764f86fea75ddb5e64e3f3079f2a22899cfa239",
+      "size_bytes": 8206
+    },
+    {
+      "path": "docs/evidence/autonomous_research/action_semantics_binding_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/action_semantics_binding_summary.json",
+      "sha256": "4edb31f3d411dda517a5d4a59bfd26d4175b42525e657699404f36656e9c2623",
+      "size_bytes": 638756
+    },
+    {
+      "path": "docs/evidence/autonomous_research/coarse_initial_point_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/coarse_initial_point_findings.md",
+      "sha256": "4787e330696aa2dcdfd55daccdac2a85dd2cc956c6f1349a34cbf842e6274bb0",
+      "size_bytes": 10426
+    },
+    {
+      "path": "docs/evidence/autonomous_research/coarse_initial_point_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/coarse_initial_point_summary.json",
+      "sha256": "69dc57c83648197e1f17aa9005745781fb4cb96690ce2fb1dd0c86e28208ad91",
+      "size_bytes": 22098
+    },
+    {
+      "path": "docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/coarse_native_counterfactual_findings.md",
+      "sha256": "2b73ca736fb84c5a3556e0a4e0594602c92e9a024800770c76e1ed5c39dd30e7",
+      "size_bytes": 6967
+    },
+    {
+      "path": "docs/evidence/autonomous_research/coarse_native_counterfactual_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/coarse_native_counterfactual_summary.json",
+      "sha256": "bd38ade5084af23226205808f4feb0bc017595641d48dc36f612b06184be4948",
+      "size_bytes": 16097
+    },
+    {
+      "path": "docs/evidence/autonomous_research/coarse_physical_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/coarse_physical_findings.md",
+      "sha256": "a5abae9110ddb0eace1ea7573906e6413f3f4acada3e6818dbdd1f73df566b03",
+      "size_bytes": 5936
+    },
+    {
+      "path": "docs/evidence/autonomous_research/current_motor_provider_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/current_motor_provider_findings.md",
+      "sha256": "07ab2cd66c7a71be49b214935eddb1aff0429d95748e302c6bfb4895f2b01c46",
+      "size_bytes": 2891
+    },
+    {
+      "path": "docs/evidence/autonomous_research/current_motor_provider_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/current_motor_provider_summary.json",
+      "sha256": "0174acaeccce6cfaf804a3589bade15ee29c78a96b6abed8d11a2730063bf437",
+      "size_bytes": 5236
+    },
+    {
+      "path": "docs/evidence/autonomous_research/depth_support_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/depth_support_summary.json",
+      "sha256": "ce9fe5ded118bff487868ef149d660de8ea37ae0b356e2d5d69f8ed82fdb3d26",
+      "size_bytes": 13717
+    },
+    {
+      "path": "docs/evidence/autonomous_research/first_contact_observability_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/first_contact_observability_findings.md",
+      "sha256": "7dd2186ed5c197a3521df75b08906b0723d83b845f0bbf9c13db64a2cec1f175",
+      "size_bytes": 12029
+    },
+    {
+      "path": "docs/evidence/autonomous_research/first_contact_observability_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/first_contact_observability_summary.json",
+      "sha256": "33877621d0c80d1c94bbade97bb5d1f517cfdef753fc784345eeba4410edd5c7",
+      "size_bytes": 699649
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_findings.md",
+      "sha256": "f2d540038d54c5e8b312fca996edbcd0738840ba06434326b9da640c02e896f9",
+      "size_bytes": 6842
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_independent_audit.json",
+      "sha256": "45f9540155315320c2fb7a8c3e6ed49281ef994a567e76dec1f7d1f43e178420",
+      "size_bytes": 5339
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_independent_review.md",
+      "sha256": "9db105c52dff3fc1d93633f5b19418cbefe650602d564130a452e36c65e0cf56",
+      "size_bytes": 3486
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_overlays.png",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_overlays.png",
+      "sha256": "d062f1a9aec6ad367035cafce47c67269af52bc791d8310f78aa4a47bb0742a4",
+      "size_bytes": 663879
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_summary.json",
+      "sha256": "78eac392c4b7cfeda3fbc2bb9a806d8e0cb7827f788ee1ad5c3a03ed7560b57e",
+      "size_bytes": 63687
+    },
+    {
+      "path": "docs/evidence/autonomous_research/gripper_visual_mask_witnesses.png",
+      "source_repo_path": "docs/evidence/autonomous_research/gripper_visual_mask_witnesses.png",
+      "sha256": "7098a4fdff8ebc0af19f2d15d6385f26872d2ba7bedae679bf6e2451d5aa706e",
+      "size_bytes": 97480
+    },
+    {
+      "path": "docs/evidence/autonomous_research/information_boundary_audit_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/information_boundary_audit_summary.json",
+      "sha256": "e5b0f47184c2bcc057db400b44a7082a099faf913a4da0c50eea6370a9d7f77b",
+      "size_bytes": 8005
+    },
+    {
+      "path": "docs/evidence/autonomous_research/information_boundary_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/information_boundary_review.md",
+      "sha256": "3e5297b5655fba388bcb7ed30b4912543e56d6f2de567ddc3e7eb4c649f58724",
+      "size_bytes": 9060
+    },
+    {
+      "path": "docs/evidence/autonomous_research/initial_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/initial_findings.md",
+      "sha256": "7f13caf2fe51d977ab941a3643fb8bbe7935ede5e3cd67ecb11f953328ea0b6e",
+      "size_bytes": 6453
+    },
+    {
+      "path": "docs/evidence/autonomous_research/interaction_observability_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/interaction_observability_findings.md",
+      "sha256": "f7782f7c667f7937ec5833698090fca1e31f202dc4215b4502d0187112f89198",
+      "size_bytes": 9609
+    },
+    {
+      "path": "docs/evidence/autonomous_research/interaction_observability_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/interaction_observability_summary.json",
+      "sha256": "51542fd53fa9a15da4a488dc45851b4fca772b58422f6e016fdba94904d86bdb",
+      "size_bytes": 19187
+    },
+    {
+      "path": "docs/evidence/autonomous_research/iteration_002.md",
+      "source_repo_path": "docs/evidence/autonomous_research/iteration_002.md",
+      "sha256": "9f94486b432bfbc2991e2222b55e629d2a221bf33af3ed10461b7612419b8de3",
+      "size_bytes": 5832
+    },
+    {
+      "path": "docs/evidence/autonomous_research/iteration_002_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/iteration_002_summary.json",
+      "sha256": "395d52bd656af0856651b9c5b4fa4a5b64471e9f71b0acf41fd93134c2ef79ce",
+      "size_bytes": 121053
+    },
+    {
+      "path": "docs/evidence/autonomous_research/joint_interface_sufficiency_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/joint_interface_sufficiency_findings.md",
+      "sha256": "19d130031b57714dbd50e410a72175759fb8908f6d9d242c899819e9c47221f4",
+      "size_bytes": 9214
+    },
+    {
+      "path": "docs/evidence/autonomous_research/joint_interface_sufficiency_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/joint_interface_sufficiency_summary.json",
+      "sha256": "8125a39e4c004d8c3cccc82fd16a3a78f4c993605c0072df765af722fb455b0a",
+      "size_bytes": 933486
+    },
+    {
+      "path": "docs/evidence/autonomous_research/laya_interface_inventory.md",
+      "source_repo_path": "docs/evidence/autonomous_research/laya_interface_inventory.md",
+      "sha256": "c08ad595b8100e9ad9457daf5e9fa24e21df54f87cec7469d217fb629147e340",
+      "size_bytes": 14500
+    },
+    {
+      "path": "docs/evidence/autonomous_research/laya_interface_inventory_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/laya_interface_inventory_summary.json",
+      "sha256": "fc3b195db4fe9d442ce199288514b929b6c7315a19282b9f674d04f96bab24f2",
+      "size_bytes": 271278
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_independent_audit.json",
+      "sha256": "63aac3478584c6aa2a172a7d5a1dab6340ea7d68b5fb5170f3df2c481cf163d3",
+      "size_bytes": 2781
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_independent_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_independent_findings.md",
+      "sha256": "80c1a1eeecefebc9627e719ec806e2d567943e0e1eb433640e1ac2f6738461aa",
+      "size_bytes": 4153
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_interface.png",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_interface.png",
+      "sha256": "b18aec08c04525ddba6a03e5600c0437859ad4965e0ace8849e3053bbb6fbbf3",
+      "size_bytes": 507502
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_interface_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_interface_findings.md",
+      "sha256": "e511d0d9672f799d6d3a935ab6baabaa1f6701eed0a4281d85ccc5cf13351430",
+      "size_bytes": 7489
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_interface_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_interface_independent_review.md",
+      "sha256": "006831bf381f8c27e5b39d9122b5089f5ff97cd02acf1ecd1e9d0a33ce92fb87",
+      "size_bytes": 4960
+    },
+    {
+      "path": "docs/evidence/autonomous_research/local_grasp_interface_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/local_grasp_interface_summary.json",
+      "sha256": "a26dd3b7b4e195922989417217ed8cb52a31d63f326454b9b0e72aecb9b888e5",
+      "size_bytes": 17841
+    },
+    {
+      "path": "docs/evidence/autonomous_research/mechanical_witness_inventory.json",
+      "source_repo_path": "docs/evidence/autonomous_research/mechanical_witness_inventory.json",
+      "sha256": "5c546a714621c585dbe9bad46aa7a434fe11d3f324aa11e8ad112ff350daf31b",
+      "size_bytes": 5756
+    },
+    {
+      "path": "docs/evidence/autonomous_research/mechanical_witness_inventory.md",
+      "source_repo_path": "docs/evidence/autonomous_research/mechanical_witness_inventory.md",
+      "sha256": "c5eba5162652217b950ccf72402789eabdbb3fdef7c9cf4220426ad38d49a4c5",
+      "size_bytes": 9420
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_contact_timing.png",
+      "source_repo_path": "docs/evidence/autonomous_research/native_contact_timing.png",
+      "sha256": "38165fc4b78637343d21acd5d66188a6c9e5dd7b1656d92278cb064fbd6d94ad",
+      "size_bytes": 152823
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_option_progress_sufficiency_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/native_option_progress_sufficiency_findings.md",
+      "sha256": "94692e400fcb84e49f26f8bc637afe22761a7307072b81bd0ace3138ca4b8769",
+      "size_bytes": 9875
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_option_progress_sufficiency_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/native_option_progress_sufficiency_summary.json",
+      "sha256": "94ece7587a08f8285ddf1e37f8b6e47eddc487f942a2408c5937a4a4fff433eb",
+      "size_bytes": 926500
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_substep_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/native_substep_independent_audit.json",
+      "sha256": "aaaaba475a2c768a9dc1e9507f38d3e4419d70d5b9fccd8c1826dd8babe3b87a",
+      "size_bytes": 9077
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_substep_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/native_substep_independent_review.md",
+      "sha256": "d24b07c018095aec9b2df36fa164521f70d68f097df0bb421992666a9fba0e12",
+      "size_bytes": 5283
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_substep_observability_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/native_substep_observability_findings.md",
+      "sha256": "96cbcce7bbfb00e4d48f61e7357025839be2198eec27c7315492e39e76aa199f",
+      "size_bytes": 8352
+    },
+    {
+      "path": "docs/evidence/autonomous_research/native_substep_observability_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/native_substep_observability_summary.json",
+      "sha256": "c3ed3089e1ee3357dbbad3037fb348be8696a6bd8bdce803ae7a8689f5c98546",
+      "size_bytes": 16770
+    },
+    {
+      "path": "docs/evidence/autonomous_research/offline_wrist_history_distributions.png",
+      "source_repo_path": "docs/evidence/autonomous_research/offline_wrist_history_distributions.png",
+      "sha256": "78d6daa6a937e851ef107495f2556997d613b3a5775a539e07f8cbce91a63037",
+      "size_bytes": 261783
+    },
+    {
+      "path": "docs/evidence/autonomous_research/offline_wrist_history_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/offline_wrist_history_findings.md",
+      "sha256": "05f73956761e27265b6c742452a56fa95e8579e58c59639f845492c5ab2f165b",
+      "size_bytes": 8621
+    },
+    {
+      "path": "docs/evidence/autonomous_research/offline_wrist_history_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/offline_wrist_history_independent_review.md",
+      "sha256": "71e189ad8afb04dd0bea3eeb924055e116ac9919c80d0b90d8dc4dd4da4ad337",
+      "size_bytes": 2475
+    },
+    {
+      "path": "docs/evidence/autonomous_research/offline_wrist_history_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/offline_wrist_history_summary.json",
+      "sha256": "b4e0123a54b64be95ff3270cf316e85f5eb27e32729c1e383517a6046240e994",
+      "size_bytes": 143865
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pause_checkpoint_20260927.json",
+      "source_repo_path": "docs/evidence/autonomous_research/pause_checkpoint_20260927.json",
+      "sha256": "a88b564c1c8afc7f6d5e99b97e7c5b18eef4df86f2a78ff9e07e4f3a2941fddb",
+      "size_bytes": 2478
+    },
+    {
+      "path": "docs/evidence/autonomous_research/perception_support_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/perception_support_summary.json",
+      "sha256": "4c155ccac68232395d880e1988f637846f6931ef5d993b2a26687ec09b26c1c0",
+      "size_bytes": 9776
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pixel_footprint_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/pixel_footprint_independent_audit.json",
+      "sha256": "62505ce0ff25fbe74f0b3d64ac111dae0f85c159142ba64223cf597a36af5048",
+      "size_bytes": 8826
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pixel_footprint_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/pixel_footprint_independent_review.md",
+      "sha256": "d39cfdda9f0a6f8c8738a960409581b073d5e4e890caa26fffd5e6bf12b561d7",
+      "size_bytes": 9484
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pixel_sample_footprint_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/pixel_sample_footprint_findings.md",
+      "sha256": "2274d1339bc24310a82950acac52ee13efa444a80399e2b083a54c08a4254e3e",
+      "size_bytes": 7513
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pixel_sample_footprint_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/pixel_sample_footprint_summary.json",
+      "sha256": "627590233e1c01a605e5db06d549f8def4826ae2111bb03ed864e9e881796230",
+      "size_bytes": 82710
+    },
+    {
+      "path": "docs/evidence/autonomous_research/pixel_sample_footprint_witnesses.png",
+      "source_repo_path": "docs/evidence/autonomous_research/pixel_sample_footprint_witnesses.png",
+      "sha256": "0ca98608657b1032130a75e55f17bf950c242d09ed961604b499769e6a02740e",
+      "size_bytes": 131958
+    },
+    {
+      "path": "docs/evidence/autonomous_research/point_failure_controls.md",
+      "source_repo_path": "docs/evidence/autonomous_research/point_failure_controls.md",
+      "sha256": "e5fc53368880d54a4240c9c34381451da2f090440dae7c9f06511c6e1ccd1d75",
+      "size_bytes": 5642
+    },
+    {
+      "path": "docs/evidence/autonomous_research/point_failure_controls_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/point_failure_controls_summary.json",
+      "sha256": "9f23b64a1cf80f4f21f59a3dd3b7d74c4a7a60a8acbc0e73c3a66000ebed6099",
+      "size_bytes": 9982
+    },
+    {
+      "path": "docs/evidence/autonomous_research/predicate_verification_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/predicate_verification_summary.json",
+      "sha256": "d7152582f4381462c4721bcda98d4f80a736e13251778e69b5089736bc36819f",
+      "size_bytes": 254400
+    },
+    {
+      "path": "docs/evidence/autonomous_research/proprio_frame_consistency_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/proprio_frame_consistency_findings.md",
+      "sha256": "961d42134bc6b9b743f522c942fef0179085566ccab65714d8a4d970757ce051",
+      "size_bytes": 9397
+    },
+    {
+      "path": "docs/evidence/autonomous_research/proprio_frame_consistency_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/proprio_frame_consistency_summary.json",
+      "sha256": "fc884eb12be49037c97be4e2c99642043a05a4a4f35e975be8f2fcd0532fdd67",
+      "size_bytes": 7634
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_diagnosis_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/render_diagnosis_independent_audit.json",
+      "sha256": "9ab98931ef09c0fc9b06fd743653a3614e811321ba7116031d4246ad3511aace",
+      "size_bytes": 4479
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_diagnosis_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/render_diagnosis_independent_review.md",
+      "sha256": "5b8d27a2001fc375af1c986b86da5ba95aa5c27923c776dca41c7f413f7fc4c9",
+      "size_bytes": 4484
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_diagnosis_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_diagnosis_findings.md",
+      "sha256": "4663615b78031308756cf51f337b8e3afc429767d94db0a0e8fddb43f9b61117",
+      "size_bytes": 8058
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_diagnosis_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_diagnosis_summary.json",
+      "sha256": "de5de8406cd1316c03d9d575e419e4fb37d75fcce946d51a12ffc8bf464b10a9",
+      "size_bytes": 14653
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_source_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_source_findings.md",
+      "sha256": "05a8394048ff60979b9a359f24279c0bef6300f8d864ed17f36cb3f01129ee61",
+      "size_bytes": 5761
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_source_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_source_summary.json",
+      "sha256": "cb7798f63de535e18a06f24f65401b8699387c0518842443c4d892f76b7ab4a0",
+      "size_bytes": 31440
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_witnesses_pre24.png",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_witnesses_pre24.png",
+      "sha256": "f54733948060ad7497b7841921877fdf90a789dae82c47c6a3333c8e12cbed9a",
+      "size_bytes": 133510
+    },
+    {
+      "path": "docs/evidence/autonomous_research/render_measurement_witnesses_pre25.png",
+      "source_repo_path": "docs/evidence/autonomous_research/render_measurement_witnesses_pre25.png",
+      "sha256": "0297905ec293928b3ecd8ae115483dfaad58e70f0212a850db1d87f4cd6c1e94",
+      "size_bytes": 130760
+    },
+    {
+      "path": "docs/evidence/autonomous_research/retention_independent_audit.md",
+      "source_repo_path": "docs/evidence/autonomous_research/retention_independent_audit.md",
+      "sha256": "400599f7e2b5634173205e17d612af9e595224f7b8e9df6ac806445c5eece075",
+      "size_bytes": 8372
+    },
+    {
+      "path": "docs/evidence/autonomous_research/retention_independent_audit_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/retention_independent_audit_summary.json",
+      "sha256": "7a80241350e6580d44778089b2f1d68e432380d1d8a7515232db7f0fce983db0",
+      "size_bytes": 14221
+    },
+    {
+      "path": "docs/evidence/autonomous_research/robot_geometry_observability_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/robot_geometry_observability_findings.md",
+      "sha256": "c3e9e4c178e5ff14126f45b18bdc051169a245882fed290eb8775bd97513f46b",
+      "size_bytes": 9464
+    },
+    {
+      "path": "docs/evidence/autonomous_research/robot_geometry_observability_gripper.png",
+      "source_repo_path": "docs/evidence/autonomous_research/robot_geometry_observability_gripper.png",
+      "sha256": "9627de8be9444b2c4e47c816828e53a03f5fd954651a327663e3ad15be3f07ae",
+      "size_bytes": 123985
+    },
+    {
+      "path": "docs/evidence/autonomous_research/robot_geometry_observability_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/robot_geometry_observability_summary.json",
+      "sha256": "e6cd87b37521e3308b372c7e62a5da408949a171e9ae78e2a9f6d3cf8da6110e",
+      "size_bytes": 8666
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_findings.md",
+      "sha256": "d0e5edd9488a4bc20892864ffab2eed071b6459db8a929e93ca01210e482c628",
+      "size_bytes": 8499
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_independent_audit.json",
+      "sha256": "d9fdc87b5353cd3045f242f152c80f3bdd2cd891fa33e8a1c05bf749ba2df5a9",
+      "size_bytes": 1674
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_independent_review.md",
+      "sha256": "3f29402f7294bd585f9e405d3e9daaec648949ccd68b4331a0e6dda19f5759cb",
+      "size_bytes": 4154
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_overlays.png",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_overlays.png",
+      "sha256": "3568393fa737e2379bad52d01dd973ee4d649df11dbc030b00d6505c75bebdf5",
+      "size_bytes": 724399
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_summary.json",
+      "sha256": "b64cf7e93ed1d4bdba511c8aa3c393b3e2aab333ee0a8774308e10daed866e26",
+      "size_bytes": 56537
+    },
+    {
+      "path": "docs/evidence/autonomous_research/sensor_gripper_proximity_witnesses.png",
+      "source_repo_path": "docs/evidence/autonomous_research/sensor_gripper_proximity_witnesses.png",
+      "sha256": "10df99c6e36c38bc805d1490bc02cc80c5d8ab0ae6e9d14ae4b527f578ef7aec",
+      "size_bytes": 154716
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task1_native_attribution.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task1_native_attribution.png",
+      "sha256": "586c7e146d82fe5e79fb6869bb325c0ce6a73b36b619f4c30ac3a26f6fb567c1",
+      "size_bytes": 153980
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task1_native_contact_attribution_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task1_native_contact_attribution_findings.md",
+      "sha256": "c5841d8c79b80e043f151987fad370d1d7b0e1a72ea3668ee76962726a676b04",
+      "size_bytes": 10709
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task1_native_contact_attribution_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task1_native_contact_attribution_summary.json",
+      "sha256": "fdee0409efeafc7699bc257d50d684c68442e8f474a60f35fd8639e45ecb9cdb",
+      "size_bytes": 373765
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task1_substep_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task1_substep_independent_audit.json",
+      "sha256": "54e4251dbe900116860ccdb2a118965c2c1e463598cf16f6397b389ff5d41893",
+      "size_bytes": 129484
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task1_substep_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task1_substep_independent_review.md",
+      "sha256": "130d8847f9d3c5793a5fe818294ec0e7f08c17af3c296766a2fcd35437947530",
+      "size_bytes": 6139
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_closeout_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_closeout_review.json",
+      "sha256": "08a04895d469f7f54d74acb34af54679bd714690de2e93e6a3dea7c6cd307d18",
+      "size_bytes": 472
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_findings.md",
+      "sha256": "c8bc1214b025098c8b3a7e77afb4b7cf9bfecddb1b2888ceca5f10c724975016",
+      "size_bytes": 5162
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_independent_audit.json",
+      "sha256": "13a6741bbf430be8c47a99217fe32acbe7f9d7cb5ad3e671ebd689eb24e95ad3",
+      "size_bytes": 295013
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_neck-close_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_neck-close_rgb.png",
+      "sha256": "1ee0dc662785da1234b0900c23301498ddb5c3840cc1f71344e6b712e3f30b76",
+      "size_bytes": 614748
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_prospective_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_prospective_review.md",
+      "sha256": "0c884a05084e7bfbdab36e50d61997c35bc6d06b60555e68df816055b210b037",
+      "size_bytes": 2393
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_raw_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_raw_review.md",
+      "sha256": "de73219bf8ee4e8e14b28d9a1fc28c164a1cfad3eda24208140cf3fb40a24855",
+      "size_bytes": 6494
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_report_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_report_review.md",
+      "sha256": "f27572f20072272643c19bf491276fbb90c48eee69724fa8713aaf24bb30c1a2",
+      "size_bytes": 2679
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_rgb_sources.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_rgb_sources.json",
+      "sha256": "1741b7271715eed1141be773f3476206b5f51713c13f9c29f653220d62a750f9",
+      "size_bytes": 78731
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_summary.json",
+      "sha256": "9415a7daf2d87ebd812ce1f1f17f029db7b6c977c2c3be3f640e886cb757e969",
+      "size_bytes": 585183
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_whole-close_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_additional_stationary_grasp_whole-close_rgb.png",
+      "sha256": "42abd941767d0ea5b9807dc41d176ec81e3296031943f7ba80e285772a77e51c",
+      "size_bytes": 622150
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_independent_audit.json",
+      "sha256": "f05701a800687894f8961597994d63340384112378944d3c609d2583242ab24a",
+      "size_bytes": 1317
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_point_boundary_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_point_boundary_findings.md",
+      "sha256": "a76729d885256e8f101e6d08b99cfd2e7196f142a75d18d75b14100a28365c45",
+      "size_bytes": 8155
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_point_boundary_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_point_boundary_independent_review.md",
+      "sha256": "8b14f01a4f195cbbc165230a8fcaa275854deb94ca88be2e5e193cee840babf6",
+      "size_bytes": 10478
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_point_boundary_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_point_boundary_rgb.png",
+      "sha256": "462217a7f324b46c13185f32135ee329740dab03e17a40708047f8fe4a0b9895",
+      "size_bytes": 527094
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_point_boundary_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_point_boundary_summary.json",
+      "sha256": "e3f0959f2dc5103c0bfe6a8eae2b8959b95c050a74609fdab04b4d41e232d4c8",
+      "size_bytes": 20409
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_support_diagnostic.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_support_diagnostic.png",
+      "sha256": "6fc3b27f1ac71917ecc46569e5257ce1b3ae6bc90c307d6aff9d67d33eff0bd3",
+      "size_bytes": 393105
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_support_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_support_findings.md",
+      "sha256": "6fe0d894cba367dc6e799ad56cb89475a1bdb473ffecdc28a08c9ac5c9f8a78e",
+      "size_bytes": 9049
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_support_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_support_independent_review.md",
+      "sha256": "1fde33fea9788b0cf3f3482f5a3362f530a8b2ed1e2e149187cccc882b4c3f0e",
+      "size_bytes": 8378
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_support_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_support_summary.json",
+      "sha256": "722e84d81c889056c611ca10bce9f220ac7c4a2b5146aea1b3c42493c8007f98",
+      "size_bytes": 6956
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_curves.png",
+      "sha256": "04db601e54d2e71e67e388e94b2d3ca5acd50b8fa5a95bf262a8648508db1072",
+      "size_bytes": 175004
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_findings.md",
+      "sha256": "fddc19207b3ad516907306a552fb4692ec1c1176049630cb77dabbcaaec827b9",
+      "size_bytes": 7176
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_first_departure.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_first_departure.png",
+      "sha256": "c4c3a31ccf3b46b2d865611253737c599a9b258e96075588cdf15b0de3497f04",
+      "size_bytes": 15366
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_independent_audit.json",
+      "sha256": "9636aa52ed06f848f83733db19cdfbd322e2e262107febbd82db0b90630b38c2",
+      "size_bytes": 53124
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_independent_review.md",
+      "sha256": "1e8057cd2d5728bcdd258e4b8d7078a904d3060098dba48e48694ddba1e68107",
+      "size_bytes": 8433
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_locations.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_locations.png",
+      "sha256": "ed00b0661513563390bc1d22e009a3ae92b4f1931b275487c65e7ee69ad503de",
+      "size_bytes": 502457
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_box_temporal_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_box_temporal_summary.json",
+      "sha256": "7aebe2bea0d28d8418bf25a79919cb7203353c3ba0729972db4013776cf55a33",
+      "size_bytes": 255375
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_findings.md",
+      "sha256": "eca9db18496fd611d9a3b8a3de8cc78791998c990a328a5bcd19e09a0b688ec3",
+      "size_bytes": 3633
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_independent_audit.json",
+      "sha256": "5494709f2e60c1160cc6642a46800f20eac702cb7508f857487bda4d94a25264",
+      "size_bytes": 6167
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_prospective_review.json",
+      "sha256": "cbad04d2b5fb136773f5457053b88d5e7c6cc75595a33e8cd8d33c06de7ed95b",
+      "size_bytes": 2048
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_current_box_rgb.png",
+      "sha256": "f1dab347363b28ec141d3e4a901bc2e948fd2a1565492854df58f89f0fe7f78d",
+      "size_bytes": 267166
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_findings.md",
+      "sha256": "f718dfd09ee3afcb2220980745e574e8cb0071085665071ae7ffc5020b2b6e51",
+      "size_bytes": 5438
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_independent_audit.json",
+      "sha256": "dd6e3e1463e2b6a00d9b4e31d6c16164e0dd471b21ea554b301c60f4bd5964d0",
+      "size_bytes": 7640
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_prospective_review.json",
+      "sha256": "0538793b32fb7bfaff626fa143e932d2a0b745a6262f8402b968a29c8fa49c7e",
+      "size_bytes": 6803
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report.json",
+      "sha256": "52575c32bb40edf610312dbadb1649cd52c5f60045fff3d5b2466826139321f4",
+      "size_bytes": 9228
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report_independent_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report_independent_review.json",
+      "sha256": "e8d194f5883cfcb2f3a8a3da4454e0186b0708e4b6f730604080c08106e0c3eb",
+      "size_bytes": 2031
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report_source.py",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_report_source.py",
+      "sha256": "8b783c055dafd5b588108b7b24540507cedd84cf6764a6ae603b4efb855d59dc",
+      "size_bytes": 7726
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_rgb.png",
+      "sha256": "b4fa37602657cbf19a21950bb0d3506045c18a69e68d2383beb85d5d104bd527",
+      "size_bytes": 594054
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_root_visual_receipt.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_root_visual_receipt.json",
+      "sha256": "b83cb32182d2667f6f8be6299969acf1a5101114acc87904acc5b57b6e257a01",
+      "size_bytes": 933
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_visual_inspection.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_fresh_point_visual_inspection.json",
+      "sha256": "b92a2f58cc4dc9e780175d474caf0b21a95f682f8f3fc0eee9cca808c041a47f",
+      "size_bytes": 1092
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_away_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_away_rgb.png",
+      "sha256": "bd67db44287237acb94cb2d45b81bab12af4f6d5f3e26c002f7fdd486505d15f",
+      "size_bytes": 562213
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_code_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_code_review.json",
+      "sha256": "e93aa11ca948a11ff4d5d546c0d68080295ba946e70106ce20942421acb89e58",
+      "size_bytes": 2755
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_curves.png",
+      "sha256": "2097b364cee6bdc5f39ff46ac107721abd1ed3b63ad53185fce8fd281bd1d88a",
+      "size_bytes": 290111
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_extraction_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_extraction_review.json",
+      "sha256": "7cf3c5fe4ad415fad2a786fa0ff81269362a4e5c75db3ca3f7d5b779d25e867a",
+      "size_bytes": 4220
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_findings.md",
+      "sha256": "8ca5efb90a6f0406bbdc19810a17d0fd16f2e65f2777a067d33e33c3fc1a4353",
+      "size_bytes": 8225
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_independent_audit.json",
+      "sha256": "b195a27d6818e5e5688116ace4fc805d70c5af976ddd676d5d08172c640adc61",
+      "size_bytes": 14497
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_present_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_present_rgb.png",
+      "sha256": "02ef81b513a0280a3f375d497d13bd00714997fc712e1017029d97df82ffb162",
+      "size_bytes": 559618
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_source_binding.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_source_binding.json",
+      "sha256": "49dbc6e182a6e516e43142537005234c7559264fd69c9f051a10e1b7b4f4d04f",
+      "size_bytes": 4924
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_visual_inspection.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_image_motion_visual_inspection.json",
+      "sha256": "74e51f65cac15776fa9d146b417adbc15e6543845a491a1379739c25fd03c2ac",
+      "size_bytes": 4373
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_mechanical_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_mechanical_summary.json",
+      "sha256": "d2f61bda56181bdc115b8f9d3d5377526fba6fb468781da07312ef6f1cc126af",
+      "size_bytes": 7501
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_own_observations.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_own_observations.json",
+      "sha256": "7faf07714187942bc7efdec1c3fadc766c3066a379362050db7bfd912bc856db",
+      "size_bytes": 37814
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_own_timing_audit.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_own_timing_audit.md",
+      "sha256": "6e8b26facafc600c4f7ef92db4891c0b7f39de08221087cdab3116f908e59378",
+      "size_bytes": 6381
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_away_verification_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_away_verification_prospective_review.json",
+      "sha256": "6f92d8c51d83f3a8021b71991abd8c2b4d894d60373ef65eef503af7a5550f17",
+      "size_bytes": 3043
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_findings.md",
+      "sha256": "947d52c7d6ae2785e3d4e3e26b970b1117883dbe9941144a2f1225d554900433",
+      "size_bytes": 7072
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_independent_audit.json",
+      "sha256": "57fa52a1ba5ffff73e7e197bbe352fe5f83209397c8cb972736cea389f0d7e42",
+      "size_bytes": 6482
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_independent_review.md",
+      "sha256": "c9fe3e38aee1eeb59959253c2764a74edecf4b9af8b302abea6ba32ac3c37383",
+      "size_bytes": 4569
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_partial_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_partial_independent_audit.json",
+      "sha256": "338a373bd60f93f7ae32022656a79a09fd491c55bd096f000d6b8b924d49dbaa",
+      "size_bytes": 299786
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_scene_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_scene_prospective_review.json",
+      "sha256": "9bd4f40b6ed643ca8b5141bb81ee302aa0f05ba8a57db635e654eea8830782e7",
+      "size_bytes": 6348
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_findings.md",
+      "sha256": "ffbb588a46d7bea59b7909bd09c471d95b37eadfb82cfd322b60be84d1fa4320",
+      "size_bytes": 4361
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_independent_audit.json",
+      "sha256": "e034ead7baad4f3dd24bb992aa556897563e08d5fb9cae034fd93485d575c251",
+      "size_bytes": 8590
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_prospective_review.json",
+      "sha256": "8ae31671ab20adf91cc29413e2a0fc078f1307ce4f4d86f3197e30cee1165757",
+      "size_bytes": 6522
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_rgb.png",
+      "sha256": "a41c1d8ad7a407ffb8c758c21f4c2c5f72b0157c1dcf7eaa9e6d796fa8d038ab",
+      "size_bytes": 267388
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_slow_point_root_visual_receipt.json",
+      "sha256": "4f8f0830123ae59f29062ed78356dfa9d2694470eb336e339d0d2d86d1523627",
+      "size_bytes": 1456
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_source_boundaries.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_source_boundaries.json",
+      "sha256": "c3676ca2c617831f487746ef15620e935715ac1fac014e5d3d8695471e215539",
+      "size_bytes": 4588
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_source_boundaries.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_source_boundaries.png",
+      "sha256": "136196334ee1f5fe8fb353612c467550cbb0cecef5e2bdb95cd312a33ea331dc",
+      "size_bytes": 375885
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds.json",
+      "sha256": "5c9a6702516a73d0c577e7c4de64a52a209b5d5a9c821470f36adec9d4e89790",
+      "size_bytes": 10358
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds_independent_audit.json",
+      "sha256": "64ba8dd71551a98278436e106515df4146f38a3db0cc28abddac802944bce61f",
+      "size_bytes": 3371
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds_source.py",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_closed_empty_static_bounds_source.py",
+      "sha256": "dba3ad2e24fcf86550adbc240a5026be6fa6b50f4bedbb53e295645aff59b128",
+      "size_bytes": 9318
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_current_box_root_visual_receipt.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_current_box_root_visual_receipt.json",
+      "sha256": "73e9ce940d35620c87d94c0762f48dd65074715521c2cfbeae7db1e74cd56774",
+      "size_bytes": 1609
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_current_depth_diagnostic_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_current_depth_diagnostic_findings.md",
+      "sha256": "a7348e26b25a2dd032dbef0cd8b6617c677ccedb3fb8c04fcdb8354aba624a43",
+      "size_bytes": 5499
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_current_depth_witnesses.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_current_depth_witnesses.png",
+      "sha256": "816e8b896aad6ceb4cb65af0ff24e9ce623c23eea075bbea1e480c170d2e07fd",
+      "size_bytes": 407241
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_findings.md",
+      "sha256": "0f9b5e7f26f8d978757d162d32172165515a8aa902d49d4ee318a214b0b45755",
+      "size_bytes": 8080
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_independent_audit.json",
+      "sha256": "b240ae50a4cc6f29a42a8d099b361627f0334aaa5d39f8b1c86d1ea545134195",
+      "size_bytes": 62591
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_independent_review.md",
+      "sha256": "e40138da576233af022f74aec860319346f9551417d0520b94094433ed8f8a65",
+      "size_bytes": 7749
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_rgb.png",
+      "sha256": "8b01b333a215dd3d62a8144e35a41c293e598e7de4d042d9f90f9ed5d108f8d9",
+      "size_bytes": 860617
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_endpoint_containment_veto_summary.json",
+      "sha256": "5e05c766681017f2ce943f16b854c444ea865bce0d9607cb96d1d48a089c0aca",
+      "size_bytes": 270321
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_extreme_track_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_extreme_track_independent_audit.json",
+      "sha256": "b8e22c3f96da2cd723e3d7c0f942e0a989ef43b777e76abd82b52d04c45a1500",
+      "size_bytes": 4919
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_extreme_track_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_extreme_track_independent_review.md",
+      "sha256": "66603f1b70107b240380099526ce7f6ff46e451e69d920389441b4f12d71e926",
+      "size_bytes": 3376
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_control_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_control_findings.md",
+      "sha256": "8a31f2c59d83357eb201991599db6af93bd66ae6c6c802131eb8cea2d6cf76f3",
+      "size_bytes": 6521
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_control_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_control_independent_audit.json",
+      "sha256": "bd5f8ee19c9042f1f09687f4c9e9cc687655a278bc9bd9677ff1067f6679d4d5",
+      "size_bytes": 3936
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_control_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_control_independent_review.md",
+      "sha256": "345a56dacd4b26f773e8696780522a1a11ebdcf3b05653d8460081c6297eecd4",
+      "size_bytes": 6796
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_control_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_control_summary.json",
+      "sha256": "dc569f9a564c59faa3686254f6fa726ad304fdcdce37b753a10108e05e821a13",
+      "size_bytes": 13034
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_common_pixels.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_common_pixels.png",
+      "sha256": "0022f12dc5115854a59cad42c49ad9523d8256b4b8b6210fb9dd3fc5e6cee670",
+      "size_bytes": 115145
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_containment.npz",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_containment.npz",
+      "sha256": "82b6029cbf00eb5ce84c220067f0f6a23fdaa7e80573815750fc507ec89c35a3",
+      "size_bytes": 1789
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_findings.md",
+      "sha256": "4325ae495e6bb5da65ba27f6d8f0ab67be360b7bcc1bb0babdc2a863b6c82446",
+      "size_bytes": 6862
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_independent_audit.json",
+      "sha256": "8ac21081d5e1df3848c2bead2960943c3d7e84d9c3f620eaa3a61db00c19a9ad",
+      "size_bytes": 32651
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_independent_review.md",
+      "sha256": "97409f825737962cbb39363345a14f09a234362652fda2e0ce5682cb7a25af0f",
+      "size_bytes": 7330
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_source_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_source_rgb.png",
+      "sha256": "9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3",
+      "size_bytes": 115307
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_finite_gap_target_region_summary.json",
+      "sha256": "dd436ec93e8b1a0a36174749c89ba406f791eccf0e38366fe048062712e8ae9d",
+      "size_bytes": 123010
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_grasp_contract_source_audit.md",
+      "sha256": "31cd249298b156814ea8917c1413a8983854d18075ab16bfa785eb77408b4d5b",
+      "size_bytes": 10653
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_grasp_proprio_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_grasp_proprio_findings.md",
+      "sha256": "d62e9cc419f848fd6f59f67c5a969ef23852186f226b12a28abc19b6e0ced2c0",
+      "size_bytes": 4116
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_grasp_proprio_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_grasp_proprio_independent_review.md",
+      "sha256": "fa61d75e620d57f14ce93b7e89aa5c964d73d6b8960eedef98d9c44737245d74",
+      "size_bytes": 2537
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_grasp_proprio_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_grasp_proprio_summary.json",
+      "sha256": "ad9d72f786ebff8b779d06e091b3445896037e32258c2a40559e629c50bec0cb",
+      "size_bytes": 62668
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_image_motion_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_image_motion_independent_audit.json",
+      "sha256": "a9e5330411484c65d960276f03f789061795c08ecb000d14133030ef2cdac441",
+      "size_bytes": 25136
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_image_motion_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_image_motion_independent_review.md",
+      "sha256": "8baadb7c7d98685f742ec0a521891784bad687085510fe8ab722e1fe325898df",
+      "size_bytes": 5075
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_image_motion_report_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_image_motion_report_independent_audit.json",
+      "sha256": "165a9bcff53f477aa0f3da4c5610d0334ec712c4937818ecbdfc1807630724b2",
+      "size_bytes": 13140
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_neck_box_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_neck_box_independent_audit.json",
+      "sha256": "611f8b293451be8943d54bbea34711b02048f25e69154afde65bba7d0abe667c",
+      "size_bytes": 1277
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_neck_box_support_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_neck_box_support_findings.md",
+      "sha256": "fe81fd4299c26a8c91e3839738edbbead7d6012421dc3f7875c9c26bc0263b04",
+      "size_bytes": 5068
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_neck_box_support_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_neck_box_support_independent_review.md",
+      "sha256": "b8ddebf03237f97fb47b7d8e4c9efb89837a35d87ff8155b93eb617e21e77a1a",
+      "size_bytes": 9836
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_neck_box_support_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_neck_box_support_summary.json",
+      "sha256": "82357e0c15b1dc153c79d767e713b6c6a952641c43290e824434bfcdc5efa03a",
+      "size_bytes": 8976
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_findings.md",
+      "sha256": "7365c5a8351ab8cec0e03c1dc87a7c66d1ff3362204b49cbf46fbd6f24caba02",
+      "size_bytes": 8942
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_independent_review.md",
+      "sha256": "a91cf882137411388c57160d2a589e63139f54b38638ac40d677d9ff6beea9c8",
+      "size_bytes": 12758
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_summary.json",
+      "sha256": "9d9d38dc757064e5449f6ed868497a68752e666217bf7d604a17721696b7a6dd",
+      "size_bytes": 680978
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_witnesses.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_observed_surface_sweep_witnesses.png",
+      "sha256": "8304b8aa1814d3d680cfd0aee20469c82b80dd8ef9ef4d017a310327bac850ec",
+      "size_bytes": 454681
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_curves.png",
+      "sha256": "a55ed419679a1e8dff8f60d695839366d565a272b2c666956d7af2b8e0a74b6b",
+      "size_bytes": 131159
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_findings.md",
+      "sha256": "ebcccad4160a8e96a0e9f07724838a1ffca0f976e7fb1e8aa96f96266a217fc9",
+      "size_bytes": 6595
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_independent_audit.json",
+      "sha256": "0cd47a1433ac25d14b45aa942a17d7322e19865804c33b3adb2fee25a2d2d56e",
+      "size_bytes": 162837
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_independent_review.md",
+      "sha256": "f85c76201a3f9ec6a90511a4d23ac1f09b44e250362d0dff8eba187da8dcee1e",
+      "size_bytes": 12827
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_findings.md",
+      "sha256": "4222ac5ead56b397cdc75746aa394d51159bffab7d71522728384deacc3912ba",
+      "size_bytes": 6797
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_neck_terminal.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_neck_terminal.png",
+      "sha256": "f18a7e22c33d4a826045b7b049e88f32a34831b080065f42b3250395e532c42d",
+      "size_bytes": 119560
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_rgb.png",
+      "sha256": "f320b40ee5d7d9fbf7c220a487d4e0ff7351d31df1daff7c2f130578d0f87e6d",
+      "size_bytes": 705122
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_summary.json",
+      "sha256": "d7af1fc268645125d223e174059f75493721d6bc94abbd04e284de1762698519",
+      "size_bytes": 51964
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_whole_terminal.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_interpretation_whole_terminal.png",
+      "sha256": "e24646cfadf0a3e202a688c84f5b0cf01a35830fe42bb1d38b7fa01fbf1bc763",
+      "size_bytes": 119583
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_summary.json",
+      "sha256": "db8038a373b9a57e842ac191800eeba10eacb499fda8991f3947633ebcb41c1a",
+      "size_bytes": 272160
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_approach_traces.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_approach_traces.json",
+      "sha256": "203ad25dc660b00c8f2c66b8dd4dd99f6522634c5d7b451200cb7e5d786e7d2f",
+      "size_bytes": 4570079
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_findings.md",
+      "sha256": "28b2e56fe8bebcaebb7e4be8413524e42394c1685e5eccb6e02ff0137e378cac",
+      "size_bytes": 8049
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_neck-close.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_neck-close.png",
+      "sha256": "c96bd2e01bf543bb5bb20aa0beb02b151db7312fdcdf7a4366d8f3ed15c1d916",
+      "size_bytes": 215832
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_neck-open_hold.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_neck-open_hold.png",
+      "sha256": "a87f628b0163e3343d363edceae644fe4a4421cf4012b148afc1c1222533f42c",
+      "size_bytes": 223228
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_summary.json",
+      "sha256": "dda234acfd67cbbbc2b9a701d03de475101768490631f3dcad06ea8686c362c4",
+      "size_bytes": 79099
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_whole-close.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_whole-close.png",
+      "sha256": "5c923ac80d7720d3dfb70fd9f6c516722e1d2d8b193b1cc4996d2e956575c651",
+      "size_bytes": 215804
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_whole-open_hold.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_extreme_track_whole-open_hold.png",
+      "sha256": "5db705d6ece103d74bc37f8d8312890cb98d8fb9e874a12c2479080724ebef8c",
+      "size_bytes": 227142
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_containment.npz",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_containment.npz",
+      "sha256": "a9f972d8898e1640e49d2e1828cecbe1fb415849d12578029674c0235cd8ff94",
+      "size_bytes": 1045
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_findings.md",
+      "sha256": "872e7f06c6d4f436fa9347a7e763d3ede464aa8878319fcb56e96bc6200eb944",
+      "size_bytes": 7866
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_independent_audit.json",
+      "sha256": "bf1ce72a79fd50c796b68e3d41d6b73b474184a8c89501cc3b93d4af1861627c",
+      "size_bytes": 77802
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_independent_review.md",
+      "sha256": "9ddc2bf794278a79d62affd417baf81112fa9bfe306c1a90c028a06c416212eb",
+      "size_bytes": 9148
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_neck_common_pixels.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_neck_common_pixels.png",
+      "sha256": "9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3",
+      "size_bytes": 115307
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_source_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_source_rgb.png",
+      "sha256": "9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3",
+      "size_bytes": 115307
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_summary.json",
+      "sha256": "fc055247845be0c75bc12d813cb295c4c7f49df336361347b488a4b517de2e0b",
+      "size_bytes": 321885
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_whole_common_pixels.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_goal_cells_whole_common_pixels.png",
+      "sha256": "7e00a2a7eb1298b2cf8343fdf62c125ae489a75eb8cc12e8e10dbdec5d65e8c7",
+      "size_bytes": 115150
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_findings.md",
+      "sha256": "bb20be2cdbc3b2b48260261e70ffe31db174df17d81d3c75de04d241bfa1b1e3",
+      "size_bytes": 6707
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_neck_close.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_neck_close.png",
+      "sha256": "b84aa3cc25969982ac207bbd230391ce6217a5bf90406369d7bfaa3b0226665a",
+      "size_bytes": 408339
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_neck_open_hold.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_neck_open_hold.png",
+      "sha256": "72272d0074c4dc5e46d1579c5c4303f574ad8f206cee429cd048fdcde0c920b8",
+      "size_bytes": 403496
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_summary.json",
+      "sha256": "582f4e87b23cd3aca461ebe6845506d113d919b83139642b24af9cb00b81152b",
+      "size_bytes": 104430
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_whole_close.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_whole_close.png",
+      "sha256": "d1f973737c3db45ab40611402ad7b3acbe25432ff1300f597b01275fe0dfbb52",
+      "size_bytes": 409574
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_whole_open_hold.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_rgb_whole_open_hold.png",
+      "sha256": "bd2b7817219d25f26a6a1c83bec18c71bd3d8a3cf486dd62d1ffd02f9a1ff1da",
+      "size_bytes": 405864
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_findings.md",
+      "sha256": "6a94429db62a0e2a20a313fd218e5b300e7e2fdc9253b60c01af794f42feaa67",
+      "size_bytes": 4636
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_independent_audit.json",
+      "sha256": "6051e9a498f73e8399b232a2d64b9a0174e8e0ab8d3187cffdb69a4c31a9a018",
+      "size_bytes": 226939
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_independent_review.md",
+      "sha256": "2ae5e34fd228bf408e19dcc58fa6a59dad2498bfa066b42af019b1e204bb0a51",
+      "size_bytes": 3675
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_raw_review.md",
+      "sha256": "f8a7717ec13aafb9c6f5baa44b5d5b345d81b91c3227f9694219151f66c5d3d8",
+      "size_bytes": 10135
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_suffix_traces.json.gz",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_suffix_traces.json.gz",
+      "sha256": "b4176e26aa4fe112e71f60bf0d1576e5e1b451220346041579058f1ac7ce3694",
+      "size_bytes": 3243972
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_grasp_transfer_summary.json",
+      "sha256": "7f1161c2e1ecf513a9904b5ee2cf09df42f7e76c68384b1cfe64c0c40995fc20",
+      "size_bytes": 45221
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_curves.png",
+      "sha256": "307da7d570565611a8ef51747332eaa90ad7107fe1512f2feee236a1396eaa57",
+      "size_bytes": 491606
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_extremes.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_extremes.png",
+      "sha256": "86c20a63929a784830f1ac7093d9ac1ae9ac25f5e04ba4cb91a361c79a38830f",
+      "size_bytes": 210420
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_findings.md",
+      "sha256": "6716724fe9067309ecfcbf48d69b73ee09e929cc7f8ce4bbc16276d4c8d3df61",
+      "size_bytes": 9998
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_prospective_review.json",
+      "sha256": "528705d65ddf1fc1ea2b772984a2b8d10fd7c09ee85ad6f518ad839d6445dbe5",
+      "size_bytes": 2560
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_image_motion_summary.json",
+      "sha256": "2a9d4f1ce5f8630007cb4c4381ec8bc8ce6eea927f7173e0cb616a9698e1ead7",
+      "size_bytes": 887475
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_curves.png",
+      "sha256": "b4c6a49540df24328223f119567935187cb1751fe758879d5a4c83013d76d39f",
+      "size_bytes": 409104
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_findings.md",
+      "sha256": "644edc2c519c68484b94bfddf419ae61919892b4b05916da55efb1e19e5dae5d",
+      "size_bytes": 7131
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_positions.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_positions.png",
+      "sha256": "3b167bd267c6952941eca9dce3b9ba1f4de000d77982d7df53131c92b1951a91",
+      "size_bytes": 595342
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_summary.json",
+      "sha256": "a71121448b058026ba805ebab60d15474ca19a32ca6f2956fdbb4fc6279083ee",
+      "size_bytes": 574823
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_independent_audit.json",
+      "sha256": "e188710d477c16ce0bd09d61004293015fe15633c12995abdd9252e9dba21b86",
+      "size_bytes": 7088
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_independent_review.md",
+      "sha256": "cc4bcbdb49b3f668f07df60b459a0532cc180e089389a619e682c59d1e969cc9",
+      "size_bytes": 2618
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_anchor_retention_transfer_prospective_review.json",
+      "sha256": "7776815e3b48d76643475336037e1f5fa3607c84866934fe81ff804f2f6022a2",
+      "size_bytes": 2559
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_boundary_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_boundary_independent_audit.json",
+      "sha256": "9f63cce6efffd98530b3b6c335051622cd03d3e86a9e55c97eef48594fa1cf40",
+      "size_bytes": 11459
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_common_pixels.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_common_pixels.png",
+      "sha256": "db3854a02a1a91b9502323bbe31b6f068e569e196b86116cc933b8ba1f994bf2",
+      "size_bytes": 115143
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_containment.npz",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_containment.npz",
+      "sha256": "2fafbc642c12b1f623d51c7cef488e4a16abeea6b120f494b8bb7581f420a78a",
+      "size_bytes": 869
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_findings.md",
+      "sha256": "6defbcc4aa1b93b5fddf801754b64f2b2fec273f7f300b7e2dd8f5f636e39c16",
+      "size_bytes": 5448
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_independent_audit.json",
+      "sha256": "eaf14227c8afb4954370f82be98176e28dc2c2c01832c08b749857bf983b3c46",
+      "size_bytes": 28190
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_independent_review.md",
+      "sha256": "b6605d90643e9fe8a742b6aa6ecde89515fc255a5c4d82f2adaf42fc9965b094",
+      "size_bytes": 3170
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_source_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_source_rgb.png",
+      "sha256": "9b446e31066ff438765f01e0bed579346b8ab6c99b79e937cf53a992510419e3",
+      "size_bytes": 115307
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_goal_cell_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_goal_cell_summary.json",
+      "sha256": "16901cac26742cbafccba0cd294b4524cd2c1ea856bfc7a0885016afc36168a5",
+      "size_bytes": 101876
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_jaw_interpretation.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_jaw_interpretation.md",
+      "sha256": "b54c396a9c5bd0a284ed97430160356c14086277d0f807fda2603ad53692d01d",
+      "size_bytes": 5782
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_jaw_interpretation_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_jaw_interpretation_summary.json",
+      "sha256": "d4cb15837cd09fcf712cd56752f5053730519fc73cc5f6b0e89b3e8d16215f50",
+      "size_bytes": 12350
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_region_control_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_region_control_findings.md",
+      "sha256": "85680c7a95f130fe630155d49b1a82e6149b3f683bb39fc0f33b4654b1540825",
+      "size_bytes": 5732
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_region_control_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_region_control_independent_audit.json",
+      "sha256": "c083504fe4574f01a472c4cf957a61ff016055ebc069b4fcb23f752d8bc467d1",
+      "size_bytes": 4842
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_region_control_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_region_control_independent_review.md",
+      "sha256": "8d6db761d9abbbb622e791892de36cdc5c761797481b877899dfb2e50d1e1758",
+      "size_bytes": 7925
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_region_control_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_region_control_rgb.png",
+      "sha256": "89abdd7933dfb996fb0742a804fcf1ca5fe0a70ca15fc3fa6e900f157c653fd4",
+      "size_bytes": 300157
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_region_control_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_region_control_summary.json",
+      "sha256": "215456189695f6f8c62aff93856c973eb34a101107f7f41164e68ac3fc709feb",
+      "size_bytes": 58970
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_point_tcp_pad_evidence_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_point_tcp_pad_evidence_review.md",
+      "sha256": "355c1a55c765155a87e53892efcb8e7e6a7d65b5e17a38a0954b8c3c55cba93c",
+      "size_bytes": 7585
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_findings.md",
+      "sha256": "0c4aef9cd3a1e2c1cd74b47ad5e67271dd803d695990a03daa61701c1ea591d2",
+      "size_bytes": 6966
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_overlay_index.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_overlay_index.json",
+      "sha256": "62d09c9e9b1b6f9c23693bf191181d201b63e52321be927054ff5c6d2da683b4",
+      "size_bytes": 8507
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_report_source.py",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_report_source.py",
+      "sha256": "5a8a7078073e1a32e1d3709ab42e3f51980569488d0362dba66a38f62f0c521b",
+      "size_bytes": 3834
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_rgb.png",
+      "sha256": "21504b55970a72df5e87cc6eac3db9c8fa938c85aa1e37cde8e657868ff8dd60",
+      "size_bytes": 280728
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_seal.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_seal.json",
+      "sha256": "a42204c7b2a1a159c40a858efb494a99a7af9a9ab7bcc937a85b7cd8243bc64f",
+      "size_bytes": 636
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_source_binding.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_source_binding.json",
+      "sha256": "75e290803f79b8d82959c14b3358719ad406a5ba55700687af46f1d5d03bd87c",
+      "size_bytes": 9260
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_box_support_visual_inspection.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_box_support_visual_inspection.json",
+      "sha256": "89a9fb30efc5842e9e51e1c500c870efa116e143f95faac1fc69f3932e7e080e",
+      "size_bytes": 794
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_findings.md",
+      "sha256": "5459508f4ae107e1550b6ef807b51a60ff55ff8f3040c36959aff05df6646233",
+      "size_bytes": 5007
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_seal.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_seal.json",
+      "sha256": "08bd7ab7b2d8c75a035bf49c1273b7658db84c8cd1e6dea22a8ed1407cf6d59b",
+      "size_bytes": 527
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_source_binding.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_postevent_slow_point_decision_source_binding.json",
+      "sha256": "1034338d0e51620393f0e9d3490d57415d01f7e4f1cc7b4c5d5b154c62d9f020",
+      "size_bytes": 15346
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_findings.md",
+      "sha256": "0fb866d918f81d14830fb67fdd999630c523b5faebff9919d81228d70811adab",
+      "size_bytes": 9262
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_independent_audit.json",
+      "sha256": "dbb2d016215fd8b87353a9d9466691c6685459c456c3d0251d3d9456b81f2f69",
+      "size_bytes": 10333
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_independent_review.md",
+      "sha256": "824e01b9a6ea0316d36c7770e8614f53cf5962d4ea85958bcb3f540dd22ff135",
+      "size_bytes": 7623
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_rgb.png",
+      "sha256": "a0995201bb5bd2e9960e1f5defad914d05ac0927c22762fb4d016a00049d7324",
+      "size_bytes": 858710
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_pre22_counterfactual_summary.json",
+      "sha256": "8500899e78595101debb7844c80bd054bc70eff8269d1fc4dadb82a9fbac03a5",
+      "size_bytes": 115605
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_retained_closed_action_equivalence_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_retained_closed_action_equivalence_review.md",
+      "sha256": "24fa0da06d64c37044ed90dc8e5ae7bda27bb4c067f281df3f5777a6650f752a",
+      "size_bytes": 1683
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_sensor_handoff_feasibility_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_sensor_handoff_feasibility_independent_audit.json",
+      "sha256": "a6e513302e874f184ca98206e0074d055f21903cfd2d1c0e2caf85964cb5fa18",
+      "size_bytes": 5058
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_sensor_handoff_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_sensor_handoff_independent_review.md",
+      "sha256": "960e28d5ffa46b453f21fab77924e71162c75f90a6939bbd1d1c247ea55c6a13",
+      "size_bytes": 5179
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_sensor_handoff_source_inventory.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_sensor_handoff_source_inventory.json",
+      "sha256": "53ab301c93ea27b2366187254e84f1016ce8f2ba7ddff4e34ebd649abf2b1842",
+      "size_bytes": 47394
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_close_departure.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_close_departure.png",
+      "sha256": "3f81a334f34140d808fe48d835182322e390045bf98928db65613f90168b1dcd",
+      "size_bytes": 20579
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_curves.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_curves.png",
+      "sha256": "22c2b83eb52bc693f93d8b6424c6ef0386a1706c975692b4cf857232489031de",
+      "size_bytes": 252660
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_findings.md",
+      "sha256": "302230cb937535d26f8fc28eade7de987d38c63a25e4063885da69ddc28a46ec",
+      "size_bytes": 9302
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_independent_audit.json",
+      "sha256": "c56dcad8348d1523c690cacc75302628270baa2730a9aa798922191b1cd89170",
+      "size_bytes": 48361
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_independent_review.md",
+      "sha256": "c9f97020b60706a01b1cb572184c1df006b26e76a458d4a7fe6f2ed35d9e9375",
+      "size_bytes": 7986
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_open_departure.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_open_departure.png",
+      "sha256": "33ece46998bd3d5e168022cbc77b49efc2b2daed6cdd4d66db22c6e00b8166d5",
+      "size_bytes": 16779
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_original_lift_rgb.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_original_lift_rgb.png",
+      "sha256": "c90bd906bc2088530b3a16f8d41b4bf495c428e34834e2c7360bdb243956c775",
+      "size_bytes": 532598
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_lift_transfer_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_lift_transfer_summary.json",
+      "sha256": "40ef0b37c6e384d933171a1195e8fc0da74e6213616b58466849f2bed666fe99",
+      "size_bytes": 130911
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_short_retargeting_prospective_review.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_short_retargeting_prospective_review.json",
+      "sha256": "af45966de26bb6616f63180d0db1779032f546cf59626dde7055d4ebf41f6d8c",
+      "size_bytes": 6554
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_surface_sweep_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_surface_sweep_independent_audit.json",
+      "sha256": "d5f966dfc3bac749e42382a0abf4a31412e4858597fd0cb107b281b8a11bdeac",
+      "size_bytes": 17352
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_surface_sweep_independent_interpretation.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_surface_sweep_independent_interpretation.md",
+      "sha256": "d05a8a62ee41aaa15ab6a1323d8b14d0da78c76eed2b6007d9e6c06520d99fe1",
+      "size_bytes": 4117
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_track_association_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_track_association_findings.md",
+      "sha256": "436c465f9cbc87e6524a9a95a941d0df16329114c4b53ecc22aacd9411941c72",
+      "size_bytes": 6354
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_track_association_remaining_departure.png",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_track_association_remaining_departure.png",
+      "sha256": "63c040a30e5f0da48a05d5d453a335f332987cbfe894dfe7a9d23e522931e469",
+      "size_bytes": 19521
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_track_association_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_track_association_summary.json",
+      "sha256": "b50a80fb59eef182b3a0796d54f722fafc08a6cb765dad2dc171a8ee71b9b299",
+      "size_bytes": 584246
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_track_coordinate_association_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_track_coordinate_association_independent_audit.json",
+      "sha256": "123be2fa6a8af6e5ee9e10a250f7ff04da4b3b87dfcb003ed0cea9b74fd1b2b7",
+      "size_bytes": 38055
+    },
+    {
+      "path": "docs/evidence/autonomous_research/task2_track_coordinate_association_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/task2_track_coordinate_association_independent_review.md",
+      "sha256": "b30496ad8cca2acb598cd0cfae17919a0e1421f3d6c7f87dbdcc140589a1bfd9",
+      "size_bytes": 6496
+    },
+    {
+      "path": "docs/evidence/autonomous_research/visual_and_approach_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/visual_and_approach_findings.md",
+      "sha256": "7268d5daf29f7db44245042c2fe35d9a6f01996a9fe25c1c9e3295bdec56a6e7",
+      "size_bytes": 6746
+    },
+    {
+      "path": "docs/evidence/autonomous_research/visual_and_approach_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/visual_and_approach_summary.json",
+      "sha256": "6478839e7bd1c4437e347868617e9aefe860ccd378e9c2733512d9f12a2a18b8",
+      "size_bytes": 8440
+    },
+    {
+      "path": "docs/evidence/autonomous_research/visual_subgoal_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/visual_subgoal_findings.md",
+      "sha256": "ec4d0c11a6366fd7d21e13ee70e53234797eb9fce25c3a38f99ad5d9fa9ad521",
+      "size_bytes": 5588
+    },
+    {
+      "path": "docs/evidence/autonomous_research/visual_subgoal_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/visual_subgoal_summary.json",
+      "sha256": "eb26c3d1ead91735f262945190b41a3248824636b9b775e0dde825742b63d0a3",
+      "size_bytes": 5445
+    },
+    {
+      "path": "docs/evidence/autonomous_research/vlm_capability_control_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/vlm_capability_control_findings.md",
+      "sha256": "c9ff40c67712a702e1045bc4cb6b83f097fd4fddaf345f44a256762a9c93742b",
+      "size_bytes": 8016
+    },
+    {
+      "path": "docs/evidence/autonomous_research/vlm_capability_control_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/vlm_capability_control_summary.json",
+      "sha256": "5c09cb21f605a7ccb3b0c57fb816c9f852b9d7d423a4d2f5fd4f7790bf711341",
+      "size_bytes": 62036
+    },
+    {
+      "path": "docs/evidence/autonomous_research/vlm_world_understanding_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/vlm_world_understanding_findings.md",
+      "sha256": "d555037319017f2ec63d7ea948cbcca9a78a72f2512b7403d5334d959731c54d",
+      "size_bytes": 11529
+    },
+    {
+      "path": "docs/evidence/autonomous_research/worldview_sufficiency_findings.md",
+      "source_repo_path": "docs/evidence/autonomous_research/worldview_sufficiency_findings.md",
+      "sha256": "2d1ad618b7f4bed18b91e87ef2747445cf2f2d51f9da1018149bbf807485010a",
+      "size_bytes": 7433
+    },
+    {
+      "path": "docs/evidence/autonomous_research/worldview_sufficiency_summary.json",
+      "source_repo_path": "docs/evidence/autonomous_research/worldview_sufficiency_summary.json",
+      "sha256": "f67599793ef054dae99bc0d55e585ef9a0178eee73c4748ebda8d4f29979979b",
+      "size_bytes": 205255
+    },
+    {
+      "path": "docs/evidence/autonomous_research/wrist_history_independent_audit.json",
+      "source_repo_path": "docs/evidence/autonomous_research/wrist_history_independent_audit.json",
+      "sha256": "5fdcbad8418ec44fc877f8d3371b4290f256d0c4850472333e4b683fe4df4507",
+      "size_bytes": 7525
+    },
+    {
+      "path": "docs/evidence/autonomous_research/wrist_history_independent_review.md",
+      "source_repo_path": "docs/evidence/autonomous_research/wrist_history_independent_review.md",
+      "sha256": "6d0d3cee1a4741f8bf434e962882217f951e1d49910be0240a162212f9b51f1a",
+      "size_bytes": 4221
+    },
+    {
+      "path": "docs/evidence/decision_interface/clause_order_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/clause_order_handoff.md",
+      "sha256": "1163d3998e8d8b783e6e30e9ed7d21caeb0277a4dc672ab3aa59cdc77675036b",
+      "size_bytes": 15993
+    },
+    {
+      "path": "docs/evidence/decision_interface/clause_order_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/clause_order_protocol.md",
+      "sha256": "d52883ec1de008698c5fe64f117e3b0b1dc795196f947445de27e95e832915b4",
+      "size_bytes": 5434
+    },
+    {
+      "path": "docs/evidence/decision_interface/dead_end_boundary_audit.md",
+      "source_repo_path": "docs/evidence/decision_interface/dead_end_boundary_audit.md",
+      "sha256": "9f7d0d0df88deb8c7bb6d8849eef837d1e06474080d8408a9569a6402d0395b4",
+      "size_bytes": 12016
+    },
+    {
+      "path": "docs/evidence/decision_interface/effect_binding_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/effect_binding_handoff.md",
+      "sha256": "3e413ce95e04dd7f48e7675dd526abfcea60bab41882ab38b9d33511190bbd17",
+      "size_bytes": 13204
+    },
+    {
+      "path": "docs/evidence/decision_interface/effect_binding_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/effect_binding_protocol.md",
+      "sha256": "f3f716028aaedc4a77531efc4442dbe4c51105a1e17b68abbfac55f360085d7c",
+      "size_bytes": 4869
+    },
+    {
+      "path": "docs/evidence/decision_interface/explicit_consequence_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/explicit_consequence_handoff.md",
+      "sha256": "4baa25c30475db32573832a4a30939edee9cc74415181736000818fa68d8c09b",
+      "size_bytes": 15912
+    },
+    {
+      "path": "docs/evidence/decision_interface/explicit_consequence_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/explicit_consequence_protocol.md",
+      "sha256": "d773680f197e5563025b8d6e1518a3007c235c5028feb07b5b3229bfaff37f29",
+      "size_bytes": 5359
+    },
+    {
+      "path": "docs/evidence/decision_interface/forced_singleton_reference.md",
+      "source_repo_path": "docs/evidence/decision_interface/forced_singleton_reference.md",
+      "sha256": "236b9096030feb6b8fc4266e6c283a2841e62fdf105d7f404ee4052474d8665b",
+      "size_bytes": 21413
+    },
+    {
+      "path": "docs/evidence/decision_interface/goal_placement_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/goal_placement_handoff.md",
+      "sha256": "a01daefd2558d2c733109207da38bfd3ca0c58361647b7d415b570b403ce92ce",
+      "size_bytes": 16418
+    },
+    {
+      "path": "docs/evidence/decision_interface/goal_placement_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/goal_placement_protocol.md",
+      "sha256": "516820dc74d30ba8c25ed6ef6b813059649b2abac695b56c090b98623b13d1e6",
+      "size_bytes": 5830
+    },
+    {
+      "path": "docs/evidence/decision_interface/interface_search_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/interface_search_handoff.md",
+      "sha256": "ab3ad04ff39a751745167fd8f18fea2e4f4516d5b39bdbe967cc301b31d2a5b9",
+      "size_bytes": 12540
+    },
+    {
+      "path": "docs/evidence/decision_interface/interface_search_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/interface_search_protocol.md",
+      "sha256": "8259e2f0657f1b48d9a24276e56853a6d10b5c85d9533240c5fa023a0db97928",
+      "size_bytes": 4673
+    },
+    {
+      "path": "docs/evidence/decision_interface/jev_hierarchy_same_condition.md",
+      "source_repo_path": "docs/evidence/decision_interface/jev_hierarchy_same_condition.md",
+      "sha256": "00aa157f2094a90a535911eeb6b872311cf0320186661a469d992af7d1d8e8bf",
+      "size_bytes": 9601
+    },
+    {
+      "path": "docs/evidence/decision_interface/local_objective_reference.md",
+      "source_repo_path": "docs/evidence/decision_interface/local_objective_reference.md",
+      "sha256": "a6ae0d0fc8536fd5816bff9e5facd2194699c8ebb49b221dd5f8fac1b64d42ed",
+      "size_bytes": 27106
+    },
+    {
+      "path": "docs/evidence/decision_interface/privileged_reference.md",
+      "source_repo_path": "docs/evidence/decision_interface/privileged_reference.md",
+      "sha256": "addcfdf0c22e32c57f70c4976065d2e6db07e4a2dc8cb2f3a6fe1183154ec0aa",
+      "size_bytes": 16739
+    },
+    {
+      "path": "docs/evidence/decision_interface/provider_comparison_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/provider_comparison_handoff.md",
+      "sha256": "dd463c136e0903e9e20ea4102c7c97c373e6967b5dc45f0115e1605e2f8bab7c",
+      "size_bytes": 15581
+    },
+    {
+      "path": "docs/evidence/decision_interface/provider_comparison_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/provider_comparison_protocol.md",
+      "sha256": "006987bcc4d0e1844719a475e1b1fa010d986fb529558677b28ce8a5a21a219c",
+      "size_bytes": 5921
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_gate_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_gate_handoff.md",
+      "sha256": "1fc657c8747e2603bfeda35acf038a9a25118c2b461e1d4b5ec2c25fca4078f4",
+      "size_bytes": 13678
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_gate_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_gate_protocol.md",
+      "sha256": "f1186da88499bcc69ddd50fc2fa69322f6fbfbf89a3f40930558eac3a1c6b847",
+      "size_bytes": 5451
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_mechanism_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_mechanism_handoff.md",
+      "sha256": "3756489555c25bada5fcc7bff7d64630ad3ee036dcd5af84b8c5ab57148d386f",
+      "size_bytes": 13400
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_mechanism_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_mechanism_protocol.md",
+      "sha256": "6a495840ef86e5461ef43e37a9cfba8b8d83ec35b8662dde8e40dc1b07bbde56",
+      "size_bytes": 4323
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_pilot_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_pilot_handoff.md",
+      "sha256": "317623c42791015b99d2edc2d16d43d80b8df56c5ba673b52963bc0fde7ebbe0",
+      "size_bytes": 21118
+    },
+    {
+      "path": "docs/evidence/decision_interface/reference_pilot_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/reference_pilot_protocol.md",
+      "sha256": "3e4105f6533c67bb839fe5b84c1929169a55b3974d9c4a3096bfef8d8632d03c",
+      "size_bytes": 5909
+    },
+    {
+      "path": "docs/evidence/decision_interface/selective_grip_handoff.md",
+      "source_repo_path": "docs/evidence/decision_interface/selective_grip_handoff.md",
+      "sha256": "df6e94079cf638126c5b6267039c90a27a0aa3f7aa5514d2c922b78c45bca6b6",
+      "size_bytes": 16396
+    },
+    {
+      "path": "docs/evidence/decision_interface/selective_grip_protocol.md",
+      "source_repo_path": "docs/evidence/decision_interface/selective_grip_protocol.md",
+      "sha256": "a4e20cd81475850ee941023a5610916051678977f134b26244b3fdce93c7e3b4",
+      "size_bytes": 5832
+    },
+    {
+      "path": "docs/evidence/decision_interface/two_step_lookahead.md",
+      "source_repo_path": "docs/evidence/decision_interface/two_step_lookahead.md",
+      "sha256": "6a9d098c54a3c5a5ad8a5ca3071c09449dc2e2608b239943befd8e883046811a",
+      "size_bytes": 14092
+    },
+    {
+      "path": "docs/evidence/demo/closed_loop_demo.md",
+      "source_repo_path": "docs/evidence/demo/closed_loop_demo.md",
+      "sha256": "02ad3d8b32af1370fda5500496db2e136931fca64796454d7dba3b8517309c27",
+      "size_bytes": 11545
+    },
+    {
+      "path": "docs/evidence/demo/decision_autopsy.md",
+      "source_repo_path": "docs/evidence/demo/decision_autopsy.md",
+      "sha256": "568e56be14fde070580b206b00939963627f265d522c13c9060ca02fb514aff5",
+      "size_bytes": 24050
+    },
+    {
+      "path": "docs/evidence/demo/demo_runbook.md",
+      "source_repo_path": "docs/evidence/demo/demo_runbook.md",
+      "sha256": "19974bd98304e3948ca0ffca2f7cb2b7665d2b42051c5fa5aee0fd77e748c3be",
+      "size_bytes": 10385
+    },
+    {
+      "path": "docs/evidence/demo/frozen_step0_distance_effects.md",
+      "source_repo_path": "docs/evidence/demo/frozen_step0_distance_effects.md",
+      "sha256": "c74ee40310a6a6c73322c02e8155a29ff5bc21e889656bf6659f5968d7ee8606",
+      "size_bytes": 11142
+    },
+    {
+      "path": "docs/evidence/demo/frozen_step0_geometry_sensitivity.md",
+      "source_repo_path": "docs/evidence/demo/frozen_step0_geometry_sensitivity.md",
+      "sha256": "f03dc77055c3eba8994786162c2e19318c456840564f0226112185c22482f832",
+      "size_bytes": 10602
+    },
+    {
+      "path": "docs/evidence/demo/frozen_step0_local_objective.md",
+      "source_repo_path": "docs/evidence/demo/frozen_step0_local_objective.md",
+      "sha256": "a7b03802558e4b66ee746af047f41d3697e866bf7822a5be98fd74e1b6e04176",
+      "size_bytes": 8924
+    },
+    {
+      "path": "docs/evidence/demo/frozen_step0_position_swap.md",
+      "source_repo_path": "docs/evidence/demo/frozen_step0_position_swap.md",
+      "sha256": "40d2952e68e44be399fc35cfbd62558b2854bd4e6b093e2bd3a55d876832a9a9",
+      "size_bytes": 7730
+    },
+    {
+      "path": "docs/evidence/demo/frozen_step0_translations_only.md",
+      "source_repo_path": "docs/evidence/demo/frozen_step0_translations_only.md",
+      "sha256": "ed81e9d917ed2d21910ab47195d498c48a255bde001c4421ba425e49147dd539",
+      "size_bytes": 10137
+    },
+    {
+      "path": "docs/evidence/demo/synthetic_direction_probe.md",
+      "source_repo_path": "docs/evidence/demo/synthetic_direction_probe.md",
+      "sha256": "74fddf3038afd8fd386771f03c60db4fdd14dd25019141d39b44faf66c76bb37",
+      "size_bytes": 10519
+    },
+    {
+      "path": "docs/evidence/demo/synthetic_negative_order_probe.md",
+      "source_repo_path": "docs/evidence/demo/synthetic_negative_order_probe.md",
+      "sha256": "57726977f719a6c44bc64b4c89830ba8e485dbd4d46c6bb96b56c70a7423e4b9",
+      "size_bytes": 9945
+    },
+    {
+      "path": "docs/evidence/demo/visual_connectivity.md",
+      "source_repo_path": "docs/evidence/demo/visual_connectivity.md",
+      "sha256": "a58bf6d6e2856bd3459453646b10970b59f2e6e898f1ff3ae526e6c88cad2f6b",
+      "size_bytes": 10336
+    },
+    {
+      "path": "docs/evidence/privileged_reference/interaction_boundary_audit.md",
+      "source_repo_path": "docs/evidence/privileged_reference/interaction_boundary_audit.md",
+      "sha256": "7cc508c461ecbb98bc88f5119f83ff364968cc8be6eeafe97b77fa3da1b2ca85",
+      "size_bytes": 9477
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task1_contact_attribution.json",
+      "source_repo_path": "docs/evidence/privileged_reference/task1_contact_attribution.json",
+      "sha256": "cfe594484ad96e8977e3757f6e8cafc4ec9e754dceb1caa6240ce806cd129af5",
+      "size_bytes": 6012
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task1_interaction_classification.json",
+      "source_repo_path": "docs/evidence/privileged_reference/task1_interaction_classification.json",
+      "sha256": "131323900b522dc0e257ce651cadcb797c37279b2fad5c494bf34adc4a139446",
+      "size_bytes": 3060638
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task2_boundary_audit.json",
+      "source_repo_path": "docs/evidence/privileged_reference/task2_boundary_audit.json",
+      "sha256": "edafa37861c8b54e125139daf8cf15c2674be8315587915d099f8f427a442d32",
+      "size_bytes": 5427387
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task2_feasibility_gate.md",
+      "source_repo_path": "docs/evidence/privileged_reference/task2_feasibility_gate.md",
+      "sha256": "8f500ec462dd43244320f3b04a7e3c56e4022714f6aab00c3e20692939dfcebb",
+      "size_bytes": 5134
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task2_strict_release_boundary.json",
+      "source_repo_path": "docs/evidence/privileged_reference/task2_strict_release_boundary.json",
+      "sha256": "c440be838e31deabb8e2c889d85421d40d146f45ee27f962d688c78dcab9e9b8",
+      "size_bytes": 48307
+    },
+    {
+      "path": "docs/evidence/privileged_reference/task2_valid_interaction_gate_failure.jsonl",
+      "source_repo_path": "docs/evidence/privileged_reference/task2_valid_interaction_gate_failure.jsonl",
+      "sha256": "6d2b9d347c4fe0576ab7400e4dd0f1995da09ed29f0900fca564ca483d281ce3",
+      "size_bytes": 32103
+    },
+    {
+      "path": "docs/evidence/privileged_reference/valid_interaction_semantics.md",
+      "source_repo_path": "docs/evidence/privileged_reference/valid_interaction_semantics.md",
+      "sha256": "48fd2f1f4a48a591b7ecf6227ee3df80eeac25c175f7082b070aa5facd03290f",
+      "size_bytes": 7386
+    },
+    {
+      "path": "docs/research/action_semantics_binding_protocol.md",
+      "source_repo_path": "docs/research/action_semantics_binding_protocol.md",
+      "sha256": "ddb1366e48fd1f3ad90c30c4cd2e1dd4d3f88ddc11ef3bb5caae6480adcbad3a",
+      "size_bytes": 7590
+    },
+    {
+      "path": "docs/research/approach_family_control_protocol.md",
+      "source_repo_path": "docs/research/approach_family_control_protocol.md",
+      "sha256": "387f1120be9389a58e3d8b2eea0a41fc74e0b04d66896ad0241d63e6ba1421c0",
+      "size_bytes": 4774
+    },
+    {
+      "path": "docs/research/approach_selector_probe_protocol.md",
+      "source_repo_path": "docs/research/approach_selector_probe_protocol.md",
+      "sha256": "84e28aade5e3bf47387db1032b1cdc58f02833fd2facc64cf17d3356fb030a1e",
+      "size_bytes": 5421
+    },
+    {
+      "path": "docs/research/autonomous_research_log.md",
+      "source_repo_path": "docs/research/autonomous_research_log.md",
+      "sha256": "86ed9308a8b4a872c6bca549e02055a1927a40ce8175c633c5647dcdbf393edd",
+      "size_bytes": 157342
+    },
+    {
+      "path": "docs/research/coarse_initial_point_control_protocol.md",
+      "source_repo_path": "docs/research/coarse_initial_point_control_protocol.md",
+      "sha256": "9678dbf5d82464e79224951175605a8e2f7f6a3318fb7d5a5ae5db2014797c0a",
+      "size_bytes": 6428
+    },
+    {
+      "path": "docs/research/coarse_native_counterfactual_protocol.md",
+      "source_repo_path": "docs/research/coarse_native_counterfactual_protocol.md",
+      "sha256": "3fb00b0fed6edf21305eabf7046954e9905a5e877b8a5b833ca8a96f6ba19e8a",
+      "size_bytes": 7171
+    },
+    {
+      "path": "docs/research/coarse_point_boundary_probe_protocol.md",
+      "source_repo_path": "docs/research/coarse_point_boundary_probe_protocol.md",
+      "sha256": "272806a21f421fb2ed9151b9532a9d1957353e716d1b8f495f40c323e990d010",
+      "size_bytes": 4851
+    },
+    {
+      "path": "docs/research/coarse_point_grounding_audit.md",
+      "source_repo_path": "docs/research/coarse_point_grounding_audit.md",
+      "sha256": "16a552d63175c4e4c3eebe9a55f5719f47b411210410aa9c88908653ad2a71b1",
+      "size_bytes": 2186
+    },
+    {
+      "path": "docs/research/coarse_point_probe_protocol.md",
+      "source_repo_path": "docs/research/coarse_point_probe_protocol.md",
+      "sha256": "4622320fe20b205dc4c513f6606628f0c4afe1971cfdffe3778a1d6bb2628bb9",
+      "size_bytes": 4401
+    },
+    {
+      "path": "docs/research/current_motor_provider_control_protocol.md",
+      "source_repo_path": "docs/research/current_motor_provider_control_protocol.md",
+      "sha256": "4dc8dc2b9d78ca4b14354a7469bf13f9f115bc9a22e07da84480f10ba9ec8cad",
+      "size_bytes": 4752
+    },
+    {
+      "path": "docs/research/current_motor_replication_protocol.md",
+      "source_repo_path": "docs/research/current_motor_replication_protocol.md",
+      "sha256": "72c5dc20017f35fb4d273533dd27ccaef83048ceefaa0c55cca00319198a4b61",
+      "size_bytes": 4645
+    },
+    {
+      "path": "docs/research/depth_support_probe_protocol.md",
+      "source_repo_path": "docs/research/depth_support_probe_protocol.md",
+      "sha256": "4172cc9b7dc0f5c69cc21ed8cf8c58c80b127d05e46099ec3596292663b8350f",
+      "size_bytes": 3435
+    },
+    {
+      "path": "docs/research/first_contact_observability_protocol.md",
+      "source_repo_path": "docs/research/first_contact_observability_protocol.md",
+      "sha256": "8aedebf56078622b8c177051536ca6105964de38adb48221a24586f471d25c09",
+      "size_bytes": 8175
+    },
+    {
+      "path": "docs/research/gripper_visual_mask_protocol.md",
+      "source_repo_path": "docs/research/gripper_visual_mask_protocol.md",
+      "sha256": "b396f6a8ac0bd64d1e14499164b2fdaa80f35fb744621cc8509251a17e87b89c",
+      "size_bytes": 5923
+    },
+    {
+      "path": "docs/research/interaction_observability_annotation_erratum.md",
+      "source_repo_path": "docs/research/interaction_observability_annotation_erratum.md",
+      "sha256": "b156424bd271a4286bc61fa7f20980e4b39a4f5d8b3ab96b246c026f702b4ee1",
+      "size_bytes": 1217
+    },
+    {
+      "path": "docs/research/interaction_observability_protocol.md",
+      "source_repo_path": "docs/research/interaction_observability_protocol.md",
+      "sha256": "9248ac910df32b38a72944ddfa0d9ef634ecc4c5e8d9aad5ffa92d47b8f965f1",
+      "size_bytes": 5479
+    },
+    {
+      "path": "docs/research/interaction_observability_replay_protocol.md",
+      "source_repo_path": "docs/research/interaction_observability_replay_protocol.md",
+      "sha256": "0e24f403fe4b0f65f8d5af8ba35c7b5ca756d333f6a4219194ca5f5c6aea79ce",
+      "size_bytes": 1167
+    },
+    {
+      "path": "docs/research/joint_interface_sufficiency_protocol.md",
+      "source_repo_path": "docs/research/joint_interface_sufficiency_protocol.md",
+      "sha256": "df3115bf95b04df385277e197570579498ab7c6621c830af7fcaf42577331d80",
+      "size_bytes": 6792
+    },
+    {
+      "path": "docs/research/local_grasp_interface_protocol.md",
+      "source_repo_path": "docs/research/local_grasp_interface_protocol.md",
+      "sha256": "fa620b16f7a61ef3882352ed7386c013f3eb9ad1d690f3d7d785a334776bb6a2",
+      "size_bytes": 6185
+    },
+    {
+      "path": "docs/research/native_option_progress_binding_proposal.md",
+      "source_repo_path": "docs/research/native_option_progress_binding_proposal.md",
+      "sha256": "346dde1034c8b0948854311d503755cadc289d6be661d4179239f774c4a6d77b",
+      "size_bytes": 7839
+    },
+    {
+      "path": "docs/research/native_option_progress_sufficiency_protocol.md",
+      "source_repo_path": "docs/research/native_option_progress_sufficiency_protocol.md",
+      "sha256": "49c9d74fd462734fe9777ae7815dc39025e6d1cb8ebbab9bde1c7d82609b052c",
+      "size_bytes": 9067
+    },
+    {
+      "path": "docs/research/native_substep_observability_protocol.md",
+      "source_repo_path": "docs/research/native_substep_observability_protocol.md",
+      "sha256": "e6ddb63706231088537a9bab42b5ff9e679425972320b695d102581748d02ef4",
+      "size_bytes": 5929
+    },
+    {
+      "path": "docs/research/offline_wrist_history_protocol.md",
+      "source_repo_path": "docs/research/offline_wrist_history_protocol.md",
+      "sha256": "2fe1d7d7ff98bd5dc82d180635a51b0e13dda93703a6d0518d3cf34ab76ac82d",
+      "size_bytes": 5678
+    },
+    {
+      "path": "docs/research/pixel_sample_footprint_protocol.md",
+      "source_repo_path": "docs/research/pixel_sample_footprint_protocol.md",
+      "sha256": "fe9a8256620e262176e76fc46d73372a7fa1f2563928067b3cde6290e4c3c908",
+      "size_bytes": 11557
+    },
+    {
+      "path": "docs/research/point_grounding_probe_protocol.md",
+      "source_repo_path": "docs/research/point_grounding_probe_protocol.md",
+      "sha256": "2c6aaeb9aff882c2aa6d20f7f81bc58a15da6796c76ee6b98444c3633047fe99",
+      "size_bytes": 3673
+    },
+    {
+      "path": "docs/research/point_replay_order_probe_protocol.md",
+      "source_repo_path": "docs/research/point_replay_order_probe_protocol.md",
+      "sha256": "91f4730665588ed607431f0ed4a4fb108b2fe6e8f7d36fae5a0e0f5314349488",
+      "size_bytes": 3899
+    },
+    {
+      "path": "docs/research/point_temporal_probe_protocol.md",
+      "source_repo_path": "docs/research/point_temporal_probe_protocol.md",
+      "sha256": "8a0de0fc4330848049878348828be6e62a40f1606b838183866bef49ad2b0866",
+      "size_bytes": 4631
+    },
+    {
+      "path": "docs/research/predicate_decomposition_protocol.md",
+      "source_repo_path": "docs/research/predicate_decomposition_protocol.md",
+      "sha256": "578c95777f399614d4fe7659d5d404fdcbe766aa65844d32263e8c676ba0edab",
+      "size_bytes": 5348
+    },
+    {
+      "path": "docs/research/predicate_verification_protocol.md",
+      "source_repo_path": "docs/research/predicate_verification_protocol.md",
+      "sha256": "13d29ac9669e4ddeea70ba221d19220010e930d7a04930944d779d283527146b",
+      "size_bytes": 5470
+    },
+    {
+      "path": "docs/research/proprio_frame_consistency_protocol.md",
+      "source_repo_path": "docs/research/proprio_frame_consistency_protocol.md",
+      "sha256": "9226db3ae4af643864f710a41ba451d74a1c1a90cad3e455f5d9e727162dec45",
+      "size_bytes": 3661
+    },
+    {
+      "path": "docs/research/render_measurement_diagnosis_protocol.md",
+      "source_repo_path": "docs/research/render_measurement_diagnosis_protocol.md",
+      "sha256": "cd1e26ba097ad763bb7983614feaf5b51abca8741097e09ef00a80c6e1699eae",
+      "size_bytes": 5862
+    },
+    {
+      "path": "docs/research/research_evidence_index.md",
+      "source_repo_path": "docs/research/research_evidence_index.md",
+      "sha256": "dd26fec5f4cae7223f98e935d9fa259846a9186fcd0031ab7d9bcbfa40ff48bf",
+      "size_bytes": 6477
+    },
+    {
+      "path": "docs/research/retention_support_plane_probe_protocol.md",
+      "source_repo_path": "docs/research/retention_support_plane_probe_protocol.md",
+      "sha256": "943e7ff5056fef85bf5dae3efffa22b3d5e477f47f773218be61a232fc98a596",
+      "size_bytes": 2759
+    },
+    {
+      "path": "docs/research/robot_geometry_probe_protocol.md",
+      "source_repo_path": "docs/research/robot_geometry_probe_protocol.md",
+      "sha256": "0227d585e70718e5875f72bbf7d018b44e7afe6723bbc5115f199f836206926f",
+      "size_bytes": 8261
+    },
+    {
+      "path": "docs/research/sensor_gripper_proximity_protocol.md",
+      "source_repo_path": "docs/research/sensor_gripper_proximity_protocol.md",
+      "sha256": "6caf184f34b1183990bca8f712fbda105c069283d9d77c6b66da4254fea0d253",
+      "size_bytes": 6917
+    },
+    {
+      "path": "docs/research/task1_native_contact_attribution_protocol.md",
+      "source_repo_path": "docs/research/task1_native_contact_attribution_protocol.md",
+      "sha256": "4b976401cdad0e0b0dbbe6acc66cc76913877d2a9c6401887fca189ab72b2ea4",
+      "size_bytes": 8164
+    },
+    {
+      "path": "docs/research/task2_additional_stationary_grasp_protocol.md",
+      "source_repo_path": "docs/research/task2_additional_stationary_grasp_protocol.md",
+      "sha256": "6186db55ee3fe9e7807544d481b407e8c3853f83639399b3087f44ab2aba7bff",
+      "size_bytes": 6816
+    },
+    {
+      "path": "docs/research/task2_box_point_boundary_protocol.md",
+      "source_repo_path": "docs/research/task2_box_point_boundary_protocol.md",
+      "sha256": "c04c9b2cea516153ee03444d3d63f11fcd6cc633b647b6e256b2e3b86ae6bc47",
+      "size_bytes": 9528
+    },
+    {
+      "path": "docs/research/task2_closed_empty_current_box_protocol.md",
+      "source_repo_path": "docs/research/task2_closed_empty_current_box_protocol.md",
+      "sha256": "469457a38792aeaaa28bc835cb681c7b91c86da346297432fda8c2aa0d65dfcd",
+      "size_bytes": 5977
+    },
+    {
+      "path": "docs/research/task2_closed_empty_falsifier_design.md",
+      "source_repo_path": "docs/research/task2_closed_empty_falsifier_design.md",
+      "sha256": "0ace520d46873e7d25362085850f8ec2f7f4e023867ecb39b94bc9e93dd5a272",
+      "size_bytes": 15149
+    },
+    {
+      "path": "docs/research/task2_closed_empty_fresh_point_proposal.md",
+      "source_repo_path": "docs/research/task2_closed_empty_fresh_point_proposal.md",
+      "sha256": "94eb7256b4ecda5d1099cf02965a6abd6f9282fd8e962d1f04b47130f4a5bb1d",
+      "size_bytes": 6096
+    },
+    {
+      "path": "docs/research/task2_closed_empty_fresh_point_protocol.md",
+      "source_repo_path": "docs/research/task2_closed_empty_fresh_point_protocol.md",
+      "sha256": "856014997b0b0ffd23dcb1c7b0a641d2b669358cd5310c76cd3208361ab0852e",
+      "size_bytes": 4593
+    },
+    {
+      "path": "docs/research/task2_closed_empty_image_motion_assay.md",
+      "source_repo_path": "docs/research/task2_closed_empty_image_motion_assay.md",
+      "sha256": "94f6fb26b633665d77c7ffdec7863dfab5d31a6c9d285167f39b315523f31232",
+      "size_bytes": 13466
+    },
+    {
+      "path": "docs/research/task2_closed_empty_image_motion_report_preparation.md",
+      "source_repo_path": "docs/research/task2_closed_empty_image_motion_report_preparation.md",
+      "sha256": "2c45d67b0d7b91c9d232ee82702e1960a78ba3c58f60af2755031cc2a3410ee9",
+      "size_bytes": 2189
+    },
+    {
+      "path": "docs/research/task2_closed_empty_point_decision_protocol.md",
+      "source_repo_path": "docs/research/task2_closed_empty_point_decision_protocol.md",
+      "sha256": "2b25099133ed0f66276dac4a9ea1ae134b7ce19e173a0d5162ae73069f183cee",
+      "size_bytes": 6982
+    },
+    {
+      "path": "docs/research/task2_closed_empty_scene_protocol.md",
+      "source_repo_path": "docs/research/task2_closed_empty_scene_protocol.md",
+      "sha256": "6962f5576e04a78826a439c4c213e1cfdf1e416ec0c6ebed1f53e62eac9c27b8",
+      "size_bytes": 6402
+    },
+    {
+      "path": "docs/research/task2_closed_empty_slow_point_protocol.md",
+      "source_repo_path": "docs/research/task2_closed_empty_slow_point_protocol.md",
+      "sha256": "368fc7f6080d73846a741c494d4235221ba804825e1ac1f7f329c6e7c3a2af3f",
+      "size_bytes": 4540
+    },
+    {
+      "path": "docs/research/task2_current_depth_diagnostic.md",
+      "source_repo_path": "docs/research/task2_current_depth_diagnostic.md",
+      "sha256": "b4991260fb8bc74e02dce91d0ff49095f7ab6019268a648e024512c20e6d591d",
+      "size_bytes": 4143
+    },
+    {
+      "path": "docs/research/task2_endpoint_containment_veto_protocol.md",
+      "source_repo_path": "docs/research/task2_endpoint_containment_veto_protocol.md",
+      "sha256": "9dda917bbc73502f510e77f694f70f9ffbd8be0b16f404b1502d60e8bb3904c0",
+      "size_bytes": 6987
+    },
+    {
+      "path": "docs/research/task2_finite_gap_control_protocol.md",
+      "source_repo_path": "docs/research/task2_finite_gap_control_protocol.md",
+      "sha256": "139f133050fa5010bb3bf8be34eca20d889141a238c2843c4fcafa9aace8c595",
+      "size_bytes": 5658
+    },
+    {
+      "path": "docs/research/task2_finite_gap_target_region_proposal.md",
+      "source_repo_path": "docs/research/task2_finite_gap_target_region_proposal.md",
+      "sha256": "c2dd63dfb543697fafe2bcd1766a01df61881a92b97f24a854a4f0e8c60c21da",
+      "size_bytes": 5288
+    },
+    {
+      "path": "docs/research/task2_finite_gap_target_region_protocol.md",
+      "source_repo_path": "docs/research/task2_finite_gap_target_region_protocol.md",
+      "sha256": "99199e30289ce5f68319afad801fde6f78a12a6f69152eceb4587350fee555d9",
+      "size_bytes": 6009
+    },
+    {
+      "path": "docs/research/task2_freshness_and_support_ownership_note.md",
+      "source_repo_path": "docs/research/task2_freshness_and_support_ownership_note.md",
+      "sha256": "f4da2457e28d1db37a1545a0fa66e066177f9ad570bdccb3a1991fc8871da8bd",
+      "size_bytes": 3402
+    },
+    {
+      "path": "docs/research/task2_initial_box_temporal_probe_proposal.md",
+      "source_repo_path": "docs/research/task2_initial_box_temporal_probe_proposal.md",
+      "sha256": "00cf740936af6f1caaa79696a4df0d44bd744894f7d71215841cf078b6b5e6f0",
+      "size_bytes": 9573
+    },
+    {
+      "path": "docs/research/task2_initial_grasp_geometry_proposal.md",
+      "source_repo_path": "docs/research/task2_initial_grasp_geometry_proposal.md",
+      "sha256": "8476959edc85bd60750b233e76404fdb1b723b679075aa1393559d06ca0a5efd",
+      "size_bytes": 6981
+    },
+    {
+      "path": "docs/research/task2_neck_box_support_protocol.md",
+      "source_repo_path": "docs/research/task2_neck_box_support_protocol.md",
+      "sha256": "1f96645a8e951ff509850cbe9cd1550b7b61857835206d4219e843695319497e",
+      "size_bytes": 9078
+    },
+    {
+      "path": "docs/research/task2_observed_surface_sweep_proposal.md",
+      "source_repo_path": "docs/research/task2_observed_surface_sweep_proposal.md",
+      "sha256": "90780b62f6050385a1bededdba4ef4fdd7fa208fc312313c06fcb82dcb9e6caa",
+      "size_bytes": 9964
+    },
+    {
+      "path": "docs/research/task2_observed_surface_sweep_protocol.md",
+      "source_repo_path": "docs/research/task2_observed_surface_sweep_protocol.md",
+      "sha256": "d4c6fbee81c4979a113ee0fed2ea030c0f7152ecdb5c210f58af5ee32601ebfe",
+      "size_bytes": 8269
+    },
+    {
+      "path": "docs/research/task2_point_anchor_approach_interpretation_plan.md",
+      "source_repo_path": "docs/research/task2_point_anchor_approach_interpretation_plan.md",
+      "sha256": "d26c2db5d4375f8b6645e44717844442ca4c70f0b7dc40a57de6c6a6877e2cd0",
+      "size_bytes": 5240
+    },
+    {
+      "path": "docs/research/task2_point_anchor_approach_protocol.md",
+      "source_repo_path": "docs/research/task2_point_anchor_approach_protocol.md",
+      "sha256": "a076dfc6e7ab06d096b039b166620b9643e28f407bb80815ddbcd577da482979",
+      "size_bytes": 9376
+    },
+    {
+      "path": "docs/research/task2_point_anchor_extreme_track_diagnostic_protocol.md",
+      "source_repo_path": "docs/research/task2_point_anchor_extreme_track_diagnostic_protocol.md",
+      "sha256": "fefce0ea3a07422d97d52de2568b4227a8e58cd2cffe0d3498ec935035a22a95",
+      "size_bytes": 4293
+    },
+    {
+      "path": "docs/research/task2_point_anchor_goal_cells_protocol.md",
+      "source_repo_path": "docs/research/task2_point_anchor_goal_cells_protocol.md",
+      "sha256": "18ef17b66d529cb8d4c828af1a55cb8277f6b98aa2f7e28212b0c83dea094da1",
+      "size_bytes": 7761
+    },
+    {
+      "path": "docs/research/task2_point_anchor_grasp_rgb_inspection_plan.md",
+      "source_repo_path": "docs/research/task2_point_anchor_grasp_rgb_inspection_plan.md",
+      "sha256": "b225ee7f0743d9f804011c04e097e25eca3f8857d4c18e711345f210bae3ea53",
+      "size_bytes": 2613
+    },
+    {
+      "path": "docs/research/task2_point_anchor_grasp_transfer_protocol.md",
+      "source_repo_path": "docs/research/task2_point_anchor_grasp_transfer_protocol.md",
+      "sha256": "f6fd6cacdcd607494f97b4595c8bda9903c644dcf09a10f3f36da230c659c9ad",
+      "size_bytes": 8038
+    },
+    {
+      "path": "docs/research/task2_point_anchor_image_motion_comparison_proposal.md",
+      "source_repo_path": "docs/research/task2_point_anchor_image_motion_comparison_proposal.md",
+      "sha256": "c14a1d0f33c52de4aefb57cce370ee71bcdc6ad604dc951e17a5140237a79bd4",
+      "size_bytes": 11887
+    },
+    {
+      "path": "docs/research/task2_point_anchor_retention_source_plan.md",
+      "source_repo_path": "docs/research/task2_point_anchor_retention_source_plan.md",
+      "sha256": "393e3c0fd6ec9edf7babdf1450bb06a918242c3a7ce7a442c93b1ae5e362d0e4",
+      "size_bytes": 12823
+    },
+    {
+      "path": "docs/research/task2_point_anchor_retention_transfer_protocol.md",
+      "source_repo_path": "docs/research/task2_point_anchor_retention_transfer_protocol.md",
+      "sha256": "8c80d1f9c9502791c00e871da19731a5bcd7bf4231608345ced26171e506c03f",
+      "size_bytes": 7333
+    },
+    {
+      "path": "docs/research/task2_point_goal_cell_protocol.md",
+      "source_repo_path": "docs/research/task2_point_goal_cell_protocol.md",
+      "sha256": "c2fb3a2c23d1ee691d1c57dda4a76bbba870a234fc1680b0476c5f9639dabb63",
+      "size_bytes": 6123
+    },
+    {
+      "path": "docs/research/task2_point_region_control_protocol.md",
+      "source_repo_path": "docs/research/task2_point_region_control_protocol.md",
+      "sha256": "164e34359f6f83b9b568d484b7e007826d559c6b3a340bbe3c1c58a018a04ab3",
+      "size_bytes": 8571
+    },
+    {
+      "path": "docs/research/task2_postevent_box_support_protocol.md",
+      "source_repo_path": "docs/research/task2_postevent_box_support_protocol.md",
+      "sha256": "62e3f1a6c11a7b82eaa5048f18b854aea1d6f4100a53702948e84394aaa47215",
+      "size_bytes": 2220
+    },
+    {
+      "path": "docs/research/task2_postevent_slow_point_decision_preparation.md",
+      "source_repo_path": "docs/research/task2_postevent_slow_point_decision_preparation.md",
+      "sha256": "247317d499d6f7fed6861a2a3737ee6659bb213643443862e174fa5e0647838f",
+      "size_bytes": 5916
+    },
+    {
+      "path": "docs/research/task2_pre22_counterfactual_protocol.md",
+      "source_repo_path": "docs/research/task2_pre22_counterfactual_protocol.md",
+      "sha256": "9c191b5b73e430432bbef63469591be80247113d1f032a7a1de3606b94af7e91",
+      "size_bytes": 8783
+    },
+    {
+      "path": "docs/research/task2_semantic_target_refresh_architecture.md",
+      "source_repo_path": "docs/research/task2_semantic_target_refresh_architecture.md",
+      "sha256": "2cf4c8e00211f48e5afaba1381a1b376f405a295346c39b9dcf832c444854b9c",
+      "size_bytes": 9738
+    },
+    {
+      "path": "docs/research/task2_sensor_handoff_feasibility.md",
+      "source_repo_path": "docs/research/task2_sensor_handoff_feasibility.md",
+      "sha256": "123a9ddf58a0aff398278e8ae3c2d9ea00e54d8ddd83520bd75a89f4f4fd20b0",
+      "size_bytes": 10473
+    },
+    {
+      "path": "docs/research/task2_sensor_handoff_information_proposal.md",
+      "source_repo_path": "docs/research/task2_sensor_handoff_information_proposal.md",
+      "sha256": "2153718d4cfb4b2a6a62f0593bfe2a7952003dc13783bb987c13d29f03ca9441",
+      "size_bytes": 4969
+    },
+    {
+      "path": "docs/research/task2_short_lift_transfer_protocol.md",
+      "source_repo_path": "docs/research/task2_short_lift_transfer_protocol.md",
+      "sha256": "df80676a3628ffd1b22b9276740cce17c3f8adfaa3978054d6a458ed8bd5c8a3",
+      "size_bytes": 6993
+    },
+    {
+      "path": "docs/research/task2_short_retargeting_independent_review.md",
+      "source_repo_path": "docs/research/task2_short_retargeting_independent_review.md",
+      "sha256": "7b149423b158c41915a83cdb8708566ce7a0965d54047566ffaba541f0cf011c",
+      "size_bytes": 5833
+    },
+    {
+      "path": "docs/research/task2_short_retargeting_protocol.md",
+      "source_repo_path": "docs/research/task2_short_retargeting_protocol.md",
+      "sha256": "6663c6fc8988269795825c4566a72bf691e6fec7f7928fc553a4c90aef240b8e",
+      "size_bytes": 6681
+    },
+    {
+      "path": "docs/research/task2_short_retargeting_trajectory_proposal.md",
+      "source_repo_path": "docs/research/task2_short_retargeting_trajectory_proposal.md",
+      "sha256": "72317b5673d84aefddbe6425b56cbf2aaa910f4a8f5dabe711e5cde01701b353",
+      "size_bytes": 6120
+    },
+    {
+      "path": "docs/research/task2_track_coordinate_association_protocol.md",
+      "source_repo_path": "docs/research/task2_track_coordinate_association_protocol.md",
+      "sha256": "8f32d642890faeb7d8e78f6ccc8418c540bd2a40d8e54accfd3a4650cde147f6",
+      "size_bytes": 5367
+    },
+    {
+      "path": "docs/research/visual_marker_control_protocol.md",
+      "source_repo_path": "docs/research/visual_marker_control_protocol.md",
+      "sha256": "5274ad5fab69603cba39913a839b7c0f6f195065e015396203b4e8e884516e30",
+      "size_bytes": 3056
+    },
+    {
+      "path": "docs/research/visual_subgoal_probe_protocol.md",
+      "source_repo_path": "docs/research/visual_subgoal_probe_protocol.md",
+      "sha256": "1a818822edc7aec3a9ee70c21bc704a6d1ee9a917e8ed977dc886991de7544ee",
+      "size_bytes": 4481
+    },
+    {
+      "path": "docs/research/visual_target_verification_protocol.md",
+      "source_repo_path": "docs/research/visual_target_verification_protocol.md",
+      "sha256": "ebde9fe7df93c87b2a2e1f21741bd2de05ede0349f7ed605f59345585cdc0e24",
+      "size_bytes": 4425
+    },
+    {
+      "path": "docs/research/vlm_capability_control_protocol.md",
+      "source_repo_path": "docs/research/vlm_capability_control_protocol.md",
+      "sha256": "ddb1265bc40cee1a3d152d1f2688ca3fd2943309461167e488f5e9e0874d3c51",
+      "size_bytes": 5752
+    },
+    {
+      "path": "docs/research/vlm_world_relations_protocol.md",
+      "source_repo_path": "docs/research/vlm_world_relations_protocol.md",
+      "sha256": "4e953022a0a6ebe887e42a98439cc217bc551abb9126ac2d5f16bf83dbd4827c",
+      "size_bytes": 6506
+    },
+    {
+      "path": "docs/research/vlm_world_single_relation_protocol.md",
+      "source_repo_path": "docs/research/vlm_world_single_relation_protocol.md",
+      "sha256": "d2c24a4cbe12a5aee7893ccad082f525032a457c8ba49577a6ed2c98e718e251",
+      "size_bytes": 4898
+    },
+    {
+      "path": "docs/research/workspace_lifecycle.md",
+      "source_repo_path": "docs/research/workspace_lifecycle.md",
+      "sha256": "8edefc4ef66048441cfe22e49cacd9780fcdd589cd4ee5fca8ec6f62d84030df",
+      "size_bytes": 7356
+    },
+    {
+      "path": "docs/research/worldview_sufficiency_protocol.md",
+      "source_repo_path": "docs/research/worldview_sufficiency_protocol.md",
+      "sha256": "1c0f60a0d537c74d8e33e98d5c55a2f578ff462aad9240ad9242bcded6699fe7",
+      "size_bytes": 7250
+    },
+    {
+      "path": "CURRENT_BELIEFS.md",
+      "source_repo_path": "CURRENT_BELIEFS.md",
+      "sha256": "e40731ea6097346a275c5436190ef6aa92726e4c5d961e2706cce8aca842e700",
+      "size_bytes": 9649
+    }
+  ]
+}

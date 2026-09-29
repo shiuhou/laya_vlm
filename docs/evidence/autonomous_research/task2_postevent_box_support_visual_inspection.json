@@ -1,0 +1,17 @@
+{
+  "status": "viewed_original_resolution",
+  "image": "full-rgb-witnesses.png",
+  "figure_sha256": "21504b55970a72df5e87cc6eac3db9c8fa938c85aa1e37cde8e657868ff8dd60",
+  "viewer": "retention_audit",
+  "method": "view_image(detail=original)",
+  "all_four_panels_visible": true,
+  "two_original_panels_pixel_exact": true,
+  "present_all_union_witness_pixels": 41,
+  "present_current_proxy_witness_pixels": 40,
+  "present_endpoint_only_witness_pixels": 1,
+  "away_union_witness_pixels": 0,
+  "observation": "Forty current-hand witness marks form a narrow strip at the upper BOX edge along the visible gripper/neck image boundary. The away bottle BOX is retained with no witness marks.",
+  "depth_ownership_verified": false,
+  "holding_inferred": false,
+  "geometry_recomputed_for_figure": false
+}
