@@ -301,6 +301,13 @@ def probe_wall(config, sink=None):
         time.sleep(.05)
         now = time.monotonic_ns()
         rig.tick((now-start)/1e9, now)
+        terminal_deadline = time.monotonic() + .5
+        while rig.scheduler.servo.active is not None:
+            if time.monotonic() >= terminal_deadline:
+                raise RuntimeError("fake servo failed to terminate its <=100ms contract")
+            time.sleep(.05)
+            now = time.monotonic_ns()
+            rig.tick((now-start)/1e9, now)
         summary = dict(case="real_wall_fake_worker", synthetic=True, accepted=accepted,
                        deliberately_configured_proposal_ttl_s=10.,
                        ticks_while_pending=len(times), max_tick_gap_s=max((b-a)/1e9 for a,b in zip(times,times[1:])),
@@ -310,6 +317,7 @@ def probe_wall(config, sink=None):
     finally:
         shutdown = rig.scheduler.close()
     summary["shutdown"] = shutdown
+    summary["feedback"] = thaw(rig.scheduler.servo.feedback)
     return summary, [{"case":"real_wall_fake_worker", **e} for e in rig.events]
 
 
