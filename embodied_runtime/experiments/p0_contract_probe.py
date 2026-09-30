@@ -67,7 +67,7 @@ class SyntheticRobot:
 
 class SyntheticRig:
     """Wire-ingress geometry -> existing fusion -> bounded decision -> fake servo."""
-    def __init__(self, *, config=None, sink=None, episode_id="p0"):
+    def __init__(self, *, config=None, sink=None, episode_id="p0", real_clock=False):
         self.config = config or load_config("configs/p0_runtime.json")
         self.sink = sink
         self.events = []
@@ -91,7 +91,7 @@ class SyntheticRig:
                                    config=self.config, constraint_templates=("fixture/constraint",),
                                    completion_templates=("fixture/completion",), operations=("push",),
                                    policy_config_revision="p0-fixture-v1", clock_domain=self.router.clock_domain,
-                                   sink=self.emit)
+                                   sink=self.emit, monotonic_clock=time.monotonic_ns if real_clock else None)
         self.router.register_handler("ActionProposal", self._wire_reply, validator=lambda p: None)
         self.emit("case_configuration", self.config)
         self.at(0., 0)
@@ -272,7 +272,7 @@ def probe_virtual(config, sink=None):
 
 
 def probe_wall(config, sink=None):
-    rig = SyntheticRig(config={**config, "proposal_ttl_s":10., "brain_request_ttl_s":15.}, episode_id="p0/wall",
+    rig = SyntheticRig(config={**config, "proposal_ttl_s":10., "brain_request_ttl_s":15.}, episode_id="p0/wall", real_clock=True,
                        sink=(lambda event: sink({"case":"real_wall_fake_worker", **event})) if sink else None)
     start = time.monotonic_ns()
     rig.tick(0., start)

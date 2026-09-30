@@ -25,8 +25,9 @@ class ExecutionFeedback:
 
 
 class Servo:
-    def __init__(self, backend, *, latest_context, sink=None):
+    def __init__(self, backend, *, latest_context, sink=None, monotonic_clock=None):
         self.backend, self.latest_context, self.sink = backend, latest_context, sink
+        self.monotonic_clock = monotonic_clock
         self.active = None
         self.seen = {}
         self.decisions = {}
@@ -135,6 +136,12 @@ class Servo:
                     "servo deadline", "CONTRACT_EXPIRED")
             validate_latest(c.identity, c.source_snapshot_id, c.action_id,
                             self.latest_context(sim_time_s, monotonic_ns))
+            # Validation/queue work can consume the remaining wall budget. Read
+            # the dispatch clock again, rather than trusting tick-entry time.
+            if self.monotonic_clock is not None:
+                monotonic_ns = max(monotonic_ns, self.monotonic_clock())
+            require(not c.expired(sim_time_s=sim_time_s, monotonic_ns=monotonic_ns),
+                    "deadline consumed during validation", "CONTRACT_EXPIRED")
             total = c.valid_until_sim_s-c.issued_sim_time_s
             dt = min(duration_s, total-self._elapsed, c.valid_until_sim_s-sim_time_s,
                      (c.expires_monotonic_ns-monotonic_ns)/1e9)

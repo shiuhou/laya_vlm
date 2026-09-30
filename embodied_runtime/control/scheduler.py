@@ -18,7 +18,7 @@ from .servo import Servo
 class Scheduler:
     def __init__(self, backend, *, initial_identity, latest_context, config,
                  constraint_templates, completion_templates, operations,
-                 policy_config_revision, clock_domain, sink=None, target_context=None):
+                 policy_config_revision, clock_domain, sink=None, target_context=None, monotonic_clock=None):
         self.backend, self._latest = backend, latest_context
         self._target_context = target_context
         self.identity, self.config = initial_identity, config
@@ -27,6 +27,7 @@ class Scheduler:
         self.operations = frozenset(operations)
         self.policy_config_revision = policy_config_revision
         self.clock_domain = clock_domain
+        self.monotonic_clock = monotonic_clock
         self.sink = sink
         self.intent = None
         self._intent_history = {}
@@ -42,7 +43,8 @@ class Scheduler:
         self.now_sim, self.now_ns = 0., 0
         self._episode_start = None
         self._intent_started_sim = None
-        self.servo = Servo(backend, latest_context=self.validation_context, sink=self._emit)
+        self.servo = Servo(backend, latest_context=self.validation_context, sink=self._emit,
+                           monotonic_clock=monotonic_clock)
         self.control = ReliableEvents(capacity=config["control_capacity"], on_failure=self._fail)
 
     def _emit(self, kind, value):
@@ -169,6 +171,8 @@ class Scheduler:
 
     def accept_proposal(self, proposal):
         try:
+            if self.monotonic_clock is not None:
+                self.now_ns = max(self.now_ns, self.monotonic_clock())
             require(not self.halted and self.intent is not None and not self.intent.abstain,
                     "no actionable intent", "NO_ACTIVE_INTENT")
             require(proposal.request_id in self.requests, "request gone/cancelled", "REQUEST_CANCELLED")
@@ -290,6 +294,8 @@ class Scheduler:
             self.cancel("STAGE_COMPLETED")  # Requests a new intent; no hard-coded next phase.
 
     def tick(self, *, sim_time_s, monotonic_ns):
+        if self.monotonic_clock is not None:
+            monotonic_ns = max(monotonic_ns, self.monotonic_clock())
         require(sim_time_s >= self.now_sim and monotonic_ns >= self.now_ns, "regressing scheduler clock")
         self.now_sim, self.now_ns = sim_time_s, monotonic_ns
         if self._episode_start is None:

@@ -60,3 +60,17 @@ def test_measured_feedback_does_not_claim_commanded_displacement():
     assert result.measured_eef_delta_m == (0.,0.,0.)
     assert result.remaining_requested_magnitude == .04
     assert result.status == "PARTIAL"
+
+
+def test_validation_latency_cannot_execute_using_old_tick_entry_time():
+    robot,motor,_ = servo()
+    current_wall = [0]
+    original = motor.latest_context
+    def slow_validation(sim,wall):
+        current_wall[0] = 100_000_000  # The callback consumed the whole contract.
+        return original(sim,wall)
+    motor.latest_context = slow_validation
+    motor.monotonic_clock = lambda: current_wall[0]
+    result = motor.tick(sim_time_s=0.,monotonic_ns=0)
+    assert not robot.commands
+    assert result.reason_codes == ("CONTRACT_EXPIRED",)
