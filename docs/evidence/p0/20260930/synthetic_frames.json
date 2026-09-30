@@ -1,0 +1,1692 @@
+[
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/3",
+      "camera_id": "camera",
+      "frame_seq": 3,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.05,
+      "capture_monotonic_ns": 50000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/4",
+      "camera_id": "camera",
+      "frame_seq": 4,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.1,
+      "capture_monotonic_ns": 100000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/5",
+      "camera_id": "camera",
+      "frame_seq": 5,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.15,
+      "capture_monotonic_ns": 150000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/6",
+      "camera_id": "camera",
+      "frame_seq": 6,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.2,
+      "capture_monotonic_ns": 200000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/7",
+      "camera_id": "camera",
+      "frame_seq": 7,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.25,
+      "capture_monotonic_ns": 250000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/8",
+      "camera_id": "camera",
+      "frame_seq": 8,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.3,
+      "capture_monotonic_ns": 300000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/9",
+      "camera_id": "camera",
+      "frame_seq": 9,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.35,
+      "capture_monotonic_ns": 350000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/10",
+      "camera_id": "camera",
+      "frame_seq": 10,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.4,
+      "capture_monotonic_ns": 400000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/11",
+      "camera_id": "camera",
+      "frame_seq": 11,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.45,
+      "capture_monotonic_ns": 450000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/12",
+      "camera_id": "camera",
+      "frame_seq": 12,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.5,
+      "capture_monotonic_ns": 500000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/13",
+      "camera_id": "camera",
+      "frame_seq": 13,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.55,
+      "capture_monotonic_ns": 550000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/14",
+      "camera_id": "camera",
+      "frame_seq": 14,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.6,
+      "capture_monotonic_ns": 600000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/15",
+      "camera_id": "camera",
+      "frame_seq": 15,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.65,
+      "capture_monotonic_ns": 650000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/16",
+      "camera_id": "camera",
+      "frame_seq": 16,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.7,
+      "capture_monotonic_ns": 700000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/17",
+      "camera_id": "camera",
+      "frame_seq": 17,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.75,
+      "capture_monotonic_ns": 750000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/18",
+      "camera_id": "camera",
+      "frame_seq": 18,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.8,
+      "capture_monotonic_ns": 800000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/19",
+      "camera_id": "camera",
+      "frame_seq": 19,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.85,
+      "capture_monotonic_ns": 850000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/20",
+      "camera_id": "camera",
+      "frame_seq": 20,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.9,
+      "capture_monotonic_ns": 900000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/21",
+      "camera_id": "camera",
+      "frame_seq": 21,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.95,
+      "capture_monotonic_ns": 950000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/22",
+      "camera_id": "camera",
+      "frame_seq": 22,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.0,
+      "capture_monotonic_ns": 1000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/23",
+      "camera_id": "camera",
+      "frame_seq": 23,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.05,
+      "capture_monotonic_ns": 1050000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/24",
+      "camera_id": "camera",
+      "frame_seq": 24,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.1,
+      "capture_monotonic_ns": 1100000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/25",
+      "camera_id": "camera",
+      "frame_seq": 25,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.15,
+      "capture_monotonic_ns": 1150000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/26",
+      "camera_id": "camera",
+      "frame_seq": 26,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.2,
+      "capture_monotonic_ns": 1200000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/27",
+      "camera_id": "camera",
+      "frame_seq": 27,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.25,
+      "capture_monotonic_ns": 1250000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/28",
+      "camera_id": "camera",
+      "frame_seq": 28,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.3,
+      "capture_monotonic_ns": 1300000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/29",
+      "camera_id": "camera",
+      "frame_seq": 29,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.35,
+      "capture_monotonic_ns": 1350000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/30",
+      "camera_id": "camera",
+      "frame_seq": 30,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.4,
+      "capture_monotonic_ns": 1400000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/31",
+      "camera_id": "camera",
+      "frame_seq": 31,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.45,
+      "capture_monotonic_ns": 1450000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/32",
+      "camera_id": "camera",
+      "frame_seq": 32,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.5,
+      "capture_monotonic_ns": 1500000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/33",
+      "camera_id": "camera",
+      "frame_seq": 33,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.55,
+      "capture_monotonic_ns": 1550000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/34",
+      "camera_id": "camera",
+      "frame_seq": 34,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.6,
+      "capture_monotonic_ns": 1600000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/35",
+      "camera_id": "camera",
+      "frame_seq": 35,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.65,
+      "capture_monotonic_ns": 1650000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/36",
+      "camera_id": "camera",
+      "frame_seq": 36,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.7,
+      "capture_monotonic_ns": 1700000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/37",
+      "camera_id": "camera",
+      "frame_seq": 37,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.75,
+      "capture_monotonic_ns": 1750000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/38",
+      "camera_id": "camera",
+      "frame_seq": 38,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.8,
+      "capture_monotonic_ns": 1800000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/39",
+      "camera_id": "camera",
+      "frame_seq": 39,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.85,
+      "capture_monotonic_ns": 1850000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/40",
+      "camera_id": "camera",
+      "frame_seq": 40,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.9,
+      "capture_monotonic_ns": 1900000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/41",
+      "camera_id": "camera",
+      "frame_seq": 41,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.95,
+      "capture_monotonic_ns": 1950000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/42",
+      "camera_id": "camera",
+      "frame_seq": 42,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.0,
+      "capture_monotonic_ns": 2000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/43",
+      "camera_id": "camera",
+      "frame_seq": 43,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.0,
+      "capture_monotonic_ns": 2000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_valid",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_valid/synthetic/frame/44",
+      "camera_id": "camera",
+      "frame_seq": 44,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.05,
+      "capture_monotonic_ns": 2050000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/3",
+      "camera_id": "camera",
+      "frame_seq": 3,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.05,
+      "capture_monotonic_ns": 50000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/4",
+      "camera_id": "camera",
+      "frame_seq": 4,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.1,
+      "capture_monotonic_ns": 100000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/5",
+      "camera_id": "camera",
+      "frame_seq": 5,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.15,
+      "capture_monotonic_ns": 150000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/6",
+      "camera_id": "camera",
+      "frame_seq": 6,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.2,
+      "capture_monotonic_ns": 200000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/7",
+      "camera_id": "camera",
+      "frame_seq": 7,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.25,
+      "capture_monotonic_ns": 250000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/8",
+      "camera_id": "camera",
+      "frame_seq": 8,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.3,
+      "capture_monotonic_ns": 300000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/9",
+      "camera_id": "camera",
+      "frame_seq": 9,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.35,
+      "capture_monotonic_ns": 350000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/10",
+      "camera_id": "camera",
+      "frame_seq": 10,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.4,
+      "capture_monotonic_ns": 400000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/11",
+      "camera_id": "camera",
+      "frame_seq": 11,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.45,
+      "capture_monotonic_ns": 450000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/12",
+      "camera_id": "camera",
+      "frame_seq": 12,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.5,
+      "capture_monotonic_ns": 500000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/13",
+      "camera_id": "camera",
+      "frame_seq": 13,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.55,
+      "capture_monotonic_ns": 550000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/14",
+      "camera_id": "camera",
+      "frame_seq": 14,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.6,
+      "capture_monotonic_ns": 600000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/15",
+      "camera_id": "camera",
+      "frame_seq": 15,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.65,
+      "capture_monotonic_ns": 650000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/16",
+      "camera_id": "camera",
+      "frame_seq": 16,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.7,
+      "capture_monotonic_ns": 700000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/17",
+      "camera_id": "camera",
+      "frame_seq": 17,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.75,
+      "capture_monotonic_ns": 750000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/18",
+      "camera_id": "camera",
+      "frame_seq": 18,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.8,
+      "capture_monotonic_ns": 800000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/19",
+      "camera_id": "camera",
+      "frame_seq": 19,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.85,
+      "capture_monotonic_ns": 850000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/20",
+      "camera_id": "camera",
+      "frame_seq": 20,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.9,
+      "capture_monotonic_ns": 900000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/21",
+      "camera_id": "camera",
+      "frame_seq": 21,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.95,
+      "capture_monotonic_ns": 950000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/22",
+      "camera_id": "camera",
+      "frame_seq": 22,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.0,
+      "capture_monotonic_ns": 1000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/23",
+      "camera_id": "camera",
+      "frame_seq": 23,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.05,
+      "capture_monotonic_ns": 1050000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/24",
+      "camera_id": "camera",
+      "frame_seq": 24,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.1,
+      "capture_monotonic_ns": 1100000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/25",
+      "camera_id": "camera",
+      "frame_seq": 25,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.15,
+      "capture_monotonic_ns": 1150000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/26",
+      "camera_id": "camera",
+      "frame_seq": 26,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.2,
+      "capture_monotonic_ns": 1200000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/27",
+      "camera_id": "camera",
+      "frame_seq": 27,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.25,
+      "capture_monotonic_ns": 1250000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/28",
+      "camera_id": "camera",
+      "frame_seq": 28,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.3,
+      "capture_monotonic_ns": 1300000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/29",
+      "camera_id": "camera",
+      "frame_seq": 29,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.35,
+      "capture_monotonic_ns": 1350000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/30",
+      "camera_id": "camera",
+      "frame_seq": 30,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.4,
+      "capture_monotonic_ns": 1400000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/31",
+      "camera_id": "camera",
+      "frame_seq": 31,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.45,
+      "capture_monotonic_ns": 1450000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/32",
+      "camera_id": "camera",
+      "frame_seq": 32,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.5,
+      "capture_monotonic_ns": 1500000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/33",
+      "camera_id": "camera",
+      "frame_seq": 33,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.55,
+      "capture_monotonic_ns": 1550000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/34",
+      "camera_id": "camera",
+      "frame_seq": 34,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.6,
+      "capture_monotonic_ns": 1600000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/35",
+      "camera_id": "camera",
+      "frame_seq": 35,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.65,
+      "capture_monotonic_ns": 1650000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/36",
+      "camera_id": "camera",
+      "frame_seq": 36,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.7,
+      "capture_monotonic_ns": 1700000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/37",
+      "camera_id": "camera",
+      "frame_seq": 37,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.75,
+      "capture_monotonic_ns": 1750000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/38",
+      "camera_id": "camera",
+      "frame_seq": 38,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.8,
+      "capture_monotonic_ns": 1800000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/39",
+      "camera_id": "camera",
+      "frame_seq": 39,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.85,
+      "capture_monotonic_ns": 1850000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/40",
+      "camera_id": "camera",
+      "frame_seq": 40,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.9,
+      "capture_monotonic_ns": 1900000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/41",
+      "camera_id": "camera",
+      "frame_seq": 41,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.95,
+      "capture_monotonic_ns": 1950000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/42",
+      "camera_id": "camera",
+      "frame_seq": 42,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.0,
+      "capture_monotonic_ns": 2000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/43",
+      "camera_id": "camera",
+      "frame_seq": 43,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.0,
+      "capture_monotonic_ns": 2000000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "late_expired",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/late_expired/synthetic/frame/44",
+      "camera_id": "camera",
+      "frame_seq": 44,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.05,
+      "capture_monotonic_ns": 2050000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "cancel_active",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/cancel_active/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "cancel_active",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/cancel_active/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "wall_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall_only_expiry/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "wall_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall_only_expiry/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "wall_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall_only_expiry/synthetic/frame/3",
+      "camera_id": "camera",
+      "frame_seq": 3,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.05,
+      "capture_monotonic_ns": 100000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "sim_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/sim_only_expiry/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "sim_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/sim_only_expiry/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "sim_only_expiry",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/sim_only_expiry/synthetic/frame/3",
+      "camera_id": "camera",
+      "frame_seq": 3,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.1,
+      "capture_monotonic_ns": 50000000,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/1",
+      "camera_id": "camera",
+      "frame_seq": 1,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 0,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/2",
+      "camera_id": "camera",
+      "frame_seq": 2,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.0,
+      "capture_monotonic_ns": 2272224548560208,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/3",
+      "camera_id": "camera",
+      "frame_seq": 3,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.026017018,
+      "capture_monotonic_ns": 2272224574577226,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/4",
+      "camera_id": "camera",
+      "frame_seq": 4,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.083596458,
+      "capture_monotonic_ns": 2272224632156666,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/5",
+      "camera_id": "camera",
+      "frame_seq": 5,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.141903308,
+      "capture_monotonic_ns": 2272224690463516,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/6",
+      "camera_id": "camera",
+      "frame_seq": 6,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.200908777,
+      "capture_monotonic_ns": 2272224749468985,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/7",
+      "camera_id": "camera",
+      "frame_seq": 7,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.260470694,
+      "capture_monotonic_ns": 2272224809030902,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/8",
+      "camera_id": "camera",
+      "frame_seq": 8,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.320542382,
+      "capture_monotonic_ns": 2272224869102590,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/9",
+      "camera_id": "camera",
+      "frame_seq": 9,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.38167523,
+      "capture_monotonic_ns": 2272224930235438,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/10",
+      "camera_id": "camera",
+      "frame_seq": 10,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.442506951,
+      "capture_monotonic_ns": 2272224991067159,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/11",
+      "camera_id": "camera",
+      "frame_seq": 11,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.509888921,
+      "capture_monotonic_ns": 2272225058449129,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/12",
+      "camera_id": "camera",
+      "frame_seq": 12,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.578672012,
+      "capture_monotonic_ns": 2272225127232220,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/13",
+      "camera_id": "camera",
+      "frame_seq": 13,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.646762927,
+      "capture_monotonic_ns": 2272225195323135,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/14",
+      "camera_id": "camera",
+      "frame_seq": 14,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.719242207,
+      "capture_monotonic_ns": 2272225267802415,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/15",
+      "camera_id": "camera",
+      "frame_seq": 15,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.790584141,
+      "capture_monotonic_ns": 2272225339144349,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/16",
+      "camera_id": "camera",
+      "frame_seq": 16,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.864354865,
+      "capture_monotonic_ns": 2272225412915073,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/17",
+      "camera_id": "camera",
+      "frame_seq": 17,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 0.938229264,
+      "capture_monotonic_ns": 2272225486789472,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/18",
+      "camera_id": "camera",
+      "frame_seq": 18,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.014566817,
+      "capture_monotonic_ns": 2272225563127025,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/19",
+      "camera_id": "camera",
+      "frame_seq": 19,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.089125516,
+      "capture_monotonic_ns": 2272225637685724,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/20",
+      "camera_id": "camera",
+      "frame_seq": 20,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.165982258,
+      "capture_monotonic_ns": 2272225714542466,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/21",
+      "camera_id": "camera",
+      "frame_seq": 21,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.244236073,
+      "capture_monotonic_ns": 2272225792796281,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/22",
+      "camera_id": "camera",
+      "frame_seq": 22,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.321894115,
+      "capture_monotonic_ns": 2272225870454323,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/23",
+      "camera_id": "camera",
+      "frame_seq": 23,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.399370605,
+      "capture_monotonic_ns": 2272225947930813,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/24",
+      "camera_id": "camera",
+      "frame_seq": 24,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.478396506,
+      "capture_monotonic_ns": 2272226026956714,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/25",
+      "camera_id": "camera",
+      "frame_seq": 25,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.55746681,
+      "capture_monotonic_ns": 2272226106027018,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/26",
+      "camera_id": "camera",
+      "frame_seq": 26,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.638218966,
+      "capture_monotonic_ns": 2272226186779174,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/27",
+      "camera_id": "camera",
+      "frame_seq": 27,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.720998423,
+      "capture_monotonic_ns": 2272226269558631,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/28",
+      "camera_id": "camera",
+      "frame_seq": 28,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.804332485,
+      "capture_monotonic_ns": 2272226352892693,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/29",
+      "camera_id": "camera",
+      "frame_seq": 29,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.888487926,
+      "capture_monotonic_ns": 2272226437048134,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/30",
+      "camera_id": "camera",
+      "frame_seq": 30,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 1.973195469,
+      "capture_monotonic_ns": 2272226521755677,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/31",
+      "camera_id": "camera",
+      "frame_seq": 31,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.058545292,
+      "capture_monotonic_ns": 2272226607105500,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/32",
+      "camera_id": "camera",
+      "frame_seq": 32,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.144220988,
+      "capture_monotonic_ns": 2272226692781196,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/33",
+      "camera_id": "camera",
+      "frame_seq": 33,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.170308399,
+      "capture_monotonic_ns": 2272226718868607,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "kind": "synthetic_frame",
+    "payload": {
+      "frame_id": "p0/wall/synthetic/frame/34",
+      "camera_id": "camera",
+      "frame_seq": 34,
+      "calibration_version": "cal1",
+      "capture_sim_time_s": 2.245765091,
+      "capture_monotonic_ns": 2272226794325299,
+      "condition": "synthetic_geometry_fixture_no_image"
+    }
+  }
+]

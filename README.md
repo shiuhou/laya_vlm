@@ -5,20 +5,27 @@ actions; code owns estimation, validity checks and motor control.
 The integrated baseline demonstrates an inspectable visual model-to-actuator loop.
 That non-oracle demo still does not establish useful drawer manipulation.
 
-The active autonomous research mission (2026-09-26) starts from `b73b5b4` and tests
-which perceptual information and planning/decision boundaries are actually needed.
-VLM planning plus Laya is a hypothesis. See [current beliefs](CURRENT_BELIEFS.md)
-and the [research log](docs/research/autonomous_research_log.md). The privileged
-results below remain preserved baselines; prior phase scope restrictions do not
-limit the newly authorized experiments.
+The selected implementation direction (2026-09-30) is **Qwen3-VL brain → Laya
+local choice → continuous RGB-D geometry and deterministic servo**. Model
+contributions remain to be evaluated with B0–B4; this is not an open-ended
+architecture search. Start with the [P0 acceptance report](docs/p0-acceptance.md),
+[approved implementation plan](docs/p0-implementation-plan.md), and
+[wire protocols](docs/protocols-and-inference-example.md).
 
-The current research direction is **Interaction-Structured Decision Interfaces for
+P0 now supplies model-free message/state/action contracts, sensor boundaries and
+cancellable scheduling. Its synthetic tests do not establish visual robot
+control, model performance or drawer success. P1/P2 own real perception/control.
+The first task is pushing a visible drawer front; a pad/handle grasp is not a
+prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
+[research log](docs/research/autonomous_research_log.md) remain historical records.
+
+The earlier privileged research phase studied **Interaction-Structured Decision Interfaces for
 Foundation-Model Robotic Manipulation**. The question is what physical structure a
 runtime must expose to a frozen decision model so its closed-loop choices satisfy
 both task results and task-valid interaction relations. The interface under study is
 current state + predicted effects + local objective + interaction semantics. This
-phase remains explicitly privileged; perception, learned world models and sim-to-real
-are outside the present scope.
+phase was explicitly privileged. Its scope restrictions describe those historical
+experiments, not the selected implementation direction above.
 
 The [local-objective privileged reference](docs/evidence/decision_interface/local_objective_reference.md)
 now exercises full Jev candidate previews, task-specific effect-contract filtering,
@@ -40,7 +47,8 @@ Task-2 Laya has not run. See the
 
 ## Reading order
 
-1. [Current state](docs/current_state.md): operational truth and stop point.
+1. [P0 acceptance](docs/p0-acceptance.md): current implementation, tests and limits.
+   [Current-state checkpoint](docs/current_state.md) records the preceding research stop point.
 2. [Architecture](docs/architecture.md): implemented interfaces and boundaries.
 3. [Research](docs/research.md) or [engineering demo](docs/engineering_demo.md):
    claims and focused evidence indexes.
@@ -86,8 +94,9 @@ LIBERO/Jev setup are local prerequisites, not downloaded by this repository.
 The visual path uses RGB-D and proprioception. Simulator state is allowed for
 execution/evaluation and explicitly privileged references, never silent visual
 decision input. Oracle-conditioned decisions are not automatically useful.
-An AtomicBackend owns action layout, coordinates, scaling, gripper polarity and
-success predicates; controller scales cannot be copied between environments.
+The legacy AtomicBackend owns action layout, scaling and success predicates.
+The new sensor-only path gives servo only a SensorPort and sends official success
+to an independent evaluator. Controller scales cannot be copied between environments.
 
 References: [Laya](https://github.com/NandhaKishorM/laya),
 [LIBERO-Pro](https://github.com/Zxy-MLlab/LIBERO-PRO),

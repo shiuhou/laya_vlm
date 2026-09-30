@@ -1,0 +1,215 @@
+[
+  {
+    "case": "late_valid",
+    "proposal_ttl_s": 3.0,
+    "synthetic": true,
+    "accepted": true,
+    "commands": 2,
+    "position_m": [
+      0.004999999999999997,
+      0.0,
+      0.0
+    ],
+    "rejections": [],
+    "feedback": [
+      {
+        "contract_id": "contract/decision/late_valid/request",
+        "decision_id": "decision/late_valid/request",
+        "status": "PARTIAL",
+        "started_sim_time_s": 2.0,
+        "finished_sim_time_s": 2.0999999999999996,
+        "started_monotonic_ns": 2000000000,
+        "finished_monotonic_ns": 2100000000,
+        "measured_eef_delta_m": [
+          0.004999999999999997,
+          0.0,
+          0.0
+        ],
+        "measured_gripper_state": {
+          "gripper_width_m": 0.08,
+          "valid": true,
+          "source_ids": [
+            "synthetic/robot"
+          ],
+          "gripper_width_calibration_id": "synthetic/calibration",
+          "gripper_command": "OPEN",
+          "gripper_joint_position_rad": null,
+          "reason_codes": [],
+          "holding": null
+        },
+        "remaining_requested_magnitude": 0.035,
+        "reason_codes": []
+      }
+    ]
+  },
+  {
+    "case": "late_expired",
+    "proposal_ttl_s": 1.2,
+    "synthetic": true,
+    "accepted": false,
+    "commands": 0,
+    "position_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rejections": [
+      "PROPOSAL_EXPIRED"
+    ],
+    "feedback": []
+  },
+  {
+    "case": "cancel_active",
+    "synthetic": true,
+    "commands": 1,
+    "feedback": {
+      "contract_id": "contract/decision/cancel_active/request",
+      "decision_id": "decision/cancel_active/request",
+      "status": "ABORTED",
+      "started_sim_time_s": 0.0,
+      "finished_sim_time_s": 0.05,
+      "started_monotonic_ns": 0,
+      "finished_monotonic_ns": 50000000,
+      "measured_eef_delta_m": [
+        0.0025,
+        0.0,
+        0.0
+      ],
+      "measured_gripper_state": {
+        "gripper_width_m": 0.08,
+        "valid": true,
+        "source_ids": [
+          "synthetic/robot"
+        ],
+        "gripper_width_calibration_id": "synthetic/calibration",
+        "gripper_command": "OPEN",
+        "gripper_joint_position_rad": null,
+        "reason_codes": [],
+        "holding": null
+      },
+      "remaining_requested_magnitude": 0.0375,
+      "reason_codes": [
+        "CANCELLED"
+      ]
+    }
+  },
+  {
+    "case": "wall_only_expiry",
+    "synthetic": true,
+    "commands": 1,
+    "feedback": {
+      "contract_id": "contract/decision/wall_only_expiry/request",
+      "decision_id": "decision/wall_only_expiry/request",
+      "status": "ABORTED",
+      "started_sim_time_s": 0.0,
+      "finished_sim_time_s": 0.05,
+      "started_monotonic_ns": 0,
+      "finished_monotonic_ns": 100000000,
+      "measured_eef_delta_m": [
+        0.0025,
+        0.0,
+        0.0
+      ],
+      "measured_gripper_state": {
+        "gripper_width_m": 0.08,
+        "valid": true,
+        "source_ids": [
+          "synthetic/robot"
+        ],
+        "gripper_width_calibration_id": "synthetic/calibration",
+        "gripper_command": "OPEN",
+        "gripper_joint_position_rad": null,
+        "reason_codes": [],
+        "holding": null
+      },
+      "remaining_requested_magnitude": 0.0375,
+      "reason_codes": [
+        "CONTRACT_EXPIRED"
+      ]
+    }
+  },
+  {
+    "case": "sim_only_expiry",
+    "synthetic": true,
+    "commands": 1,
+    "feedback": {
+      "contract_id": "contract/decision/sim_only_expiry/request",
+      "decision_id": "decision/sim_only_expiry/request",
+      "status": "ABORTED",
+      "started_sim_time_s": 0.0,
+      "finished_sim_time_s": 0.1,
+      "started_monotonic_ns": 0,
+      "finished_monotonic_ns": 50000000,
+      "measured_eef_delta_m": [
+        0.0025,
+        0.0,
+        0.0
+      ],
+      "measured_gripper_state": {
+        "gripper_width_m": 0.08,
+        "valid": true,
+        "source_ids": [
+          "synthetic/robot"
+        ],
+        "gripper_width_calibration_id": "synthetic/calibration",
+        "gripper_command": "OPEN",
+        "gripper_joint_position_rad": null,
+        "reason_codes": [],
+        "holding": null
+      },
+      "remaining_requested_magnitude": 0.0375,
+      "reason_codes": [
+        "CONTRACT_EXPIRED"
+      ]
+    }
+  },
+  {
+    "case": "real_wall_fake_worker",
+    "synthetic": true,
+    "accepted": true,
+    "deliberately_configured_proposal_ttl_s": 10.0,
+    "ticks_while_pending": 30,
+    "max_tick_gap_s": 0.085675696,
+    "mean_tick_hz": 13.690843946440152,
+    "commands": 1,
+    "worker_completed": 1,
+    "feedback": [
+      {
+        "contract_id": "contract/decision/wall/request",
+        "decision_id": "decision/wall/request",
+        "status": "ABORTED",
+        "started_sim_time_s": 2.170308399,
+        "finished_sim_time_s": 2.245765091,
+        "started_monotonic_ns": 2272226718868607,
+        "finished_monotonic_ns": 2272226794325299,
+        "measured_eef_delta_m": [
+          0.0024999999999999983,
+          0.0,
+          0.0
+        ],
+        "measured_gripper_state": {
+          "gripper_width_m": 0.08,
+          "valid": true,
+          "source_ids": [
+            "synthetic/robot"
+          ],
+          "gripper_width_calibration_id": "synthetic/calibration",
+          "gripper_command": "OPEN",
+          "gripper_joint_position_rad": null,
+          "reason_codes": [],
+          "holding": null
+        },
+        "remaining_requested_magnitude": 0.037500000000000006,
+        "reason_codes": [
+          "CONTRACT_EXPIRED"
+        ]
+      }
+    ],
+    "shutdown": [
+      {
+        "alive": false,
+        "terminated": false
+      }
+    ]
+  }
+]

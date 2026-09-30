@@ -1,0 +1,16 @@
+{
+  "raw_trace_sha256": "4ebfe25b3fb3bd1d2252f4e38f1a633475270adc7b90b50e0901f1bcdd8f725e",
+  "source_directory": "runs/p0/acceptance-20260930-03",
+  "files": {
+    "manifest.json": "8273ad028c2587524ed201df90faeb93b8d101e6fcc1666e4f60f959f170166d",
+    "audit.json": "03c8651dc1801b1d667e7e62d9b8b9d2f04b44b00f41ef0e32d8bc5dc7dbd710",
+    "validation.json": "4add736239fcf562a4c39bed731d4cf7ec7fdca8e8f64b818488c8097761c59a",
+    "tests.txt": "b632698f4ab30acab23c0b42c050b8334063168dc905cc4205620bd395a383ca",
+    "lint.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "events.jsonl.gz": "d8085f928cb24c8d40db1289fe7e138d8cbe956d9cb0e77d1ae5a4b35afe0576",
+    "synthetic_frames.json": "d37774d1a714382b93e5fade2b9e828a4a9265d03498280678311fae65b8f1d4",
+    "dependencies.txt": "387bf306cc62a8a38d4ca580ff33588ea3b855cec56f89eb1f675ab40b308cd7",
+    "summary.json": "ac5cb03ff3a27894938754716438f1181914fc65c4ef122fee665c1508fcb39e",
+    "test-command.txt": "5c72c8066412e1c00b445bf8d6e2f07fec9891873043720180fa6d414764f0ea"
+  }
+}
