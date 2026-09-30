@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "ea853019d3343ef4cb8eff8a2fdb43a91e760642",
+  "archive_sha256": "537a7f5a059c4190d3a39280cc24e32785b8f7734e60f243c298df3a3ca5f1a6",
+  "sources": [
+    {
+      "archive_member": "laya_new_direction_handoff/originals/docs/brain-cerebellum-plan-v2.md",
+      "path": "docs/brain-cerebellum-plan-v2.md",
+      "sha256": "370f8010cbde03013f573d65544f420b90a4005bf2a803ac987e82b17965e5a0"
+    },
+    {
+      "archive_member": "laya_new_direction_handoff/originals/docs/protocols-and-inference-example.md",
+      "path": "docs/protocols-and-inference-example.md",
+      "sha256": "1dc26e503bfbfbae9cf2455b0b7c7430dd323cc9c23a0081653143aa992fe7ac"
+    },
+    {
+      "archive_member": "laya_new_direction_handoff/originals/docs/target-point-perception.md",
+      "path": "docs/target-point-perception.md",
+      "sha256": "e6bf5c6efff0ce880d1175e7a8a690763008a9347fa9b9731fb9345683d5290f"
+    }
+  ]
+}
