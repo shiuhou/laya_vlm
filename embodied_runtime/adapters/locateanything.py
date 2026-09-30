@@ -25,12 +25,14 @@ def parse_locateanything(text: str, width: int, height: int) -> dict[str, Any]:
         seen.add(coords)
         boxes.append([x1 * width / 1000.0, y1 * height / 1000.0, x2 * width / 1000.0, y2 * height / 1000.0])
     refs = [m.group(1).strip() for m in _REF_RE.finditer(str(text)) if m.group(1).strip()]
-    return {"boxes_xyxy": boxes, "references": refs, "raw_response": str(text)}
+    return {"boxes_xyxy": boxes, "references": refs, "raw_response": str(text),
+            "detection_present": bool(boxes), "calibrated_confidence": None}
 
 
 class LocateAnythingWorker:
     """Lazy local worker; imports heavy Transformers only when constructed."""
-    def __init__(self, model_path: str, *, device: str = "cuda", dtype: str = "bfloat16"):
+    def __init__(self, model_path: str, *, device: str = "cuda", dtype: str = "bfloat16",
+                 model_revision: str | None = None):
         import torch
         from transformers import AutoModel, AutoProcessor, AutoTokenizer
         self.device, self.model_path = device, str(Path(model_path).expanduser())
@@ -39,6 +41,8 @@ class LocateAnythingWorker:
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True, local_files_only=True)
         self.processor = AutoProcessor.from_pretrained(self.model_path, trust_remote_code=True, local_files_only=True)
         self.model = AutoModel.from_pretrained(self.model_path, torch_dtype=self.dtype, trust_remote_code=True, local_files_only=True).to(device).eval()
+        # A filesystem path alone is not a pinned checkpoint revision.
+        self.model_revision = model_revision or getattr(self.model.config, "_commit_hash", None)
 
     def infer(self, rgb, query: str) -> dict[str, Any]:
         from PIL import Image
@@ -55,7 +59,9 @@ class LocateAnythingWorker:
         latency_ms = (time.perf_counter() - started) * 1000.0
         answer = response[0] if isinstance(response, tuple) else response
         result = parse_locateanything(answer, image.width, image.height)
-        result["score"] = 1.0 if result["boxes_xyxy"] else 0.0
+        # A parsed box is a categorical detection, not a calibrated probability.
+        result["model_revision"] = self.model_revision
+        result["model_artifact_path"] = self.model_path
         result["model_latency_ms"] = latency_ms
         return result
 

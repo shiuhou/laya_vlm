@@ -15,6 +15,29 @@ import numpy as np
 from .runtime_core import ObservationEvent
 
 
+def semantic_confidence(result: Mapping[str, Any]) -> tuple[float | None, dict[str, Any] | None]:
+    """Accept probabilities only with explicit independent calibration evidence.
+
+    Raw score/confidence remain logging fields. The provider does not calibrate
+    a detector, and a valid box does not establish confidence=1.
+    """
+    confidence = result.get("calibrated_confidence")
+    if confidence is None:
+        return None, None
+    provenance = result.get("calibration_provenance")
+    if (isinstance(confidence, bool) or not isinstance(confidence, (int, float))
+            or not np.isfinite(confidence) or not 0 <= confidence <= 1):
+        raise ValueError("calibrated_confidence must be finite and in [0,1]")
+    if not isinstance(provenance, Mapping) or not all(
+            isinstance(provenance.get(key), str) and provenance[key]
+            for key in ("calibration_id", "evidence_ref", "model_revision")):
+        raise ValueError("calibrated_confidence requires calibration provenance")
+    if provenance["model_revision"] != result.get("model_revision"):
+        raise ValueError("confidence calibration does not match model revision")
+    return float(confidence), {key: provenance[key]
+                              for key in ("calibration_id", "evidence_ref", "model_revision")}
+
+
 def robust_depth(depth: np.ndarray, box_xyxy: tuple[int, int, int, int], *,
                  min_depth: float = 0.01, max_depth: float = 5.0) -> tuple[float | None, float]:
     x1, y1, x2, y2 = [int(v) for v in box_xyxy]
@@ -124,10 +147,16 @@ class LocateAnythingProvider:
         u, v = (x1 + x2) / 2.0, (y1 + y2) / 2.0
         point = pixel_to_camera(u, v, z, self.intrinsics)
         covariance_camera = position_covariance_from_depth(u, v, z, box, stats, self.intrinsics)
-        confidence = float(result.get("score", result.get("confidence", 0.0)))
+        confidence, calibration = semantic_confidence(result)
         payload = {
             "label": query,
-            "probabilities": {query: max(0.0, min(1.0, confidence)), "unknown": max(0.0, 1.0 - confidence)},
+            "detection_present": True,
+            "semantic_evidence_kind": "categorical_binding" if confidence is None else "calibrated_probability",
+            "calibrated_confidence": confidence,
+            "calibration_provenance": calibration,
+            "raw_score": result.get("score"),
+            "raw_confidence": result.get("confidence"),
+            "model_revision": result.get("model_revision"),
             "position_camera_m": point.tolist(),
             "box_xyxy": list(box),
             "depth_valid_ratio": valid_ratio,
@@ -139,6 +168,8 @@ class LocateAnythingProvider:
             "model_latency_ms": result.get("model_latency_ms"),
             "raw_response": result.get("raw_response"),
         }
+        if confidence is not None:
+            payload["probabilities"] = {query: confidence, "unknown": 1.0 - confidence}
         if camera_to_world_matrix is not None:
             payload["position_world_m"] = camera_to_world(point, camera_to_world_matrix).tolist()
             rotation = np.asarray(camera_to_world_matrix, dtype=float)[:3, :3]
@@ -147,5 +178,6 @@ class LocateAnythingProvider:
             source=self.source, episode_id=episode_id, source_seq=source_seq,
             capture_sim_time=capture_sim_time, received_wall_time=__import__("time").time(),
             frame_id="camera", track_id=track_id or query, value=payload,
-            quality=min(confidence, valid_ratio), valid_until_sim=capture_sim_time + 0.75,
+            # Geometric support is independent of semantic calibration.
+            quality=valid_ratio, valid_until_sim=capture_sim_time + 0.75,
         )
