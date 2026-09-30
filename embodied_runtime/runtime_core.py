@@ -229,7 +229,8 @@ class BeliefStore:
         if not self.allow_delayed and event.source in {"semantic", "vision_semantic"}:
             track = event.track_id or str(value.get("track_id") or "scene")
             probs = dict(value.get("probabilities") or value.get("hypotheses") or {})
-            if not probs and value.get("label"):
+            if (not probs and value.get("label")
+                    and value.get("semantic_evidence_kind") != "categorical_binding"):
                 probs = {str(value["label"]): 1.0, "unknown": 0.0}
             self._update_semantic(track, probs, event, now)
         self.revision += 1
