@@ -1,0 +1,6 @@
+# P1 offline RGB-D/geometry replay and image diagnostics.
+# Linux x86_64 CPython 3.10; extends the unchanged P0 lock.
+# Pillow hash: downloaded binary cp310 manylinux_2_27/2_28 x86_64 wheel.
+-r p0-py310-linux.lock
+Pillow==12.3.0 \
+    --hash=sha256:f0606c8bf2cdefea14a43530f7657cbbb7ecf1c4222512492ef4a4434a9501ec

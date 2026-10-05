@@ -1,0 +1,17 @@
+{
+  "revision": "p1-static-rgbd-v1",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+  "camera_names": ["agentview", "robot0_eye_in_hand"],
+  "width": 384,
+  "height": 256,
+  "frames_per_reset": 2,
+  "roi_source": "agent_visual_seed_from_init0_no_model_not_performance_label",
+  "rois": {
+    "agentview": {"drawer_front_diagnostic": [146,90,174,160], "table_positive_control": [275,180,355,240]},
+    "robot0_eye_in_hand": {"drawer_front_diagnostic": [240,5,375,110], "table_positive_control": [10,110,70,175]}
+  },
+  "geometry_config": "configs/p1_geometry.json",
+  "condition": "sensor_capture_static_no_policy_no_extra_actions"
+}
