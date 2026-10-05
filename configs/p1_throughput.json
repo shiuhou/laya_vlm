@@ -1,0 +1,11 @@
+{
+  "revision": "p1-read-only-continuous-diagnostic-v1",
+  "duration_s": 10.0,
+  "requested_hz": 10.0,
+  "capture_config": "configs/p1_capture.json",
+  "runtime_config": "configs/p0_runtime.json",
+  "init_index": 0,
+  "warmup_cycles": 0,
+  "condition": "fresh_static_sensing_fixed_diagnostic_ROIs_no_models_no_actions",
+  "independent_of_annotation_and_semantic_grounding": true
+}
