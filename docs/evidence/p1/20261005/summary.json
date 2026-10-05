@@ -1,0 +1,62 @@
+{
+  "init_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "reset_camera_views": 50,
+  "recorded_bundles": 50,
+  "recorded_camera_views": 100,
+  "distinct_camera_rgb_depth_hashes": 50,
+  "fixed_roi_diagnostic_counts": {
+    "drawer_front_diagnostic/UNKNOWN": 44,
+    "table_positive_control/VALID": 100,
+    "drawer_front_diagnostic/AMBIGUOUS": 56
+  },
+  "tracked_patch_counts": {
+    "UNKNOWN": 153,
+    "VALID": 47
+  },
+  "tracker_counts": {
+    "LOST": 150,
+    "TRACKED": 47,
+    "AMBIGUOUS": 3
+  },
+  "geometry_p50_ms": 102.61229450043174,
+  "geometry_p95_ms": 196.5545552498952,
+  "tracker_p95_ms": 8.465412998702957,
+  "reprojection_status_counts": {
+    "PASS": 200
+  },
+  "numeric_inverse_consistency_max_error_px": 2.2659518661927756e-13,
+  "execution_usable_candidates": 0,
+  "real_temporal_sequences": false,
+  "independent_human_labels": false,
+  "official_success_evaluated": false,
+  "online_freshness_evaluated": false,
+  "positive_control_plane_counts": {
+    "UNKNOWN": 50
+  }
+}

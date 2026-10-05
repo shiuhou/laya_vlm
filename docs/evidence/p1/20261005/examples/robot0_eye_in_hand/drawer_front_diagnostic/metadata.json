@@ -1,0 +1,56 @@
+{
+  "source_frame_id": "p1/init0/robot0_eye_in_hand/1",
+  "calibration_version": "camera-calibration:bbff21c5a0587b86ed37d932035e7021ad9eeeaa77054bdd4e70c5d35527938b",
+  "roi_xyxy": [
+    240,
+    5,
+    375,
+    110
+  ],
+  "image_shape_hw": [
+    256,
+    384
+  ],
+  "geometry_status": "AMBIGUOUS",
+  "geometry_reason_codes": [
+    "AMBIGUOUS_DEPTH_COMPONENTS"
+  ],
+  "geometry_config_hash": "f3abcfd935087aa5992df6419bac6068b49fadc782e51b841ffc557808ef5da8",
+  "semantic_identity_verified": false,
+  "visualization_does_not_certify_execution": true,
+  "depth_units": "m",
+  "depth_display_range_m": [
+    0.05,
+    3.0
+  ],
+  "invalid_depth_color_rgb": [
+    180,
+    0,
+    180
+  ],
+  "plane_support_status": "NOT_AVAILABLE",
+  "plane_support_is_original_fit_membership": false,
+  "plane_support_excludes_robot_or_other_components": false,
+  "plane_compatible_pixel_count": null,
+  "plane_distance_threshold_m": 0.004,
+  "candidate_count": 0,
+  "drawn_candidate_count": 0,
+  "candidate_display_status": "UNKNOWN",
+  "candidate_color_rgb": [
+    255,
+    190,
+    0
+  ],
+  "candidate_projections": [],
+  "provenance": "sensor-derived-diagnostic",
+  "image_paths": {
+    "rgb_crop": "rgb_crop.png",
+    "metric_depth": "metric_depth.png",
+    "plane_support": "plane_support.png",
+    "candidates": "candidates.png"
+  },
+  "image_content_origin_px": [
+    0,
+    24
+  ]
+}

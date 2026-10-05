@@ -1,5 +1,14 @@
 # Decision evidence interfaces
 
+The selected implementation is Qwen3-VL → Laya → continuous RGB-D geometry and
+deterministic servo. [P0](p0-acceptance.md) supplies the typed messages, state,
+candidate/action contracts and cancellable scheduling. [P1](p1-rgbd-checkpoint.md)
+now adds same-exposure RGB-D, robot-only sensing, conservative contact geometry,
+feature association and exact sensor-file replay. These perception diagnostics
+do not yet constitute a live visual manipulation loop; P2 execution remains
+gated on target/reference observability. The diagram below records the earlier
+baseline rather than superseding the selected three-layer architecture.
+
 Implemented architecture of the integrated baseline; see [collaboration rules](development_tracks.md).
 This diagram separates concepts; the entry-point table below identifies which
 paths currently execute model decisions and which only replay them offline.

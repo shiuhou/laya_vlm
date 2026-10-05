@@ -1,0 +1,21 @@
+{
+  "events": 711,
+  "command_ticks": 6,
+  "candidate_sets": 6,
+  "model_inputs": 6,
+  "expired_dispatches": 0,
+  "post_cancel_dispatches": 0,
+  "overlong_segments": 0,
+  "partial_feedback": 1,
+  "aborted_feedback": 4,
+  "cases": [
+    "cancel_active",
+    "late_expired",
+    "late_valid",
+    "real_wall_fake_worker",
+    "sim_only_expiry",
+    "wall_only_expiry"
+  ],
+  "condition": "synthetic_p0_no_physical_success_claim",
+  "trace_sha256": "d8085f928cb24c8d40db1289fe7e138d8cbe956d9cb0e77d1ae5a4b35afe0576"
+}

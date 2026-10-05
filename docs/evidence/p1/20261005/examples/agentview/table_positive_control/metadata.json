@@ -1,0 +1,4087 @@
+{
+  "source_frame_id": "p1/init0/agentview/1",
+  "calibration_version": "camera-calibration:8feedb9b84b50bc50f3a1646e99ae9607665a81be7371f1097068cdbd34a8b8c",
+  "roi_xyxy": [
+    275,
+    180,
+    355,
+    240
+  ],
+  "image_shape_hw": [
+    256,
+    384
+  ],
+  "geometry_status": "VALID",
+  "geometry_reason_codes": [],
+  "geometry_config_hash": "f3abcfd935087aa5992df6419bac6068b49fadc782e51b841ffc557808ef5da8",
+  "semantic_identity_verified": false,
+  "visualization_does_not_certify_execution": true,
+  "depth_units": "m",
+  "depth_display_range_m": [
+    0.05,
+    3.0
+  ],
+  "invalid_depth_color_rgb": [
+    180,
+    0,
+    180
+  ],
+  "plane_support_status": "RECONSTRUCTED_PLANE_DISTANCE_COMPATIBILITY",
+  "plane_support_is_original_fit_membership": false,
+  "plane_support_excludes_robot_or_other_components": false,
+  "plane_compatible_pixel_count": 4800,
+  "plane_distance_threshold_m": 0.004,
+  "candidate_count": 192,
+  "drawn_candidate_count": 192,
+  "candidate_display_status": "UNKNOWN",
+  "candidate_color_rgb": [
+    255,
+    190,
+    0
+  ],
+  "candidate_projections": [
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:23",
+      "position_base_m": [
+        0.7199839150864508,
+        0.27599999683739346,
+        -0.00999367058269043
+      ],
+      "pixel_uv": [
+        285.6462780865302,
+        187.37423631737246
+      ],
+      "crop_pixel_uv": [
+        10.646278086530174,
+        7.374236317372464
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:24",
+      "position_base_m": [
+        0.7199839150864508,
+        0.28799999683739286,
+        -0.009993674380238508
+      ],
+      "pixel_uv": [
+        289.7178531497681,
+        187.3742369873544
+      ],
+      "crop_pixel_uv": [
+        14.717853149768075,
+        7.374236987354408
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:25",
+      "position_base_m": [
+        0.7199839150864508,
+        0.2999999968373922,
+        -0.009993678177786586
+      ],
+      "pixel_uv": [
+        293.7894282079946,
+        187.37423765733638
+      ],
+      "crop_pixel_uv": [
+        18.789428207994604,
+        7.37423765733638
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:26",
+      "position_base_m": [
+        0.7199839150864508,
+        0.31199999683739166,
+        -0.009993681975334665
+      ],
+      "pixel_uv": [
+        297.86100326120976,
+        187.37423832731832
+      ],
+      "crop_pixel_uv": [
+        22.86100326120976,
+        7.374238327318324
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:27",
+      "position_base_m": [
+        0.7199839150864508,
+        0.32399999683739106,
+        -0.009993685772882744
+      ],
+      "pixel_uv": [
+        301.9325783094136,
+        187.37423899730032
+      ],
+      "crop_pixel_uv": [
+        26.9325783094136,
+        7.374238997300324
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:28",
+      "position_base_m": [
+        0.7199839150864508,
+        0.33599999683739046,
+        -0.009993689570430822
+      ],
+      "pixel_uv": [
+        306.00415335260607,
+        187.3742396672822
+      ],
+      "crop_pixel_uv": [
+        31.004153352606068,
+        7.374239667282211
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:29",
+      "position_base_m": [
+        0.7199839150864508,
+        0.34799999683738986,
+        -0.0099936933679789
+      ],
+      "pixel_uv": [
+        310.0757283907873,
+        187.37424033726424
+      ],
+      "crop_pixel_uv": [
+        35.075728390787276,
+        7.37424033726424
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:30",
+      "position_base_m": [
+        0.7199839150864508,
+        0.3599999968373892,
+        -0.009993697165526979
+      ],
+      "pixel_uv": [
+        314.14730342395706,
+        187.37424100724618
+      ],
+      "crop_pixel_uv": [
+        39.147303423957055,
+        7.374241007246184
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:31",
+      "position_base_m": [
+        0.7199839150864508,
+        0.3719999968373886,
+        -0.009993700963075057
+      ],
+      "pixel_uv": [
+        318.2188784521154,
+        187.37424167722813
+      ],
+      "crop_pixel_uv": [
+        43.218878452115405,
+        7.374241677228127
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:32",
+      "position_base_m": [
+        0.7199839150864508,
+        0.38399999683738806,
+        -0.009993704760623136
+      ],
+      "pixel_uv": [
+        322.2904534752625,
+        187.37424234721007
+      ],
+      "crop_pixel_uv": [
+        47.290453475262495,
+        7.374242347210071
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:33",
+      "position_base_m": [
+        0.7199839150864508,
+        0.39599999683738746,
+        -0.009993708558171215
+      ],
+      "pixel_uv": [
+        326.3620284933982,
+        187.37424301719201
+      ],
+      "crop_pixel_uv": [
+        51.36202849339821,
+        7.374243017192015
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:34",
+      "position_base_m": [
+        0.7199839150864508,
+        0.40799999683738686,
+        -0.009993712355719293
+      ],
+      "pixel_uv": [
+        330.4336035065226,
+        187.37424368717402
+      ],
+      "crop_pixel_uv": [
+        55.433603506522616,
+        7.374243687174015
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:35",
+      "position_base_m": [
+        0.7199839150864508,
+        0.4199999968373862,
+        -0.00999371615326737
+      ],
+      "pixel_uv": [
+        334.5051785146356,
+        187.37424435715596
+      ],
+      "crop_pixel_uv": [
+        59.50517851463559,
+        7.374244357155959
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:36",
+      "position_base_m": [
+        0.7199839150864508,
+        0.4319999968373856,
+        -0.009993719950815449
+      ],
+      "pixel_uv": [
+        338.5767535177372,
+        187.37424502713787
+      ],
+      "crop_pixel_uv": [
+        63.57675351773719,
+        7.374245027137874
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:37",
+      "position_base_m": [
+        0.7199839150864508,
+        0.44399999683738506,
+        -0.009993723748363527
+      ],
+      "pixel_uv": [
+        342.6483285158276,
+        187.37424569711985
+      ],
+      "crop_pixel_uv": [
+        67.64832851582759,
+        7.3742456971198465
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:60:38",
+      "position_base_m": [
+        0.7199839150864508,
+        0.45599999683738446,
+        -0.009993727545911605
+      ],
+      "pixel_uv": [
+        346.71990350890655,
+        187.37424636710182
+      ],
+      "crop_pixel_uv": [
+        71.71990350890655,
+        7.374246367101819
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:22",
+      "position_base_m": [
+        0.7319838974279569,
+        0.2639999968308792,
+        -0.01001425327441285
+      ],
+      "pixel_uv": [
+        282.5011200108868,
+        190.5782846070153
+      ],
+      "crop_pixel_uv": [
+        7.50112001088678,
+        10.578284607015291
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:23",
+      "position_base_m": [
+        0.7319838974279569,
+        0.2759999968308786,
+        -0.010014257071960929
+      ],
+      "pixel_uv": [
+        286.6148049312588,
+        190.5782852819343
+      ],
+      "crop_pixel_uv": [
+        11.614804931258789,
+        10.578285281934313
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:24",
+      "position_base_m": [
+        0.7319838974279569,
+        0.287999996830878,
+        -0.010014260869509007
+      ],
+      "pixel_uv": [
+        290.72848984651523,
+        190.5782859568533
+      ],
+      "crop_pixel_uv": [
+        15.728489846515231,
+        10.578285956853307
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:25",
+      "position_base_m": [
+        0.7319838974279569,
+        0.29999999683087736,
+        -0.010014264667057085
+      ],
+      "pixel_uv": [
+        294.84217475665605,
+        190.57828663177233
+      ],
+      "crop_pixel_uv": [
+        19.84217475665605,
+        10.578286631772329
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:26",
+      "position_base_m": [
+        0.7319838974279569,
+        0.3119999968308768,
+        -0.010014268464605163
+      ],
+      "pixel_uv": [
+        298.95585966168136,
+        190.57828730669132
+      ],
+      "crop_pixel_uv": [
+        23.95585966168136,
+        10.578287306691323
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:27",
+      "position_base_m": [
+        0.7319838974279569,
+        0.3239999968308762,
+        -0.010014272262153241
+      ],
+      "pixel_uv": [
+        303.06954456159116,
+        190.57828798161032
+      ],
+      "crop_pixel_uv": [
+        28.069544561591158,
+        10.578287981610316
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:28",
+      "position_base_m": [
+        0.7319838974279569,
+        0.3359999968308756,
+        -0.010014276059701321
+      ],
+      "pixel_uv": [
+        307.18322945638533,
+        190.57828865652925
+      ],
+      "crop_pixel_uv": [
+        32.183229456385334,
+        10.578288656529253
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:29",
+      "position_base_m": [
+        0.7319838974279569,
+        0.347999996830875,
+        -0.0100142798572494
+      ],
+      "pixel_uv": [
+        311.29691434606406,
+        190.5782893314483
+      ],
+      "crop_pixel_uv": [
+        36.29691434606406,
+        10.578289331448303
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:30",
+      "position_base_m": [
+        0.7319838974279569,
+        0.35999999683087436,
+        -0.010014283654797477
+      ],
+      "pixel_uv": [
+        315.4105992306271,
+        190.57829000636727
+      ],
+      "crop_pixel_uv": [
+        40.4105992306271,
+        10.578290006367268
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:31",
+      "position_base_m": [
+        0.7319838974279569,
+        0.37199999683087376,
+        -0.010014287452345555
+      ],
+      "pixel_uv": [
+        319.52428411007475,
+        190.57829068128626
+      ],
+      "crop_pixel_uv": [
+        44.524284110074746,
+        10.578290681286262
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:32",
+      "position_base_m": [
+        0.7319838974279569,
+        0.3839999968308732,
+        -0.010014291249893633
+      ],
+      "pixel_uv": [
+        323.6379689844068,
+        190.57829135620526
+      ],
+      "crop_pixel_uv": [
+        48.637968984406825,
+        10.578291356205256
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:33",
+      "position_base_m": [
+        0.7319838974279569,
+        0.3959999968308726,
+        -0.010014295047441711
+      ],
+      "pixel_uv": [
+        327.7516538536233,
+        190.57829203112425
+      ],
+      "crop_pixel_uv": [
+        52.75165385362328,
+        10.57829203112425
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:34",
+      "position_base_m": [
+        0.7319838974279569,
+        0.407999996830872,
+        -0.010014298844989791
+      ],
+      "pixel_uv": [
+        331.8653387177242,
+        190.57829270604324
+      ],
+      "crop_pixel_uv": [
+        56.86533871772423,
+        10.578292706043243
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:35",
+      "position_base_m": [
+        0.7319838974279569,
+        0.41999999683087136,
+        -0.01001430264253787
+      ],
+      "pixel_uv": [
+        335.97902357670955,
+        190.57829338096224
+      ],
+      "crop_pixel_uv": [
+        60.97902357670955,
+        10.578293380962236
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:36",
+      "position_base_m": [
+        0.7319838974279569,
+        0.43199999683087076,
+        -0.010014306440085947
+      ],
+      "pixel_uv": [
+        340.09270843057936,
+        190.5782940558812
+      ],
+      "crop_pixel_uv": [
+        65.09270843057936,
+        10.578294055881202
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:61:37",
+      "position_base_m": [
+        0.7319838974279569,
+        0.4439999968308702,
+        -0.010014310237634026
+      ],
+      "pixel_uv": [
+        344.2063932793337,
+        190.5782947308002
+      ],
+      "crop_pixel_uv": [
+        69.20639327933372,
+        10.578294730800195
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:22",
+      "position_base_m": [
+        0.743983879769463,
+        0.26399999682436437,
+        -0.01003483976368335
+      ],
+      "pixel_uv": [
+        283.4469000112537,
+        193.84930127704172
+      ],
+      "crop_pixel_uv": [
+        8.446900011253717,
+        13.849301277041718
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:23",
+      "position_base_m": [
+        0.743983879769463,
+        0.27599999682436377,
+        -0.010034843561231428
+      ],
+      "pixel_uv": [
+        287.6035749202185,
+        193.84930195695887
+      ],
+      "crop_pixel_uv": [
+        12.603574920218477,
+        13.849301956958868
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:24",
+      "position_base_m": [
+        0.743983879769463,
+        0.28799999682436317,
+        -0.010034847358779506
+      ],
+      "pixel_uv": [
+        291.7602498239602,
+        193.849302636876
+      ],
+      "crop_pixel_uv": [
+        16.76024982396018,
+        13.84930263687599
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:25",
+      "position_base_m": [
+        0.743983879769463,
+        0.2999999968243625,
+        -0.010034851156327584
+      ],
+      "pixel_uv": [
+        295.9169247224789,
+        193.84930331679317
+      ],
+      "crop_pixel_uv": [
+        20.916924722478882,
+        13.849303316793169
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:26",
+      "position_base_m": [
+        0.743983879769463,
+        0.31199999682436197,
+        -0.010034854953875662
+      ],
+      "pixel_uv": [
+        300.0735996157746,
+        193.84930399671032
+      ],
+      "crop_pixel_uv": [
+        25.073599615774583,
+        13.849303996710319
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:27",
+      "position_base_m": [
+        0.743983879769463,
+        0.32399999682436137,
+        -0.01003485875142374
+      ],
+      "pixel_uv": [
+        304.23027450384717,
+        193.84930467662744
+      ],
+      "crop_pixel_uv": [
+        29.23027450384717,
+        13.84930467662744
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:28",
+      "position_base_m": [
+        0.743983879769463,
+        0.33599999682436077,
+        -0.010034862548971818
+      ],
+      "pixel_uv": [
+        308.38694938669687,
+        193.84930535654456
+      ],
+      "crop_pixel_uv": [
+        33.38694938669687,
+        13.849305356544562
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:29",
+      "position_base_m": [
+        0.743983879769463,
+        0.34799999682436017,
+        -0.010034866346519898
+      ],
+      "pixel_uv": [
+        312.54362426432346,
+        193.84930603646174
+      ],
+      "crop_pixel_uv": [
+        37.543624264323455,
+        13.84930603646174
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:30",
+      "position_base_m": [
+        0.743983879769463,
+        0.3599999968243595,
+        -0.010034870144067976
+      ],
+      "pixel_uv": [
+        316.700299136727,
+        193.8493067163789
+      ],
+      "crop_pixel_uv": [
+        41.70029913672698,
+        13.84930671637889
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:31",
+      "position_base_m": [
+        0.743983879769463,
+        0.3719999968243589,
+        -0.010034873941616054
+      ],
+      "pixel_uv": [
+        320.8569740039075,
+        193.84930739629598
+      ],
+      "crop_pixel_uv": [
+        45.85697400390751,
+        13.849307396295984
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:32",
+      "position_base_m": [
+        0.743983879769463,
+        0.38399999682435837,
+        -0.010034877739164132
+      ],
+      "pixel_uv": [
+        325.01364886586504,
+        193.84930807621313
+      ],
+      "crop_pixel_uv": [
+        50.013648865865036,
+        13.849308076213134
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:33",
+      "position_base_m": [
+        0.743983879769463,
+        0.39599999682435777,
+        -0.01003488153671221
+      ],
+      "pixel_uv": [
+        329.17032372259956,
+        193.84930875613028
+      ],
+      "crop_pixel_uv": [
+        54.17032372259956,
+        13.849308756130284
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:34",
+      "position_base_m": [
+        0.743983879769463,
+        0.40799999682435717,
+        -0.010034885334260288
+      ],
+      "pixel_uv": [
+        333.32699857411103,
+        193.8493094360474
+      ],
+      "crop_pixel_uv": [
+        58.32699857411103,
+        13.849309436047406
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:35",
+      "position_base_m": [
+        0.743983879769463,
+        0.4199999968243565,
+        -0.010034889131808368
+      ],
+      "pixel_uv": [
+        337.4836734203994,
+        193.84931011596456
+      ],
+      "crop_pixel_uv": [
+        62.483673420399384,
+        13.849310115964556
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:36",
+      "position_base_m": [
+        0.743983879769463,
+        0.4319999968243559,
+        -0.010034892929356446
+      ],
+      "pixel_uv": [
+        341.64034826146474,
+        193.84931079588168
+      ],
+      "crop_pixel_uv": [
+        66.64034826146474,
+        13.849310795881678
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:62:37",
+      "position_base_m": [
+        0.743983879769463,
+        0.44399999682435537,
+        -0.010034896726904524
+      ],
+      "pixel_uv": [
+        345.7970230973072,
+        193.84931147579883
+      ],
+      "crop_pixel_uv": [
+        70.7970230973072,
+        13.849311475798828
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:22",
+      "position_base_m": [
+        0.7559838621109692,
+        0.2639999968178495,
+        -0.010055426252953846
+      ],
+      "pixel_uv": [
+        284.4126564887098,
+        197.18940736484151
+      ],
+      "crop_pixel_uv": [
+        9.412656488709786,
+        17.189407364841514
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:23",
+      "position_base_m": [
+        0.7559838621109692,
+        0.2759999968178489,
+        -0.010055430050501926
+      ],
+      "pixel_uv": [
+        288.61322940769867,
+        197.18940804981847
+      ],
+      "crop_pixel_uv": [
+        13.613229407698668,
+        17.189408049818468
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:24",
+      "position_base_m": [
+        0.7559838621109692,
+        0.2879999968178483,
+        -0.010055433848050004
+      ],
+      "pixel_uv": [
+        292.81380232135353,
+        197.1894087347955
+      ],
+      "crop_pixel_uv": [
+        17.813802321353535,
+        17.189408734795506
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:25",
+      "position_base_m": [
+        0.7559838621109692,
+        0.29999999681784767,
+        -0.010055437645598082
+      ],
+      "pixel_uv": [
+        297.01437522967456,
+        197.1894094197725
+      ],
+      "crop_pixel_uv": [
+        22.014375229674556,
+        17.18940941977249
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:26",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3119999968178471,
+        -0.01005544144314616
+      ],
+      "pixel_uv": [
+        301.2149481326617,
+        197.1894101047495
+      ],
+      "crop_pixel_uv": [
+        26.214948132661675,
+        17.1894101047495
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:27",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3239999968178465,
+        -0.010055445240694239
+      ],
+      "pixel_uv": [
+        305.41552103031484,
+        197.18941078972645
+      ],
+      "crop_pixel_uv": [
+        30.415521030314835,
+        17.189410789726452
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:28",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3359999968178459,
+        -0.010055449038242317
+      ],
+      "pixel_uv": [
+        309.61609392263404,
+        197.18941147470346
+      ],
+      "crop_pixel_uv": [
+        34.616093922634036,
+        17.189411474703462
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:29",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3479999968178453,
+        -0.010055452835790395
+      ],
+      "pixel_uv": [
+        313.81666680961933,
+        197.18941215968047
+      ],
+      "crop_pixel_uv": [
+        38.816666809619335,
+        17.189412159680472
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:30",
+      "position_base_m": [
+        0.7559838621109692,
+        0.35999999681784467,
+        -0.010055456633338474
+      ],
+      "pixel_uv": [
+        318.0172396912707,
+        197.18941284465748
+      ],
+      "crop_pixel_uv": [
+        43.017239691270674,
+        17.189412844657483
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:31",
+      "position_base_m": [
+        0.7559838621109692,
+        0.37199999681784407,
+        -0.010055460430886553
+      ],
+      "pixel_uv": [
+        322.2178125675881,
+        197.1894135296344
+      ],
+      "crop_pixel_uv": [
+        47.21781256758811,
+        17.189413529634407
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:32",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3839999968178435,
+        -0.01005546422843463
+      ],
+      "pixel_uv": [
+        326.41838543857165,
+        197.18941421461142
+      ],
+      "crop_pixel_uv": [
+        51.41838543857165,
+        17.189414214611418
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:33",
+      "position_base_m": [
+        0.7559838621109692,
+        0.3959999968178429,
+        -0.010055468025982709
+      ],
+      "pixel_uv": [
+        330.6189583042212,
+        197.1894148995884
+      ],
+      "crop_pixel_uv": [
+        55.61895830422122,
+        17.1894148995884
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:34",
+      "position_base_m": [
+        0.7559838621109692,
+        0.4079999968178423,
+        -0.010055471823530787
+      ],
+      "pixel_uv": [
+        334.81953116453684,
+        197.18941558456544
+      ],
+      "crop_pixel_uv": [
+        59.81953116453684,
+        17.189415584565438
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:35",
+      "position_base_m": [
+        0.7559838621109692,
+        0.41999999681784167,
+        -0.010055475621078867
+      ],
+      "pixel_uv": [
+        339.02010401951856,
+        197.1894162695424
+      ],
+      "crop_pixel_uv": [
+        64.02010401951856,
+        17.18941626954239
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:63:36",
+      "position_base_m": [
+        0.7559838621109692,
+        0.43199999681784107,
+        -0.010055479418626945
+      ],
+      "pixel_uv": [
+        343.2206768691663,
+        197.1894169545194
+      ],
+      "crop_pixel_uv": [
+        68.22067686916631,
+        17.1894169545194
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:22",
+      "position_base_m": [
+        0.7679838444524754,
+        0.2639999968113347,
+        -0.010076012742224345
+      ],
+      "pixel_uv": [
+        285.3990291042135,
+        200.60081516255195
+      ],
+      "crop_pixel_uv": [
+        10.399029104213525,
+        20.600815162551953
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:23",
+      "position_base_m": [
+        0.7679838444524754,
+        0.2759999968113341,
+        -0.010076016539772423
+      ],
+      "pixel_uv": [
+        289.6444371301473,
+        200.600815852651
+      ],
+      "crop_pixel_uv": [
+        14.64443713014731,
+        20.60081585265101
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:24",
+      "position_base_m": [
+        0.7679838444524754,
+        0.2879999968113335,
+        -0.010076020337320503
+      ],
+      "pixel_uv": [
+        293.88984515063277,
+        200.60081654275012
+      ],
+      "crop_pixel_uv": [
+        18.889845150632766,
+        20.600816542750124
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:25",
+      "position_base_m": [
+        0.7679838444524754,
+        0.2999999968113328,
+        -0.010076024134868581
+      ],
+      "pixel_uv": [
+        298.1352531656697,
+        200.60081723284927
+      ],
+      "crop_pixel_uv": [
+        23.135253165669724,
+        20.600817232849266
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:26",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3119999968113323,
+        -0.010076027932416659
+      ],
+      "pixel_uv": [
+        302.38066117525835,
+        200.60081792294838
+      ],
+      "crop_pixel_uv": [
+        27.380661175258354,
+        20.60081792294838
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:27",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3239999968113317,
+        -0.010076031729964737
+      ],
+      "pixel_uv": [
+        306.62606917939866,
+        200.60081861304747
+      ],
+      "crop_pixel_uv": [
+        31.626069179398655,
+        20.600818613047466
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:28",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3359999968113311,
+        -0.010076035527512815
+      ],
+      "pixel_uv": [
+        310.87147717809034,
+        200.60081930314658
+      ],
+      "crop_pixel_uv": [
+        35.871477178090345,
+        20.60081930314658
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:29",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3479999968113305,
+        -0.010076039325060893
+      ],
+      "pixel_uv": [
+        315.1168851713338,
+        200.60081999324564
+      ],
+      "crop_pixel_uv": [
+        40.11688517133382,
+        20.600819993245636
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:30",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3599999968113298,
+        -0.010076043122608971
+      ],
+      "pixel_uv": [
+        319.3622931591288,
+        200.6008206833448
+      ],
+      "crop_pixel_uv": [
+        44.3622931591288,
+        20.600820683344807
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:31",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3719999968113292,
+        -0.010076046920157051
+      ],
+      "pixel_uv": [
+        323.60770114147545,
+        200.60082137344386
+      ],
+      "crop_pixel_uv": [
+        48.607701141475445,
+        20.600821373443864
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:32",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3839999968113287,
+        -0.01007605071770513
+      ],
+      "pixel_uv": [
+        327.8531091183737,
+        200.600822063543
+      ],
+      "crop_pixel_uv": [
+        52.85310911837371,
+        20.600822063543006
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:33",
+      "position_base_m": [
+        0.7679838444524754,
+        0.3959999968113281,
+        -0.010076054515253207
+      ],
+      "pixel_uv": [
+        332.0985170898235,
+        200.60082275364206
+      ],
+      "crop_pixel_uv": [
+        57.098517089823474,
+        20.600822753642063
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:34",
+      "position_base_m": [
+        0.7679838444524754,
+        0.4079999968113275,
+        -0.010076058312801285
+      ],
+      "pixel_uv": [
+        336.3439250558249,
+        200.60082344374118
+      ],
+      "crop_pixel_uv": [
+        61.34392505582491,
+        20.600823443741177
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:35",
+      "position_base_m": [
+        0.7679838444524754,
+        0.4199999968113268,
+        -0.010076062110349364
+      ],
+      "pixel_uv": [
+        340.5893330163779,
+        200.60082413384026
+      ],
+      "crop_pixel_uv": [
+        65.5893330163779,
+        20.600824133840263
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:64:36",
+      "position_base_m": [
+        0.7679838444524754,
+        0.4319999968113262,
+        -0.010076065907897442
+      ],
+      "pixel_uv": [
+        344.8347409714825,
+        200.60082482393938
+      ],
+      "crop_pixel_uv": [
+        69.83474097148252,
+        20.600824823939377
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:22",
+      "position_base_m": [
+        0.7799838267939815,
+        0.26399999680481984,
+        -0.010096599231494844
+      ],
+      "pixel_uv": [
+        286.40668512322515,
+        204.08583243354607
+      ],
+      "crop_pixel_uv": [
+        11.406685123225145,
+        24.085832433546074
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:23",
+      "position_base_m": [
+        0.7799838267939815,
+        0.27599999680481924,
+        -0.010096603029042922
+      ],
+      "pixel_uv": [
+        290.697895683264,
+        204.08583312883005
+      ],
+      "crop_pixel_uv": [
+        15.697895683263994,
+        24.085833128830046
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:24",
+      "position_base_m": [
+        0.7799838267939815,
+        0.28799999680481864,
+        -0.010096606826591
+      ],
+      "pixel_uv": [
+        294.9891062377363,
+        204.08583382411408
+      ],
+      "crop_pixel_uv": [
+        19.98910623773628,
+        24.085833824114076
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:25",
+      "position_base_m": [
+        0.7799838267939815,
+        0.299999996804818,
+        -0.01009661062413908
+      ],
+      "pixel_uv": [
+        299.28031678664195,
+        204.08583451939805
+      ],
+      "crop_pixel_uv": [
+        24.280316786641947,
+        24.08583451939805
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:26",
+      "position_base_m": [
+        0.7799838267939815,
+        0.31199999680481744,
+        -0.010096614421687158
+      ],
+      "pixel_uv": [
+        303.57152732998105,
+        204.08583521468208
+      ],
+      "crop_pixel_uv": [
+        28.571527329981052,
+        24.085835214682078
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:27",
+      "position_base_m": [
+        0.7799838267939815,
+        0.32399999680481684,
+        -0.010096618219235236
+      ],
+      "pixel_uv": [
+        307.8627378677535,
+        204.08583590996605
+      ],
+      "crop_pixel_uv": [
+        32.86273786775348,
+        24.08583590996605
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:28",
+      "position_base_m": [
+        0.7799838267939815,
+        0.33599999680481624,
+        -0.010096622016783314
+      ],
+      "pixel_uv": [
+        312.15394839995935,
+        204.08583660525
+      ],
+      "crop_pixel_uv": [
+        37.15394839995935,
+        24.085836605249995
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:29",
+      "position_base_m": [
+        0.7799838267939815,
+        0.34799999680481564,
+        -0.010096625814331392
+      ],
+      "pixel_uv": [
+        316.44515892659865,
+        204.08583730053408
+      ],
+      "crop_pixel_uv": [
+        41.44515892659865,
+        24.08583730053408
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:30",
+      "position_base_m": [
+        0.7799838267939815,
+        0.359999996804815,
+        -0.01009662961187947
+      ],
+      "pixel_uv": [
+        320.7363694476713,
+        204.08583799581803
+      ],
+      "crop_pixel_uv": [
+        45.73636944767128,
+        24.085837995818025
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:31",
+      "position_base_m": [
+        0.7799838267939815,
+        0.3719999968048144,
+        -0.010096633409427548
+      ],
+      "pixel_uv": [
+        325.02757996317735,
+        204.08583869110203
+      ],
+      "crop_pixel_uv": [
+        50.027579963177345,
+        24.085838691102026
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:32",
+      "position_base_m": [
+        0.7799838267939815,
+        0.38399999680481384,
+        -0.010096637206975628
+      ],
+      "pixel_uv": [
+        329.31879047311685,
+        204.08583938638603
+      ],
+      "crop_pixel_uv": [
+        54.31879047311685,
+        24.085839386386027
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:33",
+      "position_base_m": [
+        0.7799838267939815,
+        0.39599999680481324,
+        -0.010096641004523706
+      ],
+      "pixel_uv": [
+        333.61000097748973,
+        204.08584008167003
+      ],
+      "crop_pixel_uv": [
+        58.61000097748973,
+        24.085840081670028
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:34",
+      "position_base_m": [
+        0.7799838267939815,
+        0.40799999680481264,
+        -0.010096644802071784
+      ],
+      "pixel_uv": [
+        337.90121147629606,
+        204.08584077695403
+      ],
+      "crop_pixel_uv": [
+        62.901211476296055,
+        24.08584077695403
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:65:35",
+      "position_base_m": [
+        0.7799838267939815,
+        0.419999996804812,
+        -0.010096648599619862
+      ],
+      "pixel_uv": [
+        342.1924219695357,
+        204.085841472238
+      ],
+      "crop_pixel_uv": [
+        67.1924219695357,
+        24.085841472238002
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:21",
+      "position_base_m": [
+        0.7919838091354877,
+        0.2519999967983056,
+        -0.010117181923217264
+      ],
+      "pixel_uv": [
+        283.0983087406285,
+        207.6468669181332
+      ],
+      "crop_pixel_uv": [
+        8.09830874062851,
+        27.646866918133213
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:22",
+      "position_base_m": [
+        0.7919838091354877,
+        0.263999996798305,
+        -0.010117185720765342
+      ],
+      "pixel_uv": [
+        287.436320921034,
+        207.64686761866534
+      ],
+      "crop_pixel_uv": [
+        12.436320921033996,
+        27.64686761866534
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:23",
+      "position_base_m": [
+        0.7919838091354877,
+        0.2759999967983044,
+        -0.01011718951831342
+      ],
+      "pixel_uv": [
+        291.7743330957508,
+        207.6468683191975
+      ],
+      "crop_pixel_uv": [
+        16.77433309575082,
+        27.646868319197495
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:24",
+      "position_base_m": [
+        0.7919838091354877,
+        0.2879999967983038,
+        -0.010117193315861498
+      ],
+      "pixel_uv": [
+        296.112345264779,
+        207.64686901972962
+      ],
+      "crop_pixel_uv": [
+        21.11234526477898,
+        27.64686901972962
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:25",
+      "position_base_m": [
+        0.7919838091354877,
+        0.29999999679830314,
+        -0.010117197113409577
+      ],
+      "pixel_uv": [
+        300.4503574281184,
+        207.64686972026178
+      ],
+      "crop_pixel_uv": [
+        25.450357428118423,
+        27.646869720261776
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:26",
+      "position_base_m": [
+        0.7919838091354877,
+        0.3119999967983026,
+        -0.010117200910957656
+      ],
+      "pixel_uv": [
+        304.7883695857692,
+        207.6468704207939
+      ],
+      "crop_pixel_uv": [
+        29.788369585769203,
+        27.646870420793903
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:27",
+      "position_base_m": [
+        0.7919838091354877,
+        0.323999996798302,
+        -0.010117204708505734
+      ],
+      "pixel_uv": [
+        309.1263817377313,
+        207.64687112132606
+      ],
+      "crop_pixel_uv": [
+        34.12638173773132,
+        27.646871121326058
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:28",
+      "position_base_m": [
+        0.7919838091354877,
+        0.3359999967983014,
+        -0.010117208506053813
+      ],
+      "pixel_uv": [
+        313.4643938840047,
+        207.64687182185818
+      ],
+      "crop_pixel_uv": [
+        38.46439388400472,
+        27.646871821858184
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:29",
+      "position_base_m": [
+        0.7919838091354877,
+        0.3479999967983008,
+        -0.01011721230360189
+      ],
+      "pixel_uv": [
+        317.8024060245895,
+        207.64687252239034
+      ],
+      "crop_pixel_uv": [
+        42.802406024589516,
+        27.64687252239034
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:30",
+      "position_base_m": [
+        0.7919838091354877,
+        0.35999999679830014,
+        -0.010117216101149969
+      ],
+      "pixel_uv": [
+        322.1404181594855,
+        207.6468732229225
+      ],
+      "crop_pixel_uv": [
+        47.14041815948548,
+        27.646873222922494
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:31",
+      "position_base_m": [
+        0.7919838091354877,
+        0.37199999679829954,
+        -0.010117219898698047
+      ],
+      "pixel_uv": [
+        326.4784302886929,
+        207.64687392345462
+      ],
+      "crop_pixel_uv": [
+        51.47843028869289,
+        27.64687392345462
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:32",
+      "position_base_m": [
+        0.7919838091354877,
+        0.383999996798299,
+        -0.010117223696246125
+      ],
+      "pixel_uv": [
+        330.8164424122116,
+        207.64687462398675
+      ],
+      "crop_pixel_uv": [
+        55.816442412211586,
+        27.646874623986747
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:33",
+      "position_base_m": [
+        0.7919838091354877,
+        0.3959999967982984,
+        -0.010117227493794205
+      ],
+      "pixel_uv": [
+        335.1544545300416,
+        207.6468753245189
+      ],
+      "crop_pixel_uv": [
+        60.15445453004162,
+        27.646875324518902
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:34",
+      "position_base_m": [
+        0.7919838091354877,
+        0.4079999967982978,
+        -0.010117231291342283
+      ],
+      "pixel_uv": [
+        339.492466642183,
+        207.646876025051
+      ],
+      "crop_pixel_uv": [
+        64.49246664218299,
+        27.646876025051
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:66:35",
+      "position_base_m": [
+        0.7919838091354877,
+        0.41999999679829714,
+        -0.01011723508889036
+      ],
+      "pixel_uv": [
+        343.8304787486356,
+        207.64687672558318
+      ],
+      "crop_pixel_uv": [
+        68.83047874863558,
+        27.646876725583184
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:21",
+      "position_base_m": [
+        0.8039837914769938,
+        0.25199999679179075,
+        -0.010137768412487761
+      ],
+      "pixel_uv": [
+        284.102817662358,
+        211.28643468105182
+      ],
+      "crop_pixel_uv": [
+        9.102817662358007,
+        31.286434681051816
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:22",
+      "position_base_m": [
+        0.8039837914769938,
+        0.26399999679179015,
+        -0.010137772210035841
+      ],
+      "pixel_uv": [
+        288.48866358767793,
+        211.2864353868958
+      ],
+      "crop_pixel_uv": [
+        13.488663587677934,
+        31.28643538689579
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:23",
+      "position_base_m": [
+        0.8039837914769938,
+        0.27599999679178955,
+        -0.010137776007583919
+      ],
+      "pixel_uv": [
+        292.87450950718306,
+        211.28643609273973
+      ],
+      "crop_pixel_uv": [
+        17.874509507183063,
+        31.286436092739734
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:24",
+      "position_base_m": [
+        0.8039837914769938,
+        0.28799999679178895,
+        -0.010137779805131997
+      ],
+      "pixel_uv": [
+        297.26035542087334,
+        211.2864367985837
+      ],
+      "crop_pixel_uv": [
+        22.26035542087334,
+        31.286436798583708
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:25",
+      "position_base_m": [
+        0.8039837914769938,
+        0.2999999967917883,
+        -0.010137783602680075
+      ],
+      "pixel_uv": [
+        301.64620132874876,
+        211.2864375044277
+      ],
+      "crop_pixel_uv": [
+        26.64620132874876,
+        31.28643750442771
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:26",
+      "position_base_m": [
+        0.8039837914769938,
+        0.31199999679178775,
+        -0.010137787400228153
+      ],
+      "pixel_uv": [
+        306.0320472308094,
+        211.28643821027165
+      ],
+      "crop_pixel_uv": [
+        31.032047230809383,
+        31.286438210271655
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:27",
+      "position_base_m": [
+        0.8039837914769938,
+        0.32399999679178715,
+        -0.010137791197776233
+      ],
+      "pixel_uv": [
+        310.41789312705515,
+        211.28643891611563
+      ],
+      "crop_pixel_uv": [
+        35.41789312705515,
+        31.286438916115628
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:28",
+      "position_base_m": [
+        0.8039837914769938,
+        0.33599999679178655,
+        -0.010137794995324311
+      ],
+      "pixel_uv": [
+        314.8037390174861,
+        211.28643962195954
+      ],
+      "crop_pixel_uv": [
+        39.80373901748612,
+        31.286439621959545
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:29",
+      "position_base_m": [
+        0.8039837914769938,
+        0.34799999679178595,
+        -0.01013779879287239
+      ],
+      "pixel_uv": [
+        319.1895849021023,
+        211.28644032780355
+      ],
+      "crop_pixel_uv": [
+        44.1895849021023,
+        31.286440327803547
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:30",
+      "position_base_m": [
+        0.8039837914769938,
+        0.3599999967917853,
+        -0.010137802590420467
+      ],
+      "pixel_uv": [
+        323.5754307809035,
+        211.2864410336475
+      ],
+      "crop_pixel_uv": [
+        48.5754307809035,
+        31.286441033647492
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:31",
+      "position_base_m": [
+        0.8039837914769938,
+        0.3719999967917847,
+        -0.010137806387968545
+      ],
+      "pixel_uv": [
+        327.9612766538901,
+        211.28644173949147
+      ],
+      "crop_pixel_uv": [
+        52.96127665389008,
+        31.286441739491465
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:32",
+      "position_base_m": [
+        0.8039837914769938,
+        0.38399999679178415,
+        -0.010137810185516623
+      ],
+      "pixel_uv": [
+        332.34712252106175,
+        211.2864424453354
+      ],
+      "crop_pixel_uv": [
+        57.34712252106175,
+        31.28644244533541
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:33",
+      "position_base_m": [
+        0.8039837914769938,
+        0.39599999679178355,
+        -0.010137813983064702
+      ],
+      "pixel_uv": [
+        336.7329683824185,
+        211.28644315117938
+      ],
+      "crop_pixel_uv": [
+        61.732968382418505,
+        31.286443151179384
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:34",
+      "position_base_m": [
+        0.8039837914769938,
+        0.40799999679178295,
+        -0.01013781778061278
+      ],
+      "pixel_uv": [
+        341.1188142379606,
+        211.2864438570233
+      ],
+      "crop_pixel_uv": [
+        66.11881423796058,
+        31.2864438570233
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:67:35",
+      "position_base_m": [
+        0.8039837914769938,
+        0.4199999967917823,
+        -0.01013782157816086
+      ],
+      "pixel_uv": [
+        345.5046600876877,
+        211.2864445628673
+      ],
+      "crop_pixel_uv": [
+        70.50466008768768,
+        31.286444562867302
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:21",
+      "position_base_m": [
+        0.8159837738185001,
+        0.2519999967852759,
+        -0.01015835490175826
+      ],
+      "pixel_uv": [
+        285.1297263163865,
+        215.0071618461516
+      ],
+      "crop_pixel_uv": [
+        10.129726316386495,
+        35.007161846151604
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:22",
+      "position_base_m": [
+        0.8159837738185001,
+        0.2639999967852753,
+        -0.010158358699306338
+      ],
+      "pixel_uv": [
+        289.56447264022836,
+        215.00716255737146
+      ],
+      "crop_pixel_uv": [
+        14.56447264022836,
+        35.00716255737146
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:23",
+      "position_base_m": [
+        0.8159837738185001,
+        0.2759999967852747,
+        -0.010158362496854418
+      ],
+      "pixel_uv": [
+        293.999218958125,
+        215.00716326859128
+      ],
+      "crop_pixel_uv": [
+        18.999218958125027,
+        35.007163268591285
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:24",
+      "position_base_m": [
+        0.8159837738185001,
+        0.2879999967852741,
+        -0.010158366294402496
+      ],
+      "pixel_uv": [
+        298.4339652700764,
+        215.0071639798111
+      ],
+      "crop_pixel_uv": [
+        23.433965270076385,
+        35.00716397981111
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:25",
+      "position_base_m": [
+        0.8159837738185001,
+        0.29999999678527345,
+        -0.010158370091950574
+      ],
+      "pixel_uv": [
+        302.8687115760826,
+        215.00716469103094
+      ],
+      "crop_pixel_uv": [
+        27.868711576082603,
+        35.00716469103094
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:26",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3119999967852729,
+        -0.010158373889498652
+      ],
+      "pixel_uv": [
+        307.3034578761436,
+        215.00716540225085
+      ],
+      "crop_pixel_uv": [
+        32.303457876143625,
+        35.00716540225085
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:27",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3239999967852723,
+        -0.01015837768704673
+      ],
+      "pixel_uv": [
+        311.7382041702594,
+        215.00716611347065
+      ],
+      "crop_pixel_uv": [
+        36.738204170259394,
+        35.007166113470646
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:28",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3359999967852717,
+        -0.01015838148459481
+      ],
+      "pixel_uv": [
+        316.1729504584299,
+        215.00716682469047
+      ],
+      "crop_pixel_uv": [
+        41.17295045842991,
+        35.00716682469047
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:29",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3479999967852711,
+        -0.010158385282142888
+      ],
+      "pixel_uv": [
+        320.60769674065534,
+        215.00716753591033
+      ],
+      "crop_pixel_uv": [
+        45.60769674065534,
+        35.00716753591033
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:30",
+      "position_base_m": [
+        0.8159837738185001,
+        0.35999999678527045,
+        -0.010158389079690966
+      ],
+      "pixel_uv": [
+        325.0424430169354,
+        215.00716824713018
+      ],
+      "crop_pixel_uv": [
+        50.04244301693541,
+        35.00716824713018
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:31",
+      "position_base_m": [
+        0.8159837738185001,
+        0.37199999678526985,
+        -0.010158392877239044
+      ],
+      "pixel_uv": [
+        329.47718928727033,
+        215.00716895834995
+      ],
+      "crop_pixel_uv": [
+        54.477189287270335,
+        35.00716895834995
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:32",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3839999967852693,
+        -0.010158396674787122
+      ],
+      "pixel_uv": [
+        333.91193555166,
+        215.00716966956983
+      ],
+      "crop_pixel_uv": [
+        58.91193555166001,
+        35.007169669569834
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:33",
+      "position_base_m": [
+        0.8159837738185001,
+        0.3959999967852687,
+        -0.0101584004723352
+      ],
+      "pixel_uv": [
+        338.3466818101045,
+        215.00717038078963
+      ],
+      "crop_pixel_uv": [
+        63.346681810104485,
+        35.00717038078963
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:68:34",
+      "position_base_m": [
+        0.8159837738185001,
+        0.4079999967852681,
+        -0.010158404269883278
+      ],
+      "pixel_uv": [
+        342.78142806260377,
+        215.00717109200946
+      ],
+      "crop_pixel_uv": [
+        67.78142806260377,
+        35.00717109200946
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:21",
+      "position_base_m": [
+        0.8279837561600062,
+        0.25199999677876106,
+        -0.010178941391028758
+      ],
+      "pixel_uv": [
+        286.17979239439745,
+        218.81179370535176
+      ],
+      "crop_pixel_uv": [
+        11.179792394397452,
+        38.81179370535176
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:22",
+      "position_base_m": [
+        0.8279837561600062,
+        0.26399999677876046,
+        -0.010178945188576836
+      ],
+      "pixel_uv": [
+        290.66454185091396,
+        218.81179442201187
+      ],
+      "crop_pixel_uv": [
+        15.664541850913963,
+        38.81179442201187
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:23",
+      "position_base_m": [
+        0.8279837561600062,
+        0.27599999677875986,
+        -0.010178948986124916
+      ],
+      "pixel_uv": [
+        295.14929130135056,
+        218.81179513867193
+      ],
+      "crop_pixel_uv": [
+        20.14929130135056,
+        38.811795138671926
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:24",
+      "position_base_m": [
+        0.8279837561600062,
+        0.28799999677875926,
+        -0.010178952783672994
+      ],
+      "pixel_uv": [
+        299.63404074570707,
+        218.811795855332
+      ],
+      "crop_pixel_uv": [
+        24.63404074570707,
+        38.81179585533201
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:25",
+      "position_base_m": [
+        0.8279837561600062,
+        0.2999999967787586,
+        -0.010178956581221072
+      ],
+      "pixel_uv": [
+        304.1187901839835,
+        218.81179657199203
+      ],
+      "crop_pixel_uv": [
+        29.118790183983492,
+        38.81179657199203
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:26",
+      "position_base_m": [
+        0.8279837561600062,
+        0.31199999677875806,
+        -0.01017896037876915
+      ],
+      "pixel_uv": [
+        308.6035396161799,
+        218.81179728865214
+      ],
+      "crop_pixel_uv": [
+        33.60353961617989,
+        38.811797288652144
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:27",
+      "position_base_m": [
+        0.8279837561600062,
+        0.32399999677875746,
+        -0.010178964176317229
+      ],
+      "pixel_uv": [
+        313.08828904229625,
+        218.81179800531217
+      ],
+      "crop_pixel_uv": [
+        38.08828904229625,
+        38.81179800531217
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:28",
+      "position_base_m": [
+        0.8279837561600062,
+        0.33599999677875686,
+        -0.010178967973865307
+      ],
+      "pixel_uv": [
+        317.57303846233265,
+        218.81179872197225
+      ],
+      "crop_pixel_uv": [
+        42.57303846233265,
+        38.81179872197225
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:29",
+      "position_base_m": [
+        0.8279837561600062,
+        0.34799999677875626,
+        -0.010178971771413386
+      ],
+      "pixel_uv": [
+        322.05778787628896,
+        218.81179943863228
+      ],
+      "crop_pixel_uv": [
+        47.057787876288955,
+        38.81179943863228
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:30",
+      "position_base_m": [
+        0.8279837561600062,
+        0.3599999967787556,
+        -0.010178975568961465
+      ],
+      "pixel_uv": [
+        326.5425372841652,
+        218.81180015529236
+      ],
+      "crop_pixel_uv": [
+        51.54253728416518,
+        38.81180015529236
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:31",
+      "position_base_m": [
+        0.8279837561600062,
+        0.371999996778755,
+        -0.010178979366509543
+      ],
+      "pixel_uv": [
+        331.02728668596137,
+        218.8118008719524
+      ],
+      "crop_pixel_uv": [
+        56.02728668596137,
+        38.811800871952414
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:32",
+      "position_base_m": [
+        0.8279837561600062,
+        0.38399999677875446,
+        -0.01017898316405762
+      ],
+      "pixel_uv": [
+        335.51203608167754,
+        218.8118015886125
+      ],
+      "crop_pixel_uv": [
+        60.512036081677536,
+        38.8118015886125
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:33",
+      "position_base_m": [
+        0.8279837561600062,
+        0.39599999677875386,
+        -0.010178986961605699
+      ],
+      "pixel_uv": [
+        339.99678547131373,
+        218.81180230527255
+      ],
+      "crop_pixel_uv": [
+        64.99678547131373,
+        38.81180230527255
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:69:34",
+      "position_base_m": [
+        0.8279837561600062,
+        0.40799999677875326,
+        -0.010178990759153777
+      ],
+      "pixel_uv": [
+        344.48153485486984,
+        218.8118030219326
+      ],
+      "crop_pixel_uv": [
+        69.48153485486984,
+        38.811803021932604
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:20",
+      "position_base_m": [
+        0.8399837385015122,
+        0.23999999677224676,
+        -0.010199524082751179
+      ],
+      "pixel_uv": [
+        282.7179150946646,
+        222.703200056446
+      ],
+      "crop_pixel_uv": [
+        7.7179150946645905,
+        42.70320005644601
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:21",
+      "position_base_m": [
+        0.8399837385015122,
+        0.2519999967722462,
+        -0.010199527880299257
+      ],
+      "pixel_uv": [
+        287.2538081506078,
+        222.7032007786109
+      ],
+      "crop_pixel_uv": [
+        12.253808150607824,
+        42.70320077861089
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:22",
+      "position_base_m": [
+        0.8399837385015122,
+        0.2639999967722456,
+        -0.010199531677847335
+      ],
+      "pixel_uv": [
+        291.7897012003316,
+        222.70320150077572
+      ],
+      "crop_pixel_uv": [
+        16.789701200331592,
+        42.70320150077572
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:23",
+      "position_base_m": [
+        0.8399837385015122,
+        0.275999996772245,
+        -0.010199535475395413
+      ],
+      "pixel_uv": [
+        296.3255942438359,
+        222.7032022229407
+      ],
+      "crop_pixel_uv": [
+        21.325594243835894,
+        42.70320222294069
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:24",
+      "position_base_m": [
+        0.8399837385015122,
+        0.2879999967722444,
+        -0.010199539272943491
+      ],
+      "pixel_uv": [
+        300.8614872811207,
+        222.70320294510555
+      ],
+      "crop_pixel_uv": [
+        25.861487281120674,
+        42.703202945105545
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:25",
+      "position_base_m": [
+        0.8399837385015122,
+        0.29999999677224376,
+        -0.01019954307049157
+      ],
+      "pixel_uv": [
+        305.3973803121859,
+        222.70320366727037
+      ],
+      "crop_pixel_uv": [
+        30.397380312185874,
+        42.70320366727037
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:26",
+      "position_base_m": [
+        0.8399837385015122,
+        0.3119999967722432,
+        -0.01019954686803965
+      ],
+      "pixel_uv": [
+        309.9332733370317,
+        222.7032043894353
+      ],
+      "crop_pixel_uv": [
+        34.93327333703172,
+        42.703204389435314
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:27",
+      "position_base_m": [
+        0.8399837385015122,
+        0.3239999967722426,
+        -0.010199550665587727
+      ],
+      "pixel_uv": [
+        314.46916635565793,
+        222.70320511160017
+      ],
+      "crop_pixel_uv": [
+        39.46916635565793,
+        42.70320511160017
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:28",
+      "position_base_m": [
+        0.8399837385015122,
+        0.335999996772242,
+        -0.010199554463135805
+      ],
+      "pixel_uv": [
+        319.00505936806474,
+        222.70320583376503
+      ],
+      "crop_pixel_uv": [
+        44.005059368064735,
+        42.703205833765026
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:29",
+      "position_base_m": [
+        0.8399837385015122,
+        0.3479999967722414,
+        -0.010199558260683883
+      ],
+      "pixel_uv": [
+        323.54095237425196,
+        222.7032065559299
+      ],
+      "crop_pixel_uv": [
+        48.54095237425196,
+        42.70320655592991
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:30",
+      "position_base_m": [
+        0.8399837385015122,
+        0.35999999677224076,
+        -0.010199562058231961
+      ],
+      "pixel_uv": [
+        328.07684537421966,
+        222.70320727809482
+      ],
+      "crop_pixel_uv": [
+        53.07684537421966,
+        42.70320727809482
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:31",
+      "position_base_m": [
+        0.8399837385015122,
+        0.37199999677224016,
+        -0.010199565855780041
+      ],
+      "pixel_uv": [
+        332.61273836796795,
+        222.70320800025968
+      ],
+      "crop_pixel_uv": [
+        57.61273836796795,
+        42.70320800025968
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:32",
+      "position_base_m": [
+        0.8399837385015122,
+        0.3839999967722396,
+        -0.01019956965332812
+      ],
+      "pixel_uv": [
+        337.14863135549666,
+        222.70320872242453
+      ],
+      "crop_pixel_uv": [
+        62.14863135549666,
+        42.703208722424534
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:70:33",
+      "position_base_m": [
+        0.8399837385015122,
+        0.395999996772239,
+        -0.010199573450876197
+      ],
+      "pixel_uv": [
+        341.68452433680596,
+        222.70320944458942
+      ],
+      "crop_pixel_uv": [
+        66.68452433680596,
+        42.70320944458942
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:20",
+      "position_base_m": [
+        0.8519837208430184,
+        0.23999999676573192,
+        -0.010220110572021678
+      ],
+      "pixel_uv": [
+        283.76438581827,
+        226.68438530899493
+      ],
+      "crop_pixel_uv": [
+        8.76438581827,
+        46.68438530899493
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:21",
+      "position_base_m": [
+        0.8519837208430184,
+        0.2519999967657313,
+        -0.010220114369569756
+      ],
+      "pixel_uv": [
+        288.3526023952385,
+        226.68438603672936
+      ],
+      "crop_pixel_uv": [
+        13.352602395238478,
+        46.684386036729364
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:22",
+      "position_base_m": [
+        0.8519837208430184,
+        0.2639999967657307,
+        -0.010220118167117834
+      ],
+      "pixel_uv": [
+        292.9408189658431,
+        226.68438676446382
+      ],
+      "crop_pixel_uv": [
+        17.940818965843107,
+        46.684386764463824
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:23",
+      "position_base_m": [
+        0.8519837208430184,
+        0.2759999967657301,
+        -0.010220121964665912
+      ],
+      "pixel_uv": [
+        297.52903553008395,
+        226.68438749219828
+      ],
+      "crop_pixel_uv": [
+        22.529035530083945,
+        46.68438749219828
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:24",
+      "position_base_m": [
+        0.8519837208430184,
+        0.2879999967657295,
+        -0.01022012576221399
+      ],
+      "pixel_uv": [
+        302.11725208796094,
+        226.68438821993266
+      ],
+      "crop_pixel_uv": [
+        27.117252087960935,
+        46.68438821993266
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:25",
+      "position_base_m": [
+        0.8519837208430184,
+        0.29999999676572886,
+        -0.010220129559762068
+      ],
+      "pixel_uv": [
+        306.70546863947413,
+        226.68438894766712
+      ],
+      "crop_pixel_uv": [
+        31.705468639474134,
+        46.68438894766712
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:26",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3119999967657283,
+        -0.010220133357310146
+      ],
+      "pixel_uv": [
+        311.2936851846235,
+        226.68438967540152
+      ],
+      "crop_pixel_uv": [
+        36.293685184623484,
+        46.68438967540152
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:27",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3239999967657277,
+        -0.010220137154858226
+      ],
+      "pixel_uv": [
+        315.88190172340904,
+        226.684390403136
+      ],
+      "crop_pixel_uv": [
+        40.881901723409044,
+        46.68439040313601
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:28",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3359999967657271,
+        -0.010220140952406304
+      ],
+      "pixel_uv": [
+        320.47011825583076,
+        226.68439113087038
+      ],
+      "crop_pixel_uv": [
+        45.470118255830755,
+        46.68439113087038
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:29",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3479999967657265,
+        -0.010220144749954382
+      ],
+      "pixel_uv": [
+        325.0583347818887,
+        226.68439185860487
+      ],
+      "crop_pixel_uv": [
+        50.058334781888675,
+        46.68439185860487
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:30",
+      "position_base_m": [
+        0.8519837208430184,
+        0.35999999676572586,
+        -0.01022014854750246
+      ],
+      "pixel_uv": [
+        329.6465513015828,
+        226.6843925863392
+      ],
+      "crop_pixel_uv": [
+        54.646551301582804,
+        46.684392586339186
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:31",
+      "position_base_m": [
+        0.8519837208430184,
+        0.37199999676572526,
+        -0.010220152345050538
+      ],
+      "pixel_uv": [
+        334.234767814913,
+        226.68439331407367
+      ],
+      "crop_pixel_uv": [
+        59.23476781491303,
+        46.684393314073674
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:32",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3839999967657247,
+        -0.010220156142598618
+      ],
+      "pixel_uv": [
+        338.8229843218795,
+        226.68439404180808
+      ],
+      "crop_pixel_uv": [
+        63.82298432187952,
+        46.684394041808076
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:71:33",
+      "position_base_m": [
+        0.8519837208430184,
+        0.3959999967657241,
+        -0.010220159940146696
+      ],
+      "pixel_uv": [
+        343.41120082248216,
+        226.6843947695425
+      ],
+      "crop_pixel_uv": [
+        68.41120082248216,
+        46.68439476954251
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:20",
+      "position_base_m": [
+        0.8639837031845246,
+        0.23999999675921707,
+        -0.010240697061292176
+      ],
+      "pixel_uv": [
+        284.8352812924181,
+        230.75849189652646
+      ],
+      "crop_pixel_uv": [
+        9.835281292418074,
+        50.758491896526465
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:21",
+      "position_base_m": [
+        0.8639837031845246,
+        0.25199999675921647,
+        -0.010240700858840254
+      ],
+      "pixel_uv": [
+        289.47704262756713,
+        230.75849262989533
+      ],
+      "crop_pixel_uv": [
+        14.47704262756713,
+        50.75849262989533
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:22",
+      "position_base_m": [
+        0.8639837031845246,
+        0.26399999675921587,
+        -0.010240704656388332
+      ],
+      "pixel_uv": [
+        294.11880395620295,
+        230.7584933632641
+      ],
+      "crop_pixel_uv": [
+        19.118803956202953,
+        50.75849336326411
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:23",
+      "position_base_m": [
+        0.8639837031845246,
+        0.27599999675921527,
+        -0.01024070845393641
+      ],
+      "pixel_uv": [
+        298.76056527832566,
+        230.7584940966329
+      ],
+      "crop_pixel_uv": [
+        23.760565278325657,
+        50.75849409663289
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:24",
+      "position_base_m": [
+        0.8639837031845246,
+        0.28799999675921467,
+        -0.010240712251484489
+      ],
+      "pixel_uv": [
+        303.4023265939351,
+        230.75849483000164
+      ],
+      "crop_pixel_uv": [
+        28.402326593935072,
+        50.75849483000164
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:25",
+      "position_base_m": [
+        0.8639837031845246,
+        0.299999996759214,
+        -0.010240716049032567
+      ],
+      "pixel_uv": [
+        308.04408790303125,
+        230.75849556337045
+      ],
+      "crop_pixel_uv": [
+        33.044087903031254,
+        50.758495563370445
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:26",
+      "position_base_m": [
+        0.8639837031845246,
+        0.31199999675921347,
+        -0.010240719846580645
+      ],
+      "pixel_uv": [
+        312.68584920561426,
+        230.7584962967392
+      ],
+      "crop_pixel_uv": [
+        37.68584920561426,
+        50.758496296739196
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:27",
+      "position_base_m": [
+        0.8639837031845246,
+        0.32399999675921287,
+        -0.010240723644128725
+      ],
+      "pixel_uv": [
+        317.327610501684,
+        230.75849703010803
+      ],
+      "crop_pixel_uv": [
+        42.32761050168398,
+        50.75849703010803
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:28",
+      "position_base_m": [
+        0.8639837031845246,
+        0.33599999675921227,
+        -0.010240727441676803
+      ],
+      "pixel_uv": [
+        321.9693717912406,
+        230.7584977634768
+      ],
+      "crop_pixel_uv": [
+        46.969371791240576,
+        50.75849776347681
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:29",
+      "position_base_m": [
+        0.8639837031845246,
+        0.34799999675921167,
+        -0.01024073123922488
+      ],
+      "pixel_uv": [
+        326.6111330742839,
+        230.75849849684556
+      ],
+      "crop_pixel_uv": [
+        51.611133074283885,
+        50.75849849684556
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:30",
+      "position_base_m": [
+        0.8639837031845246,
+        0.359999996759211,
+        -0.010240735036772959
+      ],
+      "pixel_uv": [
+        331.252894350814,
+        230.75849923021434
+      ],
+      "crop_pixel_uv": [
+        56.25289435081402,
+        50.75849923021434
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:31",
+      "position_base_m": [
+        0.8639837031845246,
+        0.3719999967592104,
+        -0.010240738834321037
+      ],
+      "pixel_uv": [
+        335.89465562083086,
+        230.7584999635831
+      ],
+      "crop_pixel_uv": [
+        60.89465562083086,
+        50.75849996358309
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:32",
+      "position_base_m": [
+        0.8639837031845246,
+        0.38399999675920987,
+        -0.010240742631869115
+      ],
+      "pixel_uv": [
+        340.5364168843345,
+        230.75850069695193
+      ],
+      "crop_pixel_uv": [
+        65.53641688433453,
+        50.75850069695193
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    },
+    {
+      "point_id": "agentview/table_positive_control:visible-patch:grid:base_x:72:33",
+      "position_base_m": [
+        0.8639837031845246,
+        0.39599999675920927,
+        -0.010240746429417195
+      ],
+      "pixel_uv": [
+        345.178178141325,
+        230.7585014303207
+      ],
+      "crop_pixel_uv": [
+        70.17817814132502,
+        50.758501430320706
+      ],
+      "drawn": true,
+      "not_drawn_reason": null,
+      "display_status": "UNKNOWN",
+      "reported_usable_status": "UNKNOWN",
+      "reported_geometry_valid": true
+    }
+  ],
+  "provenance": "sensor-derived-diagnostic",
+  "image_paths": {
+    "rgb_crop": "rgb_crop.png",
+    "metric_depth": "metric_depth.png",
+    "plane_support": "plane_support.png",
+    "candidates": "candidates.png"
+  },
+  "image_content_origin_px": [
+    0,
+    24
+  ]
+}

@@ -15,6 +15,10 @@ architecture search. Start with the [P0 acceptance report](docs/p0-acceptance.md
 P0 now supplies model-free message/state/action contracts, sensor boundaries and
 cancellable scheduling. Its synthetic tests do not establish visual robot
 control, model performance or drawer success. P1/P2 own real perception/control.
+The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing,
+conservative geometry/tracking and exact 200-record replay. Static diagnostics
+have not yet established a drawer-front push patch or cabinet-relative VERIFY;
+P1 task acceptance and P2 manipulation remain pending.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

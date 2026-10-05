@@ -1,11 +1,23 @@
 # Current project state
 
-**Paused by the user on 2026-09-27.** Local checkpoint tag:
+**Current implementation checkpoint: 2026-10-05.** The selected architecture is
+Qwen3-VL brain → Laya local selection → continuous RGB-D geometry / deterministic
+servo, evaluated later with B0–B4. [P0 is accepted](p0-acceptance.md).
+[P1 capture/geometry/tracking and replay are implemented](p1-rgbd-checkpoint.md),
+but drawer-front grounding and cabinet-relative VERIFY remain unestablished;
+P1 task acceptance and P2 control are pending. Current branch:
+`feat/p1-rgbd-geometry`; frozen diagnostic code: `c6fe3ae`.
+
+The following is the preserved **2026-09-27 historical research checkpoint**.
+Its paused status and architecture-search authority do not describe the resumed
+selected implementation work above.
+
+**Paused by the user on 2026-09-27.** Historical local checkpoint tag:
 `research-checkpoint-20260927-paused`. No active research processes or automatic
 retries. See [checkpoint receipt](evidence/autonomous_research/pause_checkpoint_20260927.json).
 
 Reviewed 2026-09-27 after research iteration057. This is the authoritative current
-summary. Historical phase restrictions in older evidence describe those completed
+summary for that historical checkpoint. Historical phase restrictions in older evidence describe those completed
 experiments; they do not override the current autonomous research mission.
 
 ## Mission and working state

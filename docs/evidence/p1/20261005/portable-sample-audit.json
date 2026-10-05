@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "recording_revision": "sensor-frames/2",
+  "frame_bundles": 2,
+  "camera_exposures": 4,
+  "all_blobs_verified": true,
+  "full_collection": false
+}
