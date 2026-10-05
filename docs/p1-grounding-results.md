@@ -14,9 +14,12 @@ belong to the cavity or tabletop. Qwen, Laya, PUSH and full P2 remain off.
 | Fixed cabinet reference? | 25 agentview labels identify adjacent cabinet top/side surfaces; wrist reference labels are UNKNOWN. In a separate post-registration diagnostic, all 50 individual reference polygons yield VALID local geometry. | Adjacent cabinet surfaces are visually identifiable and measurable. Physical fixedness and a closed-drawer relation are not established from static RGB. No visible FRONT_FRAME annotation or validated coplanarity relation supports VERIFY. |
 | Primary failure source? | Zero of 23,043 semantic drawer candidate projections overlap the conservative visible-front annotations. Inspected RGB includes cavity points, tabletop points and a robot/image-bar localization. Correct-region mask diagnostics retain 130/130 points inside. | Semantic ROI/surface association is the first concrete drawer boundary. Camera limitations and multi-surface reference ambiguity are additional boundaries, not reasons to relax gates. |
 
-No individual image has both entities labeled VISIBLE. Cross-camera observations
-share an exposure and known simulator camera/robot calibration, but that alone
-does not establish semantic correspondence or a valid closed-reference relation.
+No individual image has both entities labeled VISIBLE. The two camera views are
+sequential captures of the same unstepped simulator state; within each view RGB
+and depth share a render. Camera wall timestamps remain distinct (approximately
+100 ms apart in the first recorded bundle). Known simulator camera/robot
+calibration alone does not establish semantic correspondence or a valid
+closed-reference relation.
 Separate face/reference tracks and the observational VERIFY helper remain
 available; unsupported reference, relation or uncertainty keeps VERIFY UNKNOWN.
 
