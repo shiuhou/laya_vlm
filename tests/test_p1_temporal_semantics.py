@@ -33,6 +33,8 @@ def test_all_responses_preserved_but_only_unambiguous_seed_exported(tmp_path, mo
     assert all(r["deadline_expired"] is True for r in receipts)
     for r in receipts:
         assert "private_evaluator_truth" not in r
+        assert r["source_frame_id"] == "test/agentview/1"
+        assert r["raw_source_frame_id"] == "agentview:1"
         assert r["classification"]["ordered_boxes"] == boxes
     for seed in seeds:
         artifact = json.loads(__import__("pathlib").Path(seed["artifact_uri"]).read_text())

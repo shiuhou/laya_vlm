@@ -39,7 +39,8 @@ def infer_views(worker, views, output, *, request_time_ns=None, deadline_ns=None
             folder = output / f"{view['camera_id']}-{role}"
             folder.mkdir()
             request_ns = time.monotonic_ns() if request_time_ns is None else request_time_ns
-            request = dict(camera_id=view["camera_id"], source_frame_id=view["frame_id"],
+            request = dict(camera_id=view["camera_id"], source_frame_id=view.get("canonical_frame_id", view["frame_id"]),
+                           raw_source_frame_id=view["frame_id"],
                            canonical_frame_id=view.get("canonical_frame_id"),
                            frame_seq=view["frame_seq"], calibration_version=view["calibration_version"],
                            capture_monotonic_ns=view["capture_monotonic_ns"], capture_sim_time_s=view["capture_sim_time_s"],
@@ -112,7 +113,9 @@ def main():
                 if future is None:
                     request_ns = time.monotonic_ns()
                     ttl_s = json.loads(Path("configs/p0_runtime.json").read_text())["proposal_ttl_s"]
-                    future = executor.submit(infer_views, worker, bundle["views"], output / "T10",
+                    views = [dict(view, canonical_frame_id=f"{receipt.episode_id}/{view['camera_id']}/{view['frame_seq']}")
+                             for view in bundle["views"]]
+                    future = executor.submit(infer_views, worker, views, output / "T10",
                                              request_time_ns=request_ns, deadline_ns=request_ns+round(ttl_s*1e9))
             summary = acquire(config, args.acquisition_output, static_evidence=args.static_evidence,
                               capture_observer=observe, observer_identity="p1_temporal_semantics_first_bundle_async_fixed_queries")
