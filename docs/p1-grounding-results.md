@@ -120,6 +120,8 @@ physical acquisition. It is not an undisclosed episode retry.
 
 See the [raw temporal summary](evidence/p1_grounding/temporal_observation_20261005/raw-summary.json)
 and [first-seed diagnostic](evidence/p1_grounding/temporal_observation_20261005/first-seed-diagnostic.json).
+The [temporal coverage report](evidence/p1_grounding/temporal_observation_20261005/README.md)
+separates actual perspective/movement from absent occlusion and unsupported tracking.
 
 ## Evidence and next boundary
 
