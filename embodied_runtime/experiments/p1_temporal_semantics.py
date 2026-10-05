@@ -80,6 +80,7 @@ def seed_file(recording, seeds, output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--recordings-root")
+    parser.add_argument("--case-ids", nargs="+", help="explicit offline subset; recorded in manifest")
     parser.add_argument("--output", required=True)
     parser.add_argument("--async-config")
     parser.add_argument("--static-evidence")
@@ -91,11 +92,14 @@ def main():
     from .records import code_identity, versions
     write(output / "manifest.json", {"code": code_identity(), "versions": versions(), "queries": QUERIES,
                                       "condition": "actual_async_T10" if args.async_config else "offline_initial_frame_diagnostic",
+                                      "case_ids": args.case_ids,
                                       "evaluation_labels_used": False, "oracle_inputs": False, "for_execution": False})
     worker, model = _load_worker()
     write(output / "model.json", model)
     if not args.async_config:
         for case in sorted(Path(args.recordings_root).glob("T[0-9][0-9]")):
+            if args.case_ids is not None and case.name not in args.case_ids:
+                continue
             recording = case / "frames"
             require(recording.exists(), "case recording missing")
             _, views = next(replay_frames(recording))
