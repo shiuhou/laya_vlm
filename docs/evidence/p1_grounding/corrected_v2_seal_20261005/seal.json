@@ -1,0 +1,19 @@
+{
+  "sealed_at_utc": "2026-10-05T15:25:19.350146+00:00",
+  "original_sha256": "6d57054fa839508745ce45396fc00e873b53942395f5d86fb6f81fe2247ed990",
+  "corrected_receipt_sha256": "941b9ea1447240bec70d7ffed4b7b7cca5d5cc3cbdd40460375ae6237eb79d2f",
+  "normalized_sha256": "cd5fd0bf589e7f7b11d6c9fd118040868397e2d31492feaf76bdf64f77d3d700",
+  "original_exported_at_utc": "2026-10-05T13:56:28.432826+00:00",
+  "original_registration_created_at_utc": "2026-10-05T11:57:27.181169+00:00",
+  "registration_sha256": "fd357392b4b11558de8db6bf82f9ef548e481678591b5741ab6ca2729a11dffb",
+  "annotator_source": "independent human never exposed to AI draft, as reported by project user",
+  "identity_independently_verified": false,
+  "legacy_identity_fields": "project-user/project_primary_human retained as original serialized aliases; not evidence of actual annotator identity",
+  "normalization": "provenance retained in separate correction receipt; extra image metadata removed after exact manifest equality check",
+  "regions_statuses_reasons_types_changed": false,
+  "original_export_timestamp_changed": false,
+  "new_v3_annotation_claimed": false,
+  "model_calls": 0,
+  "frozen_evaluator_commit": "ea4dd51494d19d351def97488d01e1e194d045a9",
+  "blindness_basis": "user correction plus existing RGB-only/independence attestations, not independently authenticated"
+}

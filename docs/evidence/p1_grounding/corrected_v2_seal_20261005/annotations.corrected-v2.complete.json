@@ -1,0 +1,2591 @@
+{
+  "schema": "p1-human-annotations/2",
+  "dataset_id": "934a821132b6cbb0a15715444f05a87ce798d5ea4de3e580dad2f6c984323e04",
+  "annotator_id": "project-user",
+  "annotator_role": "project_primary_human",
+  "rules_version": "p1-rgb-annotation-rules/2",
+  "rules_sha256": "d595017579fd4acabe16c563b74de8486ca64e5ee9650c294d78b30d7048ecfe",
+  "attestations": {
+    "is_human": true,
+    "independent_of_model_outputs": true,
+    "raw_rgb_only": true
+  },
+  "exported_at_utc": "2026-10-05T13:56:28.432826+00:00",
+  "annotations": [
+    {
+      "image_id": "p1/init0/agentview/1",
+      "frame_id": "p1/init0/agentview/1",
+      "rgb_blob_sha256": "2a547d8652f7e847d430402dae5acf8f65122fc75373064e5b158608b60e00f5",
+      "rgb_pixel_sha256": "03ba6354cbf617315140f2cbaf3dd86a0c6d16295b55ef28fa341d948438371b",
+      "png_sha256": "467f194321efe371cf6976e679eeea4d4a72a846d0fc4425b3edadf906eb659f",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init0/robot0_eye_in_hand/1",
+      "frame_id": "p1/init0/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "0d9e305908561980e60692e127a087334eb0b9675fc3fa7dcb2e5cd2efd1e86b",
+      "rgb_pixel_sha256": "63ca32a9b3ac353778c75c0cfbc6776a2f373d9e75023cf4482305489dc8aa7b",
+      "png_sha256": "252166b553de1618f8c1d728512f16b2ee9f18b171a68c7e0aee54ed430918b8",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                244,
+                21
+              ],
+              [
+                264,
+                21
+              ],
+              [
+                264,
+                81
+              ],
+              [
+                244,
+                90
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init1/agentview/1",
+      "frame_id": "p1/init1/agentview/1",
+      "rgb_blob_sha256": "1cddea711011858896276ec637115c3c75df3abd5e6f52b783a7e74039403cf3",
+      "rgb_pixel_sha256": "38d861447512c31007651d64357d9aadddb4fd119df3de5b9dd0c6aaec02a17d",
+      "png_sha256": "8bf3593e879b1dbdab4d5d30ce31225a2ddf74aa67cb4667417e4d8b941b326a",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init1/robot0_eye_in_hand/1",
+      "frame_id": "p1/init1/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "94f50cbcd64d81d7d9a08bc87c88bad498802cd68cafd2505f92ac64f1199135",
+      "rgb_pixel_sha256": "16193ad12089d2b8762311cae100150c0ff76d409767792145ccebc40cdd2d06",
+      "png_sha256": "056259a69920df7d01e7a1d7f27d40b6cbbf1c51bb4e21e53e929f420cf1fe9b",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                270,
+                31
+              ],
+              [
+                301,
+                31
+              ],
+              [
+                301,
+                84
+              ],
+              [
+                270,
+                94
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init2/agentview/1",
+      "frame_id": "p1/init2/agentview/1",
+      "rgb_blob_sha256": "73beb0dac374230b134bbb79c7c7eacaab4bae667a387e67316e594692118c78",
+      "rgb_pixel_sha256": "7469b85de453026e3f961213e2ec05552047694a9b44cd1c13bdb01f9461ab20",
+      "png_sha256": "26c9bf92226dfddd62fb98e2ceef7678edd879d630b879712177ce09590b5273",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init2/robot0_eye_in_hand/1",
+      "frame_id": "p1/init2/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "dded77fb9534d260f96cc9a006c59f41cae97819f416ce53975a2d22b3575dd0",
+      "rgb_pixel_sha256": "e2c683a5452f917e99c568eff80d0203e0e734911c2be06b0b54434c6fa98565",
+      "png_sha256": "4fcd894e80ff343d6e995cfccb1e630d187cd5bda825851e5645b553b849b705",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                259,
+                41
+              ],
+              [
+                284,
+                41
+              ],
+              [
+                284,
+                100
+              ],
+              [
+                259,
+                110
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init3/agentview/1",
+      "frame_id": "p1/init3/agentview/1",
+      "rgb_blob_sha256": "3a218f16e4806b8fefd4bc0dd33dc363eb16dd81ac7618747c30a619a81b9cfb",
+      "rgb_pixel_sha256": "4d9fdf06aa4620711c0bbf2f2dcebd3a3a472596302e3edbd5d52f57c33c544c",
+      "png_sha256": "c2ad8807d444a6f9d850130d93bd3b5650c7529b75b7ec13be98dadc5b0e29d1",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init3/robot0_eye_in_hand/1",
+      "frame_id": "p1/init3/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "0a54d42f15c09f6502e4a05c2e262f3f0ce36822bf2f23736a61faf8cf57bcd7",
+      "rgb_pixel_sha256": "787c493224ffec16577678478cb54ea5c86983cf000ad1ef153ed611fb668b5f",
+      "png_sha256": "3070dee130d2fee10abe7b125c26a9c05449fb5b043ba4999e9d4aec6b2ef50e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                253,
+                11
+              ],
+              [
+                277,
+                11
+              ],
+              [
+                277,
+                73
+              ],
+              [
+                253,
+                86
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init4/agentview/1",
+      "frame_id": "p1/init4/agentview/1",
+      "rgb_blob_sha256": "5662791d8376dfd72096f16ecf0d6dd3aa1d266e27b577138a76a8548c3f92a5",
+      "rgb_pixel_sha256": "e60c75a42027efa9a9f9435614e4dcad37e380368aebdffd0ab0179039f26c18",
+      "png_sha256": "70082a706c32fc6868a45afb92d389f5ff1c0d797d6e1ee3c24d12000913fedf",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init4/robot0_eye_in_hand/1",
+      "frame_id": "p1/init4/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "475a623f21e807cb02c82c2f9579552b30d97f2302295a27ead9fa17bd39e65c",
+      "rgb_pixel_sha256": "dda1d80b556142d1506888100863d3c6e027a21cd081fa6ad28b68d4f6b4d832",
+      "png_sha256": "431792a020909df926178202c5213f52da16f5da6c3da87d10cdb81fb1f93f3d",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                259,
+                25
+              ],
+              [
+                288,
+                25
+              ],
+              [
+                288,
+                83
+              ],
+              [
+                259,
+                93
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init5/agentview/1",
+      "frame_id": "p1/init5/agentview/1",
+      "rgb_blob_sha256": "f48bc6984120cfe32c1e1f3ac2fa05786b1a63c58482e70e949a00c369f26507",
+      "rgb_pixel_sha256": "9ef348e913b3d5db6111d37b88abf7af93b9b0b7c8aaeea9591e49162e0db594",
+      "png_sha256": "0331225fdc6ca5569d10e4d69cd86d5a0dba5d6bb1f699394a8ff42e594a48c1",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init5/robot0_eye_in_hand/1",
+      "frame_id": "p1/init5/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "b09f3f8c8d2a9ca90016cf24fb90afa0e1ce6fc12121ce9e1c334155879b6889",
+      "rgb_pixel_sha256": "e1621860387545be44f3c50f51edc6d11ab345c08f3546d9c1a9c3891d125b8e",
+      "png_sha256": "e7a1a56176ddf9ad20999be8b23f1582ced4bf0a87290d65618b7f808460f802",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                266,
+                31
+              ],
+              [
+                297,
+                31
+              ],
+              [
+                297,
+                100
+              ],
+              [
+                266,
+                111
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init6/agentview/1",
+      "frame_id": "p1/init6/agentview/1",
+      "rgb_blob_sha256": "1555fb6965ffa02d7820fa1d06485916363a9ed356fb02c78fb5dffa1fc5bf48",
+      "rgb_pixel_sha256": "6646eafbd8396dcd2f0f6ed4791f59d98c6e9a761c52c7214c89cda549535240",
+      "png_sha256": "53cf50f3d62d65ae72fff2ad518c38db6f10f4299314cd0136a863bec322f865",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init6/robot0_eye_in_hand/1",
+      "frame_id": "p1/init6/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "6f9a0d9d3b0ba555c58d15ce203bda64a9e816d18936c2f83efa19b363bf9629",
+      "rgb_pixel_sha256": "e9df6d1c261b08e11ef1f921c0a32b8d4314a0cd4be1fda337de3b7161746f38",
+      "png_sha256": "a810392e1803d28fafeeabe4103e97b3511629a694a0acec6f2f6a92c51dd11e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                260,
+                3
+              ],
+              [
+                289,
+                3
+              ],
+              [
+                289,
+                69
+              ],
+              [
+                260,
+                85
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init7/agentview/1",
+      "frame_id": "p1/init7/agentview/1",
+      "rgb_blob_sha256": "e12cff6b21cca9893b7469fd3eaaa724a62f23a02a9590e779e8a2c4001ef493",
+      "rgb_pixel_sha256": "f4ba7b78ae5d045fa119c4722ff3bc39274875337c48080b23e7f5ad8d5ec8fd",
+      "png_sha256": "e0a36e8b03e54e92bf89c887ac9b809ae6772ab95c59c5d7e087380c7e2e8aa8",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init7/robot0_eye_in_hand/1",
+      "frame_id": "p1/init7/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "85f317ad82331ddc3bdbd0f2460d8c16a755e217ca09a5a5ba10b2618b34bce1",
+      "rgb_pixel_sha256": "73e1357eabcfb24e88fc792af215ce1b466f5a382155b8bf412c971c8a8a03f1",
+      "png_sha256": "7e41e08a60670f9730f83d2fd3e8748b8278f5d4e68bca2f57e646769872424e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                263,
+                29
+              ],
+              [
+                291,
+                29
+              ],
+              [
+                291,
+                87
+              ],
+              [
+                263,
+                96
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init8/agentview/1",
+      "frame_id": "p1/init8/agentview/1",
+      "rgb_blob_sha256": "965d9a5876bfe840a644120ca32387cdf3d18df67c76834c8e72e8cd69893edf",
+      "rgb_pixel_sha256": "a68a5dd92541eb69a2d131a65bf12ee4a54b01e9651d2e622e5415c5340ac8e2",
+      "png_sha256": "08788ced27ae00aa72849f93fd0f797d27ff2d20d855757d94ff564f1b1f213e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init8/robot0_eye_in_hand/1",
+      "frame_id": "p1/init8/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "d711181abfa732c300c76864a3e24b4b592f5de8fb4b63bdb63d8ceb622b0f63",
+      "rgb_pixel_sha256": "78d135b202b96af6378e6c93bda4245cef74115dc2185537a8a2f2a1e63654c2",
+      "png_sha256": "f8a37abd8f8666a49145e9013722e6dbd9870ec143467f3bf00ada18a7e1b21c",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                286,
+                3
+              ],
+              [
+                333,
+                3
+              ],
+              [
+                333,
+                60
+              ],
+              [
+                286,
+                78
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init9/agentview/1",
+      "frame_id": "p1/init9/agentview/1",
+      "rgb_blob_sha256": "95824832efeaa0125cce1e7477f1d95435e6b3d11962bc7f65d7f235b29d9a20",
+      "rgb_pixel_sha256": "c30e96fefb8a3516a7aabd1ed56f3c229c664248acb7169a90d62bdd86d2ed0a",
+      "png_sha256": "1d241c030a6585ead48f055775c8f74dfcf877c7e10706f0ccbf5ed71618131e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init9/robot0_eye_in_hand/1",
+      "frame_id": "p1/init9/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "77e9da6b7b18ed2855836f25de16b21a975711cdb1a2d52b33779dabd8be6d7d",
+      "rgb_pixel_sha256": "150d8c713768ea79719c07ae6d6d6b36018e31bb9117b1a2db7e2fda66ca74d7",
+      "png_sha256": "7347e661b4ea2f08dc9a5b4520cff6ae7491eeeccc91d7f107bf955ca50b8c07",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                244,
+                32
+              ],
+              [
+                263,
+                32
+              ],
+              [
+                263,
+                94
+              ],
+              [
+                244,
+                98
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init10/agentview/1",
+      "frame_id": "p1/init10/agentview/1",
+      "rgb_blob_sha256": "b391a893cb11c0d7c4d5231663625d6a3ea51c561d6ba54437949566c14cebb7",
+      "rgb_pixel_sha256": "75e8373f593aad86952c46d164a528edcadf8a5738a7a264da652873fd71cc67",
+      "png_sha256": "c5e32104a024fe9556ffbba4e11b2fc72636f2906eb802fb05bbd26de33dc2c9",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init10/robot0_eye_in_hand/1",
+      "frame_id": "p1/init10/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "e1adf90ebcb7099c6c780db15cd5d28b5c9c7b88f00127d83533f29d6e2fe3e4",
+      "rgb_pixel_sha256": "01cf07c726c32295642be7415419ade2e0a080950aef121112ea23268aa26c25",
+      "png_sha256": "d73b65690a930b9b68a83669e8634e4f48224757140f557aa7e024a93f2b044e",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                251,
+                3
+              ],
+              [
+                277,
+                3
+              ],
+              [
+                277,
+                65
+              ],
+              [
+                251,
+                80
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init11/agentview/1",
+      "frame_id": "p1/init11/agentview/1",
+      "rgb_blob_sha256": "19ca6062c166d974d2ebe027af827e4552e225ad5ed48a100c6dcd2652dfacb4",
+      "rgb_pixel_sha256": "ed1413300a80551bdae7e01ea8e76e12f925fb32cee985d988b2ab0a43b1f694",
+      "png_sha256": "b6ffac203ff869daef3e8bce0e2b1ea6af6edd0bdae8383dab455ab3f3bc3106",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init11/robot0_eye_in_hand/1",
+      "frame_id": "p1/init11/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "6d66e4267ad4426d66811302bf8a488387f328c38ff281053dcc47ffb2bb2345",
+      "rgb_pixel_sha256": "16058d73c828f56fe8f3e7d89b96770e98e70aea70c41108b30e9e3e0cb58784",
+      "png_sha256": "e2228a855d51af362e54071bbc14b6dc4fd2beed5346e381c911b7ebbfa95b45",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                250,
+                30
+              ],
+              [
+                272,
+                30
+              ],
+              [
+                272,
+                93
+              ],
+              [
+                250,
+                101
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init12/agentview/1",
+      "frame_id": "p1/init12/agentview/1",
+      "rgb_blob_sha256": "9984f530c78c6e747b2a2d030f893c4cba412144127a6c621a3f4559d1de52ff",
+      "rgb_pixel_sha256": "ca449038996584903c414d629800e9ee0cdcccea3d965eb3036135f7fa33adc8",
+      "png_sha256": "a5f69c1c9053b29bb1885179fc6a94eb3011e02980a985ed17936515251fae08",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init12/robot0_eye_in_hand/1",
+      "frame_id": "p1/init12/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "95fa18cbad8042af21d57ced94c7db0b4e6024c07284bef8e1bb3b972a799d18",
+      "rgb_pixel_sha256": "00eda85c634011cf940dea012b7f12f6a7d69d8d7cefb4a83657bf67e2ce7abb",
+      "png_sha256": "11bdcb064fa09c5ff3d5cdae6bdf122b2c2f23726cedfac23a2019ee3e824613",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                263,
+                3
+              ],
+              [
+                293,
+                3
+              ],
+              [
+                293,
+                76
+              ],
+              [
+                263,
+                88
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init13/agentview/1",
+      "frame_id": "p1/init13/agentview/1",
+      "rgb_blob_sha256": "b287c784f1afbd0d065337b012df8f3df331f94d78cee9862a478e5ef74fe673",
+      "rgb_pixel_sha256": "3b6e35418dd5ee6533e77a41dff739548a7c45a6dab8f9c748c8ffd06acf7855",
+      "png_sha256": "a142f72471cfd72be17bf22d86d66fc6ae03abb2508d5876d52b55cfe3150afa",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init13/robot0_eye_in_hand/1",
+      "frame_id": "p1/init13/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "9970e75c6f4e313bcb10809909ebfd26b0c6d72ddbd48f89b5df572d9fa203c0",
+      "rgb_pixel_sha256": "09e2ad8130b1673e73441d041b42a50f025fa2c764d989e8c2f8d9fd9eb56dfb",
+      "png_sha256": "c33fafb5cba853c41a9ca2f3fc722dadfd49e22939b40a222c20c11896ba393c",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                269,
+                15
+              ],
+              [
+                302,
+                15
+              ],
+              [
+                302,
+                76
+              ],
+              [
+                269,
+                88
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init14/agentview/1",
+      "frame_id": "p1/init14/agentview/1",
+      "rgb_blob_sha256": "94eac6d06d4d4c7a1a981d0c613603735bde398afb30164874ffc674c9da4a5a",
+      "rgb_pixel_sha256": "d5a3eb5fc4be3616d20adc5f62e44ad3e3db2c9f9d07cc64a69caa74a7eef664",
+      "png_sha256": "f241afe5aec295d824f2b3b60058be39b15a2cd5f959e87fe10a720d8d43214a",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init14/robot0_eye_in_hand/1",
+      "frame_id": "p1/init14/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "ec10aecf83d92fab202fabb7c55d91eafa5e89ab9d06836dc1e5559387a5f99d",
+      "rgb_pixel_sha256": "60f7abc7bda2e32485ea2cf785d08dec753f5a7de7de81030337e055b5e81aa8",
+      "png_sha256": "70a21335fa5a2a3d4549ef7a852ba9c89220230665a0b9e86a338b4290c0b9cd",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                250,
+                30
+              ],
+              [
+                272,
+                30
+              ],
+              [
+                272,
+                93
+              ],
+              [
+                250,
+                101
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init15/agentview/1",
+      "frame_id": "p1/init15/agentview/1",
+      "rgb_blob_sha256": "db7b0045000371124bfdbaf12ede87d0f70cb4f31b7a129ca55ce48ac2edceb2",
+      "rgb_pixel_sha256": "5328626783421b206ac16476b35a1d6cd83daf94ba3cbe6188502dc56673f336",
+      "png_sha256": "b50ff744abd6ed73431753960f4527f7e6820dabe8d56ddb912d475835ebf3c5",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init15/robot0_eye_in_hand/1",
+      "frame_id": "p1/init15/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "5e53f8b9e55adaef9fb7896cb1f0139125b92d577dee4800fdba35951d6a7130",
+      "rgb_pixel_sha256": "99f5c30f2248e297df0a2fe83f0b838e3f1dd6d1520263876e20c44f3fb48775",
+      "png_sha256": "593a550d5a20aba0ff93153b7c6553247b53c2bee14d09b57b316bf29826bbb4",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                267,
+                3
+              ],
+              [
+                305,
+                3
+              ],
+              [
+                305,
+                67
+              ],
+              [
+                267,
+                83
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init16/agentview/1",
+      "frame_id": "p1/init16/agentview/1",
+      "rgb_blob_sha256": "ecceb92456f06c6f9cabdc2669ded79559082290f0f693077d5932d2d8619117",
+      "rgb_pixel_sha256": "812d824ebda4a9486cc642068291b9371cfd4881cd6907dda289976226c9c25e",
+      "png_sha256": "48b24f72932a3f8de6512bea395ff19fc8442de0faaa85fd61c18f117cb9cc6f",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init16/robot0_eye_in_hand/1",
+      "frame_id": "p1/init16/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "6d9a9ad865ce9a6ca3837e362fc980d3b5f5bb672d4e74b5186e660192287650",
+      "rgb_pixel_sha256": "674339714accdaecf8aa229c198427cadfe083acc7f070eab358d678edbdcbfe",
+      "png_sha256": "99f4b4336e6a61119ef9a77763a84ac04b5bdbbf21e3ababdf8d1b05fc2e23ba",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                265,
+                11
+              ],
+              [
+                294,
+                11
+              ],
+              [
+                294,
+                76
+              ],
+              [
+                265,
+                89
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init17/agentview/1",
+      "frame_id": "p1/init17/agentview/1",
+      "rgb_blob_sha256": "de3886ebdba977ac1724eb9103cc5c1f9a335dbee6037819a8a26a2bca0088f1",
+      "rgb_pixel_sha256": "74af0b19b6b2d6e532f8f46d5dbd634570b7a585923baffcc69acc1c7c92ffcb",
+      "png_sha256": "f1ddd79a94faaf11d5a02a25bd7edb22d3b847ad6c260a958e49026bebbadc57",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init17/robot0_eye_in_hand/1",
+      "frame_id": "p1/init17/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "12307414aab4470a4b617fd0dc64187f7f193b03f4513469df14a351302f98d4",
+      "rgb_pixel_sha256": "faebc63c1408728748c87755ec61dd268bf5f206ea89cf8bb299e5a46eba08ea",
+      "png_sha256": "eee1b93724442176453e47cdf6adbafce894f76cb68fb6a14d993eea23c2a742",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                258,
+                13
+              ],
+              [
+                287,
+                13
+              ],
+              [
+                287,
+                81
+              ],
+              [
+                258,
+                93
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init18/agentview/1",
+      "frame_id": "p1/init18/agentview/1",
+      "rgb_blob_sha256": "cb1276a83ec2850f3c041cac9e99ec4d165af91b2b8b31cdcd1b1f54911b4d6d",
+      "rgb_pixel_sha256": "6a45caaa76e8018772ba71c343424eed2e8077939d15a9f30ebc1b3969b8995b",
+      "png_sha256": "e06293fc2880ae4df05732222e630dc860a93e94170613de34713204078fa5d5",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init18/robot0_eye_in_hand/1",
+      "frame_id": "p1/init18/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "f06f80c469d46cd5db9210f034e80c6192333c7f04352bd376ea31eb4919b446",
+      "rgb_pixel_sha256": "ac9f9993cfc8826a94476248651510193c2a2758051500fb6a52e3f15e8c10d4",
+      "png_sha256": "10a51edbc244b80175eed232e45dd1692abd2b58e6239c3b494fc910129ca76a",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                248,
+                20
+              ],
+              [
+                270,
+                20
+              ],
+              [
+                270,
+                85
+              ],
+              [
+                248,
+                95
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init19/agentview/1",
+      "frame_id": "p1/init19/agentview/1",
+      "rgb_blob_sha256": "502561160f839e9b3f39ae2fbeec60013f8c2e6dc895a09b975054f3e820b4ea",
+      "rgb_pixel_sha256": "a84f6821f2906aeebc380f83bf0e339e8a036de19e04696c1578affc32072f44",
+      "png_sha256": "7ec180c3f4251687addb9556215d51c69de41aa925650e1ca76d1c2fb35884ed",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init19/robot0_eye_in_hand/1",
+      "frame_id": "p1/init19/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "7e3322bbd9268b4ce7df6f018e6ab98182569e5b3895492134fd9ccee235b90a",
+      "rgb_pixel_sha256": "af3af2df4ac74a247ece0e3ecea53b630681d16461e43e9f0b98878a3d1561b1",
+      "png_sha256": "ce948ee27264d87b9cc59d42cc3627e55e42e603cc59fbb8b666e72554660dc7",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                265,
+                3
+              ],
+              [
+                296,
+                3
+              ],
+              [
+                296,
+                67
+              ],
+              [
+                265,
+                83
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init20/agentview/1",
+      "frame_id": "p1/init20/agentview/1",
+      "rgb_blob_sha256": "7631874402b6a4a6755d89c88d3b1ce9d214d493db07c60597f12a51158aff4d",
+      "rgb_pixel_sha256": "9ce966978ca2126d72999b9d69802213550d9f6ea5e62940fc6d9dd28ed43709",
+      "png_sha256": "a4beb5cc3e4e310305631867b09b4619446c342bb586860f5e87e61125e00fda",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init20/robot0_eye_in_hand/1",
+      "frame_id": "p1/init20/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "cae9736275fb44733f4966467f37cdf4507ca7cb1a17b8c7546f60d1e93fcccb",
+      "rgb_pixel_sha256": "4da2c1fd5465632d1c62e27c8f3deab4c38e38a1191cebb7b6d910178e25ecdb",
+      "png_sha256": "36e73ffa874430ea5f3e3d1d57e60b88745e5d10241dc6de2ae50e5dc4f409d0",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                267,
+                10
+              ],
+              [
+                299,
+                10
+              ],
+              [
+                299,
+                76
+              ],
+              [
+                267,
+                90
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init21/agentview/1",
+      "frame_id": "p1/init21/agentview/1",
+      "rgb_blob_sha256": "e5b4f2936e7a473a44e4cdf6ba7bbd802d39f23b1fb42264168afe49cf3e1e6f",
+      "rgb_pixel_sha256": "b8c9fa6088cd76785d3e188eb57afa043975bb3c023923f77a61dd2fa7140717",
+      "png_sha256": "321a68b43a2facb0ef06c46ae1bb487362d0ba609e2956b3e19dbf6fb6bd705c",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init21/robot0_eye_in_hand/1",
+      "frame_id": "p1/init21/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "41f57a1c0fa5c4a5757842248a5a76a6dfedcc1c050f3247556bfb07122b4096",
+      "rgb_pixel_sha256": "824ad4b6e8ec8f6d3ad93b1cf1e5703630aced5b837d7346fc08bd1e44812879",
+      "png_sha256": "3bffbc861b21e95cf869eb538f0daa3b61eee3c6446497c0f83679b6476a1a65",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                263,
+                31
+              ],
+              [
+                288,
+                31
+              ],
+              [
+                288,
+                83
+              ],
+              [
+                263,
+                93
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init22/agentview/1",
+      "frame_id": "p1/init22/agentview/1",
+      "rgb_blob_sha256": "20aade3c72811fab1034e25b07ee9e689b862531af44500faedbade65163cbc7",
+      "rgb_pixel_sha256": "3bb3686e041b21a97d589f8ae6fb9d6736152aacce4ca448a9def58f2589a218",
+      "png_sha256": "746d475ea1cc8fbfb2df91fc39e2459d2e2ea42151a9181a471bc2296656d5f5",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init22/robot0_eye_in_hand/1",
+      "frame_id": "p1/init22/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "4114b65da2d001f1ec24095ea159e42b0bb2d447d428e8fedd65f4a34a3a7155",
+      "rgb_pixel_sha256": "ea2ce4d016f35125b8a06b6cd30128fbec8ef9730ac569f06c365b94bf774620",
+      "png_sha256": "ae777e4d131f62a6280448a156da3d5a36f6df548f13f2537c89d45cbb859fe1",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                264,
+                3
+              ],
+              [
+                297,
+                3
+              ],
+              [
+                297,
+                72
+              ],
+              [
+                264,
+                85
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init23/agentview/1",
+      "frame_id": "p1/init23/agentview/1",
+      "rgb_blob_sha256": "13cf92a96d4c50aa3d400c21778f5b7787fd49168d29ba76e3ff2c4667967d0c",
+      "rgb_pixel_sha256": "938ea86a730c03d1f732740bb456540055c0e7ed3071fac8bcca613ba0111015",
+      "png_sha256": "0ef7d284925cedeea5be64a19d853ed1fac1bacf2cb1721c563478e3b10667bd",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init23/robot0_eye_in_hand/1",
+      "frame_id": "p1/init23/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "ee5280eff64d9bcbd7f1a58da73522b7975548d8404eb44f0655af07badbfa90",
+      "rgb_pixel_sha256": "271570239aecae07534cf2a5deab6c4e74853427d944bfc532494221c002240c",
+      "png_sha256": "58371413b53a5cadec393cd26f74e3cbd27d58e6080464dbf3675bfa0f9b7a11",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                254,
+                39
+              ],
+              [
+                280,
+                39
+              ],
+              [
+                280,
+                89
+              ],
+              [
+                254,
+                99
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    },
+    {
+      "image_id": "p1/init24/agentview/1",
+      "frame_id": "p1/init24/agentview/1",
+      "rgb_blob_sha256": "24b02d3c7d1a427bb72668905b7facfc255791b94bc9a55543d298dc42ec1f51",
+      "rgb_pixel_sha256": "4630e16b0c500d51ce40f4b6a19129f9f7701f2c20abcd7379d98082de9c1afc",
+      "png_sha256": "caba94a93c84ea1493dbcf23543fd955886a50b042b730b8d88efb92fb679e11",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "UNKNOWN",
+          "reason": "帶把手的抽屜朝外正面近乎側向，只呈現數個像素的暗色窄帶；在此 RGB 解析度下無法可靠區分平坦朝外接觸面與薄邊／側板，因此不將較大的側板或內腔當作正面。",
+          "polygons": []
+        },
+        "fixed_cabinet_reference": {
+          "status": "VISIBLE",
+          "reason": "畫面左下木質箱體的上表面及外側面與抽屜開口連接，可辨認為同一柜體的鄰近本體；避開伸出的抽屜、下方把手及背景厨房柜。固定身份是單張 RGB 的視覺判斷，未作運動驗證。",
+          "polygons": [
+            [
+              [
+                19,
+                140
+              ],
+              [
+                53,
+                91
+              ],
+              [
+                109,
+                91
+              ],
+              [
+                94,
+                140
+              ]
+            ],
+            [
+              [
+                19,
+                147
+              ],
+              [
+                93,
+                147
+              ],
+              [
+                106,
+                195
+              ],
+              [
+                44,
+                195
+              ]
+            ]
+          ],
+          "reference_types": [
+            "ADJACENT_FIXED_BODY",
+            "ADJACENT_FIXED_BODY"
+          ]
+        }
+      }
+    },
+    {
+      "image_id": "p1/init24/robot0_eye_in_hand/1",
+      "frame_id": "p1/init24/robot0_eye_in_hand/1",
+      "rgb_blob_sha256": "ed4d8d8494202005768e0f04894855b9dbe42098a009e3c4f1b7e1c69889e067",
+      "rgb_pixel_sha256": "0dba0639b9bc092dce83629012c5fbe943785720cfa7523203552a4d5b67cf18",
+      "png_sha256": "d2c97099db11c0dd8c47cba65d596945fa68550f1d2a95d10f2d9b0a8da1e67b",
+      "width": 384,
+      "height": 256,
+      "entities": {
+        "drawer_front_pushable": {
+          "status": "VISIBLE",
+          "reason": "畫面右上、把手所在的黑色外向面可辨認為抽屜正面；圈出把手下方可見的平坦部分，排除把手及連接柱、薄邊、右側內腔和下緣。頂部超出畫面或靠近把手的部分未補全。",
+          "polygons": [
+            [
+              [
+                259,
+                25
+              ],
+              [
+                283,
+                25
+              ],
+              [
+                283,
+                78
+              ],
+              [
+                259,
+                90
+              ]
+            ]
+          ]
+        },
+        "fixed_cabinet_reference": {
+          "status": "UNKNOWN",
+          "reason": "近距離俯視圖中的主要木質區域是桌面，右上可辨認的部分是抽屜；柜體開口及固定本體被裁切或遮擋，不能可靠建立同一柜體且固定的身份。",
+          "polygons": [],
+          "reference_types": []
+        }
+      }
+    }
+  ]
+}
