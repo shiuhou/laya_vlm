@@ -261,7 +261,9 @@ def validate_frame_bundle(p):
         require(abs(det-1) < 1e-6, "rotation must be proper")
     # Import locally: sensor types own their whitelist, not a duplicate here.
     from .sensor_api import Proprioception
-    Proprioception.from_mapping(p["proprio"])
+    proprio = Proprioception.from_mapping(p["proprio"])
+    require(proprio.capture_sim_time_s <= p["capture_sim_time_s"], "proprio captured after bundle")
+    require(proprio.capture_monotonic_ns <= p["capture_monotonic_ns"], "proprio captured after bundle")
 
 
 def load_config(path):
