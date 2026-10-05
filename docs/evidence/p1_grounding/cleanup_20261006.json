@@ -1,0 +1,27 @@
+{
+  "recorded_at_utc": "2026-10-05T15:48:07.373435+00:00",
+  "removed_completed_frozen_v2_worktree": true,
+  "historical_evaluator_commit": "ea4dd51494d19d351def97488d01e1e194d045a9",
+  "preserved_original_annotations_static_capture_and_formal_results": true,
+  "operations": [
+    {
+      "path": "/tmp/laya-p1-uiqa",
+      "removed_bytes": 12281741,
+      "reason": "completed synthetic browser QA only; reports already preserved in evidence, no human labels"
+    },
+    {
+      "path": "/tmp/laya-p1-uiqa-v3",
+      "removed_bytes": 165949,
+      "reason": "completed synthetic browser QA only; reports already preserved in evidence, no human labels"
+    },
+    {
+      "path": "docs/evidence/p1_grounding/corrected_v2_evaluation_20261005/independent-reference-polygon-diagnostic.json",
+      "retained_as": "docs/evidence/p1_grounding/corrected_v2_evaluation_20261005/independent-reference-polygon-diagnostic.json.gz",
+      "original_bytes": 15439425,
+      "archive_bytes": 1177809,
+      "original_sha256": "c7b21301d399356f709343ae83e5ef4f80e10108436500ddf955c289217013aa",
+      "archive_sha256": "c8dcd5a295d11353c46b941e80669eeaff9e604880470e43270cda752421f457",
+      "lossless": true
+    }
+  ]
+}

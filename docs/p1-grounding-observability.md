@@ -4,6 +4,13 @@ The preserved infrastructure checkpoint is **92865a8** on
 `feat/p1-rgbd-geometry`. New preparation is isolated on
 `feat/p1-grounding-observability`. **Task acceptance remains pending.**
 
+**Measured update:** the corrected v2 labels have been sealed and the original
+100-call fixed-query condition has completed without truncation. Read
+[P1 grounding results](p1-grounding-results.md) and the independent RGB review
+for the current findings. The annotation preparation below is historical;
+no re-annotation is presently required. Temporal coverage remains separately
+evaluated, not inferred from acquisition count.
+
 ## Human annotation first
 
 **Latest correction:** the user clarified that the submitted labels were already
@@ -144,12 +151,13 @@ or freshness gates to hide it.
 
 ## Still pending
 
-The three requested conclusions require the complete human annotations and
-fixed semantic outputs: usable drawer-front support, fixed-reference
-observability, and failure attribution among semantics, contamination, geometry
-ambiguity and camera observability. None is declared resolved here.
+The three static questions now have qualified measured answers in the
+[results](p1-grounding-results.md): visible wrist face support exists, adjacent
+cabinet geometry exists, and semantic surface association is the first drawer
+failure. Fixedness/closed-reference relation, calibrated uncertainty, safe push
+eligibility and live freshness remain unestablished.
 
 The [ten-case temporal protocol](p1-temporal-sequence-protocol.md) is prospective:
-**zero qualifying temporal sequences have been run**. The static throughput
-recording does not satisfy it. Acquire/inspect those observation sequences after
-the static grounding boundary is understood, without PUSH or full P2.
+actual temporal acquisition and inspection are under way. The static throughput
+recording does not satisfy it. Unsupported cases and losses must remain explicit,
+without PUSH or full P2.

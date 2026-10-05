@@ -1,0 +1,25 @@
+{
+  "dataset_id": "934a821132b6cbb0a15715444f05a87ce798d5ea4de3e580dad2f6c984323e04",
+  "annotator_id": "project-user",
+  "annotator_role": "project_primary_human",
+  "third_party_review_claimed": false,
+  "rules_version": "p1-rgb-annotation-rules/2",
+  "rules_sha256": "d595017579fd4acabe16c563b74de8486ca64e5ee9650c294d78b30d7048ecfe",
+  "complete": true,
+  "annotated_images": 50,
+  "expected_images": 50,
+  "missing_image_ids": [],
+  "visibility_counts": {
+    "drawer_front_pushable": {
+      "UNKNOWN": 25,
+      "VISIBLE": 25
+    },
+    "fixed_cabinet_reference": {
+      "VISIBLE": 25,
+      "UNKNOWN": 25
+    }
+  },
+  "human_identity_claim": "self_attested_not_independently_verified",
+  "independence_claim": "self_attested_not_independently_verified",
+  "evaluation_only": true
+}

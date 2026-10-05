@@ -1,0 +1,3186 @@
+{
+  "schema": "p1-independent-offline-review/1",
+  "created_at_utc": "2026-10-05T15:37:09.274989+00:00",
+  "reviewer": "Codex p0_boundary independent artifact audit; not a human annotator",
+  "run": "runs/p1/corrected-v2-fixed-query-evaluation-20261005",
+  "runtime_actions": 0,
+  "new_model_calls": 0,
+  "predictions_seal_matches": true,
+  "point_metric_recomputation_matches": true,
+  "all_100_single_box": true,
+  "all_100_eos_without_length_limit": true,
+  "source_sha256": {
+    "predictions-sealed.json": "c9f46ab1922d334fc53291cdf99e0dd603627526bca0f538bfe29648b6d33bc2",
+    "human-evaluation.json": "2c031b93ceabf106841ca09f66af621b29d74abb568b82f6feb3808a7429e870",
+    "annotation-conditioned-upper-bound.json": "0428214ad6e4ab7de379ae6c4134dc4595d978b6999b39d1f75290c5eb7e6182",
+    "annotations-evaluation-input.json": "2afc0e680188eef842465cc1e7f4b2a6c2f1e8d999fd8337b66d01d082db7ca2",
+    "preregistration.json": "04c0428b1c32ac77456714d3e8819fd9bd2a12a8677949760c1133b88e1646a6"
+  },
+  "script_sha256": "8d4ee6b2d51f7f2920c79b722458e43b2da9306fc5365e95e2490f4b72a20d30",
+  "summary": {
+    "drawer_front_pushable:agentview": {
+      "views": 25,
+      "model_candidates": 0,
+      "mask_candidates": 0,
+      "model_geometry_UNKNOWN": 24,
+      "mask_geometry_UNKNOWN": 25,
+      "model_geometry_AMBIGUOUS": 1
+    },
+    "fixed_cabinet_reference:agentview": {
+      "views": 25,
+      "model_candidates": 0,
+      "mask_candidates": 0,
+      "model_geometry_UNKNOWN": 25,
+      "mask_geometry_AMBIGUOUS": 25,
+      "model_points_inside_labels": 0,
+      "model_points_outside_labels": 0,
+      "mask_points_inside_labels": 0,
+      "mask_points_outside_labels": 0
+    },
+    "drawer_front_pushable:robot0_eye_in_hand": {
+      "views": 25,
+      "model_candidates": 23043,
+      "mask_candidates": 130,
+      "model_geometry_AMBIGUOUS": 6,
+      "mask_geometry_VALID": 25,
+      "model_points_inside_labels": 0,
+      "model_points_outside_labels": 23043,
+      "mask_points_inside_labels": 130,
+      "mask_points_outside_labels": 0,
+      "model_geometry_UNKNOWN": 3,
+      "model_geometry_VALID": 16
+    },
+    "fixed_cabinet_reference:robot0_eye_in_hand": {
+      "views": 25,
+      "model_candidates": 3032,
+      "mask_candidates": 0,
+      "model_geometry_AMBIGUOUS": 22,
+      "mask_geometry_UNKNOWN": 25,
+      "model_geometry_UNKNOWN": 1,
+      "model_geometry_VALID": 2
+    }
+  },
+  "records": [
+    {
+      "call": "call-000",
+      "image_id": "p1/init0/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          91.648,
+          166.272,
+          159.232
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-001",
+      "image_id": "p1/init0/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-002",
+      "image_id": "p1/init0/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          243.84,
+          0.0,
+          383.23199999999997,
+          110.336
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 6,
+        "inside": 6,
+        "outside": 0,
+        "boundary_min_px": 4.930953811677028
+      }
+    },
+    {
+      "call": "call-003",
+      "image_id": "p1/init0/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          242.688,
+          0.0,
+          383.23199999999997,
+          109.312
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-004",
+      "image_id": "p1/init1/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-005",
+      "image_id": "p1/init1/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-006",
+      "image_id": "p1/init1/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          194.048,
+          383.23199999999997,
+          254.976
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 7.6986202516629305
+      }
+    },
+    {
+      "call": "call-007",
+      "image_id": "p1/init1/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          252.67200000000003,
+          0.0,
+          383.23199999999997,
+          111.616
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-008",
+      "image_id": "p1/init2/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-009",
+      "image_id": "p1/init2/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-010",
+      "image_id": "p1/init2/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          284.928,
+          0.0,
+          383.23199999999997,
+          99.328
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 36,
+        "inside": 0,
+        "outside": 36,
+        "boundary_min_px": 30.412280549874367
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 5.76224001865728
+      }
+    },
+    {
+      "call": "call-011",
+      "image_id": "p1/init2/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          241.152,
+          0.0,
+          383.23199999999997,
+          113.664
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-012",
+      "image_id": "p1/init3/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-013",
+      "image_id": "p1/init3/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-014",
+      "image_id": "p1/init3/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          255.488
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1538,
+        "inside": 0,
+        "outside": 1538,
+        "boundary_min_px": 14.767584333811202
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 5.823599191900655
+      }
+    },
+    {
+      "call": "call-015",
+      "image_id": "p1/init3/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          248.832,
+          0.0,
+          383.23199999999997,
+          108.288
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-016",
+      "image_id": "p1/init4/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          91.136,
+          168.96,
+          159.744
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-017",
+      "image_id": "p1/init4/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-018",
+      "image_id": "p1/init4/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1494,
+        "inside": 0,
+        "outside": 1494,
+        "boundary_min_px": 11.157759554544697
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 8.548628383377093
+      }
+    },
+    {
+      "call": "call-019",
+      "image_id": "p1/init4/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          241.536,
+          0.0,
+          383.23199999999997,
+          112.64
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-020",
+      "image_id": "p1/init5/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-021",
+      "image_id": "p1/init5/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-022",
+      "image_id": "p1/init5/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          215.04,
+          383.23199999999997,
+          254.976
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 6,
+        "inside": 6,
+        "outside": 0,
+        "boundary_min_px": 6.932182807670131
+      }
+    },
+    {
+      "call": "call-023",
+      "image_id": "p1/init5/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          247.296,
+          0.0,
+          383.23199999999997,
+          116.736
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-024",
+      "image_id": "p1/init6/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-025",
+      "image_id": "p1/init6/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-026",
+      "image_id": "p1/init6/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          258.048,
+          0.0,
+          383.23199999999997,
+          107.776
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 8.197793486243086
+      }
+    },
+    {
+      "call": "call-027",
+      "image_id": "p1/init6/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          258.048,
+          0.0,
+          383.23199999999997,
+          107.776
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-028",
+      "image_id": "p1/init7/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-029",
+      "image_id": "p1/init7/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-030",
+      "image_id": "p1/init7/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1623,
+        "inside": 0,
+        "outside": 1623,
+        "boundary_min_px": 11.548269827494096
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 6,
+        "inside": 6,
+        "outside": 0,
+        "boundary_min_px": 6.84381679580116
+      }
+    },
+    {
+      "call": "call-031",
+      "image_id": "p1/init7/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          259.968,
+          0.0,
+          383.23199999999997,
+          112.64
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-032",
+      "image_id": "p1/init8/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-033",
+      "image_id": "p1/init8/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-034",
+      "image_id": "p1/init8/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1480,
+        "inside": 0,
+        "outside": 1480,
+        "boundary_min_px": 13.22431069925273
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 4,
+        "inside": 4,
+        "outside": 0,
+        "boundary_min_px": 11.38070743412743
+      }
+    },
+    {
+      "call": "call-035",
+      "image_id": "p1/init8/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          281.472,
+          0.0,
+          383.23199999999997,
+          103.936
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-036",
+      "image_id": "p1/init9/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          91.136,
+          168.192,
+          159.744
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-037",
+      "image_id": "p1/init9/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-038",
+      "image_id": "p1/init9/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          195.072,
+          383.23199999999997,
+          254.976
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 4,
+        "inside": 4,
+        "outside": 0,
+        "boundary_min_px": 4.679544116258569
+      }
+    },
+    {
+      "call": "call-039",
+      "image_id": "p1/init9/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          221.952,
+          0.0,
+          383.23199999999997,
+          114.688
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-040",
+      "image_id": "p1/init10/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          87.552,
+          168.96,
+          159.488
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-041",
+      "image_id": "p1/init10/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-042",
+      "image_id": "p1/init10/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1410,
+        "inside": 0,
+        "outside": 1410,
+        "boundary_min_px": 16.112033665638215
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 2,
+        "inside": 2,
+        "outside": 0,
+        "boundary_min_px": 9.567987339686397
+      }
+    },
+    {
+      "call": "call-043",
+      "image_id": "p1/init10/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          246.52800000000002,
+          0.0,
+          383.23199999999997,
+          105.472
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-044",
+      "image_id": "p1/init11/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          90.624,
+          162.432,
+          160.0
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-045",
+      "image_id": "p1/init11/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.96
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-046",
+      "image_id": "p1/init11/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1524,
+        "inside": 0,
+        "outside": 1524,
+        "boundary_min_px": 10.821862435050633
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 5.414374631431343
+      }
+    },
+    {
+      "call": "call-047",
+      "image_id": "p1/init11/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          246.52800000000002,
+          0.0,
+          383.23199999999997,
+          115.712
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-048",
+      "image_id": "p1/init12/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-049",
+      "image_id": "p1/init12/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-050",
+      "image_id": "p1/init12/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1487,
+        "inside": 0,
+        "outside": 1487,
+        "boundary_min_px": 12.386229755127692
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 7.959341809674584
+      }
+    },
+    {
+      "call": "call-051",
+      "image_id": "p1/init12/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          259.584,
+          0.0,
+          383.23199999999997,
+          109.312
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-052",
+      "image_id": "p1/init13/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-053",
+      "image_id": "p1/init13/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-054",
+      "image_id": "p1/init13/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1597,
+        "inside": 0,
+        "outside": 1597,
+        "boundary_min_px": 11.956907891698847
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 6,
+        "inside": 6,
+        "outside": 0,
+        "boundary_min_px": 9.261623203632269
+      }
+    },
+    {
+      "call": "call-055",
+      "image_id": "p1/init13/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          266.496,
+          0.0,
+          383.23199999999997,
+          108.288
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-056",
+      "image_id": "p1/init14/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          87.552,
+          165.888,
+          161.024
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-057",
+      "image_id": "p1/init14/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-058",
+      "image_id": "p1/init14/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          246.52800000000002,
+          0.0,
+          383.23199999999997,
+          114.688
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 3,
+        "inside": 3,
+        "outside": 0,
+        "boundary_min_px": 8.854510535852455
+      }
+    },
+    {
+      "call": "call-059",
+      "image_id": "p1/init14/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          246.52800000000002,
+          0.0,
+          383.23199999999997,
+          114.688
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-060",
+      "image_id": "p1/init15/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-061",
+      "image_id": "p1/init15/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.584,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-062",
+      "image_id": "p1/init15/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1420,
+        "inside": 0,
+        "outside": 1420,
+        "boundary_min_px": 12.0719320286872
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 8.411691544532118
+      }
+    },
+    {
+      "call": "call-063",
+      "image_id": "p1/init15/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          247.296,
+          0.0,
+          383.23199999999997,
+          107.776
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-064",
+      "image_id": "p1/init16/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          91.136,
+          168.192,
+          161.024
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-065",
+      "image_id": "p1/init16/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          115.19999999999999,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-066",
+      "image_id": "p1/init16/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1559,
+        "inside": 0,
+        "outside": 1559,
+        "boundary_min_px": 13.28042912450417
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 4,
+        "inside": 4,
+        "outside": 0,
+        "boundary_min_px": 7.2463834722760225
+      }
+    },
+    {
+      "call": "call-067",
+      "image_id": "p1/init16/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          260.736,
+          0.0,
+          383.23199999999997,
+          108.288
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-068",
+      "image_id": "p1/init17/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-069",
+      "image_id": "p1/init17/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-070",
+      "image_id": "p1/init17/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          256.12800000000004,
+          0.0,
+          383.23199999999997,
+          110.336
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 7.3834988488499675
+      }
+    },
+    {
+      "call": "call-071",
+      "image_id": "p1/init17/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          256.12800000000004,
+          0.0,
+          383.23199999999997,
+          110.848
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-072",
+      "image_id": "p1/init18/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          87.04,
+          168.96,
+          160.256
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-073",
+      "image_id": "p1/init18/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-074",
+      "image_id": "p1/init18/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          243.84,
+          0.0,
+          383.23199999999997,
+          113.664
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 3,
+        "inside": 3,
+        "outside": 0,
+        "boundary_min_px": 8.131971063515266
+      }
+    },
+    {
+      "call": "call-075",
+      "image_id": "p1/init18/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          243.84,
+          0.0,
+          383.23199999999997,
+          113.664
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-076",
+      "image_id": "p1/init19/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          90.368,
+          163.584,
+          160.0
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-077",
+      "image_id": "p1/init19/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          199.424
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-078",
+      "image_id": "p1/init19/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          261.88800000000003,
+          0.0,
+          383.23199999999997,
+          106.24
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 7.089146828481432
+      }
+    },
+    {
+      "call": "call-079",
+      "image_id": "p1/init19/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          261.88800000000003,
+          0.0,
+          383.23199999999997,
+          106.24
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-080",
+      "image_id": "p1/init20/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-081",
+      "image_id": "p1/init20/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-082",
+      "image_id": "p1/init20/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1573,
+        "inside": 0,
+        "outside": 1573,
+        "boundary_min_px": 12.424802344046002
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 7,
+        "inside": 7,
+        "outside": 0,
+        "boundary_min_px": 7.769139576395958
+      }
+    },
+    {
+      "call": "call-083",
+      "image_id": "p1/init20/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          264.192,
+          0.0,
+          383.23199999999997,
+          109.312
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-084",
+      "image_id": "p1/init21/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.0,
+          101.632,
+          164.736,
+          159.744
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-085",
+      "image_id": "p1/init21/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-086",
+      "image_id": "p1/init21/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1679,
+        "inside": 0,
+        "outside": 1679,
+        "boundary_min_px": 11.950455368216666
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 6,
+        "inside": 6,
+        "outside": 0,
+        "boundary_min_px": 7.705888934790607
+      }
+    },
+    {
+      "call": "call-087",
+      "image_id": "p1/init21/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          247.296,
+          0.0,
+          383.23199999999997,
+          112.128
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-088",
+      "image_id": "p1/init22/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-089",
+      "image_id": "p1/init22/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.192
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-090",
+      "image_id": "p1/init22/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1418,
+        "inside": 0,
+        "outside": 1418,
+        "boundary_min_px": 15.796283197510732
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 4,
+        "inside": 4,
+        "outside": 0,
+        "boundary_min_px": 12.554388462534575
+      }
+    },
+    {
+      "call": "call-091",
+      "image_id": "p1/init22/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1418,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-092",
+      "image_id": "p1/init23/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.384,
+          87.04,
+          164.352,
+          160.0
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-093",
+      "image_id": "p1/init23/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-094",
+      "image_id": "p1/init23/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1591,
+        "inside": 0,
+        "outside": 1591,
+        "boundary_min_px": 10.463039870081218
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 5,
+        "inside": 5,
+        "outside": 0,
+        "boundary_min_px": 6.484860398329545
+      }
+    },
+    {
+      "call": "call-095",
+      "image_id": "p1/init23/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          250.752,
+          0.0,
+          383.23199999999997,
+          116.736
+        ]
+      ],
+      "geometry_statuses": [
+        "AMBIGUOUS"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-096",
+      "image_id": "p1/init24/agentview/1",
+      "entity": "drawer_front_pushable",
+      "camera": "agentview",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          96.384,
+          87.04,
+          165.888,
+          161.024
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-097",
+      "image_id": "p1/init24/agentview/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "agentview",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          12.672,
+          85.248,
+          114.048,
+          200.448
+        ]
+      ],
+      "geometry_statuses": [
+        "UNKNOWN"
+      ],
+      "semantic_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "AMBIGUOUS",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": 0,
+        "outside": 0,
+        "boundary_min_px": null
+      }
+    },
+    {
+      "call": "call-098",
+      "image_id": "p1/init24/robot0_eye_in_hand/1",
+      "entity": "drawer_front_pushable",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "VISIBLE",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1614,
+        "inside": 0,
+        "outside": 1614,
+        "boundary_min_px": 13.35840170937002
+      },
+      "mask_geometry_status": "VALID",
+      "mask_candidate_projection": {
+        "count": 4,
+        "inside": 4,
+        "outside": 0,
+        "boundary_min_px": 6.058331349510354
+      }
+    },
+    {
+      "call": "call-099",
+      "image_id": "p1/init24/robot0_eye_in_hand/1",
+      "entity": "fixed_cabinet_reference",
+      "camera": "robot0_eye_in_hand",
+      "label_status": "UNKNOWN",
+      "boxes": [
+        [
+          0.0,
+          0.0,
+          383.23199999999997,
+          215.04
+        ]
+      ],
+      "geometry_statuses": [
+        "VALID"
+      ],
+      "semantic_candidate_projection": {
+        "count": 1614,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      },
+      "mask_geometry_status": "UNKNOWN",
+      "mask_candidate_projection": {
+        "count": 0,
+        "inside": null,
+        "outside": null,
+        "boundary_min_px": null
+      }
+    }
+  ],
+  "contact_sheet_calls": [
+    0,
+    1,
+    2,
+    6,
+    10,
+    14,
+    98
+  ],
+  "contact_sheet_sha256": "069c76d765a472cbc28f91b18f267a639819519798c5d4446926fcec16c7cfc2",
+  "postregistration_reference_split_summary": {
+    "VALID": 50
+  },
+  "limitations": [
+    "Labels are conservative visible subsets; outside polygon is not proof of semantic invalidity.",
+    "Fixed query asks for front frame; visible labels are ADJACENT_FIXED_BODY top/side surfaces.",
+    "Zero images have both entities marked visible; views do not establish temporal fixedness.",
+    "All 25 agentview reference polygon sets are identical; limited cabinet/view diversity.",
+    "Annotation independence is project-user-reported with a preserved metadata correction, not independently verified.",
+    "No candidate is certified reachable, collision-safe, interaction-valid, or executable by this review."
+  ]
+}
