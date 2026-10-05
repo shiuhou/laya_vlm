@@ -6,7 +6,17 @@ The preserved infrastructure checkpoint is **92865a8** on
 
 ## Human annotation first
 
-**Current handoff: independent-human v3.** The user chose a new human annotator
+**Latest correction:** the user clarified that the submitted labels were already
+made by a human who had not seen the AI draft; the negative provenance fields
+were erroneous. See the [append-only correction receipt](evidence/p1_grounding/annotation_metadata_correction_20261005/README.md).
+The same 50 annotations can be retained; redrawing is not required. All label
+content and original timestamps remain unchanged. Independence is user-reported,
+not independently verified. The v3 handoff below is historical preparation;
+resolving v2 serialization compatibility must preserve the original rules and
+registration chronology, rather than relabeling the existing export as new v3
+annotation. No model call has run.
+
+**Historical handoff: independent-human v3.** The user initially chose a new human annotator
 who has never seen AI drafts or model results for these images. Follow the
 [handoff instructions](p1-independent-annotation-handoff.md). The earlier v2
 packet and submission remain preserved as historical records, not admitted

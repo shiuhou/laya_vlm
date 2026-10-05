@@ -1,0 +1,25 @@
+{
+  "schema": "p1-annotation-metadata-correction/1",
+  "recorded_at_utc": "2026-10-05T15:13:19.147809+00:00",
+  "user_statement": "剛剛的已經是一位未看過AI 草稿的人標注的了的, 應該是json裡寫了錯",
+  "basis": "Project-user clarification; not independent verification of annotator identity or exposure",
+  "original_path": "/home/junhongli/projects/laya/p1_annotations_inbox/annotations.complete.json",
+  "original_sha256": "6d57054fa839508745ce45396fc00e873b53942395f5d86fb6f81fe2247ed990",
+  "corrected_sha256": "5b87d3074ee5e796a9086378bf13e35aafaf5d91beea868ecc06543aede3ba6b",
+  "changed_paths": [
+    "provenance.method",
+    "provenance.eligible_for_human_blind_evaluation",
+    "provenance.human_relabeling_self_attested",
+    "provenance.prior_ai_exposure",
+    "provenance.original_annotation_source",
+    "provenance.metadata_updated_at_utc"
+  ],
+  "all_50_image_bindings_and_polygon_structures_valid": true,
+  "annotation_content_unchanged": true,
+  "original_export_time_unchanged": true,
+  "original_preserved_byte_for_byte": true,
+  "metadata_error_origin": "Not established; no evidence identifying the producer of erroneous fields",
+  "remaining_schema_issue": "Original export remains v2 with extra provenance and per-image source metadata. This corrected copy is not a v3 export; no silent migration or inference-gate bypass.",
+  "new_annotation_required": false,
+  "model_calls_for_this_correction": 0
+}

@@ -1,5 +1,7 @@
 # P1 獨立真人盲標交接
 
+**後續更正：**使用者已說明此前提交實際由未看過 AI 草稿的人標註，JSON 的 provenance 寫錯。因此不再要求重畫；以下 v3 空白包流程保留為歷史準備，不是目前需要使用者完成的工作。原標註與更正均保留於[更正紀錄](evidence/p1_grounding/annotation_metadata_correction_20261005/README.md)，身份與未接觸仍只屬使用者陳述。
+
 使用者已選擇保留原盲評測要求，改由**未看過 AI 草稿的新真人標註者**完成。此前提交原樣保留於[收件紀錄](evidence/p1_grounding/annotation_receipt_20261005/README.md)，不能作為本條件的盲標真值，也不匯入新資料包。
 
 ## 給標註者的材料與步驟
