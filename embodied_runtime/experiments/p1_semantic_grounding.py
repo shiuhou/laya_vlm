@@ -4,6 +4,14 @@ prepare writes the exact condition before labels or model calls. run requires
 complete, source-bound human self-attestations before even importing the model
 loader. Human polygons are used only after every prediction has been sealed.
 No control, simulator, Qwen, Laya, retry, query tuning or candidate selection.
+
+After the annotation gate passes and GPU availability has been rechecked, use
+an explicitly allocated GPU in the dedicated environment, for example:
+CUDA_VISIBLE_DEVICES=2 /home/junhongli/miniforge3/envs/locateanything/bin/python
+    -m embodied_runtime.experiments.p1_semantic_grounding run ...
+The selected physical GPU is logical cuda:0 inside that fresh process. No GPU
+is selected automatically. Allocation is run metadata, not an experimental
+query, model, annotation, or geometry condition.
 """
 from __future__ import annotations
 
@@ -11,7 +19,9 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
+import re
 import time
 
 import numpy as np
@@ -146,13 +156,40 @@ def classify_response(raw, audit, width, height):
                 semantic_identity_verified=False, classification_version=CLASSIFICATION)
 
 
+def _explicit_gpu_mask():
+    mask = os.environ.get("CUDA_VISIBLE_DEVICES")
+    require(isinstance(mask, str) and re.fullmatch(r"(?:0|[1-9]\d*|GPU-[0-9a-fA-F-]+)", mask) is not None,
+            "set CUDA_VISIBLE_DEVICES to exactly one GPU index or UUID before starting this process",
+            "GPU_ALLOCATION_REQUIRED")
+    return mask
+
+
+def _cuda_allocation(torch, mask):
+    require(_explicit_gpu_mask() == mask, "GPU mask changed during loading", "GPU_ALLOCATION_CHANGED")
+    require(not torch.cuda.is_initialized(), "use a fresh process with allocation set before CUDA initialization",
+            "GPU_ALLOCATION_CHANGED")
+    require(torch.cuda.is_available() and torch.cuda.device_count() == 1,
+            "explicit allocation must expose exactly one CUDA GPU", "GPU_ALLOCATION_REQUIRED")
+    properties = torch.cuda.get_device_properties(0)
+    require(torch.cuda.current_device() == 0, "allocated device must be logical cuda:0", "GPU_ALLOCATION_CHANGED")
+    return dict(cuda_visible_devices=mask, cuda_device_order=os.environ.get("CUDA_DEVICE_ORDER"),
+                logical_device="cuda:0", visible_device_count=1, name=properties.name,
+                total_memory_bytes=int(properties.total_memory), compute_capability=[properties.major, properties.minor],
+                uuid=str(properties.uuid) if getattr(properties, "uuid", None) is not None else None,
+                pci_bus_id=str(properties.pci_bus_id) if getattr(properties, "pci_bus_id", None) is not None else None,
+                identity_source="explicit_cuda_mask_and_torch_device_properties")
+
+
 def _load_worker():
     # Deliberately below validate_gate in run(). Hash local bytes before loading.
+    mask = _explicit_gpu_mask()
     from .records import model_identity
     identity = model_identity(MODEL_PATH)
     require(identity["content_id"] == MODEL_CONTENT_ID, "frozen LocateAnything checkpoint changed", "CONDITION_CHANGED")
+    import torch
+    allocation = _cuda_allocation(torch, mask)
     from ..adapters.locateanything import LocateAnythingWorker
-    return LocateAnythingWorker(MODEL_PATH, device="cuda", model_revision=MODEL_CONTENT_ID), identity
+    return LocateAnythingWorker(MODEL_PATH, device="cuda", model_revision=MODEL_CONTENT_ID), {**identity, "execution_allocation": allocation}
 
 
 def infer_audited(worker, rgb, query, emit):
@@ -304,10 +341,12 @@ def run(packet_dir, annotation_path, registration_path, output, *, geometry_path
                                 validated_at_utc=_utc(), model_imported=False))
     _write(out/"preregistration.json", registration)
     from .records import code_identity, versions
-    _write(out/"run-manifest.json", dict(code=code_identity(), versions=versions(),
+    run_manifest = dict(code=code_identity(), versions=versions(),
              condition="fixed_query_rgb_only_offline_no_runtime", registration_sha256=registration["registration_sha256"],
              annotation_sha256=_sha(annotation_path), annotation_identity="human_self_attestation_not_authenticated",
-             simulator_calibration="source_camera_configuration_and_robot_owned_fk", oracle_target_inputs=False))
+             simulator_calibration="source_camera_configuration_and_robot_owned_fk", oracle_target_inputs=False,
+             requested_cuda_visible_devices=os.environ.get("CUDA_VISIBLE_DEVICES"))
+    _write(out/"run-preflight-manifest.json", run_manifest)
     all_calls = []
     started_calls = 0
     try:
@@ -315,6 +354,7 @@ def run(packet_dir, annotation_path, registration_path, output, *, geometry_path
         frames = _sensor_frames(registration, manifest)
         worker, model = _load_worker()
         _write(out/"model.json", model)
+        _write(out/"run-manifest.json", {**run_manifest, "execution_allocation": model.get("execution_allocation")})
         for image in manifest["images"]:
             view, proprio = frames[image["frame_id"]]
             for entity in ENTITIES:

@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, timezone
 import hashlib
 import json
 from pathlib import Path
+import sys
 from types import SimpleNamespace
 
 import numpy as np
@@ -159,7 +160,7 @@ def test_all_predictions_sealed_before_label_evaluation_and_only_rgb_query_enter
     calls=[]
     def load():
         assert (out/"gate.json").exists()
-        return object(),{"model_content_id":"unit-test-no-real-model"}
+        return object(),{"model_content_id":"unit-test-no-real-model", "execution_allocation":{"fixture":"mocked-no-gpu"}}
     def infer(worker,rgb,query,emit):
         assert isinstance(rgb,np.ndarray) and rgb.shape==(4,4,3)
         assert query in grounding.QUERIES.values()
@@ -186,6 +187,9 @@ def test_all_predictions_sealed_before_label_evaluation_and_only_rgb_query_enter
         ref=row["entities"]["fixed_cabinet_reference"]
         assert ref["reference_types"] == ["UNKNOWN"]*len(ref["polygons"])
     assert (out/"annotations-evaluation-input.json").exists()
+    run_manifest=json.loads((out/"run-manifest.json").read_text())
+    model_manifest=json.loads((out/"model.json").read_text())
+    assert run_manifest["execution_allocation"]==model_manifest["execution_allocation"]=={"fixture":"mocked-no-gpu"}
 
 
 def test_truncated_first_call_is_counted_and_never_retried(packet,tmp_path,monkeypatch):
@@ -252,3 +256,72 @@ def test_oversized_native_input_is_saved_before_failing_without_generate():
     assert evidence["model-input"]["input_token_count"]==80
     assert evidence["model-input"]["reserved_generation_tokens"]==256
     assert evidence["model-input"]["processor_truncation"] is False
+
+
+@pytest.mark.parametrize("mask", [None, "", "0,1", "2,", "-1", "all", " 2 "])
+def test_real_loader_requires_single_gpu_mask_before_hashing_or_model_loading(monkeypatch,mask):
+    from embodied_runtime.experiments import records
+    if mask is None:
+        monkeypatch.delenv("CUDA_VISIBLE_DEVICES",raising=False)
+    else:
+        monkeypatch.setenv("CUDA_VISIBLE_DEVICES",mask)
+    hashes=[]
+    monkeypatch.setattr(records,"model_identity",lambda *args:hashes.append("hash"))
+    with pytest.raises(ProtocolError,match="GPU_ALLOCATION_REQUIRED"):
+        grounding._load_worker()
+    assert hashes==[]
+
+
+def fake_cuda(*,count=1,initialized=False):
+    properties=SimpleNamespace(name="mocked GPU",total_memory=24*1024**3,major=8,minor=9,uuid="mocked-uuid")
+    return SimpleNamespace(is_initialized=lambda:initialized,is_available=lambda:True,device_count=lambda:count,
+                           get_device_properties=lambda index:properties,current_device=lambda:0)
+
+
+@pytest.mark.parametrize("count,initialized", [(0,False),(2,False),(1,True)])
+def test_single_mask_is_checked_against_fresh_actual_cuda_visibility(monkeypatch,count,initialized):
+    monkeypatch.setenv("CUDA_VISIBLE_DEVICES","2")
+    with pytest.raises(ProtocolError,match="GPU_ALLOCATION"):
+        grounding._cuda_allocation(SimpleNamespace(cuda=fake_cuda(count=count,initialized=initialized)),"2")
+
+
+def test_real_loader_records_mask_and_device_identity_with_mocked_torch_worker(monkeypatch):
+    from embodied_runtime.adapters import locateanything
+    from embodied_runtime.experiments import records
+    monkeypatch.setenv("CUDA_VISIBLE_DEVICES","2")
+    monkeypatch.setattr(records,"model_identity",lambda *args:{"content_id":grounding.MODEL_CONTENT_ID})
+    monkeypatch.setitem(sys.modules,"torch",SimpleNamespace(cuda=fake_cuda()))
+    loaded=[]
+    def worker(path,**kwargs):
+        loaded.append((path,kwargs))
+        return "mocked-worker"
+    monkeypatch.setattr(locateanything,"LocateAnythingWorker",worker)
+    result,identity=grounding._load_worker()
+    assert result=="mocked-worker"
+    assert loaded==[(grounding.MODEL_PATH,{"device":"cuda","model_revision":grounding.MODEL_CONTENT_ID})]
+    allocation=identity["execution_allocation"]
+    assert allocation["cuda_visible_devices"]=="2" and allocation["logical_device"]=="cuda:0"
+    assert allocation["name"]=="mocked GPU" and allocation["uuid"]=="mocked-uuid"
+    assert allocation["pci_bus_id"] is None
+
+
+def test_offline_visible_reference_box_can_have_unknown_subtype_without_claiming_fixed_identity(packet):
+    _,_,_,_,manifest,annotations=packet
+    reference=annotations["annotations"][0]["entities"]["fixed_cabinet_reference"]
+    reference.update(status="VISIBLE",polygons=[[[0,0],[4,0],[4,4],[0,4]]],reference_types=["FRONT_FRAME"])
+    records=json.loads(json.dumps(annotations["annotations"]))
+    for row in records:
+        for entity in row["entities"].values():
+            entity["points"]=[]
+    records[0]["entities"]["fixed_cabinet_reference"]["reference_types"]=["UNKNOWN"]
+    predictions=dict(schema=grounding.PREDICTION_SCHEMA,dataset_id=manifest["dataset_id"],producer_id="synthetic-model",
+                     revision="test-only-no-inference",records=records)
+    evaluation=grounding.evaluate_grounding(predictions,annotations,manifest)
+    matched=[row for row in evaluation["records"] if row["image_id"]==manifest["images"][0]["image_id"]
+             and row["entity"]=="fixed_cabinet_reference"][0]
+    assert matched["polygon_iou_on_visible_label"]==1
+    assert matched["annotated_reference_types"]==["FRONT_FRAME"]
+    assert matched["predicted_reference_types"]==["UNKNOWN"]
+    assert evaluation["labels_prove_static_reference"] is False
+    result=grounding.classify_response("<box><0><0><1000><1000></box>",audit(),4,4)
+    assert result["semantic_identity_verified"] is False
