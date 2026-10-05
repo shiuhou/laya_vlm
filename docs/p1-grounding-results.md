@@ -89,10 +89,37 @@ No scheduler, threshold or freshness setting was modified.
 
 Ten bounded acquisition recipes were preregistered after the static seal, using
 existing free-space atomic controls and separately logged evaluator-only scene
-perturbations. Raw acquisition does not certify the requested perspective or
-occlusion occurred. The temporal report records actual inspection, unsupported
-cases, independent hypothesis-track losses and UNKNOWN verification; it must not
-claim ten qualifying sequences merely because ten directories were created.
+perturbations. They produced **354 dual-view bundles over 344 controls**, with no
+robot/environment contact observed at the existing control boundaries. This does
+not certify absence of transient substep contact.
+
+All 40 initial surface hypotheses failed with `SEED_DEPTH_OR_CONTEXT_INVALID`;
+subsequent updates recorded 1,376 `RESEED_REQUIRED` states. No tracked lineage was
+silently recovered. All 708 observational VERIFY outputs were UNKNOWN. These
+records establish failure to initialize supported tracks, not tracking behavior
+under a valid initial seed. A first-case diagnostic finds all four templates
+extend beyond the image and depth spread is 0.138–0.299 m, above the unchanged
+0.03 m tracking gate.
+
+The ten acquisition configs explicitly use **384×384**, while the static blind
+evaluation uses **384×256**. This is an exploratory framing/calibration condition,
+not a matched extension of the original 50 views. No results are pooled across
+these conditions and no automatic corrected-resolution rerun was performed.
+Raw acquisition does not certify that intended EEF occlusion actually occurred;
+unsupported coverage remains explicit. **Zero target-valid qualifying temporal
+sequences are established.**
+
+T10 records actual asynchronous fixed-query inference while original observation
+controls execute: four replies arrived 1.40–2.85 s after source capture, beyond
+their original 1.2 s diagnostic proposal deadlines. No delay was injected. No
+online tracker or scheduler was installed, so this is actual arrival/expiry
+evidence, not an online semantic-binding rejection demonstration. The original
+T10 launch failed before simulator construction due to CUDA/EGL routing; a
+separately preserved launch fixes only device routing and supplies the first
+physical acquisition. It is not an undisclosed episode retry.
+
+See the [raw temporal summary](evidence/p1_grounding/temporal_observation_20261005/raw-summary.json)
+and [first-seed diagnostic](evidence/p1_grounding/temporal_observation_20261005/first-seed-diagnostic.json).
 
 ## Evidence and next boundary
 

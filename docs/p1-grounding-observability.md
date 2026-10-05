@@ -157,7 +157,10 @@ cabinet geometry exists, and semantic surface association is the first drawer
 failure. Fixedness/closed-reference relation, calibrated uncertainty, safe push
 eligibility and live freshness remain unestablished.
 
-The [ten-case temporal protocol](p1-temporal-sequence-protocol.md) is prospective:
-actual temporal acquisition and inspection are under way. The static throughput
-recording does not satisfy it. Unsupported cases and losses must remain explicit,
-without PUSH or full P2.
+The [ten-case temporal protocol](p1-temporal-sequence-protocol.md) has ten acquired
+exploratory attempts, with 354 dual-view bundles. All initial semantic hypotheses
+are LOST and VERIFY remains UNKNOWN. Their declared square image resolution
+differs from the original static condition; no target-valid qualifying temporal
+sequence is established. Unsupported occlusion coverage and losses remain
+explicit. Neither these attempts nor the static throughput record establish
+P1 task acceptance; no PUSH or full P2 follows.

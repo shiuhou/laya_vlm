@@ -1,8 +1,13 @@
 # P1 temporal observation protocol — prospective
 
-Status: **NOT RUN**. These are ten separate acquisition cases, not ten repeats
-of the static collection. This document fixes coverage and evaluation boundaries;
-it is not a manipulation recipe or permission to bypass the current gates.
+Status: **TEN EXPLORATORY ATTEMPTS ACQUIRED; ZERO TARGET-VALID QUALIFYING SEQUENCES**.
+See [measured results](p1-grounding-results.md). The preregistered acquisition
+configs use 384×384 versus the original static 384×256; preserve this framing
+condition distinction. All initial semantic hypotheses fail before valid track
+initialization; intended occlusion coverage is not inferred from motion commands.
+These are ten separate acquisition cases, not ten repeats of the static
+collection. This document fixes coverage and evaluation boundaries; it is not a
+manipulation recipe or permission to bypass the current gates.
 
 Acquire only after the sealed static human annotations and fixed-query semantic
 evaluation answer drawer-front support, fixed-reference observability and the

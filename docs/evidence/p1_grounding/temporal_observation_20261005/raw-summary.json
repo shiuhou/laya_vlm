@@ -1,0 +1,440 @@
+{
+  "case_count_acquired": 10,
+  "total_controls": 344,
+  "total_dual_view_bundles": 354,
+  "track_reason_counts": {
+    "SEED_DEPTH_OR_CONTEXT_INVALID": 40,
+    "RESEED_REQUIRED": 1376
+  },
+  "verify_results": {
+    "UNKNOWN": 708
+  },
+  "matched_to_static_50view_condition": false,
+  "static_size": [
+    384,
+    256
+  ],
+  "temporal_size": [
+    384,
+    384
+  ],
+  "target_valid_temporal_sequences": 0,
+  "model_calls_initial_semantics": 40,
+  "actual_async_T10_model_calls": 4,
+  "actual_async_T10_calls_included_in_initial40": true,
+  "online_tracker_installed": false,
+  "observed_contact_at_control_boundaries": false,
+  "cases": [
+    {
+      "case_id": "T01",
+      "path": "runs/p1/temporal-observation-20261005/T01",
+      "acquisition": {
+        "captured_bundles": 25,
+        "case_coverage_validated": false,
+        "case_id": "T01",
+        "executed_controls": 24,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 25,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 25,
+          "agentview/reference/LOST": 25,
+          "robot0_eye_in_hand/face/LOST": 25,
+          "robot0_eye_in_hand/reference/LOST": 25
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "ebf7e1ab490edc76e19142aaf0860e27a9ba64a2173ade0929aea2207ce010da",
+        "analysis/manifest.json": "84f52b9329737921d980c12a8129fad4d22e147f5ad05cd5b70b0552b4a9866a",
+        "analysis/perception.jsonl": "efcd43d65ae313a4a482f0938b281143c5959c8c8e38f4616e389240e30d6ae8",
+        "analysis/summary.json": "1c0ed67031f3536334e735dcd9c44a4d0653865e27227bb4a4cbbf61b53a9e7b",
+        "frames/frames.jsonl": "f495cac2b5886f3b1f523a84f01f63e0e8b63bbce29f680fd9458c90cb3d556b",
+        "frames/recording.json": "8a89cd78a4bbc535cd2db11a56ba7eceb3db7d633b4bcb513144536135dd67f6",
+        "frames/source-identities.jsonl": "fc813c377f7c4c6db7d0c204b1b94751cdeb851157c81b784dc44cc751741302",
+        "manifest.json": "946f484380a6669562c48d5e6691466d95eb494113ee6c70bb21123d8f4366d9"
+      }
+    },
+    {
+      "case_id": "T02",
+      "path": "runs/p1/temporal-observation-20261005/T02",
+      "acquisition": {
+        "captured_bundles": 41,
+        "case_coverage_validated": false,
+        "case_id": "T02",
+        "executed_controls": 40,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 41,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 41,
+          "agentview/reference/LOST": 41,
+          "robot0_eye_in_hand/face/LOST": 41,
+          "robot0_eye_in_hand/reference/LOST": 41
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "7acfe29be6bd155a1f2fea2f4605ed61db0d7c9f53a96cf235c6557a2fd2f28e",
+        "analysis/manifest.json": "7fe5103c313e2e2c96aaf5e3b5e8976ec3421a60d4ef84171a67195e9fbc6f10",
+        "analysis/perception.jsonl": "d4eb8d402f5c2f09df2b51220d0d334368e01704bbe4ec1fa7b1609c4884ae8b",
+        "analysis/summary.json": "c97c721603b0ec25f656fe7122dcf62204d80dee63e8ed73c2cbc1409879ee3a",
+        "frames/frames.jsonl": "7fe833612d73b44c57ccb6a1a2469c24eb5bb5955130e3943189bbdb166aac87",
+        "frames/recording.json": "7ac82f98d0a727e12bdcc904fee906c10635ba09cec3f8de9570722aae4ddd30",
+        "frames/source-identities.jsonl": "aaf591b347ad21d8d2cb2ae0f14c611eabef8a3bca76f1b980f33e89a7376a1b",
+        "manifest.json": "3627fd1ed51d885f0ca76bc81402e3af7d2b3a95a1b11ceec752d2ee1fce6c4c"
+      }
+    },
+    {
+      "case_id": "T03",
+      "path": "runs/p1/temporal-observation-20261005/T03",
+      "acquisition": {
+        "captured_bundles": 25,
+        "case_coverage_validated": false,
+        "case_id": "T03",
+        "executed_controls": 24,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 25,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 25,
+          "agentview/reference/LOST": 25,
+          "robot0_eye_in_hand/face/LOST": 25,
+          "robot0_eye_in_hand/reference/LOST": 25
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "022bab058806e8509749c1669a225a067cf4f7f6814800d5428fe01e883eeca9",
+        "analysis/manifest.json": "2e5baa08692ae0e84ff09497b64f85ed1f24f73489174cf0d74537fa5590ddd7",
+        "analysis/perception.jsonl": "9ee5bf9e5ad8a997d120421842183461efc9bda631ef753632439e1fd47c1b41",
+        "analysis/summary.json": "1c0ed67031f3536334e735dcd9c44a4d0653865e27227bb4a4cbbf61b53a9e7b",
+        "frames/frames.jsonl": "3153bfbb3a47bfa36887f6008da882ec531d5d8974509cdcb6343626626bb2a5",
+        "frames/recording.json": "8762c919ad07f372c43576d27d28bd0285f4f9d2a58b7df3f8aa661688d4156f",
+        "frames/source-identities.jsonl": "9aa1e9e90ddaef867ffd22a660238a5be4e224da5dc9fc17891095afaae87f8c",
+        "manifest.json": "76c732a7fd4acdaa3341ff498b65dbb43476912aaec460e9e2460c34ce376ecd"
+      }
+    },
+    {
+      "case_id": "T04",
+      "path": "runs/p1/temporal-observation-20261005/T04",
+      "acquisition": {
+        "captured_bundles": 49,
+        "case_coverage_validated": false,
+        "case_id": "T04",
+        "executed_controls": 48,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 49,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 49,
+          "agentview/reference/LOST": 49,
+          "robot0_eye_in_hand/face/LOST": 49,
+          "robot0_eye_in_hand/reference/LOST": 49
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "16eecca24997346a55ab23fd70ebced8fcf8af96ee08f5c1aff3d91d3d90e896",
+        "analysis/manifest.json": "a0021dba033b81c02bf146515d6e6467b284c62e3bdd684fe5b3fff34077cab9",
+        "analysis/perception.jsonl": "10f6cb98f98da5d90f4cd8a88cf0315c5ae8cf811dda155c7df73c9d1763cd97",
+        "analysis/summary.json": "36281ad65ba6cb1618a85183b7a9b3c1c89bc5138c8140b3425d8eb8690ea545",
+        "frames/frames.jsonl": "452172b0a5f76506e5e153c46b35285f02ff452551df0eb103a6acee0de1c906",
+        "frames/recording.json": "bf9ab0807ce04a7c9f7de9b3ed06b87f6c7014ac45f1749349444ecebe64f8d9",
+        "frames/source-identities.jsonl": "950c00c7e5e2ed7d4bc10abc3189031eb7c8bdd0128919964c21ea24a5d00d92",
+        "manifest.json": "5394d6c7716d2c6c90f1b1e0061abde267191ec0e442bab9b56826c743b13b61"
+      }
+    },
+    {
+      "case_id": "T05",
+      "path": "runs/p1/temporal-observation-20261005/T05",
+      "acquisition": {
+        "captured_bundles": 25,
+        "case_coverage_validated": false,
+        "case_id": "T05",
+        "executed_controls": 24,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 25,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 25,
+          "agentview/reference/LOST": 25,
+          "robot0_eye_in_hand/face/LOST": 25,
+          "robot0_eye_in_hand/reference/LOST": 25
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "929ea31248808af288ab465d5b7d23d54976a94cb85e6e576c76bbabf884d166",
+        "analysis/manifest.json": "fcc31cbd301e5fd229f582ea8b7ae78a7b7d5cd0c539452686328ca7b30a7476",
+        "analysis/perception.jsonl": "5f17a9c3e6287afd2ac1e6d704e8d53dca8eb82305a55868bb93cdeae2ee9412",
+        "analysis/summary.json": "1c0ed67031f3536334e735dcd9c44a4d0653865e27227bb4a4cbbf61b53a9e7b",
+        "frames/frames.jsonl": "3a34100fceb3338fb29b61d12d63601c014f1793a4709598f2a91c7ca682e406",
+        "frames/recording.json": "d0cc0522accd2d91d51e0e4618f7bc0496ec7bf6e8ef3ba9004daa735734acf6",
+        "frames/source-identities.jsonl": "921a5c382d7fc89c93349d7fd1edc27f15e47979c244fdec22f0631c49d7fbf0",
+        "manifest.json": "6f18b87506fd0097e703423cfdac049869fa30f8dcc8d839a08a749e9ddbddbb"
+      }
+    },
+    {
+      "case_id": "T06",
+      "path": "runs/p1/temporal-observation-20261005/T06",
+      "acquisition": {
+        "captured_bundles": 49,
+        "case_coverage_validated": false,
+        "case_id": "T06",
+        "executed_controls": 48,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 49,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 49,
+          "agentview/reference/LOST": 49,
+          "robot0_eye_in_hand/face/LOST": 49,
+          "robot0_eye_in_hand/reference/LOST": 49
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "c99b1f71c3901e1c8d5fa47f81b3b0af832a89f86b8431a965de933a119606b3",
+        "analysis/manifest.json": "167ed8e283507023916fbe8d9ba0fc08f0367e60de09da3afaa27590e8c39b5c",
+        "analysis/perception.jsonl": "53134440b51c9fcf34489aa45b60215556d373927aae1ad3b400b16437b0c2e0",
+        "analysis/summary.json": "36281ad65ba6cb1618a85183b7a9b3c1c89bc5138c8140b3425d8eb8690ea545",
+        "frames/frames.jsonl": "73a785897a83653b9442d5e4c0eb072ead7641015d0e3475e56c72f0a8786925",
+        "frames/recording.json": "1dc3a20e7994d304c5f6311271b2ba74eb721fa5459c541773ae06f87a6f671f",
+        "frames/source-identities.jsonl": "1e8ad8943e1ca039cbbd8e014d49e61230c7e16215352f76794a1e61d004ad7e",
+        "manifest.json": "b6e2ff38bf342a678e3081ea6be31f16273f97a3a5c62efc05d66717a3ff7c37"
+      }
+    },
+    {
+      "case_id": "T07",
+      "path": "runs/p1/temporal-observation-20261005/T07",
+      "acquisition": {
+        "captured_bundles": 25,
+        "case_coverage_validated": false,
+        "case_id": "T07",
+        "executed_controls": 24,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 25,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 25,
+          "agentview/reference/LOST": 25,
+          "robot0_eye_in_hand/face/LOST": 25,
+          "robot0_eye_in_hand/reference/LOST": 25
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "416e45596a28602cb1d82d0c23246e33dd04209c7b3b82b86971f852f1600c53",
+        "analysis/manifest.json": "79f15f01d03798e276e542eff082da8a2f9bf0b4e0de126b5ee09d083eaf72c4",
+        "analysis/perception.jsonl": "331644df695478f96d6ac1850903eefd8ba74c4eaaa7fbd19f3f04df68107eed",
+        "analysis/summary.json": "1c0ed67031f3536334e735dcd9c44a4d0653865e27227bb4a4cbbf61b53a9e7b",
+        "frames/frames.jsonl": "4860365020ea1d4e91a538ee3504d7b4a082b3c9d71b711b93092c38d5e527db",
+        "frames/recording.json": "e01454f2101103ac447b7698c2c90f0c18e8afa5de50fd80a8b8e481a5811cf5",
+        "frames/source-identities.jsonl": "bdb06870dc136ced4ceec51d94c10dc695e73c8ce96c7bf34664381807fbf2b4",
+        "manifest.json": "3c734d3186293b9d9996ac02d2675f33452765c62851e02a458d7889bc2dda0c"
+      }
+    },
+    {
+      "case_id": "T08",
+      "path": "runs/p1/temporal-observation-20261005/T08",
+      "acquisition": {
+        "captured_bundles": 33,
+        "case_coverage_validated": false,
+        "case_id": "T08",
+        "executed_controls": 32,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 33,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 33,
+          "agentview/reference/LOST": 33,
+          "robot0_eye_in_hand/face/LOST": 33,
+          "robot0_eye_in_hand/reference/LOST": 33
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "b64298499857680e9bc10a203ff931ef72797ac8344ddac0cec3e145cc6d0d2a",
+        "analysis/manifest.json": "5be36a2949b628e3766c545e0141c8e0e9387f4cb0276fc55bd171081dc45858",
+        "analysis/perception.jsonl": "b42af6c528a15cd1b9afcf5341c3d45bf2baaec9215ed69e5ce46fafc752cf2c",
+        "analysis/summary.json": "6ff4b622c7be50a9884d8e961d5b034c95dd1241b8673687cfefe02dd2cb0424",
+        "frames/frames.jsonl": "a145ec44cd97e5760fc121fa039d1afd9840813b66e943024c54ba05ce691039",
+        "frames/recording.json": "b1270f50270e5e3b28a315c5d2a8797aef58a365bdf193df18d7dc8d7bc5b0cb",
+        "frames/source-identities.jsonl": "dd8f52e891104a491143cbdf8528714a4f92137bbe45a6da7a7f4ccfc0a83fdb",
+        "manifest.json": "33b36a02a7205f676463bb83a81524fa0e034789f73d43b76992660cb2b93aea"
+      }
+    },
+    {
+      "case_id": "T09",
+      "path": "runs/p1/temporal-observation-20261005/T09",
+      "acquisition": {
+        "captured_bundles": 25,
+        "case_coverage_validated": false,
+        "case_id": "T09",
+        "executed_controls": 24,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 25,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 25,
+          "agentview/reference/LOST": 25,
+          "robot0_eye_in_hand/face/LOST": 25,
+          "robot0_eye_in_hand/reference/LOST": 25
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "18337d2cfefae9cf3a666fe1da46b7a3db360c25b7c4664810b759a28d7fddfe",
+        "analysis/manifest.json": "af102c2dc15848c4f7ea7d937b8a00c7f4c816f1a9f1349c68188b210af6adfc",
+        "analysis/perception.jsonl": "a95f8f29b4f454d980619e7f156c6aab34e18a4db121f249effaf594eca78907",
+        "analysis/summary.json": "1c0ed67031f3536334e735dcd9c44a4d0653865e27227bb4a4cbbf61b53a9e7b",
+        "frames/frames.jsonl": "24452f69177431b5dc48e839f198efad37d6e44b320a9b552a544bf411d7a6c8",
+        "frames/recording.json": "231fb5c6bd16d9ae073201742f7fb9d8cfdb8ef298f2c0a46e91926d3de34e05",
+        "frames/source-identities.jsonl": "6f9ba4c46616ffef6df820c01afdb6a04102a29a030052148bbafaa843136ec8",
+        "manifest.json": "c4d31825d32674d586bf42c726ef69ab14c0d23bc4de72d215f72a582d1890e5"
+      }
+    },
+    {
+      "case_id": "T10",
+      "path": "runs/p1/temporal-observation-20261005/T10-env-fixed",
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T10",
+        "executed_controls": 56,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/LOST": 57,
+          "agentview/reference/LOST": 57,
+          "robot0_eye_in_hand/face/LOST": 57,
+          "robot0_eye_in_hand/reference/LOST": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "file_sha256": {
+        "acquisition-summary.json": "4081b4fc950c67dc2d7bc7e5638667c3b3cc69a7d806d400eaab7b51d15e5fd9",
+        "analysis/manifest.json": "8c37a4871f498534eccd67c7dc11df91aee681a64f598aeb899d0b5897224a30",
+        "analysis/perception.jsonl": "66443e18274f5a796d2ffcf6e7a360e95d886d40966a682dba512f3c3c559492",
+        "analysis/summary.json": "4edd883725c5225e9a385ddc168aa5218052a455a6b94e8392a4bbe956f9faa9",
+        "frames/frames.jsonl": "0c90223e256820ddae061e1330f73ed7500f365bcb3bde37c4f5c89e4c7753ca",
+        "frames/recording.json": "f3a88c20369a16fd5801cad3920ea7468be39760738cb8fe0a63788f941485eb",
+        "frames/source-identities.jsonl": "4908ed7ab96b040ce6d420b7dc7b1a1872eaa12694a68c0a629da5b2952de762",
+        "manifest.json": "602dd7a96fe60062ec199429e989d76776e264b22ee78f94b3c0ca388385058a"
+      }
+    }
+  ],
+  "case_visual_coverage": "See separately inspected report; acquisition count is not qualification"
+}

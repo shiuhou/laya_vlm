@@ -1,0 +1,74 @@
+[
+  {
+    "camera_id": "agentview",
+    "role": "face",
+    "source_frame_id": "p1-temporal/T01/agentview/1",
+    "roi_xyxy_px": [
+      0.0,
+      130.56,
+      75.648,
+      299.136
+    ],
+    "context_in_view": false,
+    "depth_geometry_valid": false,
+    "depth_support_ratio": 1.0,
+    "depth_spread_m": 0.13765031099319458,
+    "max_depth_spread_m": 0.03,
+    "diagnostic_only": true,
+    "thresholds_changed": false
+  },
+  {
+    "camera_id": "agentview",
+    "role": "reference",
+    "source_frame_id": "p1-temporal/T01/agentview/1",
+    "roi_xyxy_px": [
+      0.0,
+      129.024,
+      94.08,
+      299.136
+    ],
+    "context_in_view": false,
+    "depth_geometry_valid": false,
+    "depth_support_ratio": 1.0,
+    "depth_spread_m": 0.15974748134613037,
+    "max_depth_spread_m": 0.03,
+    "diagnostic_only": true,
+    "thresholds_changed": false
+  },
+  {
+    "camera_id": "robot0_eye_in_hand",
+    "role": "face",
+    "source_frame_id": "p1-temporal/T01/robot0_eye_in_hand/1",
+    "roi_xyxy_px": [
+      0.0,
+      291.072,
+      101.376,
+      321.792
+    ],
+    "context_in_view": false,
+    "depth_geometry_valid": false,
+    "depth_support_ratio": 1.0,
+    "depth_spread_m": 0.2991807758808136,
+    "max_depth_spread_m": 0.03,
+    "diagnostic_only": true,
+    "thresholds_changed": false
+  },
+  {
+    "camera_id": "robot0_eye_in_hand",
+    "role": "reference",
+    "source_frame_id": "p1-temporal/T01/robot0_eye_in_hand/1",
+    "roi_xyxy_px": [
+      0.0,
+      0.0,
+      383.23199999999997,
+      383.23199999999997
+    ],
+    "context_in_view": false,
+    "depth_geometry_valid": false,
+    "depth_support_ratio": 0.875,
+    "depth_spread_m": 0.2312149703502655,
+    "max_depth_spread_m": 0.03,
+    "diagnostic_only": true,
+    "thresholds_changed": false
+  }
+]
