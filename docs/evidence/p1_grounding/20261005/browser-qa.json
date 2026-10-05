@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "browser": "Chromium141 Playwright1.56.1",
+  "views": 50,
+  "checks": [
+    "raw canvas load",
+    "exact status options",
+    "two-entity save",
+    "partial/full guard",
+    "download JSON",
+    "navigation",
+    "reload autosave"
+  ],
+  "qa_data": "synthetic one-view annotation, temp-only, never human evaluation",
+  "page_errors": []
+}

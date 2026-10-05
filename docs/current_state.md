@@ -7,6 +7,11 @@ servo, evaluated later with B0–B4. [P0 is accepted](p0-acceptance.md).
 but drawer-front grounding and cabinet-relative VERIFY remain unestablished;
 P1 task acceptance and P2 control are pending. Current branch:
 `feat/p1-rgbd-geometry`; frozen diagnostic code: `c6fe3ae`.
+Infrastructure checkpoint `92865a8` is preserved. Preparation on
+`feat/p1-grounding-observability` now provides [blinded human annotation and a
+guarded fixed-query evaluation](p1-grounding-observability.md); complete primary
+human labels are pending, with zero semantic model calls or qualifying temporal
+sequences. This preparation does not pass the P1 task gate.
 
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed

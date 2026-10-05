@@ -1,0 +1,14 @@
+{
+  "semantic_model_calls": 0,
+  "Qwen_calls": 0,
+  "Laya_calls": 0,
+  "PUSH_actions": 0,
+  "qualifying_temporal_sequences": 0,
+  "annotation_status": "awaiting_primary_human_complete_export",
+  "task_acceptance": "PENDING",
+  "annotation_UI_synthetic_export_used_for_evaluation": false,
+  "packet_zip_sha256": "77fe954bb55249113d7ac9c0f293a3c63b503f6acc2fadd98944b958ea3a32b2",
+  "human_annotation_exports_received_and_validated": 0,
+  "human_local_progress": "not_observed",
+  "regression_tests_passed": 485
+}

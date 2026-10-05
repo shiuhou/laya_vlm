@@ -19,6 +19,10 @@ The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing
 conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
+The next [grounding/observability phase](docs/p1-grounding-observability.md)
+has a blinded 50-view human annotation packet and preregistered LocateAnything
+evaluation; inference waits for complete human labels. No Qwen/Laya or PUSH is
+enabled by this preparation.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

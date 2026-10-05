@@ -1,0 +1,12 @@
+{
+  "annotation-manifest.json": "ec01d44d25af3b1b7424f84982679d368b99793a84e158d99cd492c358206c9b",
+  "browser-qa.json": "8e5b992a1bc621e788b0e8f5aa7e3e2b24bc3c0360e1f398db37f0d2e5afcf76",
+  "lint.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+  "preregistration.json": "04c0428b1c32ac77456714d3e8819fd9bd2a12a8677949760c1133b88e1646a6",
+  "readiness.json": "ae13cd85d8538ced28b841983131db5d0f91868ff560fa8187d3e94890bbc641",
+  "test-command.txt": "8db80d3b269d66f595c7a132a0048199407bf5c56dd96d96cfdf3f09df7ef33f",
+  "tests.txt": "9d285fbd642033bd3b39d3149c2d9e1aaee4e1c7168deebc541e39c3ae08e21e",
+  "throughput-cycles.jsonl.gz": "46c7aca275b6e361b35e2f994f6987e6f7fce2249b281b842f1f7d0b527254e5",
+  "throughput-manifest.json": "514cfd88db9a117665b6aefe5b4a268c34c7d71c4d9fd4b7192afa9094792346",
+  "throughput-summary.json": "9296933e0fe1c83408f0046344c5f2cce4cc6b97d2296db09631f7a881078464"
+}
