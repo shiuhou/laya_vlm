@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "same_raw_image_bindings": true,
+  "old_packet_and_received_export_preserved": true,
+  "old_labels_copied": false,
+  "changed_fields": "version, rule identity and annotator eligibility; registration timestamp/hash",
+  "preserved_condition_fields": [
+    "queries",
+    "generation_settings",
+    "classification_version",
+    "model_path",
+    "model_content_id",
+    "geometry_commit",
+    "geometry_file_sha256",
+    "geometry_code_sha256",
+    "geometry_resolved_sha256",
+    "model_calls",
+    "image_order",
+    "annotation_conditioned_upper_bound",
+    "generator_inputs",
+    "for_execution",
+    "source"
+  ],
+  "zip_path": "/home/junhongli/projects/laya/p1_blind_annotation_independent_v3_50views.zip",
+  "zip_sha256": "a17932aac8c87c67e9af36d827c7d52938987a846eee36718d22cc868e258fe4",
+  "human_validated_exports": 0,
+  "model_calls": 0,
+  "qualifying_temporal_sequences": 0,
+  "browser_QA_annotations": "synthetic-temp-only, never human evaluation"
+}

@@ -6,23 +6,26 @@ The preserved infrastructure checkpoint is **92865a8** on
 
 ## Human annotation first
 
-The project user is the primary human annotator, not an independent third-party
-reviewer. The annotation is blinded to this condition's LocateAnything outputs.
+**Current handoff: independent-human v3.** The user chose a new human annotator
+who has never seen AI drafts or model results for these images. Follow the
+[handoff instructions](p1-independent-annotation-handoff.md). The earlier v2
+packet and submission remain preserved as historical records, not admitted
+blind evaluation. The annotation is blinded to LocateAnything outputs.
 Only raw RGB is displayed; no model ROI, candidate, geometry decision or success
 label appears in the page. The [frozen rules](p1-annotation-rules.md) bind every
 export by version and SHA256. There are 50 first camera views, two entities per
 view, and no prefilled labels. UNKNOWN and NOT_VISIBLE are accepted outcomes.
 
-Local packet: `runs/p1/human-annotation-packet-v2-20261005/index.html`.
-Portable download: `/home/junhongli/projects/laya/p1_blind_annotation_50views.zip`.
+Local packet: `runs/p1/human-annotation-packet-independent-v3-20261005/index.html`.
+Portable download: `/home/junhongli/projects/laya/p1_blind_annotation_independent_v3_50views.zip`.
 It needs no network: extract the folder and open `index.html` in a browser.
 Partial export/resume is available; export regularly because browser autosave
 is local to that browser/profile. Only a validated complete export qualifies.
 
-- Dataset: `934a821132b6cbb0a15715444f05a87ce798d5ea4de3e580dad2f6c984323e04`.
-- Rules: `p1-rgb-annotation-rules/2`.
-- Rules SHA256: `d595017579fd4acabe16c563b74de8486ca64e5ee9650c294d78b30d7048ecfe`.
-- Download SHA256: `77fe954bb55249113d7ac9c0f293a3c63b503f6acc2fadd98944b958ea3a32b2`.
+- Dataset: `b4f09b3fae2529cb80cbaaab99280b0420366d1e3399845a734af4d5d516c4ae`.
+- Rules: `p1-rgb-annotation-rules/3`.
+- Rules SHA256: `1b0dc9af5491fbe4d26cc8dfd7664c4351e0da0cef71499dc58af0e82df18202`.
+- Download SHA256: `a17932aac8c87c67e9af36d827c7d52938987a846eee36718d22cc868e258fe4`.
 
 Browser QA checked the actual page under Chromium 141 / Playwright 1.56.1:
 image load, exact status choices, two-entity saving, incomplete-final-export
@@ -31,12 +34,13 @@ export remains quarantined in `/tmp`, never used as human evaluation. The
 offline validator rejects it for incomplete coverage. No evaluation labels have
 been manufactured or filled by agents.
 
-After the user exports `annotations.complete.json`, validate and seal it:
+After the new annotator exports `annotations.independent-v3.complete.json`,
+validate and seal it without overwriting the earlier submission:
 
 ```sh
 .venv-p1/bin/python -m embodied_runtime.experiments.p1_annotation_packet validate \
-  --packet runs/p1/human-annotation-packet-v2-20261005 \
-  --annotations PATH/annotations.complete.json
+  --packet runs/p1/human-annotation-packet-independent-v3-20261005 \
+  --annotations /home/junhongli/projects/laya/p1_annotations_inbox/annotations.independent-v3.complete.json
 ```
 
 ## Frozen semantic experiment
@@ -46,11 +50,13 @@ declares prior AI-draft exposure and blind-evaluation ineligibility. The
 [receipt](evidence/p1_grounding/annotation_receipt_20261005/README.md) records
 matching source bindings and structural polygon checks separately from that
 conflict. It is **not admitted** to the preregistered blind condition. The user
-decision on an unexposed annotator versus an explicitly nonblind diagnostic is
-pending. No model call has run and no condition has been silently relaxed.
+chose a new unexposed human annotator; the empty v3 packet is ready. No model
+call has run and no condition has been silently relaxed.
 
-Registration prepared before exposing the packet:
-`runs/p1/grounding-preregistration-20261005.json`. It binds original sensor
+Current registration, prepared before receiving any v3 labels:
+`runs/p1/grounding-preregistration-independent-v3-20261005.json`. The original
+v2 registration remains unchanged as historical evidence. The v3 registration
+preserves queries and all model/geometry conditions. It binds original sensor
 records, packet/rules, exact queries, model bytes/settings and **unchanged
 92865a8 geometry code and configuration**. No model call has run.
 
@@ -74,10 +80,10 @@ unset/multiple GPU allocation and records device identity; this command is
 ```sh
 CUDA_VISIBLE_DEVICES=2 /home/junhongli/miniforge3/envs/locateanything/bin/python \
   -m embodied_runtime.experiments.p1_semantic_grounding run \
-  --packet runs/p1/human-annotation-packet-v2-20261005 \
-  --annotations PATH/annotations.complete.json \
-  --preregistration runs/p1/grounding-preregistration-20261005.json \
-  --output runs/p1/new-fixed-query-evaluation
+  --packet runs/p1/human-annotation-packet-independent-v3-20261005 \
+  --annotations /home/junhongli/projects/laya/p1_annotations_inbox/annotations.independent-v3.complete.json \
+  --preregistration runs/p1/grounding-preregistration-independent-v3-20261005.json \
+  --output runs/p1/new-independent-fixed-query-evaluation
 ```
 
 The existing dedicated LocateAnything environment and checkpoint are reused;
