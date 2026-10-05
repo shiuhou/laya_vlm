@@ -17,10 +17,10 @@ import numpy as np
 from ..contracts import ProtocolError, content_hash, require
 
 
-PACKET_SCHEMA = "p1-human-annotation-packet/2"
-ANNOTATION_SCHEMA = "p1-human-annotations/2"
-PREDICTION_SCHEMA = "p1-grounding-predictions/2"
-RULES_VERSION = "p1-rgb-annotation-rules/2"
+PACKET_SCHEMA = "p1-human-annotation-packet/3"
+ANNOTATION_SCHEMA = "p1-human-annotations/3"
+PREDICTION_SCHEMA = "p1-grounding-predictions/3"
+RULES_VERSION = "p1-rgb-annotation-rules/3"
 ENTITIES = ("drawer_front_pushable", "fixed_cabinet_reference")
 STATUSES = ("VISIBLE", "UNKNOWN", "NOT_VISIBLE")
 REFERENCE_TYPES = ("FRONT_FRAME", "FIXED_EDGE", "ADJACENT_FIXED_BODY")
@@ -190,12 +190,12 @@ def validate_annotations(annotations, manifest, *, require_complete=True, expect
             "annotation schema/dataset mismatch", "ANNOTATION_BINDING")
     require(annotations["rules_version"] == manifest["rules_version"] and annotations["rules_sha256"] == manifest["rules_sha256"],
             "annotations do not bind the frozen rules", "ANNOTATION_RULES")
-    require(annotations["annotator_role"] == "project_primary_human", "this packet is for the primary human annotator", "ANNOTATOR_ATTESTATION")
+    require(annotations["annotator_role"] == "independent_human_annotator", "this packet requires a new unexposed external human annotator", "ANNOTATOR_ATTESTATION")
     _text(annotations["annotator_id"], "human annotator identity")
     require(annotations["annotator_id"].strip().lower() not in {"agent", "assistant", "codex", "astra", "chatgpt", "qwen", "laya", "anonymous"},
             "distinct human annotator identity required", "ANNOTATOR_ATTESTATION")
-    _keys(annotations["attestations"], {"is_human", "independent_of_model_outputs", "raw_rgb_only"}, "attestations")
-    require(all(value is True for value in annotations["attestations"].values()), "explicit human/independence/RGB-only self-attestation required", "ANNOTATOR_ATTESTATION")
+    _keys(annotations["attestations"], {"is_human", "independent_of_model_outputs", "independent_of_ai_drafts", "raw_rgb_only"}, "attestations")
+    require(all(value is True for value in annotations["attestations"].values()), "explicit human/no-AI-draft/no-model-output/RGB-only self-attestation required", "ANNOTATOR_ATTESTATION")
     try:
         timestamp = datetime.fromisoformat(annotations["exported_at_utc"].replace("Z", "+00:00"))
         require(timestamp.tzinfo is not None and timestamp.utcoffset().total_seconds() == 0, "export timestamp must be UTC")
@@ -214,6 +214,8 @@ def validate_annotations(annotations, manifest, *, require_complete=True, expect
     require(not require_complete or not missing, f"missing {len(missing)} image annotations", "ANNOTATION_COVERAGE")
     return {"dataset_id": manifest["dataset_id"], "annotator_id": annotations["annotator_id"],
             "annotator_role": annotations["annotator_role"], "third_party_review_claimed": False,
+            "external_annotator_claim": "self_attested_not_independently_verified",
+            "ai_draft_unexposed_claim": "self_attested_not_independently_verified",
             "rules_version": annotations["rules_version"], "rules_sha256": annotations["rules_sha256"],
             "complete": not missing, "annotated_images": len(seen), "expected_images": len(images),
             "missing_image_ids": missing, "visibility_counts": {k: dict(v) for k, v in counts.items()},
@@ -302,7 +304,7 @@ def evaluate_grounding(predictions, annotations, manifest, *, expected_count=50)
             "visible_iou_count": len(ious), "mean_visible_polygon_iou": float(np.mean(ious)) if ious else None,
             "unknown_labels_excluded": sum(r["annotated_status"] == "UNKNOWN" for r in rows),
         }
-    return {"schema": "p1-human-grounding-evaluation/2", "dataset_id": manifest["dataset_id"],
+    return {"schema": "p1-human-grounding-evaluation/3", "dataset_id": manifest["dataset_id"],
             "annotation_export_sha256": content_hash(annotations), "prediction_export_sha256": content_hash(predictions),
             "annotation_summary": annotation_summary, "prediction_producer": predictions["producer_id"],
             "prediction_revision": predictions["revision"], "evaluation_only": True,

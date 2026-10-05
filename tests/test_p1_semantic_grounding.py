@@ -49,8 +49,8 @@ def packet(tmp_path):
     registration = tmp_path/"registration.json"
     grounding.preregister(directory, source, registration)
     annotations = dict(schema=ANNOTATION_SCHEMA, dataset_id=manifest["dataset_id"], annotator_id="unit-test-fixture",
-                       annotator_role="project_primary_human", rules_version=RULES_VERSION, rules_sha256=manifest["rules_sha256"],
-                       attestations=dict(is_human=True, independent_of_model_outputs=True, raw_rgb_only=True),
+                       annotator_role="independent_human_annotator", rules_version=RULES_VERSION, rules_sha256=manifest["rules_sha256"],
+                       attestations=dict(is_human=True, independent_of_model_outputs=True, independent_of_ai_drafts=True, raw_rgb_only=True),
                        exported_at_utc=datetime.now(timezone.utc).isoformat(), annotations=[
                            dict(**image_binding(image), entities={entity:dict(status="UNKNOWN", reason="synthetic test", polygons=[],
                                                                             **({"reference_types": []} if entity == "fixed_cabinet_reference" else {}))
@@ -71,15 +71,62 @@ def test_incomplete_human_gate_precedes_model_loader_or_output_directory(packet,
     assert calls == [] and not (tmp_path/"output").exists()
 
 
-def test_ai_exposed_export_rejected_before_loading_even_if_all_50_and_attested(packet, tmp_path, monkeypatch):
+@pytest.mark.parametrize("provenance", [dict(prior_ai_exposure=True), dict(eligible_for_human_blind_evaluation=False),
+                                      dict(prior_ai_exposure=True, eligible_for_human_blind_evaluation=False)])
+def test_ai_exposed_export_rejected_before_loading_even_if_all_50_and_attested(packet, tmp_path, monkeypatch, provenance):
     directory, _, registration, path, _, labels = packet
-    labels["provenance"] = dict(prior_ai_exposure=True, eligible_for_human_blind_evaluation=False)
+    labels["provenance"] = provenance
     write(path, labels)
     calls = []
     monkeypatch.setattr(grounding, "_load_worker", lambda: calls.append("loaded"))
     with pytest.raises(ProtocolError, match="ANNOTATION_BLINDNESS_CONFLICT"):
         grounding.run(directory, path, registration, tmp_path/"output")
     assert calls == [] and not (tmp_path/"output").exists()
+    assert json.loads(path.read_text())["provenance"] == provenance
+
+
+def test_complete_external_unexposed_human_gate_is_admitted_without_loading(packet,monkeypatch):
+    directory,_,registration,path,_,_=packet
+    calls=[]
+    monkeypatch.setattr(grounding,"_load_worker",lambda:calls.append("loaded"))
+    _,_,annotations,summary,_=grounding.validate_gate(directory,path,registration)
+    assert summary["complete"] is True and summary["annotated_images"]==50
+    assert summary["annotator_role"]=="independent_human_annotator"
+    assert annotations["attestations"]["independent_of_ai_drafts"] is True
+    assert summary["ai_draft_unexposed_claim"]=="self_attested_not_independently_verified"
+    assert calls==[]
+
+
+@pytest.mark.parametrize("defect", ["primary_role","exposed","missing_draft_attestation"])
+def test_primary_or_unattested_export_never_reaches_loader(packet,tmp_path,monkeypatch,defect):
+    directory,_,registration,path,_,labels=packet
+    if defect=="primary_role":
+        labels["annotator_role"]="project_primary_human"
+    elif defect=="exposed":
+        labels["attestations"]["independent_of_ai_drafts"]=False
+    else:
+        del labels["attestations"]["independent_of_ai_drafts"]
+    write(path,labels)
+    calls=[]
+    monkeypatch.setattr(grounding,"_load_worker",lambda:calls.append("loaded"))
+    with pytest.raises(ProtocolError,match="ANNOTATOR_ATTESTATION|ANNOTATION_SCHEMA"):
+        grounding.run(directory,path,registration,tmp_path/"output")
+    assert calls==[] and not (tmp_path/"output").exists()
+
+
+def test_v2_registration_is_rejected_without_rewriting_it(packet,tmp_path,monkeypatch):
+    directory,_,registration,path,_,_=packet
+    previous=json.loads(registration.read_text())
+    previous["schema"]="p1-fixed-query-grounding/2"
+    previous["registration_sha256"]=content_hash({k:v for k,v in previous.items() if k!="registration_sha256"})
+    write(registration,previous)
+    before=registration.read_bytes()
+    calls=[]
+    monkeypatch.setattr(grounding,"_load_worker",lambda:calls.append("loaded"))
+    with pytest.raises(ProtocolError,match="CONDITION_CHANGED"):
+        grounding.run(directory,path,registration,tmp_path/"output")
+    assert calls==[] and not (tmp_path/"output").exists()
+    assert registration.read_bytes()==before
 
 
 def test_registration_before_annotations_and_exact_queries_geometry_are_locked(packet, tmp_path):

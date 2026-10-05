@@ -38,8 +38,8 @@ def annotations(packet):
     region = {"status": "VISIBLE", "reason": "Synthetic schema test fixture only",
               "polygons": [[[2, 2], [10, 2], [10, 9], [2, 9]]]}
     return {"schema": ANNOTATION_SCHEMA, "dataset_id": packet["dataset_id"], "annotator_id": "test-reviewer-01",
-            "annotator_role": "project_primary_human", "rules_version": packet["rules_version"], "rules_sha256": packet["rules_sha256"],
-            "attestations": {"is_human": True, "independent_of_model_outputs": True, "raw_rgb_only": True},
+            "annotator_role": "independent_human_annotator", "rules_version": packet["rules_version"], "rules_sha256": packet["rules_sha256"],
+            "attestations": {"is_human": True, "independent_of_model_outputs": True, "independent_of_ai_drafts": True, "raw_rgb_only": True},
             "exported_at_utc": "2026-10-05T00:00:00Z",
             "annotations": [{**image_binding(image), "entities": {name: {**deepcopy(region), **({"reference_types": ["FRONT_FRAME"]} if name == "fixed_cabinet_reference" else {})} for name in ENTITIES}}
                             for image in packet["images"]]}
@@ -60,7 +60,7 @@ def test_complete_50_image_coverage_is_required_and_no_verified_human_claim():
     result = validate_annotations(labels, packet)
     assert result["complete"] and result["annotated_images"] == 50
     assert result["human_identity_claim"] == "self_attested_not_independently_verified"
-    assert result["annotator_role"] == "project_primary_human"
+    assert result["annotator_role"] == "independent_human_annotator"
     assert result["third_party_review_claimed"] is False
     labels["annotations"].pop()
     with pytest.raises(ProtocolError, match="ANNOTATION_COVERAGE"):
@@ -81,6 +81,30 @@ def test_blind_self_attestation_cannot_override_negative_provenance(disclosure):
     with pytest.raises(ProtocolError, match="ANNOTATION_BLINDNESS_CONFLICT"):
         validate_annotations(labels, packet)
     assert labels == original
+
+
+@pytest.mark.parametrize("claim", [False, None, "true", "missing"])
+def test_v3_requires_explicit_no_ai_draft_self_attestation(claim):
+    packet = manifest()
+    labels = annotations(packet)
+    if claim == "missing":
+        labels["attestations"].pop("independent_of_ai_drafts")
+    else:
+        labels["attestations"]["independent_of_ai_drafts"] = claim
+    with pytest.raises(ProtocolError):
+        validate_annotations(labels, packet)
+
+
+def test_prior_primary_user_role_and_v2_export_cannot_enter_v3_evaluation():
+    packet = manifest()
+    labels = annotations(packet)
+    labels["annotator_role"] = "project_primary_human"
+    with pytest.raises(ProtocolError, match="ANNOTATOR_ATTESTATION"):
+        validate_annotations(labels, packet)
+    labels = annotations(packet)
+    labels["schema"] = "p1-human-annotations/2"
+    with pytest.raises(ProtocolError, match="ANNOTATION_BINDING"):
+        validate_annotations(labels, packet)
 
 
 @pytest.mark.parametrize("change", ["binding", "dimension", "duplicate", "extra_field", "missing_reason", "blank_identity", "agent_identity", "unattested"])
@@ -134,7 +158,7 @@ def test_visible_unknown_not_visible_and_multiple_typed_fixed_reference_regions(
 
 
 @pytest.mark.parametrize("change", ["legacy_status", "rule_hash", "rule_version", "third_party", "untyped_reference", "unknown_reference_visible"])
-def test_frozen_v2_rules_and_typed_human_reference_required(change):
+def test_frozen_v3_rules_and_typed_human_reference_required(change):
     packet = manifest()
     labels = annotations(packet)
     reference = labels["annotations"][0]["entities"][ENTITIES[1]]
@@ -259,7 +283,9 @@ def test_generated_packet_has_only_raw_rgb_no_labels_and_roundtrip_hashes(tmp_pa
     assert "fetch(" not in html and "https://" not in html
     assert "type=\"application/json\"" in html
     assert "depth_blob" not in html and "candidate_projections" not in html
-    assert "p1-rgb-annotation-rules/2" in html and packet["rules_sha256"] in html
+    assert "p1-rgb-annotation-rules/3" in html and packet["rules_sha256"] in html
+    assert 'id="aiDrafts"' in html and "independent_of_ai_drafts:true" in html
+    assert "independent_human_annotator" in html and "project_primary_human" not in html
     assert "<option>VISIBLE</option><option>UNKNOWN</option><option>NOT_VISIBLE</option>" in html
     assert "Partial exports cannot enter evaluation" in html
     assert set(p.suffix for p in (output/"images").iterdir()) == {".png"}

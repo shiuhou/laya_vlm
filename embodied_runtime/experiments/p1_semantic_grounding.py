@@ -1,8 +1,9 @@
 """Preregistered RGB-only grounding with a prior independent annotation gate.
 
 prepare writes the exact condition before labels or model calls. run requires
-complete, source-bound human self-attestations before even importing the model
-loader. Human polygons are used only after every prediction has been sealed.
+complete, source-bound external-human self-attestations, including no exposure
+to AI drafts or model outputs, before even importing the model loader. Human
+polygons are used only after every prediction has been sealed.
 No control, simulator, Qwen, Laya, retry, query tuning or candidate selection.
 
 After the annotation gate passes and GPU availability has been rechecked, use
@@ -35,7 +36,7 @@ from ..perception.recording import project_base_points, replay_frames
 from ..perception.rgbd_geometry import GeometryConfig, estimate_visible_patch
 from .point_grounding_probe import SETTINGS, generation_audit, parse_grounding
 
-VERSION = "p1-fixed-query-grounding/2"
+VERSION = "p1-fixed-query-grounding/3"
 CLASSIFICATION = "ordered-complete-boxes-or-explicit-abstention/1"
 MODEL_PATH = "/home/junhongli/models/huggingface/LocateAnything-3B"
 MODEL_CONTENT_ID = "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f"
