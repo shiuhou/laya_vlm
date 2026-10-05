@@ -1,0 +1,38 @@
+{
+  "revision": "p1-temporal-observation/1",
+  "case_id": "T02",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_index": 0,
+  "camera_names": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "width": 384,
+  "height": 384,
+  "operations": [
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "rotate_z+10deg"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "rotate_z+10deg"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "rotate_z+10deg"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    }
+  ],
+  "static_evidence_sha256": "8efcf8533e8b5a13172e8a625d4e335a5eba5690c6011e42561cad02fc26737e",
+  "max_controls": 40,
+  "description": "Larger wrist perspective attempt, three unchanged ten-degree primitives."
+}

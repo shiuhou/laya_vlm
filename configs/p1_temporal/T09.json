@@ -1,0 +1,40 @@
+{
+  "revision": "p1-temporal-observation/1",
+  "case_id": "T09",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_index": 0,
+  "camera_names": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "width": 384,
+  "height": 384,
+  "operations": [
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "hold",
+      "fixture": {
+        "kind": "body_translation",
+        "name": "wooden_cabinet_1_main",
+        "delta": [
+          0.01,
+          0.0,
+          0.0
+        ],
+        "ramp_controls": 8
+      }
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    }
+  ],
+  "static_evidence_sha256": "8efcf8533e8b5a13172e8a625d4e335a5eba5690c6011e42561cad02fc26737e",
+  "max_controls": 24,
+  "description": "Evaluator-only cabinet reference body translation +10mm in world x; not robot manipulation or verified identity change."
+}
