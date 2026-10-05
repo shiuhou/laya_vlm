@@ -68,6 +68,21 @@ def test_complete_50_image_coverage_is_required_and_no_verified_human_claim():
     assert len(validate_annotations(labels, packet, require_complete=False)["missing_image_ids"]) == 1
 
 
+@pytest.mark.parametrize("disclosure", [
+    {"prior_ai_exposure": True},
+    {"eligible_for_human_blind_evaluation": False},
+    {"prior_ai_exposure": True, "eligible_for_human_blind_evaluation": False},
+])
+def test_blind_self_attestation_cannot_override_negative_provenance(disclosure):
+    packet = manifest()
+    labels = annotations(packet)
+    labels["provenance"] = disclosure
+    original = deepcopy(labels)
+    with pytest.raises(ProtocolError, match="ANNOTATION_BLINDNESS_CONFLICT"):
+        validate_annotations(labels, packet)
+    assert labels == original
+
+
 @pytest.mark.parametrize("change", ["binding", "dimension", "duplicate", "extra_field", "missing_reason", "blank_identity", "agent_identity", "unattested"])
 def test_incomplete_or_untrusted_labels_fail_closed(change):
     packet = manifest()

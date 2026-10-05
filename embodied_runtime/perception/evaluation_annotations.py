@@ -176,6 +176,14 @@ def _validate_record(record, images, *, prediction=False):
 
 def validate_annotations(annotations, manifest, *, require_complete=True, expected_count=50):
     images = validate_packet_manifest(manifest, expected_count=expected_count)
+    # An affirmative checkbox cannot override a contradictory provenance
+    # disclosure. Never normalize away AI exposure to admit a blind condition.
+    if isinstance(annotations, Mapping) and isinstance(annotations.get("provenance"), Mapping):
+        provenance = annotations["provenance"]
+        require(provenance.get("prior_ai_exposure") is not True
+                and provenance.get("eligible_for_human_blind_evaluation") is not False,
+                "declared AI exposure or blind-evaluation ineligibility; preserve disclosure",
+                "ANNOTATION_BLINDNESS_CONFLICT")
     _keys(annotations, {"schema", "dataset_id", "annotator_id", "annotator_role", "rules_version", "rules_sha256",
                        "attestations", "exported_at_utc", "annotations"}, "annotation export")
     require(annotations["schema"] == ANNOTATION_SCHEMA and annotations["dataset_id"] == manifest["dataset_id"],

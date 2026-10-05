@@ -1,0 +1,49 @@
+{
+  "received_at_utc": "2026-10-05T14:11:47.736181+00:00",
+  "raw_file_sha256": "6d57054fa839508745ce45396fc00e873b53942395f5d86fb6f81fe2247ed990",
+  "raw_file_bytes": 97900,
+  "dataset_id": "934a821132b6cbb0a15715444f05a87ce798d5ea4de3e580dad2f6c984323e04",
+  "rules_match": true,
+  "annotation_records": 50,
+  "unique_bound_image_ids": 50,
+  "missing_image_ids": [],
+  "structural_audit_only": true,
+  "structural_issues": [],
+  "polygons_checked": 75,
+  "provenance": {
+    "method": "Human relabeling self-attested by project user after exposure to AI draft",
+    "human_reviewed": true,
+    "eligible_for_human_blind_evaluation": false,
+    "scope": "Visual regions only; no reachability, collision safety, or physical fixedness verification",
+    "region_policy": "Conservative visible subsets; do not reconstruct occluded regions",
+    "human_relabeling_self_attested": true,
+    "human_relabeling_independently_verified": false,
+    "prior_ai_exposure": true,
+    "original_annotation_source": "AI draft",
+    "metadata_updated_at_utc": "2026-10-05T14:05:07.350769+00:00"
+  },
+  "attestations": {
+    "is_human": true,
+    "independent_of_model_outputs": true,
+    "raw_rgb_only": true
+  },
+  "visibility_counts": {
+    "drawer_front_pushable": {
+      "UNKNOWN": 25,
+      "VISIBLE": 25
+    },
+    "fixed_cabinet_reference": {
+      "VISIBLE": 25,
+      "UNKNOWN": 25
+    }
+  },
+  "admitted_for_preregistered_blind_evaluation": false,
+  "model_loaded": false,
+  "model_calls": 0,
+  "original_annotation_preserved": true,
+  "annotations_normalized_or_corrected": false,
+  "gate_rejection": {
+    "code": "ANNOTATION_BLINDNESS_CONFLICT",
+    "detail": "declared AI exposure or blind-evaluation ineligibility; preserve disclosure"
+  }
+}

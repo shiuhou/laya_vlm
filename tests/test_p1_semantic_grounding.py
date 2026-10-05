@@ -71,6 +71,17 @@ def test_incomplete_human_gate_precedes_model_loader_or_output_directory(packet,
     assert calls == [] and not (tmp_path/"output").exists()
 
 
+def test_ai_exposed_export_rejected_before_loading_even_if_all_50_and_attested(packet, tmp_path, monkeypatch):
+    directory, _, registration, path, _, labels = packet
+    labels["provenance"] = dict(prior_ai_exposure=True, eligible_for_human_blind_evaluation=False)
+    write(path, labels)
+    calls = []
+    monkeypatch.setattr(grounding, "_load_worker", lambda: calls.append("loaded"))
+    with pytest.raises(ProtocolError, match="ANNOTATION_BLINDNESS_CONFLICT"):
+        grounding.run(directory, path, registration, tmp_path/"output")
+    assert calls == [] and not (tmp_path/"output").exists()
+
+
 def test_registration_before_annotations_and_exact_queries_geometry_are_locked(packet, tmp_path):
     directory, _, registration, path, _, labels = packet
     grounding.validate_gate(directory, path, registration)

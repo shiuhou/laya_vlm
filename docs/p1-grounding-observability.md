@@ -41,6 +41,14 @@ After the user exports `annotations.complete.json`, validate and seal it:
 
 ## Frozen semantic experiment
 
+Update: a 50-record export was received and preserved, but its own provenance
+declares prior AI-draft exposure and blind-evaluation ineligibility. The
+[receipt](evidence/p1_grounding/annotation_receipt_20261005/README.md) records
+matching source bindings and structural polygon checks separately from that
+conflict. It is **not admitted** to the preregistered blind condition. The user
+decision on an unexposed annotator versus an explicitly nonblind diagnostic is
+pending. No model call has run and no condition has been silently relaxed.
+
 Registration prepared before exposing the packet:
 `runs/p1/grounding-preregistration-20261005.json`. It binds original sensor
 records, packet/rules, exact queries, model bytes/settings and **unchanged
