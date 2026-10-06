@@ -1,0 +1,44 @@
+{
+  "recorded_at_utc": "2026-10-06T15:04:20.727058+00:00",
+  "status": "BLOCKED_GPU_NOT_EXPOSED_IN_THIS_SESSION",
+  "actual_cuda_preflight": {
+    "nvidia_smi": "cannot communicate with NVIDIA driver",
+    "torch_version": "2.2.0+cu121",
+    "torch_cuda_build": "12.1",
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "device_nodes": [
+      "/dev/nvidia-caps"
+    ],
+    "usable_gpu_identity": null
+  },
+  "source_registration_sha256": "9b805e1246548e49858cf0ec64ab2f5495b1b9a350f55f658e6a4c8b435f1a91",
+  "source_inputs_sha256": "ad2dc1f0cd803035b2d19255c9a0b20797a5df930c4d755954717d3d6e98971c",
+  "verified_preserved_files": 27,
+  "verified_sensor_views": 4,
+  "original_config_sha256": "d1f493189448b70651fddbf842979982107758b6ce70f52fcc73287b413883ed",
+  "frozen_queries": {
+    "drawer_front_pushable": "the flat outward-facing front panel of the open top drawer of the small cabinet on the tabletop, excluding its handle, inner cavity, rim, and tabletop",
+    "fixed_cabinet_reference": "the fixed front-facing frame of the small tabletop cabinet immediately surrounding the open top drawer, excluding the moving drawer, its handle, the drawer interior, the tabletop, and the kitchen cabinets in the background"
+  },
+  "frozen_settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "hybrid",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "geometry_resolved_sha256": "f3abcfd935087aa5992df6419bac6068b49fadc782e51b841ffc557808ef5da8",
+  "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+  "gpu_model_calls": 0,
+  "association_status": "NOT_EVALUATED",
+  "tracker_status": "NOT_EVALUATED",
+  "fixed_reference_observability": "UNKNOWN",
+  "verify_status": "UNKNOWN",
+  "cpu_retry": false,
+  "old_evidence_modified": false,
+  "negative_path_check": "Placeholder UUID used only to check admission failure before any output/weight load; not an actual GPU allocation or experimental condition. Real unmasked device checks above were separate.",
+  "checks": "Ruff plus GPU admission negative path only; no model call, simulation, tracker or broad suite.",
+  "gpu_output_directory_created": false
+}

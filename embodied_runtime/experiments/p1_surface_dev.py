@@ -23,7 +23,9 @@ from ..perception.surface_association import (
     associate_point, inventory_surfaces, sensor_view_identity, tracker_seed_rectangle,
 )
 from ..perception.visual_tracker import TrackerConfig, VisualTracker
-from .p1_semantic_grounding import MODEL_CONTENT_ID, QUERIES, frozen_geometry
+from .p1_semantic_grounding import (
+    MODEL_CONTENT_ID, QUERIES, _cuda_allocation, _explicit_gpu_mask, frozen_geometry,
+)
 from .point_grounding_probe import SETTINGS, generation_audit, parse_grounding, serialize_model_config
 from .records import code_identity, file_hash, jsonable, model_identity, versions
 
@@ -96,7 +98,7 @@ def load_inputs(root):
     return registration, inputs
 
 
-def infer(output):
+def infer(output, *, device="cpu", inference_dir=None):
     import torch
     from PIL import Image
     from ..adapters.locateanything import LocateAnythingWorker
@@ -104,15 +106,26 @@ def infer(output):
     root = Path(output)
     registration, inputs = load_inputs(root)
     config = registration["config"]
+    require(device in {"cpu", "cuda:0"}, "explicit CPU or allocated logical cuda:0 required")
+    allocation = None
+    if device == "cuda:0":
+        mask = _explicit_gpu_mask()
+        require(mask.startswith("GPU-"), "use a GPU UUID mask for identifiable allocation", "GPU_ALLOCATION_REQUIRED")
+        allocation = _cuda_allocation(torch, mask)
+    # Execution device/output override never rewrites source registration or
+    # resumes/splices the interrupted CPU predictions into a matched GPU run.
+    folder = Path(inference_dir) if inference_dir else root/"inference"
+    require(not folder.exists(), "fresh inference directory required; no overwrite/resume")
     identity = model_identity(config["model_path"])
     require(identity["content_id"] == registration["model_content_id"], "checkpoint bytes changed")
-    folder = root/"inference"
-    folder.mkdir(exist_ok=False)
-    write(folder/"loading.json", dict(model=identity, versions=versions(), code=code_identity(), device="cpu",
+    folder.mkdir(parents=True, exist_ok=False)
+    write(folder/"loading.json", dict(model=identity, versions=versions(), code=code_identity(), device=device,
+        execution_allocation=allocation, source_root=str(root.resolve()),
+        device_override_only=device != config["device"],
         dtype=config["dtype"], threads=config["torch_threads"],
         inputs_sha256=file_hash(root/"inputs.json"), registration_sha256=file_hash(root/"registration.json")))
     torch.set_num_threads(config["torch_threads"])
-    worker = LocateAnythingWorker(config["model_path"], device="cpu", dtype=config["dtype"],
+    worker = LocateAnythingWorker(config["model_path"], device=device, dtype=config["dtype"],
                                   model_revision=identity["content_id"])
     torch = worker.torch
     torch.set_num_threads(config["torch_threads"])
@@ -142,23 +155,32 @@ def infer(output):
                                                              {"type": "text", "text": question}]}]
                     template = worker.processor.py_apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
                     images, videos = worker.processor.process_vision_info(messages)
-                    tensors = worker.processor(text=[template], images=images, videos=videos, return_tensors="pt").to("cpu")
+                    tensors = worker.processor(text=[template], images=images, videos=videos, return_tensors="pt").to(device)
                     input_ids = tensors["input_ids"].detach().cpu().tolist()[0]
-                    write(folder/f"{call}-request.json", dict(frame=frame, entity=entity, mode=mode,
+                    request = dict(frame=frame, entity=entity, mode=mode,
                         question=question, prompt=template, input_token_ids=input_ids,
-                        pixel_values_sha256=hashlib.sha256(tensors["pixel_values"].float().numpy().tobytes()).hexdigest(),
+                        pixel_values_sha256=hashlib.sha256(tensors["pixel_values"].float().cpu().numpy().tobytes()).hexdigest(),
                         pixel_values_hash_encoding="processor float32 contiguous bytes",
                         image_grid_hws=jsonable(tensors["image_grid_hws"].detach().cpu().numpy()
-                            if hasattr(tensors["image_grid_hws"], "detach") else tensors["image_grid_hws"])))
+                            if hasattr(tensors["image_grid_hws"], "detach") else tensors["image_grid_hws"]))
+                    old_request = root/"inference"/f"{call}-request.json"
+                    if inference_dir is not None and old_request.exists():
+                        require(request == json.loads(old_request.read_text()), "recorded model-facing input changed",
+                                "CONDITION_CHANGED")
+                    write(folder/f"{call}-request.json", request)
                     require(len(input_ids)+SETTINGS["max_new_tokens"] <= worker.tokenizer.model_max_length,
                             "input exceeds model budget")
                     observed.clear()
+                    if allocation is not None:
+                        torch.cuda.synchronize(0)
                     started = time.perf_counter()
                     print(f"Starting {call}", flush=True)
                     with torch.no_grad():
                         raw = worker.model.generate(pixel_values=tensors["pixel_values"].to(worker.dtype),
                             input_ids=tensors["input_ids"], attention_mask=tensors["attention_mask"],
                             image_grid_hws=tensors.get("image_grid_hws"), tokenizer=worker.tokenizer, **SETTINGS)
+                    if allocation is not None:
+                        torch.cuda.synchronize(0)
                     require(len(observed) == 1 and len(observed[0]) == 1, "actual output tokens unavailable")
                     raw = raw[0] if isinstance(raw, tuple) else raw
                     require(isinstance(raw, str), "raw output must be text")
@@ -182,19 +204,23 @@ def infer(output):
         worker.tokenizer.batch_decode = original_decode
 
 
-def analyze(output):
+def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False):
     from PIL import Image, ImageDraw
 
     root = Path(output)
     registration, inputs = load_inputs(root)
-    require((root/"inference/complete.json").exists(), "seal inference before inspecting predictions")
-    seal = json.loads((root/"inference/complete.json").read_text())
+    inference = Path(inference_dir) if inference_dir else root/"inference"
+    require((inference/"complete.json").exists(), "seal inference before inspecting predictions")
+    loading = json.loads((inference/"loading.json").read_text())
+    require(loading["inputs_sha256"] == file_hash(root/"inputs.json")
+            and loading["registration_sha256"] == file_hash(root/"registration.json"), "inference source changed")
+    seal = json.loads((inference/"complete.json").read_text())
     require(seal["calls"] == registration["model_calls"], "incomplete call coverage")
     for name, digest in seal["artifacts_sha256"].items():
-        require(file_hash(root/"inference"/name) == digest, "sealed inference artifact changed")
+        require(file_hash(inference/name) == digest, "sealed inference artifact changed")
     geometry = frozen_geometry(registration["config"]["geometry_config"])
-    folder = root/"association"
-    folder.mkdir(exist_ok=False)
+    folder = Path(analysis_dir) if analysis_dir else root/"association"
+    folder.mkdir(parents=True, exist_ok=False)
     summaries = []
     for frame in inputs["frames"]:
         view = next(v for _, views in replay_frames(root/frame["recording"]) for v in views
@@ -205,8 +231,8 @@ def analyze(output):
             if camera != frame["camera_id"]:
                 continue
             stem = f"init-{frame['init_index']:03d}-{entity}"
-            box = json.loads((root/"inference"/f"{stem}-box-response.json").read_text())
-            point_path = root/"inference"/f"{stem}-point-response.json"
+            box = json.loads((inference/f"{stem}-box-response.json").read_text())
+            point_path = inference/f"{stem}-point-response.json"
             point = json.loads(point_path.read_text())
             boxes = box["parsed"]["boxes"] if box["parsed"]["status"] in {"single_box", "multiple_boxes"} else []
             xy = [p["continuous_xy"] for p in point["parsed"]["points"]] if point["parsed"]["status"] == "single_point" else []
@@ -239,16 +265,19 @@ def analyze(output):
                 result.update(association_status="AMBIGUOUS", reason="MULTIPLE_ROI_SURFACE_SUPPORTS")
             elif len(matches) == 1 and any(b["status"] == "BOUND_HYPOTHESIS" for b in bindings):
                 result.update(association_status="BOUND_HYPOTHESIS", reason=None)
-                rectangle = tracker_seed_rectangle(matches[0], xy[0], tracker_config=TrackerConfig())
-                result["seed_rectangle_xyxy"] = rectangle
-                if rectangle is not None:
-                    tracker = VisualTracker(f"surface-dev/{stem}")
-                    tracked = tracker.initialize(view, rectangle, query=QUERIES[entity], seed_source="semantic_query",
-                        now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
-                    result.update(tracker_status=tracked.status, tracker_evidence=thaw(tracked),
-                                  clock_condition="offline capture clock; not a live freshness claim")
+                if not test_tracker:
+                    result["tracker_status"] = "NOT_TESTED_ASSOCIATION_REVIEW_FIRST"
                 else:
-                    result["reason"] = "NO_SUPPORT_CONTAINED_TRACKER_RECTANGLE"
+                    rectangle = tracker_seed_rectangle(matches[0], xy[0], tracker_config=TrackerConfig())
+                    result["seed_rectangle_xyxy"] = rectangle
+                    if rectangle is not None:
+                        tracker = VisualTracker(f"surface-dev/{stem}")
+                        tracked = tracker.initialize(view, rectangle, query=QUERIES[entity], seed_source="semantic_query",
+                            now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
+                        result.update(tracker_status=tracked.status, tracker_evidence=thaw(tracked),
+                                      clock_condition="offline capture clock; not a live freshness claim")
+                    else:
+                        result["reason"] = "NO_SUPPORT_CONTAINED_TRACKER_RECTANGLE"
             image = Image.fromarray(overlay)
             draw = ImageDraw.Draw(image)
             for b in boxes:
@@ -262,15 +291,30 @@ def analyze(output):
             print(json.dumps(dict(case=stem, association=result["association_status"],
                                   tracker=result["tracker_status"], inventories=inventories)), flush=True)
     write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN", code=code_identity(),
-                                      no_policy_or_control=True))
+                                      no_policy_or_control=True, tracker_test_explicitly_requested=test_tracker,
+                                      inference_seal_sha256=file_hash(inference/"complete.json")))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("phase", choices=("capture", "infer", "analyze"))
     parser.add_argument("--output", required=True)
+    parser.add_argument("--device", choices=("cpu", "cuda:0"), default="cpu")
+    parser.add_argument("--inference-dir", help="fresh GPU inference outputs, separate from frozen input evidence")
+    parser.add_argument("--analysis-dir", help="fresh association/track outputs; never overwrite a prior stage")
+    parser.add_argument("--test-tracker", action="store_true", help="only after surface-association review succeeds")
     args = parser.parse_args()
-    {"capture": capture, "infer": infer, "analyze": analyze}[args.phase](args.output)
+    if args.phase == "capture":
+        require(args.device == "cpu" and args.inference_dir is None and args.analysis_dir is None
+                and not args.test_tracker, "capture has no execution overrides")
+        capture(args.output)
+    elif args.phase == "infer":
+        require(args.analysis_dir is None and not args.test_tracker, "inference cannot run tracking")
+        infer(args.output, device=args.device, inference_dir=args.inference_dir)
+    else:
+        require(args.device == "cpu", "analysis is model-free CPU geometry")
+        analyze(args.output, inference_dir=args.inference_dir, analysis_dir=args.analysis_dir,
+                test_tracker=args.test_tracker)
 
 
 if __name__ == "__main__":
