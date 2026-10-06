@@ -268,7 +268,7 @@ def main():
                 log_capture=log_capture, log_completed=log_completed)
         inventory_rows = [row for r in records for row in r["result"]]
         summary["single_search_workload_ms"] = percentiles([r["search_workload_ms"] for r in inventory_rows])
-        summary["surface_plane_valid_counts"] = dict(Counter(s["plane_valid"] for row in inventory_rows
+        summary["surface_plane_valid_counts"] = dict(Counter(str(s["plane_valid"]) for row in inventory_rows
                                                            for s in row["inventory"]["surfaces"]))
         (out/"summary.json").write_text(canonical_json(summary)+"\n")
         print(json.dumps(summary, indent=2))
