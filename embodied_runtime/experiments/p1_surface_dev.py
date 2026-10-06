@@ -49,7 +49,8 @@ def capture(output):
                         robot_controls="World constructor settling only; no post-reset commands",
                         condition_note="Software EGL acquisition; separate from frozen GPU 50-view evaluation",
                         environment={k: os.environ.get(k) for k in (
-                            "MUJOCO_GL", "EGL_PLATFORM", "LIBGL_ALWAYS_SOFTWARE", "PYOPENGL_PLATFORM")},
+                            "MUJOCO_GL", "EGL_PLATFORM", "LIBGL_ALWAYS_SOFTWARE", "PYOPENGL_PLATFORM",
+                            "MESA_SHADER_CACHE_DIR", "NUMBA_CACHE_DIR")},
                         failure_rule="no retries, incomplete token audit stops inference; association uncertainty retained",
                         verify_status="UNKNOWN: no fixedness/closed-state relation established")
     write(root/"registration.json", registration)
