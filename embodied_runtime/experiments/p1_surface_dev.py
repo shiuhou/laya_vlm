@@ -19,6 +19,7 @@ import numpy as np
 
 from ..contracts import content_hash, require, thaw
 from ..perception.recording import FrameRecorder, replay_frames
+from ..perception.semantic_output import CONTRACT as SEMANTIC_CONTRACT, parse_semantic_reply
 from ..perception.surface_association import (
     associate_point, inventory_surfaces, sensor_view_identity, tracker_seed_rectangle,
 )
@@ -219,11 +220,40 @@ def infer(output, *, device="cpu", inference_dir=None, selected_pair=None):
         worker.tokenizer.batch_decode = original_decode
 
 
-def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False):
+def semantic_pair(box, point, frame, entity, *, semantic_contract):
+    """Whole-response admission before geometry; legacy evidence stays unchanged."""
+    require(semantic_contract in {"legacy", "typed-v1"}, "known semantic contract")
+    for mode, response in (("box", box), ("point", point)):
+        require(response["frame"] == frame and response["entity"] == entity and response["mode"] == mode,
+                "semantic pair source/request mismatch", "SOURCE_MISMATCH")
+        require(response["parsed"] == parse_grounding(response["raw_output"], 384, 256),
+                "sealed legacy parse disagrees with raw reply")
+    if semantic_contract == "legacy":
+        boxes = box["parsed"]["boxes"] if box["parsed"]["status"] in {"single_box", "multiple_boxes"} else []
+        admitted = point["parsed"]["status"] == "single_point"
+        return dict(admitted=admitted, boxes=boxes,
+                    xy=[p["continuous_xy"] for p in point["parsed"]["points"]] if admitted else [],
+                    reason=None if admitted else "POINT_RESPONSE_NOT_SINGLE_POINT", typed=None)
+    replies = {mode: parse_semantic_reply(response["raw_output"], 384, 256, mode=mode, audit=response["audit"])
+               for mode, response in (("box", box), ("point", point))}
+    admitted = all(r.admitted for r in replies.values())
+    return dict(admitted=admitted,
+                boxes=[dict(continuous_xyxy=list(a.pixels), normalized=list(a.normalized), ordinal=a.ordinal)
+                       for a in replies["box"].selected] if admitted else [],
+                xy=[list(a.pixels) for a in replies["point"].selected] if admitted else [],
+                reason=None if admitted else "TYPED_SEMANTIC_ADMISSION_FAILED",
+                typed={mode: r.evidence() for mode, r in replies.items()})
+
+
+def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False, semantic_contract="legacy"):
     from PIL import Image, ImageDraw
 
+    require(semantic_contract != "typed-v1" or not test_tracker,
+            "typed association requires separate requested-surface review before tracker initialization")
     root = Path(output)
     registration, inputs = load_inputs(root)
+    require(registration["config"]["width"] == 384 and registration["config"]["height"] == 256,
+            "frozen surface-dev image dimensions")
     inference = Path(inference_dir) if inference_dir else root/"inference"
     require((inference/"complete.json").exists(), "seal inference before inspecting predictions")
     loading = json.loads((inference/"loading.json").read_text())
@@ -254,16 +284,25 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
             box = json.loads((inference/f"{stem}-box-response.json").read_text())
             point_path = inference/f"{stem}-point-response.json"
             point = json.loads(point_path.read_text())
-            boxes = box["parsed"]["boxes"] if box["parsed"]["status"] in {"single_box", "multiple_boxes"} else []
-            if point["parsed"]["status"] != "single_point":
-                # Reject the whole semantic reply before any geometry work.
-                # A complete mixed reply is not an admitted POINT; retain its
-                # raw evidence but never strip off a convenient point prefix.
+            if semantic_contract == "typed-v1":
+                for mode in ("box", "point"):
+                    request = json.loads((inference/f"{stem}-{mode}-request.json").read_text())
+                    question = (f"Point to: {QUERIES[entity]}." if mode == "point" else
+                                f"Locate a single instance that matches the following description: {QUERIES[entity]}.")
+                    require(request["frame"] == frame and request["entity"] == entity
+                            and request["mode"] == mode and request["question"] == question,
+                            "frozen semantic request mismatch", "SOURCE_MISMATCH")
+            admitted = semantic_pair(box, point, frame, entity, semantic_contract=semantic_contract)
+            boxes = admitted["boxes"]
+            semantic_evidence = dict(semantic_contract=semantic_contract, typed_replies=admitted["typed"],
+                                     box_response_sha256=file_hash(inference/f"{stem}-box-response.json"),
+                                     point_response_sha256=file_hash(point_path))
+            if not admitted["admitted"]:
                 result = dict(entity=entity, frame=frame, inventories=[], bindings=[], point_xy=[],
                     association_status="UNKNOWN", tracker_status="NOT_TESTED_SEMANTIC_ADMISSION_FAILED",
                     semantic_identity_verified=False, verify_status="UNKNOWN", for_execution=False,
-                    reason="POINT_RESPONSE_NOT_SINGLE_POINT", raw_point_parse_status=point["parsed"]["status"],
-                    geometry_evaluated=False, point_format_admitted=False)
+                    reason=admitted["reason"], raw_point_parse_status=point["parsed"]["status"],
+                    geometry_evaluated=False, point_format_admitted=False, **semantic_evidence)
                 image = Image.fromarray(view["rgb"])
                 draw = ImageDraw.Draw(image)
                 for b in boxes:
@@ -274,7 +313,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                 print(json.dumps(dict(case=stem, association="UNKNOWN", reason=result["reason"],
                                       geometry_evaluated=False)), flush=True)
                 continue
-            xy = [p["continuous_xy"] for p in point["parsed"]["points"]] if point["parsed"]["status"] == "single_point" else []
+            xy = admitted["xy"]
             inventories, bindings, matches, surfaces = [], [], [], []
             overlay = view["rgb"].copy()
             for index, region in enumerate(boxes):
@@ -282,7 +321,8 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                 write(folder/f"{stem}-roi{index}-inventory.json", inventory.evidence())
                 binding = associate_point(inventory, dict(frame_id=frame["frame_id"], camera_id=camera,
                     rgb_sha256=frame["rgb_sha256"], calibration_version=frame["calibration_version"],
-                    sensor_view_sha256=frame["sensor_view_sha256"], parsed_status=point["parsed"]["status"],
+                    sensor_view_sha256=frame["sensor_view_sha256"], parsed_status="single_point", raw_reply_parse_status=point["parsed"]["status"],
+                    semantic_contract=SEMANTIC_CONTRACT if semantic_contract == "typed-v1" else "legacy",
                     query=QUERIES[entity], response_sha256=file_hash(point_path), evaluation_labels_used=False,
                     generation_complete=point["audit"]["complete_generation"], points_xy=xy))
                 inventories.append(dict(roi_index=index, surfaces=len(inventory.surfaces),
@@ -299,7 +339,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                           point_xy=xy, association_status="UNKNOWN", tracker_status="NOT_INITIALIZED",
                           semantic_identity_verified=False, verify_status="UNKNOWN", for_execution=False,
                           geometry_evaluated=True, point_format_admitted=True,
-                          reason="NO_SINGLE_SUPPORTED_POINT")
+                          reason="NO_SINGLE_SUPPORTED_POINT", **semantic_evidence)
             # Cross-ROI ambiguity remains ambiguity, even for overlapping boxes.
             if len(matches) > 1:
                 result.update(association_status="AMBIGUOUS", reason="MULTIPLE_ROI_SURFACE_SUPPORTS")
@@ -332,6 +372,9 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                                   tracker=result["tracker_status"], inventories=inventories)), flush=True)
     write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN", code=code_identity(),
                                       no_policy_or_control=True, tracker_test_explicitly_requested=test_tracker,
+                                      semantic_contract=semantic_contract,
+                                      semantic_protocol_sha256=file_hash("docs/research/p1_semantic_output_contract_repair.md")
+                                          if semantic_contract == "typed-v1" else None,
                                       selected_pair=selected_pair, registered_total_calls=registration["model_calls"],
                                       inference_seal_sha256=file_hash(inference/"complete.json")))
 
@@ -345,18 +388,20 @@ def main():
     parser.add_argument("--analysis-dir", help="fresh association/track outputs; never overwrite a prior stage")
     parser.add_argument("--test-tracker", action="store_true", help="only after surface-association review succeeds")
     parser.add_argument("--pair", help="newly preregistered single-pair scope; original frozen inputs/settings unchanged")
+    parser.add_argument("--semantic-contract", choices=("legacy", "typed-v1"), default="legacy",
+                        help="explicit new-condition typed admission; legacy results remain unchanged")
     args = parser.parse_args()
     if args.phase == "capture":
         require(args.device == "cpu" and args.inference_dir is None and args.analysis_dir is None
-                and not args.test_tracker and args.pair is None, "capture has no execution overrides")
+                and not args.test_tracker and args.pair is None and args.semantic_contract == "legacy", "capture has no execution overrides")
         capture(args.output)
     elif args.phase == "infer":
-        require(args.analysis_dir is None and not args.test_tracker, "inference cannot run tracking")
+        require(args.analysis_dir is None and not args.test_tracker and args.semantic_contract == "legacy", "inference cannot run tracking")
         infer(args.output, device=args.device, inference_dir=args.inference_dir, selected_pair=args.pair)
     else:
         require(args.device == "cpu" and args.pair is None, "analysis uses sealed inference scope; no manual rescope")
         analyze(args.output, inference_dir=args.inference_dir, analysis_dir=args.analysis_dir,
-                test_tracker=args.test_tracker)
+                test_tracker=args.test_tracker, semantic_contract=args.semantic_contract)
 
 
 if __name__ == "__main__":
