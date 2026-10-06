@@ -1,0 +1,22 @@
+{
+  "revision": "p1-surface-dev/1",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_indices": [25, 26],
+  "width": 384,
+  "height": 256,
+  "camera_names": ["agentview", "robot0_eye_in_hand"],
+  "entity_cameras": {
+    "drawer_front_pushable": "robot0_eye_in_hand",
+    "fixed_cabinet_reference": "agentview"
+  },
+  "mode_order": ["box", "point"],
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "torch_threads": 8,
+  "geometry_config": "configs/p1_geometry.json",
+  "model_path": "/home/junhongli/models/huggingface/LocateAnything-3B",
+  "acquisition_condition": "fresh_reset_software_egl_no_post_reset_controls",
+  "evaluation_labels_used": false,
+  "for_execution": false
+}

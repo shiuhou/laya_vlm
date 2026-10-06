@@ -1,0 +1,269 @@
+"""Bounded fresh-development BOX/POINT association; never a control policy.
+
+No labels, target simulator state, prompt tuning, retries or execution. Source
+RGB goes to the model; metric depth/calibration goes only to surface geometry.
+CPU timing is not a live/GPU claim. Track initialization is offline diagnostic.
+"""
+from __future__ import annotations
+
+import argparse
+from dataclasses import asdict
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import time
+
+import numpy as np
+
+from ..contracts import content_hash, require
+from ..perception.recording import FrameRecorder, replay_frames
+from ..perception.surface_association import (
+    associate_point, inventory_surfaces, sensor_view_identity, tracker_seed_rectangle,
+)
+from ..perception.visual_tracker import TrackerConfig, VisualTracker
+from .p1_semantic_grounding import MODEL_CONTENT_ID, QUERIES, frozen_geometry
+from .point_grounding_probe import SETTINGS, generation_audit, parse_grounding, serialize_model_config
+from .records import code_identity, file_hash, jsonable, model_identity, versions
+
+
+def write(path, payload):
+    Path(path).write_text(json.dumps(jsonable(payload), indent=2, allow_nan=False)+"\n")
+
+
+def capture(output):
+    from ..adapters.libero import LiberoWorldBackend
+    from ..adapters.libero_sensor_env import LiberoSensorEnv
+    from PIL import Image
+
+    root = Path(output)
+    root.mkdir(parents=True, exist_ok=False)
+    config = json.loads(Path("configs/p1_surface_dev.json").read_text())
+    geometry = frozen_geometry(config["geometry_config"])
+    registration = dict(config=config, queries=QUERIES, generation_settings=SETTINGS,
+                        model_content_id=MODEL_CONTENT_ID, code=code_identity(), versions=versions(),
+                        created_at_utc=datetime.now(timezone.utc).isoformat(),
+                        geometry_sha256=content_hash(geometry.to_dict()), tracker_config=asdict(TrackerConfig()),
+                        model_calls=8, independent_blind_evaluation=False,
+                        robot_controls="World constructor settling only; no post-reset commands",
+                        condition_note="Software EGL acquisition; separate from frozen GPU 50-view evaluation",
+                        environment={k: os.environ.get(k) for k in (
+                            "MUJOCO_GL", "EGL_PLATFORM", "LIBGL_ALWAYS_SOFTWARE", "PYOPENGL_PLATFORM")},
+                        failure_rule="no retries, incomplete token audit stops inference; association uncertainty retained",
+                        verify_status="UNKNOWN: no fixedness/closed-state relation established")
+    write(root/"registration.json", registration)
+    frames = []
+    for init in config["init_indices"]:
+        backend = LiberoWorldBackend.from_task(config["task"], seed=config["seed"], init_state_id=init,
+            libero_root="/home/junhongli/projects/LIBERO", config_dir="/tmp/laya-surface-dev-libero", render=True)
+        sensor = None
+        try:
+            sensor = LiberoSensorEnv(backend.world, camera_names=config["camera_names"],
+                width=config["width"], height=config["height"],
+                retained_gripper_command=lambda: "OPEN" if backend.gripper_command() < 0 else "CLOSE")
+            directory = root/f"init-{init:03d}"
+            with FrameRecorder(directory, episode_id=f"p1-surface-dev/init{init}",
+                clock_domain="surface-dev/local-process", condition=config["acquisition_condition"]) as recorder:
+                bundle = sensor.sensor_port().capture()
+                recorder.append(bundle["views"], bundle["proprio"], emitted_monotonic_ns=time.monotonic_ns())
+        finally:
+            if sensor is not None:
+                sensor.close()
+            backend.world.close()
+        for _, views in replay_frames(directory):
+            for view in views:
+                name = f"init-{init:03d}-{view['camera_id']}"
+                Image.fromarray(view["rgb"]).save(root/f"{name}.png")
+                frames.append(dict(init_index=init, recording=f"init-{init:03d}", camera_id=view["camera_id"],
+                    frame_id=view["canonical_frame_id"], calibration_version=view["calibration_version"],
+                    sensor_view_sha256=content_hash(sensor_view_identity(view)),
+                    rgb_sha256=hashlib.sha256(view["rgb"].tobytes()).hexdigest(),
+                    image=f"{name}.png", image_file_sha256=file_hash(root/f"{name}.png")))
+    write(root/"inputs.json", dict(frames=frames, registration_sha256=file_hash(root/"registration.json")))
+    print(json.dumps(dict(capture_complete=True, views=len(frames))), flush=True)
+
+
+def load_inputs(root):
+    registration = json.loads((root/"registration.json").read_text())
+    inputs = json.loads((root/"inputs.json").read_text())
+    require(inputs["registration_sha256"] == file_hash(root/"registration.json"), "registration changed")
+    require(registration["config"] == json.loads(Path("configs/p1_surface_dev.json").read_text())
+            and registration["queries"] == QUERIES and registration["generation_settings"] == SETTINGS,
+            "condition changed")
+    frozen_geometry(registration["config"]["geometry_config"])
+    return registration, inputs
+
+
+def infer(output):
+    import torch
+    from PIL import Image
+    from ..adapters.locateanything import LocateAnythingWorker
+
+    root = Path(output)
+    registration, inputs = load_inputs(root)
+    config = registration["config"]
+    identity = model_identity(config["model_path"])
+    require(identity["content_id"] == registration["model_content_id"], "checkpoint bytes changed")
+    folder = root/"inference"
+    folder.mkdir(exist_ok=False)
+    write(folder/"loading.json", dict(model=identity, versions=versions(), code=code_identity(), device="cpu",
+        dtype=config["dtype"], threads=config["torch_threads"],
+        inputs_sha256=file_hash(root/"inputs.json"), registration_sha256=file_hash(root/"registration.json")))
+    torch.set_num_threads(config["torch_threads"])
+    worker = LocateAnythingWorker(config["model_path"], device="cpu", dtype=config["dtype"],
+                                  model_revision=identity["content_id"])
+    torch = worker.torch
+    torch.set_num_threads(config["torch_threads"])
+    write(folder/"model_config.json", serialize_model_config(worker.model.config.to_dict()))
+    original_decode, observed = worker.tokenizer.batch_decode, []
+
+    def decode_audit(sequences, *args, **kwargs):
+        observed.append(sequences.detach().cpu().tolist())
+        return original_decode(sequences, *args, **kwargs)
+
+    worker.tokenizer.batch_decode = decode_audit
+    started_all = time.perf_counter()
+    try:
+        for frame in inputs["frames"]:
+            for entity, camera in config["entity_cameras"].items():
+                if frame["camera_id"] != camera:
+                    continue
+                image_path = root/frame["image"]
+                require(file_hash(image_path) == frame["image_file_sha256"], "RGB artifact changed")
+                image = Image.open(image_path).convert("RGB")
+                require(hashlib.sha256(np.asarray(image).tobytes()).hexdigest() == frame["rgb_sha256"], "RGB bytes changed")
+                for mode in config["mode_order"]:
+                    call = f"init-{frame['init_index']:03d}-{entity}-{mode}"
+                    question = (f"Point to: {QUERIES[entity]}." if mode == "point" else
+                                f"Locate a single instance that matches the following description: {QUERIES[entity]}.")
+                    messages = [{"role": "user", "content": [{"type": "image", "image": image},
+                                                             {"type": "text", "text": question}]}]
+                    template = worker.processor.py_apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+                    images, videos = worker.processor.process_vision_info(messages)
+                    tensors = worker.processor(text=[template], images=images, videos=videos, return_tensors="pt").to("cpu")
+                    input_ids = tensors["input_ids"].detach().cpu().tolist()[0]
+                    write(folder/f"{call}-request.json", dict(frame=frame, entity=entity, mode=mode,
+                        question=question, prompt=template, input_token_ids=input_ids,
+                        pixel_values_sha256=hashlib.sha256(tensors["pixel_values"].float().numpy().tobytes()).hexdigest(),
+                        pixel_values_hash_encoding="processor float32 contiguous bytes",
+                        image_grid_hws=jsonable(tensors["image_grid_hws"].detach().cpu().numpy()
+                            if hasattr(tensors["image_grid_hws"], "detach") else tensors["image_grid_hws"])))
+                    require(len(input_ids)+SETTINGS["max_new_tokens"] <= worker.tokenizer.model_max_length,
+                            "input exceeds model budget")
+                    observed.clear()
+                    started = time.perf_counter()
+                    print(f"Starting {call}", flush=True)
+                    with torch.no_grad():
+                        raw = worker.model.generate(pixel_values=tensors["pixel_values"].to(worker.dtype),
+                            input_ids=tensors["input_ids"], attention_mask=tensors["attention_mask"],
+                            image_grid_hws=tensors.get("image_grid_hws"), tokenizer=worker.tokenizer, **SETTINGS)
+                    require(len(observed) == 1 and len(observed[0]) == 1, "actual output tokens unavailable")
+                    raw = raw[0] if isinstance(raw, tuple) else raw
+                    require(isinstance(raw, str), "raw output must be text")
+                    audit = generation_audit(observed[0][0], len(input_ids), worker.tokenizer.model_max_length,
+                                              worker.tokenizer.convert_tokens_to_ids("<|im_end|>"))
+                    payload = dict(frame=frame, entity=entity, mode=mode, raw_output=raw, audit=audit,
+                        parsed=parse_grounding(raw, image.width, image.height), latency_s=time.perf_counter()-started)
+                    write(folder/f"{call}-response.json", payload)
+                    print(json.dumps(dict(call=call, raw=raw, complete=audit["complete_generation"],
+                                          latency_s=payload["latency_s"])), flush=True)
+                    require(audit["complete_generation"] and len(observed[0][0]) <= audit["effective_limit"],
+                            "incomplete generation; stop without retry")
+        write(folder/"complete.json", dict(calls=8, elapsed_s=time.perf_counter()-started_all))
+    except Exception as exc:
+        write(folder/"failure.json", dict(error=repr(exc), elapsed_s=time.perf_counter()-started_all))
+        raise
+    finally:
+        worker.tokenizer.batch_decode = original_decode
+
+
+def analyze(output):
+    from PIL import Image, ImageDraw
+
+    root = Path(output)
+    registration, inputs = load_inputs(root)
+    require((root/"inference/complete.json").exists(), "seal inference before inspecting predictions")
+    geometry = frozen_geometry(registration["config"]["geometry_config"])
+    folder = root/"association"
+    folder.mkdir(exist_ok=False)
+    summaries = []
+    for frame in inputs["frames"]:
+        view = next(v for _, views in replay_frames(root/frame["recording"]) for v in views
+                    if v["camera_id"] == frame["camera_id"])
+        require(hashlib.sha256(view["rgb"].tobytes()).hexdigest() == frame["rgb_sha256"], "source changed")
+        require(content_hash(sensor_view_identity(view)) == frame["sensor_view_sha256"], "sensor view changed")
+        for entity, camera in registration["config"]["entity_cameras"].items():
+            if camera != frame["camera_id"]:
+                continue
+            stem = f"init-{frame['init_index']:03d}-{entity}"
+            box = json.loads((root/"inference"/f"{stem}-box-response.json").read_text())
+            point_path = root/"inference"/f"{stem}-point-response.json"
+            point = json.loads(point_path.read_text())
+            boxes = box["parsed"]["boxes"] if box["parsed"]["status"] in {"single_box", "multiple_boxes"} else []
+            xy = [p["continuous_xy"] for p in point["parsed"]["points"]] if point["parsed"]["status"] == "single_point" else []
+            inventories, bindings, matches, surfaces = [], [], [], []
+            overlay = view["rgb"].copy()
+            for index, region in enumerate(boxes):
+                inventory = inventory_surfaces(view, region["continuous_xyxy"], config=geometry, seed=0)
+                write(folder/f"{stem}-roi{index}-inventory.json", inventory.evidence())
+                binding = associate_point(inventory, dict(frame_id=frame["frame_id"], camera_id=camera,
+                    rgb_sha256=frame["rgb_sha256"], calibration_version=frame["calibration_version"],
+                    sensor_view_sha256=frame["sensor_view_sha256"], parsed_status=point["parsed"]["status"],
+                    query=QUERIES[entity], response_sha256=file_hash(point_path), evaluation_labels_used=False,
+                    generation_complete=point["audit"]["complete_generation"], points_xy=xy))
+                inventories.append(dict(roi_index=index, surfaces=len(inventory.surfaces),
+                    residual_pixels=int(inventory.residual_mask.sum())))
+                bindings.append(binding)
+                for surface in inventory.surfaces:
+                    color = np.array([(53+index*71+len(surfaces)*37)%256,
+                                      (151+len(surfaces)*61)%256, (227+len(surfaces)*83)%256])
+                    overlay[surface.support_mask] = (.6*overlay[surface.support_mask]+.4*color).astype(np.uint8)
+                    surfaces.append(surface)
+                    if surface.surface_id in binding["matching_surface_ids"]:
+                        matches.append(surface)
+            result = dict(entity=entity, frame=frame, inventories=inventories, bindings=bindings,
+                          point_xy=xy, association_status="UNKNOWN", tracker_status="NOT_INITIALIZED",
+                          semantic_identity_verified=False, verify_status="UNKNOWN", for_execution=False,
+                          reason="NO_SINGLE_SUPPORTED_POINT")
+            # Cross-ROI ambiguity remains ambiguity, even for overlapping boxes.
+            if len(matches) > 1:
+                result.update(association_status="AMBIGUOUS", reason="MULTIPLE_ROI_SURFACE_SUPPORTS")
+            elif len(matches) == 1 and any(b["status"] == "BOUND_HYPOTHESIS" for b in bindings):
+                result.update(association_status="BOUND_HYPOTHESIS", reason=None)
+                rectangle = tracker_seed_rectangle(matches[0], xy[0], tracker_config=TrackerConfig())
+                result["seed_rectangle_xyxy"] = rectangle
+                if rectangle is not None:
+                    tracker = VisualTracker(f"surface-dev/{stem}")
+                    tracked = tracker.initialize(view, rectangle, query=QUERIES[entity], seed_source="semantic_query",
+                        now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
+                    result.update(tracker_status=tracked.status, tracker_evidence=asdict(tracked),
+                                  clock_condition="offline capture clock; not a live freshness claim")
+                else:
+                    result["reason"] = "NO_SUPPORT_CONTAINED_TRACKER_RECTANGLE"
+            image = Image.fromarray(overlay)
+            draw = ImageDraw.Draw(image)
+            for b in boxes:
+                draw.rectangle(b["continuous_xyxy"], outline="yellow", width=2)
+            for p in xy:
+                x, y = p
+                draw.ellipse((x-3, y-3, x+3, y+3), fill="red")
+            image.save(folder/f"{stem}-overlay.png")
+            write(folder/f"{stem}-result.json", result)
+            summaries.append(result)
+            print(json.dumps(dict(case=stem, association=result["association_status"],
+                                  tracker=result["tracker_status"], inventories=inventories)), flush=True)
+    write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN",
+                                      no_policy_or_control=True))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("phase", choices=("capture", "infer", "analyze"))
+    parser.add_argument("--output", required=True)
+    args = parser.parse_args()
+    {"capture": capture, "infer": infer, "analyze": analyze}[args.phase](args.output)
+
+
+if __name__ == "__main__":
+    main()
