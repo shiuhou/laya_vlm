@@ -1,0 +1,27 @@
+{
+  "source_evidence_unchanged": true,
+  "source_files_verified": 27,
+  "existing_cpu_and_gpu_model_inputs_equal": [
+    "fixed_reference_box",
+    "fixed_reference_point"
+  ],
+  "started_calls": 2,
+  "complete_eos_calls": 1,
+  "failed_calls": 1,
+  "unstarted_calls": 6,
+  "failure_boundary": "init25 agentview fixed_cabinet_reference POINT; mixed output at output token ceiling without EOS",
+  "input_truncation": false,
+  "output_truncation": true,
+  "point_prefix_not_salvaged": true,
+  "surface_association": "NOT_EVALUATED",
+  "tracker": "NOT_TESTED",
+  "fixed_reference_observability": "UNKNOWN",
+  "no_further_inference": true,
+  "no_hidden_retry": true,
+  "no_geometry_or_model_settings_changed": true,
+  "model_oom": false,
+  "controller_failure": false,
+  "evidence_commit": "1af81e4",
+  "queries_file_sha256": "b90ad28587f22fd4c14a5802cbaeffe315ab156193a6ac8e8f3b100b9a18a8d4",
+  "geometry_file_sha256": "7f9795086d0406287aa60492a22dfd9f338c58c5cf5f25b0cab6316df1d57d85"
+}

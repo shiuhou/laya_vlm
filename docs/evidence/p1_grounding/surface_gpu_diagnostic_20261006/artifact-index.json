@@ -1,0 +1,20 @@
+{
+  "archive": "gpu-diagnostic-evidence.tar.gz",
+  "archive_sha256": "4440659f1bf3f53b95e8215f882dd76244becf237094d90b3c4e6a66ecbc4150",
+  "archive_bytes": 94575,
+  "files_sha256": {
+    "inference/failure.json": "72d6e8ec09957067cf38536c92df7c5138dd079059df357d750610356e075646",
+    "inference/init-025-fixed_cabinet_reference-box-request.json": "bb186b47846492dbb1a438bd2a1c5358ce380007f0a93dfae96636576f72f3ec",
+    "inference/init-025-fixed_cabinet_reference-box-response.json": "930736f191dea5759199db23a3a646d5c830dc38d1939ad81cedf0969506c888",
+    "inference/init-025-fixed_cabinet_reference-point-request.json": "8d1eae4fc7a300f8c75de3b405a5f6a669eefbf185b8716ee1d7ef597f29baf5",
+    "inference/init-025-fixed_cabinet_reference-point-response.json": "2d30f17d0ac62953c1bf530c1cf2e9a43ca8a3f7c13ae5debb439fd5fd8f03e5",
+    "inference/loading.json": "6ef26dc175464d53bed79deea95e9df587c7896b1da78718660f5707448d05ba",
+    "inference/model_config.json": "16612090f60ee9cb509091b9e4b1c5deb4a23b13e48c21f5ef92d65751c46eb2",
+    "inference/stopped-seal.json": "fdde2de03b343e8994239e1355451714b2bb40ed33699e1deed0e74f8a73045d",
+    "launch/gpu-preflight.csv": "40d611ec5495f65c881cd29461f034b81dbaab31254872b68883d19cbd1c1af4",
+    "launch/inference-runtime.log": "072e5e1904f302670d126ef3c081ebd614ccf15d1fccc972a82343b249a81fe7",
+    "launch/registration.json": "33a2e0e99c4eeb29a33b4873dad2aff1c9a93ee1779bad85cc6a7bef5480369c",
+    "review/diagnosis.json": "adea24bfa8c6e4d9bb1cc1b7e96e5ea161aa99b4b77d0c1c46391865f9964005",
+    "review/reference-box-rgb.png": "e79646828a40d2fd75d27046f2553581b599d85ae454555d49ff59e025fc222b"
+  }
+}

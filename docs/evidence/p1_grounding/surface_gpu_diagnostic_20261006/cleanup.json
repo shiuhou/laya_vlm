@@ -1,0 +1,7 @@
+[
+  {
+    "removed": "/tmp/laya-surface-gpu-hf",
+    "bytes": 332195,
+    "reason": "process-specific trusted-module cache after model process exited; canonical checkpoint and evidence retained"
+  }
+]

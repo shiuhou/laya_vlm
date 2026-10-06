@@ -1,0 +1,19 @@
+{
+  "registered_at_utc": "2026-10-06T15:52:14.694399+00:00",
+  "source": "runs/p1/surface-dev-20261006-capture02",
+  "source_registration_sha256": "9b805e1246548e49858cf0ec64ab2f5495b1b9a350f55f658e6a4c8b435f1a91",
+  "source_inputs_sha256": "ad2dc1f0cd803035b2d19255c9a0b20797a5df930c4d755954717d3d6e98971c",
+  "gpu_uuid": "GPU-293fca5f-bdb8-2235-fa2e-18ab6c488b36",
+  "physical_index_at_preflight": 2,
+  "logical_device": "cuda:0",
+  "model_calls": 8,
+  "process_ceiling_s": 900,
+  "shared_gpu": true,
+  "timing_is_not_exclusive_throughput": true,
+  "dtype": "bfloat16",
+  "intervention": "execution device only; all original input/query/generation/geometry conditions fixed",
+  "inference_output": "runs/p1/surface-dev-gpu-20261006",
+  "association_stage": "first, no tracker initialized",
+  "fixed_reference_gate": "independent observability after successful association; no PUSH",
+  "original_files_verified": 27
+}

@@ -147,3 +147,11 @@ historical results or gates. Fresh init 25/26 capture succeeded, but a CPU-only
 900-second inference ceiling left no complete BOX/POINT pair. Real-data surface
 association/tracker acceptance therefore remains untested; no PUSH/model
 integration follows from the implementation tests.
+
+After GPU access was restored, the [frozen-input GPU continuation](evidence/p1_grounding/surface_gpu_diagnostic_20261006/README.md)
+started at clean `1af81e4`. Its first fixed-reference BOX completed; its first
+POINT mixed one point with 35 boxes and exhausted 256 output tokens without EOS.
+The preregistered stop ended the batch at two calls. No surface association or
+tracker analysis ran, and the six remaining calls were not started. This new
+boundary is incomplete model generation before geometry, not evidence against
+the geometry mechanism or permission to salvage a prefix/change the condition.

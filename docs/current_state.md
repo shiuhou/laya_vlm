@@ -21,12 +21,15 @@ records fresh capture success and a CPU inference ceiling: only one BOX complete
 in 816 seconds; no complete POINT/pair exists, so association and tracker
 initialization on real development frames remain untested. The tools and four
 focused correctness tests are complete; P1 task acceptance remains pending.
-The [GPU continuation preflight](evidence/p1_grounding/surface_gpu_preflight_20261006/README.md)
-still exposes zero usable CUDA devices in this session. Frozen source evidence
-is unchanged. A separate UUID-allocated GPU output and association-first entry
-point are prepared; no GPU inference, surface acceptance or tracker test has
-occurred. Independent fixed cabinet reference observability remains the gate
-after successful association, not PUSH.
+The [earlier GPU preflight](evidence/p1_grounding/surface_gpu_preflight_20261006/README.md)
+was blocked by the session's device sandbox. GPU access is now restored. The
+[frozen-input GPU diagnostic](evidence/p1_grounding/surface_gpu_diagnostic_20261006/README.md)
+ran at `1af81e4` on UUID-allocated GPU 2 and stopped after its first reference
+POINT produced mixed output at the 256-token ceiling without EOS. Only two of
+eight calls ran; no valid pair, drawer-front surface acceptance, geometry analysis
+or tracker test exists. Original recorded evidence/queries/gates remain unchanged.
+Independent fixed cabinet reference observability remains the gate after
+successful association, not PUSH. P1 acceptance remains pending.
 
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed
