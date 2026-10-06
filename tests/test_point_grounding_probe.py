@@ -125,3 +125,17 @@ def test_model_config_nested_torch_dtype_conversion_is_explicit_and_reversible()
     assert result['value']['label']=='torch.bfloat16'
     with pytest.raises(TypeError,match='unsupported config value'):
         serialize_model_config({'unexpected':object()})
+
+
+def test_independent_output_budget_is_audited_without_changing_frozen_default_or_typed_contract():
+    from embodied_runtime.experiments.point_grounding_probe import SETTINGS
+    from embodied_runtime.perception.semantic_output import parse_semantic_reply
+    ids = [7]*300+[99]
+    extended = generation_audit(ids, 209, 16384, 99, max_new_tokens=1024)
+    raw = '<box><500><500></box><|im_end|>'
+    assert parse_semantic_reply(raw, 384, 256, mode='point', audit=extended).admitted
+    old = generation_audit(ids, 209, 16384, 99)
+    assert old['effective_limit'] == SETTINGS['max_new_tokens'] == 256
+    assert not parse_semantic_reply(raw, 384, 256, mode='point', audit=old).admitted
+    incomplete = generation_audit([7]*1024, 209, 16384, 99, max_new_tokens=1024)
+    assert incomplete['length_limit_reached'] and not incomplete['complete_generation']

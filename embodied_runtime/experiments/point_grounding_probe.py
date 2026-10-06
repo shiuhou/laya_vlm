@@ -65,8 +65,11 @@ def parse_grounding(raw, width, height):
             'invalid': invalid, 'confidence': None}
 
 
-def generation_audit(ids, input_count, model_max_length, eos_token_id):
-    limit = min(SETTINGS['max_new_tokens'], model_max_length-input_count)
+def generation_audit(ids, input_count, model_max_length, eos_token_id, *, max_new_tokens=None):
+    budget = SETTINGS['max_new_tokens'] if max_new_tokens is None else max_new_tokens
+    if type(budget) is not int or budget <= 0:
+        raise ValueError('positive integer output budget required')
+    limit = min(budget, model_max_length-input_count)
     eos = bool(ids) and ids[-1] == eos_token_id
     return {'actual_generated_token_ids': ids, 'actual_generated_token_count': len(ids),
             'input_token_count': input_count, 'model_max_length': model_max_length, 'eos_token_id': eos_token_id,

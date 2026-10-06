@@ -1,0 +1,13 @@
+{
+  "frozen_at_utc": "2026-10-06T17:45:04.829122+00:00",
+  "infrastructure_commit": "ab361eb14cb5a207d5fe713903504c964908bf30",
+  "evidence_commit": "065ad2bbc8707924edee0a19c6f3ea2170e1a498",
+  "infrastructure_tag": "p1-tracker-infrastructure-ab361eb",
+  "evidence_tag": "p1-tracker-evidence-065ad2b",
+  "archive_sha256": "4588d8b9fece42c57d4c5340e870202f397abba6cf26b8900f98174113b2b7c3",
+  "artifact_index_sha256": "7d0f64dfaf9fd999205e198ad768d7a7551d3cb3d073f19fd763225b891f9e8b",
+  "raw_seal_sha256": "a1806893c98bbb5b15fbfa9c31de40011f4ed313da22ebea9b975d709bda46d6",
+  "raw_files_verified": 13,
+  "scope": "drawer static tracker initialization only; fixed reference and VERIFY UNKNOWN",
+  "historical_files_not_overwritten": true
+}
