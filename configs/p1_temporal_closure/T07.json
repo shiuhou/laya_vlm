@@ -1,0 +1,52 @@
+{
+  "revision": "p1-temporal-observability-closure/1",
+  "case_id": "T07",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_index": 6,
+  "camera_names": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "width": 384,
+  "height": 256,
+  "static_evidence_sha256": "8efcf8533e8b5a13172e8a625d4e335a5eba5690c6011e42561cad02fc26737e",
+  "operations": [
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "hold",
+      "fixture": {
+        "kind": "slide_joint_offset",
+        "name": "wooden_cabinet_1_top_level",
+        "delta": 0.01,
+        "ramp_controls": 8
+      }
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    }
+  ],
+  "max_controls": 56,
+  "description": "Evaluator-only actual drawer motion; fixture data isolated from perception, not manipulation competence."
+}

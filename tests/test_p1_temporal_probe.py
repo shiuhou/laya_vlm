@@ -1,6 +1,7 @@
 """Unit fixtures below are not real temporal-sequence evidence."""
 from copy import deepcopy
 import json
+from pathlib import Path
 from types import SimpleNamespace as NS
 
 import numpy as np
@@ -176,3 +177,47 @@ def test_seed_mismatch_or_evaluation_label_input_rejected(tmp_path,mutation):
         seeds["seeds"][0]["artifact_sha256"] = file_hash(artifact)
     with pytest.raises(ProtocolError):
         analyze(root,seeds,tmp_path/"analysis")
+
+
+def test_geometry_seed_binds_complete_source_and_rejects_oracle_evidence(tmp_path):
+    from embodied_runtime.perception.recording import replay_frames
+    from embodied_runtime.perception.surface_association import sensor_view_identity
+
+    root, seeds = recording(tmp_path)
+    env, views = next(replay_frames(root))
+    view = dict(views[0], frame_id=views[0]["canonical_frame_id"], episode_id=env.episode_id)
+    seed = seeds["seeds"][0]
+    artifact = Path(seed["artifact_uri"])
+    evidence = dict(source_identity=sensor_view_identity(view), feature_candidate_id="sensor/support-1",
+                    roi_xyxy_px=seed["roi_xyxy_px"], evaluation_labels_used=False, oracle_inputs=False,
+                    association_status="BOUND_HYPOTHESIS")
+    evidence_path = tmp_path / "association.json"
+    evidence_path.write_text(json.dumps(evidence))
+    bound = json.loads(artifact.read_text())
+    bound.update(seed_source="sensor_geometry", oracle_inputs=False, for_execution=False,
+                 source_identity=evidence["source_identity"], feature_candidate_id=evidence["feature_candidate_id"],
+                 association_status="BOUND_HYPOTHESIS", association_evidence_uri=str(evidence_path),
+                 association_evidence_sha256=file_hash(evidence_path))
+    artifact.write_text(json.dumps(bound))
+    seed["artifact_sha256"] = file_hash(artifact)
+    seeds["condition"] = "sensor_geometry_seed"
+    summary = analyze(root, seeds, tmp_path / "geometry-analysis")
+    assert summary["bundles"] == 2 and not summary["evaluator_truth_read"]
+    rows = [json.loads(line) for line in (tmp_path/"geometry-analysis/perception.jsonl").read_text().splitlines()]
+    assert all(row["track"]["seed_source"] == "sensor_geometry" for row in rows if row["kind"] == "surface")
+    evidence["oracle_inputs"] = True
+    evidence_path.write_text(json.dumps(evidence))
+    bound["association_evidence_sha256"] = file_hash(evidence_path)
+    artifact.write_text(json.dumps(bound))
+    seed["artifact_sha256"] = file_hash(artifact)
+    with pytest.raises(ProtocolError, match="INFORMATION_BOUNDARY"):
+        analyze(root, seeds, tmp_path / "rejected-analysis")
+
+
+def test_unsupported_occlusion_case_preserves_observations_without_arbitrary_motion():
+    value = config()
+    value["predeclared_boundary"] = dict(status="ACQUISITION_UNSUPPORTED", reason_codes=["NO_BOUND_FEATURE"])
+    assert validate_config(value) is value
+    value["operations"][1]["primitive"] = "y+40mm"
+    with pytest.raises(ProtocolError):
+        validate_config(value)

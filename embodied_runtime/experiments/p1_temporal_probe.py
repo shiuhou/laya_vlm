@@ -23,6 +23,7 @@ from ..perception.recording import FrameRecorder, replay_frames
 from ..perception.relative_verify import RelativeSurfaceVerifier, SurfaceEvidence
 from ..perception.rgbd_geometry import GeometryConfig, estimate_visible_patch
 from ..perception.visual_tracker import VisualTracker
+from ..perception.surface_association import sensor_view_identity
 from .p1_rgbd_probe import identity
 
 
@@ -36,7 +37,16 @@ def file_hash(path):
 def validate_config(config):
     required = {"revision", "case_id", "task", "seed", "init_index", "camera_names", "width", "height",
                 "operations", "static_evidence_sha256", "max_controls", "description"}
-    require(set(config) == required, "temporal acquisition config fields")
+    require(required <= set(config) <= required | {"predeclared_boundary"}, "temporal acquisition config fields")
+    if "predeclared_boundary" in config:
+        boundary = config["predeclared_boundary"]
+        require(set(boundary) == {"status", "reason_codes"}
+                and boundary["status"] == "ACQUISITION_UNSUPPORTED"
+                and isinstance(boundary["reason_codes"], list) and bool(boundary["reason_codes"])
+                and all(isinstance(reason, str) and reason for reason in boundary["reason_codes"]),
+                "explicit unsupported acquisition boundary")
+        require(all(op.get("primitive") == "hold" and op.get("fixture") is None for op in config["operations"]),
+                "unsupported case may only capture fresh contact-guarded HOLD observations")
     require(config["case_id"] in CASES and config["task"] == "top_drawer", "declared temporal task/case")
     require(type(config["seed"]) is int and type(config["init_index"]) is int and config["init_index"] >= 0,
             "seed and benchmark init")
@@ -265,7 +275,13 @@ def acquire(config, output, *, static_evidence, capture_observer=None, observer_
                                  "actual_controls": tap.controls-before, "original_executor_steps": result["steps"]})
                         if tap.controls-before != 8:
                             raise AcquisitionStop("EXISTING_EXECUTOR_EARLY_RETURN")
-                    summary["status"] = "ACQUIRED_UNINSPECTED"
+                    if config.get("predeclared_boundary"):
+                        summary.update(status="ACQUISITION_UNSUPPORTED",
+                            first_boundary=";".join(config["predeclared_boundary"]["reason_codes"]),
+                            unsupported_reason_codes=config["predeclared_boundary"]["reason_codes"],
+                            intended_event_occurred=False)
+                    else:
+                        summary["status"] = "ACQUIRED_UNINSPECTED"
                 except AcquisitionStop as exc:
                     summary.update(status="STOPPED_BOUNDARY", first_boundary=str(exc))
                 finally:
@@ -304,7 +320,7 @@ def analyze(recording, seeds, output, *, geometry_config=None):
     can explicitly reseed after loss, but no recovery is invented here.
     """
     geometry_config = geometry_config or GeometryConfig()
-    require(seeds.get("condition") in {"real_model_seed", "declared_diagnostic_seed"}, "seed condition")
+    require(seeds.get("condition") in {"real_model_seed", "declared_diagnostic_seed", "sensor_geometry_seed"}, "seed condition")
     require(set(seeds) == {"condition", "recording_frames_sha256", "seeds"}, "seed file fields")
     require(file_hash(Path(recording)/"frames.jsonl") == seeds["recording_frames_sha256"], "seed recording mismatch")
     indexed = {}
@@ -323,6 +339,28 @@ def analyze(recording, seeds, output, *, geometry_config=None):
         if seeds["condition"] == "real_model_seed":
             require(bound.get("seed_source") == "real_model" and bound.get("evaluation_labels_used") is False,
                     "real-model seed provenance required")
+        if seeds["condition"] == "sensor_geometry_seed":
+            require(bound.get("seed_source") == "sensor_geometry" and bound.get("evaluation_labels_used") is False,
+                    "sensor-geometry seed provenance required", "INFORMATION_BOUNDARY")
+            require(bound.get("oracle_inputs") is False and bound.get("for_execution") is False,
+                    "sensor-only observational seed required", "INFORMATION_BOUNDARY")
+            require(isinstance(bound.get("source_identity"), dict)
+                    and isinstance(bound.get("feature_candidate_id"), str) and bound["feature_candidate_id"],
+                    "source-bound geometry candidate identity required")
+            require(bound.get("association_status") == "BOUND_HYPOTHESIS",
+                    "unique geometry hypothesis association required")
+            evidence_uri = Path(bound.get("association_evidence_uri", ""))
+            require(evidence_uri.is_absolute() and evidence_uri.is_file(), "geometry association evidence required")
+            require(file_hash(evidence_uri) == bound.get("association_evidence_sha256"),
+                    "geometry association evidence checksum mismatch")
+            evidence = json.loads(evidence_uri.read_text())
+            require(evidence.get("evaluation_labels_used") is False and evidence.get("oracle_inputs") is False,
+                    "geometry association evidence cannot use labels or oracle", "INFORMATION_BOUNDARY")
+            require(evidence.get("source_identity") == bound["source_identity"]
+                    and evidence.get("feature_candidate_id") == bound["feature_candidate_id"]
+                    and evidence.get("roi_xyxy_px") == bound["roi_xyxy_px"]
+                    and evidence.get("association_status") == "BOUND_HYPOTHESIS",
+                    "geometry association evidence binding mismatch")
         key = seed["camera_id"], seed["role"], seed["source_frame_id"]
         require(key not in indexed, "duplicate seed")
         indexed[key] = seed
@@ -338,7 +376,9 @@ def analyze(recording, seeds, output, *, geometry_config=None):
         for env, views in replay_frames(recording):
             bundles += 1
             for original in views:
-                view = dict(original, frame_id=original["canonical_frame_id"])
+                # Recording envelope owns the replay episode. Keep the sensor's
+                # original source ID in the unchanged recording identity chain.
+                view = dict(original, frame_id=original["canonical_frame_id"], episode_id=env.episode_id)
                 camera, surfaces = view["camera_id"], {}
                 for role in ("face", "reference"):
                     key = camera, role
@@ -347,11 +387,16 @@ def analyze(recording, seeds, output, *, geometry_config=None):
                     tracker = trackers.get(key)
                     start = time.monotonic_ns()
                     if seed is not None:
+                        if seeds["condition"] == "sensor_geometry_seed":
+                            bound = json.loads(Path(seed["artifact_uri"]).read_text())
+                            require(bound["source_identity"] == sensor_view_identity(view),
+                                    "geometry seed sensor source mismatch", "SOURCE_MISMATCH")
                         used.add(seed_key)
                         tracker = tracker or VisualTracker(env.episode_id, track_id=f"{camera}/{role}", feature_id="visible-plane")
                         trackers[key] = tracker
                         track = tracker.initialize(view, seed["roi_xyxy_px"], query=seed["query"],
-                            seed_source="semantic_query" if seeds["condition"] == "real_model_seed" else "manual_seed",
+                            seed_source={"real_model_seed": "semantic_query", "declared_diagnostic_seed": "manual_seed",
+                                         "sensor_geometry_seed": "sensor_geometry"}[seeds["condition"]],
                             now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
                     elif tracker is None:
                         counts[f"{camera}/{role}/UNSEEDED"] += 1

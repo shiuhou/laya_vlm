@@ -1,0 +1,54 @@
+{
+  "revision": "p1-temporal-observability-closure/1",
+  "case_id": "T10",
+  "task": "top_drawer",
+  "seed": 1,
+  "init_index": 9,
+  "camera_names": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "width": 384,
+  "height": 256,
+  "static_evidence_sha256": "8efcf8533e8b5a13172e8a625d4e335a5eba5690c6011e42561cad02fc26737e",
+  "predeclared_boundary": {
+    "status": "ACQUISITION_UNSUPPORTED",
+    "reason_codes": [
+      "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+      "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+      "REAL_ASYNC_SEMANTIC_REPLY_NOT_CONFIGURED"
+    ]
+  },
+  "operations": [
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "pre",
+      "primitive": "hold"
+    },
+    {
+      "phase": "boundary",
+      "primitive": "hold"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    },
+    {
+      "phase": "post",
+      "primitive": "hold"
+    }
+  ],
+  "max_controls": 56,
+  "description": "Unsupported occlusion/delayed semantic reply precondition. Fresh pre/boundary/post HOLD observations only; ZERO claimed event coverage."
+}

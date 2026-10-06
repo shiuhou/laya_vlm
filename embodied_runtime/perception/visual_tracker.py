@@ -230,7 +230,7 @@ class VisualTracker:
     def initialize(self, frame, roi_xyxy_px, *, query, seed_source="manual_seed",
                    now_sim_time_s, now_monotonic_ns):
         rgb, depth, k, transform, digest = self._frame(frame, now_sim_time_s, now_monotonic_ns)
-        _require(seed_source in ("manual_seed", "semantic_query") and isinstance(query, str) and query,
+        _require(seed_source in ("manual_seed", "semantic_query", "sensor_geometry") and isinstance(query, str) and query,
                  "EXPLICIT_SEED_REQUIRED")
         roi = np.asarray(roi_xyxy_px, dtype=float)
         _require(roi.shape == (4,) and np.isfinite(roi).all() and 0 <= roi[0] < roi[2] <= rgb.shape[1]
