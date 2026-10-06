@@ -245,11 +245,29 @@ def semantic_pair(box, point, frame, entity, *, semantic_contract):
                 typed={mode: r.evidence() for mode, r in replies.items()})
 
 
-def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False, semantic_contract="legacy"):
+def reviewed_association(path):
+    """Pin a prior surface review; never supply geometry or a replacement anchor."""
+    review = json.loads(Path(path).read_text())
+    prior_path = Path(review["association_result"])
+    require(file_hash(prior_path) == review["association_result_sha256"], "reviewed association changed")
+    prior = json.loads(prior_path.read_text())
+    require(review["evaluation_labels_used"] is False and review["review_basis"] == "agent_development_rgb_support_review"
+            and review["requested_surface_status"] == "SUPPORTED_VISIBLE_DRAWER_FRONT",
+            "requested surface review required; no evaluation labels")
+    require(prior["semantic_contract"] == "typed-v1" and prior["association_status"] == "BOUND_HYPOTHESIS"
+            and prior["point_format_admitted"] is True, "review requires a previously admitted bound hypothesis")
+    return prior
+
+
+def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False, semantic_contract="legacy",
+            association_review=None):
     from PIL import Image, ImageDraw
 
-    require(semantic_contract != "typed-v1" or not test_tracker,
+    require(association_review is None or (semantic_contract == "typed-v1" and test_tracker),
+            "association review applies only to a separate typed tracker stage")
+    require(semantic_contract != "typed-v1" or not test_tracker or association_review is not None,
             "typed association requires separate requested-surface review before tracker initialization")
+    prior_association = reviewed_association(association_review) if association_review is not None else None
     root = Path(output)
     registration, inputs = load_inputs(root)
     require(registration["config"]["width"] == 384 and registration["config"]["height"] == 256,
@@ -348,6 +366,13 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                 if not test_tracker:
                     result["tracker_status"] = "NOT_TESTED_ASSOCIATION_REVIEW_FIRST"
                 else:
+                    if semantic_contract == "typed-v1":
+                        require(prior_association["frame"] == frame and prior_association["entity"] == entity
+                                and prior_association["point_xy"] == xy
+                                and prior_association["bindings"] == bindings
+                                and all(prior_association[key] == semantic_evidence[key]
+                                        for key in ("box_response_sha256", "point_response_sha256")),
+                                "tracker must use the exact reviewed association", "SOURCE_MISMATCH")
                     rectangle = tracker_seed_rectangle(matches[0], xy[0], tracker_config=TrackerConfig())
                     result["seed_rectangle_xyxy"] = rectangle
                     if rectangle is not None:
@@ -373,6 +398,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
     write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN", code=code_identity(),
                                       no_policy_or_control=True, tracker_test_explicitly_requested=test_tracker,
                                       semantic_contract=semantic_contract,
+                                      association_review_sha256=file_hash(association_review) if association_review else None,
                                       semantic_protocol_sha256=file_hash("docs/research/p1_semantic_output_contract_repair.md")
                                           if semantic_contract == "typed-v1" else None,
                                       selected_pair=selected_pair, registered_total_calls=registration["model_calls"],
@@ -390,7 +416,9 @@ def main():
     parser.add_argument("--pair", help="newly preregistered single-pair scope; original frozen inputs/settings unchanged")
     parser.add_argument("--semantic-contract", choices=("legacy", "typed-v1"), default="legacy",
                         help="explicit new-condition typed admission; legacy results remain unchanged")
+    parser.add_argument("--association-review", help="pinned prior RGB/support review required for typed tracker stage")
     args = parser.parse_args()
+    require(args.association_review is None or args.phase == "analyze", "review is analysis-only")
     if args.phase == "capture":
         require(args.device == "cpu" and args.inference_dir is None and args.analysis_dir is None
                 and not args.test_tracker and args.pair is None and args.semantic_contract == "legacy", "capture has no execution overrides")
@@ -401,7 +429,8 @@ def main():
     else:
         require(args.device == "cpu" and args.pair is None, "analysis uses sealed inference scope; no manual rescope")
         analyze(args.output, inference_dir=args.inference_dir, analysis_dir=args.analysis_dir,
-                test_tracker=args.test_tracker, semantic_contract=args.semantic_contract)
+                test_tracker=args.test_tracker, semantic_contract=args.semantic_contract,
+                association_review=args.association_review)
 
 
 if __name__ == "__main__":

@@ -90,3 +90,30 @@ def test_pair_source_mismatch_rejected():
     with pytest.raises(ProtocolError, match='SOURCE_MISMATCH'):
         semantic_pair(response(BOX+EOS, 'box'), response(POINT+EOS, 'point'), {'frame_id': 'other'},
                       'drawer_front_pushable', semantic_contract='typed-v1')
+
+
+def test_typed_tracker_cannot_bypass_prior_association_review():
+    from embodied_runtime.contracts import ProtocolError
+    from embodied_runtime.experiments.p1_surface_dev import analyze
+    with pytest.raises(ProtocolError, match='separate requested-surface review'):
+        analyze('unused', semantic_contract='typed-v1', test_tracker=True)
+
+
+def test_review_must_pin_an_admitted_prior_result_and_cannot_seed_from_labels(tmp_path):
+    import json
+    from embodied_runtime.contracts import ProtocolError
+    from embodied_runtime.experiments.p1_surface_dev import reviewed_association
+    from embodied_runtime.experiments.records import file_hash
+    prior = tmp_path/'prior.json'
+    prior.write_text(json.dumps(dict(semantic_contract='typed-v1', association_status='UNKNOWN',
+                                    point_format_admitted=True)))
+    review = dict(association_result=str(prior), association_result_sha256=file_hash(prior),
+                  evaluation_labels_used=False, review_basis='agent_development_rgb_support_review',
+                  requested_surface_status='SUPPORTED_VISIBLE_DRAWER_FRONT')
+    path = tmp_path/'review.json'
+    path.write_text(json.dumps(review))
+    with pytest.raises(ProtocolError, match='previously admitted bound'):
+        reviewed_association(path)
+    path.write_text(json.dumps({**review, 'evaluation_labels_used': True}))
+    with pytest.raises(ProtocolError, match='no evaluation labels'):
+        reviewed_association(path)
