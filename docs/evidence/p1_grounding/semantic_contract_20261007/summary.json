@@ -1,0 +1,69 @@
+{
+  "condition": "p1-semantic-output/typed-v1",
+  "historical_evidence_revision": "f2af8d8",
+  "association_code": "dbeacd9c4058d748546f6c411d92a702222423a2",
+  "tracker_attempt_code": "3e5bd6a49fc8cf0e20deb70c2d431e8746162f98",
+  "new_inference_calls": 0,
+  "legacy": {
+    "point_parse_status": "mixed",
+    "point_admission": false,
+    "association": "UNKNOWN"
+  },
+  "typed": {
+    "point_admission": true,
+    "box_admission": true,
+    "point_atoms": 1,
+    "auxiliary_box_atoms_in_point_reply": 1,
+    "roi_source": "separate BOX call only",
+    "roi_count": 1,
+    "point_xy": [
+      257.664,
+      62.976
+    ],
+    "surface_hypotheses": 5,
+    "matching_surfaces": 1,
+    "association": "BOUND_HYPOTHESIS",
+    "surface_id": "p1-surface-dev/init25/robot0_eye_in_hand/1/b7f16f16b7f6949965eed845f96275c9774836f9f960b3a7afdc9d4bda3f5090/surface-0",
+    "support_pixel_count": 2625,
+    "rms_m": 0.0009401664608275094,
+    "normal_base": [
+      -0.00032106941278027247,
+      0.9997355622562195,
+      0.02299353114841396
+    ],
+    "plane_valid": true,
+    "requested_surface_review": "SUPPORTED_VISIBLE_DRAWER_FRONT (two-agent development RGB interpretation)",
+    "semantic_identity_verified": false,
+    "for_execution": false
+  },
+  "tracker": {
+    "attempts": 1,
+    "status": "NOT_INITIALIZED_WRONG_EPISODE",
+    "first_failure": "WRONG_EPISODE",
+    "quality_evaluated": false,
+    "retries": 0,
+    "failure_is_preexisting_experiment_harness_mismatch": true
+  },
+  "fixed_reference": {
+    "stage_started": false,
+    "status": "UNKNOWN",
+    "verify": "UNKNOWN"
+  },
+  "protected_inputs": {
+    "original_source_files_verified": 27,
+    "inference_files_verified": 6,
+    "verification_before_and_after": true,
+    "queries_model_geometry_tracker_unchanged": true,
+    "prior_and_tracker_attempt_inventory_byte_identical": true
+  },
+  "tests": {
+    "new_schema_and_review_tests_latest": 33,
+    "existing_regression_tests": 23,
+    "unique_focused_tests_passed": 56,
+    "initial_cpu_env_missing_torch_test_failed": 1,
+    "same_existing_torch_test_passed_in_checkpoint_env": true,
+    "ruff_passed": true,
+    "broad_suite_run": false
+  },
+  "next_boundary": "Fix experiment-harness episode identity before separately registered tracker rerun; no reference/PUSH yet"
+}

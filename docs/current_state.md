@@ -41,6 +41,17 @@ the earlier original eight-call batch remains incomplete. No model/query/gate
 change or further inference followed. Surface association, reference/VERIFY and
 P1 acceptance remain unestablished.
 
+The [2026-10-07 typed semantic-output contract repair](evidence/p1_grounding/semantic_contract_20261007/README.md)
+reuses the exact `f2af8d8` sealed drawer pair with no new inference. Under the
+separately preregistered typed condition, one POINT is admitted and its auxiliary
+BOX retained without becoming an ROI. The unchanged independent BOX search
+binds one valid vertical support; two-agent RGB review supports the visible
+drawer-front interpretation (development evidence, not verified identity).
+The first separate tracker initialization at `3e5bd6a` raises `WRONG_EPISODE`:
+existing harness episode differs from the recorded frame. No tracker result,
+retry or reference stage follows. Source/query/model/geometry/tracker gates stay
+unchanged. Fixed reference/VERIFY and P1 task acceptance remain UNKNOWN/pending.
+
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed
 selected implementation work above.

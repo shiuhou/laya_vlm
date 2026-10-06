@@ -1,0 +1,31 @@
+{
+  "archive": "typed-contract-evidence.tar.gz",
+  "archive_sha256": "cb4f914e3d88b736cfd7f16ed9b5559fc7b104378b5f2a1c885c1e0917af81fe",
+  "archive_bytes": 276324,
+  "files_sha256": {
+    "condition/association-review.json": "8652988d800d4493cd5c070051484cbdf01f11cf5611a80db055a96c22f85a89",
+    "condition/association/init-025-drawer_front_pushable-overlay.png": "71160f6d89ec22ac291929721f66f887d47d0a49e44aefbd7597f92bc91243d8",
+    "condition/association/init-025-drawer_front_pushable-result.json": "36958005c7777b8afb25f31b83e037c696682a727387ba74820d94a53a484af1",
+    "condition/association/init-025-drawer_front_pushable-roi0-inventory.json": "5a2b1c33be2eeedeafd7b1215b5bbd83960b925c88bc47f9dd0741d243173e55",
+    "condition/association/summary.json": "b17bb1e051a324d3f354c6a459ee9241cfb91b9abb0e5b9bea92c3f35661eb79",
+    "condition/registration.json": "d422766713f15af65315a92a15abd8c65ca617951fe37bb096dbbbabd37aec7d",
+    "condition/summary.json": "e6695d37d68479a174ce79c6ed5077b57034bac013840eaf03c193957b0fb393",
+    "condition/tracker-failure.json": "027c7314eb00cd785743939295d25e23a96c83e163e4ceab3435f54c720d1f44",
+    "condition/tracker-registration.json": "58d39d82ce7f33f996290a959d893edc2139292e52bdd1518d9771bccbca6f62",
+    "condition/tracker/init-025-drawer_front_pushable-roi0-inventory.json": "5a2b1c33be2eeedeafd7b1215b5bbd83960b925c88bc47f9dd0741d243173e55",
+    "original_inference/complete.json": "16770a362325b91baed8a40f9ef1f9a7a7f8a9124ab3af8d717f4e7c8478eedd",
+    "original_inference/init-025-drawer_front_pushable-box-request.json": "74816bf6cc0574fcc4abc79b8d98578f8dd50a3e38f17b48fdb89ae61df64a33",
+    "original_inference/init-025-drawer_front_pushable-box-response.json": "05e509bf66feddf2642338cc42f05cc5c731cc1e95ead61b5d302eaabdcb4edd",
+    "original_inference/init-025-drawer_front_pushable-point-request.json": "50632715f63e7768aec0da999f5546aacac9381eae2073935c34d72f85817fbd",
+    "original_inference/init-025-drawer_front_pushable-point-response.json": "16b3fbbb9addcda66b2bafa0bcd3930d65c2cab3e1e8bb47cceb5361bb17bc35",
+    "original_inference/loading.json": "59a6fc888e9693c9c35b4223e8c68ddc92463f4bf61570ea20291d509f96b281",
+    "original_inference/model_config.json": "16612090f60ee9cb509091b9e4b1c5deb4a23b13e48c21f5ef92d65751c46eb2",
+    "original_source/init-025-agentview.png": "216ce4d14c6167ea2290e04e7bf823f7b2324101e1ef1bd04e6aa5022b22ed42",
+    "original_source/init-025-robot0_eye_in_hand.png": "75aae151a00b5becffee9b9f9f2cde9f1b14894c0b672d08b2c6a99307ca49cd",
+    "original_source/inputs.json": "ad2dc1f0cd803035b2d19255c9a0b20797a5df930c4d755954717d3d6e98971c",
+    "original_source/registration.json": "9b805e1246548e49858cf0ec64ab2f5495b1b9a350f55f658e6a4c8b435f1a91",
+    "protocol/p1_semantic_output_contract_repair.md": "0ea1e10c87fd4f4ecd1a6308d25fefeba0373e7b29d86bd69c27ae885fc06bfd"
+  },
+  "source_dependency_index": "docs/evidence/p1_grounding/surface_dev_20261006/artifact-index.json",
+  "original_inference_index": "docs/evidence/p1_grounding/drawer_pair_20261007/artifact-index.json"
+}

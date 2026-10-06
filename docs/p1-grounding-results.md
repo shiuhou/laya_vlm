@@ -163,3 +163,14 @@ exploratory analyzer enumerated five ROI supports before rejection; its admissio
 order was corrected at `34b799c` and reanalyzed without model calls. Both records
 remain visible. This isolates a completed-but-mixed output boundary from the prior
 reference's truncated output; it does not demonstrate valid surface association.
+
+## Typed semantic-output contract repair — 2026-10-07
+
+A separately preregistered typed-v1 condition reanalyzes the sealed `f2af8d8`
+drawer pair. The complete reply has one POINT plus one auxiliary BOX; typed
+admission preserves both, uses only the independent BOX call as ROI, and binds
+one of five unchanged supports. RGB review supports a drawer-front interpretation
+with identity and push safety still unverified. The next tracker initialization
+stops at a preexisting experiment-harness `WRONG_EPISODE`, before any tracker
+result. No retry, fixed-reference stage or robot action followed. See the
+[full evidence and failure boundary](evidence/p1_grounding/semantic_contract_20261007/README.md).
