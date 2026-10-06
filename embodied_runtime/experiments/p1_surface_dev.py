@@ -255,6 +255,25 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
             point_path = inference/f"{stem}-point-response.json"
             point = json.loads(point_path.read_text())
             boxes = box["parsed"]["boxes"] if box["parsed"]["status"] in {"single_box", "multiple_boxes"} else []
+            if point["parsed"]["status"] != "single_point":
+                # Reject the whole semantic reply before any geometry work.
+                # A complete mixed reply is not an admitted POINT; retain its
+                # raw evidence but never strip off a convenient point prefix.
+                result = dict(entity=entity, frame=frame, inventories=[], bindings=[], point_xy=[],
+                    association_status="UNKNOWN", tracker_status="NOT_TESTED_SEMANTIC_ADMISSION_FAILED",
+                    semantic_identity_verified=False, verify_status="UNKNOWN", for_execution=False,
+                    reason="POINT_RESPONSE_NOT_SINGLE_POINT", raw_point_parse_status=point["parsed"]["status"],
+                    geometry_evaluated=False, point_format_admitted=False)
+                image = Image.fromarray(view["rgb"])
+                draw = ImageDraw.Draw(image)
+                for b in boxes:
+                    draw.rectangle(b["continuous_xyxy"], outline="yellow", width=2)
+                image.save(folder/f"{stem}-overlay.png")
+                write(folder/f"{stem}-result.json", result)
+                summaries.append(result)
+                print(json.dumps(dict(case=stem, association="UNKNOWN", reason=result["reason"],
+                                      geometry_evaluated=False)), flush=True)
+                continue
             xy = [p["continuous_xy"] for p in point["parsed"]["points"]] if point["parsed"]["status"] == "single_point" else []
             inventories, bindings, matches, surfaces = [], [], [], []
             overlay = view["rgb"].copy()
@@ -279,6 +298,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
             result = dict(entity=entity, frame=frame, inventories=inventories, bindings=bindings,
                           point_xy=xy, association_status="UNKNOWN", tracker_status="NOT_INITIALIZED",
                           semantic_identity_verified=False, verify_status="UNKNOWN", for_execution=False,
+                          geometry_evaluated=True, point_format_admitted=True,
                           reason="NO_SINGLE_SUPPORTED_POINT")
             # Cross-ROI ambiguity remains ambiguity, even for overlapping boxes.
             if len(matches) > 1:
