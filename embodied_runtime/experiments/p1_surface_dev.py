@@ -98,7 +98,14 @@ def load_inputs(root):
     return registration, inputs
 
 
-def infer(output, *, device="cpu", inference_dir=None):
+def registered_pairs(registration, inputs):
+    return [f"init-{frame['init_index']:03d}-{entity}"
+            for frame in inputs["frames"]
+            for entity, camera in registration["config"]["entity_cameras"].items()
+            if frame["camera_id"] == camera]
+
+
+def infer(output, *, device="cpu", inference_dir=None, selected_pair=None):
     import torch
     from PIL import Image
     from ..adapters.locateanything import LocateAnythingWorker
@@ -106,6 +113,9 @@ def infer(output, *, device="cpu", inference_dir=None):
     root = Path(output)
     registration, inputs = load_inputs(root)
     config = registration["config"]
+    require(selected_pair is None or selected_pair in registered_pairs(registration, inputs),
+            "pair must already exist in frozen registration")
+    expected_calls = 2 if selected_pair else registration["model_calls"]
     require(device in {"cpu", "cuda:0"}, "explicit CPU or allocated logical cuda:0 required")
     allocation = None
     if device == "cuda:0":
@@ -122,6 +132,8 @@ def infer(output, *, device="cpu", inference_dir=None):
     write(folder/"loading.json", dict(model=identity, versions=versions(), code=code_identity(), device=device,
         execution_allocation=allocation, source_root=str(root.resolve()),
         device_override_only=device != config["device"],
+        selected_pair=selected_pair, expected_scope_calls=expected_calls,
+        registered_total_calls=registration["model_calls"],
         dtype=config["dtype"], threads=config["torch_threads"],
         inputs_sha256=file_hash(root/"inputs.json"), registration_sha256=file_hash(root/"registration.json")))
     torch.set_num_threads(config["torch_threads"])
@@ -142,6 +154,8 @@ def infer(output, *, device="cpu", inference_dir=None):
         for frame in inputs["frames"]:
             for entity, camera in config["entity_cameras"].items():
                 if frame["camera_id"] != camera:
+                    continue
+                if selected_pair and f"init-{frame['init_index']:03d}-{entity}" != selected_pair:
                     continue
                 image_path = root/frame["image"]
                 require(file_hash(image_path) == frame["image_file_sha256"], "RGB artifact changed")
@@ -194,8 +208,9 @@ def infer(output, *, device="cpu", inference_dir=None):
                     require(audit["complete_generation"] and len(observed[0][0]) <= audit["effective_limit"],
                             "incomplete generation; stop without retry")
         responses = sorted(folder.glob("*-response.json"))
-        require(len(responses) == registration["model_calls"], "incomplete call coverage")
+        require(len(responses) == expected_calls, "incomplete declared scope coverage")
         write(folder/"complete.json", dict(calls=len(responses), elapsed_s=time.perf_counter()-started_all,
+            selected_pair=selected_pair, registered_total_calls=registration["model_calls"],
             artifacts_sha256={p.name: file_hash(p) for p in sorted(folder.glob("*.json"))}))
     except Exception as exc:
         write(folder/"failure.json", dict(error=repr(exc), elapsed_s=time.perf_counter()-started_all))
@@ -215,7 +230,10 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
     require(loading["inputs_sha256"] == file_hash(root/"inputs.json")
             and loading["registration_sha256"] == file_hash(root/"registration.json"), "inference source changed")
     seal = json.loads((inference/"complete.json").read_text())
-    require(seal["calls"] == registration["model_calls"], "incomplete call coverage")
+    selected_pair = loading.get("selected_pair")
+    require(selected_pair is None or selected_pair in registered_pairs(registration, inputs), "unregistered analysis scope")
+    require(seal["calls"] == (2 if selected_pair else registration["model_calls"]), "incomplete declared scope coverage")
+    require(seal.get("selected_pair") == selected_pair, "inference scope mismatch")
     for name, digest in seal["artifacts_sha256"].items():
         require(file_hash(inference/name) == digest, "sealed inference artifact changed")
     geometry = frozen_geometry(registration["config"]["geometry_config"])
@@ -231,6 +249,8 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
             if camera != frame["camera_id"]:
                 continue
             stem = f"init-{frame['init_index']:03d}-{entity}"
+            if selected_pair and stem != selected_pair:
+                continue
             box = json.loads((inference/f"{stem}-box-response.json").read_text())
             point_path = inference/f"{stem}-point-response.json"
             point = json.loads(point_path.read_text())
@@ -292,6 +312,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                                   tracker=result["tracker_status"], inventories=inventories)), flush=True)
     write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN", code=code_identity(),
                                       no_policy_or_control=True, tracker_test_explicitly_requested=test_tracker,
+                                      selected_pair=selected_pair, registered_total_calls=registration["model_calls"],
                                       inference_seal_sha256=file_hash(inference/"complete.json")))
 
 
@@ -303,16 +324,17 @@ def main():
     parser.add_argument("--inference-dir", help="fresh GPU inference outputs, separate from frozen input evidence")
     parser.add_argument("--analysis-dir", help="fresh association/track outputs; never overwrite a prior stage")
     parser.add_argument("--test-tracker", action="store_true", help="only after surface-association review succeeds")
+    parser.add_argument("--pair", help="newly preregistered single-pair scope; original frozen inputs/settings unchanged")
     args = parser.parse_args()
     if args.phase == "capture":
         require(args.device == "cpu" and args.inference_dir is None and args.analysis_dir is None
-                and not args.test_tracker, "capture has no execution overrides")
+                and not args.test_tracker and args.pair is None, "capture has no execution overrides")
         capture(args.output)
     elif args.phase == "infer":
         require(args.analysis_dir is None and not args.test_tracker, "inference cannot run tracking")
-        infer(args.output, device=args.device, inference_dir=args.inference_dir)
+        infer(args.output, device=args.device, inference_dir=args.inference_dir, selected_pair=args.pair)
     else:
-        require(args.device == "cpu", "analysis is model-free CPU geometry")
+        require(args.device == "cpu" and args.pair is None, "analysis uses sealed inference scope; no manual rescope")
         analyze(args.output, inference_dir=args.inference_dir, analysis_dir=args.analysis_dir,
                 test_tracker=args.test_tracker)
 
