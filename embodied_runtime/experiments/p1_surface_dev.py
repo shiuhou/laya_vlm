@@ -17,7 +17,7 @@ import time
 
 import numpy as np
 
-from ..contracts import content_hash, require
+from ..contracts import content_hash, require, thaw
 from ..perception.recording import FrameRecorder, replay_frames
 from ..perception.surface_association import (
     associate_point, inventory_surfaces, sensor_view_identity, tracker_seed_rectangle,
@@ -171,7 +171,10 @@ def infer(output):
                                           latency_s=payload["latency_s"])), flush=True)
                     require(audit["complete_generation"] and len(observed[0][0]) <= audit["effective_limit"],
                             "incomplete generation; stop without retry")
-        write(folder/"complete.json", dict(calls=8, elapsed_s=time.perf_counter()-started_all))
+        responses = sorted(folder.glob("*-response.json"))
+        require(len(responses) == registration["model_calls"], "incomplete call coverage")
+        write(folder/"complete.json", dict(calls=len(responses), elapsed_s=time.perf_counter()-started_all,
+            artifacts_sha256={p.name: file_hash(p) for p in sorted(folder.glob("*.json"))}))
     except Exception as exc:
         write(folder/"failure.json", dict(error=repr(exc), elapsed_s=time.perf_counter()-started_all))
         raise
@@ -185,6 +188,10 @@ def analyze(output):
     root = Path(output)
     registration, inputs = load_inputs(root)
     require((root/"inference/complete.json").exists(), "seal inference before inspecting predictions")
+    seal = json.loads((root/"inference/complete.json").read_text())
+    require(seal["calls"] == registration["model_calls"], "incomplete call coverage")
+    for name, digest in seal["artifacts_sha256"].items():
+        require(file_hash(root/"inference"/name) == digest, "sealed inference artifact changed")
     geometry = frozen_geometry(registration["config"]["geometry_config"])
     folder = root/"association"
     folder.mkdir(exist_ok=False)
@@ -238,7 +245,7 @@ def analyze(output):
                     tracker = VisualTracker(f"surface-dev/{stem}")
                     tracked = tracker.initialize(view, rectangle, query=QUERIES[entity], seed_source="semantic_query",
                         now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
-                    result.update(tracker_status=tracked.status, tracker_evidence=asdict(tracked),
+                    result.update(tracker_status=tracked.status, tracker_evidence=thaw(tracked),
                                   clock_condition="offline capture clock; not a live freshness claim")
                 else:
                     result["reason"] = "NO_SUPPORT_CONTAINED_TRACKER_RECTANGLE"
@@ -254,7 +261,7 @@ def analyze(output):
             summaries.append(result)
             print(json.dumps(dict(case=stem, association=result["association_status"],
                                   tracker=result["tracker_status"], inventories=inventories)), flush=True)
-    write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN",
+    write(folder/"summary.json", dict(cases=summaries, development_only=True, verify_status="UNKNOWN", code=code_identity(),
                                       no_policy_or_control=True))
 
 
