@@ -31,6 +31,16 @@ or tracker test exists. Original recorded evidence/queries/gates remain unchange
 Independent fixed cabinet reference observability remains the gate after
 successful association, not PUSH. P1 acceptance remains pending.
 
+The [2026-10-07 separately registered drawer-front pair](evidence/p1_grounding/drawer_pair_20261007/README.md)
+ran the first previously unstarted init25 wrist pair at `f077df8`. Both calls
+ended with EOS, but POINT mixed one point and one box and failed strict semantic
+admission. No point was bound or tracker initialized. The initial offline
+analyzer unnecessarily enumerated five supports; `34b799c` fixes admission order
+and rejects the same sealed output before geometry. Both records are preserved;
+the earlier original eight-call batch remains incomplete. No model/query/gate
+change or further inference followed. Surface association, reference/VERIFY and
+P1 acceptance remain unestablished.
+
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed
 selected implementation work above.

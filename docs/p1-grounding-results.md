@@ -155,3 +155,11 @@ The preregistered stop ended the batch at two calls. No surface association or
 tracker analysis ran, and the six remaining calls were not started. This new
 boundary is incomplete model generation before geometry, not evidence against
 the geometry mechanism or permission to salvage a prefix/change the condition.
+
+The user-requested [one-pair continuation on the previously unstarted drawer-front view](evidence/p1_grounding/drawer_pair_20261007/README.md)
+completed both calls with EOS under unchanged inputs/settings. POINT mixed a point
+and a box, so strict admission still failed and no tracker was tested. An initial
+exploratory analyzer enumerated five ROI supports before rejection; its admission
+order was corrected at `34b799c` and reanalyzed without model calls. Both records
+remain visible. This isolates a completed-but-mixed output boundary from the prior
+reference's truncated output; it does not demonstrate valid surface association.

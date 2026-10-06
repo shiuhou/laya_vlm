@@ -1,0 +1,25 @@
+{
+  "archive": "drawer-pair-evidence.tar.gz",
+  "archive_sha256": "68d0962e8f63fd0d58f48d02bc2723e05d2e3a3ee1048781be7df88fdba0f94a",
+  "archive_bytes": 175934,
+  "files_sha256": {
+    "inference/complete.json": "16770a362325b91baed8a40f9ef1f9a7a7f8a9124ab3af8d717f4e7c8478eedd",
+    "inference/init-025-drawer_front_pushable-box-request.json": "74816bf6cc0574fcc4abc79b8d98578f8dd50a3e38f17b48fdb89ae61df64a33",
+    "inference/init-025-drawer_front_pushable-box-response.json": "05e509bf66feddf2642338cc42f05cc5c731cc1e95ead61b5d302eaabdcb4edd",
+    "inference/init-025-drawer_front_pushable-point-request.json": "50632715f63e7768aec0da999f5546aacac9381eae2073935c34d72f85817fbd",
+    "inference/init-025-drawer_front_pushable-point-response.json": "16b3fbbb9addcda66b2bafa0bcd3930d65c2cab3e1e8bb47cceb5361bb17bc35",
+    "inference/loading.json": "59a6fc888e9693c9c35b4223e8c68ddc92463f4bf61570ea20291d509f96b281",
+    "inference/model_config.json": "16612090f60ee9cb509091b9e4b1c5deb4a23b13e48c21f5ef92d65751c46eb2",
+    "launch/gpu-preflight.csv": "280374ef2b106386ccf32f0d5a24320614dc5f223c70009db4869fef19394ff9",
+    "launch/inference-runtime.log": "269bacf506b1a373758f81544cddd523eeac75b635516a45b478d5d4df79608c",
+    "launch/registration.json": "55c79e71a08cbe6c8c404f4dd6cf28d6c034118f484608173ca19a7f377eb5b6",
+    "corrected_admission/init-025-drawer_front_pushable-overlay.png": "ee988a4ac32c077cf71ec0a7f11ecfe3046e7d4f2f47eab88c97008af7352a5d",
+    "corrected_admission/init-025-drawer_front_pushable-result.json": "33a8cb7f9b2f583496fad88b75cbffa1401155eabaab076e6ff511d72d41f609",
+    "corrected_admission/summary.json": "ba171669a8f7ef9187ce924043845ac24d5a12a42c6e901451c77ca82001876d",
+    "exploratory_before_gate_fix/init-025-drawer_front_pushable-overlay.png": "46f1fa94416a136290779114f1bc474a6e97fecd805a9cd7dac2e1a10f11b2e9",
+    "exploratory_before_gate_fix/init-025-drawer_front_pushable-result.json": "c9c490c807c37405d234b9e64f4f928d725e2d4ac02c1d98282d386b2edd761c",
+    "exploratory_before_gate_fix/init-025-drawer_front_pushable-roi0-inventory.json": "5a2b1c33be2eeedeafd7b1215b5bbd83960b925c88bc47f9dd0741d243173e55",
+    "exploratory_before_gate_fix/summary.json": "b978321e4688bab8a39264095116a5c8ed61f7263d98e595914612bb5a679269"
+  },
+  "original_source_index": "docs/evidence/p1_grounding/surface_dev_20261006/artifact-index.json"
+}

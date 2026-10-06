@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-10-06T16:05:32.031805+00:00",
+  "code_commit": "f077df874ddc7105823c98781a8ee606b6b028ad",
+  "new_scope": "one previously unstarted canonical drawer-front pair, not completion of original eight-call batch",
+  "pair": "init-025-drawer_front_pushable",
+  "source_registration_sha256": "9b805e1246548e49858cf0ec64ab2f5495b1b9a350f55f658e6a4c8b435f1a91",
+  "source_inputs_sha256": "ad2dc1f0cd803035b2d19255c9a0b20797a5df930c4d755954717d3d6e98971c",
+  "prior_stopped_seal_sha256": "fdde2de03b343e8994239e1355451714b2bb40ed33699e1deed0e74f8a73045d",
+  "source_files_verified": 27,
+  "query": "the flat outward-facing front panel of the open top drawer of the small cabinet on the tabletop, excluding its handle, inner cavity, rim, and tabletop",
+  "settings": {
+    "max_new_tokens": 256,
+    "use_cache": true,
+    "generation_mode": "hybrid",
+    "temperature": 0.0,
+    "do_sample": false,
+    "verbose": false
+  },
+  "model_content_id": "4b5384cddedaa8d10e7205536ebde4893d8e20c396ad861dda2a32ed3bbcd10f",
+  "geometry_sha256": "f3abcfd935087aa5992df6419bac6068b49fadc782e51b841ffc557808ef5da8",
+  "gpu_uuid": "GPU-293fca5f-bdb8-2235-fa2e-18ab6c488b36",
+  "device": "cuda:0",
+  "dtype": "bfloat16",
+  "max_model_calls": 2,
+  "process_ceiling_s": 900,
+  "inference_dir": "runs/p1/drawer-pair-gpu-20261007",
+  "no_reference_retry": true,
+  "stop_at_first_failed_gate": true,
+  "no_actions": true,
+  "no_annotations": true,
+  "protocol_sha256": "5b946ef7130fd4578246d6a91b315e3dfdd9c230bbb8f893627e034f2182afb9"
+}
