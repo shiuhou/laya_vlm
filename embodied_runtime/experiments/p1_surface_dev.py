@@ -376,7 +376,7 @@ def analyze(output, *, inference_dir=None, analysis_dir=None, test_tracker=False
                     rectangle = tracker_seed_rectangle(matches[0], xy[0], tracker_config=TrackerConfig())
                     result["seed_rectangle_xyxy"] = rectangle
                     if rectangle is not None:
-                        tracker = VisualTracker(f"surface-dev/{stem}")
+                        tracker = VisualTracker(view["episode_id"])
                         tracked = tracker.initialize(view, rectangle, query=QUERIES[entity], seed_source="semantic_query",
                             now_sim_time_s=view["capture_sim_time_s"], now_monotonic_ns=view["capture_monotonic_ns"])
                         result.update(tracker_status=tracked.status, tracker_evidence=thaw(tracked),
