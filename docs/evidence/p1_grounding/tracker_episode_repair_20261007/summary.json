@@ -1,0 +1,56 @@
+{
+  "code": "ab361eb14cb5a207d5fe713903504c964908bf30",
+  "previous_checkpoint": "0d25216",
+  "behavioral_change": "one-line offline harness constructor uses recorded view episode_id",
+  "attempts": 1,
+  "new_inference_calls": 0,
+  "robot_actions": 0,
+  "association": {
+    "status": "BOUND_HYPOTHESIS",
+    "surface_id": "p1-surface-dev/init25/robot0_eye_in_hand/1/b7f16f16b7f6949965eed845f96275c9774836f9f960b3a7afdc9d4bda3f5090/surface-0",
+    "prior_inventory_byte_identical": true,
+    "semantic_identity_verified": false
+  },
+  "tracker": {
+    "status": "TRACKED",
+    "episode_id": "p1-surface-dev/init25",
+    "seed_rectangle_xyxy_px": [
+      251.5,
+      33.0,
+      263.5,
+      92.0
+    ],
+    "depth_support_ratio": 1.0,
+    "depth_spread_m": 0.020439326763153076,
+    "max_depth_spread_m_unchanged": 0.03,
+    "result_reason_codes": [],
+    "clock": "offline original capture clock",
+    "continuous_tracking_validated": false,
+    "live_freshness_validated": false,
+    "for_execution": false
+  },
+  "reference": {
+    "status": "UNKNOWN",
+    "box_admitted": true,
+    "point_admitted": false,
+    "point_generated_tokens": 256,
+    "point_terminal_eos": false,
+    "geometry_evaluated": false,
+    "tracker_started": false,
+    "fixedness_or_closed_relation_established": false,
+    "camera_observability": "UNKNOWN"
+  },
+  "verify_status": "UNKNOWN",
+  "p1_task_acceptance": "PENDING",
+  "stop_boundary": "REFERENCE_POINT_INCOMPLETE_GENERATION",
+  "query_checkpoint_semantic_contract_geometry_tracker_settings_unchanged": true,
+  "source_files_verified_before_after": 27,
+  "inference_files_verified_before_after": 6,
+  "validation": {
+    "actual_sealed_input_tracker_initialization": "PASS",
+    "ruff": "PASS",
+    "new_synthetic_tests": 0,
+    "broad_suite_run": false
+  },
+  "next_research_boundary": "Independent fixed cabinet reference semantic grounding and observed reference relation; no PUSH"
+}

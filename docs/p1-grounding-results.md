@@ -174,3 +174,13 @@ with identity and push safety still unverified. The next tracker initialization
 stops at a preexisting experiment-harness `WRONG_EPISODE`, before any tracker
 result. No retry, fixed-reference stage or robot action followed. See the
 [full evidence and failure boundary](evidence/p1_grounding/semantic_contract_20261007/README.md).
+
+## Episode harness repair and independent reference gate — 2026-10-07
+
+The one-line harness correction uses the recorded episode ID. One separately
+registered replay of the same reviewed sealed drawer pair initializes TRACKED
+with unchanged support/context/depth gates. This establishes static initialization,
+not temporal tracking or push safety. The subsequent independent reference gate
+reuses the historical no-EOS POINT and still rejects it under typed-v1; no
+reference geometry/track begins, and VERIFY stays UNKNOWN. See
+[results and preserved evidence](evidence/p1_grounding/tracker_episode_repair_20261007/README.md).

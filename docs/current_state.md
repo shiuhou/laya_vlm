@@ -52,6 +52,15 @@ existing harness episode differs from the recorded frame. No tracker result,
 retry or reference stage follows. Source/query/model/geometry/tracker gates stay
 unchanged. Fixed reference/VERIFY and P1 task acceptance remain UNKNOWN/pending.
 
+The [2026-10-07 episode-ID harness repair](evidence/p1_grounding/tracker_episode_repair_20261007/README.md)
+uses the immutable recorded episode in a separately registered tracker replay at
+`ab361eb`. The same reviewed drawer-front support now initializes as TRACKED
+(depth support1.0, spread20.439mm against unchanged30mm gate). This is single-frame
+offline initialization only. Afterward, independent sealed reference admission
+still rejects the historical256-token no-EOS POINT; no reference geometry or
+tracker follows. Reference/VERIFY stay UNKNOWN, P1 task acceptance pending.
+No new model calls, query/gate changes, temporal updates or actions occurred.
+
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed
 selected implementation work above.
