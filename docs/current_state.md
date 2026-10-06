@@ -61,6 +61,15 @@ still rejects the historical256-token no-EOS POINT; no reference geometry or
 tracker follows. Reference/VERIFY stay UNKNOWN, P1 task acceptance pending.
 No new model calls, query/gate changes, temporal updates or actions occurred.
 
+The [2026-10-07 independent reference budget diagnostic](evidence/p1_grounding/reference_budget1024_20261007/README.md)
+freezes `ab361eb` infrastructure and `065ad2b` evidence with local annotated tags.
+One fresh POINT at clean `bdab332` changes only max_new_tokens256→1024, preserving
+sealed reference RGB/query/input, checkpoint, old BOX, native hybrid/EOS and all
+contract/geometry/tracker gates. It again reaches the token ceiling without EOS.
+Completion fails before any typed POINT parse or downstream association/track.
+No retry, temporal relation or action follows. Reference/VERIFY remain UNKNOWN;
+fourfold budget alone is insufficient for this condition, not proof of impossibility.
+
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed
 selected implementation work above.

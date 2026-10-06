@@ -1,0 +1,66 @@
+{
+  "condition": "P1 fixed-reference budget-only1024",
+  "code": "bdab332cf3157eb8323ff931ea569df4c5bf796a",
+  "frozen_infrastructure_tag": "p1-tracker-infrastructure-ab361eb",
+  "frozen_evidence_tag": "p1-tracker-evidence-065ad2b",
+  "GPU": {
+    "cuda_visible_devices": "GPU-293fca5f-bdb8-2235-fa2e-18ab6c488b36",
+    "cuda_device_order": null,
+    "logical_device": "cuda:0",
+    "visible_device_count": 1,
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_bytes": 25252724736,
+    "compute_capability": [
+      8,
+      9
+    ],
+    "uuid": null,
+    "pci_bus_id": null,
+    "identity_source": "explicit_cuda_mask_and_torch_device_properties"
+  },
+  "changed_generation_fields": [
+    "max_new_tokens"
+  ],
+  "old_max_new_tokens": 256,
+  "new_max_new_tokens": 1024,
+  "old_generated_tokens": 256,
+  "new_generated_tokens": 1024,
+  "old_terminal_eos": false,
+  "new_terminal_eos": false,
+  "input_tokens": 209,
+  "model_max_length": 16384,
+  "generation_latency_s": 6.999065028998302,
+  "actual_fresh_model_calls": 1,
+  "box_rerun": false,
+  "full_request_file_byte_identical": true,
+  "source_files_verified_before_after": 27,
+  "baseline_files_verified_before_after": 7,
+  "EOS_admission": "FAILED",
+  "typed_POINT_parse": "NOT_STARTED",
+  "support_association": "NOT_STARTED",
+  "independent_reference_tracker": "NOT_STARTED",
+  "reference_status": "UNKNOWN",
+  "verify_status": "UNKNOWN",
+  "drawer_reference_temporal_relation": "NOT_STARTED",
+  "robot_actions": 0,
+  "hidden_retry_count": 0,
+  "failure_boundary": "OUTPUT_COMPLETION_AT_1024_TOKEN_LIMIT",
+  "interpretation": "Fourfold output budget alone is insufficient to complete this reference query under native hybrid decoding.",
+  "limitations": [
+    "Does not prove infinite nontermination or model inability.",
+    "Reference geometric/semantic observability remains untested.",
+    "GPU sharing/load differs; no causal latency conclusion."
+  ],
+  "raw_evidence_inspection": "Complete raw reply inspected; coordinate-bearing box fragments continue to ceiling; no typed parse/selection.",
+  "protected_contract_query_checkpoint_geometry_tracker_unchanged": true,
+  "verification": {
+    "focused_tests_passed": 2,
+    "ruff": "PASS",
+    "actual_input_equality": "PASS",
+    "output_tokens_audited": true,
+    "broad_suite_run": false
+  },
+  "next_gate": "Independent output-completion condition requires a new decision; no automatic larger budget, query, decoder or geometry change.",
+  "archived_box_preserved": true,
+  "archived_box_used_for_association": false
+}

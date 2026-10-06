@@ -184,3 +184,13 @@ not temporal tracking or push safety. The subsequent independent reference gate
 reuses the historical no-EOS POINT and still rejects it under typed-v1; no
 reference geometry/track begins, and VERIFY stays UNKNOWN. See
 [results and preserved evidence](evidence/p1_grounding/tracker_episode_repair_20261007/README.md).
+
+## Independent fixed-reference completion budget diagnostic — 2026-10-07
+
+After local freezing of the prior tracker/evidence checkpoints, one independent
+condition changed only native POINT max_new_tokens256→1024. Same sealed RGB, query,
+request bytes, checkpoint, old BOX, typed contract and geometry/tracker gates.
+The fresh call still generated1024tokens withoutEOS; it stops before POINT parsing,
+association or reference tracker. Thus budget extension alone is insufficient by
+1024; reference/VERIFY stayUNKNOWN. No automatic retry or other decoder was run.
+See [preregistration, full raw evidence and audit](evidence/p1_grounding/reference_budget1024_20261007/README.md).

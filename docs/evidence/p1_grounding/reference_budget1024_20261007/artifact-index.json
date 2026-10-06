@@ -1,0 +1,33 @@
+{
+  "archive": "reference-budget1024-evidence.tar.gz",
+  "archive_sha256": "6eacf4980aa9877c1171167c796e79714ec907db4637dbede0004a65ddf58e5f",
+  "archive_bytes": 54860,
+  "files_sha256": {
+    "condition/closeout-seal.json": "406f206256e8d82a1998f63cc4f90c0f0ab69a59dcdc2cbe827c728c9a51f68d",
+    "condition/init-025-fixed_cabinet_reference-point-request.json": "8d1eae4fc7a300f8c75de3b405a5f6a669eefbf185b8716ee1d7ef597f29baf5",
+    "condition/init-025-fixed_cabinet_reference-point-response.json": "8da30b88b55cd9fda381f51a10351a858768f813153af45bcdcbde1662b95256",
+    "condition/model_config.json": "16612090f60ee9cb509091b9e4b1c5deb4a23b13e48c21f5ef92d65751c46eb2",
+    "condition/outcome.json": "fab485ea57ea64d43839b9426a6551610306e61ab2cdf9ac46776379fac4e54a",
+    "condition/registration.json": "0713db67c8e134e59dcf0cefd8007ff067e112263b6b500cba1fe2827fe87e03",
+    "condition/sealed.json": "dc9bd997b21d333bd3fd4b0d67a344783dec241e9c98e081153371a4179f852c",
+    "condition/summary.json": "bc2da1695518a374375c5fcdba7eae57cc12bf095bf0d9479a3f854d99e19e12",
+    "launch/cleanup.json": "0dda5ebff2e096e8b84b49086fa8876e8b0769a70b614eb009ce3b8d3dbde4fb",
+    "launch/gpu-preflight.csv": "af2f322b181501cec4fc277b0bffa4ec1a32ec2dddf63f1805a0ef791417a41e",
+    "launch/process-exit.json": "227980c638fd046052b63acf58d537290424689908823ff868eefe36326f956c",
+    "launch/process.log": "444a08c0e62c2dbf2203a31d685ad57312afaef46e13c1a5923724a5291902d3",
+    "launch/registration.json": "1b78126bd6c1c35f6e03c3617f42c252ddd22ea795db33c19bb7a76b0ba0a3b4",
+    "original_reference/failure.json": "72d6e8ec09957067cf38536c92df7c5138dd079059df357d750610356e075646",
+    "original_reference/init-025-fixed_cabinet_reference-box-request.json": "bb186b47846492dbb1a438bd2a1c5358ce380007f0a93dfae96636576f72f3ec",
+    "original_reference/init-025-fixed_cabinet_reference-box-response.json": "930736f191dea5759199db23a3a646d5c830dc38d1939ad81cedf0969506c888",
+    "original_reference/init-025-fixed_cabinet_reference-point-request.json": "8d1eae4fc7a300f8c75de3b405a5f6a669eefbf185b8716ee1d7ef597f29baf5",
+    "original_reference/init-025-fixed_cabinet_reference-point-response.json": "2d30f17d0ac62953c1bf530c1cf2e9a43ca8a3f7c13ae5debb439fd5fd8f03e5",
+    "original_reference/loading.json": "6ef26dc175464d53bed79deea95e9df587c7896b1da78718660f5707448d05ba",
+    "original_reference/model_config.json": "16612090f60ee9cb509091b9e4b1c5deb4a23b13e48c21f5ef92d65751c46eb2",
+    "original_reference/stopped-seal.json": "fdde2de03b343e8994239e1355451714b2bb40ed33699e1deed0e74f8a73045d",
+    "protocol/p1_reference_completion_budget_protocol.md": "b2dad80b2721aff46dfb25079af8e0df7d45e4f81a091eb8e8064b9e5f4ebc2f",
+    "protocol/tracker_episode_freeze_20261007.json": "b337a58ff586b9ab8ed71a8287550ef53f2562f46f9f223435b401fda9f9af4b"
+  },
+  "source_dependency_index": "docs/evidence/p1_grounding/surface_dev_20261006/artifact-index.json",
+  "previous_reference_index": "docs/evidence/p1_grounding/surface_gpu_diagnostic_20261006/artifact-index.json",
+  "frozen_tracker_evidence_index": "docs/evidence/p1_grounding/tracker_episode_repair_20261007/artifact-index.json"
+}
