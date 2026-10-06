@@ -99,18 +99,22 @@ def parse_semantic_reply(raw, width, height, *, mode, audit):
         if body == "none":
             kind = "NONE"
         elif COORDS.fullmatch(body):
-            native = tuple(int(x) for x in re.findall(r"<(\d+)>", body))
-            kind = "POINT" if len(native) == 2 else "BOX"
-            pixels = tuple(x/1000*(width if i % 2 == 0 else height) for i, x in enumerate(native))
-            if any(x > 1000 for x in native):
+            tokens = [x.lstrip("0") or "0" for x in re.findall(r"<(\d+)>", body)]
+            kind = "POINT" if len(tokens) == 2 else "BOX"
+            # Reject unbounded numeric text before int/float conversion; retain
+            # its raw atom instead of overflowing or accepting a valid prefix.
+            if any(len(x) > 4 or (len(x) == 4 and x > "1000") for x in tokens):
                 errors.append(f"COORDINATE_OUT_OF_RANGE:{len(atoms)}")
-            elif kind == "POINT":
-                if pixels[0] >= width or pixels[1] >= height:
-                    errors.append(f"POINT_OUT_OF_FRAME:{len(atoms)}")
-                else:
-                    sampled = (math.floor(pixels[0]), math.floor(pixels[1]))
-            elif native[2] <= native[0] or native[3] <= native[1]:
-                errors.append(f"DEGENERATE_BOX:{len(atoms)}")
+            else:
+                native = tuple(int(x) for x in tokens)
+                pixels = tuple(x/1000*(width if i % 2 == 0 else height) for i, x in enumerate(native))
+                if kind == "POINT":
+                    if pixels[0] >= width or pixels[1] >= height:
+                        errors.append(f"POINT_OUT_OF_FRAME:{len(atoms)}")
+                    else:
+                        sampled = (math.floor(pixels[0]), math.floor(pixels[1]))
+                elif native[2] <= native[0] or native[3] <= native[1]:
+                    errors.append(f"DEGENERATE_BOX:{len(atoms)}")
         else:
             errors.append(f"MALFORMED_ATOM:{len(atoms)}")
         atoms.append(GroundingAtom(kind, len(atoms), atom.span(), atom[0], native, pixels, sampled))

@@ -117,3 +117,10 @@ def test_review_must_pin_an_admitted_prior_result_and_cannot_seed_from_labels(tm
     path.write_text(json.dumps({**review, 'evaluation_labels_used': True}))
     with pytest.raises(ProtocolError, match='no evaluation labels'):
         reviewed_association(path)
+
+
+def test_unbounded_coordinate_text_rejects_whole_reply_without_numeric_overflow():
+    raw = POINT+'<box><'+('9'*5000)+'><2></box>'+EOS
+    result = parse(raw)
+    assert not result.admitted and result.atoms[1].normalized is None
+    assert result.atoms[1].raw_text in raw
