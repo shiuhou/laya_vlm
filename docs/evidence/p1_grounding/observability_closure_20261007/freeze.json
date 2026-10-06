@@ -1,0 +1,19 @@
+{
+  "baseline_commit": "d1ed91e916b596d0502afa15567cdbe725da2177",
+  "tag": "p1-observability-baseline-d1ed91e",
+  "created_at_utc": "2026-10-06T18:35:08.982900+00:00",
+  "reference_POINT_condition": "UNSUPPORTED_INCOMPLETE_GENERATION",
+  "decoder_query_budget_research_closed": true,
+  "evidence_sha256": {
+    "docs/evidence/p1_grounding/corrected_v2_seal_20261005/annotations.corrected-v2.complete.json": "cd5fd0bf589e7f7b11d6c9fd118040868397e2d31492feaf76bdf64f77d3d700",
+    "docs/evidence/p1_grounding/reference_budget1024_20261007/README.md": "618bc3696ba3518be224405d9b1bd6a0e038d73095645c11bfd8ace4faaf8d93",
+    "docs/evidence/p1_grounding/reference_budget1024_20261007/artifact-index.json": "4879e48b3a39ddc3122920100f2efdd23eaee98e9ce1e7a56cf37e5cab30d7ce",
+    "docs/evidence/p1_grounding/reference_budget1024_20261007/reference-budget1024-evidence.tar.gz": "6eacf4980aa9877c1171167c796e79714ec907db4637dbede0004a65ddf58e5f",
+    "docs/evidence/p1_grounding/reference_budget1024_20261007/summary.json": "bc2da1695518a374375c5fcdba7eae57cc12bf095bf0d9479a3f854d99e19e12",
+    "docs/evidence/p1_grounding/semantic_contract_20261007/README.md": "c2800dc0c9bb871b72e6e264d05144c129f29c1dce78593117ea56c29ca3ae7b",
+    "docs/evidence/p1_grounding/semantic_contract_20261007/artifact-index.json": "b0108687396303bc417a0daf99609f1153f314d2657690d1217ceaf46b99aab7",
+    "docs/evidence/p1_grounding/semantic_contract_20261007/drawer-front-support.png": "71160f6d89ec22ac291929721f66f887d47d0a49e44aefbd7597f92bc91243d8",
+    "docs/evidence/p1_grounding/semantic_contract_20261007/summary.json": "e6695d37d68479a174ce79c6ed5077b57034bac013840eaf03c193957b0fb393",
+    "docs/evidence/p1_grounding/semantic_contract_20261007/typed-contract-evidence.tar.gz": "cb4f914e3d88b736cfd7f16ed9b5559fc7b104378b5f2a1c885c1e0917af81fe"
+  }
+}

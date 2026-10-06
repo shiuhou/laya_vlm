@@ -1,0 +1,62 @@
+{
+  "condition": "p1-observability-closure/1",
+  "baseline_commit": "d1ed91e916b596d0502afa15567cdbe725da2177",
+  "static_source": "runs/p1/static-25init-20261005",
+  "sealed_predictions": "runs/p1/corrected-v2-fixed-query-evaluation-20261005",
+  "annotation_packet": "runs/p1/human-annotation-packet-v2-20261005",
+  "annotations": "docs/evidence/p1_grounding/corrected_v2_seal_20261005/annotations.corrected-v2.complete.json",
+  "geometry_config": "configs/p1_geometry.json",
+  "new_static_model_calls": 0,
+  "reference_POINT_calls": 0,
+  "surface_selection": "none; all sensor-supported hypotheses retained",
+  "temporal_configs": [
+    "configs/p1_temporal_closure/T01.json",
+    "configs/p1_temporal_closure/T02.json",
+    "configs/p1_temporal_closure/T03.json",
+    "configs/p1_temporal_closure/T04.json",
+    "configs/p1_temporal_closure/T05.json",
+    "configs/p1_temporal_closure/T06.json",
+    "configs/p1_temporal_closure/T07.json",
+    "configs/p1_temporal_closure/T08.json",
+    "configs/p1_temporal_closure/T09.json",
+    "configs/p1_temporal_closure/T10.json"
+  ],
+  "temporal_attempts_per_case": 1,
+  "stream_inits": [
+    0,
+    12,
+    24
+  ],
+  "stream_duration_s": 30,
+  "stream_requested_hz": 10,
+  "drawer_gate": {
+    "static_correct_identity_and_tool_interior_inits_min": 20,
+    "static_eval_inits": 25,
+    "wrong_identity_admitted_max": 0,
+    "temporal_cases_attempted": 10,
+    "required_drawer_event_cases": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T07",
+      "T08",
+      "T10"
+    ],
+    "visible_temporal_correct_availability_min": 0.95,
+    "invalid_lineage_continuations_max": 0,
+    "visible_live_free_age_fraction_min": 0.95,
+    "free_age_s": 0.3
+  },
+  "reference_gate": {
+    "identity_required": true,
+    "same_cabinet_structure_required": true,
+    "temporal_fixedness_required": true,
+    "closed_relation_required": true,
+    "pairing_skew_s_max": 0.05
+  },
+  "unknown_not_imputed": true,
+  "no_PUSH": true,
+  "no_Qwen": true,
+  "no_Laya": true
+}
