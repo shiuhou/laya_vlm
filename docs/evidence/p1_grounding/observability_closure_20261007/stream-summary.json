@@ -1,0 +1,126 @@
+{
+  "condition": "fresh_static_sensor_geometry_inventory_workload_no_target_seed",
+  "requested_hz": 10,
+  "duration_each_s": 30,
+  "camera_names": [
+    "agentview",
+    "robot0_eye_in_hand"
+  ],
+  "width": 384,
+  "height": 256,
+  "results": [
+    {
+      "init_index": 0,
+      "code_revision": "fb2b2994525a3796d23939de310927e8e6712cde",
+      "summary_path": "init-000/observed-summary.json",
+      "captured_bundles": 114,
+      "published_snapshots": 2,
+      "queue_replacements": 112,
+      "dropped_views": 224,
+      "publication_hz_in_measurement_window": 0.03333333333333333,
+      "geometry_pipeline_ms": {
+        "p50": 26512.604459000002,
+        "p95": 26698.416245
+      },
+      "end_to_end_ms": {
+        "p50": 27471.063679,
+        "p95": 27753.1275958
+      },
+      "geometry_wall_age_s": {
+        "p50": 27.015742523,
+        "p95": 27.69042928695
+      },
+      "geometry_sim_age_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "free_fresh_diagnostic_views": 0,
+      "diagnostic_view_count": 4,
+      "valid_target_hz": 0.0,
+      "frame_identity_replay_verified": 2,
+      "raw_cost_only": true,
+      "target_tracking_tested": false
+    },
+    {
+      "init_index": 12,
+      "code_revision": "eb390686fee4f1ad25d681f143cf52df7966d483",
+      "summary_path": "init-012/summary.json",
+      "captured_bundles": 112,
+      "published_snapshots": 3,
+      "queue_replacements": 109,
+      "dropped_views": 218,
+      "publication_hz_in_measurement_window": 0.03333333333333333,
+      "geometry_pipeline_ms": {
+        "p50": 26841.206407,
+        "p95": 26857.3047529
+      },
+      "end_to_end_ms": {
+        "p50": 27557.8803,
+        "p95": 53031.592453499994
+      },
+      "geometry_wall_age_s": {
+        "p50": 27.47807593,
+        "p95": 55.843488470000004
+      },
+      "geometry_sim_age_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "free_fresh_diagnostic_views": 0,
+      "diagnostic_view_count": 6,
+      "valid_target_hz": 0.0,
+      "frame_identity_replay_verified": 3,
+      "raw_cost_only": true,
+      "target_tracking_tested": false
+    },
+    {
+      "init_index": 24,
+      "code_revision": "eb390686fee4f1ad25d681f143cf52df7966d483",
+      "summary_path": "init-024/summary.json",
+      "captured_bundles": 113,
+      "published_snapshots": 2,
+      "queue_replacements": 111,
+      "dropped_views": 222,
+      "publication_hz_in_measurement_window": 0.0,
+      "geometry_pipeline_ms": {
+        "p50": 32779.5205415,
+        "p95": 33455.61617315
+      },
+      "end_to_end_ms": {
+        "p50": 36632.040613000005,
+        "p95": 39191.1709714
+      },
+      "geometry_wall_age_s": {
+        "p50": 36.53613416,
+        "p95": 39.44673293895
+      },
+      "geometry_sim_age_s": {
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "free_fresh_diagnostic_views": 0,
+      "diagnostic_view_count": 4,
+      "valid_target_hz": 0.0,
+      "frame_identity_replay_verified": 2,
+      "raw_cost_only": true,
+      "target_tracking_tested": false
+    }
+  ],
+  "total_captured_bundles": 339,
+  "total_snapshots": 7,
+  "total_queue_replacements": 332,
+  "target_identity": "UNKNOWN",
+  "target_tracking_evaluated": false,
+  "source_timestamps_rewritten": false,
+  "annotation_inputs": false,
+  "robot_controls_after_reset": 0,
+  "new_models_invoked": false,
+  "init0_rerun": false,
+  "two_runtime_boundaries_preserved": [
+    "Mesa hardware default display failed before capture in preceding outputroot",
+    "init0 post-run bool-key summary serialization failure; raw timings preserved"
+  ],
+  "reporting_fix_runtime_delta": false,
+  "readiness_claim": false,
+  "reporting_regression_verification": "init12/24 actual canonical summary serialized successfully; temporary mirror test removed"
+}

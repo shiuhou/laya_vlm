@@ -1,5 +1,32 @@
 # Current research beliefs
 
+## Current implementation milestone — 2026-10-07
+
+The user subsequently selected the README/three-document implementation route:
+Qwen3-VL brain → Laya local choice → continuous RGB-D geometry/deterministic servo,
+with model contribution measured later by B0–B4. The paused exploratory research
+record below is historical; the approved P0/P1 implementation work has resumed.
+
+The bounded [P1 observability closure](docs/p1-observability-closure-results.md)
+concludes **Gate C**. Observed: unchanged original tool-interior candidates have
+positive drawer-region support at0/25 init states; median wrist BOX contamination
+is97.48%. Complete inventories contain locally valid overlapping support at21/25
+BOX searches and25/25 full-frame searches, which does not establish target identity.
+Reference support overlaps25/25 visible agentview annotations, but fixedness and
+the closed relation remain UNKNOWN. Ten fresh temporal recordings have zero
+initialized target chains; continuous tracking is unproven. Three exhaustive live
+cost runs publish stale geometry, not target-specific tracking evidence.
+
+Inference: BOX-to-surface association is the strongest supported drawer bottleneck,
+with geometry ambiguity and sensing limits still relevant. Confidence is high for
+these frozen conditions, low for generality. A separate sensor-only segmentation/
+sensing development condition that earns original-gate target patches and reliable
+fresh continuous association would change this conclusion. No such experiment has
+run. Reference POINT no-EOS work is closed; no budget/query/decoder repair continues.
+P2/Qwen/Laya/PUSH remain off. Historical evidence and annotations remain immutable.
+
+## Historical exploratory stop record
+
 **PAUSED at the user’s request.** Local tag: `research-checkpoint-20260927-paused`.
 No experiments or automatic retries are authorized while paused.
 

@@ -1,5 +1,10 @@
 # P1 grounding / observability closure — measured results
 
+Current continuation: [P1 observability closure results](p1-observability-closure-results.md)
+give **Gate C**. The historical fixed-query evaluation below remains unchanged.
+No further reference POINT decoder experiments are planned; target tracking and
+cabinet-relative VERIFY are still unestablished.
+
 **P1 task acceptance has not passed.** The frozen fixed-query experiment is
 complete: 50 recorded views, 100 LocateAnything calls, no truncation, no robot
 actions. The first demonstrated drawer failure is semantic surface association:

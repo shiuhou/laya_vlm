@@ -1,0 +1,314 @@
+{
+  "lossless_archive": "docs/evidence/p1_grounding/observability_closure_20261007/static-evidence.tar.xz",
+  "archive_sha256": "4d90e0ef0700af64ec0ad4482f3e1e09c3823e5d7cc7ab1b387f1f748a6041fa",
+  "removed": [
+    {
+      "path": "docs/evidence/p1_grounding/observability_closure_20261007/static-evidence.tar.gz",
+      "bytes": 35641810,
+      "reason": "same tar payload retained with smaller lossless xz compression"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-000.json",
+      "bytes": 3740780,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-001.json",
+      "bytes": 3014921,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-002.json",
+      "bytes": 3082371,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-003.json",
+      "bytes": 4285054,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-004.json",
+      "bytes": 3918504,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-005.json",
+      "bytes": 1390414,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-006.json",
+      "bytes": 3027265,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-007.json",
+      "bytes": 7079956,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-008.json",
+      "bytes": 3066099,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-009.json",
+      "bytes": 5217240,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-010.json",
+      "bytes": 3524324,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-011.json",
+      "bytes": 1216398,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-012.json",
+      "bytes": 3012579,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-013.json",
+      "bytes": 2571213,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-014.json",
+      "bytes": 4284235,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-015.json",
+      "bytes": 6089009,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-016.json",
+      "bytes": 2980502,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-017.json",
+      "bytes": 5173161,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-018.json",
+      "bytes": 3946546,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-019.json",
+      "bytes": 1255045,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-020.json",
+      "bytes": 2870661,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-021.json",
+      "bytes": 4062595,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-022.json",
+      "bytes": 3299053,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-023.json",
+      "bytes": 3370480,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-024.json",
+      "bytes": 3174861,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-025.json",
+      "bytes": 5053681,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-026.json",
+      "bytes": 3126778,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-027.json",
+      "bytes": 6246938,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-028.json",
+      "bytes": 2928938,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-029.json",
+      "bytes": 1709364,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-030.json",
+      "bytes": 3775378,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-031.json",
+      "bytes": 4316786,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-032.json",
+      "bytes": 3702328,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-033.json",
+      "bytes": 8685900,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-034.json",
+      "bytes": 3052214,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-035.json",
+      "bytes": 3477881,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-036.json",
+      "bytes": 3335099,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-037.json",
+      "bytes": 3185216,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-038.json",
+      "bytes": 3058252,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-039.json",
+      "bytes": 2202115,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-040.json",
+      "bytes": 3671673,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-041.json",
+      "bytes": 8596956,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-042.json",
+      "bytes": 3105245,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-043.json",
+      "bytes": 6203034,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-044.json",
+      "bytes": 3026060,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-045.json",
+      "bytes": 8065268,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-046.json",
+      "bytes": 3732829,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-047.json",
+      "bytes": 4501653,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-048.json",
+      "bytes": 3081767,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": "runs/p1/observability-closure-static-20261007/frame-049.json",
+      "bytes": 8663650,
+      "reason": "verified lossless archive retained; duplicate expanded generation cache"
+    },
+    {
+      "path": ".pytest_cache",
+      "bytes": 187078,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": ".ruff_cache",
+      "bytes": 6190,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "embodied_runtime/__pycache__",
+      "bytes": 154114,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "embodied_runtime/control/__pycache__",
+      "bytes": 46555,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "embodied_runtime/adapters/__pycache__",
+      "bytes": 46138,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "embodied_runtime/perception/__pycache__",
+      "bytes": 125602,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "embodied_runtime/experiments/__pycache__",
+      "bytes": 1734512,
+      "reason": "reconstructible Python/test/lint cache"
+    },
+    {
+      "path": "tests/__pycache__",
+      "bytes": 1774229,
+      "reason": "reconstructible Python/test/lint cache"
+    }
+  ],
+  "historical_raw_evidence_deleted": false,
+  "human_annotations_changed": false,
+  "canonical_source_rgbd_preserved": true,
+  "canonical_temporal610_bundles_preserved": true,
+  "temporary_worktree": {
+    "path": "/tmp/laya-p1-stream-summary-fb2",
+    "head": "39d3a1889c5c35c36881641403231818f9b2183a",
+    "exact_experiment_commit_preserved_tag": "p1-stream-reporting-condition-eb39068",
+    "integrated_production_commit": "daf6a26",
+    "reason": "one-line production fix integrated; all raw outputs outside worktree"
+  },
+  "removed_bytes_excluding_worktree": 238874497,
+  "restore_generated_cache": "tar -xJf docs/evidence/p1_grounding/observability_closure_20261007/static-evidence.tar.xz -C <new-empty-directory>; use <directory>/static for score"
+}

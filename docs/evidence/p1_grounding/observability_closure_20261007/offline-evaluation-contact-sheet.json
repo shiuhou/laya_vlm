@@ -1,0 +1,16 @@
+{
+  "evaluation_only": true,
+  "runtime_consumed": false,
+  "indices": [
+    0,
+    1,
+    24,
+    25,
+    48,
+    49
+  ],
+  "yellow": "archived model BOX search",
+  "green": "immutable evaluation polygon",
+  "red": "original tool-interior candidate projections; all retained",
+  "unknown_labels_not_scored": true
+}

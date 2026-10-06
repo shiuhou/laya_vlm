@@ -19,10 +19,13 @@ The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing
 conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
-The next [grounding/observability phase](docs/p1-grounding-observability.md)
-has a blinded 50-view human annotation packet and preregistered LocateAnything
-evaluation; inference waits for complete human labels. No Qwen/Laya or PUSH is
-enabled by this preparation.
+The bounded [P1 observability closure](docs/p1-observability-closure-results.md)
+has completed reanalysis of the sealed 50-view annotation set, ten fresh temporal
+attempts and three live geometry-cost acquisitions. Its result is **Gate C**:
+drawer target association and continuous tracking remain insufficient;
+reference/VERIFY stays UNKNOWN. Fixed-reference POINT no-EOS diagnostics are
+closed. No Qwen/Laya or PUSH is enabled; the next control milestone remains B0
+after P1 earns sensor-only target association and freshness.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

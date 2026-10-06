@@ -1,0 +1,20 @@
+{
+  "README.md": "4cae1134edd57cf1d8ae62dcce89d5b08155520f027ce76fcbdc3d8a9a5c43a2",
+  "archive-validation.json": "a323f6e35c291d5520658f7ba60bf366f4f242408e43d223c357e47dc0557ed4",
+  "cleanup.json": "20fe54f902a8f4e1d4fd3a782a29dfb05b50716c8be17af581627536e15ea2ef",
+  "freeze.json": "30e14595e5889af683880fecaf72c9be35c9267b344fbe79ec0661f3edc4b0d3",
+  "offline-evaluation-contact-sheet.json": "9d407f61ce88d7a8205e315dff08251d962b9c743730866d9e626c3e87f6464c",
+  "offline-evaluation-contact-sheet.png": "cb9c6b204b537d491aec19b6d483bf52198740a7dbe76838a8272ed131925c94",
+  "preregistration.json": "ba86a0fa1877b39abdfff5e52d06631ba0b6859e3cf284b5ced18e3822f62b28",
+  "scope-gate.json": "b6e78b762b89da3f2e584f63a82ba211b6b2cbd0e6b17dd392b3fa7b982a655d",
+  "static-archive-members.json": "939769779ce578aafa2914e361d911567c3762e63241ae77d05370a69834f137",
+  "static-evidence.tar.xz": "4d90e0ef0700af64ec0ad4482f3e1e09c3823e5d7cc7ab1b387f1f748a6041fa",
+  "static-summary.json": "79d9a86bb7ef730c7a5ea369fd196eb922125b95087f43d0a51eb4c4e3718ae1",
+  "stream-evidence.tar.gz": "9a95e7afe0cc3e5cc33944d90fbfde822345bb963c0944c0ee86f30219bf75d0",
+  "stream-initial-failure.tar.gz": "f24aa19f7d3e8fa9dfdd9702c153dbb9dc89307e75f060b4b61dbaef877564bc",
+  "stream-summary.json": "cc7c408bd7719ecc797ee7fc0c12814397fb324761ac1a82aa0706ac38abee5e",
+  "temporal-artifact-index.json": "abb6c1dbe2860923eeeec3a2439e184614e9485c68f61c10fa830d7f9d5f2e39",
+  "temporal-evidence.tar.gz": "b0324e980bfa5a2c060dd0830a3d3942218bd151cc34672385d7dd9ab220b83c",
+  "temporal-review.json": "814b2b2f61065edd4b6a0b52409d151c9acf737c97a8baf10eff55a7530c0f07",
+  "validation.json": "c02517f150c59aab6565568d8c79ed18927d8abe844daa7d9cb3facca90f11d2"
+}

@@ -1,0 +1,22 @@
+{
+  "targeted_test_commands": [
+    {
+      "command": ".venv-p1/bin/python -m pytest -q tests/test_reference_candidates.py tests/test_p1_observability_stream.py tests/test_p1_temporal_probe.py tests/test_visual_tracker.py",
+      "result": "50 passed in 1.38s"
+    },
+    {
+      "command": ".venv-p1/bin/python -m pytest -q tests/test_p1_observability_closure.py",
+      "result": "2 passed in 0.15s"
+    }
+  ],
+  "ruff_changed_python": "PASS",
+  "broad_suite_run": false,
+  "actual_summary_serialization_regression": "init12/24 actual summary canonical_json succeeded; implementation-copying temporary test removed",
+  "static_generation_exit": 0,
+  "static_scoring_exit": 0,
+  "stream_identity_records_replayed": 7,
+  "temporal_raw_reviews": "all20 contact sheets by AI agent, selected T01/T07/T09 also reviewed by root; not human annotation",
+  "initial_EGL_failures_preserved": true,
+  "init0_reporting_failure_preserved": true,
+  "init0_reexecuted": false
+}

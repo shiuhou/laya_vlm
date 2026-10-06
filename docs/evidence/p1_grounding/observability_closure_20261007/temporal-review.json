@@ -1,0 +1,1001 @@
+{
+  "code_revision": "fb2b2994525a3796d23939de310927e8e6712cde",
+  "registered_cases": 10,
+  "fresh_successfully_recorded_cases": 10,
+  "executed_controls": 600,
+  "recorded_bundles": 610,
+  "target_valid_qualifying_sequences": 0,
+  "unsupported_cases": [
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T10"
+  ],
+  "acquisition_runtime_failures": 0,
+  "evaluator_contact_rows": 0,
+  "model_calls": 0,
+  "admitted_source_bound_seeds": 0,
+  "tracker_initializations": 0,
+  "tracker_statuses": [
+    "UNSEEDED"
+  ],
+  "LOST_or_AMBIGUOUS_not_observed_because_no_chain_initialized": true,
+  "VERIFY": "UNKNOWN",
+  "annotation_packet": "runs/p1/observability-closure-temporal-software7-packet-20261007/index.html",
+  "human_temporal_annotations_completed": false,
+  "observations": [
+    {
+      "case_id": "T01",
+      "init_index": 0,
+      "acquisition": {
+        "captured_bundles": 65,
+        "case_coverage_validated": false,
+        "case_id": "T01",
+        "executed_controls": 64,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 65,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 65,
+          "agentview/reference/UNSEEDED": 65,
+          "robot0_eye_in_hand/face/UNSEEDED": 65,
+          "robot0_eye_in_hand/reference/UNSEEDED": 65
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 65,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T01/inspection/agentview.png",
+            "image_sha256": "73757c5205b8295ad5873e490e7cfa7faf7676ff043f07c3fa94095214c8e217",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.38730823597870767,
+            "max_mean_rgb_change": 0.7540215386284722,
+            "selected_source_frame_ids": [
+              "p1-temporal/T01/agentview/1",
+              "p1-temporal/T01/agentview/10",
+              "p1-temporal/T01/agentview/19",
+              "p1-temporal/T01/agentview/28",
+              "p1-temporal/T01/agentview/37",
+              "p1-temporal/T01/agentview/46",
+              "p1-temporal/T01/agentview/55",
+              "p1-temporal/T01/agentview/65"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 65,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T01/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "c86c4b6f379fc2e4cfd1321dc338863a3e364973e696af06d22c1d54b5f3a611",
+            "max_camera_displacement_m": 0.008461369126726981,
+            "max_camera_rotation_deg": 9.150133263501498,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.28969332299311645,
+            "max_mean_rgb_change": 18.469356960720486,
+            "selected_source_frame_ids": [
+              "p1-temporal/T01/robot0_eye_in_hand/1",
+              "p1-temporal/T01/robot0_eye_in_hand/10",
+              "p1-temporal/T01/robot0_eye_in_hand/19",
+              "p1-temporal/T01/robot0_eye_in_hand/28",
+              "p1-temporal/T01/robot0_eye_in_hand/37",
+              "p1-temporal/T01/robot0_eye_in_hand/46",
+              "p1-temporal/T01/robot0_eye_in_hand/55",
+              "p1-temporal/T01/robot0_eye_in_hand/65"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "3493e39deea4f4639e0dda8b0471fc0750c75c2cec4009cbec5532f6ed15663a",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "Wrist-view scene rotates and returns; perspective change visible. No drawer identity or continuous association proven.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T01/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T01/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T02",
+      "init_index": 1,
+      "acquisition": {
+        "captured_bundles": 81,
+        "case_coverage_validated": false,
+        "case_id": "T02",
+        "executed_controls": 80,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 81,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 81,
+          "agentview/reference/UNSEEDED": 81,
+          "robot0_eye_in_hand/face/UNSEEDED": 81,
+          "robot0_eye_in_hand/reference/UNSEEDED": 81
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 81,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T02/inspection/agentview.png",
+            "image_sha256": "2759f05d3b70a228ccff3d613b84a6c7f88c481a4b4c773b1f8930febab6b744",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.4462195500091184,
+            "max_mean_rgb_change": 1.7162950303819444,
+            "selected_source_frame_ids": [
+              "p1-temporal/T02/agentview/1",
+              "p1-temporal/T02/agentview/12",
+              "p1-temporal/T02/agentview/23",
+              "p1-temporal/T02/agentview/35",
+              "p1-temporal/T02/agentview/46",
+              "p1-temporal/T02/agentview/58",
+              "p1-temporal/T02/agentview/69",
+              "p1-temporal/T02/agentview/81"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 81,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T02/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "94439427c6e3a539e2298e5090eee7b5107bc1113bb05b3371ea536c24ebbd05",
+            "max_camera_displacement_m": 0.02386759385820142,
+            "max_camera_rotation_deg": 13.310533250956532,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.34403530799318105,
+            "max_mean_rgb_change": 17.942396375868057,
+            "selected_source_frame_ids": [
+              "p1-temporal/T02/robot0_eye_in_hand/1",
+              "p1-temporal/T02/robot0_eye_in_hand/12",
+              "p1-temporal/T02/robot0_eye_in_hand/23",
+              "p1-temporal/T02/robot0_eye_in_hand/35",
+              "p1-temporal/T02/robot0_eye_in_hand/46",
+              "p1-temporal/T02/robot0_eye_in_hand/58",
+              "p1-temporal/T02/robot0_eye_in_hand/69",
+              "p1-temporal/T02/robot0_eye_in_hand/81"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "03b09ea6146c36783ee11262bff2751acbabe178dce5a44df238bebe55f974ed",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "Larger wrist perspective change visible and return visible. No valid seeded target chain.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T02/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T02/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T03",
+      "init_index": 2,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T03",
+        "executed_controls": 56,
+        "first_boundary": "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION;NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+        "intended_event_occurred": false,
+        "official_success_evaluated": false,
+        "status": "ACQUISITION_UNSUPPORTED",
+        "unsupported_reason_codes": [
+          "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+          "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE"
+        ],
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T03/inspection/agentview.png",
+            "image_sha256": "247cdf4b5ccbda3d4e688d1f1d2f8526aa49dd6253bf38e154e9d898c28cdab5",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3526559939782601,
+            "max_mean_rgb_change": 0.13532511393229166,
+            "selected_source_frame_ids": [
+              "p1-temporal/T03/agentview/1",
+              "p1-temporal/T03/agentview/9",
+              "p1-temporal/T03/agentview/17",
+              "p1-temporal/T03/agentview/25",
+              "p1-temporal/T03/agentview/33",
+              "p1-temporal/T03/agentview/41",
+              "p1-temporal/T03/agentview/49",
+              "p1-temporal/T03/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T03/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "aaf0835ca40202af28cad11b9b4bdf2f48adcf788f18f5cfc7936545a72924eb",
+            "max_camera_displacement_m": 0.0011821216033704699,
+            "max_camera_rotation_deg": 0.2311515279772548,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.2582128429785371,
+            "max_mean_rgb_change": 1.5102166069878473,
+            "selected_source_frame_ids": [
+              "p1-temporal/T03/robot0_eye_in_hand/1",
+              "p1-temporal/T03/robot0_eye_in_hand/9",
+              "p1-temporal/T03/robot0_eye_in_hand/17",
+              "p1-temporal/T03/robot0_eye_in_hand/25",
+              "p1-temporal/T03/robot0_eye_in_hand/33",
+              "p1-temporal/T03/robot0_eye_in_hand/41",
+              "p1-temporal/T03/robot0_eye_in_hand/49",
+              "p1-temporal/T03/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "6d71e48025ee6daddf2949f0548893c738b8d22324fb26005e09526bda99e227",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "HOLD-only data; agentview EEF remains distant from the foreground cabinet. No intentional partial occlusion occurred.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T03/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T03/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T04",
+      "init_index": 3,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T04",
+        "executed_controls": 56,
+        "first_boundary": "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION;NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+        "intended_event_occurred": false,
+        "official_success_evaluated": false,
+        "status": "ACQUISITION_UNSUPPORTED",
+        "unsupported_reason_codes": [
+          "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+          "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE"
+        ],
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T04/inspection/agentview.png",
+            "image_sha256": "64498b3845e20b1c435f00aa63ae0eaf890df2612e0c145484dda4a63f49042e",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.47601091998512857,
+            "max_mean_rgb_change": 0.1007113986545139,
+            "selected_source_frame_ids": [
+              "p1-temporal/T04/agentview/1",
+              "p1-temporal/T04/agentview/9",
+              "p1-temporal/T04/agentview/17",
+              "p1-temporal/T04/agentview/25",
+              "p1-temporal/T04/agentview/33",
+              "p1-temporal/T04/agentview/41",
+              "p1-temporal/T04/agentview/49",
+              "p1-temporal/T04/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T04/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "3917434c27950a5537282472975597c22141fe9e58bea2af05486cc4032132e1",
+            "max_camera_displacement_m": 0.0004829910089103424,
+            "max_camera_rotation_deg": 0.1199203674896274,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3200430109864101,
+            "max_mean_rgb_change": 1.8505961100260417,
+            "selected_source_frame_ids": [
+              "p1-temporal/T04/robot0_eye_in_hand/1",
+              "p1-temporal/T04/robot0_eye_in_hand/9",
+              "p1-temporal/T04/robot0_eye_in_hand/17",
+              "p1-temporal/T04/robot0_eye_in_hand/25",
+              "p1-temporal/T04/robot0_eye_in_hand/33",
+              "p1-temporal/T04/robot0_eye_in_hand/41",
+              "p1-temporal/T04/robot0_eye_in_hand/49",
+              "p1-temporal/T04/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "b004c57f6edd201f066a18613d4e27d2c22c818b7f445aee17b6f5e5103e811f",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "HOLD-only data; wrist cabinet view remains essentially steady. No full occlusion/reappearance occurred.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T04/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T04/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T05",
+      "init_index": 4,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T05",
+        "executed_controls": 56,
+        "first_boundary": "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION;NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+        "intended_event_occurred": false,
+        "official_success_evaluated": false,
+        "status": "ACQUISITION_UNSUPPORTED",
+        "unsupported_reason_codes": [
+          "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+          "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE"
+        ],
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T05/inspection/agentview.png",
+            "image_sha256": "b1b7f26ec6f9ec7ad4132db62e23f30bed4017dfce626c8ddc851350416d72e3",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.35205934700206853,
+            "max_mean_rgb_change": 0.14094373914930555,
+            "selected_source_frame_ids": [
+              "p1-temporal/T05/agentview/1",
+              "p1-temporal/T05/agentview/9",
+              "p1-temporal/T05/agentview/17",
+              "p1-temporal/T05/agentview/25",
+              "p1-temporal/T05/agentview/33",
+              "p1-temporal/T05/agentview/41",
+              "p1-temporal/T05/agentview/49",
+              "p1-temporal/T05/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T05/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "a6cf57795b42baef4bf4b4b51789e37ef981e42d46914f7cc24bcf0655ba9b1a",
+            "max_camera_displacement_m": 0.0006430363619618683,
+            "max_camera_rotation_deg": 0.12276307450516621,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.2594834220071789,
+            "max_mean_rgb_change": 1.8764512803819444,
+            "selected_source_frame_ids": [
+              "p1-temporal/T05/robot0_eye_in_hand/1",
+              "p1-temporal/T05/robot0_eye_in_hand/9",
+              "p1-temporal/T05/robot0_eye_in_hand/17",
+              "p1-temporal/T05/robot0_eye_in_hand/25",
+              "p1-temporal/T05/robot0_eye_in_hand/33",
+              "p1-temporal/T05/robot0_eye_in_hand/41",
+              "p1-temporal/T05/robot0_eye_in_hand/49",
+              "p1-temporal/T05/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "0310e4905a13a021269c0bb828b223bd9a11b2bd8bde9ef794e81eb7e01d4ee7",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "HOLD-only data; agentview does not show an EEF crossing the foreground cabinet reference. No partial reference occlusion.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T05/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T05/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T06",
+      "init_index": 5,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T06",
+        "executed_controls": 56,
+        "first_boundary": "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION;NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+        "intended_event_occurred": false,
+        "official_success_evaluated": false,
+        "status": "ACQUISITION_UNSUPPORTED",
+        "unsupported_reason_codes": [
+          "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+          "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE"
+        ],
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T06/inspection/agentview.png",
+            "image_sha256": "00e40884f180b95da7b53b64beeec2c567e76b2d9f237a1d69fd93881511a789",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3468575610022526,
+            "max_mean_rgb_change": 0.07206217447916667,
+            "selected_source_frame_ids": [
+              "p1-temporal/T06/agentview/1",
+              "p1-temporal/T06/agentview/9",
+              "p1-temporal/T06/agentview/17",
+              "p1-temporal/T06/agentview/25",
+              "p1-temporal/T06/agentview/33",
+              "p1-temporal/T06/agentview/41",
+              "p1-temporal/T06/agentview/49",
+              "p1-temporal/T06/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T06/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "8a736603362fc918deb08163113957f90e3e4e01067fa87d87d68bcdb400325e",
+            "max_camera_displacement_m": 0.00048472004524935624,
+            "max_camera_rotation_deg": 0.14376284534361888,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.2658734840224497,
+            "max_mean_rgb_change": 1.2170545789930556,
+            "selected_source_frame_ids": [
+              "p1-temporal/T06/robot0_eye_in_hand/1",
+              "p1-temporal/T06/robot0_eye_in_hand/9",
+              "p1-temporal/T06/robot0_eye_in_hand/17",
+              "p1-temporal/T06/robot0_eye_in_hand/25",
+              "p1-temporal/T06/robot0_eye_in_hand/33",
+              "p1-temporal/T06/robot0_eye_in_hand/41",
+              "p1-temporal/T06/robot0_eye_in_hand/49",
+              "p1-temporal/T06/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "1c204e72146eebe0bd9b305b81d1be011ac68cef205bf53b872a278a56803bc7",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "HOLD-only data; agentview does not show full reference occlusion/reappearance.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T06/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T06/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T07",
+      "init_index": 6,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T07",
+        "executed_controls": 56,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T07/inspection/agentview.png",
+            "image_sha256": "1020c03c1134b3fbb3ebdfba15311a1ff68504623d2da6110875267c60f8e8da",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3442335650033783,
+            "max_mean_rgb_change": 0.6632792154947916,
+            "selected_source_frame_ids": [
+              "p1-temporal/T07/agentview/1",
+              "p1-temporal/T07/agentview/9",
+              "p1-temporal/T07/agentview/17",
+              "p1-temporal/T07/agentview/25",
+              "p1-temporal/T07/agentview/33",
+              "p1-temporal/T07/agentview/41",
+              "p1-temporal/T07/agentview/49",
+              "p1-temporal/T07/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T07/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "d12cf75e8f0c789b8f616ed4f1e550ac96ab926c664c889333d761c162d5ba4a",
+            "max_camera_displacement_m": 0.0006056648125449505,
+            "max_camera_rotation_deg": 0.1315650009232722,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3321266710117925,
+            "max_mean_rgb_change": 2.6788465711805554,
+            "selected_source_frame_ids": [
+              "p1-temporal/T07/robot0_eye_in_hand/1",
+              "p1-temporal/T07/robot0_eye_in_hand/9",
+              "p1-temporal/T07/robot0_eye_in_hand/17",
+              "p1-temporal/T07/robot0_eye_in_hand/25",
+              "p1-temporal/T07/robot0_eye_in_hand/33",
+              "p1-temporal/T07/robot0_eye_in_hand/41",
+              "p1-temporal/T07/robot0_eye_in_hand/49",
+              "p1-temporal/T07/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "31b4c9a7fe61a68fcac6a9e9320519466717cface86053f158e7f30722633ecc",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "Raw views show subtle foreground drawer/handle displacement across boundary while the cabinet body remains approximately stationary. A visible movement event is supported qualitatively; no independently grounded fixed reference or valid lineage.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T07/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T07/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T08",
+      "init_index": 7,
+      "acquisition": {
+        "captured_bundles": 65,
+        "case_coverage_validated": false,
+        "case_id": "T08",
+        "executed_controls": 64,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 65,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 65,
+          "agentview/reference/UNSEEDED": 65,
+          "robot0_eye_in_hand/face/UNSEEDED": 65,
+          "robot0_eye_in_hand/reference/UNSEEDED": 65
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 65,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T08/inspection/agentview.png",
+            "image_sha256": "35e23092242f96e707a639ec0c1a11a6e550ced8f533832de61035a87fabd17b",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3457030009885784,
+            "max_mean_rgb_change": 0.7532179090711806,
+            "selected_source_frame_ids": [
+              "p1-temporal/T08/agentview/1",
+              "p1-temporal/T08/agentview/10",
+              "p1-temporal/T08/agentview/19",
+              "p1-temporal/T08/agentview/28",
+              "p1-temporal/T08/agentview/37",
+              "p1-temporal/T08/agentview/46",
+              "p1-temporal/T08/agentview/55",
+              "p1-temporal/T08/agentview/65"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 65,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T08/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "4a7ed1b61123a99d8b607e0fb4503772307d02f5feb446a9ff1ed44c43c06cd3",
+            "max_camera_displacement_m": 0.0003375746908093151,
+            "max_camera_rotation_deg": 0.0955911905648316,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.2908876560104545,
+            "max_mean_rgb_change": 3.4580145941840277,
+            "selected_source_frame_ids": [
+              "p1-temporal/T08/robot0_eye_in_hand/1",
+              "p1-temporal/T08/robot0_eye_in_hand/10",
+              "p1-temporal/T08/robot0_eye_in_hand/19",
+              "p1-temporal/T08/robot0_eye_in_hand/28",
+              "p1-temporal/T08/robot0_eye_in_hand/37",
+              "p1-temporal/T08/robot0_eye_in_hand/46",
+              "p1-temporal/T08/robot0_eye_in_hand/55",
+              "p1-temporal/T08/robot0_eye_in_hand/65"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "d5f651a9d34e1028558cbb982a9db34f6a3d25af3395d5d4760782f8675f6a01",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "Raw views show a small drawer/handle boundary excursion and return. Movement reversal is visually subtle; formal coverage/identity review remains pending.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T08/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T08/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T09",
+      "init_index": 8,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T09",
+        "executed_controls": 56,
+        "official_success_evaluated": false,
+        "status": "ACQUIRED_UNINSPECTED",
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T09/inspection/agentview.png",
+            "image_sha256": "f96e3f01bfafec9a06bc7e087ea0f0ca767321de3806bb4adea333a09e32a6bb",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.35368280598777346,
+            "max_mean_rgb_change": 1.4343838161892362,
+            "selected_source_frame_ids": [
+              "p1-temporal/T09/agentview/1",
+              "p1-temporal/T09/agentview/9",
+              "p1-temporal/T09/agentview/17",
+              "p1-temporal/T09/agentview/25",
+              "p1-temporal/T09/agentview/33",
+              "p1-temporal/T09/agentview/41",
+              "p1-temporal/T09/agentview/49",
+              "p1-temporal/T09/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T09/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "a1b1f5276bef7d9a6fe5f585557dfde9b217c99d74109be306038b52250e7462",
+            "max_camera_displacement_m": 0.0008636868992239057,
+            "max_camera_rotation_deg": 0.17741265449916,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3619217670056969,
+            "max_mean_rgb_change": 3.364071316189236,
+            "selected_source_frame_ids": [
+              "p1-temporal/T09/robot0_eye_in_hand/1",
+              "p1-temporal/T09/robot0_eye_in_hand/9",
+              "p1-temporal/T09/robot0_eye_in_hand/17",
+              "p1-temporal/T09/robot0_eye_in_hand/25",
+              "p1-temporal/T09/robot0_eye_in_hand/33",
+              "p1-temporal/T09/robot0_eye_in_hand/41",
+              "p1-temporal/T09/robot0_eye_in_hand/49",
+              "p1-temporal/T09/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "8a874af750d936144f5929019949b1d23f5760cf4f989f3f6a373159c9b1a816",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "Raw views contain subtle foreground cabinet boundary displacement. A named fixed reference and reference-relation invalidation are not independently established.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T09/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T09/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    },
+    {
+      "case_id": "T10",
+      "init_index": 9,
+      "acquisition": {
+        "captured_bundles": 57,
+        "case_coverage_validated": false,
+        "case_id": "T10",
+        "executed_controls": 56,
+        "first_boundary": "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION;NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE;REAL_ASYNC_SEMANTIC_REPLY_NOT_CONFIGURED",
+        "intended_event_occurred": false,
+        "official_success_evaluated": false,
+        "status": "ACQUISITION_UNSUPPORTED",
+        "unsupported_reason_codes": [
+          "NO_UNIQUE_SOURCE_BOUND_FEATURE_FOR_OCCLUSION",
+          "NO_CONSERVATIVE_ROBOT_OWNED_EEF_SWEEP_CERTIFICATE",
+          "REAL_ASYNC_SEMANTIC_REPLY_NOT_CONFIGURED"
+        ],
+        "visual_inspection_required": true
+      },
+      "analysis": {
+        "bundles": 57,
+        "case_coverage_validated": false,
+        "delayed_semantic_reply_evaluated": false,
+        "evaluator_truth_read": false,
+        "official_success_evaluated": false,
+        "online_freshness_evaluated": false,
+        "synthetic_sequence": false,
+        "track_counts": {
+          "agentview/face/UNSEEDED": 57,
+          "agentview/reference/UNSEEDED": 57,
+          "robot0_eye_in_hand/face/UNSEEDED": 57,
+          "robot0_eye_in_hand/reference/UNSEEDED": 57
+        },
+        "unused_seed_keys": [],
+        "verify_calibrated": false,
+        "visual_inspection_required": true
+      },
+      "inspection": {
+        "cameras": [
+          {
+            "camera_id": "agentview",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T10/inspection/agentview.png",
+            "image_sha256": "4bc8fca8344bb693a9769664b191b64d50c3be8054a3785a39a49c8bd2d59757",
+            "max_camera_displacement_m": 0.0,
+            "max_camera_rotation_deg": 0.0,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.3837683080055285,
+            "max_mean_rgb_change": 0.09461127387152778,
+            "selected_source_frame_ids": [
+              "p1-temporal/T10/agentview/1",
+              "p1-temporal/T10/agentview/9",
+              "p1-temporal/T10/agentview/17",
+              "p1-temporal/T10/agentview/25",
+              "p1-temporal/T10/agentview/33",
+              "p1-temporal/T10/agentview/41",
+              "p1-temporal/T10/agentview/49",
+              "p1-temporal/T10/agentview/57"
+            ]
+          },
+          {
+            "camera_id": "robot0_eye_in_hand",
+            "frames": 57,
+            "image": "runs/p1/observability-closure-temporal-software7-20261007/T10/inspection/robot0_eye_in_hand.png",
+            "image_sha256": "90d40fd51e204da12547750c81a4fa96bd73a43dba3cf14887b739331d1165e3",
+            "max_camera_displacement_m": 0.00022571429738854238,
+            "max_camera_rotation_deg": 0.11047063910352004,
+            "max_capture_gap_sim_s": 0.050000000000000044,
+            "max_capture_gap_wall_s": 0.33248614499461837,
+            "max_mean_rgb_change": 1.33935546875,
+            "selected_source_frame_ids": [
+              "p1-temporal/T10/robot0_eye_in_hand/1",
+              "p1-temporal/T10/robot0_eye_in_hand/9",
+              "p1-temporal/T10/robot0_eye_in_hand/17",
+              "p1-temporal/T10/robot0_eye_in_hand/25",
+              "p1-temporal/T10/robot0_eye_in_hand/33",
+              "p1-temporal/T10/robot0_eye_in_hand/41",
+              "p1-temporal/T10/robot0_eye_in_hand/49",
+              "p1-temporal/T10/robot0_eye_in_hand/57"
+            ]
+          }
+        ],
+        "case_coverage_validated": false,
+        "evaluator_truth_read": false,
+        "frames_sha256": "f4a1e4585295d09dd6587a4530f1865b2538b2b995ce0f08f74956b8585348f0",
+        "visual_inspection_required": true
+      },
+      "evaluator_contact_rows": 0,
+      "agent_review": {
+        "reviewer": "AI_agent_temporal_closure",
+        "independent_human_annotation": false,
+        "qualified_observation": "HOLD-only data. No actual perspective/occlusion/delayed semantic response boundary; no model process was run.",
+        "formal_temporal_coverage": "NOT_QUALIFIED",
+        "reviewed_raw_sheets": [
+          "runs/p1/observability-closure-temporal-software7-20261007/T10/inspection/agentview.png",
+          "runs/p1/observability-closure-temporal-software7-20261007/T10/inspection/robot0_eye_in_hand.png"
+        ],
+        "continuous_tracking_proven": false,
+        "reference_observability_proven": false
+      }
+    }
+  ],
+  "earlier_render_routing_failure_preserved": "runs/p1/observability-closure-temporal-20261007/batch-summary.json"
+}

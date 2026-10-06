@@ -1,0 +1,8 @@
+{
+  "lossless_static_archive": "static-evidence.tar.xz",
+  "all_generation_sealed_files_verified": 53,
+  "static_archive_files": 564,
+  "static_frame_count": 50,
+  "generation_seal_sha256": "f4eca3ce2a23f5e119f686e5b83220fcb33bec94e351890e474fcf9fd99acff2",
+  "all_generated_raw_effects_and_hypotheses_preserved": true
+}

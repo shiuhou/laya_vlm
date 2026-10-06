@@ -2175,3 +2175,40 @@ Continue until a clear architecture is supported within stated conditions, the
 core hypothesis requires a major reframe, necessary resources are unavailable, or
 a genuinely human research decision is required. A negative experiment alone does
 not end the mission or authorize arbitrary complexity.
+
+
+## 2026-10-07 — bounded P1 observability closure
+
+Research question: Does the fixed sensor/BOX condition supply a reliably associated
+drawer push surface, fixed cabinet reference and temporal lineage for B0?
+This follows the selected milestone route; it does not reopen architecture search.
+
+Hypotheses: the first drawer failure is BOX-to-surface association/contamination;
+competing explanations are absent geometry, depth ambiguity and camera observability.
+Intervention: complete sensor-only face/boundary inventory on the frozen50 views,
+sealed before immutable corrected-v2 scoring; ten fresh temporal attempts and three
+latest-frame live cost acquisitions. Controls: unchanged queries, model/checkpoint,
+geometry gates, recorded static data, executor and timestamps; no new model calls.
+
+Observed result: original tool-interior target support0/25; local plane overlap21/25
+BOX searches and25/25 full-frame searches; wrist median ROI contamination97.48%.
+Reference overlap25/25 visible agentview frames, but identity/fixedness/closed relation
+UNKNOWN. Ten recordings/610 bundles have all target chains UNSEEDED; occlusion and
+delayed-output cases explicitly unsupported. Exhaustive cost snapshots take26–33s
+of geometry processing, and all14 published diagnostic view ages exceed0.3s.
+
+Operational negative evidence: Mesa hardware-default pre-capture failure preserved;
+software device7 separately registered. Init0 final report failed boolean-key
+serialization; raw evidence preserved, no init0 rerun. One-line reporting fix in
+isolated worktree permits actual init12/24 summary serialization.
+
+Interpretation: Gate C. Observed support existence falsifies a blanket no-surface
+explanation; it does not prove action usability or a fixed closed reference.
+No claim of continuous tracking, current target freshness or general model failure.
+Remaining uncertainty: reliable target segmentation/association, independently
+evaluated temporal lineage and cabinet-relative closed geometry.
+Next decision: define a separate development-only segmentation/sensing intervention
+against the association bottleneck; no fallback/model/PUSH experiment started.
+
+Artifacts and exact code conditions: [closure report](../p1-observability-closure-results.md)
+and [evidence](../evidence/p1_grounding/observability_closure_20261007/README.md).

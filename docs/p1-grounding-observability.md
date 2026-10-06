@@ -1,5 +1,12 @@
 # P1 grounding / observability — annotation handoff
 
+**Latest bounded round:** [P1 observability closure results](p1-observability-closure-results.md)
+report **Gate C**, with sealed static reanalysis, ten temporal attempts and three
+live cost acquisitions. The 50-frame corrected-v2 annotation remains complete;
+no redraw is required. Reference POINT decoder work is closed; VERIFY remains
+UNKNOWN. The preparation/provenance history below is preserved, not an instruction
+to request new v3 labels or resume decoder experiments.
+
 The preserved infrastructure checkpoint is **92865a8** on
 `feat/p1-rgbd-geometry`. New preparation is isolated on
 `feat/p1-grounding-observability`. **Task acceptance remains pending.**
