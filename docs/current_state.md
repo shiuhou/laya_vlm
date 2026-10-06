@@ -1,17 +1,26 @@
 # Current project state
 
-**Current implementation checkpoint: 2026-10-05.** The selected architecture is
+**Current implementation checkpoint: 2026-10-06.** The selected architecture is
 Qwen3-VL brain → Laya local selection → continuous RGB-D geometry / deterministic
 servo, evaluated later with B0–B4. [P0 is accepted](p0-acceptance.md).
 [P1 capture/geometry/tracking and replay are implemented](p1-rgbd-checkpoint.md),
 but drawer-front grounding and cabinet-relative VERIFY remain unestablished;
 P1 task acceptance and P2 control are pending. Current branch:
-`feat/p1-rgbd-geometry`; frozen diagnostic code: `c6fe3ae`.
-Infrastructure checkpoint `92865a8` is preserved. Preparation on
-`feat/p1-grounding-observability` now provides [blinded human annotation and a
-guarded fixed-query evaluation](p1-grounding-observability.md); complete primary
-human labels are pending, with zero semantic model calls or qualifying temporal
-sequences. This preparation does not pass the P1 task gate.
+`feat/p1-grounding-observability`. Infrastructure checkpoint `92865a8` is preserved.
+The [completed grounding closure](p1-grounding-results.md) includes the corrected
+human-label provenance, 100 sealed fixed-query calls over 50 views, ten exploratory
+temporal acquisitions, and timing evidence. Grounding/reference identity was not
+established; none of the temporal acquisitions qualifies as target-valid tracking.
+The current bounded [surface-association development probe](research/p1_surface_dev_protocol.md)
+uses fresh init 25/26 at 384×256, exact native BOX/POINT queries, retained depth
+surface supports and the unchanged tracker gate. This is development diagnosis,
+not reuse of evaluation labels or acceptance of P1. No PUSH, P2, Qwen or Laya
+integration is authorized in this batch.
+The [2026-10-06 repair-batch receipt](evidence/p1_grounding/surface_dev_20261006/README.md)
+records fresh capture success and a CPU inference ceiling: only one BOX completed
+in 816 seconds; no complete POINT/pair exists, so association and tracker
+initialization on real development frames remain untested. The tools and four
+focused correctness tests are complete; P1 task acceptance remains pending.
 
 The following is the preserved **2026-09-27 historical research checkpoint**.
 Its paused status and architecture-search authority do not describe the resumed

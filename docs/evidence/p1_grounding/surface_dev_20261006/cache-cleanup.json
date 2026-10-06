@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/tmp/laya-surface-dev-hf-modules",
+    "bytes": 332291,
+    "kind": "process-specific disposable cache/config; canonical evidence retained"
+  },
+  {
+    "path": "/tmp/laya-surface-dev-numba",
+    "bytes": 918072,
+    "kind": "process-specific disposable cache/config; canonical evidence retained"
+  },
+  {
+    "path": "/tmp/laya-surface-dev-mesa",
+    "bytes": 1395007,
+    "kind": "process-specific disposable cache/config; canonical evidence retained"
+  },
+  {
+    "path": "/tmp/laya-surface-dev-libero",
+    "bytes": 358,
+    "kind": "process-specific disposable cache/config; canonical evidence retained"
+  }
+]

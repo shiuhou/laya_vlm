@@ -140,3 +140,10 @@ boundary is a source-bound association between the requested semantic subpart
 and its measured surface, plus an observable reference relation and measured
 freshness. This report does not implement that repair or tune the current
 queries/geometry against the evaluation labels.
+
+The subsequent [bounded development repair](evidence/p1_grounding/surface_dev_20261006/README.md)
+implements source-bound POINT-to-surface association without changing these
+historical results or gates. Fresh init 25/26 capture succeeded, but a CPU-only
+900-second inference ceiling left no complete BOX/POINT pair. Real-data surface
+association/tracker acceptance therefore remains untested; no PUSH/model
+integration follows from the implementation tests.
