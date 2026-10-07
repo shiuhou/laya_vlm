@@ -11,6 +11,8 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
+import sys
 import time
 
 import numpy as np
@@ -96,7 +98,7 @@ def registration(root):
     return r
 
 
-def prepare(output, assets):
+def prepare(output, assets, inherited_boxes=None):
     assets = read(assets)
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
@@ -131,14 +133,66 @@ def prepare(output, assets):
              independent_evaluation=False, for_execution=False, tracker_calls=0,
              qwen_calls=0, laya_calls=0, controls=0,
              failure_rule="stop runtime/invalid output/incomplete generation; retain every ordinary geometry rejection")
+    if inherited_boxes is not None:
+        prior_root = Path(inherited_boxes).absolute()
+        prior = registration(prior_root)
+        verify_seal(prior_root/"boxes")
+        for key in ("inputs", "query", "generation_settings", "sam_settings", "checkpoint_sha256",
+                    "sam_config_sha256", "sam_source_files_sha256", "source_files_sha256"):
+            require(prior[key] == r[key], "inherited condition differs", "CONDITION_CHANGED")
+        r["new_BOX_calls"] = 0
+        r["inherited_boxes"] = dict(root=str(prior_root),
+            registration_sha256=file_hash(prior_root/"registration.json"),
+            boxes_seal_sha256=file_hash(prior_root/"boxes/sealed.json"),
+            correction="invoke absolute venv executable without symlink resolution",
+            independent_replication=False)
     r["registration_content_sha256"] = content_hash(r)
     write(root/"registration.json", r)
     registration(root)
 
 
+def reuse_boxes(root):
+    root = Path(root)
+    r = registration(root)
+    inherited = r["inherited_boxes"]
+    prior_root = Path(inherited["root"])
+    require(file_hash(prior_root/"registration.json") == inherited["registration_sha256"]
+            and file_hash(prior_root/"boxes/sealed.json") == inherited["boxes_seal_sha256"],
+            "inherited registration/seal changed", "SOURCE_MISMATCH")
+    prior = registration(prior_root)
+    verify_seal(prior_root/"boxes")
+    require(r["new_BOX_calls"] == 0 and r["inputs"] == prior["inputs"]
+            and r["query"] == prior["query"] and r["generation_settings"] == prior["generation_settings"],
+            "inherited BOX condition differs", "CONDITION_CHANGED")
+    rows = read(prior_root/"boxes/inputs.json")
+    require([row["init_index"] for row in rows] == r["init_indices"], "inherited sample order differs")
+    for row in rows:
+        init = row["init_index"]
+        view, _ = view_for(r["source"], init)
+        require(row["source_identity"] == sensor_view_identity(view) and row["query"] == r["query"],
+                "inherited BOX sensor source differs", "SOURCE_MISMATCH")
+        if init == 25:
+            response = read(prior_root/"boxes/init-025-original-response.json")
+            raw, audit = response["raw_output"], response["audit"]
+        else:
+            raw = read(prior_root/"boxes/init-026-raw-output.json")["raw_response"]
+            audit = read(prior_root/"boxes/init-026-audit.json")
+        parsed = parse_semantic_reply(raw, 384, 256, mode="box", audit=audit)
+        require(parsed.admitted and canonical_json(parsed.evidence())
+                == canonical_json(read(prior_root/f"boxes/init-{init:03d}-typed.json"))
+                and [list(a.pixels) for a in parsed.selected] == row["ordered_boxes"],
+                "inherited whole-output BOX parse differs", "SOURCE_MISMATCH")
+    shutil.copytree(prior_root/"boxes", root/"boxes")
+    # A byte-identical inherited seal is preserved; continuation lineage is separate.
+    write(root/"boxes-inheritance.json", dict(**inherited, code=code_identity(), new_model_calls=0))
+    verify_seal(root/"boxes")
+
+
 def boxes(root):
     root = Path(root)
     r = registration(root)
+    require(r["new_BOX_calls"] == 1 and "inherited_boxes" not in r,
+            "continuation forbids new semantic calls; use reuse-boxes", "CONDITION_CHANGED")
     out = root/"boxes"
     out.mkdir(exist_ok=False)
     write(out/"condition.json", dict(code=code_identity(), registration_sha256=file_hash(root/"registration.json")))
@@ -192,6 +246,13 @@ def _masks_native(root):
     out = root/"masks"
     out.mkdir(exist_ok=False)
     import torch
+    expected_executable = r["environment_receipt"]["python_executable"]
+    environment = dict(executable=sys.executable, prefix=sys.prefix, base_prefix=sys.base_prefix,
+                       torch=torch.__version__, expected_executable=expected_executable)
+    write(out/"process-environment.json", environment)
+    require(os.path.abspath(sys.executable) == os.path.abspath(expected_executable)
+            and Path(sys.prefix).absolute() == Path(expected_executable).absolute().parent.parent,
+            "prepared venv invocation required; do not resolve executable symlink", "ENVIRONMENT_MISMATCH")
     require(torch.__version__ == "2.5.1+cu121", "isolated locked Torch condition required")
     require(os.environ.get("CUBLAS_WORKSPACE_CONFIG") == SAM_SETTINGS["cublas_workspace_config"],
             "explicit deterministic CuBLAS workspace required before CUDA initialization")
@@ -316,15 +377,16 @@ def geometry(root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=["prepare", "boxes", "masks", "geometry"])
+    parser.add_argument("stage", choices=["prepare", "boxes", "reuse-boxes", "masks", "geometry"])
     parser.add_argument("--output", required=True)
     parser.add_argument("--assets", help="pinned model/environment receipt, prepare only")
+    parser.add_argument("--reuse-boxes-from", help="sealed predecessor root, prepare only")
     args = parser.parse_args()
     if args.stage == "prepare":
         require(args.assets is not None, "assets receipt required")
-        prepare(args.output, args.assets)
+        prepare(args.output, args.assets, args.reuse_boxes_from)
     else:
-        {"boxes": boxes, "masks": masks, "geometry": geometry}[args.stage](args.output)
+        {"boxes": boxes, "reuse-boxes": reuse_boxes, "masks": masks, "geometry": geometry}[args.stage](args.output)
 
 
 if __name__ == "__main__":
