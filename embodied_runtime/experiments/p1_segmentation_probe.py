@@ -30,6 +30,7 @@ from .records import code_identity, file_hash
 
 SOURCE = Path("runs/p1/surface-dev-20261006-capture02")
 BOX25 = Path("runs/p1/drawer-pair-gpu-20261007/init-025-drawer_front_pushable-box-response.json")
+BOX25_REQUEST = BOX25.with_name("init-025-drawer_front_pushable-box-request.json")
 SAM_REVISION = "2b90b9f5ceec907a1c18123530e92e794ad901a4"
 CHECKPOINT_SHA = "7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69"
 CONFIG_SHA = "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d"
@@ -106,7 +107,7 @@ def prepare(output, assets):
         identity = sensor_view_identity(view)
         inputs.append(dict(init_index=init, source_identity=identity,
                            sensor_view_sha256=content_hash(identity)))
-    for path in (SOURCE/"registration.json", SOURCE/"inputs.json", BOX25):
+    for path in (SOURCE/"registration.json", SOURCE/"inputs.json", BOX25, BOX25_REQUEST):
         source_files[str(path.resolve())] = file_hash(path)
     require(assets["checkpoint_sha256"] == CHECKPOINT_SHA and assets["sam_revision"] == SAM_REVISION,
             "fixed tiny assets required")
@@ -115,7 +116,7 @@ def prepare(output, assets):
              source=str(SOURCE.resolve()), source_files_sha256=source_files,
              init_indices=[25, 26], inputs=inputs, query=QUERIES["drawer_front_pushable"],
              generation_settings=SETTINGS, new_BOX_calls=1, new_POINT_calls=0,
-             box25=str(BOX25.resolve()), sam_source=assets["sam_source"],
+             box25=str(BOX25.resolve()), box25_request=str(BOX25_REQUEST.resolve()), sam_source=assets["sam_source"],
              sam_revision=SAM_REVISION, checkpoint_path=assets["checkpoint_path"],
              checkpoint_sha256=CHECKPOINT_SHA, sam_config_sha256=CONFIG_SHA,
              sam_settings=SAM_SETTINGS, environment_receipt=assets,
@@ -145,8 +146,17 @@ def boxes(root):
             view, _ = view_for(r["source"], init)
             if init == 25:
                 response = read(r["box25"])
-                require(response["frame"]["rgb_sha256"] == sensor_view_identity(view)["rgb_sha256"]
-                        and response["frame"]["frame_id"] == view["canonical_frame_id"], "BOX25 source mismatch")
+                source = sensor_view_identity(view)
+                request = read(r["box25_request"])
+                require(response["frame"]["rgb_sha256"] == source["rgb_sha256"]
+                        and response["frame"]["frame_id"] == source["frame_id"]
+                        and response["frame"]["camera_id"] == source["camera_id"]
+                        and response["frame"]["calibration_version"] == source["calibration_version"]
+                        and response["frame"]["sensor_view_sha256"] == content_hash(source)
+                        and response["entity"] == "drawer_front_pushable" and response["mode"] == "box"
+                        and request["frame"] == response["frame"]
+                        and request["question"] == f"Locate a single instance that matches the following description: {r['query']}.",
+                        "BOX25 source/query mismatch", "SOURCE_MISMATCH")
                 raw, audit = response["raw_output"], response["audit"]
                 write(out/"init-025-original-response.json", response)
                 response_hash = file_hash(r["box25"])
@@ -173,7 +183,7 @@ def boxes(root):
         raise
 
 
-def masks(root):
+def _masks_native(root):
     root = Path(root)
     r = registration(root)
     verify_seal(root/"boxes")
@@ -239,6 +249,17 @@ def masks(root):
         seal(out)
     except Exception as exc:
         write(out/"failure.json", dict(error=repr(exc), hidden_retry=False))
+        raise
+
+
+def masks(root):
+    # Device/version/import failures precede model loading but remain evidence.
+    try:
+        _masks_native(root)
+    except Exception as exc:
+        failure = Path(root)/"masks/failure.json"
+        if failure.parent.is_dir() and not failure.exists():
+            write(failure, dict(error=repr(exc), hidden_retry=False, stage="before_native_model_call"))
         raise
 
 
