@@ -1,5 +1,31 @@
 # Current research beliefs
 
+## BOX role factorial — 2026-10-08
+
+Observed: [role decomposition](docs/p1-box-role-results.md), execution ed48728,
+reuses masks with zero inference. Matched21: HH/HO/OH/OO=21/21/21/10candidate
+frames. Both substitutions recover the same11frames; each has0outside proposals.
+OO retains44,737raw outside proposals. Four original-prompt exclusions remain
+unavailable for OH, while HO fails support on those4. All138new native results
+are preserved; geometry/tool gates unchanged.
+
+Inference: broad/contaminated support plus broad search-domain interaction is
+sufficient to explain matched-set failures. Neither SAM prompting nor geometry
+domain alone earns priority: preregistered contributions tie5.5/5.5, interaction−11.
+This supersedes interpreting the earlier BOX contrast as selecting one repair.
+Confidence high for the finite recorded intervention, unknown for transfer.
+Evidence against sole SAM failure: unchanged masks recover under human domain.
+Evidence against sole domain failure: human-prompt masks recover in original domain.
+
+Unknown: which autonomous target-support source/BOX interface transfers. Human
+search domain does not justify full-image/nearest-plane fallbacks or removing
+constraints blindly. Falsifier for substitutable interventions: new held-out
+conditions show one intervention consistently fails with source-valid support.
+Next: bounded selection/preregistration of one repair and new held-out validation;
+no repair, extra development condition, held-out tuning or downstream run tonight.
+P1 unpassed, all usability UNKNOWN, VERIFY UNKNOWN. Stopped on priority tie.
+
+
 ## Semantic decomposition — 2026-10-08 local / 2026-10-07 UTC
 
 Observed: [frozen development decomposition](docs/p1-semantic-decomposition-results.md)

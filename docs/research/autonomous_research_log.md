@@ -2477,3 +2477,27 @@ held-out reliability, temporal lineage and VERIFY. SharedGPU/offline latency is
 not continuousHz. Next decision: one semantic BOX/search-region repair, later
 new held-out validation, frozen geometry/tool gates. Not executed this round;
 no tracker/P2/PUSH/Qwen/Laya. Stop for review as requested.
+
+
+## 2026-10-08 — BOX prompt versus geometry-domain roles
+
+Question: does the earlier BOX effect come from SAM prompting or geometry domain?
+Why: C2/C3 simultaneously changed both and could not choose a repair mechanism.
+Hypotheses: prompt-dominant, domain-dominant, or interacting/substitutable losses.
+Intervention: freeze51be5f6 masks/POINTs; evaluate HO/OH at ed48728, reuse HH/OO.
+Controlled: sensor data, masks, configs, all gates/order, seed and input identities.
+Metrics: all25coverage and fully matched21factorial; inside/outside candidates,
+all native boundaries, conditional gains/losses and explicit missingness.
+Result: matched HH/HO/OH/OO=21/21/21/10; both recover same11.4original-prompt
+frames unavailable; HO evaluates them but fails support. Crossed conditions have
+0outside candidates, OO44,737raw. Equal balanced contributions5.5/5.5 and−11
+interaction. Preregistered decision INCONCLUSIVE; no posthoc tie-breaker.
+Evidence: runs/p1/box-role-20261008; docs/p1-box-role-results.md; complete source
+hashes, all138native evaluations, candidate reprojection audit,25images/5sheets.
+Interpretation: two substitutable corrections on the matched frames, not proof
+of one sole bottleneck or50/50causal error. True exclusion remains separate.
+Unknown: autonomous support source, held-out transfer, candidate selection and
+control/VERIFY. Human domain is not a deployable fallback. Next: review/preregister
+one repair plus new held-out validation; no further exposed-frame tuning.
+Checks:2targeted tests,ruff F,compile,whitespace pass. No new inference or runtime
+changes. No harness failure/retry. No tracker/P2/Qwen/Laya. Stop for review.

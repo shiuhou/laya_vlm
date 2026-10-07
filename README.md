@@ -20,6 +20,15 @@ conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
 
+The [BOX role decomposition](docs/p1-box-role-results.md) is complete at
+execution `ed48728`, with no new model calls. On21fully matched frames,
+SAM-BOX/geometry-BOX conditions HH/HO/OH/OO yield **21/21/21/10** candidate frames.
+Both crossed interventions recover the same11failures; neither is uniquely
+prioritized. Four original-prompt frames remain unavailable. This is offline
+human-assisted development evidence, not P1 acceptance. No BOX/interface repair
+was implemented; the next single repair/held-out condition requires a bounded
+choice, not more tuning on these25frames.
+
 The [bounded semantic decomposition](docs/p1-semantic-decomposition-results.md)
 is complete at execution `f60cc1d`: human support / human BOX+POINT /
 original BOX+human POINT / original BOX+model POINT yield candidate-frame counts
