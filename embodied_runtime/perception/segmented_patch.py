@@ -1,7 +1,7 @@
 """Source-bound learned-mask geometry diagnostic, without action authority.
 
 A mask is a learned hypothesis, not verified target identity. Outside-mask
-depth is UNKNOWN; the original BOX and geometry denominator/gates survive.
+depth is UNKNOWN; native-mask depth availability and BOX coverage are distinct.
 Persisted artifact bytes must be authenticated by the caller before admission.
 """
 from __future__ import annotations
@@ -22,7 +22,8 @@ def _sha256(value, name):
 
 
 def estimate_segmented_patch(view, original_box, mask, *, mask_binding, config,
-                             track_id, feature_id, seed=0, eef_position_base_m=None):
+                             track_id, feature_id, seed=0, eef_position_base_m=None,
+                             measurement_contract="native-mask-depth/2"):
     """Evaluate one native mask; never rank masks or select a target winner.
 
     ``mask_binding`` binds the complete sensor identity, original BOX response
@@ -32,6 +33,8 @@ def estimate_segmented_patch(view, original_box, mask, *, mask_binding, config,
     correctness, calibrated confidence, fixedness or executability is implied.
     """
     require(isinstance(mask_binding, Mapping), "mask binding required")
+    require(measurement_contract in {"native-mask-depth/2", "original-box-depth/1"},
+            "explicit known depth measurement contract required")
     require(isinstance(config, GeometryConfig), "explicit unchanged geometry config required")
     source = sensor_view_identity(view)
     source_hash = content_hash(source)
@@ -87,9 +90,12 @@ def estimate_segmented_patch(view, original_box, mask, *, mask_binding, config,
         feature_id=feature_id, capture_sim_time_s=view["capture_sim_time_s"],
         capture_monotonic_ns=view["capture_monotonic_ns"], config=config, seed=seed,
         eef_position_base_m=eef_position_base_m,
+        depth_availability_mask=native_mask if measurement_contract == "native-mask-depth/2" else None,
     )
     return dict(
-        condition="p1-segmented-patch/1", source_identity=source,
+        condition="p1-segmented-patch/2" if measurement_contract == "native-mask-depth/2" else "p1-segmented-patch/1",
+        **({"measurement_contract": measurement_contract} if measurement_contract == "native-mask-depth/2" else {}),
+        source_identity=source,
         sensor_view_sha256=source_hash, mask_binding=thaw(mask_binding),
         raw_mask_sha256=native_sha,
         original_depth_sha256=source["depth_sha256"],

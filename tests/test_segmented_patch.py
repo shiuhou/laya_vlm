@@ -36,7 +36,8 @@ def test_native_mask_keeps_original_roi_denominator_and_does_not_mutate_inputs()
     view, box, mask, binding = fixture()
     original_depth, original_mask = view["depth_m"].copy(), mask.copy()
     result = estimate_segmented_patch(view, box, mask, mask_binding=binding,
-                                     config=GeometryConfig(), track_id="test", feature_id="mask2")
+                                     config=GeometryConfig(), track_id="test", feature_id="mask2",
+                                     measurement_contract="original-box-depth/1")
     assert result["patch"]["reason_codes"] == ["INSUFFICIENT_VALID_DEPTH"]
     assert result["patch"]["metrics"]["roi_pixel_count"] == 480
     assert result["patch"]["metrics"]["valid_depth_count"] == 16
@@ -48,6 +49,38 @@ def test_native_mask_keeps_original_roi_denominator_and_does_not_mutate_inputs()
     assert result["calibrated_confidence"] is None
     np.testing.assert_array_equal(view["depth_m"], original_depth)
     np.testing.assert_array_equal(mask, original_mask)
+
+
+def test_native_mask_availability_passes_while_absolute_roi_support_still_rejects():
+    view, box, mask, binding = fixture()
+    result = estimate_segmented_patch(view, box, mask, mask_binding=binding,
+        config=GeometryConfig(), track_id="test", feature_id="mask2")
+    metrics = result["patch"]["metrics"]
+    assert metrics["mask_pixel_count"] == metrics["valid_depth_inside_mask"] == 17
+    assert metrics["depth_availability"] == metrics["depth_valid_ratio"] == 1.0
+    assert metrics["mask_original_box_coverage"] == 16/480
+    assert metrics["mask_pixels_outside_original_roi"] == 1
+    assert metrics["valid_depth_count"] == 16
+    assert result["patch"]["reason_codes"] == ["INSUFFICIENT_CONNECTED_SUPPORT"]
+    assert result["semantic_identity"] == "UNKNOWN" and result["for_execution"] is False
+
+
+@pytest.mark.parametrize("empty", [False, True])
+def test_missing_mask_depth_and_empty_mask_remain_unknown(empty):
+    view, box, mask, binding = fixture()
+    if empty:
+        mask[:] = False
+    else:
+        view["depth_m"][4:7, 4:8] = np.nan
+    binding["raw_mask_sha256"] = hashlib.sha256(mask.tobytes()).hexdigest()
+    binding["source_identity"] = sensor_view_identity(view)
+    binding["sensor_view_sha256"] = content_hash(binding["source_identity"])
+    result = estimate_segmented_patch(view, box, mask, mask_binding=binding,
+        config=GeometryConfig(), track_id="test", feature_id="mask2")
+    assert result["patch"]["geometry_status"] == "UNKNOWN"
+    metrics = result["patch"]["metrics"]
+    assert metrics["depth_availability"] == (None if empty else 5/17)
+    assert result["patch"]["reason_codes"] == ["EMPTY_DEPTH_AVAILABILITY_MASK" if empty else "INSUFFICIENT_VALID_DEPTH"]
 
 
 @pytest.mark.parametrize("mutation", ["depth", "rgb", "frame", "camera", "calibration", "box", "mask", "shape", "labels"])

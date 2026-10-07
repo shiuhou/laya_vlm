@@ -347,6 +347,7 @@ def estimate_visible_patch(
     eef_position_base_m=None, robot_self_mask=None,
     robot_self_mask_source_ids: tuple[str, ...] = (),
     feasibility: Callable[[TargetPointCandidate], FeasibilityEvidence] | None = None,
+    depth_availability_mask=None,
 ) -> PatchEstimate:
     """Fit only the observed ROI; no target axis, closed state, or hidden extent.
 
@@ -356,6 +357,13 @@ def estimate_visible_patch(
     verification remain upstream measurement hypotheses.
     """
     config = config or GeometryConfig()
+    if depth_availability_mask is not None:
+        availability_mask = np.asarray(depth_availability_mask)
+        availability_depth = np.asarray(depth_m)
+        if availability_mask.dtype != bool or availability_mask.shape != availability_depth.shape:
+            raise ProtocolError("INVALID_SCHEMA", "depth availability mask must be bool HW")
+        if np.any(np.isfinite(availability_depth) & ~availability_mask):
+            raise ProtocolError("INVALID_SCHEMA", "outside-support depth must remain UNKNOWN")
     k, t = _camera(K, T_base_camera)
     cloud = project_depth(depth_m, k, t, source_frame_id=source_frame_id,
                           calibration_version=calibration_version, config=config, roi_xyxy=roi_xyxy)
@@ -390,6 +398,23 @@ def estimate_visible_patch(
         "component_selection": "dominant_3d_connected_component_or_abstain",
         "reachability_verified": False, "sweep_verified": False,
     }
+    if depth_availability_mask is not None:
+        observed = (availability_mask & np.isfinite(availability_depth)
+                    & (availability_depth >= config.min_depth_m) & (availability_depth <= config.max_depth_m))
+        if robot_self_mask is not None:
+            observed &= ~mask
+        mask_count = int(availability_mask.sum())
+        mask_valid = int(observed.sum())
+        in_roi = int(availability_mask[y0:y1, x0:x1].sum())
+        metrics.update(depth_availability_domain="full_native_mask",
+            mask_pixel_count=mask_count, valid_depth_inside_mask=mask_valid,
+            depth_availability=None if mask_count == 0 else mask_valid/mask_count,
+            original_roi_depth_valid_ratio=metrics["depth_valid_ratio"],
+            mask_pixels_inside_original_roi=in_roi,
+            mask_pixels_outside_original_roi=mask_count-in_roi,
+            mask_original_box_coverage=in_roi/max(1, roi_size),
+            depth_availability_inside_original_roi=None if in_roi == 0 else int(valid.sum())/in_roi)
+        metrics["depth_valid_ratio"] = metrics["depth_availability"]
     common = dict(source_frame_id=source_frame_id, calibration_version=calibration_version,
                   track_id=track_id, feature_id=feature_id, capture_sim_time_s=float(capture_sim_time_s),
                   capture_monotonic_ns=capture_monotonic_ns, source_roi_xyxy=roi,
@@ -398,6 +423,8 @@ def estimate_visible_patch(
     def unknown(reason, status="UNKNOWN"):
         return PatchEstimate(status, (reason,), None, None, None, None, (), metrics, **common)
 
+    if depth_availability_mask is not None and mask_count == 0:
+        return unknown("EMPTY_DEPTH_AVAILABILITY_MASK")
     if metrics["depth_valid_ratio"] < config.min_depth_valid_ratio:
         return unknown("INSUFFICIENT_VALID_DEPTH")
     components = _components(cloud, valid, config.connectivity_distance_m)
