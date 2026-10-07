@@ -1,0 +1,751 @@
+{
+  "auditor": "decomposition_audit",
+  "registered_hashes_verified": true,
+  "geometry_seal_verified": true,
+  "scope": "independent candidate projection and native counts from sealed outputs; no inference or geometry rerun",
+  "summary": {
+    "C2": {
+      "frames": 25,
+      "completed": 25,
+      "native_masks": 75,
+      "raw_candidate_frames": 25,
+      "admitted_candidate_frames": 25,
+      "inside": 344,
+      "outside": 0,
+      "admitted_inside": 344,
+      "admitted_outside": 0,
+      "first_boundary": {
+        "CANDIDATES": 67,
+        "NO_TOOL_INTERIOR_CANDIDATE": 1,
+        "ERODED_PLANE_DEGENERATE": 7
+      }
+    },
+    "C3": {
+      "frames": 25,
+      "completed": 21,
+      "native_masks": 63,
+      "raw_candidate_frames": 10,
+      "admitted_candidate_frames": 10,
+      "inside": 69,
+      "outside": 44737,
+      "admitted_inside": 69,
+      "admitted_outside": 43188,
+      "first_boundary": {
+        "AMBIGUOUS_DEPTH_COMPONENTS": 17,
+        "CANDIDATES": 40,
+        "INSUFFICIENT_PLANE_SUPPORT": 5,
+        "ERODED_PLANE_DEGENERATE": 1
+      }
+    }
+  },
+  "rows": [
+    {
+      "condition": "C2",
+      "init_index": 0,
+      "completed": true,
+      "inside": 18,
+      "outside": 0,
+      "admitted_inside": 18,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 0,
+      "completed": true,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 1,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 1,
+      "completed": false,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": []
+    },
+    {
+      "condition": "C2",
+      "init_index": 2,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 2,
+      "completed": false,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": []
+    },
+    {
+      "condition": "C2",
+      "init_index": 3,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 3,
+      "completed": true,
+      "inside": 0,
+      "outside": 2985,
+      "admitted_inside": 0,
+      "admitted_outside": 2985,
+      "first_boundary": [
+        "CANDIDATES",
+        "INSUFFICIENT_PLANE_SUPPORT",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 4,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 4,
+      "completed": true,
+      "inside": 0,
+      "outside": 2907,
+      "admitted_inside": 0,
+      "admitted_outside": 2907,
+      "first_boundary": [
+        "CANDIDATES",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 5,
+      "completed": true,
+      "inside": 16,
+      "outside": 0,
+      "admitted_inside": 16,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 5,
+      "completed": false,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": []
+    },
+    {
+      "condition": "C2",
+      "init_index": 6,
+      "completed": true,
+      "inside": 21,
+      "outside": 0,
+      "admitted_inside": 21,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 6,
+      "completed": true,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "INSUFFICIENT_PLANE_SUPPORT",
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 7,
+      "completed": true,
+      "inside": 17,
+      "outside": 0,
+      "admitted_inside": 17,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 7,
+      "completed": true,
+      "inside": 7,
+      "outside": 3146,
+      "admitted_inside": 7,
+      "admitted_outside": 3146,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 8,
+      "completed": true,
+      "inside": 12,
+      "outside": 0,
+      "admitted_inside": 12,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 8,
+      "completed": true,
+      "inside": 6,
+      "outside": 2868,
+      "admitted_inside": 6,
+      "admitted_outside": 2868,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 9,
+      "completed": true,
+      "inside": 12,
+      "outside": 0,
+      "admitted_inside": 12,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 9,
+      "completed": false,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": []
+    },
+    {
+      "condition": "C2",
+      "init_index": 10,
+      "completed": true,
+      "inside": 4,
+      "outside": 0,
+      "admitted_inside": 4,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "NO_TOOL_INTERIOR_CANDIDATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 10,
+      "completed": true,
+      "inside": 0,
+      "outside": 2724,
+      "admitted_inside": 0,
+      "admitted_outside": 2724,
+      "first_boundary": [
+        "CANDIDATES",
+        "INSUFFICIENT_PLANE_SUPPORT",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 11,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 11,
+      "completed": true,
+      "inside": 5,
+      "outside": 2954,
+      "admitted_inside": 5,
+      "admitted_outside": 2954,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 12,
+      "completed": true,
+      "inside": 14,
+      "outside": 0,
+      "admitted_inside": 14,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 12,
+      "completed": true,
+      "inside": 0,
+      "outside": 2873,
+      "admitted_inside": 0,
+      "admitted_outside": 2873,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 13,
+      "completed": true,
+      "inside": 17,
+      "outside": 0,
+      "admitted_inside": 17,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 13,
+      "completed": true,
+      "inside": 5,
+      "outside": 3134,
+      "admitted_inside": 5,
+      "admitted_outside": 1585,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 14,
+      "completed": true,
+      "inside": 6,
+      "outside": 0,
+      "admitted_inside": 6,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 14,
+      "completed": true,
+      "inside": 11,
+      "outside": 0,
+      "admitted_inside": 11,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "CANDIDATES",
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 15,
+      "completed": true,
+      "inside": 21,
+      "outside": 0,
+      "admitted_inside": 21,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 15,
+      "completed": true,
+      "inside": 8,
+      "outside": 2754,
+      "admitted_inside": 8,
+      "admitted_outside": 2754,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 16,
+      "completed": true,
+      "inside": 8,
+      "outside": 0,
+      "admitted_inside": 8,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 16,
+      "completed": true,
+      "inside": 6,
+      "outside": 3045,
+      "admitted_inside": 6,
+      "admitted_outside": 3045,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 17,
+      "completed": true,
+      "inside": 21,
+      "outside": 0,
+      "admitted_inside": 21,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 17,
+      "completed": true,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 18,
+      "completed": true,
+      "inside": 6,
+      "outside": 0,
+      "admitted_inside": 6,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 18,
+      "completed": true,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 19,
+      "completed": true,
+      "inside": 14,
+      "outside": 0,
+      "admitted_inside": 14,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 19,
+      "completed": true,
+      "inside": 0,
+      "outside": 0,
+      "admitted_inside": 0,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "INSUFFICIENT_PLANE_SUPPORT",
+        "INSUFFICIENT_PLANE_SUPPORT"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 20,
+      "completed": true,
+      "inside": 14,
+      "outside": 0,
+      "admitted_inside": 14,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 20,
+      "completed": true,
+      "inside": 8,
+      "outside": 3025,
+      "admitted_inside": 8,
+      "admitted_outside": 3025,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 21,
+      "completed": true,
+      "inside": 12,
+      "outside": 0,
+      "admitted_inside": 12,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "ERODED_PLANE_DEGENERATE",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 21,
+      "completed": true,
+      "inside": 5,
+      "outside": 3290,
+      "admitted_inside": 5,
+      "admitted_outside": 3290,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 22,
+      "completed": true,
+      "inside": 9,
+      "outside": 0,
+      "admitted_inside": 9,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 22,
+      "completed": true,
+      "inside": 8,
+      "outside": 2783,
+      "admitted_inside": 8,
+      "admitted_outside": 2783,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 23,
+      "completed": true,
+      "inside": 15,
+      "outside": 0,
+      "admitted_inside": 15,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 23,
+      "completed": true,
+      "inside": 0,
+      "outside": 3091,
+      "admitted_inside": 0,
+      "admitted_outside": 3091,
+      "first_boundary": [
+        "CANDIDATES",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C2",
+      "init_index": 24,
+      "completed": true,
+      "inside": 12,
+      "outside": 0,
+      "admitted_inside": 12,
+      "admitted_outside": 0,
+      "first_boundary": [
+        "CANDIDATES",
+        "CANDIDATES",
+        "CANDIDATES"
+      ]
+    },
+    {
+      "condition": "C3",
+      "init_index": 24,
+      "completed": true,
+      "inside": 0,
+      "outside": 3158,
+      "admitted_inside": 0,
+      "admitted_outside": 3158,
+      "first_boundary": [
+        "CANDIDATES",
+        "AMBIGUOUS_DEPTH_COMPONENTS",
+        "CANDIDATES"
+      ]
+    }
+  ],
+  "scoring_seal_verified": true,
+  "comparison_seal_verified": true,
+  "review_seal_verified": true,
+  "scoring_matches_independent_reprojection": true,
+  "comparison_candidate_frame_counts": {
+    "C1": 25,
+    "C2": 25,
+    "C3": 10,
+    "C4": 0
+  },
+  "comparison_matched_C3_C4": {
+    "C3_candidate_frames": 1,
+    "C4_candidate_frames": 0,
+    "init_indices": [
+      0,
+      6,
+      12,
+      18,
+      19,
+      20,
+      23
+    ],
+    "n": 7
+  }
+}

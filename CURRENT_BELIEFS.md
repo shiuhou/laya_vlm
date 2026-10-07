@@ -1,5 +1,27 @@
 # Current research beliefs
 
+## Semantic decomposition — 2026-10-08 local / 2026-10-07 UTC
+
+Observed: [frozen development decomposition](docs/p1-semantic-decomposition-results.md)
+at f60cc1d yields C1/C2/C3/C4 candidate-frame counts25/25/10/0. C2 paired human
+BOX+POINT produces344 inside and0outside proposals; C3 originalBOX+humanPOINT
+produces69inside,44,737outside raw, with4BOX incompatibilities. All138 new native
+masks retained. C3/C4 jointly completed subset is7frames,1versus0 candidate frames.
+
+Inference: one next repair priority is target-part BOX/search-support localization;
+no geometry/tool relaxation is supported. Confidence high for the fixed contrast,
+low for independent transfer or BOX-only sufficiency. Evidence against declaring
+SAM solved: C2 masks still extend beyond the human front; tightBOX bounds geometry.
+C2/C3 changes both SAM prompting and geometry ROI, so cause is not isolated.
+CorrectPOINT alone is insufficient. C4 generation/admission losses confound all25
+POINT attribution; matched gain is only1frame.
+
+Falsifier: a reliable autonomous part-specific BOX on new held-out frames fails to
+recover sensor-only support/candidates with unchanged gates. Human-prompt results
+are not perception performance. No repair/held-out/tracker/P2/Qwen/Laya executed;
+this bounded round stopped for review. Runtime remains unchanged; VERIFY UNKNOWN.
+
+
 ## Human-region support counterfactual — 2026-10-07
 
 Observed: [one offline diagnostic](docs/p1-human-region-geometry-results.md) at

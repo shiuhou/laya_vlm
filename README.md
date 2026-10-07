@@ -20,6 +20,16 @@ conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
 
+The [bounded semantic decomposition](docs/p1-semantic-decomposition-results.md)
+is complete at execution `f60cc1d`: human support / human BOX+POINT /
+original BOX+human POINT / original BOX+model POINT yield candidate-frame counts
+**25/25, 25/25, 10/25, 0/25**. Prioritize **target-part BOX/search-support
+localization** as the single next repair, with new held-out validation. This
+human-assisted development diagnostic changes both SAM BOX prompting and geometry
+ROI; it does not establish autonomous perception or solve mask identity. All
+138 new native masks, four incompatible BOX cases and wrong-target proposals are
+retained. The batch stopped; no tracking/P2/Qwen/Laya started.
+
 The [offline human-region geometry diagnostic](docs/p1-human-region-geometry-results.md)
 is complete at `eb8028e`: all 25 frozen VISIBLE wrist frames yield candidates
 (130 total, 2–7 each) under unchanged geometry/tool gates; NO_TOOL_INTERIOR_CANDIDATE
@@ -28,7 +38,7 @@ acceptance. It supports prioritizing target-part identity/support repair with ne
 held-out validation. The diagnostic stopped; no new semantic model tuning,
 temporal/P2/Qwen/Laya experiment followed.
 
-The subsequent [bounded POINT + BOX identity repair](docs/p1-identity-prompt-results.md)
+The earlier [bounded POINT + BOX identity repair](docs/p1-identity-prompt-results.md)
 is complete at frozen execution `b7f5409`:50 POINT calls,16 admitted SAM frames,
 48 native masks;0 task-valid candidates. Only2/9 typed wrist POINTs fall in the
 human front region; one is outside the original BOX, the other yields a better

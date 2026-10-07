@@ -2448,3 +2448,32 @@ failure was not systematic under human support. Remaining uncertainty: reliable
 learned regions, independent held-out views, annotation/calibration uncertainty,
 real depth noise, reachability, continuous tracking and VERIFY. Candidate usable
 status remains UNKNOWN. Stop after checkpoint; no next experiment executed.
+
+
+## 2026-10-07 UTC / 2026-10-08 local — bounded semantic decomposition
+
+Research question: which intervention recovers drawer-front support under frozen
+geometry: correct target support, paired human BOX+POINT, or just human POINT?
+Why: prior human-region25/25 versus learned0/25 did not isolate a repair priority.
+Hypothesis: target-part search-region localization is necessary; competing
+hypotheses are POINT identity/completion dominance or intrinsic SAM/tool failure.
+Intervention: C2/C3 on all25 exposed wrist frames; reuse C1/C4. Human prompts
+come only from frozen raster annotations. Same RGB-D/calibration/SAM/settings/
+geometry gates/order. Execution f60cc1d, no LocateAnything calls or tuning.
+Metrics: per-frame inside-candidate existence, all native failures and outside
+proposals, point compatibility/containment, all25 and jointly completed contrasts.
+Result: C1/C2/C3/C4=25/25/10/0 candidate frames. C2:344inside0outside; C3:69inside
+44,737outside raw,43,188after point containment;4originalBOX exclusions.
+Matched C3/C4 seven frames:1vs0. Preregistered signed gaps0/15/10 select BOX.
+Artifacts: runs/p1/semantic-decomposition-20261007 and tracked evidence companion;
+report docs/p1-semantic-decomposition-results.md; all25 images inspected;
+independent source/config/seal/projection audit passed;2targeted tests pass.
+Interpretation: prioritize target-part BOX/search-support localization. C2 changes
+both SAM prompting and geometry domain; visibly broad masks still benefit from
+tightROI, so no claim SAM identity is solved. Candidate counts duplicate native
+hypotheses and are not unique actionable targets. All usability UNKNOWN.
+Remaining uncertainty: autonomous BOX-only sufficiency, mask selection/identity,
+held-out reliability, temporal lineage and VERIFY. SharedGPU/offline latency is
+not continuousHz. Next decision: one semantic BOX/search-region repair, later
+new held-out validation, frozen geometry/tool gates. Not executed this round;
+no tracker/P2/PUSH/Qwen/Laya. Stop for review as requested.
