@@ -60,7 +60,8 @@ Use isolated Python3.10/Torch2.5.1+cu121/torchvision0.20.1+cu121. Preserve exist
 Torch2.2 environments. Optional CUDA connected-components extension disabled;
 SAM postprocessing disabled, hole/sprinkle area0, native logit threshold0,
 `multimask_output=True`, `return_logits=True`, FP32/no autocast/no TF32,
-seed1/deterministic algorithms. Record exact dependency/source/config/weight
+seed1/deterministic algorithms and `CUBLAS_WORKSPACE_CONFIG=:4096:8` before CUDA
+initialization. Record exact dependency/source/config/weight
 hashes before inference and an explicit RTX4090 GPU UUID allocation.
 
 Retain decoder tokens1–3 in native order (the public multimask API excludes its

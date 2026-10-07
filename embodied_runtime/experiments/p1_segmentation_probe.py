@@ -9,6 +9,7 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import time
 
@@ -38,7 +39,8 @@ SAM_SETTINGS = dict(apply_postprocessing=False, mask_threshold=0.0,
                     max_hole_area=0.0, max_sprinkle_area=0.0,
                     multimask_output=True, return_logits=True, dtype="float32",
                     autocast=False, matmul_tf32=False, cudnn_tf32=False,
-                    deterministic_algorithms=True, seed=1, mask_order="native_decoder_tokens_1_2_3")
+                    deterministic_algorithms=True, cublas_workspace_config=":4096:8",
+                    seed=1, mask_order="native_decoder_tokens_1_2_3")
 
 
 def read(path):
@@ -191,6 +193,8 @@ def _masks_native(root):
     out.mkdir(exist_ok=False)
     import torch
     require(torch.__version__ == "2.5.1+cu121", "isolated locked Torch condition required")
+    require(os.environ.get("CUBLAS_WORKSPACE_CONFIG") == SAM_SETTINGS["cublas_workspace_config"],
+            "explicit deterministic CuBLAS workspace required before CUDA initialization")
     mask = _explicit_gpu_mask()
     require(mask.startswith("GPU-"), "GPU UUID allocation required")
     allocation = _cuda_allocation(torch, mask)
