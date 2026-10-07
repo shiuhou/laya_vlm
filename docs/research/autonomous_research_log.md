@@ -2212,3 +2212,29 @@ against the association bottleneck; no fallback/model/PUSH experiment started.
 
 Artifacts and exact code conditions: [closure report](../p1-observability-closure-results.md)
 and [evidence](../evidence/p1_grounding/observability_closure_20261007/README.md).
+
+## 2026-10-07 — bounded BOX / SAM2 development attempt
+
+Question: can the conditional RGB+BOX SAM2.1 tiny fallback isolate useful support
+from the contaminated search region without changing original geometry gates?
+Competing hypotheses: target separation; retained contamination/part ambiguity;
+narrow-mask/original-BOX denominator incompatibility; insufficient observed depth.
+Intervention: two fixed recorded development wrist images, init25/26 seed1,
+original BOX versus all three native masks in decoder order, outside-mask depth
+UNKNOWN. No label input, mask winner, gate tuning, POINT or control.
+
+Condition: clean `1ef973a`. Prepared isolated dependencies/imports passed.
+Init25 authenticated BOX reused; one new init26 BOX completed, 208 input/39 output
+tokens with EOS. Both typed BOXes admitted and sealed. First failure: parent
+launcher dereferenced the venv Python symlink, invoked base interpreter, and
+failed locked Torch check before CUDA allocation/SAM loading. No mask/geometry
+result; independent receipt/code-path review confirms zero native calls.
+
+Result: STOPPED, no retry. Scientific hypotheses remain untested. This is launch
+infrastructure evidence, not a perception or architecture negative result.
+Original core runtime/geometry/track/provider bytes preserved; P1 remains Gate C.
+Next decision: only a separately registered launcher correction could complete
+the matched diagnostic. Invoke venv path without resolving symlink and audit
+process identity before launch; no geometry/interface repair is yet justified.
+
+Artifacts: [bounded attempt receipt](../evidence/p1_grounding/box_sam2_development_20261007/README.md).

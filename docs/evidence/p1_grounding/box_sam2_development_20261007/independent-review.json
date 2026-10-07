@@ -1,0 +1,8 @@
+{
+  "reviewer": "independent dev_condition_audit agent",
+  "scope": "Read-only receipts, symlink and code path; no interpreter execution or inference",
+  "finding": "Launcher resolved isolated venv Python symlink to base interpreter. Failure before GPU allocation, SAM import, model construction, weights or prediction.",
+  "actual_wrong_interpreter_torch_version": "NOT_RECORDED; version gate proves not 2.5.1+cu121",
+  "visual_review": "NOT_RUN_NO_MASKS",
+  "retry": false
+}

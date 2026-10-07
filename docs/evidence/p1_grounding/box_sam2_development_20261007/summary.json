@@ -1,0 +1,61 @@
+{
+  "condition": "p1-box-sam2-development/1",
+  "code": "1ef973afca11439c8af25fd5e38bb8468262c504",
+  "status": "STOPPED_PRE_MODEL_LAUNCH_FAILURE",
+  "first_failure": "SAM stage isolated locked Torch version gate; launcher dereferenced venv Python symlink to base interpreter",
+  "failure_kind": "experiment_launch_infrastructure",
+  "boxes": [
+    {
+      "init_index": 25,
+      "new_model_call": false,
+      "typed_admitted": true,
+      "box_xyxy": [
+        238.848,
+        0.0,
+        383.23199999999997,
+        116.736
+      ],
+      "actual_generated_token_count": 39,
+      "input_token_count": 208,
+      "terminal_eos_observed": true,
+      "length_limit_reached": false
+    },
+    {
+      "init_index": 26,
+      "new_model_call": true,
+      "typed_admitted": true,
+      "box_xyxy": [
+        261.88800000000003,
+        0.0,
+        383.23199999999997,
+        111.104
+      ],
+      "actual_generated_token_count": 39,
+      "input_token_count": 208,
+      "terminal_eos_observed": true,
+      "length_limit_reached": false
+    }
+  ],
+  "BOX_stage_sealed": true,
+  "SAM_model_built": false,
+  "SAM_weights_loaded": false,
+  "SAM_predictions": 0,
+  "native_masks": 0,
+  "matched_geometry_evaluated": false,
+  "mask_visual_review": "NOT_AVAILABLE",
+  "semantic_association": "UNKNOWN_UNTESTED",
+  "reference": "UNKNOWN",
+  "VERIFY": "UNKNOWN",
+  "P1_gate": "C unchanged",
+  "hidden_retry": false,
+  "thresholds_changed": false,
+  "query_changed": false,
+  "tracker_calls": 0,
+  "Qwen_calls": 0,
+  "Laya_calls": 0,
+  "controls": 0,
+  "evaluation_labels_read": false,
+  "dependency_setup": "PASS",
+  "next_condition_not_run": "Use absolute venv executable path without resolving its symlink; preflight executable/prefix/Torch identity before registering any distinct follow-up launch.",
+  "scientific_interpretation": "No BOX-versus-mask evidence exists; this does not test segmentation or camera feasibility."
+}

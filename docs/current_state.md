@@ -1,5 +1,18 @@
 # Current project state
 
+**Latest execution receipt: 2026-10-07.** The selected architecture/milestones
+remain unchanged. [P1 observability closure](p1-observability-closure-results.md)
+finished at `1fedb9c` with Gate C, not continuous drawer/reference tracking.
+The [two-sample BOX/SAM2 diagnostic](evidence/p1_grounding/box_sam2_development_20261007/README.md)
+ran at clean `1ef973a` on `feat/p1-segmentation-surface`: isolated dependency setup
+passed and one new init26 BOX completed; init25 BOX was source-authenticated.
+The parent SAM launcher resolved the venv Python symlink to a base interpreter
+and failed the pinned Torch guard before any model call. This condition is
+STOPPED, with zero masks/geometry evaluations, no retry and no scientific
+segmentation conclusion. Reference/VERIFY remain UNKNOWN. Correcting the launch
+path would require a separately identified follow-up condition, not overwriting
+this failure. The earlier dated records below remain historical evidence.
+
 **Current implementation checkpoint: 2026-10-06.** The selected architecture is
 Qwen3-VL brain → Laya local selection → continuous RGB-D geometry / deterministic
 servo, evaluated later with B0–B4. [P0 is accepted](p0-acceptance.md).

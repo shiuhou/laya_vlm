@@ -26,6 +26,10 @@ drawer target association and continuous tracking remain insufficient;
 reference/VERIFY stays UNKNOWN. Fixed-reference POINT no-EOS diagnostics are
 closed. No Qwen/Laya or PUSH is enabled; the next control milestone remains B0
 after P1 earns sensor-only target association and freshness.
+The subsequent [bounded BOX/SAM2 development diagnostic](docs/evidence/p1_grounding/box_sam2_development_20261007/README.md)
+sealed complete BOX outputs for init25/26, then stopped at a launcher/interpreter
+mismatch before any SAM prediction. It supplies no segmentation result and does
+not change Gate C; no retry or tracker/action stage followed.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

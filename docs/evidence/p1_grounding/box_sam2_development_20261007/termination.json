@@ -1,0 +1,8 @@
+{
+  "terminated_at_utc": "2026-10-07T07:18:52.501884+00:00",
+  "stop_rule": "First runtime/source/invalid-output/truncation failure",
+  "first_failure": "SAM stage isolated locked Torch version gate; launcher dereferenced venv Python symlink to base interpreter",
+  "mask_stage_exit_code": 1,
+  "subsequent_stages_run": false,
+  "hidden_retry": false
+}
