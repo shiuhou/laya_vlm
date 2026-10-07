@@ -1,5 +1,17 @@
 # Current project state
 
+**Latest: offline human-region geometry diagnostic completed, execution `eb8028e`.**
+[Report](p1-human-region-geometry-results.md) and
+[evidence](evidence/p1_grounding/human_region_geometry_20261007/README.md).
+25/25 frozen VISIBLE wrist frames produce 130 raw geometry candidates under
+unchanged gates. NO_TOOL_INTERIOR_CANDIDATE 0/25; every candidate remains UNKNOWN
+for execution. Annotation is offline target support only, not perception evidence.
+Next priority is semantic identity/support repair followed by new held-out
+validation. No further experiment started. P1 acceptance remains unearned;
+reference/VERIFY UNKNOWN and temporal/P2/Qwen/Laya blocked. Prior e8cda1e evidence
+is frozen and preserved. The earlier dated entries retain their historical scope.
+
+
 **Latest completed batch: POINT + BOX identity development repair,2026-10-07.**
 Frozen execution `b7f5409`; [report](p1-identity-prompt-results.md) and
 [complete evidence](evidence/p1_grounding/identity_prompt_20261007/README.md).

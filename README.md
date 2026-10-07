@@ -19,6 +19,15 @@ The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing
 conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
+
+The [offline human-region geometry diagnostic](docs/p1-human-region-geometry-results.md)
+is complete at `eb8028e`: all 25 frozen VISIBLE wrist frames yield candidates
+(130 total, 2–7 each) under unchanged geometry/tool gates; NO_TOOL_INTERIOR_CANDIDATE
+is 0/25. This human-assisted upper bound is not perception performance or P1
+acceptance. It supports prioritizing target-part identity/support repair with new
+held-out validation. The diagnostic stopped; no new semantic model tuning,
+temporal/P2/Qwen/Laya experiment followed.
+
 The subsequent [bounded POINT + BOX identity repair](docs/p1-identity-prompt-results.md)
 is complete at frozen execution `b7f5409`:50 POINT calls,16 admitted SAM frames,
 48 native masks;0 task-valid candidates. Only2/9 typed wrist POINTs fall in the

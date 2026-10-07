@@ -1,5 +1,28 @@
 # Current research beliefs
 
+## Human-region support counterfactual — 2026-10-07
+
+Observed: [one offline diagnostic](docs/p1-human-region-geometry-results.md) at
+`eb8028e` yields candidates in 25/25 frozen wrist frames, 130 total, unchanged
+geometry/tool gates. NO_TOOL_INTERIOR_CANDIDATE is 0/25. Human support has 100%
+depth availability; every output candidate remains UNKNOWN for execution.
+The prior init12 SAM native1 failure becomes 7 candidates with human support,
+without relaxing erosion or tool constraints.
+
+Inference: prioritize target-part identity/region support repair, with later new
+held-out validation, over changing geometry/tool thresholds based on the prior
+isolated failure. Confidence high for this fixed recorded condition. The result
+supports local geometric availability, not autonomous perception, continuous
+tracking, execution feasibility or real-sensor robustness. Annotation replaces
+BOX and SAM together, so their individual contributions remain unresolved.
+
+Falsifier: reliable learned target support on independent frames still consistently
+fails unchanged tool gates, or support/calibration inaccuracies invalidate these
+local candidates. Next experiment is not yet run. Diagnostic stopped as requested;
+no further POINT/SAM/query/decoder/threshold work or temporal/P2/Qwen/Laya.
+Human annotation remains evaluator-only; P1 acceptance and VERIFY remain pending.
+
+
 ## Latest bounded repair — 2026-10-07
 
 Observed: [POINT+BOX repair](docs/p1-identity-prompt-results.md), clean execution

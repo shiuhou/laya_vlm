@@ -2424,3 +2424,27 @@ Next decision: for review, choose a prospective experiment separating target-par
 identity from usable tool geometry; no next experiment automatically executed.
 Stop: no decoder/query/gate tuning, tracker/temporal/reference work, PUSH/P2,
 Qwen or Laya. Reference/VERIFY UNKNOWN; P1 acceptance unearned. Runtime unchanged.
+
+
+## 2026-10-07 — one human-region geometry upper-bound diagnostic
+
+Research question: separate target-part identity/support from usable local tool
+geometry on the frozen 25 VISIBLE wrist frames. Hypotheses: unchanged geometry
+can produce candidates with idealized human support, or most frames still fail
+geometry/tool/viewpoint gates. Intervention: frozen annotation replaces learned
+BOX/SAM support offline; original RGB-D, calibration, seed0, proprioception and
+all component/plane/edge/uncertainty/tool/candidate gates remain unchanged.
+Prospective priority rule: >=13/25 frames with candidates favors semantic repair;
+otherwise geometry/tool/viewpoint repair. Neither branch is P1 acceptance.
+Result: 25/25 candidate frames, 130 points (2–7 each), all inside annotations;
+100% in-region valid depth; no frame rejection or NO_TOOL_INTERIOR_CANDIDATE.
+Grid-level rejects: 562 edge-margin, 228 outside-support, 0 uncertainty; 920 cells.
+Execution eb8028e. Artifacts: docs/p1-human-region-geometry-results.md and
+runs/p1/human-region-geometry-20261007. Two focused tests passed. Source audit
+verified 1,072 hashes and original/derived-depth lineage; parent inspected all
+five review sheets covering 25 frames. No model calls or repeated geometry.
+Interpretation: identity/support repair has priority; earlier isolated no-tool
+failure was not systematic under human support. Remaining uncertainty: reliable
+learned regions, independent held-out views, annotation/calibration uncertainty,
+real depth noise, reachability, continuous tracking and VERIFY. Candidate usable
+status remains UNKNOWN. Stop after checkpoint; no next experiment executed.
