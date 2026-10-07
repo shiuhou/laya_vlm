@@ -322,8 +322,7 @@ def _masks_native(root):
                                   sam_input_box_float32=np.asarray(box, dtype=np.float32).tolist(),
                                   native_mask_sha256=[hashlib.sha256(m.tobytes()).hexdigest() for m in native],
                                   predicted_ious=scores.tolist(), mask_count=3, selected_mask=None,
-                                  source_boundary="RGB-only learned mask; query is BOX provenance, not a SAM text input",
-                                  calibrated_confidence=None)
+                                  source_boundary="RGB-only learned mask; query is BOX provenance, not a SAM text input")
                     write(out/f"init-{row['init_index']:03d}-box-{index:03d}.json", record)
                     records.append(record)
         write(out/"outputs.json", records)

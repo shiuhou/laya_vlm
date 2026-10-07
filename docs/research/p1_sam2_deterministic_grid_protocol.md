@@ -53,3 +53,17 @@ Minimal validation: actual native-grid numerical gate, source-bound inherited
 BOX integration, stage seals and changed-file lint. No broad duplicate tests.
 Concrete new data/numerical/runtime failure remains a recorded boundary; small
 successful setup milestones do not end the work.
+
+## Explicit reporting-only follow-up
+
+Execution `98d9f33` passed the bitwise dense-grid gate and produced init25's three
+native masks, then the legacy record constructor failed on duplicate
+`calibrated_confidence` (already inherited in the BOX row). Preserve its partial
+NPZ, log and STOPPED termination; its aggregate masks stage was not sealed.
+Remove only that redundant record keyword. The user authorized continuing across
+routine milestones. Register a fresh exclusive condition using the same sealed
+BOXes and scientific settings; regenerate the two images in a fresh SAM process,
+with no archived latent state or control. This means one explicitly disclosed
+additional init25 prediction, not a hidden retry or independent replication.
+Compare the preserved and regenerated init25 raw arrays offline for repeatability;
+never overwrite or relabel the partial attempt as PASS.
