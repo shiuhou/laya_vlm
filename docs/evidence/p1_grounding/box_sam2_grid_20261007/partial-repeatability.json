@@ -1,0 +1,11 @@
+{
+  "partial_npz_sha256": "8823a9bb02e977d0c206f9213c28a7ba8f9da68764bce28266b14f06cdacd3f7",
+  "full_npz_sha256": "8823a9bb02e977d0c206f9213c28a7ba8f9da68764bce28266b14f06cdacd3f7",
+  "arrays_byte_identical": {
+    "logits": true,
+    "predicted_ious": true,
+    "lowres_logits": true,
+    "masks": true
+  },
+  "scope": "one repeated init25 development prediction after reporting-only error; not 3run or heldout evaluation"
+}

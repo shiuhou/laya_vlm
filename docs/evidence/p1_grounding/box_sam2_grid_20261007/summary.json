@@ -1,0 +1,274 @@
+{
+  "status": "COMPLETE_MATCHED_DEVELOPMENT_DIAGNOSTIC",
+  "code": "b5ada28becf7b84c57d4ea5c5dc41e78a1f42182",
+  "independent_replication": false,
+  "development_samples": [
+    25,
+    26
+  ],
+  "new_BOX_calls": 0,
+  "new_POINT_calls": 0,
+  "strict_determinism": true,
+  "position_encoding_equivalence": {
+    "condition": "sam2-dense-grid-arange/1",
+    "coordinate_grid_bitwise_equal": true,
+    "forward_with_coords_changed": false,
+    "full_native_cuda_model_equivalence": "NOT_RUN_UNSUPPORTED_CUMSUM",
+    "gaussian_buffer_sha256": "c37a6a9361886286fc3e868dd279dfa4703919e3fee65c07a07e5a75e980d84f",
+    "learned_buffer_changed": false,
+    "max_abs_PE_difference": 0.0,
+    "native_source_modified": false,
+    "original_cpu_vs_overlay_cpu_bitwise_equal": true,
+    "override_scope": "this model instance sam_prompt_encoder.pe_layer.forward only",
+    "reference_provenance": "original CPU ones/cumsum grid, encoded on same GPU and learned buffer",
+    "same_gpu_reference_vs_overlay_PE_bitwise_equal": true,
+    "size": [
+      64,
+      64
+    ],
+    "strict_deterministic_algorithms": true
+  },
+  "completed_native_predictions": 2,
+  "masks_retained": 6,
+  "mask_selected": null,
+  "baseline_target_candidates": 0,
+  "masked_target_candidates": 0,
+  "broad_mask_ambiguity": 4,
+  "narrow_mask_originalBOX_gate_rejections": 2,
+  "geometry_plane_fits_reached": 0,
+  "calibrated_confidence": null,
+  "metrics": [
+    {
+      "init_index": 25,
+      "original_box": [
+        238.848,
+        0.0,
+        383.23199999999997,
+        116.736
+      ],
+      "baseline_geometry_status": "AMBIGUOUS",
+      "baseline_reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "baseline_depth_valid_ratio": 1.0,
+      "baseline_components": [
+        9902,
+        7036,
+        17,
+        10
+      ],
+      "baseline_candidate_count": 0,
+      "baseline_geometry_s": 0.09105339800589718,
+      "encode_s": 0.15282707300502807,
+      "predict_s": 0.07900021699606441,
+      "native_masks": [
+        {
+          "native_index": 0,
+          "predicted_iou_uncalibrated": 0.9612645506858826,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 16965,
+          "inside_pixels": 16029,
+          "outside_pixels": 8,
+          "occupancy": 0.9448275862068966,
+          "depth_valid_ratio": 0.9448275862068966,
+          "geometry_status": "AMBIGUOUS",
+          "reason_codes": [
+            "AMBIGUOUS_DEPTH_COMPONENTS"
+          ],
+          "component_sizes": [
+            9902,
+            6105,
+            6,
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.08627042901935056,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        },
+        {
+          "native_index": 1,
+          "predicted_iou_uncalibrated": 0.4666816294193268,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 16965,
+          "inside_pixels": 3733,
+          "outside_pixels": 0,
+          "occupancy": 0.22004126142057176,
+          "depth_valid_ratio": 0.22004126142057176,
+          "geometry_status": "UNKNOWN",
+          "reason_codes": [
+            "INSUFFICIENT_VALID_DEPTH"
+          ],
+          "component_sizes": null,
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.005404476018156856,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        },
+        {
+          "native_index": 2,
+          "predicted_iou_uncalibrated": 0.949479877948761,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 16965,
+          "inside_pixels": 15636,
+          "outside_pixels": 0,
+          "occupancy": 0.9216622458001769,
+          "depth_valid_ratio": 0.9216622458001769,
+          "geometry_status": "AMBIGUOUS",
+          "reason_codes": [
+            "AMBIGUOUS_DEPTH_COMPONENTS"
+          ],
+          "component_sizes": [
+            9704,
+            5927,
+            5
+          ],
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.08468506002100185,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        }
+      ]
+    },
+    {
+      "init_index": 26,
+      "original_box": [
+        261.88800000000003,
+        0.0,
+        383.23199999999997,
+        111.104
+      ],
+      "baseline_geometry_status": "AMBIGUOUS",
+      "baseline_reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "baseline_depth_valid_ratio": 1.0,
+      "baseline_components": [
+        8070,
+        5542,
+        52
+      ],
+      "baseline_candidate_count": 0,
+      "baseline_geometry_s": 0.07304477601428516,
+      "encode_s": 0.04497783200349659,
+      "predict_s": 0.010842174000572413,
+      "native_masks": [
+        {
+          "native_index": 0,
+          "predicted_iou_uncalibrated": 0.9795981049537659,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 13664,
+          "inside_pixels": 12712,
+          "outside_pixels": 0,
+          "occupancy": 0.930327868852459,
+          "depth_valid_ratio": 0.930327868852459,
+          "geometry_status": "AMBIGUOUS",
+          "reason_codes": [
+            "AMBIGUOUS_DEPTH_COMPONENTS"
+          ],
+          "component_sizes": [
+            7157,
+            5542,
+            5,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.06908876198576763,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        },
+        {
+          "native_index": 1,
+          "predicted_iou_uncalibrated": 0.8110641837120056,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 13664,
+          "inside_pixels": 5026,
+          "outside_pixels": 0,
+          "occupancy": 0.367827868852459,
+          "depth_valid_ratio": 0.367827868852459,
+          "geometry_status": "UNKNOWN",
+          "reason_codes": [
+            "INSUFFICIENT_VALID_DEPTH"
+          ],
+          "component_sizes": null,
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.006430673995055258,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        },
+        {
+          "native_index": 2,
+          "predicted_iou_uncalibrated": 0.9790671467781067,
+          "calibrated_confidence": null,
+          "roi_pixel_count": 13664,
+          "inside_pixels": 12289,
+          "outside_pixels": 0,
+          "occupancy": 0.8993706088992974,
+          "depth_valid_ratio": 0.8993706088992974,
+          "geometry_status": "AMBIGUOUS",
+          "reason_codes": [
+            "AMBIGUOUS_DEPTH_COMPONENTS"
+          ],
+          "component_sizes": [
+            6884,
+            5405
+          ],
+          "plane_fit": "NOT_REACHED",
+          "candidate_count": 0,
+          "geometry_s": 0.06694940099259838,
+          "semantic_identity": "UNKNOWN",
+          "for_execution": false
+        }
+      ]
+    }
+  ],
+  "source_seals": "PASS",
+  "core_invariants": "PASS",
+  "freshness_and_live_Hz": "NOT_MEASURED_OFFLINE_TWO_SAMPLES",
+  "semantic_association": "NOT_ESTABLISHED",
+  "reference": "UNKNOWN",
+  "VERIFY": "UNKNOWN",
+  "P1_gate": "C unchanged",
+  "tracker_calls": 0,
+  "Qwen_calls": 0,
+  "Laya_calls": 0,
+  "controls": 0,
+  "evaluation_labels_used": false,
+  "query_changed": false,
+  "geometry_gates_changed": false,
+  "originalBOX_denominator_changed": false,
+  "partial_attempts_disclosed": [
+    {
+      "code": "98d9f33",
+      "root": "runs/p1/box-sam2-grid-20261007",
+      "prediction_completed": 1,
+      "masks": 3,
+      "stop": "duplicate calibrated_confidence record field",
+      "batch_sealed": false,
+      "regenerated_in_fresh_process": true,
+      "arrays_repeated_byte_identically": true
+    }
+  ],
+  "interpretation": "RGB+BOX native multimasks do not establish usable target support under original gates. Broad masks retain depth ambiguity; narrow-mask loss against original BOX denominator prevents testing its actual component/plane support or semantic correctness.",
+  "next_scope_gate": "No tracker/PUSH or automatic winner/denominator repair. A separate prospective mask-support measurement contract is needed to test narrow-mask geometry without conflating mask occupancy with missing depth."
+}

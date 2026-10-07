@@ -2263,3 +2263,38 @@ compatibility correction could remove this blocker without changing learned
 weights or geometry. Not implemented/executed here; P1 remains Gate C.
 
 Artifacts: [continuation evidence](../evidence/p1_grounding/box_sam2_continuation_20261007/README.md).
+
+## 2026-10-07 — completed deterministic-grid BOX / SAM2 diagnostic
+
+Research question: can RGB+BOX native multimasks improve target support without
+changing geometry gates? Why it matters: Gate C contaminates BOX depth; segmentation
+is the planned conditional fallback, but mask support and BOX validity may conflict.
+Hypotheses: clean target isolation; broad contamination; mask/BOX denominator
+incompatibility; insufficient observed physical support. Intervention: instance-only
+deterministic arange dense grid, numerically verified before images; all native
+masks over identical recorded development25/26 RGB-D and sealed BOXes. Query,
+source/weights, strict determinism, originalBOX/denominator, geometry and EEF fixed.
+
+Execution: `98d9f33` passed grid/PE byte checks and wrote init25's three masks,
+then failed duplicate inherited confidence record keyword. User authorizes
+continuation across routine milestones; reporting-only `b5ada28` used a new
+registered fresh process and completed both images. Partial failure remains
+unsealed/STOPPED. One extra init25 prediction disclosed; its NPZ bytes repeat
+exactly. No extra semantic calls, archived-control warm start or cached model state.
+
+Metrics/result: baselineBOX2/2 AMBIGUOUS; broad masks4/4 AMBIGUOUS; narrow masks
+22.004/36.783% originalBOX depth valid against0.50 gate, UNKNOWN before components.
+All candidate counts0; planes/edges not reached. Every mask/silhouette/RGB reviewed
+after sealing by root and independent reviewer; narrower masks are edge/lip-like
+hypotheses, not verified drawer-front identity. PredictedIoU uncalibrated/no winner.
+
+Interpretation: mask/BOX measurement incompatibility observed; broad subpart/depth
+contamination supported. Correct semantic isolation and actual narrow-surface
+physical sufficiency remain unresolved. Two development examples do not imply
+held-out generalization. P1 remains Gate C; no tracker/reference/PUSH/model work.
+Next experiment: prospectively define mask-support depth availability separate
+from area coverage, while preserving physical/semantic gates and all mask
+hypotheses. This is a substantive interface change, not implemented automatically.
+
+Artifacts: [report](../p1-segmentation-results.md) and
+[full raw evidence](../evidence/p1_grounding/box_sam2_grid_20261007/README.md).

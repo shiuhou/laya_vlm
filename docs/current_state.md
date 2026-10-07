@@ -1,5 +1,20 @@
 # Current project state
 
+**Latest substantive result: 2026-10-07, clean execution `b5ada28`.**
+[Completed BOX/SAM2 comparison](p1-segmentation-results.md) preserves all six
+native masks on init25/26 development frames, strict determinism and unchanged
+queries/source/weights/geometry gates. A dense-grid arange overlay passes exact
+native-size raw-byte coordinate/PE checks; no learned buffer or official SAM
+source change. A reporting-only duplicate-key error is separately retained,
+then disclosed fresh-process continuation completed both masks/geometry stages.
+Original and regenerated init25 NPZ bytes match. Zero new LocateAnything calls.
+Four broad masks remain depth-ambiguous; two narrow masks22.004/36.783% fail the
+unchanged original-BOX depth gate before plane fitting. All candidates0; no mask
+winner. This localizes mask-support/ROI-measurement incompatibility and retained
+part ambiguity, not absent physical geometry. P1 Gate C remains. A future
+mask-support measurement experiment needs a separate condition; no automatic
+denominator repair, tracking, reference/VERIFY or P2/model integration occurred.
+
 **Latest continuation: 2026-10-07, clean execution revision `305056a`.**
 [Launcher correction evidence](evidence/p1_grounding/box_sam2_continuation_20261007/README.md)
 confirms prepared venv identity and byte-identical sealed BOX reuse with zero new

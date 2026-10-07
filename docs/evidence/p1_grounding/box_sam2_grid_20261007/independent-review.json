@@ -1,0 +1,20 @@
+{
+  "reviewer": "independent dev_condition_audit agent",
+  "scope": "Read-only rawRGB/all6native/overlays and sealed file checks; no human evaluation labels",
+  "seal_validation": {
+    "boxes": 9,
+    "masks": 8,
+    "geometry": 2,
+    "mismatches": 0
+  },
+  "visual": "Masks0/2 cover broad central dark recessed/interior-looking surface and perimeter. Mask1 L-shaped left handle-adjacent strip and bottom lip/base-like band may include relevant panel but does not verify isolated front identity.",
+  "narrowmask_measurement": "3733/16965 and5026/13664; every retained mask depth valid; originalBOX .50 ratio rejects before component/plane/edge stage.",
+  "hypotheses": {
+    "H1": "usable correctly associated target not established",
+    "H2": "broad multipart/depth ambiguity supported",
+    "H3": "mask-support/originalBOX denominator incompatibility observed",
+    "H4": "narrowmask physical/plane insufficiency not evaluated"
+  },
+  "mask_winner": null,
+  "tracker_earned": false
+}

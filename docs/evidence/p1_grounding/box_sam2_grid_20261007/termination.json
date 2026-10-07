@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETED_BOUNDED_DIAGNOSTIC",
+  "completed_at_utc": "2026-10-07T07:58:10.210580+00:00",
+  "runtime_failure": false,
+  "scientific_boundary": "No admitted target patch/candidate; broad contamination/ambiguity and narrowmask originalROI gate incompatibility",
+  "further_tracker_or_control": false,
+  "hidden_retry": false,
+  "reporting_retry_disclosed": true
+}

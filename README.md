@@ -35,6 +35,11 @@ fixed venv invocation and reused both sealed BOXes without new semantic calls.
 SAM image encoding completed, but strict deterministic CUDA `cumsum` failed
 before mask decoding. No masks/geometry comparison or further retry followed;
 P1 remains Gate C.
+The [completed BOX/SAM2 matched diagnostic](docs/p1-segmentation-results.md)
+now retains all six native masks under a byte-verified deterministic positional-
+grid repair. Four broad masks remain depth-ambiguous; two narrow masks hit the
+original BOX-area depth gate before plane fitting. Zero candidates: P1 remains
+Gate C. No mask winner, query/gate change or tracker/control integration followed.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

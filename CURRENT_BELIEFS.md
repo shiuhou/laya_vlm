@@ -21,8 +21,26 @@ Inference: BOX-to-surface association is the strongest supported drawer bottlene
 with geometry ambiguity and sensing limits still relevant. Confidence is high for
 these frozen conditions, low for generality. A separate sensor-only segmentation/
 sensing development condition that earns original-gate target patches and reliable
-fresh continuous association would change this conclusion. No such experiment has
-run. Reference POINT no-EOS work is closed; no budget/query/decoder repair continues.
+fresh continuous association would change this conclusion. No such acceptance has
+been established. Reference POINT no-EOS work is closed; no budget/query/decoder repair continues.
+
+The [completed BOX/SAM2 development diagnostic](docs/p1-segmentation-results.md)
+adds a concrete interface finding at `b5ada28`: all six native masks retained,
+four broad masks depth-ambiguous, two narrow masks rejected at22.004/36.783%
+original-BOX depth coverage before component/plane checks. Zero candidates.
+Observed: strict deterministic dense-grid repair passes raw-byte coordinate/PE
+equivalence; no learned weights/gates/query change. A reporting-only partial
+failure and explicit fresh-process continuation are preserved.
+
+Inference: the original BOX-area depth gate conflates intentional outside-mask
+UNKNOWN pixels with unavailable sensor depth. High confidence for this arithmetic
+boundary; narrow-mask semantic identity, plane quality and actual tool support
+remain unknown. Broad-mask part contamination is visually supported, with lower
+confidence outside these two development views. No universal SAM incapacity claim.
+Falsifier/next test: a prospectively specified mask-support measurement contract
+could reveal whether sealed narrow masks have useful plane/interior support;
+passing geometry still must establish target identity before tracking. No mask
+winner, denominator repair or downstream execution is implemented automatically.
 P2/Qwen/Laya/PUSH remain off. Historical evidence and annotations remain immutable.
 
 ## Historical exploratory stop record

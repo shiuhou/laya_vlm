@@ -1,0 +1,9 @@
+{
+  "review_type": "agent development diagnosis; not independent human evaluation",
+  "all_native_masks_reviewed": true,
+  "original_RGB_reviewed": true,
+  "observed": "Wrist images mostly show downward-facing view of dark drawer/cabinet region clipped at upper/right frame. Masks0/2 cover most of the dark rectangle; mask1 instead follows left/lower edge/rim-like bands. No mask supplies an unambiguous isolated outward front from appearance alone.",
+  "inference": "Broad masks are not clean drawer-front surfaces; narrower hypotheses contain visible boundary parts but their semantic correctness remains unresolved.",
+  "limitations": "No evaluation labels or oracle truth. Early geometry rejection prevents plane/target evidence for narrow hypotheses. Do not conclude that an actual pushable surface is absent.",
+  "mask_winner": null
+}
