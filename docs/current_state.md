@@ -1,6 +1,28 @@
 # Current project state
 
-**Latest: mask-support repair at clean `5f97166`, 2026-10-07.**
+**Latest: Formal-50 complete at clean execution `e1ff472`, 2026-10-07.**
+[Full report](p1-formal50-results.md),
+[checkpoint/evidence](evidence/p1_grounding/formal50_20261007/README.md).
+All50 archived BOX inputs →150 native SAM masks → frozen geometry → sealed
+blind annotation scoring. No failures/retries/winner. Human wrist25 VISIBLE,
+agentview25 UNKNOWN (neither NOT_VISIBLE). Wrist33 masks produce45,252
+geometric proposals, all outside the human drawer-front region; correct
+tool-supported candidate evidence0/25 visible inits. Raw identity/geometry
+taxonomies and offline p50/p95 retained. All10 review sheets inspected.
+Nine focused tests before freeze, two independent source/scoring/visual audits.
+Init25/26 tuning remains CLOSED. No query/gate/weight/order/controller change.
+
+Next-round proposal B: bounded P1 grounding/identity representation repair,
+not yet implemented. Temporal qualification not earned; no new10 sequences,
+tracker, reference decoder, PUSH/P2/Qwen/Laya run. Reference/VERIFY UNKNOWN.
+**P2 remains blocked pending Formal-50 / temporal P1 gate**; Formal-50 is now
+complete. No final scientific Gate A/B/C assigned this round. Stop for review.
+Route remains Formal-50 →10 temporal sequences →P1 GateA/B/C →P2a/B0.
+
+The following entries preserve historical checkpoints and their then-current
+Gate C conclusions; they do not override the latest bounded evaluation status.
+
+**Previous: mask-support repair at clean `5f97166`, 2026-10-07.**
 [Repair/results](p1-mask-support-results.md) preserve `b5ada28` inference and
 `26648a3` evidence. Full native-mask depth availability replaces BOX coverage
 as segmentation availability; original thresholds and downstream gates remain.

@@ -19,6 +19,17 @@ The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing
 conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
+The [Formal-50 frozen perception evaluation](docs/p1-formal50-results.md) is now
+complete at execution revision `e1ff472`:50 frames,150 native SAM masks, no
+inference failures/retries, and0 task-valid drawer-front candidates. Wrist
+annotations are25 VISIBLE; agentview annotations are25 UNKNOWN. All45,252
+geometric proposals lie outside the annotated front. Geometry validity does
+not establish target identity. The result supports a bounded P1 grounding/
+identity representation repair proposal before temporal qualification.
+**P2 remains blocked pending Formal-50 / temporal P1 gate**; Formal-50 is
+complete but has not earned temporal qualification. No new tracker, PUSH,
+Qwen or Laya run followed. The historical Gate C records below are not a new
+final Gate C decision for this frozen evaluation.
 The bounded [P1 observability closure](docs/p1-observability-closure-results.md)
 has completed reanalysis of the sealed 50-view annotation set, ten fresh temporal
 attempts and three live geometry-cost acquisitions. Its result is **Gate C**:
@@ -45,7 +56,8 @@ separates native-mask depth availability from BOX coverage. Offline replay of
 all six unchanged masks gives100% availability but six ambiguous component pools
 and zero candidates. Init25/26 development tuning is now closed. The repaired
 pipeline and existing50-frame annotation/input condition are frozen for formal
-evaluation; no new model inference, threshold change or tracker/PUSH ran.
+evaluation; that repair round used no new inference or tracker/PUSH. The subsequent
+Formal-50 round above performs SAM inference under those frozen conditions.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

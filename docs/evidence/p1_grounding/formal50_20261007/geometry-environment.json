@@ -1,0 +1,17 @@
+{
+  "stage": "geometry_evaluation_environment",
+  "recorded_after_completion": true,
+  "executable": "/home/junhongli/projects/laya/laya-embodied-runtime/.venv-p1/bin/python",
+  "prefix": "/home/junhongli/projects/laya/laya-embodied-runtime/.venv-p1",
+  "python": "3.10.21 | packaged by conda-forge | (main, Aug 21 2026, 22:42:31) [GCC 14.4.0]",
+  "platform": "Linux-5.19.0-45-generic-x86_64-with-glibc2.35",
+  "numpy": "1.26.4",
+  "pillow": "12.3.0",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null
+  },
+  "exact_geometry_launch_process_environment_recorded": false,
+  "launch_process_environment_assumed_same_local_venv": true
+}

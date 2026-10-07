@@ -1,0 +1,9 @@
+{
+  "stage": "archive-verification",
+  "initial_result": "Archive creation completed; full-archive expected-member-name assertion failed because tarfile strips leading slash from absolute preparation receipt paths.",
+  "correction": "Verifier and artifact index use identical leading-slash-stripped member names; verify existing archives without rewriting them.",
+  "scientific_outputs_changed": false,
+  "archives_recreated": false,
+  "model_or_geometry_reexecuted": false,
+  "failure_overwritten": false
+}

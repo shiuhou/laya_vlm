@@ -2335,3 +2335,49 @@ candidates are semantic/segmentation identity failures; no labels become masks.
 Route:50-frame evaluation →10 temporal sequences → P1 GateA/B/C → P2a/B0.
 Artifacts: [report](../p1-mask-support-results.md),
 [evidence/entry receipt](../evidence/p1_grounding/mask_support_reanalysis_20261007/README.md).
+
+## 2026-10-07 — Formal-50 frozen perception evaluation
+
+Research question: does the frozen BOX→SAM→RGB-D interface recover correct
+drawer-front tool support across the formal50 recorded frames, and which camera/
+boundary fails? Why it matters: temporal/control integration cannot repair
+unsupported target identity. Hypothesis: mask-depth denominator repair reveals
+useful target patches. Competing hypotheses: semantic BOX specificity, native
+mask identity, component/plane gates or viewpoint identity observability dominate.
+
+Intervention: apply the frozen repaired pipeline to all50first-exposure views
+(25agentview/25wrist) at clean `e1ff472`. All50 archived drawer BOX records,
+query/source/model/checkpoint/decoder/dependency/calibration/config/gates/order
+fixed;0 LocateAnything calls. Fresh SAM50 encodings/50 BOX predictions, all150
+native ordinal masks retained. No labels before complete mask+geometry seals.
+Then unchanged corrected-v2 labels read only for scoring. No winner/tuning/retry.
+
+Metrics/result: all50/150 complete, no inference failure. Human wrist25VISIBLE,
+agentview25UNKNOWN,NOT_VISIBLE0. BOX full coverage21/25 visible,4misses;
+median BOX contamination97.48%.50/75 wrist masks disjoint from front. Wrist
+33 masks produce45,252 correlated proposals, all outside label;0 inside.
+Agentview geometry68plane-support/7ambiguity; wrist27ambiguity/11plane reject/
+3no-tool-point/1depth/33candidate-positive.114 masks never reach boundary/tool
+evaluation. Correct tool-supported target evidence0/25 visible initializations.
+Total SAM encode+decode p50/p9540.19/47.17ms; per-mask geometry78.26/8325.01ms,
+offline workloads, not continuous Hz.9 focused tests before freeze; two
+independent source/ordinal/score/visual reviews. All10 sheets inspected.
+
+Interpretation: denominator correctness did not solve target-part association.
+Strongest observed failure is specificity/identity contamination; physical gates
+still matter. Geometry-valid wrong planes are not useful task evidence. Wrist
+human visibility argues against universal sensing absence; UNKNOWN agentview
+is not proof of NOT_VISIBLE. No action usability/tracking/VERIFY evidence.
+Confidence high in exact frozen distribution, limited beyond this dataset.
+Alternative explanation: current geometry domain may discard narrow target
+support even in an overlapping mask; no label-guided counterfactual run here.
+
+Next decision: propose B, a bounded prospective P1 representation/identity repair
+from the full distribution. Do not start it, temporal sequences, reference decoder,
+PUSH/P2/Qwen/Laya this round. **P2 remains blocked pending Formal-50 / temporal
+P1 gate**; Formal-50 complete, temporal qualification unearned. No new final
+scientific GateA/B/C. Stop for review. Init25/26 tuning remains closed.
+
+Artifacts: [full report](../p1-formal50-results.md),
+[evidence](../evidence/p1_grounding/formal50_20261007/README.md),
+raw corpus `runs/p1/formal50-native-masks-20261007`.

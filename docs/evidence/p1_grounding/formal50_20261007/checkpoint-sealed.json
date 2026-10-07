@@ -1,0 +1,19 @@
+{
+  "execution_commit": "e1ff472936cfb906ea6d3bfaf08adfd8200c0805",
+  "files": {
+    "README.md": "bba9c787a159b484f27f8e183388054a0a8599ecd1a2909af9eb130625edae53",
+    "all-native-masks.csv": "77cb60cbbe18953c55f53d96638b32e9d4662f3fbc0cf095cde03a693525cc89",
+    "archive_evidence.py": "fba15e4b79e2da8ae8e974b6f81cfa22f0f446ff9e26112f8167feffd305e578",
+    "artifact-index.json": "f09ce246a76d9e6c475f5e517208fd4ca703666a4df9f3207533311386bb3ae8",
+    "geometry-environment.json": "53267ec5436f33afdd3e46e8c3bca7fdb0befaa403e8d3e08370c1341901e331",
+    "independent-review.json": "6567854d4c8c3f90859148ea18956cac1b21d27d19a882cab40e1dad9ed890ce",
+    "metadata-evidence.tar.gz": "895e31619a7869d7972ca3ba67c35b9bfd57f6f52e68eb0112a95b79cb17531f",
+    "packaging-note.json": "7e103a03e0a2f76051b095c1f3b71b690f2c947acb321ea737aa3276ea4bd7c4",
+    "registration.json": "1ea3adfe886d51d728c09d9b13a8b7105f3bd3ad14eb97b0cd6878176666a1f8",
+    "stage-diagnostics.json": "2a65503653033e8c55a6921201320af39196866c677ae2f6a6c0fad1380b1fb3",
+    "summary.json": "6f98829afdbafdbc6085a0d3e7cf5ac9a0b70f2f4f122a6a14b90efb7f958c3f",
+    "termination.json": "5f3a2ba2e2832349b0a2b96c4b7985e9a1842202136ebb671508881bc8b9a3cc"
+  },
+  "schema": "p1-formal50-checkpoint/1",
+  "stopped_for_review": true
+}

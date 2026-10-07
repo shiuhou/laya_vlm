@@ -2,7 +2,34 @@
 
 ## Current implementation milestone — 2026-10-07
 
-Latest observed result: the user-authorized
+Latest observed result: [Formal-50](docs/p1-formal50-results.md), frozen clean
+execution `e1ff472`, is COMPLETE.50 frames,150 native masks,0 inference failures,
+0 retries,0 task-valid front candidates. Wrist25/25 human VISIBLE; agentview
+25/25 UNKNOWN. Wrist BOX covers full target21/25 but median97.48% contamination;
+50/75 wrist masks disjoint from target.33 masks generate45,252 geometric points,
+all outside the human front region. Agentview0 candidates,68 plane-support
+rejects +7 ambiguities. All-image inspection and two independent audits agree.
+
+Belief: semantic-region specificity and segmentation part identity are the
+strongest supported current interface bottleneck. Depth availability alone
+is insufficient; a valid plane may describe tabletop/cavity. Confidence high
+for these frozen observations, limited for generalization. Against a pure
+camera-unobservability explanation: wrist has25 VISIBLE human regions. Against
+a pure depth-dropout explanation:139/150 native masks have availability1.0,
+only1 depth-availability gate fails. Components/plane rejection also remain
+material; failing before tool evaluation cannot establish tool impossibility.
+Falsifier: a future prospective identity-supported sensor condition produces
+correct tool-interior candidates across independent initializations without
+weakened geometry gates. No such condition is claimed here.
+
+Next proposal: one scoped P1 grounding/identity representation repair (B),
+not temporal qualification or a final sensing Gate C. Wrist is a better current
+development source, neither camera control-qualified. Reference/VERIFY UNKNOWN.
+**P2 remains blocked pending Formal-50 / temporal P1 gate**; Formal-50 complete,
+temporal evidence unearned. Stop for review. No PUSH/Qwen/Laya/tracker run.
+The historical checkpoints below keep their original context/status.
+
+Previous observed result: the user-authorized
 [mask-support repair](docs/p1-mask-support-results.md) at `5f97166` replays all six
 sealed masks with zero model calls. Availability is1.0 for all six; all remain
 AMBIGUOUS_DEPTH_COMPONENTS, candidates0. Narrow-mask components1924/1756 and
