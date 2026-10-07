@@ -30,6 +30,11 @@ The subsequent [bounded BOX/SAM2 development diagnostic](docs/evidence/p1_ground
 sealed complete BOX outputs for init25/26, then stopped at a launcher/interpreter
 mismatch before any SAM prediction. It supplies no segmentation result and does
 not change Gate C; no retry or tracker/action stage followed.
+The [separately registered launcher continuation](docs/evidence/p1_grounding/box_sam2_continuation_20261007/README.md)
+fixed venv invocation and reused both sealed BOXes without new semantic calls.
+SAM image encoding completed, but strict deterministic CUDA `cumsum` failed
+before mask decoding. No masks/geometry comparison or further retry followed;
+P1 remains Gate C.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

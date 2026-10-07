@@ -1,0 +1,7 @@
+{
+  "reviewer": "independent dev_condition_audit agent",
+  "scope": "Read-only receipt/source/trace audit; no interpreter/models/tests",
+  "finding": "Correct clean305056a venv/Torch/GPU, strict deterministic settings. Build and init25 set_image completed; predict attempted once, failed dense positional encoding CUDA cumsum before mask decoder invocation. Init26 SAM unattempted; masks0, geometry0.",
+  "interpretation": "Strict deterministic GPU condition compatibility failure; no segmentation-quality conclusion",
+  "retry": false
+}

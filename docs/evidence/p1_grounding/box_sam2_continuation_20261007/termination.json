@@ -1,0 +1,16 @@
+{
+  "terminated_at_utc": "2026-10-07T07:43:12.042018+00:00",
+  "first_failure": {
+    "init_index": 25,
+    "box_index": 0,
+    "stage": "PositionEmbeddingRandom.forward get_dense_pe before mask decoder",
+    "exception": "RuntimeError(\"cumsum_cuda_kernel does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True)'. You can turn off determinism just for this operation, or you can use the 'warn_only=True' option, if that's acceptable for your application. You can also file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation.\")",
+    "source": "sam2/modeling/position_encoding.py:161",
+    "operator": "float32 grid.cumsum(dim=0) on CUDA",
+    "deterministic_algorithms": true
+  },
+  "stop_rule": "First concrete runtime failure",
+  "mask_stage_exit_code": 1,
+  "subsequent_stages_run": false,
+  "hidden_retry": false
+}

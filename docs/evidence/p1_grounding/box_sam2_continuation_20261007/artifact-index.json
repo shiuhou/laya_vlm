@@ -1,0 +1,45 @@
+{
+  "archive": {
+    "path": "evidence.tar.gz",
+    "sha256": "a3e90dd12b19b19d018e1b1253ab57a9e585e79918ffecfe7f7e4c2841f7fe44",
+    "size_bytes": 59316
+  },
+  "members_sha256": {
+    "experiment/boxes/LocateAnything-identity.json": "e16c024dad5686f054eda0731d65a167714581eee4c3b7a837f29f2c0017384b",
+    "experiment/boxes/condition.json": "0d2dfe50a18c680a2bb7694db9c5820e2c123cc4f74ed5ac09100557734df5c7",
+    "experiment/boxes/init-025-original-response.json": "c76a70f571b644f6129850261c72e15852b88599df2f7a19584a3047166a30b4",
+    "experiment/boxes/init-025-typed.json": "72d796cae9677de476a50ef9bb05e4ba166b03a715f092ef52e17a7a8792ad24",
+    "experiment/boxes/init-026-audit.json": "33e40db8b4bf0e2e559772bdc83df834f5112ac089b2686fe6cae8312870f672",
+    "experiment/boxes/init-026-model-input.json": "12b81fd8b91ea20b9b38e37764b2ee0cc95e1c49593a16f68fcf4c16216368ca",
+    "experiment/boxes/init-026-raw-output.json": "063a03879863eceb179d14ca29d083f6bc7ca28a1399b567e2c376a6d501ddbf",
+    "experiment/boxes/init-026-typed.json": "9072cdc91a456a6f49b27ab2375e206b28ac8540f8b734fc2568a8e46af8c103",
+    "experiment/boxes/inputs.json": "9a8e452f20f8a108defc33e2e4fb068e50bec08b22ec7f9b5ff813bd7d94e60b",
+    "experiment/boxes/sealed.json": "bc449293bfb9e7d7afe0683fb0be8f0f35acd8f2556e02f4946fb9e538910a9b",
+    "experiment/boxes-inheritance.json": "e1d1efc64e3b4c5ac5e3a9a2a80cd8c01efe8ce57d481055a4b740a0196af18d",
+    "experiment/independent-review.json": "335974d6c39c954794b3fd213131a193fbcc030396f3e239e53a293aef629ea5",
+    "experiment/invariant-receipt.json": "eb989191083ded1b5521a46d773d5b449da600c8b989ecc81cde8fe086fa9a34",
+    "experiment/launch-preflight.json": "ba067c0cc466af4ddcba02162fb6eb516d80fdb7249dd382878d1375204b81dd",
+    "experiment/masks/condition.json": "d4a9ace5254cc786a1a37d9adf6ace7705c939d7e446555fe789d3e8f7f6754a",
+    "experiment/masks/failure.json": "d8386d0d7bad8fe5655103c6bee9dba06802c4592ff2387daa55ba40818bb09c",
+    "experiment/masks/process-environment.json": "66693697877f6841a518e37f84e08b341aac54316b0899a2cfdc860f823d4b9e",
+    "experiment/masks-process.json": "27eb442422880dd17112c242daab7ee355244016240210751574ff5d13be519a",
+    "experiment/masks-process.log": "e9c067b5160853fc133f16dd6505b62dae3a1226bd60a5a13c92452d9b11d35d",
+    "experiment/registration.json": "cd8dfb2fc15cc3b204c91ba52d564fcc79ba139f8d8286ea118a80e4235d4263",
+    "experiment/source-review.json": "fb9652918fee44f55f241357b3bb0d738b9bae0eb1d13f45da17d45185baa99d",
+    "experiment/summary.json": "b7e20af9f2114ef7d5149374645fafa52003ebed3791a468265e446bf7eeb934",
+    "experiment/termination.json": "f93125a2a2fbc1f74e42abd68ffeb4bc2dc2f2b6a5d7e2000188474f634c32d3"
+  },
+  "dependencies": [
+    {
+      "path": "docs/evidence/p1_grounding/box_sam2_development_20261007/evidence.tar.gz",
+      "sha256": "008a34d3e5fee7965af2be40a3c12b33ff645db20e66ac4969c495338343c036"
+    },
+    {
+      "path": "docs/evidence/p1_grounding/surface_dev_20261006/fresh-development-evidence.tar.gz",
+      "sha256": "c344f7f1f8799acd5726ddbb52f258a828211f2440e73d07160d66b0a9fb36ae"
+    }
+  ],
+  "archive_byte_validation": "PASS",
+  "model_weights_archived": false,
+  "venv_archived": false
+}

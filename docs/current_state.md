@@ -1,5 +1,15 @@
 # Current project state
 
+**Latest continuation: 2026-10-07, clean execution revision `305056a`.**
+[Launcher correction evidence](evidence/p1_grounding/box_sam2_continuation_20261007/README.md)
+confirms prepared venv identity and byte-identical sealed BOX reuse with zero new
+LocateAnything calls. SAM model construction and init25 image encoding completed;
+first mask prediction stopped at unsupported strict-deterministic CUDA `cumsum`
+in dense positional encoding, before mask decoder execution. Zero returned masks,
+zero geometry evaluations; init26 not attempted. No retry or determinism relaxation.
+This is operator compatibility evidence, not segmentation-quality evidence.
+P1 Gate C, reference/VERIFY UNKNOWN and no control/model integration remain.
+
 **Latest execution receipt: 2026-10-07.** The selected architecture/milestones
 remain unchanged. [P1 observability closure](p1-observability-closure-results.md)
 finished at `1fedb9c` with Gate C, not continuous drawer/reference tracking.

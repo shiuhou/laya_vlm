@@ -2238,3 +2238,28 @@ the matched diagnostic. Invoke venv path without resolving symlink and audit
 process identity before launch; no geometry/interface repair is yet justified.
 
 Artifacts: [bounded attempt receipt](../evidence/p1_grounding/box_sam2_development_20261007/README.md).
+
+## 2026-10-07 — launcher continuation / deterministic operator boundary
+
+Question: does correcting venv invocation allow the preregistered two-frame
+BOX/SAM comparison under the unchanged scientific condition? Competing outcome:
+launcher passed versus another concrete runtime failure before usable outputs.
+Intervention: absolute venv invocation without symlink resolution, explicit
+process identity preflight, source-bound byte-identical inherited BOXes. Controls:
+same RGB-D, query/checkpoint, three native masks, strict deterministic FP32,
+original BOX denominator/geometry; no new semantic calls or labels.
+
+Observed: clean `305056a`; preflight/reuse passed. Model build and init25 image
+encoding complete. First predictor call failed CUDA float32 cumsum in dense
+positional encoding under strict deterministic algorithms, before mask decoder.
+Attempted predictions1/completed0, native masks0, geometry0; init26 unattempted.
+Independent audit confirms source/trace/counts. No retry or relaxed flag followed.
+
+Interpretation: launcher repair validated; native strict deterministic GPU
+condition unsupported on this operator path. Scientific segmentation/association
+hypotheses still untested. No inference about missing surface or SAM quality.
+Next decision: a separately specified deterministic equivalent positional-grid
+compatibility correction could remove this blocker without changing learned
+weights or geometry. Not implemented/executed here; P1 remains Gate C.
+
+Artifacts: [continuation evidence](../evidence/p1_grounding/box_sam2_continuation_20261007/README.md).
