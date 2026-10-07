@@ -95,10 +95,15 @@ def registration(root):
     for name, digest in r["sam_source_files_sha256"].items():
         require(file_hash(Path(r["sam_source"])/name) == digest, "SAM source changed", "CONDITION_CHANGED")
     frozen_geometry("configs/p1_geometry.json")
+    if "sam_compatibility" in r:
+        overlay = r["sam_compatibility"]
+        require(overlay["condition"] == "sam2-dense-grid-arange/1"
+                and file_hash(Path(__file__).with_name("sam2_deterministic_grid.py")) == overlay["source_sha256"],
+                "registered compatibility overlay differs", "CONDITION_CHANGED")
     return r
 
 
-def prepare(output, assets, inherited_boxes=None):
+def prepare(output, assets, inherited_boxes=None, deterministic_grid=False):
     assets = read(assets)
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
@@ -146,6 +151,12 @@ def prepare(output, assets, inherited_boxes=None):
             boxes_seal_sha256=file_hash(prior_root/"boxes/sealed.json"),
             correction="invoke absolute venv executable without symlink resolution",
             independent_replication=False)
+    if deterministic_grid:
+        require(inherited_boxes is not None, "compatibility continuation requires sealed BOX inheritance")
+        r["sam_compatibility"] = dict(condition="sam2-dense-grid-arange/1",
+            source_sha256=file_hash(Path(__file__).with_name("sam2_deterministic_grid.py")),
+            change="dense grid ones/cumsum replaced by exact float32 arange; no learned buffer change",
+            strict_determinism=True, numerical_gate="bitwise native-size coordinate/PE checks before images")
     r["registration_content_sha256"] = content_hash(r)
     write(root/"registration.json", r)
     registration(root)
@@ -272,11 +283,15 @@ def _masks_native(root):
     torch.backends.cudnn.benchmark = False
     write(out/"condition.json", dict(code=code_identity(), registration_sha256=file_hash(root/"registration.json"),
                                      allocation=allocation, sam_settings=SAM_SETTINGS,
+                                     sam_compatibility=r.get("sam_compatibility"),
                                      model_inputs=["original_full_RGB", "sealed_BOX_xyxy"],
                                      evaluation_labels_used=False, depth_to_SAM=False))
     try:
         model = build_sam2("configs/sam2.1/sam2.1_hiera_t.yaml", r["checkpoint_path"],
                            device="cuda:0", apply_postprocessing=False)
+        if "sam_compatibility" in r:
+            from .sam2_deterministic_grid import install_and_verify
+            write(out/"dense-grid-equivalence.json", install_and_verify(model))
         predictor = SAM2ImagePredictor(model, mask_threshold=0.0, max_hole_area=0.0, max_sprinkle_area=0.0)
         records = []
         with torch.inference_mode():
@@ -285,7 +300,8 @@ def _masks_native(root):
                 require(sensor_view_identity(view) == row["source_identity"], "BOX/SAM source mismatch")
                 torch.cuda.synchronize()
                 start = time.perf_counter()
-                predictor.set_image(view["rgb"])
+                # Same RGB bytes; writable copy avoids torchvision's readonly-array warning.
+                predictor.set_image(view["rgb"].copy())
                 torch.cuda.synchronize()
                 encode_s = time.perf_counter()-start
                 for index, box in enumerate(row["ordered_boxes"]):
@@ -342,13 +358,16 @@ def geometry(root):
         source = sensor_view_identity(view)
         require(source == record["source_identity"] and file_hash(record["artifact_uri"]) == record["artifact_sha256"],
                 "mask artifact/source changed", "SOURCE_MISMATCH")
+        start = time.perf_counter()
         baseline = estimate_visible_patch(view["depth_m"], view["intrinsics_K"], view["T_base_camera"],
             roi_xyxy=record["box_xyxy"], source_frame_id=source["frame_id"],
             calibration_version=source["calibration_version"], track_id="drawer_front_pushable",
             feature_id=f"box-{record['box_index']}", capture_sim_time_s=view["capture_sim_time_s"],
             capture_monotonic_ns=view["capture_monotonic_ns"], config=config, seed=0,
             eef_position_base_m=proprio["eef_position_base_m"]).to_dict()
+        baseline_geometry_s = time.perf_counter()-start
         estimates = []
+        mask_geometry_s = []
         with np.load(record["artifact_uri"], allow_pickle=False) as data:
             require(data["masks"].dtype == bool and data["masks"].shape == (3, 256, 384), "mask shape changed")
             require(np.array_equal(data["masks"], data["logits"] > 0.0), "mask/logit relation changed")
@@ -360,12 +379,15 @@ def geometry(root):
                     mask_artifact_uri=record["artifact_uri"], mask_artifact_sha256=record["artifact_sha256"],
                     coordinate_convention="top-left-origin-pixel-xyxy", mask_input_channels=["rgb"],
                     evaluation_labels_used=False, provenance="learned estimate")
+                start = time.perf_counter()
                 estimates.append(estimate_segmented_patch(view, record["box_xyxy"], native,
                     mask_binding=binding, config=config, track_id="drawer_front_pushable",
                     feature_id=f"box-{record['box_index']}/mask-{index}", seed=0,
                     eef_position_base_m=proprio["eef_position_base_m"]))
+                mask_geometry_s.append(time.perf_counter()-start)
         results.append(dict(init_index=record["init_index"], box_index=record["box_index"],
                             baseline=baseline, native_mask_estimates=estimates,
+                            baseline_geometry_s=baseline_geometry_s, mask_geometry_s=mask_geometry_s,
                             semantic_association="UNKNOWN_UNREVIEWED_MULTIMASK_HYPOTHESES",
                             calibrated_confidence=None, for_execution=False))
     write(out/"results.json", results)
@@ -381,10 +403,11 @@ def main():
     parser.add_argument("--output", required=True)
     parser.add_argument("--assets", help="pinned model/environment receipt, prepare only")
     parser.add_argument("--reuse-boxes-from", help="sealed predecessor root, prepare only")
+    parser.add_argument("--deterministic-grid", action="store_true", help="preregister dense-grid compatibility overlay")
     args = parser.parse_args()
     if args.stage == "prepare":
         require(args.assets is not None, "assets receipt required")
-        prepare(args.output, args.assets, args.reuse_boxes_from)
+        prepare(args.output, args.assets, args.reuse_boxes_from, args.deterministic_grid)
     else:
         {"boxes": boxes, "reuse-boxes": reuse_boxes, "masks": masks, "geometry": geometry}[args.stage](args.output)
 
