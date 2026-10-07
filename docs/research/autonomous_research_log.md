@@ -2381,3 +2381,46 @@ scientific GateA/B/C. Stop for review. Init25/26 tuning remains closed.
 Artifacts: [full report](../p1-formal50-results.md),
 [evidence](../evidence/p1_grounding/formal50_20261007/README.md),
 raw corpus `runs/p1/formal50-native-masks-20261007`.
+
+
+## 2026-10-07 — bounded P1 POINT + BOX identity repair
+
+Research question: can a same-frame semantic positive POINT disambiguate the
+original broad BOX enough for frozen SAM/geometry to recover usable front evidence?
+Why it matters: Formal-50 produced 0 correct candidates; part identity was the
+strongest supported interface bottleneck.
+Hypothesis: H1 predicts better raw segmentation and task-valid candidates.
+Competing hypotheses: H2 predicts unreliable POINT grounding/completion; H3
+predicts segmentation/component identity or tool-support rejection despite a
+correct POINT.
+Intervention: original native POINT request/checkpoint/256-token settings plus
+original BOX to frozen SAM, with source-bound coordinate/depth admission.
+Controlled variables: original 50 RGB-D frames, query/BOX/calibration,
+SAM/weights/settings, all native masks, measurement/gates/order. Labels read only
+after new generation seals. Previously exposed set explicitly development.
+CPU geometry threads set to 1 and recorded; timing comparison is limited.
+Metrics: full-frame/slot failures, visible POINT relation, mask contamination,
+raw vs admission-filtered candidate identity, matched generated subgroup,
+offline p50/p95 timing.
+Result: 50 raw calls, 23 typed POINTs, 7 BOX contradictions, 16 SAM calls,
+48 native masks; 0 task-valid candidates. Wrist: 2/9 typed POINTs correct,
+7 wrong, 16/25 frames unavailable. Matched 8 wrist frames: outside proposals
+9,226 → 9,149; median contamination 94.218% → 96.808%. Filtering two contradictory
+masks removes 1,532 outside proposals without creating valid candidates.
+Artifacts: docs/p1-identity-prompt-results.md and docs/evidence/p1_grounding/
+identity_prompt_20261007; raw runs/p1/identity-point-sam-20261007.
+Execution b7f5409, contract/runner 747fb7f. Parent inspected all 10 point-review
+sheets; two independent auditors inspected all 10 review sheets. Six focused
+synthetic tests pass.
+Interpretation: this exact H1 addition is insufficient; H2 is supported in this
+condition. H3 has one concrete boundary: the only correct POINT reaching SAM
+produces a front-focused mask with a local plane, but no tool-interior candidate;
+other masks still produce tabletop proposals.
+Remaining uncertainty: generalization and reliable correct-POINT performance;
+too few correct points, exposed labels, correlated grid proposals, uncalibrated
+uncertainty. UNKNOWN agentview frames are not accuracy negatives. No physical
+impossibility claim.
+Next decision: for review, choose a prospective experiment separating target-part
+identity from usable tool geometry; no next experiment automatically executed.
+Stop: no decoder/query/gate tuning, tracker/temporal/reference work, PUSH/P2,
+Qwen or Laya. Reference/VERIFY UNKNOWN; P1 acceptance unearned. Runtime unchanged.

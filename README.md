@@ -19,13 +19,22 @@ The [P1 RGB-D checkpoint](docs/p1-rgbd-checkpoint.md) adds same-exposure sensing
 conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
+The subsequent [bounded POINT + BOX identity repair](docs/p1-identity-prompt-results.md)
+is complete at frozen execution `b7f5409`:50 POINT calls,16 admitted SAM frames,
+48 native masks;0 task-valid candidates. Only2/9 typed wrist POINTs fall in the
+human front region; one is outside the original BOX, the other yields a better
+front mask but fails unchanged tool-interior support. This reused50-frame
+condition is development evidence, not independent acceptance. All raw failures
+and point/mask/proposal imagery are sealed. No additional tuning or downstream
+tracking/control/model run followed; the batch stopped for review.
+
 The [Formal-50 frozen perception evaluation](docs/p1-formal50-results.md) is now
 complete at execution revision `e1ff472`:50 frames,150 native SAM masks, no
 inference failures/retries, and0 task-valid drawer-front candidates. Wrist
 annotations are25 VISIBLE; agentview annotations are25 UNKNOWN. All45,252
 geometric proposals lie outside the annotated front. Geometry validity does
-not establish target identity. The result supports a bounded P1 grounding/
-identity representation repair proposal before temporal qualification.
+not establish target identity. The result motivated the bounded P1 identity repair linked above; that repair
+also yields no task-valid candidate and does not earn temporal qualification.
 **P2 remains blocked pending Formal-50 / temporal P1 gate**; Formal-50 is
 complete but has not earned temporal qualification. No new tracker, PUSH,
 Qwen or Laya run followed. The historical Gate C records below are not a new

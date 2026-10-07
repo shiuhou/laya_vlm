@@ -1,6 +1,23 @@
 # Current project state
 
-**Latest: Formal-50 complete at clean execution `e1ff472`, 2026-10-07.**
+**Latest completed batch: POINT + BOX identity development repair,2026-10-07.**
+Frozen execution `b7f5409`; [report](p1-identity-prompt-results.md) and
+[complete evidence](evidence/p1_grounding/identity_prompt_20261007/README.md).
+50 fixed-query POINT calls,23 typed admissions,7 outside-original-BOX rejections,
+16 completed SAM calls,48 native masks evaluated,102 planned slots NOT_EVALUATED.
+0 task-valid candidates. Raw candidate count9,149, all outside annotated front.
+Same generated8wrist frames: baseline9,226 outside proposals vs new9,149;
+median contamination94.218%→96.808%. Admission filtering is recorded separately.
+2/9typed wrist POINTs label-correct: init1 blocked by originalBOX; init12native1
+reaches a better front plane but NO_TOOL_INTERIOR_CANDIDATE. No fallback/tuning.
+Six focused tests pass; unchanged runtime/geometry/model/weights/query/gates.
+The set was previously exposed; this is development, not held-out acceptance.
+P1/temporal qualification remains unearned, reference/VERIFY UNKNOWN; P2/PUSH/
+Qwen/Laya blocked. Stopped for review. No fresh inference or automatic next repair.
+The dated checkpoints below preserve their historical status.
+
+
+**Previous: Formal-50 complete at clean execution `e1ff472`, 2026-10-07.**
 [Full report](p1-formal50-results.md),
 [checkpoint/evidence](evidence/p1_grounding/formal50_20261007/README.md).
 All50 archived BOX inputs →150 native SAM masks → frozen geometry → sealed

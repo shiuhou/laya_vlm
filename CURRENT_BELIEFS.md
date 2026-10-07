@@ -1,5 +1,36 @@
 # Current research beliefs
 
+## Latest bounded repair — 2026-10-07
+
+Observed: [POINT+BOX repair](docs/p1-identity-prompt-results.md), clean execution
+`b7f5409`, yields0 task-valid candidates.50 POINT rawcalls completed,23 typed
+POINT admissions,7 originalBOX contradictions,16 SAM calls/48 masks. On25VISIBLE
+wrist frames only2typed points match front,7do not,16unavailable. Agentview25UNKNOWN
+remains unscored for semantic correctness. Original50labels/results were exposed:
+matched reused-development diagnostic only, no independent acceptance.
+
+Observed matched8wrist frames: outside proposals9,226→9,149; median contamination
+94.218%→96.808%, no aggregate benefit. Two contradiction masks removed1,532outside
+proposals deterministically; this is not a prompting gain. One correctPOINT is
+excluded by oldBOX; the other produces a front-focused mask(native1,71.33%purity)
+whose original tool-support gate rejects, while broad masks still propose tabletop.
+
+Inference: positive-point containment alone does not establish target-component
+or candidate identity; this exact addition is insufficient. Confidence high for
+recorded measurements, low for generality/correct-prompt performance(only1correct
+POINT reachesSAM). Against a simple 'all segmentation always useless' explanation:
+one native mask localizes the front better. Against complete sensing invisibility:
+wrist labels remain25VISIBLE. Against missing-depth explanation: all48 masks
+availability1.0. Fixed-reference/VERIFY and continuous tracking still unproved.
+
+Falsifier/next decision for review: independent prospective target-part association
+and usable tool support without weaker gates, labels/oracle policy inputs or an
+additional model compensating for unknown geometry. Do not auto-tune this example
+or reopen decoder budgets. No P1 pass, no final scientific Gate C, no temporal/P2/
+Qwen/Laya run. Six focused tests and independent source/scoring/image audits pass.
+The original Formal-50 and development checkpoints below remain historical.
+
+
 ## Current implementation milestone — 2026-10-07
 
 Latest observed result: [Formal-50](docs/p1-formal50-results.md), frozen clean
