@@ -1,0 +1,35 @@
+{
+  "archive": {
+    "name": "evidence.tar.gz",
+    "sha256": "21d6f3c36856e7a038171ae1ec3fe1a3dae85effab2f2600778209295916fd29",
+    "size_bytes": 210440
+  },
+  "members_sha256": {
+    "reanalysis/all-masks-reanalysis.png": "e7b22dfdae62d89d9f81ade52b43d81d01cdfeab3d78f91d578f6ccd4aab7bdf",
+    "reanalysis/build-review.py": "06b25ce475909f9dac89a4164986e4836f2f9a81f37fed0c26c687ca23fe06c1",
+    "reanalysis/formal50-evaluation-entry.json": "4c955f3ef765563fdd95d086124389553512eed44dc526f5ae3dbc9fcab7fa63",
+    "reanalysis/geometry/condition.json": "70fe38d41ccfb7d31a0f867d40949f89cd142a584718ecd3b997cc639282873b",
+    "reanalysis/geometry/results.json": "fcad227de2838c55d2c250ece1b9753c5ea9302af7f8bd5d86229715d65a3546",
+    "reanalysis/geometry/sealed.json": "1fb59d99deff2ebc1600ae752fb3d88da85d2b39dbf748e67038c711c40b1319",
+    "reanalysis/independent-review.json": "a8d9579e8c7778c911609a0ef184fb557d812e015478d3609a1f534de5d24204",
+    "reanalysis/invariant-receipt.json": "f4883ae8f6145a234a54b94dc4d1683a3466bb79e913b240c70dd32a5c364828",
+    "reanalysis/reanalysis-process.json": "c6fafae06ecc10ae942138e6dca264033c28a62ba8150a5dc669e9467d45d38c",
+    "reanalysis/reanalysis-process.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reanalysis/registration.json": "70fe38d41ccfb7d31a0f867d40949f89cd142a584718ecd3b997cc639282873b",
+    "reanalysis/summary.json": "22c851273d172f73cd90a3315696632f0395a5561f42d980823962c74ae36795",
+    "reanalysis/termination.json": "e3199922a20a03b4344349c8a631698e44c8515317fc5b256c643950efe2f950"
+  },
+  "dependencies": [
+    {
+      "path": "docs/evidence/p1_grounding/box_sam2_grid_20261007/evidence.tar.gz",
+      "sha256": "0b8dc8db8ed0077ef5d164b7914facfb28ef5b69d41bd73cfc7348fd977aabc9"
+    },
+    {
+      "path": "docs/evidence/p1_grounding/surface_dev_20261006/fresh-development-evidence.tar.gz",
+      "sha256": "c344f7f1f8799acd5726ddbb52f258a828211f2440e73d07160d66b0a9fb36ae"
+    }
+  ],
+  "archive_byte_validation": "PASS",
+  "raw_masks_duplicated": false,
+  "annotation_polygons_archived_in_generator": false
+}

@@ -40,6 +40,12 @@ now retains all six native masks under a byte-verified deterministic positional-
 grid repair. Four broad masks remain depth-ambiguous; two narrow masks hit the
 original BOX-area depth gate before plane fitting. Zero candidates: P1 remains
 Gate C. No mask winner, query/gate change or tracker/control integration followed.
+The [single prospective mask-support repair](docs/p1-mask-support-results.md)
+separates native-mask depth availability from BOX coverage. Offline replay of
+all six unchanged masks gives100% availability but six ambiguous component pools
+and zero candidates. Init25/26 development tuning is now closed. The repaired
+pipeline and existing50-frame annotation/input condition are frozen for formal
+evaluation; no new model inference, threshold change or tracker/PUSH ran.
 The first task is pushing a visible drawer front; a pad/handle grasp is not a
 prerequisite. Earlier [beliefs](CURRENT_BELIEFS.md) and the
 [research log](docs/research/autonomous_research_log.md) remain historical records.

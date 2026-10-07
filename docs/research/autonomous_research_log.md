@@ -2298,3 +2298,40 @@ hypotheses. This is a substantive interface change, not implemented automaticall
 
 Artifacts: [report](../p1-segmentation-results.md) and
 [full raw evidence](../evidence/p1_grounding/box_sam2_grid_20261007/README.md).
+
+## 2026-10-07 — one prospective mask-support repair; development closed
+
+Question: does correcting native-mask depth availability expose usable support
+while all original physical/semantic gates remain? Competing hypotheses: original
+BOX denominator alone blocks useful narrow support versus further component/plane/
+tool/identity failure. User fixes this single intervention; no inference or tuning.
+Frozen successful inference `b5ada28` / evidence `26648a3` tagged before edits.
+
+Intervention: complete native-mask valid depth / mask pixels; originalBOX coverage
+is diagnostic. Geometry still originalBOX, outside-mask UNKNOWN; all original
+thresholds, component-through-candidate AST, source/mask/depth and semantics fixed.
+Preregistered clean `5f97166`; every mask0/1/2 at init25/26 replayed, no winner.
+
+Observed: availability1.0 all6; all6 AMBIGUOUS_DEPTH_COMPONENTS, candidates0.
+Newly admitted narrow masks fail actual component gate1924/1756 and2776/2249.
+Planes/edges/tools not reached. DefaultBOX2/2 and legacy-mask6/6 exact regression,
+13 tests/source seals/config/AST/lint pass; independent reviewer agrees.
+No LocateAnything/SAM, labels-in-generation, controller/tracker/Qwen/Laya call.
+
+Interpretation: denominator repair works but competing physical supports remain.
+Mask target identity is unproven, physical surface absence not established, and
+two development images do not test generality. No new threshold/mask experiment
+on these sources follows. **Development tuning CLOSED.**
+
+Next decision executed: pin repaired pipeline + existing50 raw frames, immutable
+annotations/rules,100 archived BOX predictions and P1 gates in a formal entry
+receipt. All50 actual dimensions384×256,25agentview/25wrist. Reviewer initially
+misstated384×384, then retracted it against the exact manifest; no input change.
+No native mask corpus exists for this entry and new inference is excluded this
+round, so formal repaired scoring remains explicitly pending, not inferred from
+old BOX evaluation or dev results. Future outside human drawer-front region
+candidates are semantic/segmentation identity failures; no labels become masks.
+
+Route:50-frame evaluation →10 temporal sequences → P1 GateA/B/C → P2a/B0.
+Artifacts: [report](../p1-mask-support-results.md),
+[evidence/entry receipt](../evidence/p1_grounding/mask_support_reanalysis_20261007/README.md).

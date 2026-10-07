@@ -1,0 +1,186 @@
+{
+  "status": "COMPLETE_NO_CANDIDATES",
+  "frozen_pipeline_code": "5f971665a00a0585655c437225e99ea3d0b0c12d",
+  "measurements": [
+    {
+      "init_index": 25,
+      "mask_index": 0,
+      "full_native_mask_pixels": 16037,
+      "valid_depth_inside_native_mask": 16037,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.9448275862068966,
+      "mask_pixels_outside_original_box": 8,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        9902,
+        6105,
+        6,
+        5,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    },
+    {
+      "init_index": 25,
+      "mask_index": 1,
+      "full_native_mask_pixels": 3733,
+      "valid_depth_inside_native_mask": 3733,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.22004126142057176,
+      "mask_pixels_outside_original_box": 0,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        1924,
+        1756,
+        17,
+        15,
+        10,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    },
+    {
+      "init_index": 25,
+      "mask_index": 2,
+      "full_native_mask_pixels": 15636,
+      "valid_depth_inside_native_mask": 15636,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.9216622458001769,
+      "mask_pixels_outside_original_box": 0,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        9704,
+        5927,
+        5
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    },
+    {
+      "init_index": 26,
+      "mask_index": 0,
+      "full_native_mask_pixels": 12712,
+      "valid_depth_inside_native_mask": 12712,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.930327868852459,
+      "mask_pixels_outside_original_box": 0,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        7157,
+        5542,
+        5,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    },
+    {
+      "init_index": 26,
+      "mask_index": 1,
+      "full_native_mask_pixels": 5026,
+      "valid_depth_inside_native_mask": 5026,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.367827868852459,
+      "mask_pixels_outside_original_box": 0,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        2776,
+        2249,
+        1
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    },
+    {
+      "init_index": 26,
+      "mask_index": 2,
+      "full_native_mask_pixels": 12289,
+      "valid_depth_inside_native_mask": 12289,
+      "depth_availability": 1.0,
+      "original_box_coverage": 0.8993706088992974,
+      "mask_pixels_outside_original_box": 0,
+      "geometry_status": "AMBIGUOUS",
+      "reason_codes": [
+        "AMBIGUOUS_DEPTH_COMPONENTS"
+      ],
+      "component_sizes": [
+        6884,
+        5405
+      ],
+      "candidate_count": 0,
+      "usable_candidate_count": 0,
+      "semantic_identity": "UNKNOWN_NO_DEV_HUMAN_LABELS",
+      "plane_fit": "NOT_REACHED_COMPONENT_AMBIGUITY"
+    }
+  ],
+  "source_masks_unchanged": true,
+  "new_LocateAnything_calls": 0,
+  "new_SAM_calls": 0,
+  "defaultBOX_exact_regressions": 2,
+  "legacy_mask_exact_regressions": 6,
+  "downstream_geometry_AST_unchanged": true,
+  "geometry_thresholds_unchanged": true,
+  "candidate_order_unchanged": true,
+  "mask_winner": null,
+  "all6_completed": true,
+  "total_candidates": 0,
+  "total_usable_candidates": 0,
+  "plane_fits_reached": 0,
+  "interpretation": "Availability repair removes narrowmask originalBOX-denominator rejection. All six then fail unchanged comparable-depth-component ambiguity. No physical absence or correct semantic identity proved.",
+  "development_tuning": "CLOSED_FOR_INIT25_INIT26",
+  "next_milestone": "50frame annotation/observability evaluation using frozen pipeline",
+  "P1_gate": "C unchanged",
+  "reference": "UNKNOWN",
+  "VERIFY": "UNKNOWN",
+  "tracker_calls": 0,
+  "controls": 0,
+  "Qwen_calls": 0,
+  "Laya_calls": 0
+}

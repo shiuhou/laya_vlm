@@ -1,5 +1,19 @@
 # Current project state
 
+**Latest: mask-support repair at clean `5f97166`, 2026-10-07.**
+[Repair/results](p1-mask-support-results.md) preserve `b5ada28` inference and
+`26648a3` evidence. Full native-mask depth availability replaces BOX coverage
+as segmentation availability; original thresholds and downstream gates remain.
+Offline all6 replay gives availability1.0 but all6 ambiguous components and0
+candidates. Both old BOX and all six legacy mask results match exactly;
+13 tests and independent audit pass. No model/control/tracker calls.
+**Init25/26 tuning is CLOSED.** Next is frozen50-frame annotation/observability
+evaluation: its input/code/annotation/BOX packet is pinned; repaired scoring is
+pending native masks for50 source IDs, whose inference is excluded this round.
+No old BOX-only/development substitution; future outside-label points are
+semantic identity failures. Then10 temporal sequences → GateA/B/C → P2a/B0.
+P1 remains Gate C; reference/VERIFY UNKNOWN, no PUSH/model coupling.
+
 **Latest substantive result: 2026-10-07, clean execution `b5ada28`.**
 [Completed BOX/SAM2 comparison](p1-segmentation-results.md) preserves all six
 native masks on init25/26 development frames, strict determinism and unchanged

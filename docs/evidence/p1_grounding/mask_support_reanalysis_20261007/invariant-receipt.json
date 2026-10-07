@@ -1,0 +1,65 @@
+{
+  "thresholds_unchanged": true,
+  "execution_scheduling_and_tracker_unchanged": true,
+  "defaultBOX_and_legacy_mask_regression": "2BOX+6masks PASS",
+  "component_through_candidate_AST": "IDENTICAL",
+  "files": {
+    "embodied_runtime/perception/rgbd_geometry.py": {
+      "before_sha256": "9050bbe7985a9f1e0de5017e04234993fb0a59c0ab75e7f5b1c49d739cd3df01",
+      "current_sha256": "7f0a773112e5ec8b8fa583949c22b1cbe1cd892785b5b8606eacf3a8270f2f83",
+      "authorized_change": "explicit full-native-mask availability domain only; downstream AST unchanged; defaultBOX/legacy masks exact regression"
+    },
+    "configs/p1_geometry.json": {
+      "unchanged": true,
+      "sha256": "7f9795086d0406287aa60492a22dfd9f338c58c5cf5f25b0cab6316df1d57d85"
+    },
+    "embodied_runtime/perception/visual_tracker.py": {
+      "unchanged": true,
+      "sha256": "f5784736c865b285e50b0a2ad88ce232daf52fd424196c8aa3f57141ad23770b"
+    },
+    "embodied_runtime/perception/relative_verify.py": {
+      "unchanged": true,
+      "sha256": "2d7161e4db8950d93ab72d267aba5f59f4c1ea1ed17316d4746f3b74c6e08b91"
+    },
+    "embodied_runtime/control/scheduler.py": {
+      "unchanged": true,
+      "sha256": "388b8a1685bc83dd5cf5e6d7dece6eb786498ebcfa290106cb7d37befd22afd2"
+    },
+    "embodied_runtime/control/servo.py": {
+      "unchanged": true,
+      "sha256": "a856699ace5779b5ccc2fcb8493866756e8805895267334878375e6871368fba"
+    },
+    "embodied_runtime/control/action_contracts.py": {
+      "unchanged": true,
+      "sha256": "7cb146c935399fecc90493ed0470e532464f3a7e53aee7837ca1324f10d88f08"
+    },
+    "embodied_runtime/control/local_candidates.py": {
+      "unchanged": true,
+      "sha256": "1a6f9f838b6c77d6ab00a97280ccbf6da7c2d6111da60cb8070abf59de016f74"
+    },
+    "embodied_runtime/adapters/libero_sensor_env.py": {
+      "unchanged": true,
+      "sha256": "727dd5f80a683aaddaab6d1500923bc2849b87ecc1f73d3c60308fcb655773a0"
+    },
+    "embodied_runtime/adapters/locateanything.py": {
+      "unchanged": true,
+      "sha256": "ef86a8e42d6a04bed1e820d65216619dbf3382c615c5ae3d3c7dcac7a94a2ccb"
+    },
+    "embodied_runtime/runtime.py": {
+      "unchanged": true,
+      "sha256": "f233fc0516f8056b311b10fa71e8285ed658f9ccc887898259a726716144187d"
+    },
+    "embodied_runtime/runtime_core.py": {
+      "unchanged": true,
+      "sha256": "84206a5b930d302fb13826d0327f62f9511c47d70dc184c93b0df3c62b9a6fa7"
+    },
+    "embodied_runtime/sensor_api.py": {
+      "unchanged": true,
+      "sha256": "d5727dc4fb030d1b97abbeb6a798431dc24550ca6b3844e763ce7fd2ab8196ec"
+    },
+    "embodied_runtime/contracts.py": {
+      "unchanged": true,
+      "sha256": "35d5ffef206f1559ffaf73b3ea5b43e98d5d44dbc1074ab4ac01d4d4f025efd5"
+    }
+  }
+}

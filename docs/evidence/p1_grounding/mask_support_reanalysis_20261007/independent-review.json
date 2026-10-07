@@ -1,0 +1,28 @@
+{
+  "reviewer": "independent dev_condition_audit agent",
+  "source_seals": "PASS",
+  "all6_sources_masks_depth_bindings": "UNCHANGED",
+  "defaultBOX_regressions": 2,
+  "legacy_mask_regressions": 6,
+  "fullnative_availability": "all1.0; includes8outsideBOXpixels in init25mask0",
+  "results": "all6 AMBIGUOUS_DEPTH_COMPONENTS, all0candidates",
+  "newly_reached_boundary": {
+    "init25mask1": [
+      1924,
+      1756
+    ],
+    "init26mask1": [
+      2776,
+      2249
+    ]
+  },
+  "interpretation": "Denominator repair worked; competing physical supports remain; planes/edges/tool not reached.",
+  "development_tuning": "CLOSED",
+  "formal50": "NOT_EVALUATED_PENDING_NATIVE_MASK_CORPUS",
+  "formal50_verified_dimensions": [
+    384,
+    256
+  ],
+  "runtime_or_model_calls": 0,
+  "evaluation_labels_consumed": false
+}

@@ -2,6 +2,20 @@
 
 ## Current implementation milestone — 2026-10-07
 
+Latest observed result: the user-authorized
+[mask-support repair](docs/p1-mask-support-results.md) at `5f97166` replays all six
+sealed masks with zero model calls. Availability is1.0 for all six; all remain
+AMBIGUOUS_DEPTH_COMPONENTS, candidates0. Narrow-mask components1924/1756 and
+2776/2249 show the actual next boundary after denominator repair. Plane/tool
+support and semantic identity remain unknown. Confidence high for these recorded
+measurements, low for generalization; no claim of absent physical surface.
+DefaultBOX2 and legacy-mask6 outputs match; thresholds/order/gates unchanged.
+**No more init25/26 development tuning.** Frozen50-frame annotation/observability
+evaluation is now the next milestone; its input/code/label/BOX packet is pinned,
+native evaluation-mask corpus pending under this round's no-inference rule.
+Formal candidate identity must be judged separately against human regions; an
+outside-region point fails semantic identity, never becomes task-valid success.
+
 The user subsequently selected the README/three-document implementation route:
 Qwen3-VL brain → Laya local choice → continuous RGB-D geometry/deterministic servo,
 with model contribution measured later by B0–B4. The paused exploratory research
@@ -40,7 +54,9 @@ confidence outside these two development views. No universal SAM incapacity clai
 Falsifier/next test: a prospectively specified mask-support measurement contract
 could reveal whether sealed narrow masks have useful plane/interior support;
 passing geometry still must establish target identity before tracking. No mask
-winner, denominator repair or downstream execution is implemented automatically.
+winner or downstream execution is implemented automatically. The subsequently
+authorized denominator repair is recorded above; this paragraph preserves the
+earlier diagnostic hypothesis rather than scheduling further development tuning.
 P2/Qwen/Laya/PUSH remain off. Historical evidence and annotations remain immutable.
 
 ## Historical exploratory stop record
