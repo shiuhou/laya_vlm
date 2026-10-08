@@ -1,8 +1,11 @@
 import hashlib
 import json
 import numpy as np
+import pytest
+from PIL import Image
 
-from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, QUERY
+from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, json_metadata, QUERY
+from embodied_runtime.contracts import content_hash, ProtocolError
 from embodied_runtime.experiments.p1_qwen_localizer_dev import execute_requests
 from embodied_runtime.perception.grounding_observation import parse_qwen_grounding
 
@@ -21,6 +24,19 @@ def test_actual_eos_context_budget_and_fresh_request_messages():
     second = messages_for('POINT')
     assert len(second) == 2 and 'old result' not in json.dumps(second)
     assert QUERY in second[1]['content'][1]['text']
+
+
+def test_native_hf_config_integer_keys_are_losslessly_json_metadata():
+    config = {'model_type': 'qwen3_vl', 'text_config': {'id2label': {0: 'LABEL_0', 1: 'LABEL_1'},
+              'eos_token_id': [151645, 151643]}, 'image_mean': np.array([.5, .5, .5]),
+              'resample': Image.Resampling.BICUBIC}
+    safe = json_metadata(config)
+    assert safe['text_config']['id2label'] == {'0': 'LABEL_0', '1': 'LABEL_1'}
+    assert len(content_hash(safe)) == 64
+    assert safe['resample'] == 3
+    assert config['text_config']['id2label'] == {0: 'LABEL_0', 1: 'LABEL_1'}
+    with pytest.raises(ProtocolError, match='collide'):
+        json_metadata({'id2label': {0: 'first', '0': 'second'}})
 
 
 def test_typed_box_failure_does_not_suppress_independent_point_or_retry(tmp_path):

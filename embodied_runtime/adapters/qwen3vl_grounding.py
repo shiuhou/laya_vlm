@@ -6,7 +6,9 @@ Every request constructs a fresh chat and fresh generation cache.
 from __future__ import annotations
 
 from copy import deepcopy
+from collections.abc import Mapping
 from datetime import datetime, timezone
+from enum import Enum
 import hashlib
 import importlib.metadata
 from pathlib import Path
@@ -31,6 +33,33 @@ TEMPLATES = {
               '"label" and "point_2d". Set label to "drawer_front_pushable" and point_2d to [x,y] '
               'in the normalized coordinate system. Return [] if unknown.'),
 }
+
+
+def json_metadata(value):
+    """Represent native HF metadata with JSON keys, refusing lossy collisions.
+
+    Hugging Face id2label dictionaries have integer keys. Their explicit JSON
+    representation uses decimal string keys; the evidence contract requires that
+    conversion before freezing. This affects metadata only, never model config.
+    """
+    if isinstance(value, Mapping):
+        result = {}
+        for key, item in value.items():
+            require(type(key) in (str, int), "unsupported model metadata key type")
+            name = str(key)
+            require(name not in result, "model metadata keys collide after JSON conversion")
+            result[name] = json_metadata(item)
+        return result
+    if isinstance(value, (tuple, list)):
+        return [json_metadata(item) for item in value]
+    if isinstance(value, np.ndarray):
+        return json_metadata(value.tolist())
+    if isinstance(value, np.generic):
+        return json_metadata(value.item())
+    if isinstance(value, Enum):
+        return json_metadata(value.value)
+    require(value is None or type(value) in (str, bool, int, float), "unsupported model metadata value type")
+    return value
 
 
 def messages_for(mode, query=QUERY):
@@ -86,14 +115,14 @@ class Qwen3VLGroundingWorker:
         require(self.model.config.model_type == "qwen3_vl", "Qwen3-VL checkpoint required")
         tokenizer = self.processor.tokenizer
         image_processor = self.processor.image_processor
-        self.processor_identity = dict(processor_class=type(self.processor).__name__,
+        self.processor_identity = json_metadata(dict(processor_class=type(self.processor).__name__,
             tokenizer_class=type(tokenizer).__name__, image_processor_class=type(image_processor).__name__,
             image_processor_config=image_processor.to_dict(), chat_template_sha256=content_hash(self.processor.chat_template),
             model_config=self.model.config.to_dict(), model_class=type(self.model).__name__,
             checkpoint_generation_config=self.model.generation_config.to_dict(),
             tokenizer_eos_token_id=tokenizer.eos_token_id, tokenizer_pad_token_id=tokenizer.pad_token_id,
             tokenizer_model_max_length=tokenizer.model_max_length,
-            weights_dtype=str(next(self.model.parameters()).dtype), attention_implementation="sdpa")
+            weights_dtype=str(next(self.model.parameters()).dtype), attention_implementation="sdpa"))
         self.environment_identity = dict(seed=seed, device=device, torch=torch.__version__,
             transformers=importlib.metadata.version("transformers"),
             dtype="bfloat16", autocast=False, quantization=False, tf32=False,
@@ -162,5 +191,5 @@ class Qwen3VLGroundingWorker:
                 pixel_channels="full original RGB only", history_messages=0),
             timing=dict(requested_at_utc=requested_at, finished_at_utc=datetime.now(timezone.utc).isoformat(),
                 preprocess_s=preprocess_s, generate_s=generate_s, total_s=time.perf_counter()-started),
-            effective_generation_config=cfg.to_dict(), calibration_confidence=None,
+            effective_generation_config=json_metadata(cfg.to_dict()), calibration_confidence=None,
             evaluation_labels_used=False, for_execution=False)
