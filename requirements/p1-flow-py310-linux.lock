@@ -1,0 +1,5 @@
+# Optional CPU sparse optical flow development condition, on unchanged P1.
+# Downloaded cp37-abi3 manylinux2014 x86_64 wheel; NumPy remains P1-pinned.
+-r p1-py310-linux.lock
+opencv-python-headless==4.11.0.86 \
+    --hash=sha256:0e0a27c19dd1f40ddff94976cfe43066fbbe9dfbb2ec1907d66c19caef42a57b
