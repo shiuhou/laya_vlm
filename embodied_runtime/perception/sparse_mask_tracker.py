@@ -160,7 +160,8 @@ class SparseMaskTracker:
     def _depth(self, view, points):
         points = np.asarray(points).reshape(-1,2)
         depth = np.asarray(view['depth_m'])
-        finite = np.isfinite(points).all(1)
+        finite = (np.isfinite(points).all(1) & (points >= 0).all(1)
+                  & (points[:,0] < depth.shape[1]) & (points[:,1] < depth.shape[0]))
         safe_points = np.where(finite[:,None],points,0.)
         xy = np.rint(safe_points).astype(int)
         inside = finite & (xy >= 0).all(1) & (xy[:,0] < depth.shape[1]) & (xy[:,1] < depth.shape[0])
@@ -197,6 +198,8 @@ class SparseMaskTracker:
         self._support_hash = sha256(support.tobytes()).hexdigest()
         self.generation += 1
         self._seed_support = _owned(support)
+        self._seed_shape = view['rgb'].shape
+        self._seed_intrinsics = _owned(view['intrinsics_K'])
         self._seed_box = np.array([[x0,y0],[x1,y0],[x1,y1],[x0,y1]],dtype=float)
         self._matrix = np.eye(3)
         gray = self.cv.cvtColor(view['rgb'],self.cv.COLOR_RGB2GRAY)
@@ -212,6 +215,7 @@ class SparseMaskTracker:
             mask=feature_mask,blockSize=self.config.feature_block_size)
         count = 0 if points is None else len(points)
         metrics['seed_features'] = count
+        metrics['seed_feature_pixels_xy'] = [] if points is None else points.reshape(-1,2).tolist()
         if count < self.config.min_features:
             return self._result(view,now_sim_time_s,now_monotonic_ns,'LOST','INSUFFICIENT_SEED_FEATURES',metrics=metrics)
         points = points.reshape(-1,2)
@@ -239,6 +243,8 @@ class SparseMaskTracker:
                 'AMBIGUOUS' if ambiguous else 'LOST',reason,metrics=metrics)
         if view['camera_id'] != previous.camera_id or view['calibration_version'] != previous.calibration_version:
             return reject('SOURCE_CHANGED_RESEED_REQUIRED')
+        if view['rgb'].shape != self._seed_shape or not np.array_equal(view['intrinsics_K'],self._seed_intrinsics):
+            return reject('SOURCE_CHANGED_RESEED_REQUIRED')
         if previous.status != 'TRACKED':
             return reject('RESEED_REQUIRED')
         if not self._fresh(view,now_sim_time_s,now_monotonic_ns):
@@ -253,12 +259,20 @@ class SparseMaskTracker:
         new,forward,errors = self.cv.calcOpticalFlowPyrLK(self._gray,gray,old,None,**args)
         if new is None or forward is None:
             return reject('FLOW_NOT_FOUND')
-        back,backward,_ = self.cv.calcOpticalFlowPyrLK(gray,self._gray,new,None,**args)
+        finite_new = np.isfinite(new).all(axis=(1,2))
+        inside_new = ((new[:,0,:] >= 0).all(1) & (new[:,0,0] < gray.shape[1])
+                      & (new[:,0,1] < gray.shape[0]))
+        raw_new_valid = finite_new & inside_new
+        # Invalid outputs remain rejected evidence; never feed NaN/out-of-view
+        # coordinates into a subsequent native OpenCV call.
+        safe_new = np.where(raw_new_valid[:,None,None],new,old)
+        back,backward,_ = self.cv.calcOpticalFlowPyrLK(gray,self._gray,safe_new,None,**args)
         if back is None or backward is None:
             return reject('BACKWARD_FLOW_NOT_FOUND')
         p,q,b = old.reshape(-1,2),new.reshape(-1,2),back.reshape(-1,2)
         fb = np.linalg.norm(b-p,axis=1)
         good = (forward.ravel() != 0) & (backward.ravel() != 0) & np.isfinite(q).all(1) & np.isfinite(b).all(1)
+        good &= raw_new_valid
         good &= (fb <= self.config.max_fb_error_px) & (errors.ravel() <= self.config.max_lk_error_gray)
         good &= np.linalg.norm(q-p,axis=1) <= self.config.max_image_step_px
         metrics = dict(previous_features=len(p),flow_admitted_features=int(good.sum()),

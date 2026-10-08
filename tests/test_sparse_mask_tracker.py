@@ -115,3 +115,29 @@ def test_competing_observed_motions_do_not_warp_whole_mask_as_one_surface():
     assert result.status == 'AMBIGUOUS',result.to_dict()
     assert result.reason_codes[0] in ('INCONSISTENT_3D_MOTION','COMPETING_FLOW_MOTIONS')
     assert result.support_mask is None
+
+
+def test_intrinsics_change_requires_new_source_instead_of_native_flow_call():
+    tracker,_,_,_ = initialize()
+    view = frame(1)
+    view['intrinsics_K'][0,0] += 1
+    result = update(tracker,view)
+    assert result.reason_codes == ('SOURCE_CHANGED_RESEED_REQUIRED',)
+
+
+def test_invalid_flow_coordinate_preserved_unknown_and_not_given_to_opencv(monkeypatch):
+    tracker,_,_,_ = initialize()
+    native = cv2.calcOpticalFlowPyrLK
+    calls = []
+    def injected(*args,**kwargs):
+        assert np.isfinite(args[2]).all()
+        new,status,error = native(*args,**kwargs)
+        if not calls:
+            new[0,0] = np.nan
+        calls.append(1)
+        return new,status,error
+    monkeypatch.setattr(cv2,'calcOpticalFlowPyrLK',injected)
+    result = update(tracker,frame(1,shift=2))
+    assert result.status == 'TRACKED'
+    assert result.metrics['feature_pairs']['current_xy'][0] == (None,None)
+    assert result.metrics['feature_pairs']['flow_admitted'][0] is False
