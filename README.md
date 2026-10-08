@@ -20,6 +20,14 @@ conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
 
+The [fixed HO23 automatic BOX A/B batch](docs/p1-box-heldout23-results.md)
+has completed generation and frozen geometry:23new scenes,69model requests,
+all outcomes retained. **Blind semantic scoring awaits the new human annotations**;
+this is not P1 acceptance. BOX output availability is measured independently from
+the shared POINT; neither human prompts nor old development frames enter the new
+chain. Raw evidence and the23-frame annotation packet are archived. No new
+inference is needed to finish scoring; downstream control remains blocked.
+
 The [BOX role decomposition](docs/p1-box-role-results.md) is complete at
 execution `ed48728`, with no new model calls. On21fully matched frames,
 SAM-BOX/geometry-BOX conditions HH/HO/OH/OO yield **21/21/21/10** candidate frames.

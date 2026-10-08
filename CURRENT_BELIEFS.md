@@ -1,5 +1,28 @@
 # Current research beliefs
 
+## Fixed HO23 BOX query repair — generation complete, annotation pending
+
+Observed at f71e452/a314003:23fresh states27..49,69single-attempt model calls;
+BOX A23/23typed, B3/23typed+20noEOS. SharedPOINT4typed,8cardinality,11noEOS.
+A4SAM frames/12native masks; B0SAM frames from upstream refusal. A8,467raw
+proposals/7,084after frozen containment remain semantically ungraded; B0proposals.
+All sources/native ordinals preserved; independent815-check audit passes.
+
+Inference: this exact shorter BOX query worsens completion/typed availability,
+independently of POINT failures. B cannot reach19/23candidate coverage because it
+produces none. Unknown: BOX semantic localization, SAM support identity, A clean
+candidate rate and visibility distribution. No human annotations have been read;
+no claim of completed blind evaluation or P1 PASS. Full report:
+docs/p1-box-heldout23-results.md. Do not attribute noEOS to semantic mislocalization.
+
+Confidence high for frozen operational counts; semantic benefit remains untested
+until labels. Falsifier for a localization-loss claim (not made): the few B boxes
+could be more accurate despite lower availability. Next required action: obtain
+new23-frame human export, run existing offline scorer, inspect outputs and stop.
+No new inference/query/POINT/domain repair, held-out tuning or control is authorized
+by these intermediate results. No tracker/P2/Qwen/Laya started.
+
+
 ## BOX role factorial — 2026-10-08
 
 Observed: [role decomposition](docs/p1-box-role-results.md), execution ed48728,

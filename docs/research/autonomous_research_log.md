@@ -2501,3 +2501,27 @@ control/VERIFY. Human domain is not a deployable fallback. Next: review/preregis
 one repair plus new held-out validation; no further exposed-frame tuning.
 Checks:2targeted tests,ruff F,compile,whitespace pass. No new inference or runtime
 changes. No harness failure/retry. No tracker/P2/Qwen/Laya. Stop for review.
+
+
+## 2026-10-08 — fixed autonomous HO23 BOX A/B, generation checkpoint
+
+Research question: does one shorter positive BOX description improve the full
+sensor-only chain without changing POINT/SAM/geometry? Approved33c358c design.
+Competing explanation: completion/identity failure persists, or POINT availability
+masks downstream benefit. Intervention: only BOX text; POINT generated once per
+new frame and byte-shared. Controlled: original model/settings,RGB-D,K/T,SAM,
+mask/order/gates,decoder/query-independent admissions. No human/oracle input.
+Metadata preflight6,164documents/28archives finds no recorded27..49exposure;
+23unique source states and novel capturedRGB pass. Codef71e452/scorera314003.
+Results pending labels: POINT4typed/8cardinality/11noEOS; BOXA23typed versusB3typed
+and20noEOS. A4SAM frames/12masks, B0. A8,467raw/7,084admitted proposals, identity
+UNKNOWN. B0proposals rules out19/23candidate coverage without labels. This does
+not score BOX localization. All69calls and46arm slots retained; no retries.
+Artifacts: runs/p1/box-heldout23-20261008 and docs/evidence/p1_grounding/
+box_heldout23_20261008. Fullgenerationarchive549members byte-verified,39,737,547B.
+Independent audit815checks passes;12synthetic tests/Ruff pass. Raw source first
+RGB inspected; labeled overlays/scoring await human. The user is downloading
+raw-only23frame packet. No finalsemantic score or P1PASS claimed.
+Next: receive human export, verify/seal and score allfourlayers with existing
+runner; inspect paired outputs, append scoring checkpoint and stop for review.
+No additional inference/repair/temporal/P2/Qwen/Laya/fixed-reference work.
