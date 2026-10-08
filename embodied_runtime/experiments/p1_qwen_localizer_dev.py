@@ -16,7 +16,7 @@ import sys
 import time
 
 from ..adapters.qwen3vl_grounding import (
-    ADAPTER_REVISION, QUERY, SYSTEM, TEMPLATES, Qwen3VLGroundingWorker, checkpoint_identity,
+    ADAPTER_REVISION, GREEDY_CALL_OVERRIDES, QUERY, SYSTEM, TEMPLATES, Qwen3VLGroundingWorker, checkpoint_identity,
 )
 from ..contracts import content_hash, require
 from ..perception.grounding_observation import build_grounding_observation
@@ -132,6 +132,7 @@ def run(args):
             prompts=dict(system=SYSTEM, templates=TEMPLATES, query=QUERY),
             generation=dict(max_new_tokens=args.max_new_tokens, do_sample=False, num_beams=1, use_cache=True,
                 temperature=None, top_p=None, top_k=None, seed=args.seed),
+            generation_call_overrides=dict(GREEDY_CALL_OVERRIDES),
             request_timeout_s=args.request_timeout_s, device=args.device, gpu_uuid=gpu,
             executable=sys.executable, versions=versions(),
             source_selection='first requested-camera exposure per recording, complete recording verified',

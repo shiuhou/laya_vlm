@@ -19,7 +19,7 @@ import numpy as np
 from ..contracts import content_hash, require
 from ..perception.grounding_observation import parse_qwen_grounding
 
-ADAPTER_REVISION = "qwen3vl-rgb-localizer/1"
+ADAPTER_REVISION = "qwen3vl-rgb-localizer/2"
 QUERY = ("the flat outward-facing front panel of the open top drawer of the small cabinet on the "
          "tabletop, excluding its handle, inner cavity, rim, and tabletop")
 SYSTEM = ("You are an image-only 2D localizer. Return only the requested JSON, without markdown or "
@@ -81,6 +81,22 @@ def generation_audit(ids, *, input_count, max_new_tokens, model_max_length, eos_
         terminal_eos_observed=terminal, complete_generation=terminal,
         length_limit_reached=len(ids) >= limit,
         stop_reason="EOS" if terminal else "TOKEN_BUDGET" if len(ids) >= limit else "INCOMPLETE_STOP")
+
+
+GREEDY_CALL_OVERRIDES = dict(use_model_defaults=False, do_sample=False, num_beams=1,
+    use_cache=True, temperature=None, top_p=None, top_k=None,
+    return_dict_in_generate=True, output_scores=False)
+
+
+def generate_greedy(model, inputs, config):
+    """Explicit call kwargs defeat Transformers' checkpoint-default merging.
+
+    In Transformers 4.57.1, False in a supplied config can be treated as a global
+    default and overwritten by checkpoint do_sample=True. Both disabling that
+    merge and passing controls at highest-priority kwargs makes the boundary
+    explicit. The adapter never forwards user/history generation kwargs.
+    """
+    return model.generate(**inputs, generation_config=config, **GREEDY_CALL_OVERRIDES)
 
 
 def checkpoint_identity(path):
@@ -169,7 +185,7 @@ class Qwen3VLGroundingWorker:
         preprocess_s = time.perf_counter()-started
         generation_start = time.perf_counter()
         with self.torch.inference_mode():
-            output = self.model.generate(**inputs, generation_config=cfg)
+            output = generate_greedy(self.model, inputs, cfg)
         self._sync()
         generate_s = time.perf_counter()-generation_start
         sequence = output.sequences[0].tolist()
@@ -191,5 +207,7 @@ class Qwen3VLGroundingWorker:
                 pixel_channels="full original RGB only", history_messages=0),
             timing=dict(requested_at_utc=requested_at, finished_at_utc=datetime.now(timezone.utc).isoformat(),
                 preprocess_s=preprocess_s, generate_s=generate_s, total_s=time.perf_counter()-started),
+            requested_generation_config=json_metadata(cfg.to_dict()),
+            generation_call_overrides=dict(GREEDY_CALL_OVERRIDES),
             effective_generation_config=json_metadata(cfg.to_dict()), calibration_confidence=None,
             evaluation_labels_used=False, for_execution=False)

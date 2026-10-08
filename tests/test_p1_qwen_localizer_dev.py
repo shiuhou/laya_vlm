@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 from PIL import Image
 
-from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, json_metadata, QUERY
+from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, json_metadata, generate_greedy, QUERY
 from embodied_runtime.contracts import content_hash, ProtocolError
 from embodied_runtime.experiments.p1_qwen_localizer_dev import execute_requests
 from embodied_runtime.perception.grounding_observation import parse_qwen_grounding
@@ -37,6 +37,23 @@ def test_native_hf_config_integer_keys_are_losslessly_json_metadata():
     assert config['text_config']['id2label'] == {0: 'LABEL_0', 1: 'LABEL_1'}
     with pytest.raises(ProtocolError, match='collide'):
         json_metadata({'id2label': {0: 'first', '0': 'second'}})
+
+
+def test_actual_generate_call_disables_model_default_sampling_override():
+    class Spy:
+        def generate(self, **kwargs):
+            self.called = kwargs
+            return 'tokens'
+    model = Spy()
+    config = object()
+    assert generate_greedy(model, {'input_ids': [1, 2]}, config) == 'tokens'
+    assert model.called['generation_config'] is config
+    assert model.called['use_model_defaults'] is False
+    assert model.called['do_sample'] is False
+    assert model.called['num_beams'] == 1
+    assert model.called['temperature'] is None
+    assert model.called['top_p'] is None
+    assert model.called['top_k'] is None
 
 
 def test_typed_box_failure_does_not_suppress_independent_point_or_retry(tmp_path):
