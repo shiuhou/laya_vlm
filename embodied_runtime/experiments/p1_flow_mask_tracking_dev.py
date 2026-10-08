@@ -114,6 +114,7 @@ def run(geometry_root, recording, output):
     seeds, decisions = native_seeds(records, source_view)
     out = Path(output)
     out.mkdir(parents=True, exist_ok=False)
+    (out/'support-masks').mkdir()
     cfg = FlowTrackerConfig()
     write(out/'condition.json', dict(condition='p1-sparse-flow-native-support-development/1', code=code_identity(), versions=versions(),
         geometry_root=str(Path(geometry_root).resolve()), geometry_seal_sha256=file_hash(Path(geometry_root)/'sealed.json'),
@@ -155,10 +156,16 @@ def run(geometry_root, recording, output):
                                 'NO_GEOMETRY_CANDIDATE' if not patch['candidates'] else None)
                     if boundary:
                         boundaries.setdefault(key, dict(frame_id=view['frame_id'], reason=boundary))
+                    artifact = None
+                    if result.support_mask is not None:
+                        path = out/'support-masks'/f"frame-{frames:04d}-{key.replace('/', '-')}.npz"
+                        np.savez_compressed(path, support_mask=result.support_mask)
+                        artifact = dict(uri=str(path.resolve()), sha256=file_hash(path))
                     row = dict(hypothesis_id=key, source_identity=sensor_view_identity(view), track=result.to_dict(), patch=patch,
+                        support_mask_artifact=artifact,
                         first_boundary=boundary, flow_s=flow_s, geometry_s=geometry_s, seed_event=frames == 0,
                         geometry_evaluation='EVALUATED' if patch is not None else 'NOT_EVALUATED',
-                        candidate_evidence_ids=[] if patch is None else [f"{view['frame_id']}/{key}/generation-1/{c['point_id']}" for c in patch['candidates']],
+                        candidate_evidence_ids=[] if patch is None else [f"{view['frame_id']}/{key}/generation-{result.track_generation}/{c['point_id']}" for c in patch['candidates']],
                         reference_status='UNKNOWN', verify_status='UNKNOWN', for_execution=False)
                     log.write(canonical_json(row)+'\n')
                     counts[key+'/'+result.status] += 1
