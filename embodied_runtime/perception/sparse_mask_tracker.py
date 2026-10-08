@@ -82,6 +82,12 @@ def _owned(array):
     return np.frombuffer(array.tobytes(),dtype=array.dtype).reshape(array.shape)
 
 
+def _finite_list(array):
+    """Persist failed optical-flow outputs as unknown, never invented pixels."""
+    value = np.asarray(array)
+    return np.where(np.isfinite(value),value,None).tolist()
+
+
 @dataclass(frozen=True)
 class FlowTrackResult:
     episode_id: str
@@ -211,6 +217,7 @@ class SparseMaskTracker:
         points = points.reshape(-1,2)
         valid,base,z = self._depth(view,points)
         points,base,z = points[valid],base[valid],z[valid]
+        metrics['seed_feature_pixels_xy'] = points.tolist()
         metrics.update(zip(('feature_hull_fraction','feature_covariance_min_eigenvalue_px2'),self._coverage(points,support)))
         if (len(points) < self.config.min_features or metrics['feature_hull_fraction'] < self.config.min_feature_hull_fraction
                 or metrics['feature_covariance_min_eigenvalue_px2'] < self.config.min_feature_covariance_eigenvalue_px2):
@@ -255,7 +262,12 @@ class SparseMaskTracker:
         good &= (fb <= self.config.max_fb_error_px) & (errors.ravel() <= self.config.max_lk_error_gray)
         good &= np.linalg.norm(q-p,axis=1) <= self.config.max_image_step_px
         metrics = dict(previous_features=len(p),flow_admitted_features=int(good.sum()),
-                       retained_feature_ratio=float(good.mean()))
+                       retained_feature_ratio=float(good.mean()),
+                       feature_pairs=dict(previous_xy=_finite_list(p),current_xy=_finite_list(q),
+                           backward_xy=_finite_list(b),forward_valid=forward.ravel().astype(bool).tolist(),
+                           backward_valid=backward.ravel().astype(bool).tolist(),
+                           fb_error_px=_finite_list(fb),lk_error_gray=_finite_list(errors.ravel()),
+                           flow_admitted=good.tolist()))
         if good.sum() < self.config.min_features or good.mean() < self.config.min_retained_feature_ratio:
             return reject('INSUFFICIENT_FORWARD_BACKWARD_FLOW',metrics=metrics)
         valid,base,z = self._depth(view,q)
@@ -277,7 +289,8 @@ class SparseMaskTracker:
         if affine is None or inliers is None or not np.isfinite(affine).all():
             return reject('SIMILARITY_UNDETERMINED',ambiguous=True,metrics=metrics)
         selected = np.flatnonzero(good)[inliers.ravel().astype(bool)]
-        metrics.update(inlier_features=len(selected),inlier_ratio=float(inliers.mean()))
+        metrics.update(inlier_features=len(selected),inlier_ratio=float(inliers.mean()),
+                       inlier_original_indices=selected.tolist(),step_similarity_matrix=affine.tolist())
         if len(selected) < self.config.min_features or inliers.mean() < self.config.min_inlier_ratio:
             return reject('COMPETING_FLOW_MOTIONS',ambiguous=True,metrics=metrics)
         scale = float(np.hypot(affine[0,0],affine[1,0]))
