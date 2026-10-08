@@ -50,6 +50,11 @@ def input_rows(root):
         require(identity not in seen, 'duplicate frame')
         seen.add(identity)
         view, _ = source_frame(record)
+        if record.get('box_observation') is None and record.get('point_observation') is None:
+            coarse = validate_grounding_observation(record['coarse_observation'], view=view)
+            require(not coarse.admitted and record['box_status'] == record['point_status'] == 'NOT_ATTEMPTED_COARSE_REJECTED',
+                    'missing fine observations require explicit coarse refusal')
+            continue
         for mode, key in [('BOX', 'box_observation'), ('POINT', 'point_observation')]:
             obs = record[key]
             reply = validate_grounding_observation(obs, view=view)
@@ -102,16 +107,17 @@ def masks(grounding, output):
         for i, record in enumerate(records):
             view, _ = source_frame(record)
             box_obs, point_obs = record['box_observation'], record['point_observation']
-            reply = validate_grounding_observation(box_obs)
-            boxes = reply.ordered_boxes_xyxy_px if reply.admitted else []
+            reply = validate_grounding_observation(box_obs, view=view) if box_obs is not None else None
+            boxes = reply.ordered_boxes_xyxy_px if reply is not None and reply.admitted else []
             for ordinal, box in enumerate(boxes or [None]):
                 row = dict(input_index=i, input_record=record, source_identity=record['source_identity'],
                     box_index=ordinal if box is not None else None, box_xyxy=list(box) if box else None,
-                    query=box_obs['query'], box_response_sha256=box_obs['raw_output_sha256'],
+                    query=box_obs['query'] if box_obs else record['query'],
+                    box_response_sha256=box_obs['raw_output_sha256'] if box_obs else None,
                     status='NOT_EVALUATED', failure_stage=None, mask_count=0,
                     evaluation_labels_used=False, for_execution=False)
                 if box is None:
-                    row['failure_stage'] = 'BOX_'+str(reply.reason)
+                    row['failure_stage'] = 'BOX_'+str(reply.reason) if reply is not None else 'COARSE_LOCALIZATION_REJECTED'
                 else:
                     prompt = grounding_point_prompt(view, box, point_obs, query=box_obs['query'],
                                                      config=config(), target_key=box_obs['target_key'])
