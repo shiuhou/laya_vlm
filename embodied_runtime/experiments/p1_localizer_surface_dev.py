@@ -49,10 +49,10 @@ def input_rows(root):
         identity = content_hash(record['source_identity'])
         require(identity not in seen, 'duplicate frame')
         seen.add(identity)
-        source_frame(record)
+        view, _ = source_frame(record)
         for mode, key in [('BOX', 'box_observation'), ('POINT', 'point_observation')]:
             obs = record[key]
-            reply = validate_grounding_observation(obs)
+            reply = validate_grounding_observation(obs, view=view)
             require(reply.mode == mode and obs['source_identity'] == record['source_identity'],
                     'wrong observation mode/source', 'SOURCE_MISMATCH')
     return records
