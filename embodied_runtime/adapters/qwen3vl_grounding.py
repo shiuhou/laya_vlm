@@ -12,6 +12,7 @@ from enum import Enum
 import hashlib
 import importlib.metadata
 from pathlib import Path
+import re
 import time
 
 import numpy as np
@@ -19,7 +20,7 @@ import numpy as np
 from ..contracts import content_hash, require
 from ..perception.grounding_observation import parse_qwen_grounding
 
-ADAPTER_REVISION = "qwen3vl-rgb-localizer/3"
+ADAPTER_REVISION = "qwen3vl-rgb-localizer/4"
 QUERY = ("the flat outward-facing front panel of the open top drawer of the small cabinet on the "
          "tabletop, excluding its handle, inner cavity, rim, and tabletop")
 SYSTEM = ("You are an image-only 2D localizer. Return only the requested JSON, without markdown or "
@@ -27,10 +28,10 @@ SYSTEM = ("You are an image-only 2D localizer. Return only the requested JSON, w
           "and y downward. If the requested visible part cannot be identified, return []. Do not infer hidden surfaces.")
 TEMPLATES = {
     "BOX": ('BOX: Locate one visible region matching: {query}. Return exactly one JSON array item with keys '
-            '"label" and "bbox_2d". Set label to "drawer_front_pushable" and bbox_2d to [x1,y1,x2,y2] '
+            '"label" and "bbox_2d". Set label to "{label}" and bbox_2d to [x1,y1,x2,y2] '
             'in the normalized coordinate system. Return [] if unknown.'),
     "POINT": ('POINT: Point to one visible location on: {query}. Return exactly one JSON array item with keys '
-              '"label" and "point_2d". Set label to "drawer_front_pushable" and point_2d to [x,y] '
+              '"label" and "point_2d". Set label to "{label}" and point_2d to [x,y] '
               'in the normalized coordinate system. Return [] if unknown.'),
 }
 
@@ -62,10 +63,11 @@ def json_metadata(value):
     return value
 
 
-def messages_for(mode, query=QUERY):
+def messages_for(mode, query=QUERY, target_key='drawer_front_pushable'):
     require(mode in TEMPLATES, "BOX or POINT required")
+    require(isinstance(target_key, str) and re.fullmatch(r'[a-z][a-z0-9_]*', target_key), 'explicit semantic label required')
     return [{"role": "system", "content": SYSTEM}, {"role": "user", "content": [
-        {"type": "image"}, {"type": "text", "text": TEMPLATES[mode].format(query=query)}]}]
+        {"type": "image"}, {"type": "text", "text": TEMPLATES[mode].format(query=query, label=target_key)}]}]
 
 
 def configure_image_budget(image_processor, *, min_pixels=None, max_pixels=None):
@@ -179,15 +181,15 @@ class Qwen3VLGroundingWorker:
         if str(self.device).startswith("cuda"):
             self.torch.cuda.synchronize(self.device)
 
-    def infer(self, rgb, *, mode, query=QUERY, max_new_tokens=256):
+    def infer(self, rgb, *, mode, query=QUERY, target_key='drawer_front_pushable', max_new_tokens=256):
         from PIL import Image
         require(isinstance(rgb, np.ndarray) and rgb.dtype == np.uint8
-                and rgb.ndim == 3 and rgb.shape[2] == 3, "full original uint8 RGB required")
+                and rgb.ndim == 3 and rgb.shape[2] == 3, "unmodified input uint8 RGB raster required")
         require(type(max_new_tokens) is int and max_new_tokens > 0, "positive explicit token budget required")
         started = time.perf_counter()
         requested_at = datetime.now(timezone.utc).isoformat()
         # Only image and this new two-message chat reach the processor/model.
-        messages = messages_for(mode, query)
+        messages = messages_for(mode, query, target_key)
         prompt = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         inputs = self.processor(text=[prompt], images=[Image.fromarray(rgb)], return_tensors="pt")
         input_ids = inputs["input_ids"][0].tolist()
@@ -228,15 +230,15 @@ class Qwen3VLGroundingWorker:
         raw = tokenizer.decode(generated, skip_special_tokens=False, clean_up_tokenization_spaces=False)
         terminals = tuple(tokenizer.decode([x], skip_special_tokens=False, clean_up_tokenization_spaces=False) for x in eos)
         typed = parse_qwen_grounding(raw, int(rgb.shape[1]), int(rgb.shape[0]), mode=mode,
-                                     audit=audit, terminal_special_tokens=terminals)
+                                     audit=audit, terminal_special_tokens=terminals, expected_label=target_key)
         return dict(raw_output=raw, raw_output_sha256=hashlib.sha256(raw.encode()).hexdigest(),
             audit=audit, typed=typed, terminal_special_tokens=terminals,
-            input_evidence=dict(rgb_sha256=hashlib.sha256(rgb.tobytes()).hexdigest(), query=query,
+            input_evidence=dict(rgb_sha256=hashlib.sha256(rgb.tobytes()).hexdigest(), query=query, target_key=target_key,
                 original_rgb_shape=list(rgb.shape), input_token_ids=input_ids,
                 messages=messages, rendered_prompt=prompt, rendered_prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(),
                 tensor_receipts=tensor_receipts, image_grid_thw=grids, processed_image_hw=resized,
                 image_budget_condition=self.image_budget,
-                pixel_channels="full original RGB only", history_messages=0),
+                pixel_channels="provided RGB raster only; acquisition/crop identity bound by caller", history_messages=0),
             timing=dict(requested_at_utc=requested_at, finished_at_utc=datetime.now(timezone.utc).isoformat(),
                 preprocess_s=preprocess_s, generate_s=generate_s, total_s=time.perf_counter()-started),
             requested_generation_config=json_metadata(cfg.to_dict()),
