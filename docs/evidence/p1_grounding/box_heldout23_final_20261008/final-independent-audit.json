@@ -1,0 +1,1418 @@
+{
+  "status": "PASS",
+  "scope": "Final scoring audit, no new generation or geometry execution",
+  "checks": [
+    {
+      "check": "capture_seal",
+      "pass": true
+    },
+    {
+      "check": "grounding_seal",
+      "pass": true
+    },
+    {
+      "check": "masks_seal",
+      "pass": true
+    },
+    {
+      "check": "geometry_seal",
+      "pass": true
+    },
+    {
+      "check": "scoring_seal",
+      "pass": true
+    },
+    {
+      "check": "annotation-correction_seal",
+      "pass": true
+    },
+    {
+      "check": "generation_seals_identical_to_prelabel_audit",
+      "pass": true
+    },
+    {
+      "check": "annotation_original_preserved",
+      "pass": true
+    },
+    {
+      "check": "annotation_corrected_hash_bound",
+      "pass": true
+    },
+    {
+      "check": "annotation_all_records_unchanged",
+      "pass": true
+    },
+    {
+      "check": "annotation_only_documented_metadata_changed",
+      "pass": true
+    },
+    {
+      "check": "all23canonicalrows",
+      "pass": true
+    },
+    {
+      "check": "all46arms",
+      "pass": true
+    },
+    {
+      "check": "23humanrecords",
+      "pass": true
+    },
+    {
+      "check": "27_visibility",
+      "pass": true
+    },
+    {
+      "check": "27_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "27_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "27_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "27_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "27_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "27_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "27_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "27_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "27_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "27_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "27_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "28_visibility",
+      "pass": true
+    },
+    {
+      "check": "28_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "28_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "28_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "28_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "28_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "28_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "28_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "28_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "28_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "28_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "28_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "29_visibility",
+      "pass": true
+    },
+    {
+      "check": "29_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "29_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "29_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "29_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "29_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "29_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "29_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "29_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "29_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "29_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "29_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "30_visibility",
+      "pass": true
+    },
+    {
+      "check": "30_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "30_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "30_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "30_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "30_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "30_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "30_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "30_B_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "30_B_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "30_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "30_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "30_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "31_visibility",
+      "pass": true
+    },
+    {
+      "check": "31_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "31_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "31_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "31_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "31_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "31_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "31_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "31_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "31_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "31_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "31_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "32_visibility",
+      "pass": true
+    },
+    {
+      "check": "32_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "32_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "32_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "32_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "32_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "32_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "32_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "32_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "32_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "32_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "32_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "33_visibility",
+      "pass": true
+    },
+    {
+      "check": "33_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "33_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "33_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "33_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "33_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "33_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "33_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "33_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "33_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "33_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "33_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "34_visibility",
+      "pass": true
+    },
+    {
+      "check": "34_point_membership",
+      "pass": true
+    },
+    {
+      "check": "34_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "34_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "34_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "34_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "34_A_0_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "34_A_0_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "34_A_1_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "34_A_1_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "34_A_2_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "34_A_2_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "34_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "34_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "34_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "34_B_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "34_B_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "34_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "34_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "34_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "35_visibility",
+      "pass": true
+    },
+    {
+      "check": "35_point_membership",
+      "pass": true
+    },
+    {
+      "check": "35_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "35_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "35_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "35_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "35_A_0_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "35_A_0_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "35_A_1_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "35_A_1_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "35_A_2_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "35_A_2_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "35_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "35_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "35_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "35_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "35_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "35_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "35_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "36_visibility",
+      "pass": true
+    },
+    {
+      "check": "36_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "36_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "36_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "36_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "36_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "36_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "36_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "36_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "36_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "36_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "36_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "37_visibility",
+      "pass": true
+    },
+    {
+      "check": "37_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "37_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "37_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "37_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "37_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "37_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "37_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "37_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "37_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "37_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "37_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "38_visibility",
+      "pass": true
+    },
+    {
+      "check": "38_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "38_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "38_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "38_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "38_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "38_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "38_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "38_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "38_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "38_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "38_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "39_visibility",
+      "pass": true
+    },
+    {
+      "check": "39_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "39_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "39_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "39_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "39_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "39_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "39_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "39_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "39_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "39_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "39_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "40_visibility",
+      "pass": true
+    },
+    {
+      "check": "40_point_membership",
+      "pass": true
+    },
+    {
+      "check": "40_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "40_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "40_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "40_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "40_A_0_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "40_A_0_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "40_A_1_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "40_A_1_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "40_A_2_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "40_A_2_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "40_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "40_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "40_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "40_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "40_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "40_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "40_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "41_visibility",
+      "pass": true
+    },
+    {
+      "check": "41_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "41_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "41_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "41_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "41_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "41_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "41_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "41_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "41_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "41_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "41_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "42_visibility",
+      "pass": true
+    },
+    {
+      "check": "42_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "42_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "42_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "42_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "42_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "42_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "42_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "42_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "42_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "42_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "42_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "43_visibility",
+      "pass": true
+    },
+    {
+      "check": "43_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "43_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "43_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "43_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "43_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "43_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "43_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "43_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "43_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "43_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "43_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "44_visibility",
+      "pass": true
+    },
+    {
+      "check": "44_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "44_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "44_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "44_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "44_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "44_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "44_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "44_B_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "44_B_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "44_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "44_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "44_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "45_visibility",
+      "pass": true
+    },
+    {
+      "check": "45_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "45_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "45_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "45_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "45_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "45_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "45_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "45_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "45_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "45_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "45_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "46_visibility",
+      "pass": true
+    },
+    {
+      "check": "46_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "46_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "46_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "46_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "46_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "46_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "46_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "46_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "46_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "46_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "46_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "47_visibility",
+      "pass": true
+    },
+    {
+      "check": "47_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "47_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "47_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "47_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "47_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "47_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "47_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "47_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "47_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "47_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "47_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "48_visibility",
+      "pass": true
+    },
+    {
+      "check": "48_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "48_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "48_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "48_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "48_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "48_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "48_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "48_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "48_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "48_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "48_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "49_visibility",
+      "pass": true
+    },
+    {
+      "check": "49_point_membership",
+      "pass": true
+    },
+    {
+      "check": "49_A_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "49_A_0_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "49_A_box_metrics_independent_of_point",
+      "pass": true
+    },
+    {
+      "check": "49_A_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "49_A_0_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "49_A_0_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "49_A_1_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "49_A_1_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "49_A_2_no_winner_or_point_skip",
+      "pass": true
+    },
+    {
+      "check": "49_A_2_candidate_projection_and_membership",
+      "pass": true
+    },
+    {
+      "check": "49_A_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "49_A_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "49_B_all_box_slots",
+      "pass": true
+    },
+    {
+      "check": "49_B_None_box_receipt",
+      "pass": true
+    },
+    {
+      "check": "49_B_all_native_masks",
+      "pass": true
+    },
+    {
+      "check": "49_B_raw_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "49_B_admitted_all_candidates_aggregate",
+      "pass": true
+    },
+    {
+      "check": "A_23frame_denominators",
+      "pass": true
+    },
+    {
+      "check": "A_box_count_reconciles",
+      "pass": true
+    },
+    {
+      "check": "A_raw_total_summary",
+      "pass": true
+    },
+    {
+      "check": "A_raw_correct_summary",
+      "pass": true
+    },
+    {
+      "check": "A_raw_outside_summary",
+      "pass": true
+    },
+    {
+      "check": "A_admitted_total_summary",
+      "pass": true
+    },
+    {
+      "check": "A_admitted_correct_summary",
+      "pass": true
+    },
+    {
+      "check": "A_admitted_outside_summary",
+      "pass": true
+    },
+    {
+      "check": "B_23frame_denominators",
+      "pass": true
+    },
+    {
+      "check": "B_box_count_reconciles",
+      "pass": true
+    },
+    {
+      "check": "B_raw_total_summary",
+      "pass": true
+    },
+    {
+      "check": "B_raw_correct_summary",
+      "pass": true
+    },
+    {
+      "check": "B_raw_outside_summary",
+      "pass": true
+    },
+    {
+      "check": "B_admitted_total_summary",
+      "pass": true
+    },
+    {
+      "check": "B_admitted_correct_summary",
+      "pass": true
+    },
+    {
+      "check": "B_admitted_outside_summary",
+      "pass": true
+    },
+    {
+      "check": "point_inside_summary",
+      "pass": true
+    },
+    {
+      "check": "paired_full23_and_common0",
+      "pass": true
+    },
+    {
+      "check": "CSV23canonical",
+      "pass": true
+    }
+  ],
+  "checks_count": 340,
+  "all23_scene_denominator": 23,
+  "arm_frame_slots": 46,
+  "typed_BOX_metrics_evaluated_regardless_of_POINT": {
+    "A": 23,
+    "B": 3
+  },
+  "BOX_localization_correct": {
+    "A": 0,
+    "B": 0
+  },
+  "POINT_inside_human_regions": 0,
+  "candidate_counts": {
+    "A": {
+      "raw": {
+        "total": 8467,
+        "correct": 0,
+        "outside": 8467
+      },
+      "admitted": {
+        "total": 7084,
+        "correct": 0,
+        "outside": 7084
+      }
+    },
+    "B": {
+      "raw": {
+        "total": 0,
+        "correct": 0,
+        "outside": 0
+      },
+      "admitted": {
+        "total": 0,
+        "correct": 0,
+        "outside": 0
+      }
+    }
+  },
+  "annotation_provenance": "Explicit user-attested human independence; original contradictory export and metadata-only correction preserved. Not independently verified.",
+  "limitations": [
+    "BOX IoU uses bounding box of conservative human pushable support, not exhaustive physical front-panel outline; localization rejection must not be equated with proof of absent drawer-front coverage.",
+    "Outside-human-region counts mean outside this frozen evaluation support; they do not independently prove physical wrong-part identity over all unannotated pixels.",
+    "POINT zero correct among four typed samples blocks full automatic chain; B has zero SAM generation, so no comparative SAM quality claim is identifiable.",
+    "All23 were human VISIBLE; no broader viewpoint/temporal/generalization or real-sensor claim.",
+    "Runtime candidate usability remains UNKNOWN; evaluation membership is not execution feasibility."
+  ],
+  "evidence_sha256": {
+    "prior_independent_audit": "f8af8bdc02281f30ff20a69389f9d6b6d8d5044f12765969acd99ca2569fc07c",
+    "scoring_seal": "09db1c98a7b5d705fcc04b0afef0914dfd734f7b1b8774049d943c3d08cecf20",
+    "annotation_correction_seal": "301a03a2004bf0b330f901714d8e666cd2dd31331f07d62994d90f953883a472",
+    "audit_script": "37eacf0683c4035502e1037c42534857642c9fc2ec5d7fabaa583521a592dd5a"
+  }
+}

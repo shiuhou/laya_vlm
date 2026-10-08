@@ -2525,3 +2525,38 @@ raw-only23frame packet. No finalsemantic score or P1PASS claimed.
 Next: receive human export, verify/seal and score allfourlayers with existing
 runner; inspect paired outputs, append scoring checkpoint and stop for review.
 No additional inference/repair/temporal/P2/Qwen/Laya/fixed-reference work.
+
+
+## 2026-10-08 — HO23 final offline annotation scoring
+
+Research question: does the fixed automatic BOX query repair improve part
+localization and final support independently of POINT losses? Competing
+hypotheses: wording improves part localization; output completion regresses;
+POINT/support failures block either chain. Intervention remains the single
+registered A/B query change; all other generation/geometry conditions fixed.
+
+User confirmed the annotator is a human assistant named AI, after an explicit
+independence question; original AI-source metadata was incorrect. Preserved
+original bytes/rejection and metadata-only correction. All 23 annotation records
+are unchanged and pass frame binding/validation. Human independence remains
+user-attested, not independently verified. Labels only enter postseal scoring.
+
+Result: 23 VISIBLE, 23 reference UNKNOWN. BOX typed A/B 23/3; localized 0/0.
+Coverage alone 18/23 versus 1/23. POINT 4 typed, 0 inside; 19 unavailable.
+A12 masks, 8,467 raw / 7,084 admitted proposals, 0 in-region; B no SAM outputs.
+Clean A/B0/23. All23 raw/BOX/POINT panels and12native panels inspected. Keep
+original geometric first boundaries separate from offline identity taxonomy.
+Metrics, matched denominators and p50/p95 archived. No common SAM subset.
+
+Interpretation: wording-only repair failed; target identity / POINT availability
+remain upstream blockers. Confidence high for this frozen batch, no generalized
+model impossibility claim. Conservative usable-region labels do not establish
+exhaustive object identity. Pure geometry-domain repair cannot bypass 19/23
+POINT admission failures without another scientific variable. Next decision:
+stop for review and design one upstream interface intervention on fresh data;
+no new inference, threshold adjustment or runtime change this round.
+
+Artifacts: runs/p1/box-heldout23-20261008/{annotation-receipts,annotation-correction,
+scoring,review}; docs/evidence/p1_grounding/box_heldout23_final_20261008;
+docs/p1-box-heldout23-results.md. Targeted tests10passed; review-script Ruff F
+passed. Original generation archive/seal unchanged. P1 not passed; P2 blocked.

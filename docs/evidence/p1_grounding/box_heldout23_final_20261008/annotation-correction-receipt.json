@@ -1,0 +1,52 @@
+{
+  "basis": "Explicit user clarification in this conversation; self-attested, not independently verified",
+  "user_statement": "应该是写错了，我助手名字也叫AI，确认是全真人的，",
+  "preceding_question": "Whether the human assistant independently drew all 23 polygons from raw RGB without AI drafts/model outputs. User confirmation is interpreted as answering this question.",
+  "original_sha256": "8a701062ed90f013f4966bcc68462fa76fff1edc7f4f0ae9a617faa8a40ff051",
+  "corrected_sha256": "6e3c85db8a0c3ee994e49d1a497b027a96be37309225a8a5800c74f54513d1aa",
+  "changed_keys": [
+    "annotator_id",
+    "annotator_role",
+    "attestations",
+    "provenance"
+  ],
+  "changes": {
+    "annotator_id": {
+      "original": "OpenAI dot (AI-assisted visual annotation)",
+      "corrected": "AI (human assistant; user-attested)"
+    },
+    "annotator_role": {
+      "original": "ai_assisted_annotator",
+      "corrected": "independent_human_annotator"
+    },
+    "attestations": {
+      "original": {
+        "is_human": false,
+        "independent_of_model_outputs": false,
+        "independent_of_ai_drafts": false,
+        "raw_rgb_only": true
+      },
+      "corrected": {
+        "is_human": true,
+        "independent_of_model_outputs": true,
+        "independent_of_ai_drafts": true,
+        "raw_rgb_only": true
+      }
+    },
+    "provenance": {
+      "original": {
+        "annotation_source": "AI-assisted annotation",
+        "human_reviewed": false,
+        "source_inputs": "23 supplied raw RGB PNG images, frozen annotation rules and manifest only; no task-model predictions, ROI, push points, scores, trajectories or success/failure outcomes consulted.",
+        "method": "Each image visually inspected at enlarged resolution; polygons manually selected by AI vision reasoning in native pixel coordinates, then reviewed as overlays.",
+        "compatibility": "Original human-only schema identifier retained for traceability and row layout. Provenance deliberately differs; this is NOT an independent human evaluation export and must not pass the human-only gate.",
+        "coverage_policy": "Conservative visible subsets of identifiable drawer front, with ambiguous edges and handle attachments excluded. Not an exhaustive pixel-perfect segmentation. UNKNOWN is excluded from positive/negative evaluation."
+      },
+      "corrected": null
+    }
+  },
+  "annotation_records_unchanged": true,
+  "dataset_rules_timestamp_unchanged": true,
+  "raw_original_preserved_at": "runs/p1/box-heldout23-20261008/annotation-receipts/8a701062ed90f013",
+  "qualification": "Independence is user-attested; export metadata originally contradicted it. No third-party provenance verification is claimed."
+}

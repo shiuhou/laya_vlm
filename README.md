@@ -20,22 +20,22 @@ conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
 
-The [fixed HO23 automatic BOX A/B batch](docs/p1-box-heldout23-results.md)
-has completed generation and frozen geometry:23new scenes,69model requests,
-all outcomes retained. **Blind semantic scoring awaits the new human annotations**;
-this is not P1 acceptance. BOX output availability is measured independently from
-the shared POINT; neither human prompts nor old development frames enter the new
-chain. Raw evidence and the23-frame annotation packet are archived. No new
-inference is needed to finish scoring; downstream control remains blocked.
+The [fixed HO23 automatic BOX A/B evaluation](docs/p1-box-heldout23-results.md)
+is complete: **0/23 clean drawer-front candidate frames in both arms**. BOX
+localization is 0/23 versus 0/23; new-query typed BOX availability falls 23/23
+→ 3/23. The shared POINT is typed in 4/23, with 0/4 inside human usable regions.
+All 23 scenes and 12 native masks were scored and visually reviewed after outputs
+were sealed. Human labels remain offline-only, with user-attested metadata
+correction preserved. No P1 PASS or downstream control is claimed. The batch is
+frozen and stopped for review; no additional repair or inference is running.
 
 The [BOX role decomposition](docs/p1-box-role-results.md) is complete at
 execution `ed48728`, with no new model calls. On21fully matched frames,
 SAM-BOX/geometry-BOX conditions HH/HO/OH/OO yield **21/21/21/10** candidate frames.
 Both crossed interventions recover the same11failures; neither is uniquely
 prioritized. Four original-prompt frames remain unavailable. This is offline
-human-assisted development evidence, not P1 acceptance. No BOX/interface repair
-was implemented; the next single repair/held-out condition requires a bounded
-choice, not more tuning on these25frames.
+human-assisted development evidence, not P1 acceptance. The subsequent single BOX-query repair is evaluated above; neither the exposed
+25-frame development set nor the new 23-frame batch permits further tuning.
 
 The [bounded semantic decomposition](docs/p1-semantic-decomposition-results.md)
 is complete at execution `f60cc1d`: human support / human BOX+POINT /

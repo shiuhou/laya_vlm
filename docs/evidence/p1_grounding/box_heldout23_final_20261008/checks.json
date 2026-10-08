@@ -1,0 +1,15 @@
+{
+  "annotation_scorer_tests": {
+    "command": ".venv-p1/bin/python -m pytest -q tests/test_p1_heldout_annotation_packet.py tests/test_p1_box_grounding_heldout_scoring.py",
+    "passed": 10,
+    "seconds": 0.65
+  },
+  "review_script_lint": "Ruff F checks PASS",
+  "generation_audit_checks": 815,
+  "final_audit_checks": 340,
+  "code_changed": false,
+  "inference_rerun": false,
+  "geometry_rerun": false,
+  "scoring_execution_count": 1,
+  "report_only_audit_error": "NumPy int64 serialization failed; partial output retained, corrected serializer wrote final JSON. No scientific conditions changed."
+}

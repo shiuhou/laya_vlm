@@ -1,27 +1,31 @@
 # Current research beliefs
 
-## Fixed HO23 BOX query repair — generation complete, annotation pending
+## Fixed HO23 BOX query repair — final offline score, stopped for review
 
-Observed at f71e452/a314003:23fresh states27..49,69single-attempt model calls;
-BOX A23/23typed, B3/23typed+20noEOS. SharedPOINT4typed,8cardinality,11noEOS.
-A4SAM frames/12native masks; B0SAM frames from upstream refusal. A8,467raw
-proposals/7,084after frozen containment remain semantically ungraded; B0proposals.
-All sources/native ordinals preserved; independent815-check audit passes.
+Observed: all 23 human drawer-front labels VISIBLE; fixed reference 23 UNKNOWN.
+BOX A/B typed 23/3; localization pass 0/0 (all-frame denominator 23 each).
+A covers support in 18/23 but all boxes fail preregistered IoU; B covers 1/3
+completed boxes and has 20 incomplete outputs. Shared POINT: 4 typed, all outside
+human support; 8 cardinality / 11 incomplete. A generates 12 masks in 4 frames,
+8,467 raw / 7,084 admitted proposals, all outside human usable region. B none.
+Clean frames 0/23 in both arms. All frames/masks visually inspected. Original
+metadata conflict and user-confirmed human identity correction are archived;
+polygon records unchanged, independence self-attested rather than verified.
 
-Inference: this exact shorter BOX query worsens completion/typed availability,
-independently of POINT failures. B cannot reach19/23candidate coverage because it
-produces none. Unknown: BOX semantic localization, SAM support identity, A clean
-candidate rate and visibility distribution. No human annotations have been read;
-no claim of completed blind evaluation or P1 PASS. Full report:
-docs/p1-box-heldout23-results.md. Do not attribute noEOS to semantic mislocalization.
+Inference: this query-only repair does not improve the automatic chain. Current
+blocker is upstream target-part grounding/POINT availability and support identity,
+not lack of geometric proposals. Evidence against a BOX-only sufficient repair:
+19/23 POINTs fail before SAM and 0/4 typed points hit the annotated region. Pure
+later geometry-domain decoupling cannot remove this admission ceiling.
+Confidence high for frozen counts; outside conservative annotation is not proof
+of a different physical object. No equivalence, general impossibility, P1 PASS
+or fixed-reference/temporal readiness claim. Falsifier: a preregistered automatic
+interface produces target-correct support and clean candidates on fresh scenes.
 
-Confidence high for frozen operational counts; semantic benefit remains untested
-until labels. Falsifier for a localization-loss claim (not made): the few B boxes
-could be more accurate despite lower availability. Next required action: obtain
-new23-frame human export, run existing offline scorer, inspect outputs and stop.
-No new inference/query/POINT/domain repair, held-out tuning or control is authorized
-by these intermediate results. No tracker/P2/Qwen/Laya started.
-
+Next: review a single upstream grounding/interface design, explicitly assess the
+geometry-domain alternative's POINT limitation; no implementation or new trial
+without the next review. No further tuning on either exposed population.
+Report: docs/p1-box-heldout23-results.md. No tracker/P2/Qwen/Laya started.
 
 ## BOX role factorial — 2026-10-08
 
