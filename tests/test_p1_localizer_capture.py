@@ -46,11 +46,15 @@ def fake_capture(tmp_path, monkeypatch, *, fail_reset=False):
         calls.append('capture')
         return dict(views=selected, proprio=proprio)
     def sensor_factory(world, **kwargs):
-        assert kwargs['width'] == 384 and kwargs['height'] == 256
+        width, height = kwargs['width'], kwargs['height']
+        assert width > 0 and height > 0
         assert kwargs['retained_gripper_command']() == 'OPEN'
         selected = [v for v in views if v["camera_id"] in kwargs["camera_names"]]
         if 'frontview' in kwargs['camera_names']:
             selected.append(dict(views[0], camera_id='frontview', frame_id='frontview:1'))
+        selected = [dict(v, rgb=np.full((height, width, 3), n*40, dtype=np.uint8),
+            depth_m=np.ones((height, width), dtype=np.float32),
+            intrinsics_K=np.array([[height, 0, width/2], [0, height, height/2], [0, 0, 1]])) for n, v in enumerate(selected)]
         assert tuple(v['camera_id'] for v in selected) == kwargs['camera_names']
         return SimpleNamespace(sensor_port=lambda: SimpleNamespace(capture=lambda: capture_bundle(selected)), close=lambda: calls.append('sensor_close'))
     return calls, dict(factory=factory, sensor_factory=sensor_factory, audit_writer=audit_writer)
@@ -210,3 +214,20 @@ def test_frontview_only_is_explicit_and_preserves_default_single_frame(tmp_path,
     assert calls.count('capture') == 1
     with pytest.raises(ProtocolError, match='requires'):
         capture.capture_seed(43, tmp_path/'invalid-front', dev_only=True, frontview_only=True, **inject)
+
+
+def test_native_dimensions_reach_sensor_receipt_and_recorded_calibration(tmp_path, monkeypatch):
+    from embodied_runtime.perception.recording import replay_frames
+    _, inject = fake_capture(tmp_path, monkeypatch)
+    root = tmp_path/'native768'
+    capture.capture_seed(42, root, dev_only=True, workspace_front=True, frontview_only=True,
+                         width=768, height=512, **inject)
+    manifest = read(root/'sensor/manifest.json')
+    assert (manifest['width'], manifest['height']) == (768, 512)
+    assert manifest['resolution_source'] == 'native_simulator_render_no_interpolation'
+    _, views = next(replay_frames(root/'sensor/frames'))
+    assert views[0]['rgb'].shape == (512, 768, 3) and views[0]['depth_m'].shape == (512, 768)
+    assert views[0]['intrinsics_K'][0][2] == 384 and views[0]['intrinsics_K'][1][2] == 256
+    for width, height in ((0, 256), (384, -1), (True, 256)):
+        with pytest.raises(ProtocolError, match='dimensions'):
+            capture.capture_seed(43, tmp_path/'invalid-resolution', dev_only=True, width=width, height=height, **inject)
