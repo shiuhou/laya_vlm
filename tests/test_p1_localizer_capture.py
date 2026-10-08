@@ -44,7 +44,9 @@ def fake_capture(tmp_path, monkeypatch, *, fail_reset=False):
         capture_sim_time_s=1., capture_monotonic_ns=10, frame='robot_base') for n, camera in enumerate(capture.CAMERAS)]
     def capture_bundle(selected):
         calls.append('capture')
-        return dict(views=selected, proprio=proprio)
+        sequence = calls.count('capture')
+        current = [dict(v, frame_seq=sequence, frame_id=f"{v['camera_id']}:{sequence}", capture_monotonic_ns=10+sequence) for v in selected]
+        return dict(views=current, proprio=proprio)
     def sensor_factory(world, **kwargs):
         width, height = kwargs['width'], kwargs['height']
         assert width > 0 and height > 0
@@ -231,3 +233,38 @@ def test_native_dimensions_reach_sensor_receipt_and_recorded_calibration(tmp_pat
     for width, height in ((0, 256), (384, -1), (True, 256)):
         with pytest.raises(ProtocolError, match='dimensions'):
             capture.capture_seed(43, tmp_path/'invalid-resolution', dev_only=True, width=width, height=height, **inject)
+
+
+def test_render_priming_retains_cold_timing_without_world_step_capability():
+    import json
+    world, sensor, recorder, events, clock, sleep, steps, messages = sequence_fixture(first_cost_ns=400_000_000)
+    stats = capture.record_warmup(sensor, recorder, events, 1, clock_ns=lambda: clock.value)
+    rows = [json.loads(line) for line in events.getvalue().splitlines()]
+    assert stats['captured_bundles'] == 1 and stats['wall_elapsed_s'] == .4
+    assert stats['cold_start_is_preserved'] and stats['simulator_steps'] == 0
+    assert rows[0]['capture_duration_s'] == .4 and rows[0]['oldest_view_age_at_write_s'] == .4
+    assert messages[0]['captured'] == 0 and messages[0]['emitted'] == 400_000_000
+    assert steps == []  # No world/step handle is passed to the priming function.
+
+
+def test_priming_raw_and_sources_are_separate_from_timed_frames(tmp_path, monkeypatch):
+    from embodied_runtime.perception.recording import replay_frames
+    calls, inject = fake_capture(tmp_path, monkeypatch)
+    root = tmp_path/'warm'
+    capture.capture_seed(42, root, dev_only=True, workspace_front=True, frontview_only=True,
+                         warmup_captures=1, **inject)
+    manifest = read(root/'sensor/manifest.json')
+    assert len(list(replay_frames(root/'sensor/warmup-frames'))) == 1
+    assert len(list(replay_frames(root/'sensor/frames'))) == 1
+    assert len(manifest['warmup_source_identities']) == len(manifest['source_identities']) == 1
+    assert manifest['warmup_recording'] == 'warmup-frames'
+    assert manifest['warmup_statistics']['reason'] == 'GPU_RENDER_INITIALIZATION'
+    assert manifest['capture_statistics']['cadence_condition'] == 'EXPLICIT_RENDER_PRIMING_COMPLETE'
+    assert calls.count('capture') == 2
+    assert len([x for x in calls if isinstance(x, tuple) and x[0] == 'step']) == 10
+    warm_view = next(replay_frames(root/'sensor/warmup-frames'))[1][0]
+    timed_view = next(replay_frames(root/'sensor/frames'))[1][0]
+    assert warm_view['canonical_frame_id'] != timed_view['canonical_frame_id']
+    assert warm_view['capture_sim_time_s'] == timed_view['capture_sim_time_s']
+    assert warm_view['frame_seq'] == 1 and timed_view['frame_seq'] == 2
+    verify_seal(root)

@@ -175,6 +175,50 @@ def capture_schedule(*, frames=None, duration_s=None, capture_hz=10.):
                 failure_policy='record FAILED and NOT_ATTEMPTED_AFTER_FAILURE; stop')
 
 
+
+def record_warmup(sensor, recorder, event_stream, count, *, clock_ns=time.monotonic_ns):
+    """Explicit render priming: sensor access only, no simulator step capability."""
+    require(type(count) is int and 1 <= count <= 16, 'bounded1..16 priming captures required')
+    anchor = clock_ns()
+    events, first_sim = [], None
+    for index in range(count):
+        started = clock_ns()
+        try:
+            bundle = sensor.sensor_port().capture()
+            captured = clock_ns()
+            sim_times = [v['capture_sim_time_s'] for v in bundle['views']]
+            if first_sim is None:
+                first_sim = sim_times
+            require(sim_times == first_sim, 'priming must not advance simulation')
+            emitted = clock_ns()
+            message = recorder.append(bundle['views'], bundle['proprio'], emitted_monotonic_ns=emitted)
+            finished = clock_ns()
+            capture_ns = [v['capture_monotonic_ns'] for v in bundle['views']]
+            event = dict(warmup_index=index, status='CAPTURED', reason='GPU_RENDER_INITIALIZATION',
+                capture_started_monotonic_ns=started, capture_finished_monotonic_ns=captured,
+                emitted_monotonic_ns=emitted, frame_write_finished_monotonic_ns=finished,
+                capture_duration_s=(captured-started)/1e9, capture_sim_time_s=sim_times,
+                oldest_view_age_at_write_s=(finished-min(capture_ns))/1e9,
+                view_capture_monotonic_ns=capture_ns, bundle_message_id=message.message_id,
+                source_ids=[f"{recorder.episode_id}/{v['camera_id']}/{v['frame_seq']}" for v in bundle['views']],
+                timestamps_fabricated=False, excluded_from_warm_cadence_only=True, simulator_steps=0)
+        except Exception as exc:
+            event = dict(warmup_index=index, status='FAILED', reason='GPU_RENDER_INITIALIZATION',
+                exception_type=type(exc).__name__, error=repr(exc), observed_monotonic_ns=clock_ns(),
+                source_ids=[], simulator_steps=0)
+            event_stream.write(canonical_json(event)+'\n')
+            for rest in range(index+1, count):
+                event_stream.write(canonical_json(dict(warmup_index=rest, status='NOT_ATTEMPTED_AFTER_FAILURE', source_ids=[]))+'\n')
+            event_stream.flush()
+            raise
+        events.append(event)
+        event_stream.write(canonical_json(event)+'\n')
+        event_stream.flush()
+    return dict(requested_captures=count, captured_bundles=len(events), wall_elapsed_s=(clock_ns()-anchor)/1e9,
+        reason='GPU_RENDER_INITIALIZATION', simulator_steps=0, capture_records=events,
+        cold_start_is_preserved=True, excluded_from_warm_cadence_only=True, timestamps_fabricated=False)
+
+
 def record_sequence(world, sensor, recorder, event_stream, schedule, *, clock_ns=time.monotonic_ns, sleep=time.sleep):
     """Real acquisition timestamps survive; desired cadence never substitutes for them."""
     anchor = clock_ns()
@@ -242,13 +286,14 @@ def record_sequence(world, sensor, recorder, event_stream, schedule, *, clock_ns
 
 
 def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/projects/LIBERO',
-                 config_dir='/tmp/laya-localizer-fresh-libero', workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., width=384, height=256, factory=create_environment,
+                 config_dir='/tmp/laya-localizer-fresh-libero', workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., width=384, height=256, warmup_captures=0, factory=create_environment,
                  sensor_factory=LiberoSensorEnv, audit_writer=save_audit):
     """One reset and ten settling ticks, then bounded sensor slots (default one)."""
     require(dev_only is True, 'development-only capture must be explicit')
     require(type(seed) is int and 0 <= seed < 2**32, 'uint32 seed required')
     require(type(width) is int and type(height) is int and min(width, height) > 0, 'positive native render dimensions required')
     require(type(workspace_front) is bool, 'explicit camera flag required')
+    require(type(warmup_captures) is int and 0 <= warmup_captures <= 16, 'bounded0..16 explicit priming captures required')
     require(type(frontview_only) is bool and (not frontview_only or workspace_front), 'frontview-only requires workspace-front')
     cameras = ('frontview',) if frontview_only else CAMERAS + (('frontview',) if workspace_front else ())
     schedule = capture_schedule(frames=frames, duration_s=duration_s, capture_hz=capture_hz)
@@ -261,9 +306,11 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     sensor_root.mkdir()
     world = sensor = None
     sequence_stats = None
+    warmup_stats = None
+    warmup_sources = []
     stage, reset_attempts, settle_ticks = 'CONSTRUCTOR', 0, 0
     receipt = dict(schema='p1-localizer-fresh-capture/1', seed=seed, dev_only=True,
-        task=TASK, width=width, height=height, resolution_source="native_simulator_render_no_interpolation", cameras=list(cameras), capture_schedule=schedule, frontview_only=frontview_only, camera_condition=WORKSPACE_FRONT if workspace_front else None, code=code_identity(), versions=versions(),
+        task=TASK, width=width, height=height, resolution_source="native_simulator_render_no_interpolation", cameras=list(cameras), warmup_captures=warmup_captures, capture_schedule=schedule, frontview_only=frontview_only, camera_condition=WORKSPACE_FRONT if workspace_front else None, code=code_identity(), versions=versions(),
         process_id=os.getpid(), executable=sys.executable, started_at_utc=datetime.now(timezone.utc).isoformat(),
         render_environment={k:os.environ.get(k) for k in ('MUJOCO_GL', 'MUJOCO_EGL_DEVICE_ID', 'CUDA_VISIBLE_DEVICES')},
         settle_action=list(SETTLE_ACTION), settle_ticks_planned=SETTLE_TICKS, explicit_reset_attempts=0,
@@ -297,10 +344,23 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
         stage = 'SENSOR_CAPTURE'
         sensor = sensor_factory(world, camera_names=cameras, width=width, height=height,
                                 retained_gripper_command=lambda: 'OPEN')
+        if warmup_captures:
+            stage = 'RENDER_PRIMING'
+            with FrameRecorder(sensor_root/'warmup-frames', episode_id=f'p1-localizer-dev/seed{seed}/warmup',
+                               clock_domain='localizer-fresh/local-process', condition='render-priming-explicit/1') as warm_recorder, \
+                    (sensor_root/'warmup-attempts.jsonl').open('x') as warm_events:
+                warmup_stats = record_warmup(sensor, warm_recorder, warm_events, warmup_captures)
+            warmup_sources = [sensor_view_identity(dict(v, frame_id=v['canonical_frame_id']))
+                              for _, views in replay_frames(sensor_root/'warmup-frames') for v in views]
+            write(sensor_root/'warmup-statistics.json', warmup_stats)
+        stage = 'SENSOR_CAPTURE'
         with FrameRecorder(sensor_root/'frames', episode_id=f'p1-localizer-dev/seed{seed}',
                            clock_domain='localizer-fresh/local-process', condition=condition) as recorder, \
                 (sensor_root/'capture-attempts.jsonl').open('x') as attempts:
             sequence_stats = record_sequence(world, sensor, recorder, attempts, schedule)
+        sequence_stats.update(warmup_captures=warmup_captures,
+            cadence_condition='EXPLICIT_RENDER_PRIMING_COMPLETE' if warmup_captures else 'COLD_START_INCLUDED',
+            cold_start_receipt='warmup-statistics.json' if warmup_captures else 'capture-attempts.jsonl')
         recorded = list(replay_frames(sensor_root/'frames'))
         require(len(recorded) == sequence_stats['captured_bundles'] and len(recorded) > 0,
                 'complete recorded successful slots required')
@@ -309,11 +369,11 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
         write(sensor_root/'capture-statistics.json', sequence_stats)
         write(sensor_root/'manifest.json', dict(schema='p1-localizer-sensor-capture/1', seed=seed, dev_only=True,
             episode_id=envelope.episode_id, width=width, height=height, resolution_source="native_simulator_render_no_interpolation", cameras=list(cameras), camera_condition=WORKSPACE_FRONT if workspace_front else None,
-            source_identities=sources, frame_bundle_count=len(recorded), capture_statistics=sequence_stats, recording='frames', allowed_inputs=['RGB', 'metric_depth', 'K', 'T_base_camera', 'robot_proprioception'],
+            source_identities=sources, warmup_source_identities=warmup_sources, warmup_recording='warmup-frames' if warmup_captures else None, warmup_statistics=warmup_stats, frame_bundle_count=len(recorded), capture_statistics=sequence_stats, recording='frames', allowed_inputs=['RGB', 'metric_depth', 'K', 'T_base_camera', 'robot_proprioception'],
             evaluation_labels_used=False, oracle_inputs=False, novelty_status='NOT_AUDITED', heldout_claim=False))
         seal(sensor_root)
         write(root/'result.json', dict(status='CAPTURE_COMPLETE', seed=seed, explicit_reset_attempts=reset_attempts,
-            settle_ticks_completed=settle_ticks, capture_statistics=sequence_stats, sensor_manifest_sha256=file_hash(sensor_root/'manifest.json'),
+            settle_ticks_completed=settle_ticks, warmup_statistics=warmup_stats, capture_statistics=sequence_stats, sensor_manifest_sha256=file_hash(sensor_root/'manifest.json'),
             audit_only_reset_identity=initial, audit_only_settled_identity=settled,
             stage='COMPLETE', dev_only=True, novelty_status='NOT_AUDITED', heldout_claim=False))
     except Exception as exc:
@@ -330,17 +390,18 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     return read(root/'result.json')
 
 
-def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., width=384, height=256, timeout_s=180):
+def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., width=384, height=256, warmup_captures=0, timeout_s=180):
     require(dev_only is True and seeds and len(seeds) == len(set(seeds))
             and all(type(s) is int and 0 <= s < 2**32 for s in seeds), 'unique explicit development seeds required')
     require(type(width) is int and type(height) is int and min(width, height) > 0, 'positive native render dimensions required')
+    require(type(warmup_captures) is int and 0 <= warmup_captures <= 16, 'bounded0..16 explicit priming captures required')
     schedule = capture_schedule(frames=frames, duration_s=duration_s, capture_hz=capture_hz)
     require(not frontview_only or workspace_front, 'frontview-only requires workspace-front')
     timeout_s = max(timeout_s, schedule['planned_slots']/capture_hz + 180)
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
     write(root/'registration.json', dict(schema='p1-localizer-fresh-batch/1', seeds=seeds, dev_only=True,
-        per_seed_fresh_process=True, width=width, height=height, resolution_source="native_simulator_render_no_interpolation", workspace_front=workspace_front, frontview_only=frontview_only, capture_schedule=schedule, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
+        per_seed_fresh_process=True, warmup_captures=warmup_captures, width=width, height=height, resolution_source="native_simulator_render_no_interpolation", workspace_front=workspace_front, frontview_only=frontview_only, capture_schedule=schedule, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
     results = []
     try:
         for seed in seeds:
@@ -348,7 +409,7 @@ def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace
             command = [sys.executable, '-m', 'embodied_runtime.experiments.p1_localizer_capture', '--single',
                 '--seed', str(seed), '--output', str(folder), '--dev-only', '--libero-root', libero_root,
                 '--config-dir', str(Path(config_dir)/f'seed-{seed}')]
-            command.extend(['--capture-hz', str(capture_hz), '--width', str(width), '--height', str(height)])
+            command.extend(['--capture-hz', str(capture_hz), '--width', str(width), '--height', str(height), '--warmup-captures', str(warmup_captures)])
             if duration_s is not None:
                 command.extend(['--duration-s', str(duration_s)])
             elif frames is not None:
@@ -392,15 +453,16 @@ def main():
     parser.add_argument('--capture-hz', type=float, default=10.)
     parser.add_argument('--width', type=int, default=384, help='Native RGB-D render width; no interpolation')
     parser.add_argument('--height', type=int, default=256, help='Native RGB-D render height; no interpolation')
+    parser.add_argument('--warmup-captures', type=int, default=0, help='Explicit no-step priming frames retained separately before timed slot0')
     parser.add_argument('--single', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--libero-root', default='/home/junhongli/projects/LIBERO')
     parser.add_argument('--config-dir', default='/tmp/laya-localizer-fresh-libero')
     args = parser.parse_args()
     require(not args.single or len(args.seeds) == 1, 'single child requires one seed')
     if args.single:
-        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz, width=args.width, height=args.height)
+        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz, width=args.width, height=args.height, warmup_captures=args.warmup_captures)
     else:
-        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz, width=args.width, height=args.height)
+        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz, width=args.width, height=args.height, warmup_captures=args.warmup_captures)
 
 
 if __name__ == '__main__':
