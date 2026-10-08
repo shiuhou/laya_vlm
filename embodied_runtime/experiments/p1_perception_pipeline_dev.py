@@ -55,10 +55,12 @@ def build_stages(args):
     if args.track:
         for i, recording in enumerate(recordings):
             output = str(root/f'tracking-{i:03d}')
-            stages.append(Stage(f'tracking-{i:03d}',
-                [geometry, '-m', 'embodied_runtime.experiments.p1_automatic_patch_tracking',
-                 '--geometry', patches, '--recording', recording, '--output', output,
-                 '--seed-method', args.seed_method], output, ('geometry',)))
+            module = ('embodied_runtime.experiments.p1_automatic_patch_tracking' if args.tracking_method == 'template'
+                      else 'embodied_runtime.experiments.p1_flow_mask_tracking_dev')
+            command = [geometry, '-m', module, '--geometry', patches, '--recording', recording, '--output', output]
+            if args.tracking_method == 'template':
+                command.extend(['--seed-method', args.seed_method])
+            stages.append(Stage(f'tracking-{i:03d}', command, output, ('geometry',)))
     return stages
 
 
@@ -120,6 +122,8 @@ def parser():
     p.add_argument('--stage-timeout-s', type=float, default=3600.)
     p.add_argument('--seed', type=int, default=1)
     p.add_argument('--track', action='store_true', help='Replay existing tracker on each same source recording; no new capture/reseed')
+    p.add_argument('--tracking-method', choices=['template', 'sparse-flow'], default='template',
+                   help='Optional offline tracking worker; historical template tracker remains default')
     p.add_argument('--seed-method', choices=['mask-rectangle', 'depth-supported-rectangle'], default='mask-rectangle',
                    help='Optional tracker seed adapter; historical mask-rectangle remains default')
     p.add_argument('--dry-run', action='store_true', help='Print commands/environment only; no files or workers started')

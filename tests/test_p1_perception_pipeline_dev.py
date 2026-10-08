@@ -23,6 +23,13 @@ def test_exact_source_camera_env_and_optional_tracker_command_propagation(tmp_pa
         assert tracking[tracking.index('--geometry')+1] == stages[2].output
         assert tracking[tracking.index('--seed-method')+1] == 'depth-supported-rectangle'
     assert parser().get_default('seed_method') == 'mask-rectangle'
+    assert parser().get_default('tracking_method') == 'template'
+    args.tracking_method = 'sparse-flow'
+    flow = build_stages(args)[3].command
+    assert flow[2] == 'embodied_runtime.experiments.p1_flow_mask_tracking_dev'
+    assert '--seed-method' not in flow
+    assert flow[flow.index('--recording')+1] == str((tmp_path/'source-a').resolve())
+    assert flow[flow.index('--geometry')+1] == stages[2].output
 
 
 def test_upstream_runtime_failure_preserved_and_never_launches_downstream(tmp_path):
