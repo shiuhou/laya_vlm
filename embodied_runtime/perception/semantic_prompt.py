@@ -34,9 +34,37 @@ def point_prompt(view, original_box, point_record, *, query, config):
     if not typed.admitted:
         return dict(result, reason=typed.reason)
     point = typed.selected[0]
-    x, y = point.pixels
-    u, v = point.sample_pixel_xy
-    result.update(point_xy=list(point.pixels), sample_pixel_xy=[u, v])
+    return _point_geometry(view, original_box, point.pixels, point.sample_pixel_xy,
+                           result=result, config=config)
+
+
+def grounding_point_prompt(view, original_box, observation, *, query, target_key, config):
+    """Admit a verified native frontend POINT through the original geometry gates.
+
+    The observation stays model-specific at parsing; neither Qwen output nor its
+    token evidence is translated into a fictitious LocateAnything response.
+    """
+    from .grounding_observation import validate_grounding_observation
+    require(observation['source_identity'] == sensor_view_identity(view)
+            and observation['query'] == query and observation['target_key'] == target_key,
+            'POINT sensor/query/target mismatch', 'SOURCE_MISMATCH')
+    typed = validate_grounding_observation(observation)
+    require(typed.mode == 'POINT', 'POINT observation required')
+    result = dict(contract=CONTRACT, admitted=False, reason=None, point_xy=None,
+                  sample_pixel_xy=None, geometry_roi_xyxy=None, sampled_depth_m=None,
+                  calibrated_confidence=None, semantic_identity_verified=False, for_execution=False)
+    if not typed.admitted:
+        return dict(result, reason=typed.reason)
+    return _point_geometry(view, original_box, typed.point_xy_px, typed.sample_pixel_xy,
+                           result=result, config=config)
+
+
+def _point_geometry(view, original_box, pixels, sample, *, result, config):
+    """Shared continuous BOX, ceil ROI, floor sample and exact depth admission."""
+    h, w = view['depth_m'].shape
+    x, y = pixels
+    u, v = sample
+    result.update(point_xy=list(pixels), sample_pixel_xy=[u, v])
     x0, y0, x1, y1 = map(float, original_box)
     roi = _roi(original_box, w, h)
     result['geometry_roi_xyxy'] = list(roi)
