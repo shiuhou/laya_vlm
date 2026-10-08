@@ -23,6 +23,7 @@ from ..perception.rgbd_geometry import _roi, estimate_visible_patch
 from ..perception.semantic_prompt import grounding_point_prompt, mask_point_admission
 from ..perception.surface_association import sensor_view_identity, tracker_seed_rectangle
 from ..perception.visual_tracker import TrackerConfig, VisualTracker
+from ..perception.tracker_seed import depth_supported_rectangle
 from .p1_formal50 import ledger
 from .p1_localizer_surface_dev import input_rows
 from .p1_mask_support_reanalysis import config
@@ -74,9 +75,10 @@ def verified_geometry(root):
     return records
 
 
-def seed_hypotheses(records, view, *, tracker_config=TrackerConfig()):
+def seed_hypotheses(records, view, *, tracker_config=TrackerConfig(), seed_method='mask-rectangle'):
     """Retain every original native rejection and every eligible seed hypothesis."""
     identity = sensor_view_identity(view)
+    require(seed_method in ('mask-rectangle', 'depth-supported-rectangle'), 'unknown seed method')
     selected = [r for r in records if r['source_identity'] == identity]
     require(bool(selected), 'grounding must match the first recorded camera frame exactly', 'SOURCE_MISMATCH')
     hypotheses, decisions = [], []
@@ -126,8 +128,12 @@ def seed_hypotheses(records, view, *, tracker_config=TrackerConfig()):
                     x0, y0, x1, y1 = _roi(record['box_xyxy'], native.shape[1], native.shape[0])
                     support = np.zeros_like(native)
                     support[y0:y1, x0:x1] = native[y0:y1, x0:x1]
-                    rectangle = tracker_seed_rectangle(_MaskSupport(support), prompt['point_xy'],
-                                                       tracker_config=tracker_config)
+                    if seed_method == 'depth-supported-rectangle':
+                        rectangle, receipt = depth_supported_rectangle(view, support, prompt['point_xy'], config=tracker_config)
+                        row['seed_proposal_receipt'] = receipt
+                    else:
+                        rectangle = tracker_seed_rectangle(_MaskSupport(support), prompt['point_xy'],
+                                                           tracker_config=tracker_config)
                     row.update(seed_support_domain='native_mask_intersection_original_geometry_roi',
                         seed_support_sha256=hashlib.sha256(support.tobytes()).hexdigest(),
                         seed_support_pixels=int(support.sum()), original_geometry_roi=[x0, y0, x1, y1],
@@ -143,7 +149,7 @@ def seed_hypotheses(records, view, *, tracker_config=TrackerConfig()):
     return hypotheses, decisions
 
 
-def run(geometry_root, recording, output):
+def run(geometry_root, recording, output, *, seed_method='mask-rectangle'):
     """Replay original capture clocks once; no online freshness/Hz assertion."""
     records = verified_geometry(geometry_root)
     stream = iter(replay_frames(recording))
@@ -154,11 +160,12 @@ def run(geometry_root, recording, output):
     matched = [v for v in views if any(r['source_identity'] == sensor_view_identity(v) for r in records)]
     require(len(matched) == 1, 'one exact first-frame camera grounding required', 'SOURCE_MISMATCH')
     source_view = matched[0]
-    hypotheses, decisions = seed_hypotheses(records, source_view)
+    hypotheses, decisions = seed_hypotheses(records, source_view, seed_method=seed_method)
     tracker_config, geometry_config = TrackerConfig(), config()
     out = Path(output)
     out.mkdir(parents=True, exist_ok=False)
     write(out/'condition.json', dict(condition=CONDITION, code=code_identity(),
+        seed_method=seed_method,
         geometry_root=str(Path(geometry_root).resolve()), geometry_seal_sha256=file_hash(Path(geometry_root)/'sealed.json'),
         recording=str(Path(recording).resolve()), recording_frames_sha256=file_hash(Path(recording)/'frames.jsonl'),
         tracker_config=asdict(tracker_config), geometry_config=geometry_config.to_dict(),
@@ -248,8 +255,9 @@ def main():
     parser.add_argument('--geometry', required=True)
     parser.add_argument('--recording', required=True)
     parser.add_argument('--output', required=True)
+    parser.add_argument('--seed-method', choices=['mask-rectangle', 'depth-supported-rectangle'], default='mask-rectangle')
     args = parser.parse_args()
-    run(args.geometry, args.recording, args.output)
+    run(args.geometry, args.recording, args.output, seed_method=args.seed_method)
 
 
 if __name__ == '__main__':
