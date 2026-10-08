@@ -23,10 +23,16 @@ P1 task acceptance and P2 manipulation remain pending.
 Current work: [autonomous P1 perception development](docs/p1-qwen-localizer-replacement-plan.md).
 Qwen3-VL-4B now has a runnable RGB-only BOX/POINT adapter feeding the unchanged
 SAM/geometry gates; development runs are separate from the frozen HO23 evaluation.
-A bounded fresh-reset sensor collector and an automatic-support tracking bridge
-are implemented. This does not yet establish correct localization, continuous
-tracking, P1 acceptance or permission to PUSH. Normal development continues
-without per-experiment approval; independent validation freezes follow capability.
+A fixed workspace camera now yields visually correct automatic drawer-front
+geometry candidates in five narrowly varied development resets. The same method
+is still unreliable in the old oblique/wrist views. A one-command runner and
+continuous RGB-D collector are implemented; warm acquisition measures about9.93Hz.
+Continuous target-support tracking remains unresolved: template ambiguity and
+insufficient distributed optical-flow features are retained failures. These are
+development observations, not independent human scoring, P1 acceptance or
+permission to PUSH. See [current beliefs](CURRENT_BELIEFS.md) for the active blocker.
+Normal development continues without per-experiment approval; independent
+validation freezes follow capability.
 
 The [fixed HO23 automatic BOX A/B evaluation](docs/p1-box-heldout23-results.md)
 is complete: **0/23 clean drawer-front candidate frames in both arms**. BOX

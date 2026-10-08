@@ -1,19 +1,46 @@
 # Current research beliefs
 
-## Active P1 development — 2026-10-08
+## Active P1 capability development — 2026-10-08
 
-User authorizes autonomous implementation/iteration in the chosen architecture.
-Qwen3-VL-4B source-bound 2D localization, unchanged SAM/geometry connection,
-automatic-support tracker bridge and fresh sampler collector are implemented.
-Actual greedy dev03: 8/8 typed BOX/POINT outputs on four exposed wrist images,
-but localization points at the gripper; 3frames enterSAM/9masks all reject
-PLANE_DEGENERATE, fourth POINT outsideBOX. No valid perception claim.
-Dev01 failed metadata serialization before inference; dev02 was contaminated
-by Transformers checkpoint do_sample fallback; both preserved, fixes tested.
-Next development tests higher visual-token budget on same raw RGB without gate
-changes. All these images are development, not independent evaluation.
-Tracking/control untested by these static outputs; reference remains UNKNOWN.
+The active authorization is autonomous engineering within the selected architecture;
+older "stop for review" instructions below describe historical experiments.
 
+**Observed:** Qwen3-VL RGB-only coarse cabinet localization → source-bound crop →
+automatic drawer-front BOX+POINT → unchanged SAM/geometry is runnable in one command.
+The original oblique/wrist views still give wrong-part localization. An explicitly
+configured fixed workspace camera exposes the complete drawer front. On five
+small-variation development resets, all five yield visually correct front-panel
+candidates (all native masks retained; no manual prompts). This is agent visual
+inspection, not independent human scoring or P1 acceptance.
+
+**Observed:** continuous fixed-camera RGB-D capture works at approximately9.93Hz.
+At native768×512, one separately recorded render warmup eliminates the observed
+cold-start cadence drops:40/40 warm frames, no drops, age-at-write p95≈25ms.
+This measures acquisition, not tracking/geometry end-to-end performance.
+
+**Observed:** continuous tracking is not yet established. Template tracking rejects
+mixed-depth seeds and becomes appearance-ambiguous; a depth-aware seed proposal
+preserves its gates but cannot repair that ambiguity. The independent sparse-flow
+method finds only5features at384×256; native768 gives10features concentrated around
+the handle, failing the fixed full-support spatial-coverage gate. Neither result
+justifies lowering gates or moving the full surface using insufficient evidence.
+
+**Inference:** a frontal sensing condition makes autonomous static grounding
+practical in this narrow development distribution. Tracking the complete dark,
+low-texture front remains the current engineering bottleneck. Confidence moderate
+for the static observation, unknown for new layouts, occlusion and motion.
+
+**Next:** test the already-installed SAM2 temporal model as a separately identified
+support-tracking method, preserving each initial native hypothesis and recomputing
+geometry from current depth. No new weights/training, no mask-winner selection
+across initial hypotheses, no geometry/tool relaxation. Independent spatial
+validation and10real temporal cases remain prerequisites for P1 scope gates.
+Reference/VERIFY remain UNKNOWN; no approach/PUSH/planning/Laya execution yet.
+
+Runnable entry: [P1 development](docs/p1-qwen-localizer-replacement-plan.md).
+Main local evidence: `runs/p1/automatic-perception-front-multiscene-dev-20261008-01`,
+`runs/p1/automatic-perception-native768-dev-20261008-01`, and the separately retained
+`runs/p1/automatic-patch-track-front-dev-20261008-02-depth-supported`.
 
 ## Fixed HO23 BOX query repair — final offline score, stopped for review
 
