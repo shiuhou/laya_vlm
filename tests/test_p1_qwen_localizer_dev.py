@@ -3,8 +3,9 @@ import json
 import numpy as np
 import pytest
 from PIL import Image
+from types import SimpleNamespace
 
-from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, json_metadata, generate_greedy, QUERY
+from embodied_runtime.adapters.qwen3vl_grounding import generation_audit, messages_for, json_metadata, generate_greedy, configure_image_budget, QUERY
 from embodied_runtime.contracts import content_hash, ProtocolError
 from embodied_runtime.experiments.p1_qwen_localizer_dev import execute_requests
 from embodied_runtime.perception.grounding_observation import parse_qwen_grounding
@@ -54,6 +55,21 @@ def test_actual_generate_call_disables_model_default_sampling_override():
     assert model.called['temperature'] is None
     assert model.called['top_p'] is None
     assert model.called['top_k'] is None
+
+
+def test_native_image_area_override_is_explicit_and_default_is_noop():
+    processor = SimpleNamespace(size={'shortest_edge': 65536, 'longest_edge': 16777216}, min_pixels=None, max_pixels=None)
+    original = processor.size
+    result = configure_image_budget(processor)
+    assert not result['changed'] and processor.size is original
+    assert processor.min_pixels is None and processor.max_pixels is None
+    result = configure_image_budget(processor, min_pixels=1572864, max_pixels=1572864)
+    assert result['checkpoint_size'] == original
+    assert processor.size == {'shortest_edge': 1572864, 'longest_edge': 1572864}
+    assert processor.min_pixels == processor.max_pixels == 1572864
+    for minimum, maximum in ((0, 1), (-1, 2), (True, 2), (2, 1)):
+        with pytest.raises(ProtocolError):
+            configure_image_budget(processor, min_pixels=minimum, max_pixels=maximum)
 
 
 def test_typed_box_failure_does_not_suppress_independent_point_or_retry(tmp_path):

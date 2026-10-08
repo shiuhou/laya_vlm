@@ -19,7 +19,7 @@ import numpy as np
 from ..contracts import content_hash, require
 from ..perception.grounding_observation import parse_qwen_grounding
 
-ADAPTER_REVISION = "qwen3vl-rgb-localizer/2"
+ADAPTER_REVISION = "qwen3vl-rgb-localizer/3"
 QUERY = ("the flat outward-facing front panel of the open top drawer of the small cabinet on the "
          "tabletop, excluding its handle, inner cavity, rim, and tabletop")
 SYSTEM = ("You are an image-only 2D localizer. Return only the requested JSON, without markdown or "
@@ -66,6 +66,33 @@ def messages_for(mode, query=QUERY):
     require(mode in TEMPLATES, "BOX or POINT required")
     return [{"role": "system", "content": SYSTEM}, {"role": "user", "content": [
         {"type": "image"}, {"type": "text", "text": TEMPLATES[mode].format(query=query)}]}]
+
+
+def configure_image_budget(image_processor, *, min_pixels=None, max_pixels=None):
+    """Explicit native processor area bounds; never crop or externally resize RGB.
+
+    Qwen2VLImageProcessorFast (used by this Qwen3-VL checkpoint) names its pixel
+    *area* limits shortest_edge/longest_edge. No supplied option is a strict
+    no-op. Original checkpoint values and requested/effective limits are kept.
+    """
+    original = deepcopy(image_processor.size)
+    record = dict(requested_min_pixels=min_pixels, requested_max_pixels=max_pixels,
+                  checkpoint_size=json_metadata(original), changed=False,
+                  effective_size=json_metadata(original), interpretation='native processor image pixel area bounds')
+    if min_pixels is None and max_pixels is None:
+        return record
+    for value in (min_pixels, max_pixels):
+        require(value is None or (type(value) is int and value > 0), 'image pixel budgets must be positive integers')
+    require(isinstance(original, Mapping) and 'shortest_edge' in original and 'longest_edge' in original,
+            'native processor does not expose expected area bounds')
+    minimum = original['shortest_edge'] if min_pixels is None else min_pixels
+    maximum = original['longest_edge'] if max_pixels is None else max_pixels
+    require(minimum <= maximum, 'minimum image pixel area exceeds maximum')
+    updated = dict(original, shortest_edge=minimum, longest_edge=maximum)
+    image_processor.size = updated
+    # Keep native aliases consistent: preprocess kwargs may read these attributes.
+    image_processor.min_pixels, image_processor.max_pixels = minimum, maximum
+    return dict(record, changed=True, effective_size=json_metadata(updated))
 
 
 def generation_audit(ids, *, input_count, max_new_tokens, model_max_length, eos_token_ids):
@@ -115,7 +142,8 @@ def checkpoint_identity(path):
 class Qwen3VLGroundingWorker:
     """Optional heavy dependencies are imported only when explicitly constructed."""
 
-    def __init__(self, model_path, *, device="cuda:0", seed=1, model_identity=None):
+    def __init__(self, model_path, *, device="cuda:0", seed=1, model_identity=None,
+                 image_min_pixels=None, image_max_pixels=None):
         import torch
         from transformers import AutoModelForImageTextToText, AutoProcessor
         self.torch, self.device = torch, device
@@ -125,6 +153,8 @@ class Qwen3VLGroundingWorker:
         torch.backends.cudnn.allow_tf32 = False
         torch.backends.cudnn.benchmark = False
         self.processor = AutoProcessor.from_pretrained(model_path, local_files_only=True, trust_remote_code=False)
+        self.image_budget = configure_image_budget(self.processor.image_processor,
+            min_pixels=image_min_pixels, max_pixels=image_max_pixels)
         self.model = AutoModelForImageTextToText.from_pretrained(
             model_path, local_files_only=True, trust_remote_code=False,
             torch_dtype=torch.bfloat16, attn_implementation="sdpa").to(device).eval()
@@ -134,6 +164,7 @@ class Qwen3VLGroundingWorker:
         self.processor_identity = json_metadata(dict(processor_class=type(self.processor).__name__,
             tokenizer_class=type(tokenizer).__name__, image_processor_class=type(image_processor).__name__,
             image_processor_config=image_processor.to_dict(), chat_template_sha256=content_hash(self.processor.chat_template),
+            image_budget_condition=self.image_budget,
             model_config=self.model.config.to_dict(), model_class=type(self.model).__name__,
             checkpoint_generation_config=self.model.generation_config.to_dict(),
             tokenizer_eos_token_id=tokenizer.eos_token_id, tokenizer_pad_token_id=tokenizer.pad_token_id,
@@ -204,6 +235,7 @@ class Qwen3VLGroundingWorker:
                 original_rgb_shape=list(rgb.shape), input_token_ids=input_ids,
                 messages=messages, rendered_prompt=prompt, rendered_prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(),
                 tensor_receipts=tensor_receipts, image_grid_thw=grids, processed_image_hw=resized,
+                image_budget_condition=self.image_budget,
                 pixel_channels="full original RGB only", history_messages=0),
             timing=dict(requested_at_utc=requested_at, finished_at_utc=datetime.now(timezone.utc).isoformat(),
                 preprocess_s=preprocess_s, generate_s=generate_s, total_s=time.perf_counter()-started),

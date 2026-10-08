@@ -133,6 +133,7 @@ def run(args):
             generation=dict(max_new_tokens=args.max_new_tokens, do_sample=False, num_beams=1, use_cache=True,
                 temperature=None, top_p=None, top_k=None, seed=args.seed),
             generation_call_overrides=dict(GREEDY_CALL_OVERRIDES),
+            image_processor_override=dict(min_pixels=args.image_min_pixels, max_pixels=args.image_max_pixels),
             request_timeout_s=args.request_timeout_s, device=args.device, gpu_uuid=gpu,
             executable=sys.executable, versions=versions(),
             source_selection='first requested-camera exposure per recording, complete recording verified',
@@ -146,7 +147,8 @@ def run(args):
             '--format=csv,noheader'], capture_output=True, text=True, check=False)
         write(root/'gpu-before-load.json', dict(returncode=gpu_receipt.returncode,
               stdout=gpu_receipt.stdout, stderr=gpu_receipt.stderr, selected_uuid=gpu))
-        worker = Qwen3VLGroundingWorker(args.model, device=args.device, seed=args.seed, model_identity=identity)
+        worker = Qwen3VLGroundingWorker(args.model, device=args.device, seed=args.seed, model_identity=identity,
+            image_min_pixels=args.image_min_pixels, image_max_pixels=args.image_max_pixels)
         write(root/'loaded-model.json', dict(model_identity=worker.model_identity,
             processor_identity=worker.processor_identity, environment_identity=worker.environment_identity,
             registration_sha256=file_hash(root/'registration.json'), pid=os.getpid()))
@@ -173,6 +175,8 @@ def main():
     parser.add_argument('--max-new-tokens', type=int, default=256)
     parser.add_argument('--request-timeout-s', type=float, default=120.)
     parser.add_argument('--seed', type=int, default=1)
+    parser.add_argument('--image-min-pixels', type=int)
+    parser.add_argument('--image-max-pixels', type=int)
     raise SystemExit(run(parser.parse_args()))
 
 
