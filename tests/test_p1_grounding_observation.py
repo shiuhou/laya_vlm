@@ -8,7 +8,8 @@ import pytest
 from embodied_runtime.contracts import ProtocolError, content_hash
 from embodied_runtime.experiments.point_grounding_probe import generation_audit
 from embodied_runtime.perception.grounding_observation import (
-    build_grounding_observation, parse_locateanything_grounding, parse_qwen_grounding,
+    build_grounding_observation, build_mapped_grounding_observation, make_model_crop,
+    parse_locateanything_grounding, parse_qwen_grounding, validate_grounding_observation,
 )
 from embodied_runtime.perception.rgbd_geometry import GeometryConfig
 from embodied_runtime.perception.semantic_prompt import grounding_point_prompt, point_prompt
@@ -101,3 +102,70 @@ def test_shared_geometry_boundary_and_source_checks_keep_legacy_behavior():
     assert json.loads(json.dumps(obs)) == obs
     la_reply = parse_locateanything_grounding(la_raw,10,10,mode='POINT',audit=audit())
     assert la_reply.point_xy_px == (5.5,5.5)
+
+
+def crop_fixture():
+    view, _ = fixture('[{"label":"drawer_front_pushable","point_2d":[550,550]}]')
+    view = dict(view,rgb=np.arange(20*40*3,dtype=np.uint8).reshape(20,40,3),depth_m=np.full((20,40),.7))
+    source = sensor_view_identity(view)
+    common = dict(source_identity=source,frontend_id='qwen3vl',model_identity={'id':'m'},
+        processor_identity={'id':'p'},environment_identity={'id':'e'},audit=audit())
+    raw = '[{"label":"tabletop_cabinet","bbox_2d":[250,250,750,750]}]'
+    coarse = parse_qwen_grounding(raw,40,20,mode='BOX',audit=audit(),expected_label='tabletop_cabinet')
+    observation = build_grounding_observation(coarse,request_id='coarse/1',query='cabinet',
+        target_key='tabletop_cabinet',expected_label='tabletop_cabinet',**common,
+        input_evidence={'query':'cabinet','rgb_sha256':source['rgb_sha256'],'input_token_ids':[1,2]})
+    return view,common,observation
+
+
+def test_model_crop_exact_inverse_mapping_and_native_evidence_preserved():
+    view,common,coarse = crop_fixture()
+    crop,binding = make_model_crop(view,coarse)
+    assert binding['crop_xyxy_px'] == [7,3,33,17]
+    assert np.array_equal(crop,view['rgb'][3:17,7:33])
+    for mode,coords in [('POINT',[250,750]),('BOX',[0,0,1000,1000])]:
+        raw = json.dumps([{'label':'drawer_front_pushable','point_2d' if mode=='POINT' else 'bbox_2d':coords}])
+        reply = parse_qwen_grounding(raw,26,14,mode=mode,audit=audit())
+        mapped = build_mapped_grounding_observation(reply,crop_binding=binding,request_id='fine/'+mode,
+            query='front',target_key='drawer_front_pushable',**common,
+            input_evidence={'query':'front','rgb_sha256':hashlib.sha256(crop.tobytes()).hexdigest(),'input_token_ids':[1,2]})
+        verified = validate_grounding_observation(mapped,view=view)
+        assert mapped['native_typed']['width'] == 26 and mapped['typed']['width'] == 40
+        assert mapped['native_typed']['raw_output'] == mapped['typed']['raw_output'] == raw
+        if mode=='POINT':
+            assert verified.point_xy_px == (13.5,13.5) and verified.sample_pixel_xy == (13,13)
+            prompt = grounding_point_prompt(view,[7,3,33,17],mapped,query='front',target_key='drawer_front_pushable',config=GeometryConfig())
+            assert prompt['admitted'] and prompt['point_xy'] == [13.5,13.5]
+        else:
+            assert verified.ordered_boxes_xyxy_px == ((7.,3.,33.,17.),)
+        altered = copy.deepcopy(mapped)
+        altered['typed']['width'] = 26  # Mistaking crop coordinates for full source pixels must fail.
+        altered['observation_sha256'] = content_hash({k:v for k,v in altered.items() if k!='observation_sha256'})
+        with pytest.raises(ProtocolError):
+            validate_grounding_observation(altered,view=view)
+
+
+def test_crop_rule_and_actual_pixel_binding_cannot_be_rehashed_away():
+    view,common,coarse = crop_fixture()
+    crop,binding = make_model_crop(view,coarse)
+    reply = parse_qwen_grounding('[]',26,14,mode='POINT',audit=audit())
+    def build(bound):
+        return build_mapped_grounding_observation(reply,crop_binding=bound,request_id='fine',query='front',
+            target_key='drawer_front_pushable',**common,
+            input_evidence={'query':'front','rgb_sha256':bound['crop_rgb_sha256'],'input_token_ids':[1,2]})
+    changed = copy.deepcopy(binding)
+    changed['crop_xyxy_px'][0] += 1
+    changed['crop_binding_sha256'] = content_hash({k:v for k,v in changed.items() if k!='crop_binding_sha256'})
+    with pytest.raises(ProtocolError):
+        build(changed)
+    changed = copy.deepcopy(binding)
+    changed['crop_rgb_sha256'] = '0'*64
+    changed['crop_binding_sha256'] = content_hash({k:v for k,v in changed.items() if k!='crop_binding_sha256'})
+    # Without raw RGB the record can establish internal provenance only. The
+    # mandatory view-aware downstream bridge authenticates actual crop bytes.
+    forged = build(changed)
+    with pytest.raises(ProtocolError,match='crop bytes'):
+        validate_grounding_observation(forged,view=view)
+    valid = build(binding)
+    assert not validate_grounding_observation(valid,view=view).admitted
+    assert valid['typed']['reason'] == 'EXPLICIT_ABSTAIN'  # No full-frame fallback.

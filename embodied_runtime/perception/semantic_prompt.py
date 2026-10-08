@@ -48,7 +48,7 @@ def grounding_point_prompt(view, original_box, observation, *, query, target_key
     require(observation['source_identity'] == sensor_view_identity(view)
             and observation['query'] == query and observation['target_key'] == target_key,
             'POINT sensor/query/target mismatch', 'SOURCE_MISMATCH')
-    typed = validate_grounding_observation(observation)
+    typed = validate_grounding_observation(observation, view=view)
     require(typed.mode == 'POINT', 'POINT observation required')
     result = dict(contract=CONTRACT, admitted=False, reason=None, point_xy=None,
                   sample_pixel_xy=None, geometry_roi_xyxy=None, sampled_depth_m=None,
