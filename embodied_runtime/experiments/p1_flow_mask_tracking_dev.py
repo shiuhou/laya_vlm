@@ -17,7 +17,7 @@ import numpy as np
 
 from ..contracts import canonical_json, content_hash, require
 from ..perception.recording import replay_frames, project_base_points
-from ..perception.rgbd_geometry import estimate_visible_patch
+from ..perception.tracked_mask_geometry import fresh_mask_geometry
 from ..perception.semantic_prompt import grounding_point_prompt, mask_point_admission
 from ..perception.surface_association import sensor_view_identity
 from ..perception.opencv_receipt import opencv_process_receipt
@@ -66,14 +66,9 @@ def native_seeds(records, view):
 
 def fresh_geometry(view, support, roi, proprio, key):
     """One measurement from CURRENT depth, with an explicitly tracked domain."""
-    masked = np.asarray(view['depth_m']).copy()
-    masked[~support] = np.nan
-    return estimate_visible_patch(masked, view['intrinsics_K'], view['T_base_camera'],
-        roi_xyxy=roi, source_frame_id=view['frame_id'], calibration_version=view['calibration_version'],
+    return fresh_mask_geometry(view,support,roi,geometry_config=config(),
         track_id='drawer_front_pushable/'+key, feature_id='flow-native-support',
-        capture_sim_time_s=view['capture_sim_time_s'], capture_monotonic_ns=view['capture_monotonic_ns'],
-        config=config(), seed=0, eef_position_base_m=proprio['eef_position_base_m'],
-        depth_availability_mask=support).to_dict()
+        eef_position_base_m=proprio['eef_position_base_m'])
 
 
 def review_panel(view, rows):

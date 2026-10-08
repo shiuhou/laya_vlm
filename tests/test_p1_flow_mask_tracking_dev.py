@@ -5,6 +5,7 @@ import pytest
 
 from embodied_runtime.contracts import ProtocolError
 from embodied_runtime.experiments import p1_flow_mask_tracking_dev as runner
+from embodied_runtime.perception import tracked_mask_geometry
 from test_p1_automatic_patch_tracking import fixture
 
 
@@ -26,7 +27,7 @@ def test_geometry_receives_only_current_depth_under_current_support(monkeypatch)
     def estimate(depth, k, transform, **kwargs):
         seen.update(depth=depth, **kwargs)
         return SimpleNamespace(to_dict=lambda: {})
-    monkeypatch.setattr(runner, 'estimate_visible_patch', estimate)
+    monkeypatch.setattr(tracked_mask_geometry, 'estimate_visible_patch', estimate)
     runner.fresh_geometry(view, mask, [3, 2, 9, 8], {'eef_position_base_m': [0, 0, 0]}, 'native-2')
     assert np.isnan(seen['depth'][~mask]).all() and np.all(seen['depth'][mask] == 1.234)
     assert np.all(view['depth_m'] == 1.234)
