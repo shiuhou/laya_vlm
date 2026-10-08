@@ -8,7 +8,7 @@ from embodied_runtime.experiments.p1_segmentation_probe import write, seal
 def test_exact_source_camera_env_and_optional_tracker_command_propagation(tmp_path):
     args = parser().parse_args(['--recording', str(tmp_path/'source-a'), '--recording', str(tmp_path/'source-b'),
         '--camera', 'frontview', '--gpu-uuid', 'GPU-test', '--output', str(tmp_path/'out'), '--track',
-        '--qwen-python', '/tmp/isolated-qwen/bin/python'])
+        '--qwen-python', '/tmp/isolated-qwen/bin/python', '--seed-method', 'depth-supported-rectangle'])
     stages = build_stages(args)
     assert len(stages) == 5
     qwen = stages[0].command
@@ -21,6 +21,8 @@ def test_exact_source_camera_env_and_optional_tracker_command_propagation(tmp_pa
         tracking = stages[3+i].command
         assert tracking[tracking.index('--recording')+1] == str((tmp_path/('source-a' if i==0 else 'source-b')).resolve())
         assert tracking[tracking.index('--geometry')+1] == stages[2].output
+        assert tracking[tracking.index('--seed-method')+1] == 'depth-supported-rectangle'
+    assert parser().get_default('seed_method') == 'mask-rectangle'
 
 
 def test_upstream_runtime_failure_preserved_and_never_launches_downstream(tmp_path):
