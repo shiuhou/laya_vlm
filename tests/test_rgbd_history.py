@@ -88,3 +88,12 @@ def test_cross_camera_out_of_order_and_false_source_rejected():
         catch(buffer,'0'*64)
     with pytest.raises(ProtocolError,match='current clock'):
         catch(buffer,source,lambda:(-1.,0))
+
+
+def test_recorded_canonical_identity_matches_tracker_lineage():
+    buffer = history()
+    source = buffer.append(dict(frame(0), canonical_frame_id='episode/front/0'))
+    result = catch(buffer,source,lambda:(0.,0))
+    assert result.current_eligible
+    assert result.transitions[0].frame_id == 'episode/front/0'
+    assert result.retained_frame_ids == ('episode/front/0',)

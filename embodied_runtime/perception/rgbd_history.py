@@ -66,7 +66,7 @@ class RGBDHistory:
         if self._frames:
             previous = self._frames[-1][1]
             require(view['frame_seq'] > previous['frame_seq']
-                    and view['frame_id'] != previous['frame_id']
+                    and view.get('canonical_frame_id', view['frame_id']) != previous['frame_id']
                     and view['capture_sim_time_s'] >= previous['capture_sim_time_s']
                     and view['capture_monotonic_ns'] >= previous['capture_monotonic_ns'],
                     'history capture order must increase', 'FRAME_OUT_OF_ORDER')
@@ -75,6 +75,9 @@ class RGBDHistory:
         owned = {k: view[k] for k in keys}
         if 'canonical_frame_id' in view:
             owned['canonical_frame_id'] = view['canonical_frame_id']
+            # Recorded observations expose a canonical ID; use the same ID for
+            # tracker lineage as the source identity / semantic request binding.
+            owned['frame_id'] = view['canonical_frame_id']
         size = 0
         for key in ('rgb', 'depth_m', 'intrinsics_K', 'T_base_camera'):
             array = np.asarray(view[key])
