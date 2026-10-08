@@ -18,7 +18,7 @@ import time
 
 import numpy as np
 
-from ..adapters.libero_sensor_env import LiberoSensorEnv
+from ..adapters.libero_sensor_env import LiberoSensorEnv, quaternion_xyzw
 from ..contracts import content_hash, require
 from ..perception.recording import FrameRecorder, replay_frames
 from ..perception.surface_association import sensor_view_identity
@@ -29,6 +29,56 @@ TASK = 'KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet'
 CAMERAS = ('agentview', 'robot0_eye_in_hand')
 SETTLE_ACTION = (0., 0., 0., 0., 0., 0., -1.)
 SETTLE_TICKS = 10
+WORKSPACE_FRONT = dict(condition="fixed-workspace-front/1", camera_id="frontview",
+    position_world_m=[0., .7, 1.35], look_at_world_m=[0., 0., 1.05], world_up=[0., 0., 1.],
+    vertical_fov_deg=45., world_reference="fixed workspace origin; configured table z=0.90m",
+    source="explicit workspace camera configuration; no robot/object/target pose input")
+
+
+def camera_look_at_rotation(position, look_at, world_up):
+    """MuJoCo camera-to-world rotation: local -Z looks forward, +Y is up."""
+    position, target, up = (np.asarray(x, dtype=float) for x in (position, look_at, world_up))
+    require(all(x.shape == (3,) and np.isfinite(x).all() for x in (position, target, up)),
+            'finite xyz camera configuration required')
+    forward = target-position
+    require(np.linalg.norm(forward) > 1e-12 and np.linalg.norm(up) > 1e-12, 'nonzero camera direction/up required')
+    forward = forward/np.linalg.norm(forward)
+    right = np.cross(forward, up)
+    require(np.linalg.norm(right) > 1e-12, 'look direction and up must not be parallel')
+    right = right/np.linalg.norm(right)
+    actual_up = np.cross(right, forward)
+    return np.column_stack((right, actual_up, -forward))
+
+
+def configure_workspace_camera(world):
+    """Configure only the unused world-mounted frontview; never aim at a body."""
+    sim = world.env.sim
+    model = sim.model
+    camera = model.camera_name2id(WORKSPACE_FRONT['camera_id'])
+    require(int(model.cam_bodyid[camera]) == 0, 'workspace front camera must be world-mounted')
+    require(int(model.cam_mode[camera]) == 0, 'workspace front camera must use fixed pose mode')
+    before = {name: (np.array(model.cam_pos[model.camera_name2id(name)]),
+                    np.array(model.cam_quat[model.camera_name2id(name)]),
+                    float(model.cam_fovy[model.camera_name2id(name)])) for name in CAMERAS}
+    rotation = camera_look_at_rotation(WORKSPACE_FRONT['position_world_m'],
+        WORKSPACE_FRONT['look_at_world_m'], WORKSPACE_FRONT['world_up'])
+    xyzw = quaternion_xyzw(rotation)
+    wxyz = np.roll(xyzw, 1)
+    clock = float(sim.data.time)
+    model.cam_pos[camera] = WORKSPACE_FRONT['position_world_m']
+    model.cam_quat[camera] = wxyz
+    model.cam_fovy[camera] = WORKSPACE_FRONT['vertical_fov_deg']
+    sim.forward()
+    require(float(sim.data.time) == clock, 'camera configuration must not advance simulation')
+    for name, (position, quaternion, fovy) in before.items():
+        index = model.camera_name2id(name)
+        require(np.array_equal(model.cam_pos[index], position)
+                and np.array_equal(model.cam_quat[index], quaternion) and model.cam_fovy[index] == fovy,
+                'original camera configuration changed')
+    return dict(**WORKSPACE_FRONT, quaternion_camera_to_world_wxyz=wxyz.tolist(),
+                rotation_camera_to_world=rotation.tolist(), camera_mount_body_id=0,
+                camera_mount_body_name=model.body_id2name(0), camera_mode='fixed',
+                original_camera_configs_preserved=True, no_scene_state_used_for_aim=True)
 
 
 class SensorWorld:
@@ -107,11 +157,14 @@ def save_audit(world, output):
 
 
 def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/projects/LIBERO',
-                 config_dir='/tmp/laya-localizer-fresh-libero', factory=create_environment,
+                 config_dir='/tmp/laya-localizer-fresh-libero', workspace_front=False, factory=create_environment,
                  sensor_factory=LiberoSensorEnv, audit_writer=save_audit):
     """One constructor, one native reset, ten settling ticks, one sensor bundle."""
     require(dev_only is True, 'development-only capture must be explicit')
     require(type(seed) is int and 0 <= seed < 2**32, 'uint32 seed required')
+    require(type(workspace_front) is bool, 'explicit camera flag required')
+    cameras = CAMERAS + (('frontview',) if workspace_front else ())
+    condition = 'fresh-sampled-reset-workspace-front-development/1' if workspace_front else 'fresh-sampled-reset-development/1'
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
     audit = root/'collector-audit'
@@ -121,7 +174,7 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     world = sensor = None
     stage, reset_attempts, settle_ticks = 'CONSTRUCTOR', 0, 0
     receipt = dict(schema='p1-localizer-fresh-capture/1', seed=seed, dev_only=True,
-        task=TASK, width=384, height=256, cameras=list(CAMERAS), code=code_identity(), versions=versions(),
+        task=TASK, width=384, height=256, cameras=list(cameras), camera_condition=WORKSPACE_FRONT if workspace_front else None, code=code_identity(), versions=versions(),
         process_id=os.getpid(), executable=sys.executable, started_at_utc=datetime.now(timezone.utc).isoformat(),
         render_environment={k:os.environ.get(k) for k in ('MUJOCO_GL', 'MUJOCO_EGL_DEVICE_ID', 'CUDA_VISIBLE_DEVICES')},
         settle_action=list(SETTLE_ACTION), settle_ticks_planned=SETTLE_TICKS, explicit_reset_attempts=0,
@@ -149,11 +202,14 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
             settle_ticks += 1
         world.env.sim.forward()
         settled = audit_writer(world, audit/'post-settle')
+        if workspace_front:
+            stage = 'WORKSPACE_CAMERA_CONFIGURATION'
+            write(audit/'workspace-camera.json', configure_workspace_camera(world))
         stage = 'SENSOR_CAPTURE'
-        sensor = sensor_factory(world, camera_names=CAMERAS, width=384, height=256,
+        sensor = sensor_factory(world, camera_names=cameras, width=384, height=256,
                                 retained_gripper_command=lambda: 'OPEN')
         with FrameRecorder(sensor_root/'frames', episode_id=f'p1-localizer-dev/seed{seed}',
-                           clock_domain='localizer-fresh/local-process', condition='fresh-sampled-reset-development/1') as recorder:
+                           clock_domain='localizer-fresh/local-process', condition=condition) as recorder:
             bundle = sensor.sensor_port().capture()
             recorder.append(bundle['views'], bundle['proprio'], emitted_monotonic_ns=time.monotonic_ns())
         recorded = list(replay_frames(sensor_root/'frames'))
@@ -161,7 +217,7 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
         envelope, views = recorded[0]
         sources = [sensor_view_identity(dict(view, frame_id=view['canonical_frame_id'])) for view in views]
         write(sensor_root/'manifest.json', dict(schema='p1-localizer-sensor-capture/1', seed=seed, dev_only=True,
-            episode_id=envelope.episode_id, width=384, height=256, cameras=list(CAMERAS),
+            episode_id=envelope.episode_id, width=384, height=256, cameras=list(cameras), camera_condition=WORKSPACE_FRONT if workspace_front else None,
             source_identities=sources, recording='frames', allowed_inputs=['RGB', 'metric_depth', 'K', 'T_base_camera', 'robot_proprioception'],
             evaluation_labels_used=False, oracle_inputs=False, novelty_status='NOT_AUDITED', heldout_claim=False))
         seal(sensor_root)
@@ -183,13 +239,13 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     return read(root/'result.json')
 
 
-def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, timeout_s=180):
+def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace_front=False, timeout_s=180):
     require(dev_only is True and seeds and len(seeds) == len(set(seeds))
             and all(type(s) is int and 0 <= s < 2**32 for s in seeds), 'unique explicit development seeds required')
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
     write(root/'registration.json', dict(schema='p1-localizer-fresh-batch/1', seeds=seeds, dev_only=True,
-        per_seed_fresh_process=True, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
+        per_seed_fresh_process=True, workspace_front=workspace_front, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
     results = []
     try:
         for seed in seeds:
@@ -197,6 +253,8 @@ def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, timeout_s
             command = [sys.executable, '-m', 'embodied_runtime.experiments.p1_localizer_capture', '--single',
                 '--seed', str(seed), '--output', str(folder), '--dev-only', '--libero-root', libero_root,
                 '--config-dir', str(Path(config_dir)/f'seed-{seed}')]
+            if workspace_front:
+                command.append('--workspace-front')
             started = datetime.now(timezone.utc).isoformat()
             with (root/f'seed-{seed}.log').open('x') as log:
                 try:
@@ -224,15 +282,16 @@ def main():
     parser.add_argument('--seed', '--seeds', nargs='+', type=int, required=True, dest='seeds')
     parser.add_argument('--output', required=True)
     parser.add_argument('--dev-only', action='store_true')
+    parser.add_argument('--workspace-front', action='store_true', help='Add explicitly configured world-mounted workspace front RGB-D camera')
     parser.add_argument('--single', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--libero-root', default='/home/junhongli/projects/LIBERO')
     parser.add_argument('--config-dir', default='/tmp/laya-localizer-fresh-libero')
     args = parser.parse_args()
     require(not args.single or len(args.seeds) == 1, 'single child requires one seed')
     if args.single:
-        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir)
+        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front)
     else:
-        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir)
+        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front)
 
 
 if __name__ == '__main__':

@@ -21,7 +21,11 @@ def fake_capture(tmp_path, monkeypatch, *, fail_reset=False):
     def forbidden_wrapper_reset():
         pytest.fail('retrying wrapper reset was called')
     env = SimpleNamespace(env=SimpleNamespace(reset=native_reset), reset=forbidden_wrapper_reset,
-        sim=SimpleNamespace(forward=lambda: calls.append('forward')),
+        sim=SimpleNamespace(forward=lambda: calls.append('forward'), data=SimpleNamespace(time=1.),
+            model=SimpleNamespace(camera_name2id=lambda name: (*capture.CAMERAS, 'frontview').index(name),
+                cam_bodyid=np.array([0, 1, 0]), cam_mode=np.zeros(3, dtype=int),
+                cam_pos=np.arange(9, dtype=float).reshape(3, 3), cam_quat=np.tile([1., 0., 0., 0.], (3, 1)),
+                cam_fovy=np.full(3, 45.), body_id2name=lambda index: 'world')),
         seed=lambda seed: calls.append(('seed', seed)), step=lambda action: calls.append(('step', action)))
     world = SimpleNamespace(env=env, close=lambda: calls.append('world_close'))
     def factory(**kwargs):
@@ -38,13 +42,17 @@ def fake_capture(tmp_path, monkeypatch, *, fail_reset=False):
         intrinsics_K=np.array([[200., 0, 192], [0, 200., 128], [0, 0, 1]]), T_base_camera=np.eye(4),
         camera_id=camera, frame_seq=1, frame_id=f'{camera}:1', calibration_version='synthetic',
         capture_sim_time_s=1., capture_monotonic_ns=10, frame='robot_base') for n, camera in enumerate(capture.CAMERAS)]
-    def capture_bundle():
+    def capture_bundle(selected):
         calls.append('capture')
-        return dict(views=views, proprio=proprio)
+        return dict(views=selected, proprio=proprio)
     def sensor_factory(world, **kwargs):
         assert kwargs['width'] == 384 and kwargs['height'] == 256
         assert kwargs['retained_gripper_command']() == 'OPEN'
-        return SimpleNamespace(sensor_port=lambda: SimpleNamespace(capture=capture_bundle), close=lambda: calls.append('sensor_close'))
+        selected = list(views)
+        if 'frontview' in kwargs['camera_names']:
+            selected.append(dict(views[0], camera_id='frontview', frame_id='frontview:1'))
+        assert tuple(v['camera_id'] for v in selected) == kwargs['camera_names']
+        return SimpleNamespace(sensor_port=lambda: SimpleNamespace(capture=lambda: capture_bundle(selected)), close=lambda: calls.append('sensor_close'))
     return calls, dict(factory=factory, sensor_factory=sensor_factory, audit_writer=audit_writer)
 
 
@@ -98,3 +106,40 @@ def test_scene_fingerprint_excludes_time_and_robot_noise_but_retains_object_moti
     assert content_hash(capture.scene_layout(env)) == before
     data.body_xpos[0, 0] += .01
     assert content_hash(capture.scene_layout(env)) != before
+
+
+def test_fixed_workspace_camera_lookat_axes_and_mount_rejection(tmp_path, monkeypatch):
+    config = capture.WORKSPACE_FRONT
+    rotation = capture.camera_look_at_rotation(config['position_world_m'], config['look_at_world_m'], config['world_up'])
+    forward = np.array(config['look_at_world_m'])-np.array(config['position_world_m'])
+    assert np.allclose(rotation @ [0, 0, -1], forward/np.linalg.norm(forward))
+    assert np.allclose(rotation.T@rotation, np.eye(3)) and np.isclose(np.linalg.det(rotation), 1)
+    assert (rotation @ [0, 1, 0])[2] > 0
+    with pytest.raises(ProtocolError, match='parallel'):
+        capture.camera_look_at_rotation([0, 0, 0], [0, 0, 1], [0, 0, 1])
+    _, inject = fake_capture(tmp_path, monkeypatch)
+    world, _ = inject['factory']()
+    model = world.env.sim.model
+    before = model.cam_pos.copy()
+    model.cam_bodyid[2] = 1
+    with pytest.raises(ProtocolError, match='world-mounted'):
+        capture.configure_workspace_camera(world)
+    assert np.array_equal(model.cam_pos, before)
+    model.cam_bodyid[2] = 0
+    result = capture.configure_workspace_camera(world)
+    assert np.array_equal(model.cam_pos[:2], before[:2])
+    assert model.cam_pos[2].tolist() == config['position_world_m']
+    assert result['no_scene_state_used_for_aim'] and result['original_camera_configs_preserved']
+
+
+def test_optin_camera_flag_adds_third_sensor_and_separate_configuration(tmp_path, monkeypatch):
+    calls, inject = fake_capture(tmp_path, monkeypatch)
+    root = tmp_path/'workspace'
+    capture.capture_seed(42, root, dev_only=True, workspace_front=True, **inject)
+    manifest = read(root/'sensor/manifest.json')
+    assert manifest['cameras'] == [*capture.CAMERAS, 'frontview']
+    assert len(manifest['source_identities']) == 3 and calls.count('capture') == 1
+    config = read(root/'collector-audit/workspace-camera.json')
+    assert config['position_world_m'] == [0., .7, 1.35]
+    assert config['camera_mount_body_id'] == 0 and config['vertical_fov_deg'] == 45.
+    verify_seal(root)
