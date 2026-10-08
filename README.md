@@ -20,14 +20,21 @@ conservative geometry/tracking and exact 200-record replay. Static diagnostics
 have not yet established a drawer-front push patch or cabinet-relative VERIFY;
 P1 task acceptance and P2 manipulation remain pending.
 
+Current work: [autonomous P1 perception development](docs/p1-qwen-localizer-replacement-plan.md).
+Qwen3-VL-4B now has a runnable RGB-only BOX/POINT adapter feeding the unchanged
+SAM/geometry gates; development runs are separate from the frozen HO23 evaluation.
+A bounded fresh-reset sensor collector and an automatic-support tracking bridge
+are implemented. This does not yet establish correct localization, continuous
+tracking, P1 acceptance or permission to PUSH. Normal development continues
+without per-experiment approval; independent validation freezes follow capability.
+
 The [fixed HO23 automatic BOX A/B evaluation](docs/p1-box-heldout23-results.md)
 is complete: **0/23 clean drawer-front candidate frames in both arms**. BOX
 localization is 0/23 versus 0/23; new-query typed BOX availability falls 23/23
 → 3/23. The shared POINT is typed in 4/23, with 0/4 inside human usable regions.
 All 23 scenes and 12 native masks were scored and visually reviewed after outputs
 were sealed. Human labels remain offline-only, with user-attested metadata
-correction preserved. No P1 PASS or downstream control is claimed. The batch is
-frozen and stopped for review; no additional repair or inference is running.
+correction preserved. No P1 PASS or downstream control is claimed. That batch remains frozen; new development is separately versioned above.
 
 The [BOX role decomposition](docs/p1-box-role-results.md) is complete at
 execution `ed48728`, with no new model calls. On21fully matched frames,

@@ -1,5 +1,20 @@
 # Current research beliefs
 
+## Active P1 development — 2026-10-08
+
+User authorizes autonomous implementation/iteration in the chosen architecture.
+Qwen3-VL-4B source-bound 2D localization, unchanged SAM/geometry connection,
+automatic-support tracker bridge and fresh sampler collector are implemented.
+Actual greedy dev03: 8/8 typed BOX/POINT outputs on four exposed wrist images,
+but localization points at the gripper; 3frames enterSAM/9masks all reject
+PLANE_DEGENERATE, fourth POINT outsideBOX. No valid perception claim.
+Dev01 failed metadata serialization before inference; dev02 was contaminated
+by Transformers checkpoint do_sample fallback; both preserved, fixes tested.
+Next development tests higher visual-token budget on same raw RGB without gate
+changes. All these images are development, not independent evaluation.
+Tracking/control untested by these static outputs; reference remains UNKNOWN.
+
+
 ## Fixed HO23 BOX query repair — final offline score, stopped for review
 
 Observed: all 23 human drawer-front labels VISIBLE; fixed reference 23 UNKNOWN.
