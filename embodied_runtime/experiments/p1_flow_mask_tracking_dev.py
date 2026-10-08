@@ -20,6 +20,7 @@ from ..perception.recording import replay_frames, project_base_points
 from ..perception.rgbd_geometry import estimate_visible_patch
 from ..perception.semantic_prompt import grounding_point_prompt, mask_point_admission
 from ..perception.surface_association import sensor_view_identity
+from ..perception.opencv_receipt import opencv_process_receipt
 from .p1_automatic_patch_tracking import verified_geometry
 from .p1_mask_support_reanalysis import config
 from .p1_segmentation_probe import seal, write
@@ -101,7 +102,10 @@ def review_panel(view, rows):
 
 
 def run(geometry_root, recording, output):
+    import cv2
     from ..perception.sparse_mask_tracker import FlowTrackerConfig, SparseMaskTracker
+    # Fixed CPU scheduling condition, avoiding the host's 256-thread default.
+    cv2.setNumThreads(1)
     records = verified_geometry(geometry_root)
     stream = iter(replay_frames(recording))
     first = next(stream, None)
@@ -120,6 +124,7 @@ def run(geometry_root, recording, output):
         geometry_root=str(Path(geometry_root).resolve()), geometry_seal_sha256=file_hash(Path(geometry_root)/'sealed.json'),
         recording=str(Path(recording).resolve()), recording_frames_sha256=file_hash(Path(recording)/'frames.jsonl'),
         flow_config=asdict(cfg), geometry_config=config().to_dict(), measurement_contract='tracked-native-support/1',
+        opencv_process=opencv_process_receipt(), opencv_threads_explicit=1,
         source_identity=sensor_view_identity(source_view), processing_clock='offline_capture_clock_original_gaps',
         online_freshness_evaluated=False, continuous_end_to_end_hz_measured=False,
         evaluation_labels_used=False, oracle_inputs=False, robot_commands=0, for_execution=False))
