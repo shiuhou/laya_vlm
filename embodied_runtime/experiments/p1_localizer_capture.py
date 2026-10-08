@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import os
+import math
 from pathlib import Path
 import random
 import subprocess
@@ -19,7 +20,7 @@ import time
 import numpy as np
 
 from ..adapters.libero_sensor_env import LiberoSensorEnv, quaternion_xyzw
-from ..contracts import content_hash, require
+from ..contracts import canonical_json, content_hash, require
 from ..perception.recording import FrameRecorder, replay_frames
 from ..perception.surface_association import sensor_view_identity
 from .p1_segmentation_probe import read, write, seal
@@ -156,14 +157,100 @@ def save_audit(world, output):
                 xml_sha256=identity['xml_sha256'], audit_seal_sha256=file_hash(output/'sealed.json'))
 
 
+
+def capture_schedule(*, frames=None, duration_s=None, capture_hz=10.):
+    require(type(capture_hz) in (int, float) and np.isfinite(capture_hz) and 0 < capture_hz <= 20,
+            'capture cadence must be positive and at most native20Hz control')
+    require(frames is None or duration_s is None, 'choose frame slots or duration, not both')
+    if duration_s is not None:
+        require(type(duration_s) in (int, float) and np.isfinite(duration_s) and duration_s > 0,
+                'positive bounded duration required')
+        frames = math.ceil(duration_s*capture_hz)
+    else:
+        frames = 1 if frames is None else frames
+    require(type(frames) is int and 1 <= frames <= 10000, 'bounded1..10000 scheduled slots required')
+    return dict(planned_slots=frames, capture_hz=float(capture_hz), period_ns=round(1e9/capture_hz),
+                requested_duration_s=duration_s, native_control_hz=20.,
+                missed_slot_policy='record DROPPED_DEADLINE; no replacement or burst catch-up',
+                failure_policy='record FAILED and NOT_ATTEMPTED_AFTER_FAILURE; stop')
+
+
+def record_sequence(world, sensor, recorder, event_stream, schedule, *, clock_ns=time.monotonic_ns, sleep=time.sleep):
+    """Real acquisition timestamps survive; desired cadence never substitutes for them."""
+    anchor = clock_ns()
+    events, hold_ticks = [], 0
+    def emit(event):
+        events.append(event)
+        event_stream.write(canonical_json(event)+'\n')
+        event_stream.flush()
+    for slot in range(schedule['planned_slots']):
+        deadline = anchor + slot*schedule['period_ns']
+        current = clock_ns()
+        if current < deadline:
+            sleep((deadline-current)/1e9)
+            current = clock_ns()
+        event = dict(slot_index=slot, scheduled_monotonic_ns=deadline, observed_start_monotonic_ns=current,
+                     scheduling_lateness_ns=max(0, current-deadline), hold_ticks_before=hold_ticks)
+        if slot > 0 and current-deadline >= schedule['period_ns']:
+            emit(dict(event, status='DROPPED_DEADLINE', hold_ticks_after=hold_ticks,
+                      source_ids=[], timestamps_fabricated=False))
+            continue
+        try:
+            target_ticks = math.floor(slot*schedule['native_control_hz']/schedule['capture_hz'] + 1e-9)
+            while hold_ticks < target_ticks:
+                world.env.step(list(SETTLE_ACTION))  # Zero arm / retained OPEN only, no approach policy.
+                hold_ticks += 1
+            start = clock_ns()
+            bundle = sensor.sensor_port().capture()
+            capture_finished = clock_ns()
+            emitted = clock_ns()
+            message = recorder.append(bundle['views'], bundle['proprio'], emitted_monotonic_ns=emitted)
+            finished = clock_ns()
+            captures = [v['capture_monotonic_ns'] for v in bundle['views']]
+            source_ids = [f"{recorder.episode_id}/{v['camera_id']}/{v['frame_seq']}" for v in bundle['views']]
+            emit(dict(event, status='CAPTURED', capture_started_monotonic_ns=start,
+                capture_finished_monotonic_ns=capture_finished, emitted_monotonic_ns=emitted,
+                frame_write_finished_monotonic_ns=finished, hold_ticks_after=hold_ticks,
+                source_ids=source_ids, bundle_message_id=message.message_id,
+                view_capture_monotonic_ns=captures,
+                capture_sim_time_s=[v['capture_sim_time_s'] for v in bundle['views']],
+                capture_duration_s=(capture_finished-start)/1e9,
+                oldest_view_age_at_write_s=(finished-min(captures))/1e9,
+                timestamps_fabricated=False))
+        except Exception as exc:
+            emit(dict(event, status='FAILED', exception_type=type(exc).__name__, error=repr(exc),
+                      finished_monotonic_ns=clock_ns(), hold_ticks_after=hold_ticks,
+                      source_ids=[], timestamps_fabricated=False))
+            for rest in range(slot+1, schedule['planned_slots']):
+                emit(dict(slot_index=rest, scheduled_monotonic_ns=anchor+rest*schedule['period_ns'],
+                          status='NOT_ATTEMPTED_AFTER_FAILURE', source_ids=[], timestamps_fabricated=False))
+            raise
+    end = clock_ns()
+    captured = [e for e in events if e['status'] == 'CAPTURED']
+    def percentiles(values):
+        return dict(n=len(values), p50_s=float(np.percentile(values, 50)) if values else None,
+                    p95_s=float(np.percentile(values, 95)) if values else None)
+    return dict(**schedule, captured_bundles=len(captured), dropped_slots=sum(e['status']=='DROPPED_DEADLINE' for e in events),
+        failed_slots=0, continuous_hold_ticks=hold_ticks, actual_wall_elapsed_s=(end-anchor)/1e9,
+        actual_producer_hz=len(captured)/((end-anchor)/1e9) if end > anchor else None,
+        camera_capture_time=percentiles([e['capture_duration_s'] for e in captured]),
+        oldest_view_age_at_write=percentiles([e['oldest_view_age_at_write_s'] for e in captured]),
+        actual_capture_cadence_hz=(len(captured)-1)/((captured[-1]['view_capture_monotonic_ns'][0]-captured[0]['view_capture_monotonic_ns'][0])/1e9)
+            if len(captured)>1 and captured[-1]['view_capture_monotonic_ns'][0]>captured[0]['view_capture_monotonic_ns'][0] else None,
+        geometry_or_tracking_throughput_measured=False, replay_is_not_live_freshness=True,
+        hold_motion_only=True, approach_or_push=False)
+
+
 def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/projects/LIBERO',
-                 config_dir='/tmp/laya-localizer-fresh-libero', workspace_front=False, factory=create_environment,
+                 config_dir='/tmp/laya-localizer-fresh-libero', workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., factory=create_environment,
                  sensor_factory=LiberoSensorEnv, audit_writer=save_audit):
-    """One constructor, one native reset, ten settling ticks, one sensor bundle."""
+    """One reset and ten settling ticks, then bounded sensor slots (default one)."""
     require(dev_only is True, 'development-only capture must be explicit')
     require(type(seed) is int and 0 <= seed < 2**32, 'uint32 seed required')
     require(type(workspace_front) is bool, 'explicit camera flag required')
-    cameras = CAMERAS + (('frontview',) if workspace_front else ())
+    require(type(frontview_only) is bool and (not frontview_only or workspace_front), 'frontview-only requires workspace-front')
+    cameras = ('frontview',) if frontview_only else CAMERAS + (('frontview',) if workspace_front else ())
+    schedule = capture_schedule(frames=frames, duration_s=duration_s, capture_hz=capture_hz)
     condition = 'fresh-sampled-reset-workspace-front-development/1' if workspace_front else 'fresh-sampled-reset-development/1'
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
@@ -172,9 +259,10 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     sensor_root = root/'sensor'
     sensor_root.mkdir()
     world = sensor = None
+    sequence_stats = None
     stage, reset_attempts, settle_ticks = 'CONSTRUCTOR', 0, 0
     receipt = dict(schema='p1-localizer-fresh-capture/1', seed=seed, dev_only=True,
-        task=TASK, width=384, height=256, cameras=list(cameras), camera_condition=WORKSPACE_FRONT if workspace_front else None, code=code_identity(), versions=versions(),
+        task=TASK, width=384, height=256, cameras=list(cameras), capture_schedule=schedule, frontview_only=frontview_only, camera_condition=WORKSPACE_FRONT if workspace_front else None, code=code_identity(), versions=versions(),
         process_id=os.getpid(), executable=sys.executable, started_at_utc=datetime.now(timezone.utc).isoformat(),
         render_environment={k:os.environ.get(k) for k in ('MUJOCO_GL', 'MUJOCO_EGL_DEVICE_ID', 'CUDA_VISIBLE_DEVICES')},
         settle_action=list(SETTLE_ACTION), settle_ticks_planned=SETTLE_TICKS, explicit_reset_attempts=0,
@@ -209,20 +297,22 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
         sensor = sensor_factory(world, camera_names=cameras, width=384, height=256,
                                 retained_gripper_command=lambda: 'OPEN')
         with FrameRecorder(sensor_root/'frames', episode_id=f'p1-localizer-dev/seed{seed}',
-                           clock_domain='localizer-fresh/local-process', condition=condition) as recorder:
-            bundle = sensor.sensor_port().capture()
-            recorder.append(bundle['views'], bundle['proprio'], emitted_monotonic_ns=time.monotonic_ns())
+                           clock_domain='localizer-fresh/local-process', condition=condition) as recorder, \
+                (sensor_root/'capture-attempts.jsonl').open('x') as attempts:
+            sequence_stats = record_sequence(world, sensor, recorder, attempts, schedule)
         recorded = list(replay_frames(sensor_root/'frames'))
-        require(len(recorded) == 1, 'exactly one first capture bundle required')
-        envelope, views = recorded[0]
-        sources = [sensor_view_identity(dict(view, frame_id=view['canonical_frame_id'])) for view in views]
+        require(len(recorded) == sequence_stats['captured_bundles'] and len(recorded) > 0,
+                'complete recorded successful slots required')
+        envelope = recorded[0][0]
+        sources = [sensor_view_identity(dict(view, frame_id=view['canonical_frame_id'])) for _, views in recorded for view in views]
+        write(sensor_root/'capture-statistics.json', sequence_stats)
         write(sensor_root/'manifest.json', dict(schema='p1-localizer-sensor-capture/1', seed=seed, dev_only=True,
             episode_id=envelope.episode_id, width=384, height=256, cameras=list(cameras), camera_condition=WORKSPACE_FRONT if workspace_front else None,
-            source_identities=sources, recording='frames', allowed_inputs=['RGB', 'metric_depth', 'K', 'T_base_camera', 'robot_proprioception'],
+            source_identities=sources, frame_bundle_count=len(recorded), capture_statistics=sequence_stats, recording='frames', allowed_inputs=['RGB', 'metric_depth', 'K', 'T_base_camera', 'robot_proprioception'],
             evaluation_labels_used=False, oracle_inputs=False, novelty_status='NOT_AUDITED', heldout_claim=False))
         seal(sensor_root)
         write(root/'result.json', dict(status='CAPTURE_COMPLETE', seed=seed, explicit_reset_attempts=reset_attempts,
-            settle_ticks_completed=settle_ticks, sensor_manifest_sha256=file_hash(sensor_root/'manifest.json'),
+            settle_ticks_completed=settle_ticks, capture_statistics=sequence_stats, sensor_manifest_sha256=file_hash(sensor_root/'manifest.json'),
             audit_only_reset_identity=initial, audit_only_settled_identity=settled,
             stage='COMPLETE', dev_only=True, novelty_status='NOT_AUDITED', heldout_claim=False))
     except Exception as exc:
@@ -239,13 +329,16 @@ def capture_seed(seed, output, *, dev_only, libero_root='/home/junhongli/project
     return read(root/'result.json')
 
 
-def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace_front=False, timeout_s=180):
+def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace_front=False, frontview_only=False, frames=None, duration_s=None, capture_hz=10., timeout_s=180):
     require(dev_only is True and seeds and len(seeds) == len(set(seeds))
             and all(type(s) is int and 0 <= s < 2**32 for s in seeds), 'unique explicit development seeds required')
+    schedule = capture_schedule(frames=frames, duration_s=duration_s, capture_hz=capture_hz)
+    require(not frontview_only or workspace_front, 'frontview-only requires workspace-front')
+    timeout_s = max(timeout_s, schedule['planned_slots']/capture_hz + 180)
     root = Path(output)
     root.mkdir(parents=True, exist_ok=False)
     write(root/'registration.json', dict(schema='p1-localizer-fresh-batch/1', seeds=seeds, dev_only=True,
-        per_seed_fresh_process=True, workspace_front=workspace_front, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
+        per_seed_fresh_process=True, workspace_front=workspace_front, frontview_only=frontview_only, capture_schedule=schedule, timeout_s=timeout_s, retry_count=0, novelty_status='NOT_AUDITED', code=code_identity()))
     results = []
     try:
         for seed in seeds:
@@ -253,8 +346,15 @@ def capture_batch(seeds, output, *, dev_only, libero_root, config_dir, workspace
             command = [sys.executable, '-m', 'embodied_runtime.experiments.p1_localizer_capture', '--single',
                 '--seed', str(seed), '--output', str(folder), '--dev-only', '--libero-root', libero_root,
                 '--config-dir', str(Path(config_dir)/f'seed-{seed}')]
+            command.extend(['--capture-hz', str(capture_hz)])
+            if duration_s is not None:
+                command.extend(['--duration-s', str(duration_s)])
+            elif frames is not None:
+                command.extend(['--frames', str(frames)])
             if workspace_front:
                 command.append('--workspace-front')
+            if frontview_only:
+                command.append('--frontview-only')
             started = datetime.now(timezone.utc).isoformat()
             with (root/f'seed-{seed}.log').open('x') as log:
                 try:
@@ -283,15 +383,20 @@ def main():
     parser.add_argument('--output', required=True)
     parser.add_argument('--dev-only', action='store_true')
     parser.add_argument('--workspace-front', action='store_true', help='Add explicitly configured world-mounted workspace front RGB-D camera')
+    parser.add_argument('--frontview-only', action='store_true', help='Capture only configured frontview; requires workspace-front')
+    bound = parser.add_mutually_exclusive_group()
+    bound.add_argument('--frames', type=int, help='Finite scheduled slots; dropped slots are not replaced')
+    bound.add_argument('--duration-s', type=float, help='Finite scheduled window, not a guaranteed run walltime')
+    parser.add_argument('--capture-hz', type=float, default=10.)
     parser.add_argument('--single', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--libero-root', default='/home/junhongli/projects/LIBERO')
     parser.add_argument('--config-dir', default='/tmp/laya-localizer-fresh-libero')
     args = parser.parse_args()
     require(not args.single or len(args.seeds) == 1, 'single child requires one seed')
     if args.single:
-        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front)
+        capture_seed(args.seeds[0], args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz)
     else:
-        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front)
+        capture_batch(args.seeds, args.output, dev_only=args.dev_only, libero_root=args.libero_root, config_dir=args.config_dir, workspace_front=args.workspace_front, frontview_only=args.frontview_only, frames=args.frames, duration_s=args.duration_s, capture_hz=args.capture_hz)
 
 
 if __name__ == '__main__':

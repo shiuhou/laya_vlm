@@ -48,7 +48,7 @@ def fake_capture(tmp_path, monkeypatch, *, fail_reset=False):
     def sensor_factory(world, **kwargs):
         assert kwargs['width'] == 384 and kwargs['height'] == 256
         assert kwargs['retained_gripper_command']() == 'OPEN'
-        selected = list(views)
+        selected = [v for v in views if v["camera_id"] in kwargs["camera_names"]]
         if 'frontview' in kwargs['camera_names']:
             selected.append(dict(views[0], camera_id='frontview', frame_id='frontview:1'))
         assert tuple(v['camera_id'] for v in selected) == kwargs['camera_names']
@@ -143,3 +143,70 @@ def test_optin_camera_flag_adds_third_sensor_and_separate_configuration(tmp_path
     assert config['position_world_m'] == [0., .7, 1.35]
     assert config['camera_mount_body_id'] == 0 and config['vertical_fov_deg'] == 45.
     verify_seal(root)
+
+
+def sequence_fixture(*, first_cost_ns=250_000_000, fail_second=False):
+    import io
+    clock = SimpleNamespace(value=0)
+    steps, messages = [], []
+    calls = [0]
+    def sleep(seconds):
+        clock.value += round(seconds*1e9)
+    def acquire():
+        calls[0] += 1
+        if fail_second and calls[0] == 2:
+            raise RuntimeError('synthetic sensor failure')
+        captured = clock.value
+        clock.value += first_cost_ns if calls[0] == 1 else 10_000_000
+        return dict(views=[dict(camera_id='frontview', frame_seq=calls[0], capture_monotonic_ns=captured,
+                               capture_sim_time_s=len(steps)/20)], proprio={})
+    def append(views, proprio, *, emitted_monotonic_ns):
+        messages.append(dict(captured=views[0]['capture_monotonic_ns'], emitted=emitted_monotonic_ns))
+        return SimpleNamespace(message_id=f'test/bundle/{len(messages)}')
+    sensor = SimpleNamespace(sensor_port=lambda: SimpleNamespace(capture=acquire))
+    world = SimpleNamespace(env=SimpleNamespace(step=lambda action: steps.append(action)))
+    recorder = SimpleNamespace(episode_id='synthetic', append=append)
+    events = io.StringIO()
+    return world, sensor, recorder, events, clock, sleep, steps, messages
+
+
+def test_continuous_slots_preserve_real_lateness_drop_and_timestamps():
+    import json
+    world, sensor, recorder, events, clock, sleep, steps, messages = sequence_fixture()
+    schedule = capture.capture_schedule(frames=4, capture_hz=10)
+    stats = capture.record_sequence(world, sensor, recorder, events, schedule,
+                                    clock_ns=lambda: clock.value, sleep=sleep)
+    rows = [json.loads(line) for line in events.getvalue().splitlines()]
+    assert [r['status'] for r in rows] == ['CAPTURED', 'DROPPED_DEADLINE', 'CAPTURED', 'CAPTURED']
+    assert stats['captured_bundles'] == 3 and stats['dropped_slots'] == 1
+    assert [m['captured'] for m in messages] == [0, 250_000_000, 300_000_000]
+    assert rows[2]['scheduled_monotonic_ns'] == 200_000_000
+    assert rows[2]['view_capture_monotonic_ns'] == [250_000_000]
+    assert len(steps) == 6 and all(s == list(capture.SETTLE_ACTION) for s in steps)
+    assert stats['geometry_or_tracking_throughput_measured'] is False
+    assert capture.capture_schedule(duration_s=.35, capture_hz=10)['planned_slots'] == 4
+    with pytest.raises(ProtocolError):
+        capture.capture_schedule(frames=4, duration_s=1.)
+
+
+def test_continuous_failure_keeps_failed_and_remaining_unattempted_slots():
+    import json
+    world, sensor, recorder, events, clock, sleep, steps, messages = sequence_fixture(first_cost_ns=10_000_000, fail_second=True)
+    with pytest.raises(RuntimeError, match='sensor failure'):
+        capture.record_sequence(world, sensor, recorder, events, capture.capture_schedule(frames=4),
+                                clock_ns=lambda: clock.value, sleep=sleep)
+    statuses = [json.loads(line)['status'] for line in events.getvalue().splitlines()]
+    assert statuses == ['CAPTURED', 'FAILED', 'NOT_ATTEMPTED_AFTER_FAILURE', 'NOT_ATTEMPTED_AFTER_FAILURE']
+    assert len(messages) == 1
+
+
+def test_frontview_only_is_explicit_and_preserves_default_single_frame(tmp_path, monkeypatch):
+    calls, inject = fake_capture(tmp_path, monkeypatch)
+    root = tmp_path/'front-only'
+    capture.capture_seed(42, root, dev_only=True, workspace_front=True, frontview_only=True, **inject)
+    manifest = read(root/'sensor/manifest.json')
+    assert manifest['cameras'] == ['frontview'] and manifest['frame_bundle_count'] == 1
+    assert manifest['capture_statistics']['continuous_hold_ticks'] == 0
+    assert calls.count('capture') == 1
+    with pytest.raises(ProtocolError, match='requires'):
+        capture.capture_seed(43, tmp_path/'invalid-front', dev_only=True, frontview_only=True, **inject)
